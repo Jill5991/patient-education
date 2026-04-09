@@ -147,21 +147,67 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 /* Steps */
 .s-steps { padding: 6px 0; }
 .step {
-  display: flex; align-items: flex-start; padding: 9px 16px; gap: 11px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); /* 8欄:4欄 */
+  align-items: start;
+  column-gap: 11px;
+  padding: 9px 16px;
   border-bottom: 0.3px solid rgba(0,0,0,0.07);
 }
 .step:last-child { border-bottom: none; }
+.step-left {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
 .step-num {
   width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 700; color: white;
 }
-.step-body { flex: 1; }
+.step-body { flex: 1; min-width: 0; }
 .step-action { font-size: 11px; font-weight: 600; line-height: 1.4; color: #1a1a1a; }
 .step-note   { font-size: 9.5px; color: #6b6b6b; margin-top: 2px; line-height: 1.4; }
+
+/* Right 4-column illustration area */
+.step-ill {
+  width: 100%;
+  min-height: 64px;
+  border: 0.5px dashed rgba(0,0,0,0.14);
+  border-radius: 6px;
+  background: #fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.step-ill img,
+.step-ill svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.step-ill-label {
+  font-size: 8px;
+  color: #8a8a8a;
+  letter-spacing: 0.2px;
+}
+
 .step.hl { background: rgba(216,90,48,0.07); }
 .step.hl .step-action { color: #4A1B0C; }
 .step.hl .step-note   { color: #993C1D; font-weight: 500; }
+
+@media (max-width: 640px) {
+  .step {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 8px;
+  }
+  .step-ill {
+    min-height: 90px;
+  }
+}
 
 /* Info box */
 .s-infobox {
@@ -228,8 +274,10 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
   .step {
     padding: calc(9px * var(--ipad-scale)) calc(16px * var(--ipad-scale));
-    gap: calc(11px * var(--ipad-scale));
+    column-gap: calc(11px * var(--ipad-scale));
   }
+
+  .step-left { gap: calc(11px * var(--ipad-scale)); }
 
   .step-num {
     width: calc(22px * var(--ipad-scale));
@@ -242,6 +290,15 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   .step-note {
     font-size: calc(9.5px * var(--ipad-scale));
     margin-top: calc(2px * var(--ipad-scale));
+  }
+
+  .step-ill {
+    min-height: calc(64px * var(--ipad-scale));
+    border-radius: calc(6px * var(--ipad-scale));
+  }
+
+  .step-ill-label {
+    font-size: calc(8px * var(--ipad-scale));
   }
 
   .s-infobox {
@@ -387,7 +444,8 @@ const UI = {
   storage:   { "zh-TW":"藥品保存",    "en":"Storage",       "id":"Penyimpanan",   "vi":"Bảo quản",          "th":"การเก็บรักษา","tl":"Imbakan",      "ja":"保管方法"     },
   pharmacy:  { "zh-TW":"藥局",        "en":"Pharmacy",      "id":"Apotek",        "vi":"Nhà thuốc",         "th":"ร้านยา",      "tl":"Parmasya",     "ja":"薬局"         },
   searchMed: { "zh-TW":"搜尋藥品名稱（中/英）", "en":"Search medication name", "id":"Cari nama obat", "vi":"Tìm tên thuốc", "th":"ค้นหาชื่อยา", "tl":"Hanapin ang pangalan ng gamot", "ja":"薬品名を検索" },
-  noResult:  { "zh-TW":"此分類無符合藥品", "en":"No matching medication", "id":"Tidak ada obat yang cocok", "vi":"Không có thuốc phù hợp", "th":"ไม่พบยาที่ตรงเงื่อนไข", "tl":"Walang katugmang gamot", "ja":"該当する薬品がありません" }
+  noResult:  { "zh-TW":"此分類無符合藥品", "en":"No matching medication", "id":"Tidak ada obat yang cocok", "vi":"Không có thuốc phù hợp", "th":"ไม่พบยาที่ตรงเงื่อนไข", "tl":"Walang katugmang gamot", "ja":"該当する薬品がありません" },
+  illustration: { "zh-TW":"插圖", "en":"Illustration", "id":"Ilustrasi", "vi":"Hình minh họa", "th":"ภาพประกอบ", "tl":"Ilustrasyon", "ja":"図" }
 };
 
 // ============================================================
@@ -5336,6 +5394,16 @@ function uiText(key) {
   return (UI[key] && (UI[key][lang] || UI[key]["en"])) || "";
 }
 
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function inferCategory(m) {
   if (m.category && CATEGORY_META[m.category]) return m.category;
 
@@ -5532,15 +5600,32 @@ function render() {
   const t  = k => (m[k] && (m[k][lang] || m[k]["en"])) || "";
   const ui = k => UI[k][lang] || UI[k]["en"];
 
-  // Steps HTML
+  // Steps HTML (left 8-column text + right 4-column illustration)
   const stepsHtml = m.steps.map((s, i) => {
     const isHL = s.highlight ? " hl" : "";
+
+    let illSrc = "";
+    let illAlt = uiText("illustration");
+    if (typeof s.illustration === "string") {
+      illSrc = s.illustration;
+    } else if (s.illustration && typeof s.illustration === "object") {
+      illSrc = s.illustration.src || "";
+      if (s.illustration.alt) illAlt = s.illustration.alt[lang] || s.illustration.alt["en"] || illAlt;
+    }
+
+    const illHtml = illSrc
+      ? `<img src="${escapeHtml(illSrc)}" alt="${escapeHtml(illAlt)}" loading="lazy" decoding="async">`
+      : `<span class="step-ill-label">${uiText("illustration")}</span>`;
+
     return `<div class="step${isHL}">
-      <div class="step-num" style="background:${c.main}">${i+1}</div>
-      <div class="step-body">
-        <div class="step-action">${s.action[lang] || s.action["en"]}</div>
-        ${s.note ? `<div class="step-note">${s.note[lang] || s.note["en"]}</div>` : ""}
+      <div class="step-left">
+        <div class="step-num" style="background:${c.main}">${i+1}</div>
+        <div class="step-body">
+          <div class="step-action">${s.action[lang] || s.action["en"]}</div>
+          ${s.note ? `<div class="step-note">${s.note[lang] || s.note["en"]}</div>` : ""}
+        </div>
       </div>
+      <div class="step-ill">${illHtml}</div>
     </div>`;
   }).join("");
 
