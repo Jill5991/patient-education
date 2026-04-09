@@ -1,65 +1,192 @@
 {
   "id": "berotec-n",
-  "category": "inhaler",
+  "category": "急救用 pMDI",
+  "color": {
+    "main": "#993C1D",
+    "light": "#FAECE7",
+    "dark": "#4A1B0C",
+    "badge": "#F5C4B3",
+    "badgeText": "#4A1B0C"
+  },
+  "emergency": true,
   "name": {
-    "zh-TW": "Berotec N",
+    "zh-TW": "備勞喘",
     "en": "Berotec N",
     "id": "Berotec N",
     "vi": "Berotec N",
     "th": "Berotec N",
     "tl": "Berotec N",
-    "ja": "Berotec N"
+    "ja": "ベロテックN"
   },
   "subtitle": {
-    "zh-TW": "",
-    "en": "",
-    "id": "",
-    "vi": "",
-    "th": "",
-    "tl": "",
-    "ja": ""
+    "zh-TW": "有喘鳴或急性呼吸困難時使用",
+    "en": "Use when wheezing or breathless",
+    "id": "Gunakan saat mengi atau sesak napas",
+    "vi": "Dùng khi khò khè hoặc khó thở",
+    "th": "ใช้เมื่อมีเสียงวี้ดหรือหายใจลำบาก",
+    "tl": "Gamitin kapag may wheezing o hirap huminga",
+    "ja": "喘鳴や息苦しさがあるときに使用"
   },
   "badge": {
-    "zh-TW": "吸入劑",
-    "en": "Inhaler",
-    "id": "Inhaler",
-    "vi": "Thuốc hít",
-    "th": "ยาสูดพ่น",
-    "tl": "Inhaler",
-    "ja": "吸入薬"
+    "zh-TW": "急救用 pMDI",
+    "en": "Reliever pMDI",
+    "id": "pMDI Pereda",
+    "vi": "pMDI Cắt cơn",
+    "th": "pMDI บรรเทาอาการ",
+    "tl": "Reliever pMDI",
+    "ja": "救急用pMDI"
   },
   "steps": [
     {
       "action": {
-        "zh-TW": "",
-        "en": "",
-        "id": "",
-        "vi": "",
-        "th": "",
-        "tl": "",
-        "ja": ""
+        "zh-TW": "取下護蓋，確認噴嘴乾淨",
+        "en": "Remove cap, check mouthpiece is clear",
+        "id": "Lepas tutup, pastikan corong bersih",
+        "vi": "Tháo nắp, kiểm tra ống ngậm sạch",
+        "th": "ถอดฝาครอบ ตรวจให้แน่ใจว่าปากสูดสะอาด",
+        "tl": "Alisin ang takip, tiyaking malinis ang mouthpiece",
+        "ja": "キャップを外し、マウスピースが清潔か確認"
       },
       "note": {
-        "zh-TW": "",
-        "en": "",
-        "id": "",
-        "vi": "",
-        "th": "",
-        "tl": "",
-        "ja": ""
+        "zh-TW": "備勞喘為溶液劑，不需搖動",
+        "en": "No shaking needed — solution formulation",
+        "id": "Berotec N adalah sediaan larutan, tidak perlu dikocok",
+        "vi": "Berotec N là dạng dung dịch, không cần lắc",
+        "th": "Berotec N เป็นยาสูดชนิดสารละลาย ไม่ต้องเขย่า",
+        "tl": "Berotec N ay solution formulation, hindi kailangang alugin",
+        "ja": "ベロテックNは溶液製剤のため振る必要はありません"
+      }
+    },
+    {
+      "action": {
+        "zh-TW": "嘴巴離開噴嘴，呼氣至底",
+        "en": "Breathe out fully, away from inhaler",
+        "id": "Buang napas sampai habis dengan mulut menjauh dari inhaler",
+        "vi": "Thở ra hết khi miệng rời khỏi ống ngậm",
+        "th": "หายใจออกให้สุดโดยให้ปากห่างจากปากสูด",
+        "tl": "Huminga palabas nang buo habang nakalayo ang bibig sa inhaler",
+        "ja": "吸入口から口を離して、息を最後まで吐く"
+      },
+      "note": {
+        "zh-TW": "不要對著噴嘴吹氣，避免濕氣進入",
+        "en": "Never exhale into the mouthpiece",
+        "id": "Jangan mengembuskan napas ke corong agar kelembapan tidak masuk",
+        "vi": "Không thở vào ống ngậm để tránh hơi ẩm vào trong",
+        "th": "ห้ามเป่าลมเข้าในปากสูด เพื่อป้องกันความชื้นเข้า",
+        "tl": "Huwag huminga palabas sa mouthpiece para maiwasan ang moisture",
+        "ja": "マウスピースに息を吹き込まない（湿気混入防止）"
+      }
+    },
+    {
+      "action": {
+        "zh-TW": "嘴唇緊閉噴嘴，緩慢吸氣，同時按壓藥罐一次",
+        "en": "Seal lips, inhale slowly and press canister once simultaneously",
+        "id": "Rapatkan bibir pada corong, tarik napas perlahan sambil menekan kanister satu kali",
+        "vi": "Ngậm kín ống ngậm bằng môi, hít vào chậm và đồng thời ấn bình 1 lần",
+        "th": "เม้มริมฝีปากให้แนบปากสูด สูดลมหายใจช้า ๆ พร้อมกดกระป๋อง 1 ครั้ง",
+        "tl": "Ipitin ng labi ang mouthpiece, huminga nang dahan-dahan habang pinipindot ang canister nang isang beses",
+        "ja": "口唇をマウスピースに密着し、ゆっくり吸いながらボンベを1回押す"
+      },
+      "note": {
+        "zh-TW": "吸氣速度要慢（3–5 秒），不可快吸",
+        "en": "Breathe in slowly over 3–5 seconds",
+        "id": "Kecepatan tarik napas harus lambat (3–5 detik), jangan terlalu cepat",
+        "vi": "Tốc độ hít phải chậm (3–5 giây), không hít nhanh",
+        "th": "สูดลมช้า ๆ (3–5 วินาที) ห้ามสูดเร็ว",
+        "tl": "Dahan-dahan ang paglanghap (3–5 segundo), huwag mabilis",
+        "ja": "吸入速度はゆっくり（3〜5秒）。速く吸わない"
+      }
+    },
+    {
+      "action": {
+        "zh-TW": "移開噴嘴，閉嘴屏氣 10 秒",
+        "en": "Remove inhaler, hold breath for 10 seconds",
+        "id": "Lepaskan inhaler, tahan napas 10 detik",
+        "vi": "Rút ống hít ra, nín thở 10 giây",
+        "th": "นำปากสูดออก กลั้นหายใจ 10 วินาที",
+        "tl": "Alisin ang inhaler, pigilin ang hininga nang 10 segundo",
+        "ja": "吸入器を外し、10秒間息を止める"
+      },
+      "note": {
+        "zh-TW": "讓藥物在肺部沉積，屏不住就屏到不舒服為止",
+        "en": "Allows medicine to deposit — hold as long as comfortable",
+        "id": "Agar obat mengendap di paru-paru; jika tidak sanggup, tahan selama masih nyaman",
+        "vi": "Giúp thuốc lắng đọng ở phổi; nếu không giữ được 10 giây thì giữ trong mức còn chịu được",
+        "th": "เพื่อให้ยาตกค้างในปอด หากกลั้นไม่ไหวให้กลั้นเท่าที่สบาย",
+        "tl": "Para ma-deposit ang gamot sa baga; kung hindi kaya, pigilin hangga't komportable",
+        "ja": "薬剤を肺に沈着させるため。10秒難しければ無理のない範囲で"
+      }
+    },
+    {
+      "action": {
+        "zh-TW": "慢慢由鼻呼氣，蓋回護蓋",
+        "en": "Exhale slowly through nose, replace cap",
+        "id": "Embuskan napas perlahan melalui hidung, pasang kembali tutup",
+        "vi": "Thở ra chậm bằng mũi rồi đậy nắp lại",
+        "th": "หายใจออกช้า ๆ ทางจมูก แล้วปิดฝาครอบกลับ",
+        "tl": "Dahan-dahang huminga palabas sa ilong, ibalik ang takip",
+        "ja": "鼻からゆっくり息を吐き、キャップを戻す"
+      }
+    },
+    {
+      "action": {
+        "zh-TW": "需要第 2 劑：等 30 秒後，重複步驟 1–5",
+        "en": "Second dose needed: wait 30 seconds, repeat steps 1–5",
+        "id": "Jika perlu dosis ke-2: tunggu 30 detik, ulangi langkah 1–5",
+        "vi": "Cần liều thứ 2: chờ 30 giây rồi lặp lại bước 1–5",
+        "th": "ต้องใช้โดสที่ 2: รอ 30 วินาที แล้วทำซ้ำขั้นตอน 1–5",
+        "tl": "Kailangan ng ika-2 dosis: maghintay ng 30 segundo, ulitin ang hakbang 1–5",
+        "ja": "2吸入目が必要な場合：30秒待って手順1〜5を繰り返す"
+      },
+      "note": {
+        "zh-TW": "每次只按壓一次，不可連按兩下",
+        "en": "One press per breath — never double press",
+        "id": "Setiap kali tarik napas tekan hanya sekali, jangan menekan dua kali berturut-turut",
+        "vi": "Mỗi lần hít chỉ ấn 1 lần, không ấn liên tiếp 2 lần",
+        "th": "1 ลมหายใจต่อ 1 ครั้งกด ห้ามกดซ้อนสองครั้ง",
+        "tl": "Isang pindot bawat paglanghap, huwag mag-double press",
+        "ja": "1呼吸につき1回のみ押す。連続2回押しはしない"
       }
     }
   ],
   "warnings": [
     {
-      "zh-TW": "",
-      "en": "",
-      "id": "",
-      "vi": "",
-      "th": "",
-      "tl": "",
-      "ja": ""
+      "zh-TW": "急救用藥：有症狀才使用，不是每天用",
+      "en": "Reliever — use when symptomatic, not daily",
+      "id": "Obat pereda darurat: gunakan saat bergejala, bukan untuk dipakai setiap hari",
+      "vi": "Thuốc cắt cơn: chỉ dùng khi có triệu chứng, không dùng hằng ngày",
+      "th": "ยาบรรเทาอาการฉุกเฉิน: ใช้เมื่อมีอาการเท่านั้น ไม่ใช่ยาที่ใช้ทุกวัน",
+      "tl": "Reliever: gamitin kapag may sintomas, hindi para sa araw-araw",
+      "ja": "発作時の救急薬：症状がある時のみ使用し、毎日定期使用しない"
+    },
+    {
+      "zh-TW": "備勞喘不含類固醇，使用後不需漱口",
+      "en": "No steroid — no need to rinse mouth after use",
+      "id": "Tidak mengandung steroid, tidak perlu berkumur setelah pemakaian",
+      "vi": "Không chứa steroid, dùng xong không cần súc miệng",
+      "th": "ไม่มีสเตียรอยด์ จึงไม่จำเป็นต้องบ้วนปากหลังใช้",
+      "tl": "Walang steroid, hindi kailangang magmumog pagkatapos gamitin",
+      "ja": "ステロイドを含まないため、使用後のうがいは不要"
+    },
+    {
+      "zh-TW": "2 劑後症狀未緩解 → 立即就醫或撥 119",
+      "en": "No relief after 2 puffs → seek emergency care or call 119",
+      "id": "Tidak membaik setelah 2 semprotan → segera ke IGD atau hubungi 119",
+      "vi": "Không đỡ sau 2 nhát xịt → đi cấp cứu ngay hoặc gọi 119",
+      "th": "ไม่ดีขึ้นหลังพ่น 2 ครั้ง → ไปฉุกเฉินทันทีหรือโทร 119",
+      "tl": "Walang ginhawa matapos ang 2 puff → magpatingin agad sa ER o tumawag sa 119",
+      "ja": "2吸入しても改善しない場合→直ちに受診または119へ連絡",
+      "highlight": true
+    },
+    {
+      "zh-TW": "超過 3 天未使用，先對空噴 1 次再正常使用",
+      "en": "Not used for 3+ days: prime with 1 test spray before use",
+      "id": "Jika tidak digunakan lebih dari 3 hari, lakukan 1 semprotan uji ke udara sebelum penggunaan normal",
+      "vi": "Nếu không dùng quá 3 ngày, xịt thử ra không khí 1 lần trước khi dùng bình thường",
+      "th": "หากไม่ได้ใช้เกิน 3 วัน ให้พ่นทดสอบ 1 ครั้งก่อนใช้งานจริง",
+      "tl": "Kung hindi nagamit nang lampas 3 araw, mag-prime ng 1 test spray sa hangin bago normal na paggamit",
+      "ja": "3日以上未使用なら、通常使用前に空打ち1回でプライミング"
     }
   ],
-  "qrUrl": "https://pharmacy.example.com/meds/berotec-n"
+  "qrUrl": "https://www.youtube.com/watch?v=o4sFGDhZyp4"
 }
