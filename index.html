@@ -256,7 +256,6 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   min-height: calc(16 * var(--mm));
   height: 100%;
   justify-self: end;
-  padding-right: calc(1 * var(--col) + (1 * var(--gutter)));
   border: 0.5px dashed rgba(0,0,0,0.14);
   border-radius: calc(1.5 * var(--mm));
   background: #fbfbfb;
@@ -267,7 +266,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 }
 .step-ill img,
 .step-ill svg {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: right center;
@@ -363,13 +363,17 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 }
 .s-footer-qr {
   grid-column: 10 / span 3;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
   justify-self: end;
   width: clamp(18mm, calc(22 * var(--mm)), 22mm);
 }
 #qr-target {
   width: clamp(18mm, calc(22 * var(--mm)), 22mm);
   height: clamp(18mm, calc(22 * var(--mm)), 22mm);
+  margin-left: auto;
 }
 #qr-target canvas,
 #qr-target img {
@@ -382,6 +386,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   margin-top: calc(0.2 * var(--base));
   line-height: var(--base);
   letter-spacing: 0.008em;
+  width: 100%;
+  text-align: right;
 }
 
 /* ===== Print ===== */
