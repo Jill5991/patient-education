@@ -28,13 +28,13 @@
     "ja": "狭心症急性発作時の緊急使用"
   },
   "badge": {
-    "zh-TW": "舌下錠",
-    "en": "Sublingual",
-    "id": "Sublingual",
-    "vi": "Ngậm dưới lưỡi",
-    "th": "อมใต้ลิ้น",
-    "tl": "Sublingual",
-    "ja": "舌下錠"
+    "zh-TW": "常溫避光保存",
+    "en": "Store at room temp, away from light",
+    "id": "Simpan suhu ruang, hindari cahaya",
+    "vi": "Bảo quản nhiệt độ phòng, tránh ánh sáng",
+    "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงแสง",
+    "tl": "Itago sa room temp, iwasan ang liwanag",
+    "ja": "室温・遮光で保管"
   },
   "steps": [
     {

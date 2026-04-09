@@ -135,11 +135,12 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   /* B5-based scale system (all values derived from 176mm width) */
   --mm: calc(min(96vw, 176mm) / 176);
   --base: clamp(14px, calc(5 * var(--mm)), 19px);   /* baseline grid */
-  --mx: clamp(12px, calc(10 * var(--mm)), 38px);    /* left/right margin (~10mm) */
+  --mx: clamp(12px, calc(10 * var(--mm)), 38px);    /* left margin (~10mm) */
+  --rx: clamp(2px, calc(2 * var(--mm)), 10px);      /* right rail margin (~2mm) */
   --mt: clamp(20px, calc(18 * var(--mm)), 68px);    /* top margin zone */
   --mb: clamp(14px, calc(14 * var(--mm)), 53px);    /* bottom margin zone */
   --gutter: clamp(6px, calc(3 * var(--mm)), 12px);  /* 12-col gutter */
-  --content-w: calc(100% - (2 * var(--mx)));
+  --content-w: calc(100% - var(--mx) - var(--rx));
   --col: calc((var(--content-w) - (11 * var(--gutter))) / 12);
 }
 
@@ -148,7 +149,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
 /* Header: 12 columns full width, min 40mm */
 .s-header {
-  padding: var(--mt) var(--mx) calc(2 * var(--base));
+  padding: var(--base) var(--rx) var(--base) var(--mx);
   min-height: calc(40 * var(--mm));
 }
 .s-header-row {
@@ -156,6 +157,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   grid-template-columns: repeat(12, minmax(0, var(--col)));
   column-gap: var(--gutter);
   align-items: start;
+  min-height: calc(40 * var(--mm) - (2 * var(--base)));
 }
 .s-header-left { grid-column: 1 / span 9; min-width: 0; }
 .s-name {
@@ -168,20 +170,24 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .s-sub {
   font-size: clamp(11px, calc(3.9 * var(--mm)), 16px); /* ~11pt */
   color: var(--muted);
-  line-height: calc(0.95 * var(--base));
+  line-height: var(--base);
   letter-spacing: 0.008em;
-  margin-top: calc(0.25 * var(--base));
+  margin-top: 0;
+  white-space: pre-line;
 }
 .s-usage{
   font-size: clamp(11px, calc(3.6 * var(--mm)), 15px);
   color: var(--muted);
   line-height: var(--base);
   letter-spacing: 0.006em;
-  margin-top: calc(0.15 * var(--base));
+  margin-top: 0;
+  white-space: pre-line;
 }
 .s-badges {
   grid-column: 10 / span 3;
+  grid-column-end: 13;
   justify-self: end;
+  align-self: center;
   display: flex;
   flex-direction: column;
   gap: calc(0.6 * var(--base));
@@ -196,12 +202,13 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   padding: calc(0.45 * var(--base)) calc(0.8 * var(--base));
   border-radius: calc(0.8 * var(--mm));
   white-space: nowrap;
+  margin-left: auto;
 }
 .badge-emrg { font-weight: 700; background: #993C1D; color: white; }
-.s-hr { border: none; border-top: 0.5px solid rgba(0,0,0,0.1); margin: 0 var(--mx); }
+.s-hr { border: none; border-top: 0.5px solid rgba(0,0,0,0.1); margin: 0 var(--rx) 0 var(--mx); }
 
 /* Steps: left 8 columns + right 4 columns */
-.s-steps { padding: 0 var(--mx); }
+.s-steps { padding: 0 var(--rx) 0 var(--mx); }
 .step {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, var(--col)));
@@ -239,19 +246,22 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   letter-spacing: 0.006em;
   color: #1a1a1a;
   overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 .step-note {
   font-size: clamp(12px, calc(3.6 * var(--mm)), 16px);
-  color: #6b6b6b;
-  margin-top: calc(0.15 * var(--base));
+  color: #1A1A1A;
+  margin-top: 0;
   line-height: var(--base);
   letter-spacing: 0.004em;
   overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 
 /* Right 4-column illustration area */
 .step-ill {
   grid-column: 9 / span 4;
+  grid-column-end: 13;
   width: 100%;
   min-height: calc(16 * var(--mm));
   height: 100%;
@@ -305,7 +315,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
 /* Optional storage box */
 .s-infobox {
-  margin: calc(0.8 * var(--mm)) var(--mx) calc(1.4 * var(--mm));
+  margin: calc(0.8 * var(--mm)) var(--rx) calc(1.4 * var(--mm)) var(--mx);
   padding: calc(0.6 * var(--base)) calc(0.7 * var(--base));
   border-radius: calc(1.2 * var(--mm));
   border-left: calc(3 * var(--mm)) solid;
@@ -315,19 +325,20 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   font-weight: 600;
   line-height: var(--base);
   letter-spacing: 0.008em;
-  margin-bottom: calc(0.1 * var(--base));
+  margin-bottom: 0;
 }
 .s-infobox-text  {
   font-size: clamp(11px, calc(3.3 * var(--mm)), 15px);
   line-height: var(--base);
   letter-spacing: 0.003em;
   overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 
 /* Warning bar: min 15mm high */
 .s-warn {
   min-height: calc(15 * var(--mm));
-  padding: calc(0.7 * var(--base)) var(--mx) calc(0.7 * var(--base)) calc(var(--mx) + 0.9 * var(--base));
+  padding: calc(0.7 * var(--base)) var(--rx) calc(0.7 * var(--base)) calc(var(--mx) + 0.9 * var(--base));
   border-left: calc(3 * var(--mm)) solid;
 }
 .s-warn-item {
@@ -335,19 +346,21 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   font-weight: 500;
   line-height: var(--base);
   letter-spacing: 0.004em;
-  margin-bottom: calc(0.15 * var(--base));
+  margin-bottom: 0;
   padding-left: calc(0.55 * var(--base));
   position: relative;
   overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 .s-warn-item::before { content: "●"; position: absolute; left: 0; }
 .s-warn-item:last-child { margin-bottom: 0; }
+.s-warn-item.is-hl { font-weight: 700; color: #7A2A12; }
 
 /* Footer: left 9 columns + right 3 columns, min 25mm */
 .s-footer {
   border-top: 0.5px solid rgba(0,0,0,0.1);
   min-height: calc(25 * var(--mm));
-  padding: calc(0.75 * var(--base)) var(--mx) var(--mb);
+  padding: calc(0.75 * var(--base)) var(--rx) var(--mb) var(--mx);
   display: grid;
   grid-template-columns: repeat(12, minmax(0, var(--col)));
   column-gap: var(--gutter);
@@ -363,6 +376,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 }
 .s-footer-qr {
   grid-column: 10 / span 3;
+  grid-column-end: 13;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -388,6 +402,337 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   letter-spacing: 0.008em;
   width: 100%;
   text-align: right;
+}
+
+/* ===== Nitrostat Reference Layout ===== */
+.sheet.ref-nitrostat {
+  width: min(97vw, 620px);
+  max-width: 620px;
+  border-radius: 4px;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-name {
+  font-size: 24px;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-header-row {
+  grid-template-columns: minmax(0, 1fr) 156px;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-header-left {
+  padding-right: 4px;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-sub {
+  font-size: 14px;
+  max-inline-size: 26ch;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-usage {
+  font-size: 11px;
+  max-inline-size: 26ch;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-badge {
+  font-size: 12px;
+  width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-step-action {
+  font-size: 17px;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-step-note {
+  font-size: 14px;
+}
+.sheet.ref-nitrostat.is-compact .ref-ntg-infobox-title,
+.sheet.ref-nitrostat.is-compact .ref-ntg-infobox-text,
+.sheet.ref-nitrostat.is-compact .ref-ntg-warn-item {
+  font-size: 14px;
+}
+.sheet.ref-nitrostat[data-category="ntg"] .ref-ntg-header-left {
+  padding-right: 6px;
+}
+.sheet.ref-nitrostat[data-category="ntg"] .ref-ntg-sub {
+  max-inline-size: 30ch;
+}
+.sheet.ref-nitrostat[data-category="ntg"] .ref-ntg-usage {
+  color: #993C1D;
+  font-weight: 700;
+  max-inline-size: 30ch;
+  margin-top: 5px;
+}
+.sheet.ref-nitrostat[data-med="berotec-n"] .ref-ntg-info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0 12px;
+}
+.sheet.ref-nitrostat[data-med="berotec-n"] .ref-ntg-info-group .ref-ntg-infobox {
+  margin: 0 20px;
+  padding: 12px 15px;
+  border-left-width: 4px;
+  border-radius: 6px;
+}
+.sheet.ref-nitrostat[data-med="berotec-n"] .ref-ntg-info-group .ref-ntg-infobox-title {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+.sheet.ref-nitrostat[data-med="berotec-n"] .ref-ntg-info-group .ref-ntg-infobox-text {
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+.sheet.ref-nitrostat.is-compact[data-category="ntg"] .ref-ntg-header-row {
+  grid-template-columns: minmax(0, 1fr) 176px;
+}
+.sheet.ref-nitrostat.is-compact[data-category="ntg"] .ref-ntg-badges {
+  width: 176px;
+}
+.sheet.ref-nitrostat.is-compact[data-med="berotec-n"] .ref-ntg-info-group .ref-ntg-infobox-title {
+  font-size: 15px;
+}
+.sheet.ref-nitrostat.is-compact[data-med="berotec-n"] .ref-ntg-info-group .ref-ntg-infobox-text {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.ref-ntg-band { height: 10px; }
+.ref-ntg-header { padding: 18px 20px 14px; }
+.ref-ntg-header-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 148px;
+  column-gap: 16px;
+  align-items: start;
+}
+.ref-ntg-header-left { min-width: 0; }
+.ref-ntg-name {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+  word-break: break-word;
+}
+.ref-ntg-sub {
+  font-size: 16px;
+  line-height: 1.35;
+  margin-top: 4px;
+  color: #8b4a30;
+  font-weight: 600;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.ref-ntg-usage {
+  font-size: 12px;
+  line-height: 1.35;
+  margin-top: 3px;
+  color: #8b4a30;
+  font-weight: 600;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.ref-ntg-badges {
+  width: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  align-self: center;
+}
+.ref-ntg-badge {
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.ref-ntg-badge-top {
+  width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 700;
+}
+.ref-ntg-badge-emrg {
+  background: #993C1D;
+  color: #fff;
+  font-weight: 700;
+}
+.ref-ntg-hr {
+  border: none;
+  border-top: 0.5px solid rgba(0,0,0,0.1);
+  margin: 0 20px;
+}
+.ref-ntg-steps {
+  padding: 8px 0 0;
+}
+.ref-ntg-step {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) 148px;
+  column-gap: 14px;
+  align-items: start;
+  padding: 12px 20px;
+  border-bottom: 0.3px solid rgba(0,0,0,0.07);
+}
+.ref-ntg-step:last-child {
+  border-bottom: none;
+}
+.ref-ntg-step.hl {
+  margin: 0;
+  padding: 12px 20px;
+  border-radius: 0;
+  background: rgba(216,90,48,0.07);
+}
+.ref-ntg-step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+.ref-ntg-step-body {
+  min-width: 0;
+}
+.ref-ntg-step-action {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #1a1a1a;
+  white-space: pre-line;
+}
+.ref-ntg-step-note {
+  font-size: 16px;
+  line-height: 1.45;
+  color: #6b6b6b;
+  margin-top: 3px;
+  white-space: pre-line;
+}
+.ref-ntg-step.hl .ref-ntg-step-action {
+  color: #4A1B0C;
+}
+.ref-ntg-step.hl .ref-ntg-step-note {
+  color: #993C1D;
+  font-weight: 500;
+}
+.ref-ntg-step-section {
+  margin: 10px 20px 4px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #534AB7;
+}
+.ref-ntg-step-ill {
+  width: 148px;
+  height: 112px;
+  border: 0.5px dashed rgba(0,0,0,0.14);
+  border-radius: 4px;
+  background: #fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ref-ntg-step-ill img,
+.ref-ntg-step-ill svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+.ref-ntg-step-ill-label {
+  font-size: 11px;
+  color: #8a8a8a;
+}
+.ref-ntg-infobox {
+  margin: 6px 20px 10px;
+  padding: 10px 13px;
+  border-radius: 4px;
+  border-left: 3px solid;
+}
+.ref-ntg-infobox-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.ref-ntg-infobox-text {
+  font-size: 16px;
+  line-height: 1.55;
+}
+.ref-ntg-warn {
+  padding: 10px 20px 10px 24px;
+  border-left: 4px solid;
+}
+.ref-ntg-warn-item {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 8px;
+  align-items: start;
+}
+.ref-ntg-warn-bullet {
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+.ref-ntg-warn-item:last-child {
+  margin-bottom: 0;
+}
+.ref-ntg-warn-item.is-hl {
+  color: #993C1D;
+  font-weight: 700;
+}
+.ref-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 8px;
+  margin-right: 6px;
+  border-radius: 999px;
+  background: #534AB7;
+  color: #fff;
+  font-size: 0.82em;
+  font-weight: 700;
+  line-height: 1.4;
+  vertical-align: baseline;
+}
+.ref-ntg-footer {
+  border-top: 0.5px solid rgba(0,0,0,0.1);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 148px;
+  column-gap: 16px;
+  align-items: end;
+}
+.ref-ntg-footer-info {
+  font-size: 11.5px;
+  color: #8a8a8a;
+  line-height: 1.7;
+}
+.ref-ntg-footer-top {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #555;
+}
+.ref-ntg-footer-qr {
+  width: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.ref-ntg-footer-qr #qr-target {
+  width: 72px;
+  height: 72px;
+  margin-left: auto;
+}
+.ref-ntg-footer-qr-label {
+  font-size: 8px;
+  color: #8a8a8a;
+  margin-top: 4px;
 }
 
 /* ===== Print ===== */
@@ -469,7 +814,7 @@ const CATEGORY_ORDER = ["all", "inhaler", "ntg", "topical", "eye", "supp", "inje
 const CATEGORY_META = {
   all:     { color: "#5E5E5E", label: { "zh-TW":"全部", "en":"All", "id":"Semua", "vi":"Tất cả", "th":"ทั้งหมด", "tl":"Lahat", "ja":"すべて" } },
   inhaler: { color: "#0F6E56", label: { "zh-TW":"吸入劑", "en":"Inhalers", "id":"Inhaler", "vi":"Thuốc hít", "th":"ยาสูดพ่น", "tl":"Inhaler", "ja":"吸入薬" } },
-  ntg:     { color: "#993C1D", label: { "zh-TW":"NTG 舌下錠", "en":"NTG", "id":"NTG", "vi":"NTG", "th":"NTG", "tl":"NTG", "ja":"NTG" } },
+  ntg:     { color: "#993C1D", label: { "zh-TW":"急救用藥", "en":"Emergency", "id":"Obat darurat", "vi":"Thuốc cấp cứu", "th":"ยาฉุกเฉิน", "tl":"Pang-emergency", "ja":"救急薬" } },
   topical: { color: "#3B6D11", label: { "zh-TW":"外用藥/貼片", "en":"Topical/Patch", "id":"Obat oles/Patch", "vi":"Thuốc bôi/Patch", "th":"ยาทา/แผ่นแปะ", "tl":"Topical/Patch", "ja":"外用薬/貼付薬" } },
   eye:     { color: "#185FA5", label: { "zh-TW":"眼耳鼻用藥", "en":"Eye/Ear/Nasal", "id":"Mata/Telinga/Hidung", "vi":"Mắt/Tai/Mũi", "th":"ตา/หู/จมูก", "tl":"Eye/Ear/Nasal", "ja":"眼・耳・鼻" } },
   supp:    { color: "#534AB7", label: { "zh-TW":"栓劑/陰道", "en":"Supp/Vaginal", "id":"Supositoria/Vaginal", "vi":"Đặt âm đạo/hậu môn", "th":"ยาเหน็บ/ช่องคลอด", "tl":"Supp/Vaginal", "ja":"坐剤/膣用" } },
@@ -1071,6 +1416,15 @@ const MEDICATIONS = [
           "ja": "ニトログリセリン舌下錠"
       },
       subtitle: {
+          "zh-TW": "Nitrostat | nitroglycerin | 25 粒/瓶",
+          "en": "Nitrostat | nitroglycerin | 25 tablets/bottle",
+          "id": "Nitrostat | nitroglycerin | 25 tablet/botol",
+          "vi": "Nitrostat | nitroglycerin | 25 viên/lọ",
+          "th": "Nitrostat | nitroglycerin | 25 เม็ด/ขวด",
+          "tl": "Nitrostat | nitroglycerin | 25 tableta/bote",
+          "ja": "Nitrostat | nitroglycerin | 25錠/瓶"
+      },
+      usage: {
           "zh-TW": "心絞痛急性發作緊急使用",
           "en": "For acute angina attacks — emergency use",
           "id": "Untuk serangan angina akut — penggunaan darurat",
@@ -1080,13 +1434,13 @@ const MEDICATIONS = [
           "ja": "狭心症急性発作時の緊急使用"
       },
       badge: {
-          "zh-TW": "舌下錠",
-          "en": "Sublingual",
-          "id": "Sublingual",
-          "vi": "Ngậm dưới lưỡi",
-          "th": "อมใต้ลิ้น",
-          "tl": "Sublingual",
-          "ja": "舌下錠"
+          "zh-TW": "常溫避光保存",
+          "en": "Store at room temp, away from light",
+          "id": "Simpan suhu ruang, hindari cahaya",
+          "vi": "Bảo quản nhiệt độ phòng, tránh ánh sáng",
+          "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงแสง",
+          "tl": "Itago sa room temp, iwasan ang liwanag",
+          "ja": "室温・遮光で保管"
       },
       steps: [
           {
@@ -1696,71 +2050,221 @@ const MEDICATIONS = [
   {
       "id": "foster-mdi",
       color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
+          main: "#3B6D11",
+          light: "#EAF3DE",
+          dark: "#173404",
+          badge: "#C0DD97",
+          badgeText: "#173404"
       },
+      "category": "inhaler",
       emergency: false,
+      headerBadge: {
+          "zh-TW": "保養藥 Controller（每天用，不是急救用）",
+          "en": "Controller maintenance (daily, not for rescue)",
+          "id": "Controller pemeliharaan (harian, bukan obat darurat)",
+          "vi": "Thuốc kiểm soát duy trì (dùng hằng ngày, không phải cắt cơn)",
+          "th": "ยาควบคุมอาการ (ใช้ทุกวัน ไม่ใช่ยาฉุกเฉิน)",
+          "tl": "Controller maintenance (araw-araw, hindi pang-rescue)",
+          "ja": "維持治療薬 Controller（毎日使用、救急用ではない）"
+      },
       name: {
-          "zh-TW": "Foster MDI",
-          "en": "Foster MDI (beclomethasone/formoterol)",
-          "id": "Foster MDI (beclomethasone/formoterol)",
-          "vi": "Foster MDI (beclomethasone/formoterol)",
-          "th": "Foster MDI (beclomethasone/formoterol)",
-          "tl": "Foster MDI (beclomethasone/formoterol)",
-          "ja": "Foster MDI (beclomethasone/formoterol)"
+          "zh-TW": "肺舒坦定量吸入劑",
+          "en": "Foster MDI",
+          "id": "Foster MDI",
+          "vi": "Foster MDI",
+          "th": "Foster MDI",
+          "tl": "Foster MDI",
+          "ja": "フォスター定量吸入剤"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Foster MDI | Beclomethasone 100mcg + Formoterol 6mcg / puff | 共 120 劑",
+          "en": "Foster MDI | Beclomethasone 100 mcg + Formoterol 6 mcg / puff | 120 doses",
+          "id": "Foster MDI | Beclomethasone 100 mcg + Formoterol 6 mcg / puff | Total 120 dosis",
+          "vi": "Foster MDI | Beclomethasone 100 mcg + Formoterol 6 mcg / puff | Tổng 120 liều",
+          "th": "Foster MDI | Beclomethasone 100 mcg + Formoterol 6 mcg / puff | รวม 120 พัฟ",
+          "tl": "Foster MDI | Beclomethasone 100 mcg + Formoterol 6 mcg / puff | Kabuuang 120 dose",
+          "ja": "Foster MDI | Beclomethasone 100mcg + Formoterol 6mcg / puff | 全120吸入"
+      },
+      usage: {
+          "zh-TW": "每天 2 次（早晚），每次 _____ 劑（依醫囑）",
+          "en": "Twice daily (morning and evening), _____ puffs each time, as prescribed",
+          "id": "2 kali sehari (pagi dan malam), tiap kali _____ semprotan sesuai resep",
+          "vi": "Ngày 2 lần (sáng và tối), mỗi lần _____ nhát xịt theo chỉ định",
+          "th": "วันละ 2 ครั้ง (เช้า-เย็น) ครั้งละ _____ พัฟ ตามแพทย์สั่ง",
+          "tl": "2 beses araw-araw (umaga at gabi), _____ puff bawat gamit ayon sa reseta",
+          "ja": "1日2回（朝・夕）、1回 _____ 吸入（医師の指示通り）"
       },
       badge: {
-          "zh-TW": "吸入劑",
-          "en": "Inhaler",
-          "id": "Inhaler",
-          "vi": "Thuốc hít",
-          "th": "ยาสูดพ่น",
-          "tl": "Inhaler",
-          "ja": "吸入薬"
+          "zh-TW": "ICS + LABA pMDI",
+          "en": "ICS + LABA pMDI",
+          "id": "ICS + LABA pMDI",
+          "vi": "ICS + LABA pMDI",
+          "th": "ICS + LABA pMDI",
+          "tl": "ICS + LABA pMDI",
+          "ja": "ICS + LABA pMDI"
+      },
+      preStepsInfo: {
+          tone: {
+              bg: "#E6F1FB",
+              border: "#185FA5",
+              text: "#042C53"
+          },
+          title: {
+              "zh-TW": "初次使用前：對空噴 1 次",
+              "en": "Before first use: prime with 1 spray",
+              "id": "Sebelum pemakaian pertama: semprot uji 1 kali",
+              "vi": "Trước lần dùng đầu tiên: xịt thử 1 lần",
+              "th": "ก่อนใช้ครั้งแรก: พ่นทดสอบ 1 ครั้ง",
+              "tl": "Bago unang gamit: mag-prime ng 1 spray",
+              "ja": "初回使用前：空打ち1回"
+          },
+          text: {
+              "zh-TW": "確認有藥霧出現。\n超過 14 天未使用：對空噴 1 次後再正常使用。\nFoster 為溶液劑型，使用前不需振搖。\n未開封前冷藏保存（4-8°C）；開封後室溫（≤25°C）保存，3 個月內使用完畢。",
+              "en": "Confirm a visible spray appears.\nIf not used for more than 14 days: prime with 1 spray before normal use.\nFoster is a solution formulation, so no shaking is needed before use.\nBefore opening: refrigerate at 4-8°C. After opening: store at room temperature (≤25°C) and use within 3 months.",
+              "id": "Pastikan terlihat kabut semprot.\nJika tidak dipakai lebih dari 14 hari: lakukan 1 semprotan uji sebelum penggunaan normal.\nFoster adalah formulasi larutan, jadi tidak perlu dikocok sebelum digunakan.\nSebelum dibuka: simpan di lemari es 4-8°C. Setelah dibuka: simpan pada suhu ruang (≤25°C) dan habiskan dalam 3 bulan.",
+              "vi": "Xác nhận có sương thuốc xuất hiện.\nNếu không dùng quá 14 ngày: xịt thử 1 lần trước khi dùng bình thường.\nFoster là dạng dung dịch nên không cần lắc trước khi dùng.\nTrước khi mở: bảo quản lạnh 4-8°C. Sau khi mở: để nhiệt độ phòng (≤25°C) và dùng hết trong 3 tháng.",
+              "th": "ให้แน่ใจว่ามีละอองยาพ่นออกมา\nหากไม่ได้ใช้เกิน 14 วัน: พ่นทดสอบ 1 ครั้งก่อนใช้ตามปกติ\nFoster เป็นยาชนิดสารละลาย จึงไม่ต้องเขย่าก่อนใช้\nก่อนเปิดใช้: เก็บในตู้เย็น 4-8°C หลังเปิดใช้: เก็บที่อุณหภูมิห้อง (≤25°C) และใช้ให้หมดภายใน 3 เดือน",
+              "tl": "Tiyaking may lumalabas na ulap ng gamot.\nKung hindi nagamit nang lampas 14 araw: mag-prime ng 1 spray bago normal na paggamit.\nAng Foster ay solution formulation kaya hindi kailangang alugin bago gamitin.\nBago buksan: i-refrigerate sa 4-8°C. Pagkabukas: itago sa room temperature (≤25°C) at ubusin sa loob ng 3 buwan.",
+              "ja": "噴霧が出ることを確認する。\n14日以上未使用なら通常使用前に空打ち1回を行う。\nFosterは溶液製剤のため使用前の振とうは不要。\n未開封時は4-8°Cで冷蔵。開封後は室温（≤25°C）で保管し、3か月以内に使用する。"
+          }
       },
       steps: [
           {
               action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
+                  "zh-TW": "確認劑量計數窗口，取下護蓋",
+                  "en": "Check the dose counter window and remove the cap",
+                  "id": "Periksa jendela penghitung dosis lalu lepas tutup",
+                  "vi": "Kiểm tra cửa sổ đếm liều rồi tháo nắp",
+                  "th": "ตรวจหน้าต่างนับขนาดยา แล้วถอดฝาครอบ",
+                  "tl": "Suriin ang dose counter window at alisin ang takip",
+                  "ja": "用量カウンターを確認し、キャップを外す"
               },
               note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
+                  "zh-TW": "確認噴嘴無雜物。不需振搖。",
+                  "en": "Make sure the mouthpiece is clear. No shaking needed.",
+                  "id": "Pastikan corong tidak tersumbat. Tidak perlu dikocok.",
+                  "vi": "Đảm bảo đầu ngậm không có dị vật. Không cần lắc.",
+                  "th": "ตรวจว่าปากสูดไม่มีสิ่งอุดตัน และไม่ต้องเขย่า",
+                  "tl": "Tiyaking walang bara ang mouthpiece. Hindi kailangang alugin.",
+                  "ja": "マウスピースに異物がないことを確認。振とう不要。"
+              },
+              illustration: "assets/svg/foster-mdi/step-0.png"
+          },
+          {
+              action: {
+                  "zh-TW": "嘴巴離開噴嘴，呼氣至底",
+                  "en": "Breathe out fully with your mouth away from the mouthpiece",
+                  "id": "Buang napas sampai habis dengan mulut menjauh dari corong",
+                  "vi": "Thở ra hết khi miệng rời khỏi đầu ngậm",
+                  "th": "หายใจออกให้สุด โดยให้ปากห่างจากปากสูด",
+                  "tl": "Huminga palabas nang buo habang nakalayo ang bibig sa mouthpiece",
+                  "ja": "マウスピースから口を離して最後まで息を吐く"
+              },
+              note: {
+                  "zh-TW": "避免對著噴嘴吐氣。",
+                  "en": "Do not breathe out into the mouthpiece.",
+                  "id": "Jangan mengembuskan napas ke corong.",
+                  "vi": "Không thở vào đầu ngậm.",
+                  "th": "หลีกเลี่ยงการเป่าลมเข้าในปากสูด",
+                  "tl": "Huwag huminga palabas sa mouthpiece.",
+                  "ja": "マウスピースへ息を吹き込まない。"
+              },
+              illustration: "assets/svg/foster-mdi/step-1.png"
+          },
+          {
+              action: {
+                  "zh-TW": "嘴唇緊閉噴嘴，開始緩慢吸氣（3-5 秒）",
+                  "en": "Seal lips around the mouthpiece and inhale slowly for 3-5 seconds",
+                  "id": "Rapatkan bibir pada corong lalu tarik napas perlahan 3-5 detik",
+                  "vi": "Ngậm kín đầu ngậm và hít vào chậm 3-5 giây",
+                  "th": "เม้มริมฝีปากให้แนบปากสูด แล้วสูดลมช้า ๆ 3-5 วินาที",
+                  "tl": "Idikit ang labi sa mouthpiece at huminga nang dahan-dahan sa loob ng 3-5 segundo",
+                  "ja": "口唇を密着し、3-5秒かけてゆっくり吸入する"
+              },
+              note: {
+                  "zh-TW": "吸氣的同時按壓藥罐一次。",
+                  "en": "Press the canister once while inhaling.",
+                  "id": "Tekan kanister satu kali saat menarik napas.",
+                  "vi": "Ấn bình thuốc 1 lần trong lúc hít vào.",
+                  "th": "กดกระป๋องยา 1 ครั้งพร้อมกับการสูดลม",
+                  "tl": "Pindutin ang canister nang isang beses habang humihinga papasok.",
+                  "ja": "吸いながらボンベを1回押す。"
+              },
+              illustration: "assets/svg/foster-mdi/step-2拷貝.png"
+          },
+          {
+              action: {
+                  "zh-TW": "移開噴嘴，閉嘴屏氣 5-10 秒",
+                  "en": "Remove the mouthpiece and hold your breath for 5-10 seconds",
+                  "id": "Lepaskan corong lalu tahan napas 5-10 detik",
+                  "vi": "Rút đầu ngậm ra và nín thở 5-10 giây",
+                  "th": "นำปากสูดออก แล้วกลั้นหายใจ 5-10 วินาที",
+                  "tl": "Alisin ang mouthpiece at pigilin ang hininga nang 5-10 segundo",
+                  "ja": "マウスピースを外し、5-10秒息を止める"
+              },
+              illustration: "assets/svg/foster-mdi/step-3拷貝.png"
+          },
+          {
+              action: {
+                  "zh-TW": "慢慢呼氣，蓋回護蓋",
+                  "en": "Exhale slowly and replace the cap",
+                  "id": "Hembuskan napas perlahan lalu pasang kembali tutup",
+                  "vi": "Thở ra chậm rồi đậy nắp lại",
+                  "th": "หายใจออกช้า ๆ แล้วปิดฝาครอบกลับ",
+                  "tl": "Dahan-dahang huminga palabas at ibalik ang takip",
+                  "ja": "ゆっくり息を吐き、キャップを戻す"
+              },
+              illustration: "assets/svg/foster-mdi/step-4拷貝.png"
+          },
+          {
+              action: {
+                  "zh-TW": "需要第 2 劑：等 30-60 秒後，重複步驟 ①-⑤",
+                  "en": "If a second puff is needed, wait 30-60 seconds and repeat steps 1-5",
+                  "id": "Jika perlu dosis ke-2, tunggu 30-60 detik lalu ulangi langkah 1-5",
+                  "vi": "Nếu cần liều thứ 2, chờ 30-60 giây rồi lặp lại bước 1-5",
+                  "th": "หากต้องใช้พัฟที่ 2 ให้รอ 30-60 วินาที แล้วทำซ้ำขั้นตอน 1-5",
+                  "tl": "Kung kailangan ng ika-2 puff, maghintay ng 30-60 segundo at ulitin ang hakbang 1-5",
+                  "ja": "2吸入目が必要なら30-60秒待って手順1-5を繰り返す"
+              },
+              note: {
+                  "zh-TW": "每次只按壓一次，不可連按兩下。",
+                  "en": "Press only once each time. Never double-press.",
+                  "id": "Setiap kali tekan hanya satu kali. Jangan tekan dua kali berturut-turut.",
+                  "vi": "Mỗi lần chỉ ấn 1 lần. Không ấn liên tiếp 2 lần.",
+                  "th": "แต่ละครั้งกดเพียง 1 ครั้ง ห้ามกดซ้อนสองครั้ง",
+                  "tl": "Isang pindot lang bawat pagkakataon. Huwag mag-double press.",
+                  "ja": "1回につき1回のみ押す。連続2回押しはしない。"
+              },
+              illustration: "assets/svg/foster-mdi/step-5.png"
           }
       ],
       warnings: [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              "zh-TW": "保養藥：每天早晚各用，即使今天沒有症狀也要用。",
+              "en": "Controller medicine: use every morning and evening, even if you have no symptoms today.",
+              "id": "Obat pemeliharaan: gunakan pagi dan malam setiap hari, meskipun hari ini tidak ada gejala.",
+              "vi": "Thuốc kiểm soát: dùng mỗi sáng và tối, kể cả khi hôm nay không có triệu chứng.",
+              "th": "ยาควบคุมอาการ: ใช้ทุกเช้าและเย็น แม้วันนี้ไม่มีอาการก็ต้องใช้",
+              "tl": "Controller na gamot: gamitin tuwing umaga at gabi kahit wala kang sintomas ngayon.",
+              "ja": "維持治療薬：今日症状がなくても毎朝・毎晩使用する。"
+          },
+          {
+              "zh-TW": "使用後立刻漱口，把水吐掉（預防口腔念珠菌感染）。",
+              "en": "Rinse your mouth right after use and spit out the water to prevent oral thrush.",
+              "id": "Segera berkumur setelah digunakan lalu buang airnya untuk mencegah kandidiasis mulut.",
+              "vi": "Súc miệng ngay sau khi dùng rồi nhổ bỏ để phòng nấm miệng.",
+              "th": "บ้วนปากทันทีหลังใช้แล้วบ้วนทิ้ง เพื่อป้องกันเชื้อราในปาก",
+              "tl": "Magmumog agad pagkatapos gamitin at iluwa ang tubig para maiwasan ang oral thrush.",
+              "ja": "使用後すぐにうがいをして吐き出し、口腔カンジダを予防する。"
+          },
+          {
+              "zh-TW": "開封後 3 個月內使用完畢，超過請帶回藥局確認。",
+              "en": "Use within 3 months after opening. If overdue, bring it back to the pharmacy for review.",
+              "id": "Gunakan dalam 3 bulan setelah dibuka. Jika lewat, bawa kembali ke apotek untuk diperiksa.",
+              "vi": "Dùng hết trong vòng 3 tháng sau khi mở. Nếu quá hạn, mang lại nhà thuốc để kiểm tra.",
+              "th": "ใช้ให้หมดภายใน 3 เดือนหลังเปิดใช้ หากเกินกำหนดให้นำกลับมาที่ร้านยาเพื่อตรวจสอบ",
+              "tl": "Ubusin sa loob ng 3 buwan matapos buksan. Kung lampas na, dalhin pabalik sa parmasya para masuri.",
+              "ja": "開封後3か月以内に使用し、期限を超えたら薬局へ持参して確認する。"
           }
       ],
       qrUrl: "https://pharmacy.example.com/meds/foster-mdi"
@@ -1917,7 +2421,7 @@ const MEDICATIONS = [
   // ── Berotec N ─────────────────────────────────────,
   {
       "id": "berotec-n",
-      "category": "急救用 pMDI",
+      "category": "ntg",
       color: {
           main: "#993C1D",
           light: "#FAECE7",
@@ -1926,6 +2430,15 @@ const MEDICATIONS = [
           badgeText: "#4A1B0C"
       },
       emergency: true,
+      emergencyLabel: {
+          "zh-TW": "⚠ 急救用藥（Reliever）",
+          "en": "⚠ Reliever",
+          "id": "⚠ Obat Pereda Darurat",
+          "vi": "⚠ Thuốc Cắt Cơn Khẩn Cấp",
+          "th": "⚠ ยาบรรเทาอาการฉุกเฉิน",
+          "tl": "⚠ Pang-emergency na Reliever",
+          "ja": "⚠ 救急用薬（リリーバー）"
+      },
       name: {
           "zh-TW": "備勞喘",
           "en": "Berotec N",
@@ -1936,173 +2449,265 @@ const MEDICATIONS = [
           "ja": "ベロテックN"
       },
       subtitle: {
-          "zh-TW": "有喘鳴或急性呼吸困難時使用",
-          "en": "Use when wheezing or breathless",
-          "id": "Gunakan saat mengi atau sesak napas",
-          "vi": "Dùng khi khò khè hoặc khó thở",
-          "th": "ใช้เมื่อมีเสียงวี้ดหรือหายใจลำบาก",
-          "tl": "Gamitin kapag may wheezing o hirap huminga",
-          "ja": "喘鳴や息苦しさがあるときに使用"
+          "zh-TW": "Berotec N｜Fenoterol 100mcg/puff｜共 200 劑",
+          "en": "Berotec N | Fenoterol 100 mcg/puff | 200 doses",
+          "id": "Berotec N | Fenoterol 100 mcg/puff | Total 200 dosis",
+          "vi": "Berotec N | Fenoterol 100 mcg/lần xịt | Tổng 200 liều",
+          "th": "Berotec N | Fenoterol 100 ไมโครกรัม/พัฟ | รวม 200 พัฟ",
+          "tl": "Berotec N | Fenoterol 100 mcg/puff | Kabuuang 200 dose",
+          "ja": "Berotec N｜フェノテロール 100mcg/1吸入｜全200吸入"
+      },
+      usage: {
+          "zh-TW": "有喘鳴、胸悶或急性呼吸困難時使用",
+          "en": "Use when wheezing, chest tightness, or acute shortness of breath",
+          "id": "Gunakan saat mengi, dada terasa sesak, atau sesak napas akut",
+          "vi": "Dùng khi khò khè, tức ngực, hoặc khó thở cấp",
+          "th": "ใช้เมื่อมีเสียงวี้ด แน่นหน้าอก หรือหายใจลำบากเฉียบพลัน",
+          "tl": "Gamitin kapag may wheezing, paninikip ng dibdib, o matinding hirap huminga",
+          "ja": "喘鳴、胸部圧迫感、または急な呼吸困難時に使用"
       },
       badge: {
-          "zh-TW": "急救用 pMDI",
-          "en": "Reliever pMDI",
-          "id": "pMDI Pereda",
-          "vi": "pMDI Cắt cơn",
-          "th": "pMDI บรรเทาอาการ",
-          "tl": "Reliever pMDI",
-          "ja": "救急用pMDI"
+          "zh-TW": "超過 3 天未使用，先對空噴 1 次",
+          "en": "Not used >3 days: prime 1 spray first",
+          "id": "Tidak dipakai >3 hari: semprot uji 1x dulu",
+          "vi": "Không dùng >3 ngày: xịt thử 1 lần trước",
+          "th": "ไม่ได้ใช้เกิน 3 วัน: พ่นทดสอบ 1 ครั้งก่อน",
+          "tl": "Hindi nagamit >3 araw: 1 test spray muna",
+          "ja": "3日超未使用：先に空打ち1回"
+      },
+      preStepsInfo: {
+          tone: {
+              bg: "#E6F1FB",
+              border: "#185FA5",
+              text: "#042C53"
+          },
+          title: {
+              "zh-TW": "初次使用前 - 對空噴 2 次",
+              "en": "Before first use - Prime with 2 sprays",
+              "id": "Sebelum pemakaian pertama - Semprot uji 2 kali",
+              "vi": "Trước lần dùng đầu tiên - Xịt thử 2 lần",
+              "th": "ก่อนใช้ครั้งแรก - พ่นทดสอบ 2 ครั้ง",
+              "tl": "Bago unang gamit - Mag-prime ng 2 spray",
+              "ja": "初回使用前 - 空打ち2回"
+          },
+          text: {
+              "zh-TW": "取下護蓋，將噴嘴朝向空中，按壓 2 次，確認有霧噴出。\n備勞喘不需振搖。",
+              "en": "Remove the cap, point the mouthpiece upward, and press 2 times to confirm visible mist.\nBerotec N does not need shaking.",
+              "id": "Lepas tutup, arahkan corong ke udara, lalu tekan 2 kali sampai terlihat kabut semprot。\nBerotec N tidak perlu dikocok。",
+              "vi": "Tháo nắp, hướng đầu ngậm lên không trung, nhấn 2 lần để thấy sương thuốc。\nBerotec N không cần lắc。",
+              "th": "ถอดฝาครอบ หันปากสูดขึ้นสู่อากาศ แล้วกดพ่น 2 ครั้งให้เห็นละอองยา\nBerotec N ไม่ต้องเขย่า",
+              "tl": "Alisin ang takip, itutok pataas sa hangin ang mouthpiece, at pindutin nang 2 beses para makita ang ulap ng gamot.\nHindi kailangang alugin ang Berotec N.",
+              "ja": "キャップを外し、マウスピースを空中に向けて2回噴霧し、ミストが出ることを確認する。\nベロテックNは振とう不要。"
+          }
       },
       steps: [
           {
               action: {
-                  "zh-TW": "取下護蓋，確認噴嘴乾淨",
-                  "en": "Remove cap, check mouthpiece is clear",
-                  "id": "Lepas tutup, pastikan corong bersih",
-                  "vi": "Tháo nắp, kiểm tra ống ngậm sạch",
-                  "th": "ถอดฝาครอบ ตรวจให้แน่ใจว่าปากสูดสะอาด",
-                  "tl": "Alisin ang takip, tiyaking malinis ang mouthpiece",
-                  "ja": "キャップを外し、マウスピースが清潔か確認"
+                  "zh-TW": "取下護蓋",
+                  "en": "Remove the cap",
+                  "id": "Lepas tutup",
+                  "vi": "Tháo nắp",
+                  "th": "ถอดฝาครอบ",
+                  "tl": "Alisin ang takip",
+                  "ja": "キャップを外す"
               },
               note: {
-                  "zh-TW": "備勞喘為溶液劑，不需搖動",
-                  "en": "No shaking needed — solution formulation",
-                  "id": "Berotec N adalah sediaan larutan, tidak perlu dikocok",
-                  "vi": "Berotec N là dạng dung dịch, không cần lắc",
-                  "th": "Berotec N เป็นยาสูดชนิดสารละลาย ไม่ต้องเขย่า",
-                  "tl": "Berotec N ay solution formulation, hindi kailangang alugin",
-                  "ja": "ベロテックNは溶液製剤のため振る必要はありません"
-              }
+                  "zh-TW": "確認噴嘴乾淨，無雜物。",
+                  "en": "Make sure the mouthpiece is clean and free of debris.",
+                  "id": "Pastikan corong bersih dan tidak ada kotoran.",
+                  "vi": "Kiểm tra đầu ngậm sạch, không có dị vật.",
+                  "th": "ตรวจให้แน่ใจว่าปากสูดสะอาด ไม่มีสิ่งแปลกปลอม",
+                  "tl": "Tiyaking malinis ang mouthpiece at walang bara.",
+                  "ja": "マウスピースが清潔で異物がないことを確認。"
+              },
+              illustration: "assets/svg/trimbow/step-0.png"
           },
           {
               action: {
-                  "zh-TW": "嘴巴離開噴嘴，呼氣至底",
-                  "en": "Breathe out fully, away from inhaler",
-                  "id": "Buang napas sampai habis dengan mulut menjauh dari inhaler",
-                  "vi": "Thở ra hết khi miệng rời khỏi ống ngậm",
-                  "th": "หายใจออกให้สุดโดยให้ปากห่างจากปากสูด",
-                  "tl": "Huminga palabas nang buo habang nakalayo ang bibig sa inhaler",
-                  "ja": "吸入口から口を離して、息を最後まで吐く"
+                  "zh-TW": "呼氣至底，嘴巴離開噴嘴",
+                  "en": "Breathe out fully with your mouth away from the mouthpiece",
+                  "id": "Buang napas sampai habis dengan mulut menjauh dari corong",
+                  "vi": "Thở ra hết khi miệng rời khỏi đầu ngậm",
+                  "th": "หายใจออกให้สุด โดยให้ปากห่างจากปากสูด",
+                  "tl": "Huminga palabas nang buo habang nakalayo ang bibig sa mouthpiece",
+                  "ja": "マウスピースから口を離して息を最後まで吐く"
               },
               note: {
-                  "zh-TW": "不要對著噴嘴吹氣，避免濕氣進入",
-                  "en": "Never exhale into the mouthpiece",
-                  "id": "Jangan mengembuskan napas ke corong agar kelembapan tidak masuk",
-                  "vi": "Không thở vào ống ngậm để tránh hơi ẩm vào trong",
-                  "th": "ห้ามเป่าลมเข้าในปากสูด เพื่อป้องกันความชื้นเข้า",
-                  "tl": "Huwag huminga palabas sa mouthpiece para maiwasan ang moisture",
-                  "ja": "マウスピースに息を吹き込まない（湿気混入防止）"
-              }
+                  "zh-TW": "盡量把肺裡的空氣吐乾淨。\n⚠ 不要對著噴嘴吐氣（會造成濕氣）。",
+                  "en": "Exhale as completely as possible.\n⚠ Do not breathe out into the mouthpiece (moisture can enter).",
+                  "id": "Keluarkan udara dari paru-paru semaksimal mungkin.\n⚠ Jangan mengembuskan napas ke corong (dapat menimbulkan kelembapan).",
+                  "vi": "Cố gắng thở hết không khí trong phổi.\n⚠ Không thở vào đầu ngậm (sẽ gây ẩm).",
+                  "th": "พยายามหายใจออกจากปอดให้มากที่สุด\n⚠ ห้ามเป่าลมเข้าในปากสูด (จะทำให้เกิดความชื้น)",
+                  "tl": "Ilabas ang hangin sa baga hangga't kaya.\n⚠ Huwag huminga palabas sa mouthpiece (nagkakaroon ng moisture).",
+                  "ja": "肺の空気をできるだけ吐き出す。\n⚠ マウスピースへ息を吹き込まない（湿気の原因）。"
+              },
+              illustration: "assets/svg/trimbow/step-1.png"
           },
           {
               action: {
-                  "zh-TW": "嘴唇緊閉噴嘴，緩慢吸氣，同時按壓藥罐一次",
-                  "en": "Seal lips, inhale slowly and press canister once simultaneously",
-                  "id": "Rapatkan bibir pada corong, tarik napas perlahan sambil menekan kanister satu kali",
-                  "vi": "Ngậm kín ống ngậm bằng môi, hít vào chậm và đồng thời ấn bình 1 lần",
-                  "th": "เม้มริมฝีปากให้แนบปากสูด สูดลมหายใจช้า ๆ พร้อมกดกระป๋อง 1 ครั้ง",
-                  "tl": "Ipitin ng labi ang mouthpiece, huminga nang dahan-dahan habang pinipindot ang canister nang isang beses",
-                  "ja": "口唇をマウスピースに密着し、ゆっくり吸いながらボンベを1回押す"
+                  "zh-TW": "嘴唇緊閉噴嘴，開始緩慢吸氣",
+                  "en": "Seal lips around the mouthpiece and start to inhale slowly",
+                  "id": "Rapatkan bibir pada corong dan mulai tarik napas perlahan",
+                  "vi": "Ngậm kín đầu ngậm bằng môi và bắt đầu hít vào chậm",
+                  "th": "เม้มริมฝีปากให้แนบปากสูด แล้วเริ่มสูดลมช้า ๆ",
+                  "tl": "Idikit ang labi sa mouthpiece at magsimulang huminga nang dahan-dahan",
+                  "ja": "口唇をマウスピースに密着し、ゆっくり吸入を開始"
               },
               note: {
-                  "zh-TW": "吸氣速度要慢（3–5 秒），不可快吸",
-                  "en": "Breathe in slowly over 3–5 seconds",
-                  "id": "Kecepatan tarik napas harus lambat (3–5 detik), jangan terlalu cepat",
-                  "vi": "Tốc độ hít phải chậm (3–5 giây), không hít nhanh",
-                  "th": "สูดลมช้า ๆ (3–5 วินาที) ห้ามสูดเร็ว",
-                  "tl": "Dahan-dahan ang paglanghap (3–5 segundo), huwag mabilis",
-                  "ja": "吸入速度はゆっくり（3〜5秒）。速く吸わない"
-              }
+                  "zh-TW": "吸氣同時，用力按壓藥罐一次。\n吸氣速度要慢，約 3-5 秒。",
+                  "en": "While inhaling, press the canister once firmly.\nInhale slowly over about 3-5 seconds.",
+                  "id": "Saat menarik napas, tekan kanister satu kali dengan mantap.\nKecepatan tarik napas harus lambat, sekitar 3-5 detik.",
+                  "vi": "Trong lúc hít vào, ấn bình thuốc 1 lần dứt khoát.\nTốc độ hít chậm, khoảng 3-5 giây.",
+                  "th": "ขณะสูดลม ให้กดกระป๋องยา 1 ครั้งอย่างชัดเจน\nสูดลมช้า ๆ ประมาณ 3-5 วินาที",
+                  "tl": "Habang humihinga papasok, pindutin ang canister nang isang beses.\nDapat mabagal ang paglanghap, mga 3-5 segundo.",
+                  "ja": "吸いながらボンベを1回しっかり押す。\n吸入速度はゆっくり3-5秒程度。"
+              },
+              illustration: "assets/svg/berotec-n/step-2.png"
           },
           {
               action: {
-                  "zh-TW": "移開噴嘴，閉嘴屏氣 10 秒",
-                  "en": "Remove inhaler, hold breath for 10 seconds",
-                  "id": "Lepaskan inhaler, tahan napas 10 detik",
-                  "vi": "Rút ống hít ra, nín thở 10 giây",
-                  "th": "นำปากสูดออก กลั้นหายใจ 10 วินาที",
-                  "tl": "Alisin ang inhaler, pigilin ang hininga nang 10 segundo",
-                  "ja": "吸入器を外し、10秒間息を止める"
+                  "zh-TW": "移開噴嘴，屏氣 10 秒",
+                  "en": "Remove the mouthpiece and hold your breath for 10 seconds",
+                  "id": "Lepaskan corong, tahan napas 10 detik",
+                  "vi": "Rút đầu ngậm ra và nín thở 10 giây",
+                  "th": "นำปากสูดออก แล้วกลั้นหายใจ 10 วินาที",
+                  "tl": "Alisin ang mouthpiece at pigilin ang hininga nang 10 segundo",
+                  "ja": "マウスピースを外し、10秒間息を止める"
               },
               note: {
-                  "zh-TW": "讓藥物在肺部沉積，屏不住就屏到不舒服為止",
-                  "en": "Allows medicine to deposit — hold as long as comfortable",
-                  "id": "Agar obat mengendap di paru-paru; jika tidak sanggup, tahan selama masih nyaman",
-                  "vi": "Giúp thuốc lắng đọng ở phổi; nếu không giữ được 10 giây thì giữ trong mức còn chịu được",
-                  "th": "เพื่อให้ยาตกค้างในปอด หากกลั้นไม่ไหวให้กลั้นเท่าที่สบาย",
-                  "tl": "Para ma-deposit ang gamot sa baga; kung hindi kaya, pigilin hangga't komportable",
-                  "ja": "薬剤を肺に沈着させるため。10秒難しければ無理のない範囲で"
-              }
+                  "zh-TW": "閉嘴，不要吞嚥，讓藥物在肺部沉積。\n若無法屏 10 秒，屏到不舒服為止。",
+                  "en": "Keep mouth closed and do not swallow, so medicine can deposit in the lungs.\nIf 10 seconds is difficult, hold as long as comfortable.",
+                  "id": "Tutup mulut, jangan menelan, agar obat mengendap di paru-paru.\nJika tidak mampu 10 detik, tahan napas selama masih nyaman.",
+                  "vi": "Khép miệng, không nuốt để thuốc lắng đọng trong phổi.\nNếu không giữ được 10 giây, giữ trong mức còn chịu được.",
+                  "th": "ปิดปากและอย่ากลืน เพื่อให้ยาตกค้างในปอด\nหากกลั้นไม่ถึง 10 วินาที ให้กลั้นเท่าที่สบาย",
+                  "tl": "Isara ang bibig at huwag lumunok para makadeposito ang gamot sa baga.\nKung hindi kaya ang 10 segundo, pigilin hangga't komportable.",
+                  "ja": "口を閉じ、飲み込まずに薬を肺に沈着させる。\n10秒が難しければ、無理のない範囲で保持。"
+              },
+              illustration: "assets/svg/berotec-n/step-3.png"
           },
           {
               action: {
                   "zh-TW": "慢慢由鼻呼氣，蓋回護蓋",
-                  "en": "Exhale slowly through nose, replace cap",
-                  "id": "Embuskan napas perlahan melalui hidung, pasang kembali tutup",
+                  "en": "Exhale slowly through the nose and replace the cap",
+                  "id": "Hembuskan napas perlahan lewat hidung, lalu pasang kembali tutup",
                   "vi": "Thở ra chậm bằng mũi rồi đậy nắp lại",
                   "th": "หายใจออกช้า ๆ ทางจมูก แล้วปิดฝาครอบกลับ",
-                  "tl": "Dahan-dahang huminga palabas sa ilong, ibalik ang takip",
+                  "tl": "Dahan-dahang huminga palabas sa ilong, pagkatapos ay ibalik ang takip",
                   "ja": "鼻からゆっくり息を吐き、キャップを戻す"
-              }
+              },
+              illustration: "assets/svg/berotec-n/step-4.png"
           },
           {
               action: {
-                  "zh-TW": "需要第 2 劑：等 30 秒後，重複步驟 1–5",
-                  "en": "Second dose needed: wait 30 seconds, repeat steps 1–5",
-                  "id": "Jika perlu dosis ke-2: tunggu 30 detik, ulangi langkah 1–5",
-                  "vi": "Cần liều thứ 2: chờ 30 giây rồi lặp lại bước 1–5",
-                  "th": "ต้องใช้โดสที่ 2: รอ 30 วินาที แล้วทำซ้ำขั้นตอน 1–5",
-                  "tl": "Kailangan ng ika-2 dosis: maghintay ng 30 segundo, ulitin ang hakbang 1–5",
-                  "ja": "2吸入目が必要な場合：30秒待って手順1〜5を繰り返す"
+                  "zh-TW": "需要第 2 劑時：等 30 秒後重複步驟 ①-⑤",
+                  "en": "If a second puff is needed: wait 30 seconds, then repeat steps 1-5",
+                  "id": "Jika perlu dosis ke-2: tunggu 30 detik lalu ulangi langkah 1-5",
+                  "vi": "Nếu cần liều thứ 2: chờ 30 giây rồi lặp lại bước 1-5",
+                  "th": "หากต้องใช้โดสที่ 2: รอ 30 วินาที แล้วทำซ้ำขั้นตอน 1-5",
+                  "tl": "Kung kailangan ng ika-2 puff: maghintay ng 30 segundo, tapos ulitin ang hakbang 1-5",
+                  "ja": "2吸入目が必要なら30秒待って手順1-5を繰り返す"
               },
               note: {
-                  "zh-TW": "每次只按壓一次，不可連按兩下",
-                  "en": "One press per breath — never double press",
-                  "id": "Setiap kali tarik napas tekan hanya sekali, jangan menekan dua kali berturut-turut",
-                  "vi": "Mỗi lần hít chỉ ấn 1 lần, không ấn liên tiếp 2 lần",
-                  "th": "1 ลมหายใจต่อ 1 ครั้งกด ห้ามกดซ้อนสองครั้ง",
-                  "tl": "Isang pindot bawat paglanghap, huwag mag-double press",
-                  "ja": "1呼吸につき1回のみ押す。連続2回押しはしない"
+                  "zh-TW": "醫師通常指示每次吸 2 劑。",
+                  "en": "Doctors commonly prescribe 2 puffs each time.",
+                  "id": "Dokter biasanya mengarahkan 2 semprotan setiap kali pemakaian.",
+                  "vi": "Bác sĩ thường chỉ định mỗi lần dùng 2 nhát xịt.",
+                  "th": "โดยทั่วไปแพทย์มักสั่งให้ใช้ครั้งละ 2 พัฟ",
+                  "tl": "Karaniwang utos ng doktor ay 2 puff bawat gamit.",
+                  "ja": "通常は1回2吸入を医師が指示します。"
+              },
+              illustration: "assets/svg/berotec-n/step-5.png"
+          }
+      ],
+      infoBoxes: [
+          {
+              tone: {
+                  bg: "#EAF3DE",
+                  border: "#3B6D11",
+                  text: "#173404"
+              },
+              title: {
+                  "zh-TW": "如果有配吸藥輔助器（Spacer）",
+                  "en": "If using a spacer",
+                  "id": "Jika menggunakan spacer",
+                  "vi": "Nếu dùng buồng đệm (Spacer)",
+                  "th": "หากใช้สเปเซอร์ (Spacer)",
+                  "tl": "Kung may spacer",
+                  "ja": "吸入補助器（スペーサー）を使う場合"
+              },
+              text: {
+                  "zh-TW": "步驟 ③ 改為：將輔助器接上噴嘴後，嘴唇含住輔助器吸嘴。\n步驟 ⑥：每次只按壓一次，吸完再按第二次（不可連按兩下）。\n輔助器請用溫水 + 清潔劑清洗，自然風乾，不可烘乾、不可刷洗。",
+                  "en": "For step 3: connect the spacer to the inhaler, then seal lips around the spacer mouthpiece.\nFor step 6: press only once each time; finish inhaling the first puff before pressing the second (do not double-press).\nClean spacer with warm water + detergent, air-dry naturally; do not heat-dry or scrub.",
+                  "id": "Untuk langkah 3: sambungkan spacer ke inhaler, lalu rapatkan bibir pada corong spacer.\nUntuk langkah 6: setiap kali tekan hanya sekali; setelah hirupan pertama selesai baru tekan untuk hirupan kedua (jangan tekan dua kali beruntun).\nCuci spacer dengan air hangat + detergen, keringkan alami; jangan dikeringkan dengan panas atau disikat.",
+                  "vi": "Ở bước 3: gắn buồng đệm vào bình xịt, rồi ngậm kín đầu ngậm của buồng đệm.\nỞ bước 6: mỗi lần chỉ ấn 1 lần; hít xong nhát đầu rồi mới ấn nhát thứ hai (không ấn liên tiếp 2 lần).\nRửa buồng đệm bằng nước ấm + chất tẩy rửa, để khô tự nhiên; không sấy nóng, không chà cọ.",
+                  "th": "สำหรับขั้นตอน 3: ต่อสเปเซอร์เข้ากับปากสูด แล้วเม้มริมฝีปากกับปากดูดของสเปเซอร์\nสำหรับขั้นตอน 6: กดเพียงครั้งละ 1 ครั้ง สูดพัฟแรกเสร็จก่อนจึงกดพัฟที่สอง (ห้ามกดซ้อนสองครั้ง)\nทำความสะอาดสเปเซอร์ด้วยน้ำอุ่น + น้ำยาทำความสะอาด แล้วผึ่งให้แห้งเอง ห้ามอบแห้งและห้ามขัดถู",
+                  "tl": "Para sa hakbang 3: ikabit ang spacer sa inhaler, pagkatapos ay idikit ang labi sa mouthpiece ng spacer.\nPara sa hakbang 6: isang pindot lang bawat pagkakataon; tapusin muna ang unang paglanghap bago pindutin ang pangalawa (huwag mag-double press).\nLinisin ang spacer gamit ang maligamgam na tubig + panlinis, patuyuin sa hangin; huwag i-heat dry at huwag kuskusin.",
+                  "ja": "手順3：スペーサーを吸入器に接続し、スペーサーの吸入口を口唇で密着させる。\n手順6：1回につき1回のみ押す。1吸入目を終えてから2回目を押す（連続2回押し不可）。\nスペーサーはぬるま湯＋洗剤で洗浄し自然乾燥。加熱乾燥・ブラシ洗浄は不可。"
+              }
+          },
+          {
+              tone: {
+                  bg: "#F2F2F2",
+                  border: "#7A7A7A",
+                  text: "#3F3F3F"
+              },
+              title: {
+                  "zh-TW": "剩餘劑量管理",
+                  "en": "Remaining Dose Tracking",
+                  "id": "Pemantauan Sisa Dosis",
+                  "vi": "Theo Dõi Liều Còn Lại",
+                  "th": "การติดตามจำนวนครั้งที่เหลือ",
+                  "tl": "Pagsubaybay ng Natitirang Dose",
+                  "ja": "残量管理"
+              },
+              text: {
+                  "zh-TW": "共 200 劑。每次使用後在藥罐上劃一記。\n劃滿 200 記（正正正正…）即可回診或領慢箋。\n超過 3 天沒用：先對空噴 1 次，再正常使用。",
+                  "en": "Total 200 doses. Mark one tally on the canister after each use.\nWhen all 200 tallies are completed (||||...), return for refill.\nIf not used for more than 3 days: prime 1 spray before normal use.",
+                  "id": "Total 200 dosis. Beri satu tanda setiap kali selesai digunakan.\nJika sudah penuh 200 tanda (||||...), lakukan kontrol ulang atau isi ulang resep.\nJika tidak dipakai lebih dari 3 hari: lakukan 1 semprotan uji sebelum penggunaan normal.",
+                  "vi": "Tổng 200 liều. Mỗi lần dùng xong đánh 1 dấu trên bình.\nĐủ 200 dấu (||||...) thì tái khám hoặc nhận đơn dài hạn.\nNếu không dùng quá 3 ngày: xịt thử 1 lần trước khi dùng bình thường.",
+                  "th": "รวม 200 พัฟ หลังใช้แต่ละครั้งให้ขีดเครื่องหมาย 1 ครั้งบนกระป๋องยา\nเมื่อครบ 200 เครื่องหมาย (||||...) ให้กลับมาพบแพทย์หรือรับยาเพิ่ม\nหากไม่ได้ใช้เกิน 3 วัน: พ่นทดสอบ 1 ครั้งก่อนใช้ตามปกติ",
+                  "tl": "Kabuuang 200 dose. Magmarka ng isang guhit sa canister pagkatapos ng bawat gamit.\nKapag umabot na sa 200 marka (||||...), mag-follow up o kumuha ng refill.\nKung hindi nagamit nang lampas 3 araw: mag-prime ng 1 spray bago normal na paggamit.",
+                  "ja": "全200吸入。使用後は毎回1つ印を付ける。\n200個の印（||||...）で再診または処方補充。\n3日以上未使用なら通常使用前に空打ち1回。"
               }
           }
       ],
       warnings: [
           {
-              "zh-TW": "急救用藥：有症狀才使用，不是每天用",
-              "en": "Reliever — use when symptomatic, not daily",
-              "id": "Obat pereda darurat: gunakan saat bergejala, bukan untuk dipakai setiap hari",
-              "vi": "Thuốc cắt cơn: chỉ dùng khi có triệu chứng, không dùng hằng ngày",
-              "th": "ยาบรรเทาอาการฉุกเฉิน: ใช้เมื่อมีอาการเท่านั้น ไม่ใช่ยาที่ใช้ทุกวัน",
-              "tl": "Reliever: gamitin kapag may sintomas, hindi para sa araw-araw",
-              "ja": "発作時の救急薬：症状がある時のみ使用し、毎日定期使用しない"
+              "zh-TW": "急救用藥：有喘鳴、胸悶、急性呼吸困難才使用，不是每天用。",
+              "en": "Reliever medicine: use only for wheezing, chest tightness, or acute shortness of breath; not for daily routine use.",
+              "id": "Obat pereda darurat: gunakan hanya saat mengi, dada sesak, atau sesak napas akut; bukan untuk pemakaian harian.",
+              "vi": "Thuốc cắt cơn: chỉ dùng khi khò khè, tức ngực hoặc khó thở cấp; không phải thuốc dùng hằng ngày.",
+              "th": "ยาบรรเทาอาการฉุกเฉิน: ใช้เมื่อมีเสียงวี้ด แน่นหน้าอก หรือหายใจลำบากเฉียบพลันเท่านั้น ไม่ใช่ยาที่ใช้ทุกวัน",
+              "tl": "Reliever na gamot: gamitin lang kapag may wheezing, paninikip ng dibdib, o matinding hirap huminga; hindi ito pang-araw-araw.",
+              "ja": "救急用薬：喘鳴・胸部圧迫感・急な呼吸困難時のみ使用。毎日定期で使わない。"
           },
           {
-              "zh-TW": "備勞喘不含類固醇，使用後不需漱口",
-              "en": "No steroid — no need to rinse mouth after use",
-              "id": "Tidak mengandung steroid, tidak perlu berkumur setelah pemakaian",
-              "vi": "Không chứa steroid, dùng xong không cần súc miệng",
-              "th": "ไม่มีสเตียรอยด์ จึงไม่จำเป็นต้องบ้วนปากหลังใช้",
-              "tl": "Walang steroid, hindi kailangang magmumog pagkatapos gamitin",
-              "ja": "ステロイドを含まないため、使用後のうがいは不要"
+              "zh-TW": "備勞喘不含類固醇，使用後不需漱口。",
+              "en": "Berotec N contains no steroid, so mouth rinsing is not required after use.",
+              "id": "Berotec N tidak mengandung steroid, jadi tidak perlu berkumur setelah digunakan.",
+              "vi": "Berotec N không chứa steroid, nên không cần súc miệng sau khi dùng.",
+              "th": "Berotec N ไม่มีสเตียรอยด์ จึงไม่จำเป็นต้องบ้วนปากหลังใช้",
+              "tl": "Walang steroid ang Berotec N, kaya hindi kailangang magmumog pagkatapos gamitin.",
+              "ja": "ベロテックNはステロイドを含まないため、使用後のうがいは不要。"
           },
           {
-              "zh-TW": "2 劑後症狀未緩解 → 立即就醫或撥 119",
-              "en": "No relief after 2 puffs → seek emergency care or call 119",
-              "id": "Tidak membaik setelah 2 semprotan → segera ke IGD atau hubungi 119",
-              "vi": "Không đỡ sau 2 nhát xịt → đi cấp cứu ngay hoặc gọi 119",
-              "th": "ไม่ดีขึ้นหลังพ่น 2 ครั้ง → ไปฉุกเฉินทันทีหรือโทร 119",
-              "tl": "Walang ginhawa matapos ang 2 puff → magpatingin agad sa ER o tumawag sa 119",
-              "ja": "2吸入しても改善しない場合→直ちに受診または119へ連絡",
+              "zh-TW": "若使用 2 劑後症狀未緩解，立即就醫或撥 119。",
+              "en": "If symptoms do not improve after 2 puffs, seek emergency care immediately or call 119.",
+              "id": "Jika gejala tidak membaik setelah 2 semprotan, segera ke IGD atau hubungi 119.",
+              "vi": "Nếu không cải thiện sau 2 nhát xịt, đi cấp cứu ngay hoặc gọi 119.",
+              "th": "หากอาการไม่ดีขึ้นหลังพ่น 2 พัฟ ให้ไปฉุกเฉินทันทีหรือโทร 119",
+              "tl": "Kung hindi gumaan ang sintomas matapos ang 2 puff, magpatingin agad sa ER o tumawag sa 119.",
+              "ja": "2吸入後も症状が改善しない場合は、直ちに救急受診または119へ連絡。",
               "highlight": true
           },
           {
-              "zh-TW": "超過 3 天未使用，先對空噴 1 次再正常使用",
-              "en": "Not used for 3+ days: prime with 1 test spray before use",
-              "id": "Jika tidak digunakan lebih dari 3 hari, lakukan 1 semprotan uji ke udara sebelum penggunaan normal",
-              "vi": "Nếu không dùng quá 3 ngày, xịt thử ra không khí 1 lần trước khi dùng bình thường",
-              "th": "หากไม่ได้ใช้เกิน 3 วัน ให้พ่นทดสอบ 1 ครั้งก่อนใช้งานจริง",
-              "tl": "Kung hindi nagamit nang lampas 3 araw, mag-prime ng 1 test spray sa hangin bago normal na paggamit",
-              "ja": "3日以上未使用なら、通常使用前に空打ち1回でプライミング"
+              "zh-TW": "超過 3 天未使用，先對空噴 1 次再正常使用。",
+              "en": "If not used for more than 3 days, prime with 1 test spray before normal use.",
+              "id": "Jika tidak digunakan lebih dari 3 hari, lakukan 1 semprotan uji sebelum penggunaan normal.",
+              "vi": "Nếu không dùng quá 3 ngày, xịt thử 1 lần trước khi dùng bình thường.",
+              "th": "หากไม่ได้ใช้เกิน 3 วัน ให้พ่นทดสอบ 1 ครั้งก่อนใช้ตามปกติ",
+              "tl": "Kung hindi nagamit nang lampas 3 araw, mag-prime ng 1 test spray bago normal na paggamit.",
+              "ja": "3日以上未使用なら、通常使用前に空打ち1回を行う。"
           }
       ],
       qrUrl: "https://www.youtube.com/watch?v=o4sFGDhZyp4"
@@ -2256,75 +2861,225 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/seretide-250"
   },
 
-  // ── Placeholder: Trimbow ─────────────────────────────────────,
+  // ── Trimbow MDI ─────────────────────────────────────,
   {
       "id": "trimbow",
       color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
+          main: "#3B6D11",
+          light: "#EAF3DE",
+          dark: "#173404",
+          badge: "#C0DD97",
+          badgeText: "#173404"
       },
+      "category": "inhaler",
       emergency: false,
+      headerBadge: {
+          "zh-TW": "保養藥 Controller（三合一，每天用）",
+          "en": "Controller maintenance (triple therapy, daily)",
+          "id": "Controller pemeliharaan (terapi tiga obat, harian)",
+          "vi": "Thuốc kiểm soát duy trì (ba thành phần, dùng hằng ngày)",
+          "th": "ยาควบคุมอาการ (ยาสามชนิด ใช้ทุกวัน)",
+          "tl": "Controller maintenance (triple therapy, araw-araw)",
+          "ja": "維持治療薬 Controller（三剤配合、毎日使用）"
+      },
       name: {
-          "zh-TW": "Trimbow",
-          "en": "Trimbow",
-          "id": "Trimbow",
-          "vi": "Trimbow",
-          "th": "Trimbow",
-          "tl": "Trimbow",
-          "ja": "Trimbow"
+          "zh-TW": "喘寶定量吸入劑",
+          "en": "Trimbow MDI",
+          "id": "Trimbow MDI",
+          "vi": "Trimbow MDI",
+          "th": "Trimbow MDI",
+          "tl": "Trimbow MDI",
+          "ja": "トリンボウ定量吸入剤"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Trimbow MDI | Beclomethasone 100mcg + Formoterol 6mcg + Glycopyrronium 12.5mcg / puff | 共 120 劑",
+          "en": "Trimbow MDI | Beclomethasone 100 mcg + Formoterol 6 mcg + Glycopyrronium 12.5 mcg / puff | 120 doses",
+          "id": "Trimbow MDI | Beclomethasone 100 mcg + Formoterol 6 mcg + Glycopyrronium 12.5 mcg / puff | Total 120 dosis",
+          "vi": "Trimbow MDI | Beclomethasone 100 mcg + Formoterol 6 mcg + Glycopyrronium 12.5 mcg / puff | Tổng 120 liều",
+          "th": "Trimbow MDI | Beclomethasone 100 mcg + Formoterol 6 mcg + Glycopyrronium 12.5 mcg / puff | รวม 120 พัฟ",
+          "tl": "Trimbow MDI | Beclomethasone 100 mcg + Formoterol 6 mcg + Glycopyrronium 12.5 mcg / puff | Kabuuang 120 dose",
+          "ja": "Trimbow MDI | Beclomethasone 100mcg + Formoterol 6mcg + Glycopyrronium 12.5mcg / puff | 全120吸入"
+      },
+      usage: {
+          "zh-TW": "每天 2 次（早晚），每次 2 劑",
+          "en": "Twice daily (morning and evening), 2 puffs each time",
+          "id": "2 kali sehari (pagi dan malam), tiap kali 2 semprotan",
+          "vi": "Ngày 2 lần (sáng và tối), mỗi lần 2 nhát xịt",
+          "th": "วันละ 2 ครั้ง (เช้า-เย็น) ครั้งละ 2 พัฟ",
+          "tl": "2 beses araw-araw (umaga at gabi), 2 puff bawat gamit",
+          "ja": "1日2回（朝・夕）、1回2吸入"
       },
       badge: {
-          "zh-TW": "吸入劑",
-          "en": "Inhaler",
-          "id": "Inhaler",
-          "vi": "Thuốc hít",
-          "th": "ยาสูดพ่น",
-          "tl": "Inhaler",
-          "ja": "吸入薬"
+          "zh-TW": "ICS + LABA + LAMA pMDI",
+          "en": "ICS + LABA + LAMA pMDI",
+          "id": "ICS + LABA + LAMA pMDI",
+          "vi": "ICS + LABA + LAMA pMDI",
+          "th": "ICS + LABA + LAMA pMDI",
+          "tl": "ICS + LABA + LAMA pMDI",
+          "ja": "ICS + LABA + LAMA pMDI"
+      },
+      preStepsInfo: {
+          tone: {
+              bg: "#E6F1FB",
+              border: "#185FA5",
+              text: "#042C53"
+          },
+          title: {
+              "zh-TW": "初次使用前：對空噴 1 次",
+              "en": "Before first use: prime with 1 spray",
+              "id": "Sebelum pemakaian pertama: semprot uji 1 kali",
+              "vi": "Trước lần dùng đầu tiên: xịt thử 1 lần",
+              "th": "ก่อนใช้ครั้งแรก: พ่นทดสอบ 1 ครั้ง",
+              "tl": "Bago unang gamit: mag-prime ng 1 spray",
+              "ja": "初回使用前：空打ち1回"
+          },
+          text: {
+              "zh-TW": "確認計數窗口顯示「120」。\nTrimbow 為溶液劑型，使用前不需振搖。\n未開封前冷藏保存（4-8°C）；開封後室溫（≤25°C）保存，4 個月內使用完畢。",
+              "en": "Confirm the counter shows 120.\nTrimbow is a solution formulation, so no shaking is needed before use.\nBefore opening: refrigerate at 4-8°C. After opening: store at room temperature (≤25°C) and use within 4 months.",
+              "id": "Pastikan penghitung menunjukkan 120.\nTrimbow adalah formulasi larutan, jadi tidak perlu dikocok sebelum digunakan.\nSebelum dibuka: simpan di lemari es 4-8°C. Setelah dibuka: simpan pada suhu ruang (≤25°C) dan habiskan dalam 4 bulan.",
+              "vi": "Xác nhận cửa sổ đếm hiển thị 120.\nTrimbow là dạng dung dịch nên không cần lắc trước khi dùng.\nTrước khi mở: bảo quản lạnh 4-8°C. Sau khi mở: để nhiệt độ phòng (≤25°C) và dùng hết trong 4 tháng.",
+              "th": "ตรวจให้แน่ใจว่าหน้าต่างนับขนาดยาแสดง 120\nTrimbow เป็นยาชนิดสารละลาย จึงไม่ต้องเขย่าก่อนใช้\nก่อนเปิดใช้: เก็บในตู้เย็น 4-8°C หลังเปิดใช้: เก็บที่อุณหภูมิห้อง (≤25°C) และใช้ให้หมดภายใน 4 เดือน",
+              "tl": "Tiyaking 120 ang nakalagay sa counter.\nAng Trimbow ay solution formulation kaya hindi kailangang alugin bago gamitin.\nBago buksan: i-refrigerate sa 4-8°C. Pagkabukas: itago sa room temperature (≤25°C) at ubusin sa loob ng 4 na buwan.",
+              "ja": "カウンターが120を示していることを確認する。\nTrimbowは溶液製剤のため使用前の振とうは不要。\n未開封時は4-8°Cで冷蔵。開封後は室温（≤25°C）で保管し、4か月以内に使用する。"
+          }
       },
       steps: [
           {
               action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
+                  "zh-TW": "確認計數窗口，取下護蓋",
+                  "en": "Check the counter window and remove the cap",
+                  "id": "Periksa jendela penghitung lalu lepas tutup",
+                  "vi": "Kiểm tra cửa sổ đếm rồi tháo nắp",
+                  "th": "ตรวจหน้าต่างนับขนาดยา แล้วถอดฝาครอบ",
+                  "tl": "Suriin ang counter window at alisin ang takip",
+                  "ja": "カウンターを確認し、キャップを外す"
               },
               note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
+                  "zh-TW": "每用 1 次減少 1。不需振搖。",
+                  "en": "The counter decreases by 1 with each use. No shaking needed.",
+                  "id": "Penghitung berkurang 1 setiap kali digunakan. Tidak perlu dikocok.",
+                  "vi": "Mỗi lần dùng sẽ giảm 1. Không cần lắc.",
+                  "th": "ใช้แต่ละครั้งตัวเลขจะลดลง 1 และไม่ต้องเขย่า",
+                  "tl": "Bumababa ng 1 ang counter sa bawat gamit. Hindi kailangang alugin.",
+                  "ja": "使用ごとに1減る。振とう不要。"
+              },
+              illustration: "assets/svg/trimbow/step-0.png"
+          },
+          {
+              action: {
+                  "zh-TW": "嘴巴離開噴嘴，呼氣至底",
+                  "en": "Breathe out fully with your mouth away from the mouthpiece",
+                  "id": "Buang napas sampai habis dengan mulut menjauh dari corong",
+                  "vi": "Thở ra hết khi miệng rời khỏi đầu ngậm",
+                  "th": "หายใจออกให้สุด โดยให้ปากห่างจากปากสูด",
+                  "tl": "Huminga palabas nang buo habang nakalayo ang bibig sa mouthpiece",
+                  "ja": "マウスピースから口を離して最後まで息を吐く"
+              },
+              illustration: "assets/svg/trimbow/step-1.png"
+          },
+          {
+              action: {
+                  "zh-TW": "嘴唇緊閉噴嘴，開始緩慢吸氣（3-5 秒）",
+                  "en": "Seal lips around the mouthpiece and inhale slowly for 3-5 seconds",
+                  "id": "Rapatkan bibir pada corong lalu tarik napas perlahan 3-5 detik",
+                  "vi": "Ngậm kín đầu ngậm và hít vào chậm 3-5 giây",
+                  "th": "เม้มริมฝีปากให้แนบปากสูด แล้วสูดลมช้า ๆ 3-5 วินาที",
+                  "tl": "Idikit ang labi sa mouthpiece at huminga nang dahan-dahan sa loob ng 3-5 segundo",
+                  "ja": "口唇を密着し、3-5秒かけてゆっくり吸入する"
+              },
+              note: {
+                  "zh-TW": "吸氣的同時按壓藥罐一次。",
+                  "en": "Press the canister once while inhaling.",
+                  "id": "Tekan kanister satu kali saat menarik napas.",
+                  "vi": "Ấn bình thuốc 1 lần trong lúc hít vào.",
+                  "th": "กดกระป๋องยา 1 ครั้งพร้อมกับการสูดลม",
+                  "tl": "Pindutin ang canister nang isang beses habang humihinga papasok.",
+                  "ja": "吸いながらボンベを1回押す。"
+              },
+              illustration: "assets/svg/trimbow/step-2拷貝.png"
+          },
+          {
+              action: {
+                  "zh-TW": "移開噴嘴，閉嘴屏氣 5-10 秒",
+                  "en": "Remove the mouthpiece and hold your breath for 5-10 seconds",
+                  "id": "Lepaskan corong lalu tahan napas 5-10 detik",
+                  "vi": "Rút đầu ngậm ra và nín thở 5-10 giây",
+                  "th": "นำปากสูดออก แล้วกลั้นหายใจ 5-10 วินาที",
+                  "tl": "Alisin ang mouthpiece at pigilin ang hininga nang 5-10 segundo",
+                  "ja": "マウスピースを外し、5-10秒息を止める"
+              },
+              illustration: "assets/svg/trimbow/step-3拷貝.png"
+          },
+          {
+              action: {
+                  "zh-TW": "慢慢呼氣",
+                  "en": "Exhale slowly",
+                  "id": "Hembuskan napas perlahan",
+                  "vi": "Thở ra chậm",
+                  "th": "หายใจออกช้า ๆ",
+                  "tl": "Dahan-dahang huminga palabas",
+                  "ja": "ゆっくり息を吐く"
+              },
+              illustration: "assets/svg/trimbow/step-4拷貝.png"
+          },
+          {
+              action: {
+                  "zh-TW": "等 30-60 秒後按第 2 劑（每次共用 2 劑）",
+                  "en": "After 30-60 seconds, take the second puff (2 puffs each time)",
+                  "id": "Setelah 30-60 detik, gunakan semprotan ke-2 (setiap kali total 2 semprotan)",
+                  "vi": "Sau 30-60 giây, dùng nhát xịt thứ 2 (mỗi lần tổng 2 nhát)",
+                  "th": "หลัง 30-60 วินาที ให้ใช้พัฟที่ 2 (รวมครั้งละ 2 พัฟ)",
+                  "tl": "Pagkalipas ng 30-60 segundo, gamitin ang ika-2 puff (2 puff bawat gamit)",
+                  "ja": "30-60秒後に2吸入目を行う（毎回計2吸入）"
+              },
+              note: {
+                  "zh-TW": "重複步驟 ①-⑤。蓋回護蓋。",
+                  "en": "Repeat steps 1-5, then replace the cap.",
+                  "id": "Ulangi langkah 1-5 lalu pasang kembali tutup.",
+                  "vi": "Lặp lại bước 1-5 rồi đậy nắp lại.",
+                  "th": "ทำซ้ำขั้นตอน 1-5 แล้วปิดฝาครอบกลับ",
+                  "tl": "Ulitin ang hakbang 1-5 at ibalik ang takip.",
+                  "ja": "手順1-5を繰り返し、最後にキャップを戻す。"
+              },
+              illustration: "assets/svg/trimbow/step-5.png"
           }
       ],
       warnings: [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              "zh-TW": "保養藥：每天早晚各用 2 劑，不可自行減量或停用。",
+              "en": "Controller medicine: use 2 puffs every morning and evening. Do not reduce or stop on your own.",
+              "id": "Obat pemeliharaan: gunakan 2 semprotan setiap pagi dan malam. Jangan mengurangi atau menghentikan sendiri.",
+              "vi": "Thuốc kiểm soát: dùng 2 nhát xịt mỗi sáng và tối. Không tự ý giảm liều hoặc ngừng thuốc.",
+              "th": "ยาควบคุมอาการ: ใช้ครั้งละ 2 พัฟ ทุกเช้าและเย็น ห้ามลดขนาดหรือหยุดยาเอง",
+              "tl": "Controller na gamot: gumamit ng 2 puff tuwing umaga at gabi. Huwag kusang magbawas o huminto.",
+              "ja": "維持治療薬：毎朝・毎晩2吸入使用し、自己判断で減量・中止しない。"
+          },
+          {
+              "zh-TW": "使用後立刻漱口，把水吐掉（預防口腔念珠菌感染）。",
+              "en": "Rinse your mouth right after use and spit out the water to prevent oral thrush.",
+              "id": "Segera berkumur setelah digunakan lalu buang airnya untuk mencegah kandidiasis mulut.",
+              "vi": "Súc miệng ngay sau khi dùng rồi nhổ bỏ để phòng nấm miệng.",
+              "th": "บ้วนปากทันทีหลังใช้แล้วบ้วนทิ้ง เพื่อป้องกันเชื้อราในปาก",
+              "tl": "Magmumog agad pagkatapos gamitin at iluwa ang tubig para maiwasan ang oral thrush.",
+              "ja": "使用後すぐにうがいをして吐き出し、口腔カンジダを予防する。"
+          },
+          {
+              "zh-TW": "開封後 4 個月內使用完畢，超過請帶回藥局確認。",
+              "en": "Use within 4 months after opening. If overdue, bring it back to the pharmacy for review.",
+              "id": "Gunakan dalam 4 bulan setelah dibuka. Jika lewat, bawa kembali ke apotek untuk diperiksa.",
+              "vi": "Dùng hết trong vòng 4 tháng sau khi mở. Nếu quá hạn, mang lại nhà thuốc để kiểm tra.",
+              "th": "ใช้ให้หมดภายใน 4 เดือนหลังเปิดใช้ หากเกินกำหนดให้นำกลับมาที่ร้านยาเพื่อตรวจสอบ",
+              "tl": "Ubusin sa loob ng 4 na buwan matapos buksan. Kung lampas na, dalhin pabalik sa parmasya para masuri.",
+              "ja": "開封後4か月以内に使用し、期限を超えたら薬局へ持参して確認する。"
+          },
+          {
+              "zh-TW": "若出現排尿困難或口乾明顯，請回診告知醫師。",
+              "en": "If you develop difficulty urinating or troublesome dry mouth, return and tell your doctor.",
+              "id": "Jika muncul sulit buang air kecil atau mulut sangat kering, kontrol kembali dan beri tahu dokter.",
+              "vi": "Nếu xuất hiện tiểu khó hoặc khô miệng rõ rệt, hãy tái khám và báo cho bác sĩ.",
+              "th": "หากมีปัสสาวะลำบากหรือปากแห้งชัดเจน ให้กลับมาพบแพทย์และแจ้งอาการ",
+              "tl": "Kung magkaroon ng hirap umihi o matinding tuyong bibig, magpatingin muli at sabihin sa doktor.",
+              "ja": "排尿困難や強い口渇があれば再診して医師へ伝える。"
           }
       ],
       qrUrl: "https://pharmacy.example.com/meds/trimbow"
@@ -2848,78 +3603,253 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/benzoyl-peroxide-5"
   },
 
-  // ── Placeholder: Premarin vaginal cream (estrogens conjugated 0.65mg/g) ─────────────────────────────────────,
+  // ── Premarin vaginal cream ─────────────────────────────────────,
   {
-      "id": "premarin-vaginal-cream",
-      color: {
-          main: "#534AB7",
-          light: "#EEEDFE",
-          dark: "#26215C",
-          badge: "#AFA9EC",
-          badgeText: "#26215C"
+    "id": "premarin-vaginal-cream",
+    "category": "supp",
+    "color": {
+      "main": "#534AB7",
+      "light": "#EEEDFE",
+      "dark": "#26215C",
+      "badge": "#AFA9EC",
+      "badgeText": "#26215C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "普力馬林陰道乳膏",
+      "en": "Premarin vaginal cream",
+      "id": "Krim vagina Premarin",
+      "vi": "Kem âm đạo Premarin",
+      "th": "ครีมช่องคลอด Premarin",
+      "tl": "Premarin vaginal cream",
+      "ja": "Premarin膣用クリーム"
+    },
+    "subtitle": {
+      "zh-TW": "Premarin｜Conjugated estrogens 0.65 mg/g",
+      "en": "Premarin | Conjugated estrogens 0.65 mg/g",
+      "id": "Premarin | Conjugated estrogens 0,65 mg/g",
+      "vi": "Premarin | Conjugated estrogens 0,65 mg/g",
+      "th": "Premarin | Conjugated estrogens 0.65 mg/g",
+      "tl": "Premarin | Conjugated estrogens 0.65 mg/g",
+      "ja": "Premarin｜結合型エストロゲン 0.65 mg/g"
+    },
+    "usage": {
+      "zh-TW": "停經後陰道乾燥或頻尿時，依醫囑規律使用",
+      "en": "Use regularly as directed for postmenopausal vaginal dryness or urinary frequency",
+      "id": "Gunakan teratur sesuai petunjuk untuk kekeringan vagina atau sering berkemih setelah menopause",
+      "vi": "Dùng đều đặn theo chỉ định khi khô âm đạo hoặc tiểu nhiều sau mãn kinh",
+      "th": "ใช้สม่ำเสมอตามแพทย์สั่งเมื่อมีช่องคลอดแห้งหรือปัสสาวะบ่อยหลังหมดประจำเดือน",
+      "tl": "Gamitin nang regular ayon sa payo ng doktor para sa vaginal dryness o madalas na pag-ihi pagkatapos ng menopause",
+      "ja": "閉経後の膣乾燥や頻尿に対して、医師の指示どおり規則的に使用します"
+    },
+    "headerBadge": {
+      "zh-TW": "陰道乳膏",
+      "en": "Vaginal cream",
+      "id": "Krim vagina",
+      "vi": "Kem âm đạo",
+      "th": "ครีมช่องคลอด",
+      "tl": "Vaginal cream",
+      "ja": "膣用クリーム"
+    },
+    "steps": [
+      {
+        "section": {
+          "zh-TW": "流程 A：填充塗抹器",
+          "en": "Process A: Fill the applicator",
+          "id": "Langkah A: Isi applicator",
+          "vi": "Quy trình A: Nạp thuốc vào applicator",
+          "th": "ขั้นตอน A: เติมยาใน applicator",
+          "tl": "Proseso A: Punuin ang applicator",
+          "ja": "手順A：アプリケーターに薬を入れる"
+        },
+        "action": {
+          "zh-TW": "打開管蓋",
+          "en": "Open the tube cap",
+          "id": "Buka tutup tube",
+          "vi": "Mở nắp tuýp thuốc",
+          "th": "เปิดฝาหลอดยา",
+          "tl": "Buksan ang takip ng tube",
+          "ja": "チューブのふたを開ける"
+        }
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Premarin 陰道乳膏（0.65 mg/g）",
-          "en": "Premarin vaginal cream (estrogens conjugated 0.65mg/g)",
-          "id": "Premarin vaginal cream (estrogens conjugated 0.65mg/g)",
-          "vi": "Premarin vaginal cream (estrogens conjugated 0.65mg/g)",
-          "th": "Premarin vaginal cream (estrogens conjugated 0.65mg/g)",
-          "tl": "Premarin vaginal cream (estrogens conjugated 0.65mg/g)",
-          "ja": "Premarin vaginal cream (estrogens conjugated 0.65mg/g)"
+      {
+        "section": {
+          "zh-TW": "流程 A：填充塗抹器",
+          "en": "Process A: Fill the applicator",
+          "id": "Langkah A: Isi applicator",
+          "vi": "Quy trình A: Nạp thuốc vào applicator",
+          "th": "ขั้นตอน A: เติมยาใน applicator",
+          "tl": "Proseso A: Punuin ang applicator",
+          "ja": "手順A：アプリケーターに薬を入れる"
+        },
+        "action": {
+          "zh-TW": "將塗抹器旋轉接上軟管",
+          "en": "Twist the applicator onto the tube",
+          "id": "Putar applicator lalu pasang ke tube",
+          "vi": "Vặn applicator vào đầu tuýp thuốc",
+          "th": "หมุน applicator เพื่อต่อเข้ากับหลอดยา",
+          "tl": "Ikabit ang applicator sa tube sa pamamagitan ng pag-ikot",
+          "ja": "アプリケーターを回してチューブに取り付ける"
+        }
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        "section": {
+          "zh-TW": "流程 A：填充塗抹器",
+          "en": "Process A: Fill the applicator",
+          "id": "Langkah A: Isi applicator",
+          "vi": "Quy trình A: Nạp thuốc vào applicator",
+          "th": "ขั้นตอน A: เติมยาใน applicator",
+          "tl": "Proseso A: Punuin ang applicator",
+          "ja": "手順A：アプリケーターに薬を入れる"
+        },
+        "action": {
+          "zh-TW": "擠壓至刻度線，再旋轉取下塗抹器",
+          "en": "Squeeze the cream to the marked line, then twist off the applicator",
+          "id": "Tekan krim sampai garis takaran, lalu putar dan lepas applicator",
+          "vi": "Bóp thuốc đến vạch chia rồi xoay tháo applicator ra",
+          "th": "บีบครีมจนถึงขีดที่กำหนด แล้วหมุนถอด applicator ออก",
+          "tl": "Pigain ang krema hanggang sa guhit, saka paikuting tanggalin ang applicator",
+          "ja": "目盛り線までクリームを入れたら、回してアプリケーターを外す"
+        }
       },
-      badge: {
-          "zh-TW": "栓劑/陰道用藥",
-          "en": "Suppository/Vaginal",
-          "id": "Supositoria/Vaginal",
-          "vi": "Đặt âm đạo/hậu môn",
-          "th": "ยาเหน็บ/ช่องคลอด",
-          "tl": "Suppository/Vaginal",
-          "ja": "坐剤/膣用薬"
+      {
+        "section": {
+          "zh-TW": "流程 B：置入",
+          "en": "Process B: Insert",
+          "id": "Langkah B: Masukkan",
+          "vi": "Quy trình B: Đặt vào",
+          "th": "ขั้นตอน B: สอดเข้า",
+          "tl": "Proseso B: Ipasok",
+          "ja": "手順B：挿入する"
+        },
+        "action": {
+          "zh-TW": "仰躺，膝蓋彎曲",
+          "en": "Lie on your back with knees bent",
+          "id": "Berbaring telentang dengan lutut ditekuk",
+          "vi": "Nằm ngửa và co gối",
+          "th": "นอนหงายและงอเข่า",
+          "tl": "Humiga nang nakatihaya at ibaluktot ang tuhod",
+          "ja": "仰向けになり、膝を曲げる"
+        }
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/premarin-vaginal-cream"
+      {
+        "section": {
+          "zh-TW": "流程 B：置入",
+          "en": "Process B: Insert",
+          "id": "Langkah B: Masukkan",
+          "vi": "Quy trình B: Đặt vào",
+          "th": "ขั้นตอน B: สอดเข้า",
+          "tl": "Proseso B: Ipasok",
+          "ja": "手順B：挿入する"
+        },
+        "action": {
+          "zh-TW": "輕輕插入塗抹器",
+          "en": "Gently insert the applicator",
+          "id": "Masukkan applicator secara perlahan",
+          "vi": "Nhẹ nhàng đưa applicator vào âm đạo",
+          "th": "ค่อย ๆ สอด applicator เข้าไป",
+          "tl": "Dahan-dahang ipasok ang applicator",
+          "ja": "アプリケーターをやさしく挿入する"
+        },
+        "note": {
+          "zh-TW": "盡可能深，以舒適為準。",
+          "en": "Insert as deeply as comfortable.",
+          "id": "Masukkan sedalam mungkin selama masih nyaman.",
+          "vi": "Đưa vào càng sâu càng tốt trong mức thấy thoải mái.",
+          "th": "สอดเข้าไปให้ลึกที่สุดเท่าที่สบาย",
+          "tl": "Ipasok nang malalim hangga't komportable.",
+          "ja": "無理のない範囲で、できるだけ深く挿入します。"
+        }
+      },
+      {
+        "section": {
+          "zh-TW": "流程 B：置入",
+          "en": "Process B: Insert",
+          "id": "Langkah B: Masukkan",
+          "vi": "Quy trình B: Đặt vào",
+          "th": "ขั้นตอน B: สอดเข้า",
+          "tl": "Proseso B: Ipasok",
+          "ja": "手順B：挿入する"
+        },
+        "action": {
+          "zh-TW": "推入柱塞，再取出塗抹器",
+          "en": "Push the plunger, then remove the applicator",
+          "id": "Dorong plunger, lalu keluarkan applicator",
+          "vi": "Đẩy pít-tông rồi rút applicator ra",
+          "th": "ดันก้านลูกสูบ แล้วนำ applicator ออก",
+          "tl": "Itulak ang plunger, saka alisin ang applicator",
+          "ja": "プランジャーを押し込み、その後アプリケーターを抜く"
+        }
+      },
+      {
+        "section": {
+          "zh-TW": "流程 C：清潔塗抹器",
+          "en": "Process C: Clean the applicator",
+          "id": "Langkah C: Bersihkan applicator",
+          "vi": "Quy trình C: Vệ sinh applicator",
+          "th": "ขั้นตอน C: ทำความสะอาด applicator",
+          "tl": "Proseso C: Linisin ang applicator",
+          "ja": "手順C：アプリケーターを洗浄する"
+        },
+        "action": {
+          "zh-TW": "分開推管與容器管後清洗",
+          "en": "Separate the plunger and barrel, then wash them",
+          "id": "Pisahkan plunger dan tabung applicator lalu cuci",
+          "vi": "Tách pít-tông và ống applicator rồi rửa sạch",
+          "th": "แยกก้านดันกับกระบอก applicator แล้วล้าง",
+          "tl": "Paghiwalayin ang plunger at barrel saka hugasan",
+          "ja": "プランジャーと本体を分けて洗う"
+        },
+        "note": {
+          "zh-TW": "用溫水加肥皂清洗，自然陰乾。",
+          "en": "Wash with warm water and soap, then air dry.",
+          "id": "Cuci dengan air hangat dan sabun, lalu keringkan sendiri.",
+          "vi": "Rửa bằng nước ấm và xà phòng, rồi để khô tự nhiên.",
+          "th": "ล้างด้วยน้ำอุ่นและสบู่ แล้วผึ่งให้แห้งเอง",
+          "tl": "Hugasan gamit ang maligamgam na tubig at sabon, saka patuyuin sa hangin.",
+          "ja": "ぬるま湯と石けんで洗い、自然乾燥させます。"
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "zh-TW": "含荷爾蒙（雌激素），使用前告知醫師是否有：乳癌家族史 / 血栓疾病 / 高三酸甘油脂 / 不尋常陰道出血。",
+        "en": "This medicine contains estrogen. Tell your doctor before use if you have a family history of breast cancer, blood clots, high triglycerides, or unusual vaginal bleeding.",
+        "id": "Obat ini mengandung estrogen. Sebelum menggunakan, beri tahu dokter bila Anda punya riwayat keluarga kanker payudara, penyakit pembekuan darah, trigliserida tinggi, atau perdarahan vagina yang tidak biasa.",
+        "vi": "Thuốc này chứa estrogen. Trước khi dùng, hãy báo bác sĩ nếu bạn có tiền sử gia đình ung thư vú, bệnh huyết khối, triglycerid cao hoặc chảy máu âm đạo bất thường.",
+        "th": "ยานี้มีฮอร์โมนเอสโตรเจน ก่อนใช้ให้แจ้งแพทย์หากมีประวัติครอบครัวมะเร็งเต้านม โรคลิ่มเลือด ไตรกลีเซอไรด์สูง หรือมีเลือดออกทางช่องคลอดผิดปกติ",
+        "tl": "May estrogen ang gamot na ito. Sabihin muna sa doktor bago gamitin kung may family history ng breast cancer, sakit sa pamumuo ng dugo, mataas na triglycerides, o hindi pangkaraniwang pagdurugo sa puwerta.",
+        "ja": "この薬にはエストロゲンが含まれます。乳がんの家族歴、血栓症、高トリグリセリド血症、または異常な不正出血がある場合は、使用前に医師へ伝えてください。"
+      },
+      {
+        "zh-TW": "懷孕或哺乳中禁用（除非醫師指示）。",
+        "en": "Do not use during pregnancy or breastfeeding unless your doctor specifically tells you to do so.",
+        "id": "Jangan digunakan saat hamil atau menyusui kecuali dokter secara khusus mengizinkan.",
+        "vi": "Không dùng khi đang mang thai hoặc cho con bú, trừ khi có chỉ định rõ của bác sĩ.",
+        "th": "ห้ามใช้ขณะตั้งครรภ์หรือให้นมบุตร เว้นแต่แพทย์สั่งโดยเฉพาะ",
+        "tl": "Huwag gamitin kung buntis o nagpapasuso maliban kung malinaw na ipinag-utos ng doktor.",
+        "ja": "妊娠中または授乳中は、医師から明確な指示がある場合を除き使用しないでください。"
+      },
+      {
+        "zh-TW": "月經期間可繼續使用。",
+        "en": "You may continue using it during menstruation.",
+        "id": "Obat ini boleh tetap digunakan saat menstruasi.",
+        "vi": "Có thể tiếp tục dùng trong kỳ kinh.",
+        "th": "สามารถใช้ต่อได้ระหว่างมีประจำเดือน",
+        "tl": "Maaaring ipagpatuloy ang paggamit kahit may regla.",
+        "ja": "月経中も継続して使用できます。"
+      },
+      {
+        "zh-TW": "依醫囑長期規律使用，不可自行中斷。",
+        "en": "Use regularly for the long term as directed, and do not stop on your own.",
+        "id": "Gunakan teratur untuk jangka panjang sesuai petunjuk dan jangan berhenti sendiri.",
+        "vi": "Dùng đều đặn lâu dài theo chỉ định, không tự ý ngừng thuốc.",
+        "th": "ใช้สม่ำเสมอระยะยาวตามแพทย์สั่ง ห้ามหยุดยาเอง",
+        "tl": "Gamitin nang regular sa pangmatagalan ayon sa payo ng doktor at huwag ihinto nang kusa.",
+        "ja": "医師の指示に従って長期的に規則正しく使用し、自己判断で中止しないでください。"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/premarin-vaginal-cream"
   },
 
   // ── Placeholder: Steroids cream/ointment/lotion ─────────────────────────────────────,
@@ -4402,78 +5332,429 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/painkyl-buccal-film"
   },
 
-  // ── Placeholder: Vaginal suppositories (policresulen, isoconazole, nystatin) ─────────────────────────────────────,
+  // ── Nystatin + Isogen vaginal tablets ─────────────────────────────────────,
   {
-      "id": "vaginal-suppositories",
-      color: {
-          main: "#534AB7",
-          light: "#EEEDFE",
-          dark: "#26215C",
-          badge: "#AFA9EC",
-          badgeText: "#26215C"
+    "id": "vaginal-suppositories",
+    "category": "supp",
+    "color": {
+      "main": "#534AB7",
+      "light": "#EEEDFE",
+      "dark": "#26215C",
+      "badge": "#AFA9EC",
+      "badgeText": "#26215C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "陰道錠使用方法",
+      "en": "How to use vaginal tablets",
+      "id": "Cara menggunakan tablet vagina",
+      "vi": "Cách dùng viên đặt âm đạo",
+      "th": "วิธีใช้ยาเม็ดสอดช่องคลอด",
+      "tl": "Paraan ng paggamit ng vaginal tablet",
+      "ja": "膣錠の使い方"
+    },
+    "subtitle": {
+      "zh-TW": "您本次使用的藥品（藥師在發藥時圈選）：<br>○ 速淨® 陰道錠（Nystatin 100,000 u）- 念珠菌感染<br>○ 愛膚健® 陰道錠（Isoconazole 100mg）- 念珠菌 / 混合感染",
+      "en": "The medicine you are using this time (circle by pharmacist):<br>○ Nystatin vaginal tablet (100,000 units) - Candida infection<br>○ Isogen vaginal tablet (Isoconazole 100 mg) - Candida or mixed infection",
+      "id": "Obat yang Anda gunakan kali ini (dilingkari apoteker):<br>○ Tablet vagina Nystatin (100.000 unit) - infeksi kandida<br>○ Tablet vagina Isogen (Isoconazole 100 mg) - kandida atau infeksi campuran",
+      "vi": "Thuốc bạn dùng lần này (dược sĩ sẽ khoanh chọn):<br>○ Viên đặt âm đạo Nystatin (100.000 đơn vị) - nhiễm nấm Candida<br>○ Viên đặt âm đạo Isogen (Isoconazole 100 mg) - Candida hoặc nhiễm phối hợp",
+      "th": "ยาที่คุณใช้ครั้งนี้ (เภสัชกรจะวงให้):<br>○ ยาเม็ดสอดช่องคลอด Nystatin 100,000 ยูนิต - ติดเชื้อแคนดิดา<br>○ ยาเม็ดสอดช่องคลอด Isogen (Isoconazole 100 มก.) - แคนดิดาหรือติดเชื้อผสม",
+      "tl": "Gamot na ginagamit mo ngayon (lilinyahan ng parmasyutiko):<br>○ Nystatin vaginal tablet (100,000 units) - impeksiyong Candida<br>○ Isogen vaginal tablet (Isoconazole 100 mg) - Candida o halo-halong impeksiyon",
+      "ja": "今回使用する薬（薬剤師が丸を付けます）:<br>○ Nystatin膣錠（100,000単位）- カンジダ感染<br>○ Isogen膣錠（Isoconazole 100mg）- カンジダまたは混合感染"
+    },
+    "headerBadge": {
+      "zh-TW": "陰道錠",
+      "en": "Vaginal tablet",
+      "id": "Tablet vagina",
+      "vi": "Viên đặt âm đạo",
+      "th": "ยาเม็ดสอดช่องคลอด",
+      "tl": "Vaginal tablet",
+      "ja": "膣錠"
+    },
+    "steps": [
+      {
+        "action": {
+          "zh-TW": "洗手",
+          "en": "Wash hands",
+          "id": "Cuci tangan",
+          "vi": "Rửa tay",
+          "th": "ล้างมือ",
+          "tl": "Maghugas ng kamay",
+          "ja": "手を洗う"
+        },
+        "note": {
+          "zh-TW": "用肥皂和水洗手至少 20 秒。",
+          "en": "Wash with soap and water for at least 20 seconds.",
+          "id": "Cuci tangan dengan sabun dan air setidaknya 20 detik.",
+          "vi": "Rửa tay bằng xà phòng và nước ít nhất 20 giây.",
+          "th": "ล้างมือด้วยสบู่และน้ำอย่างน้อย 20 วินาที",
+          "tl": "Hugasan ang kamay gamit ang sabon at tubig nang hindi bababa sa 20 segundo.",
+          "ja": "石けんと水で少なくとも20秒間、手を洗います。"
+        }
       },
-      emergency: false,
-      name: {
-          "zh-TW": "陰道栓劑（policresulen/isoconazole/nystatin）",
-          "en": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
-          "id": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
-          "vi": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
-          "th": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
-          "tl": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
-          "ja": "Vaginal suppositories (policresulen, isoconazole, nystatin)"
+      {
+        "action": {
+          "zh-TW": "取出藥錠，確認外觀完整",
+          "en": "Remove the tablet and check it is intact",
+          "id": "Keluarkan tablet dan pastikan bentuknya utuh",
+          "vi": "Lấy viên thuốc ra và kiểm tra còn nguyên vẹn",
+          "th": "นำยาเม็ดออกมาและตรวจดูว่าเม็ดยาสมบูรณ์",
+          "tl": "Ilabas ang tableta at tiyaking buo ang itsura nito",
+          "ja": "錠剤を取り出し、形が崩れていないか確認します"
+        },
+        "note": {
+          "zh-TW": "若藥錠太軟，放入冰箱冷藏 30 分鐘後再使用。",
+          "en": "If it feels too soft, refrigerate it for 30 minutes before use.",
+          "id": "Bila tablet terlalu lunak, simpan di lemari es 30 menit sebelum digunakan.",
+          "vi": "Nếu viên thuốc quá mềm, hãy để tủ lạnh 30 phút rồi mới dùng.",
+          "th": "หากยาเม็ดนิ่มเกินไป ให้นำไปแช่ตู้เย็น 30 นาทีก่อนใช้",
+          "tl": "Kung masyadong malambot ang tableta, palamigin muna sa refrigerator nang 30 minuto bago gamitin.",
+          "ja": "錠剤が柔らかすぎる場合は、冷蔵庫で30分ほど冷やしてから使用します。"
+        }
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        "action": {
+          "zh-TW": "仰躺，膝蓋彎曲，雙腿稍微分開",
+          "en": "Lie on your back with knees bent and legs slightly apart",
+          "id": "Berbaring telentang, tekuk lutut, dan buka kaki sedikit",
+          "vi": "Nằm ngửa, co gối và dang nhẹ hai chân",
+          "th": "นอนหงาย งอเข่า และแยกขาเล็กน้อย",
+          "tl": "Humiga nang nakatihaya, ibaluktot ang tuhod, at bahagyang ibuka ang mga binti",
+          "ja": "仰向けになり、膝を曲げ、両脚を少し開きます"
+        },
+        "note": {
+          "zh-TW": "約 2 個指節深\n讓藥錠在體內自然融化，不需取出。",
+          "en": "For both medicines: about two finger-joint depths\nLet the tablet dissolve naturally. Do not remove it.",
+          "id": "Keduanya: sekitar sedalam 2 ruas jari\nBiarkan tablet larut sendiri di dalam. Jangan dikeluarkan.",
+          "vi": "Cả hai thuốc: sâu khoảng 2 đốt ngón tay\nĐể viên thuốc tự tan trong cơ thể, không lấy ra.",
+          "th": "ทั้งสองชนิด: ลึกประมาณ 2 ข้อนิ้ว\nปล่อยให้ยาเม็ดละลายเองในร่างกาย ไม่ต้องนำออก",
+          "tl": "Para sa parehong gamot: humigit-kumulang dalawang kasukasuan ng daliri ang lalim\nHayaan ang tableta na matunaw nang kusa. Huwag alisin.",
+          "ja": "どちらの薬も：指2節分くらいの深さ\n体内で自然に溶けるので、取り出す必要はありません。"
+        }
       },
-      badge: {
-          "zh-TW": "栓劑/陰道用藥",
-          "en": "Suppository/Vaginal",
-          "id": "Supositoria/Vaginal",
-          "vi": "Đặt âm đạo/hậu môn",
-          "th": "ยาเหน็บ/ช่องคลอด",
-          "tl": "Suppository/Vaginal",
-          "ja": "坐剤/膣用薬"
+      {
+        "action": {
+          "zh-TW": "插入後平躺休息，避免立刻走動",
+          "en": "Rest lying down after insertion",
+          "id": "Tetap berbaring setelah memasukkan obat dan jangan langsung berjalan",
+          "vi": "Sau khi đặt thuốc, tiếp tục nằm nghỉ và tránh đi lại ngay",
+          "th": "หลังสอดยาแล้วให้นอนพัก หลีกเลี่ยงการลุกเดินทันที",
+          "tl": "Magpahinga nang nakahiga matapos ipasok at iwasang agad maglakad",
+          "ja": "挿入後は横になって休み、すぐに歩き回らないでください"
+        },
+        "note": {
+          "zh-TW": "建議於睡前使用。可使用生理護墊，不可使用棉條。",
+          "en": "Use at bedtime when possible. You may use a pantyliner, but not a tampon.",
+          "id": "Sebaiknya digunakan sebelum tidur. Boleh memakai pantyliner, tetapi jangan memakai tampon.",
+          "vi": "Nên dùng trước khi đi ngủ. Có thể dùng băng lót hằng ngày, nhưng không dùng tampon.",
+          "th": "แนะนำให้ใช้ก่อนนอน ใช้แผ่นอนามัยแบบบางได้ แต่ห้ามใช้ผ้าอนามัยแบบสอด",
+          "tl": "Mas mabuting gamitin bago matulog. Maaaring gumamit ng pantyliner ngunit huwag tampon.",
+          "ja": "就寝前の使用がおすすめです。おりものシートは使えますが、タンポンは使わないでください。"
+        }
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
+      {
+        "action": {
+          "zh-TW": "再次洗手",
+          "en": "Wash hands again",
+          "id": "Cuci tangan kembali",
+          "vi": "Rửa tay lại",
+          "th": "ล้างมืออีกครั้ง",
+          "tl": "Maghugas muli ng kamay",
+          "ja": "もう一度手を洗う"
+        }
+      }
+    ],
+    "infoBoxes": [
+      {
+        "title": {
+          "zh-TW": "療程",
+          "en": "Treatment course",
+          "id": "Lama terapi",
+          "vi": "Liệu trình",
+          "th": "ระยะการรักษา",
+          "tl": "Tagal ng gamutan",
+          "ja": "治療期間"
+        },
+        "text": {
+          "zh-TW": "· 速淨：依醫師指示（_____ 天，每____使用一次）<br>· 愛膚健：依醫師指示，_____ 天，每天睡前 1 顆，不可自行停藥",
+          "en": "· Nystatin: follow your doctor's instructions (_____ days, use once every ____ )<br>· Isogen: follow your doctor's instructions, _____ days, 1 tablet nightly, do not stop on your own",
+          "id": "· Nystatin: ikuti petunjuk dokter (_____ hari, gunakan sekali setiap ____ )<br>· Isogen: ikuti petunjuk dokter, _____ hari, 1 tablet setiap malam sebelum tidur, jangan berhenti sendiri",
+          "vi": "· Nystatin: dùng theo chỉ định của bác sĩ (_____ ngày, mỗi ____ dùng 1 lần)<br>· Isogen: dùng theo chỉ định, _____ ngày, mỗi tối trước ngủ 1 viên, không tự ý ngừng thuốc",
+          "th": "· Nystatin: ใช้ตามแพทย์สั่ง (_____ วัน ใช้ทุก ____ )<br>· Isogen: ใช้ตามแพทย์สั่ง _____ วัน คืนละ 1 เม็ดก่อนนอน ห้ามหยุดยาเอง",
+          "tl": "· Nystatin: sundin ang utos ng doktor (_____ araw, gamitin minsan bawat ____ )<br>· Isogen: sundin ang utos ng doktor, _____ araw, 1 tableta tuwing bago matulog, huwag tumigil nang mag-isa",
+          "ja": "· Nystatin: 医師の指示に従う（_____日間、____ごとに1回）<br>· Isogen: 医師の指示に従い、_____日間、毎晩就寝前に1錠。自己判断で中止しないでください。"
+        },
+        "tone": {
+          "bg": "#E6F1FB",
+          "border": "#185FA5",
+          "text": "#042C53"
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "zh-TW": "此為外用藥，勿吞服。",
+        "en": "This medicine is for vaginal use only. Do not swallow.",
+        "id": "Obat ini hanya untuk penggunaan vagina. Jangan ditelan.",
+        "vi": "Thuốc này chỉ dùng đặt âm đạo. Không được nuốt.",
+        "th": "ยานี้ใช้สำหรับสอดช่องคลอดเท่านั้น ห้ามกลืน",
+        "tl": "Para sa vaginal use lamang ang gamot na ito. Huwag lunukin.",
+        "ja": "この薬は膣内使用専用です。飲み込まないでください。"
+      },
+      {
+        "zh-TW": "<span class=\"ref-pill-tag\">速淨</span>月經期間應繼續使用，不可中斷。",
+        "en": "<span class=\"ref-pill-tag\">Nystatin</span>Continue using during menstruation. Do not stop.",
+        "id": "<span class=\"ref-pill-tag\">Nystatin</span>Tetap gunakan saat menstruasi. Jangan dihentikan.",
+        "vi": "<span class=\"ref-pill-tag\">Nystatin</span>Tiếp tục dùng trong kỳ kinh, không được ngừng giữa chừng.",
+        "th": "<span class=\"ref-pill-tag\">Nystatin</span>ระหว่างมีประจำเดือนให้ใช้ต่อ ห้ามหยุดยา",
+        "tl": "<span class=\"ref-pill-tag\">Nystatin</span>Ipagpatuloy kahit may regla. Huwag ihinto.",
+        "ja": "<span class=\"ref-pill-tag\">Nystatin</span>月経中も継続して使用し、中断しないでください。"
+      },
+      {
+        "zh-TW": "<span class=\"ref-pill-tag\">愛膚健</span>月經期間不可使用，停用後繼續完成剩餘療程。",
+        "en": "<span class=\"ref-pill-tag\">Isogen</span>Do not use during menstruation. Resume and finish the remaining course afterward.",
+        "id": "<span class=\"ref-pill-tag\">Isogen</span>Jangan digunakan saat menstruasi. Lanjutkan dan selesaikan sisa terapi setelahnya.",
+        "vi": "<span class=\"ref-pill-tag\">Isogen</span>Không dùng trong kỳ kinh. Sau đó tiếp tục và hoàn thành liệu trình còn lại.",
+        "th": "<span class=\"ref-pill-tag\">Isogen</span>ห้ามใช้ระหว่างมีประจำเดือน หลังหมดประจำเดือนให้ใช้ต่อจนครบคอร์ส",
+        "tl": "<span class=\"ref-pill-tag\">Isogen</span>Huwag gamitin habang may regla. Ipagpatuloy at tapusin ang natitirang gamutan pagkatapos.",
+        "ja": "<span class=\"ref-pill-tag\">Isogen</span>月経中は使用せず、終了後に残りの治療を再開して完了してください。"
+      },
+      {
+        "zh-TW": "出現刺激、搔癢加劇或症狀未改善，停藥並回診。",
+        "en": "Stop and return for evaluation if irritation worsens, itching increases, or symptoms do not improve.",
+        "id": "Hentikan dan kembali berobat bila iritasi bertambah, gatal makin berat, atau gejala tidak membaik.",
+        "vi": "Ngừng thuốc và tái khám nếu kích ứng tăng lên, ngứa nặng hơn hoặc triệu chứng không cải thiện.",
+        "th": "หากระคายเคืองมากขึ้น คันมากขึ้น หรืออาการไม่ดีขึ้น ให้หยุดยาและกลับมาพบแพทย์",
+        "tl": "Itigil at bumalik para masuri kung lumala ang iritasyon o pangangati, o kung hindi gumagaling ang sintomas.",
+        "ja": "刺激感やかゆみが強くなる、または症状が改善しない場合は中止して再診してください。"
+      },
+      {
+        "zh-TW": "懷孕或哺乳中，使用前告知醫師。",
+        "en": "Tell your doctor before use if you are pregnant or breastfeeding.",
+        "id": "Beri tahu dokter sebelum menggunakan bila sedang hamil atau menyusui.",
+        "vi": "Nếu đang mang thai hoặc cho con bú, hãy báo bác sĩ trước khi dùng.",
+        "th": "หากตั้งครรภ์หรือให้นมบุตร ให้แจ้งแพทย์ก่อนใช้",
+        "tl": "Sabihin muna sa doktor bago gamitin kung buntis o nagpapasuso.",
+        "ja": "妊娠中または授乳中の場合は、使用前に医師へ伝えてください。"
+      },
+      {
+        "zh-TW": "治療期間避免性行為，或請伴侶使用保險套（防止交叉感染）。",
+        "en": "Avoid sexual intercourse during treatment, or have your partner use condoms to reduce cross-infection.",
+        "id": "Hindari hubungan seksual selama terapi, atau minta pasangan memakai kondom untuk mencegah infeksi silang.",
+        "vi": "Tránh quan hệ tình dục trong thời gian điều trị, hoặc yêu cầu bạn tình dùng bao cao su để giảm lây nhiễm chéo.",
+        "th": "หลีกเลี่ยงการมีเพศสัมพันธ์ระหว่างการรักษา หรือให้คู่นอนใช้ถุงยางอนามัยเพื่อลดการติดเชื้อข้ามกัน",
+        "tl": "Iwasan ang pakikipagtalik habang ginagamot, o gumamit ng condom ang kapareha upang mabawasan ang cross-infection.",
+        "ja": "治療中は性交渉を避けるか、交差感染を防ぐためパートナーにコンドームを使用してもらってください。"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/vaginal-suppositories"
+  },
+
+  // ── Albothyl vaginal suppository ─────────────────────────────────────,
+  {
+    "id": "albothyl-vaginal-suppository",
+    "category": "supp",
+    "color": {
+      "main": "#534AB7",
+      "light": "#EEEDFE",
+      "dark": "#26215C",
+      "badge": "#AFA9EC",
+      "badgeText": "#26215C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "安可治陰道栓劑",
+      "en": "Albothyl vaginal suppository",
+      "id": "Suppositoria vagina Albothyl",
+      "vi": "Viên đặt âm đạo Albothyl",
+      "th": "ยาเหน็บช่องคลอด Albothyl",
+      "tl": "Albothyl vaginal suppository",
+      "ja": "Albothyl膣坐剤"
+    },
+    "subtitle": {
+      "zh-TW": "Albothyl｜Policresulen",
+      "en": "Albothyl | Policresulen",
+      "id": "Albothyl | Policresulen",
+      "vi": "Albothyl | Policresulen",
+      "th": "Albothyl | Policresulen",
+      "tl": "Albothyl | Policresulen",
+      "ja": "Albothyl｜Policresulen"
+    },
+    "usage": {
+      "zh-TW": "治療子宮頸糜爛、陰道炎或白帶時依醫囑使用",
+      "en": "Use as directed for cervical erosion, vaginitis, or discharge",
+      "id": "Gunakan sesuai petunjuk dokter untuk erosi serviks, vaginitis, atau keputihan",
+      "vi": "Dùng theo chỉ định cho lộ tuyến cổ tử cung, viêm âm đạo hoặc khí hư",
+      "th": "ใช้ตามแพทย์สั่งสำหรับปากมดลูกอักเสบ ช่องคลอดอักเสบ หรือ ตกขาว",
+      "tl": "Gamitin ayon sa payo ng doktor para sa cervicitis, vaginitis, o discharge",
+      "ja": "子宮頸部びらん、膣炎、帯下に対して医師の指示で使用"
+    },
+    "headerBadge": {
+      "zh-TW": "陰道栓劑",
+      "en": "Vaginal suppository",
+      "id": "Suppositoria vagina",
+      "vi": "Viên đặt âm đạo",
+      "th": "ยาเหน็บช่องคลอด",
+      "tl": "Vaginal suppository",
+      "ja": "膣坐剤"
+    },
+    "steps": [
+      {
+        "action": {
+          "zh-TW": "洗手",
+          "en": "Wash hands",
+          "id": "Cuci tangan",
+          "vi": "Rửa tay",
+          "th": "ล้างมือ",
+          "tl": "Maghugas ng kamay",
+          "ja": "手を洗う"
+        },
+        "note": {
+          "zh-TW": "用肥皂和水洗手至少 20 秒。",
+          "en": "Wash with soap and water for at least 20 seconds.",
+          "id": "Cuci tangan dengan sabun dan air setidaknya 20 detik.",
+          "vi": "Rửa tay bằng xà phòng và nước ít nhất 20 giây.",
+          "th": "ล้างมือด้วยสบู่และน้ำอย่างน้อย 20 วินาที",
+          "tl": "Hugasan ang kamay gamit ang sabon at tubig nang hindi bababa sa 20 segundo.",
+          "ja": "石けんと水で少なくとも20秒間、手を洗います。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "取出栓劑，確認外觀完整",
+          "en": "Remove the suppository and check it is intact",
+          "id": "Keluarkan suppositoria dan pastikan bentuknya utuh",
+          "vi": "Lấy viên đặt ra và kiểm tra còn nguyên vẹn",
+          "th": "นำยาเหน็บออกมาและตรวจดูว่าเม็ดยาสมบูรณ์",
+          "tl": "Ilabas ang suppository at tiyaking buo ang itsura nito",
+          "ja": "坐剤を取り出し、形が崩れていないか確認します"
+        },
+        "note": {
+          "zh-TW": "若太軟，可先冷藏 30 分鐘後再使用。",
+          "en": "If it feels too soft, refrigerate it for 30 minutes before use.",
+          "id": "Bila terlalu lunak, simpan di lemari es 30 menit sebelum digunakan.",
+          "vi": "Nếu quá mềm, hãy để tủ lạnh 30 phút rồi mới dùng.",
+          "th": "หากนิ่มเกินไป ให้นำไปแช่ตู้เย็น 30 นาทีก่อนใช้",
+          "tl": "Kung masyadong malambot, palamigin muna sa refrigerator nang 30 minuto bago gamitin.",
+          "ja": "柔らかすぎる場合は、冷蔵庫で30分ほど冷やしてから使用します。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "仰躺，膝蓋彎曲，雙腿稍微分開",
+          "en": "Lie on your back with knees bent and legs slightly apart",
+          "id": "Berbaring telentang, tekuk lutut, dan buka kaki sedikit",
+          "vi": "Nằm ngửa, co gối và dang nhẹ hai chân",
+          "th": "นอนหงาย งอเข่า และแยกขาเล็กน้อย",
+          "tl": "Humiga nang nakatihaya, ibaluktot ang tuhod, at bahagyang ibuka ang mga binti",
+          "ja": "仰向けになり、膝を曲げ、両脚を少し開きます"
+        },
+        "note": {
+          "zh-TW": "用食指將栓劑輕推進入陰道，約 1 食指深。",
+          "en": "Gently push the suppository into the vagina with one finger, about one index-finger depth.",
+          "id": "Dorong suppositoria perlahan ke dalam vagina dengan jari, sekitar sedalam 1 jari telunjuk.",
+          "vi": "Dùng ngón trỏ đẩy nhẹ viên đặt vào âm đạo, sâu khoảng 1 ngón tay.",
+          "th": "ใช้นิ้วชี้ดันยาเหน็บเข้าไปในช่องคลอดอย่างเบามือ ลึกประมาณ 1 นิ้วชี้",
+          "tl": "Dahan-dahang itulak ang suppository papasok sa puwerta gamit ang daliri, humigit-kumulang isang hintuturo ang lalim.",
+          "ja": "人差し指で坐剤をやさしく膣内へ押し入れ、深さは人差し指1本分くらいにします。"
+        },
+        "afterBox": {
+          "title": {
+            "zh-TW": "正常反應提醒",
+            "en": "What may happen after use",
+            "id": "Reaksi normal setelah pemakaian",
+            "vi": "Phản ứng có thể gặp sau khi dùng",
+            "th": "อาการที่อาจพบหลังใช้",
+            "tl": "Maaaring mangyari pagkatapos gamitin",
+            "ja": "使用後に起こりうること"
+          },
+          "text": {
+            "zh-TW": "使用安可治後，可能出現白色或黃色組織脫落，這是藥物正常作用，不需驚慌。<br>使用後可穿戴衛生棉護墊，不可使用棉條。",
+            "en": "After Albothyl use, white or yellow tissue discharge may appear. This is a normal medicine effect and does not usually mean danger.<br>You may use a sanitary pad afterward, but do not use a tampon.",
+            "id": "Setelah menggunakan Albothyl, dapat muncul jaringan putih atau kuning yang terlepas. Ini adalah efek obat yang normal dan biasanya tidak berbahaya.<br>Anda boleh memakai pembalut setelahnya, tetapi jangan memakai tampon.",
+            "vi": "Sau khi dùng Albothyl, có thể xuất hiện mô bong màu trắng hoặc vàng. Đây là tác dụng bình thường của thuốc, không cần quá lo lắng.<br>Sau dùng có thể mang băng vệ sinh, nhưng không dùng tampon.",
+            "th": "หลังใช้ Albothyl อาจมีชิ้นเนื้อสีขาวหรือเหลืองหลุดออกมาได้ ซึ่งเป็นผลตามปกติของยา ไม่ต้องตกใจ<br>หลังใช้สามารถใส่ผ้าอนามัยได้ แต่ห้ามใช้ผ้าอนามัยแบบสอด",
+            "tl": "Pagkatapos gumamit ng Albothyl, maaaring may lumabas na puti o dilaw na himaymay. Normal itong epekto ng gamot at hindi kailangang mabahala kaagad.<br>Maaaring gumamit ng sanitary pad pagkatapos, ngunit huwag tampon.",
+            "ja": "Albothyl使用後に白色または黄色の組織片が剥がれ落ちることがありますが、これは薬の正常な作用であり、通常は心配いりません。<br>使用後はナプキンを使用できますが、タンポンは使わないでください。"
+          },
+          "tone": {
+            "bg": "#FAEEDA",
+            "border": "#BA7517",
+            "text": "#633806"
           }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/vaginal-suppositories"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "插入後平躺休息，避免立刻走動",
+          "en": "Rest lying down after insertion",
+          "id": "Tetap berbaring setelah memasukkan obat dan jangan langsung berjalan",
+          "vi": "Sau khi đặt thuốc, tiếp tục nằm nghỉ và tránh đi lại ngay",
+          "th": "หลังสอดยาแล้วให้นอนพัก หลีกเลี่ยงการลุกเดินทันที",
+          "tl": "Magpahinga nang nakahiga matapos ipasok at iwasang agad maglakad",
+          "ja": "挿入後は横になって休み、すぐに歩き回らないでください"
+        },
+        "note": {
+          "zh-TW": "建議於睡前使用。可使用衛生棉護墊，不可使用棉條。",
+          "en": "Use at bedtime when possible. You may use a sanitary pad, but not a tampon.",
+          "id": "Sebaiknya digunakan sebelum tidur. Boleh memakai pembalut, tetapi jangan memakai tampon.",
+          "vi": "Nên dùng trước khi đi ngủ. Có thể dùng băng vệ sinh, nhưng không dùng tampon.",
+          "th": "แนะนำให้ใช้ก่อนนอน ใช้ผ้าอนามัยได้ แต่ห้ามใช้ผ้าอนามัยแบบสอด",
+          "tl": "Mas mabuting gamitin bago matulog. Maaaring gumamit ng sanitary pad ngunit huwag tampon.",
+          "ja": "就寝前の使用がおすすめです。ナプキンは使えますが、タンポンは使わないでください。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "再次洗手",
+          "en": "Wash hands again",
+          "id": "Cuci tangan kembali",
+          "vi": "Rửa tay lại",
+          "th": "ล้างมืออีกครั้ง",
+          "tl": "Maghugas muli ng kamay",
+          "ja": "もう一度手を洗う"
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "zh-TW": "治療期間禁止性行為。",
+        "en": "Do not have sexual intercourse during treatment.",
+        "id": "Jangan melakukan hubungan seksual selama terapi.",
+        "vi": "Không quan hệ tình dục trong thời gian điều trị.",
+        "th": "ห้ามมีเพศสัมพันธ์ระหว่างการรักษา",
+        "tl": "Huwag makipagtalik habang ginagamot.",
+        "ja": "治療中は性交渉をしないでください。"
+      },
+      {
+        "zh-TW": "個人衣物每日更換，並以煮沸方式消毒，避免再感染。",
+        "en": "Change personal underwear daily and disinfect by boiling to reduce reinfection.",
+        "id": "Ganti pakaian dalam setiap hari dan sterilkan dengan direbus untuk mencegah infeksi ulang.",
+        "vi": "Thay đồ lót mỗi ngày và khử khuẩn bằng cách đun sôi để giảm tái nhiễm.",
+        "th": "เปลี่ยนเสื้อผ้าส่วนตัวทุกวัน และต้มฆ่าเชื้อเพื่อลดการติดเชื้อซ้ำ",
+        "tl": "Palitan araw-araw ang damit na panloob at pakuluan para ma-disinfect upang maiwasan ang muling impeksiyon.",
+        "ja": "下着は毎日交換し、煮沸消毒して再感染を防いでください。"
+      },
+      {
+        "zh-TW": "月經期間不應使用；若剛好遇到月經，請先告知醫師。",
+        "en": "This medicine should not be used during menstruation; tell your doctor if your period starts during treatment.",
+        "id": "Obat ini sebaiknya tidak digunakan saat menstruasi; beri tahu dokter bila haid datang saat terapi.",
+        "vi": "Không nên dùng thuốc này trong kỳ kinh; hãy báo bác sĩ nếu có kinh trong thời gian điều trị.",
+        "th": "ไม่ควรใช้ยานี้ระหว่างมีประจำเดือน หากประจำเดือนมาระหว่างการรักษาให้แจ้งแพทย์ก่อน",
+        "tl": "Hindi dapat gamitin sa panahon ng regla; ipaalam muna sa doktor kung datnan ka habang ginagamot.",
+        "ja": "月経中は使用すべきではありません。治療中に月経が来た場合は医師へ伝えてください。"
+      },
+      {
+        "zh-TW": "懷孕或哺乳中先告知醫師。",
+        "en": "Tell your doctor before use if you are pregnant or breastfeeding.",
+        "id": "Beri tahu dokter sebelum menggunakan bila sedang hamil atau menyusui.",
+        "vi": "Nếu đang mang thai hoặc cho con bú, hãy báo bác sĩ trước khi dùng.",
+        "th": "หากตั้งครรภ์หรือให้นมบุตร ให้แจ้งแพทย์ก่อนใช้",
+        "tl": "Sabihin muna sa doktor bago gamitin kung buntis o nagpapasuso.",
+        "ja": "妊娠中または授乳中の場合は、使用前に医師へ伝えてください。"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/albothyl-vaginal-suppository"
   },
 
   // ── Placeholder: Nicorette chewing gum ─────────────────────────────────────,
@@ -5510,6 +6791,956 @@ const MEDICATIONS = [
           }
       ],
       qrUrl: "https://pharmacy.example.com/meds/sindecon-nasal-spray"
+  },
+
+  // ── Placeholder: Insulin Aspart [NovoRapid] ─────────────────────────────────────,
+  {
+      "id": "novorapid",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin Aspart [NovoRapid]",
+          "en": "Insulin Aspart [NovoRapid]",
+          "id": "Insulin Aspart [NovoRapid]",
+          "vi": "Insulin Aspart [NovoRapid]",
+          "th": "Insulin Aspart [NovoRapid]",
+          "tl": "Insulin Aspart [NovoRapid]",
+          "ja": "Insulin Aspart [NovoRapid]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/novorapid"
+  },
+  // ── Placeholder: Insulin Glulisine [Apidra] ─────────────────────────────────────,
+  {
+      "id": "apidra",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin Glulisine [Apidra]",
+          "en": "Insulin Glulisine [Apidra]",
+          "id": "Insulin Glulisine [Apidra]",
+          "vi": "Insulin Glulisine [Apidra]",
+          "th": "Insulin Glulisine [Apidra]",
+          "tl": "Insulin Glulisine [Apidra]",
+          "ja": "Insulin Glulisine [Apidra]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/apidra"
+  },
+  // ── Placeholder: Insulin Aspart/Insulin Aspart Protamine 30%/70% [NovoMix 30] ─────────────────────────────────────,
+  {
+      "id": "novomix-30",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin Aspart/Insulin Aspart Protamine 30%/70% [NovoMix 30]",
+          "en": "Insulin Aspart/Insulin Aspart Protamine 30%/70% [NovoMix 30]",
+          "id": "Insulin Aspart/Insulin Aspart Protamine 30%/70% [NovoMix 30]",
+          "vi": "Insulin Aspart/Insulin Aspart Protamine 30%/70% [NovoMix 30]",
+          "th": "Insulin Aspart/Insulin Aspart Protamine 30%/70% [NovoMix 30]",
+          "tl": "Insulin Aspart/Insulin Aspart Protamine 30%/70% [NovoMix 30]",
+          "ja": "Insulin Aspart/Insulin Aspart Protamine 30%/70% [NovoMix 30]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/novomix-30"
+  },
+  // ── Placeholder: Insulin Lispro/Insulin Lispro Protamine 50%/50% [Humalog mix50] ─────────────────────────────────────,
+  {
+      "id": "humalog-mix50",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin Lispro/Insulin Lispro Protamine 50%/50% [Humalog mix50]",
+          "en": "Insulin Lispro/Insulin Lispro Protamine 50%/50% [Humalog mix50]",
+          "id": "Insulin Lispro/Insulin Lispro Protamine 50%/50% [Humalog mix50]",
+          "vi": "Insulin Lispro/Insulin Lispro Protamine 50%/50% [Humalog mix50]",
+          "th": "Insulin Lispro/Insulin Lispro Protamine 50%/50% [Humalog mix50]",
+          "tl": "Insulin Lispro/Insulin Lispro Protamine 50%/50% [Humalog mix50]",
+          "ja": "Insulin Lispro/Insulin Lispro Protamine 50%/50% [Humalog mix50]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/humalog-mix50"
+  },
+  // ── Placeholder: Insulin Aspart/Insulin degludec [Ryzodeg] ─────────────────────────────────────,
+  {
+      "id": "ryzodeg",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin Aspart/Insulin degludec [Ryzodeg]",
+          "en": "Insulin Aspart/Insulin degludec [Ryzodeg]",
+          "id": "Insulin Aspart/Insulin degludec [Ryzodeg]",
+          "vi": "Insulin Aspart/Insulin degludec [Ryzodeg]",
+          "th": "Insulin Aspart/Insulin degludec [Ryzodeg]",
+          "tl": "Insulin Aspart/Insulin degludec [Ryzodeg]",
+          "ja": "Insulin Aspart/Insulin degludec [Ryzodeg]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/ryzodeg"
+  },
+  // ── Placeholder: Insulin detemir [Levemir] ─────────────────────────────────────,
+  {
+      "id": "levemir",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin detemir [Levemir]",
+          "en": "Insulin detemir [Levemir]",
+          "id": "Insulin detemir [Levemir]",
+          "vi": "Insulin detemir [Levemir]",
+          "th": "Insulin detemir [Levemir]",
+          "tl": "Insulin detemir [Levemir]",
+          "ja": "Insulin detemir [Levemir]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/levemir"
+  },
+  // ── Placeholder: Insulin Glargine Inj 450IU/1.5ml [Toujeo] ─────────────────────────────────────,
+  {
+      "id": "toujeo",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin Glargine Inj 450IU/1.5ml [Toujeo]",
+          "en": "Insulin Glargine Inj 450IU/1.5ml [Toujeo]",
+          "id": "Insulin Glargine Inj 450IU/1.5ml [Toujeo]",
+          "vi": "Insulin Glargine Inj 450IU/1.5ml [Toujeo]",
+          "th": "Insulin Glargine Inj 450IU/1.5ml [Toujeo]",
+          "tl": "Insulin Glargine Inj 450IU/1.5ml [Toujeo]",
+          "ja": "Insulin Glargine Inj 450IU/1.5ml [Toujeo]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/toujeo"
+  },
+  // ── Placeholder: Insulin degludec [Tresiba] ─────────────────────────────────────,
+  {
+      "id": "tresiba",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin degludec [Tresiba]",
+          "en": "Insulin degludec [Tresiba]",
+          "id": "Insulin degludec [Tresiba]",
+          "vi": "Insulin degludec [Tresiba]",
+          "th": "Insulin degludec [Tresiba]",
+          "tl": "Insulin degludec [Tresiba]",
+          "ja": "Insulin degludec [Tresiba]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/tresiba"
+  },
+  // ── Placeholder: Liraglutide [Victoza] ─────────────────────────────────────,
+  {
+      "id": "victoza",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Liraglutide [Victoza]",
+          "en": "Liraglutide [Victoza]",
+          "id": "Liraglutide [Victoza]",
+          "vi": "Liraglutide [Victoza]",
+          "th": "Liraglutide [Victoza]",
+          "tl": "Liraglutide [Victoza]",
+          "ja": "Liraglutide [Victoza]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/victoza"
+  },
+  // ── Placeholder: Dulaglutide [Trulicity] ─────────────────────────────────────,
+  {
+      "id": "trulicity",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Dulaglutide [Trulicity]",
+          "en": "Dulaglutide [Trulicity]",
+          "id": "Dulaglutide [Trulicity]",
+          "vi": "Dulaglutide [Trulicity]",
+          "th": "Dulaglutide [Trulicity]",
+          "tl": "Dulaglutide [Trulicity]",
+          "ja": "Dulaglutide [Trulicity]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/trulicity"
+  },
+  // ── Placeholder: Semaglutide [Ozempic] ─────────────────────────────────────,
+  {
+      "id": "ozempic",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Semaglutide [Ozempic]",
+          "en": "Semaglutide [Ozempic]",
+          "id": "Semaglutide [Ozempic]",
+          "vi": "Semaglutide [Ozempic]",
+          "th": "Semaglutide [Ozempic]",
+          "tl": "Semaglutide [Ozempic]",
+          "ja": "Semaglutide [Ozempic]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/ozempic"
+  },
+  // ── Placeholder: Tirzepatide [Mounjaro] ─────────────────────────────────────,
+  {
+      "id": "mounjaro",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Tirzepatide [Mounjaro]",
+          "en": "Tirzepatide [Mounjaro]",
+          "id": "Tirzepatide [Mounjaro]",
+          "vi": "Tirzepatide [Mounjaro]",
+          "th": "Tirzepatide [Mounjaro]",
+          "tl": "Tirzepatide [Mounjaro]",
+          "ja": "Tirzepatide [Mounjaro]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/mounjaro"
+  },
+  // ── Placeholder: Insulin glargine / lixisenatide [Soliqua] ─────────────────────────────────────,
+  {
+      "id": "soliqua",
+      color: {
+          main: "#854F0B",
+          light: "#FAEEDA",
+          dark: "#633806",
+          badge: "#F3D3A1",
+          badgeText: "#633806"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "Insulin glargine / lixisenatide [Soliqua]",
+          "en": "Insulin glargine / lixisenatide [Soliqua]",
+          "id": "Insulin glargine / lixisenatide [Soliqua]",
+          "vi": "Insulin glargine / lixisenatide [Soliqua]",
+          "th": "Insulin glargine / lixisenatide [Soliqua]",
+          "tl": "Insulin glargine / lixisenatide [Soliqua]",
+          "ja": "Insulin glargine / lixisenatide [Soliqua]"
+      },
+      subtitle: {
+          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
+          "en": "Pending update: pharmacist will add full instructions",
+          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
+          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
+          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
+          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
+          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      },
+      badge: {
+          "zh-TW": "注射劑",
+          "en": "Injection",
+          "id": "Injeksi",
+          "vi": "Thuốc tiêm",
+          "th": "ยาฉีด",
+          "tl": "Injection",
+          "ja": "注射剤"
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "內容待填寫",
+                  "en": "Content pending",
+                  "id": "Konten menunggu pengisian",
+                  "vi": "Nội dung chờ cập nhật",
+                  "th": "เนื้อหายังไม่กรอก",
+                  "tl": "Naghihintay ng nilalaman",
+                  "ja": "内容は未入力です"
+              },
+              note: {
+                  "zh-TW": "請依院內最新版衛教內容補上步驟",
+                  "en": "Please fill this step using the latest in-house guidance",
+                  "id": "Isi langkah ini sesuai panduan terbaru internal",
+                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
+                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
+                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
+                  "ja": "院内の最新版手順に沿って入力してください"
+              }
+          }
+      ],
+      warnings: [
+          {
+              "zh-TW": "注意事項待填寫",
+              "en": "Warning content pending",
+              "id": "Peringatan menunggu pengisian",
+              "vi": "Nội dung cảnh báo chờ cập nhật",
+              "th": "คำเตือนยังไม่กรอก",
+              "tl": "Naghihintay ng babala",
+              "ja": "注意事項は未入力です"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/soliqua"
   }
 
 ]; // end MEDICATIONS
@@ -5724,6 +7955,128 @@ function setAccent(c) {
   document.documentElement.style.setProperty("--acc-dark",  c.dark);
 }
 
+function renderReferenceInfoBox(box, fallbackTone, localize) {
+  if (!box) return "";
+  const tone = box.tone || {};
+  const bg = tone.bg || fallbackTone.bg;
+  const border = tone.border || fallbackTone.border;
+  const textColor = tone.text || fallbackTone.text;
+  const title = localize(box.title);
+  const text = localize(box.text);
+  if (!title && !text) return "";
+  return `<div class="ref-ntg-infobox" style="background:${bg};border-color:${border}">
+    ${title ? `<div class="ref-ntg-infobox-title" style="color:${textColor}">${title}</div>` : ""}
+    ${text ? `<div class="ref-ntg-infobox-text" style="color:${textColor}">${text}</div>` : ""}
+  </div>`;
+}
+
+function renderReferenceSheet(m, c, t, ui, localize) {
+  const emergencyText = localize(m.emergencyLabel) || ui("emergency");
+  const headerBadgeText = localize(m.headerBadge);
+  const now = new Date();
+  const preparedMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+
+  let lastSection = "";
+  const stepsHtml = (m.steps || []).map((s, i) => {
+    const isHL = s.highlight ? " hl" : "";
+    let illSrc = "";
+    let illAlt = uiText("illustration");
+
+    if (typeof s.illustration === "string") {
+      illSrc = s.illustration;
+    } else if (s.illustration && typeof s.illustration === "object") {
+      illSrc = s.illustration.src || "";
+      if (s.illustration.alt) illAlt = s.illustration.alt[lang] || s.illustration.alt.en || illAlt;
+    }
+
+    const illHtml = illSrc
+      ? `<img src="${escapeHtml(illSrc)}" alt="${escapeHtml(illAlt)}" loading="lazy" decoding="async">`
+      : `<span class="ref-ntg-step-ill-label">${uiText("illustration")}</span>`;
+
+    const sectionText = localize(s.section);
+    const sectionHtml = sectionText && sectionText !== lastSection
+      ? `<div class="ref-ntg-step-section">${sectionText}</div>`
+      : "";
+    if (sectionText) lastSection = sectionText;
+
+    const afterBoxHtml = s.afterBox
+      ? renderReferenceInfoBox(
+          s.afterBox,
+          { bg: "#FAEEDA", border: "#BA7517", text: "#633806" },
+          localize
+        )
+      : "";
+
+    return `${sectionHtml}<div class="ref-ntg-step${isHL}">
+      <div class="ref-ntg-step-num" style="background:${c.main}">${i + 1}</div>
+      <div class="ref-ntg-step-body">
+        <div class="ref-ntg-step-action">${localize(s.action)}</div>
+        ${s.note ? `<div class="ref-ntg-step-note">${localize(s.note)}</div>` : ""}
+      </div>
+      <div class="ref-ntg-step-ill">${illHtml}</div>
+    </div>${afterBoxHtml}`;
+  }).join("");
+
+  const preStepsHtml = renderReferenceInfoBox(
+    m.preStepsInfo,
+    { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+    localize
+  );
+
+  const infoBoxesHtml = (m.infoBoxes || []).map((box) =>
+    renderReferenceInfoBox(box, { bg: c.light, border: c.main, text: c.dark }, localize)
+  ).join("");
+  const infoGroupHtml = infoBoxesHtml ? `<div class="ref-ntg-info-group">${infoBoxesHtml}</div>` : "";
+
+  const storageHtml = renderReferenceInfoBox(
+    m.storage,
+    { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+    localize
+  );
+
+  const warnHtml = (m.warnings || []).map((w) => {
+    const text = localize(w);
+    if (!text) return "";
+    const isHL = typeof w === "object" && !!w.highlight ? " is-hl" : "";
+    return `<div class="ref-ntg-warn-item${isHL}"><span class="ref-ntg-warn-bullet">•</span><span>${text}</span></div>`;
+  }).join("");
+
+  return `
+    <div class="ref-ntg-band" style="background:${c.main}"></div>
+    <div class="ref-ntg-header" style="background:${c.light}">
+      <div class="ref-ntg-header-row">
+        <div class="ref-ntg-header-left">
+          <div class="ref-ntg-name" style="color:${c.dark}">${t("name")}</div>
+          ${t("subtitle") ? `<div class="ref-ntg-sub">${t("subtitle")}</div>` : ""}
+          ${m.usage ? `<div class="ref-ntg-usage">${t("usage")}</div>` : ""}
+        </div>
+        <div class="ref-ntg-badges">
+          ${m.emergency
+            ? `<div class="ref-ntg-badge ref-ntg-badge-emrg">${emergencyText}</div>`
+            : (headerBadgeText ? `<div class="ref-ntg-badge ref-ntg-badge-top" style="background:${c.main};color:#fff">${headerBadgeText}</div>` : "")}
+          ${t("badge") ? `<div class="ref-ntg-badge" style="background:${c.badge};color:${c.badgeText}">${t("badge")}</div>` : ""}
+        </div>
+      </div>
+    </div>
+    <hr class="ref-ntg-hr">
+    ${preStepsHtml}
+    <div class="ref-ntg-steps">${stepsHtml}</div>
+    ${infoGroupHtml}
+    ${storageHtml}
+    <div class="ref-ntg-warn" style="background:#FAEEDA;border-color:#BA7517">
+      ${warnHtml}
+    </div>
+    <div class="ref-ntg-footer">
+      <div class="ref-ntg-footer-info">
+        <div class="ref-ntg-footer-top">○○ ${ui("pharmacy")} &nbsp; Tel: 02-XXXX-XXXX &nbsp; ${ui("prepared")}: ${preparedMonth}</div>
+        <div>${ui("scan")}</div>
+      </div>
+      <div class="ref-ntg-footer-qr">
+        <div id="qr-target"></div>
+      </div>
+    </div>`;
+}
+
 // ============================================================
 // RENDER SHEET
 // ============================================================
@@ -5732,6 +8085,11 @@ function render() {
   const c  = m.color;
   const t  = k => (m[k] && (m[k][lang] || m[k]["en"])) || "";
   const ui = k => UI[k][lang] || UI[k]["en"];
+  const localize = (value) => {
+    if (!value) return "";
+    if (typeof value === "string") return value;
+    return value[lang] || value["en"] || "";
+  };
 
   // Steps HTML (left 8-column text + right 4-column illustration)
   const stepsHtml = m.steps.map((s, i) => {
@@ -5754,63 +8112,64 @@ function render() {
       <div class="step-left">
         <div class="step-num" style="background:${c.main}">${i+1}</div>
         <div class="step-body">
-          <div class="step-action">${s.action[lang] || s.action["en"]}</div>
-          ${s.note ? `<div class="step-note">${s.note[lang] || s.note["en"]}</div>` : ""}
+          <div class="step-action">${localize(s.action)}</div>
+          ${s.note ? `<div class="step-note">${localize(s.note)}</div>` : ""}
         </div>
       </div>
       <div class="step-ill">${illHtml}</div>
     </div>`;
   }).join("");
 
-  // Storage box (NTG only)
-  const storageHtml = m.storage ? `
-    <div class="s-infobox" style="background:${c.light};border-color:${c.main}">
-      <div class="s-infobox-title" style="color:${c.dark}">${m.storage.title[lang] || m.storage.title["en"]}</div>
-      <div class="s-infobox-text"  style="color:${c.dark}">${m.storage.text[lang]  || m.storage.text["en"]}</div>
-    </div>` : "";
+  const renderInfoBox = (box, fallbackTone) => {
+    if (!box) return "";
+    const tone = box.tone || {};
+    const bg = tone.bg || fallbackTone.bg;
+    const border = tone.border || fallbackTone.border;
+    const textColor = tone.text || fallbackTone.text;
+    const title = localize(box.title);
+    const text = localize(box.text);
+    if (!title && !text) return "";
+    return `<div class="s-infobox" style="background:${bg};border-color:${border}">
+      ${title ? `<div class="s-infobox-title" style="color:${textColor}">${title}</div>` : ""}
+      ${text ? `<div class="s-infobox-text" style="color:${textColor}">${text}</div>` : ""}
+    </div>`;
+  };
 
-  // Warnings HTML
-  const warnHtml = (m.warnings || []).slice(0, 2).map(w =>
-    `<div class="s-warn-item">${w[lang] || w["en"]}</div>`
+  const preStepsHtml = renderInfoBox(
+    m.preStepsInfo,
+    { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" }
+  );
+
+  const infoBoxesHtml = (m.infoBoxes || []).map((box) =>
+    renderInfoBox(box, { bg: c.light, border: c.main, text: c.dark })
   ).join("");
 
+  // Storage box (legacy + optional)
+  const storageHtml = renderInfoBox(
+    m.storage,
+    { bg: c.light, border: c.main, text: c.dark }
+  );
+
+  // Warnings HTML
+  const warnHtml = (m.warnings || []).map((w) => {
+    const text = localize(w);
+    if (!text) return "";
+    const isHL = typeof w === "object" && !!w.highlight;
+    return `<div class="s-warn-item${isHL ? " is-hl" : ""}">${text}</div>`;
+  }).join("");
+
   // Emergency badge
+  const emergencyText = localize(m.emergencyLabel) || ui("emergency");
   const emergBadge = m.emergency
-    ? `<div class="badge-emrg">${ui("emergency")}</div>` : "";
+    ? `<div class="badge-emrg">${emergencyText}</div>` : "";
+  const subtitleEmStyle = (!m.usage && m.emergency) ? `color:${c.main};font-weight:700;` : "";
+  const usageEmStyle = (m.usage && m.emergency) ? `color:${c.main};font-weight:700;` : "";
 
-  const today = new Date().toLocaleDateString("zh-TW", {year:"numeric",month:"2-digit",day:"2-digit"});
-
-  document.getElementById("sheet").innerHTML = `
-    <div class="s-band" style="background:${c.main}"></div>
-    <div class="s-header" style="background:${c.light}">
-      <div class="s-header-row">
-        <div class="s-header-left">
-          <div class="s-name" style="color:${c.dark}">${t("name")}</div>
-          <div class="s-sub">${t("subtitle")}</div>
-        </div>
-        <div class="s-badges">
-          ${emergBadge}
-          <div class="badge-type" style="background:${c.badge};color:${c.badgeText}">${t("badge")}</div>
-        </div>
-      </div>
-    </div>
-    <hr class="s-hr">
-    <div class="s-steps">${stepsHtml}</div>
-    ${storageHtml}
-    <div class="s-warn" style="background:#FAEEDA;border-color:#BA7517">
-      ${warnHtml}
-    </div>
-    <div class="s-footer">
-      <div class="s-footer-info">
-        <div style="font-weight:500;font-size:9px;color:#555">${ui("pharmacy")}</div>
-        <div>○○ ${ui("pharmacy")} &nbsp; Tel: 02-XXXX-XXXX</div>
-        <div>${ui("prepared")}: ${today}</div>
-      </div>
-      <div class="s-footer-qr">
-        <div id="qr-target"></div>
-        <div class="s-footer-qr-label">${ui("scan")}</div>
-      </div>
-    </div>`;
+  const sheet = document.getElementById("sheet");
+  sheet.className = `sheet ref-nitrostat${lang === "zh-TW" ? "" : " is-compact"}`;
+  sheet.dataset.med = m.id;
+  sheet.dataset.category = m.category || "";
+  sheet.innerHTML = renderReferenceSheet(m, c, t, ui, localize);
 
   generateQR(m.qrUrl + "?lang=" + lang);
   document.getElementById("ui-print").textContent = ui("print");
