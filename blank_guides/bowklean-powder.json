@@ -1,0 +1,65 @@
+{
+  "id": "bowklean-powder",
+  "category": "powder",
+  "name": {
+    "zh-TW": "Bowklean Powder（腸鏡清腸）",
+    "en": "Bowklean Powder for colonoscopy bowel preparation",
+    "id": "Bowklean Powder for colonoscopy bowel preparation",
+    "vi": "Bowklean Powder for colonoscopy bowel preparation",
+    "th": "Bowklean Powder for colonoscopy bowel preparation",
+    "tl": "Bowklean Powder for colonoscopy bowel preparation",
+    "ja": "Bowklean Powder for colonoscopy bowel preparation"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "粉劑/泡製",
+    "en": "Powder/Reconstitution",
+    "id": "Serbuk",
+    "vi": "Thuốc bột",
+    "th": "ยาผง",
+    "tl": "Powder/Reconstitution",
+    "ja": "粉末剤"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/bowklean-powder"
+}

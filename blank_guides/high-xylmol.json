@@ -1,0 +1,65 @@
+{
+  "id": "high-xylmol",
+  "category": "topical",
+  "name": {
+    "zh-TW": "High-Xylmol",
+    "en": "High-Xylmol (lidocaine + phenylephrine + betamethasone)",
+    "id": "High-Xylmol (lidocaine + phenylephrine + betamethasone)",
+    "vi": "High-Xylmol (lidocaine + phenylephrine + betamethasone)",
+    "th": "High-Xylmol (lidocaine + phenylephrine + betamethasone)",
+    "tl": "High-Xylmol (lidocaine + phenylephrine + betamethasone)",
+    "ja": "High-Xylmol (lidocaine + phenylephrine + betamethasone)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/high-xylmol"
+}

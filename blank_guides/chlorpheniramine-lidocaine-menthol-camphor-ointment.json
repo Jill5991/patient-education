@@ -1,0 +1,65 @@
+{
+  "id": "chlorpheniramine-lidocaine-menthol-camphor-ointment",
+  "category": "topical",
+  "name": {
+    "zh-TW": "複方止癢止痛軟膏（chlorpheniramine/lidocaine/menthol/camphor）",
+    "en": "Chlorpheniramine, lidocaine, menthol, camphor ointment",
+    "id": "Chlorpheniramine, lidocaine, menthol, camphor ointment",
+    "vi": "Chlorpheniramine, lidocaine, menthol, camphor ointment",
+    "th": "Chlorpheniramine, lidocaine, menthol, camphor ointment",
+    "tl": "Chlorpheniramine, lidocaine, menthol, camphor ointment",
+    "ja": "Chlorpheniramine, lidocaine, menthol, camphor ointment"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/chlorpheniramine-lidocaine-menthol-camphor-ointment"
+}

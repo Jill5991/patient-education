@@ -1,0 +1,65 @@
+{
+  "id": "seretide-250",
+  "category": "inhaler",
+  "name": {
+    "zh-TW": "Seretide 250",
+    "en": "Seretide 250",
+    "id": "Seretide 250",
+    "vi": "Seretide 250",
+    "th": "Seretide 250",
+    "tl": "Seretide 250",
+    "ja": "Seretide 250"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "吸入劑",
+    "en": "Inhaler",
+    "id": "Inhaler",
+    "vi": "Thuốc hít",
+    "th": "ยาสูดพ่น",
+    "tl": "Inhaler",
+    "ja": "吸入薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/seretide-250"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "fentanyl-patch",
+  "category": "topical",
+  "name": {
+    "zh-TW": "Fentanyl patch",
+    "en": "Fentanyl patch",
+    "id": "Fentanyl patch",
+    "vi": "Fentanyl patch",
+    "th": "Fentanyl patch",
+    "tl": "Fentanyl patch",
+    "ja": "Fentanyl patch"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/fentanyl-patch"
+}

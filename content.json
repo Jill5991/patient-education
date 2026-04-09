@@ -1,0 +1,112 @@
+{
+  "_comment": "content.json — 藥品內容資料。此檔為 Claude Code 的結構參考。實際資料嵌入於 index.html 的 MEDICATIONS 陣列中。如需新增藥品，先在此檔撰寫草稿，確認後複製進 index.html。",
+  "_version": "1.0",
+  "_languages": ["zh-TW", "en", "id", "vi", "th", "tl", "ja"],
+
+  "schema": {
+    "medication": {
+      "id":        "string — 英文小寫 ID，用於 QR URL",
+      "color":     "object — { main, light, dark, badge, badgeText }",
+      "emergency": "boolean — true 顯示紅色緊急標籤",
+      "name":      "i18n — 藥品名稱",
+      "subtitle":  "i18n — 副標題（使用說明簡述）",
+      "badge":     "i18n — 劑型短標籤（如：吸入劑）",
+      "steps":     "array of step — 最多 8 步",
+      "storage":   "object (optional) — { title: i18n, text: i18n }",
+      "warnings":  "array of i18n — 2–3 條",
+      "qrUrl":     "string — QR code 連結（系統自動附加 ?lang=xx）"
+    },
+    "step": {
+      "action":    "i18n — 動詞開頭，≤20字，必填",
+      "note":      "i18n — 補充說明，≤20字，可選",
+      "highlight": "boolean (optional) — true 顯示紅底，用於緊急步驟"
+    },
+    "i18n": {
+      "zh-TW": "繁體中文",
+      "en":    "English",
+      "id":    "Bahasa Indonesia",
+      "vi":    "Tiếng Việt",
+      "th":    "ภาษาไทย",
+      "tl":    "Filipino (Tagalog)",
+      "ja":    "日本語"
+    }
+  },
+
+  "colorPalette": [
+    { "category": "吸入劑 / 抗生素泡製", "main": "#0F6E56", "light": "#E1F5EE", "dark": "#04342C", "badge": "#9FE1CB", "badgeText": "#04342C" },
+    { "category": "NTG 舌下錠",          "main": "#993C1D", "light": "#FAECE7", "dark": "#4A1B0C", "badge": "#F5C4B3", "badgeText": "#4A1B0C" },
+    { "category": "外用藥 / 貼片",        "main": "#3B6D11", "light": "#EAF3DE", "dark": "#173404", "badge": "#C0DD97", "badgeText": "#173404" },
+    { "category": "眼藥水 / 耳藥",        "main": "#185FA5", "light": "#E6F1FB", "dark": "#042C53", "badge": "#B5D4F4", "badgeText": "#042C53" },
+    { "category": "栓劑（陰道 / 肛門）",  "main": "#534AB7", "light": "#EEEDFE", "dark": "#26215C", "badge": "#AFA9EC", "badgeText": "#26215C" },
+    { "category": "皮下注射劑",           "main": "#854F0B", "light": "#FAEEDA", "dark": "#412402", "badge": "#FAC775", "badgeText": "#412402" },
+    { "category": "戒菸用藥",             "main": "#27500A", "light": "#EAF3DE", "dark": "#173404", "badge": "#97C459", "badgeText": "#173404" }
+  ],
+
+  "medications": [
+    {
+      "id": "mdi",
+      "category": "吸入劑",
+      "color": { "main": "#0F6E56", "light": "#E1F5EE", "dark": "#04342C", "badge": "#9FE1CB", "badgeText": "#04342C" },
+      "emergency": false,
+      "name": {
+        "zh-TW": "定量噴霧吸入劑（MDI）", "en": "Metered-Dose Inhaler (MDI)",
+        "id": "Inhaler Dosis Terukur (MDI)", "vi": "Thuốc Hít Định Liều (MDI)",
+        "th": "ยาสูดพ่นชนิดกำหนดขนาด (MDI)", "tl": "Metered-Dose Inhaler (MDI)", "ja": "定量噴霧式吸入器（MDI）"
+      },
+      "subtitle": {
+        "zh-TW": "請依步驟正確使用", "en": "Follow these steps carefully",
+        "id": "Ikuti langkah-langkah ini", "vi": "Làm theo từng bước dưới đây",
+        "th": "กรุณาทำตามขั้นตอนอย่างถูกต้อง", "tl": "Sundin ang mga hakbang nang maayos", "ja": "手順に従って正しく使用してください"
+      },
+      "badge": {
+        "zh-TW": "吸入劑", "en": "Inhaler", "id": "Inhaler", "vi": "Thuốc hít",
+        "th": "ยาสูดพ่น", "tl": "Inhaler", "ja": "吸入薬"
+      },
+      "steps": [
+        {
+          "action": { "zh-TW": "搖動吸入器 10 次", "en": "Shake inhaler 10 times", "id": "Kocok inhaler 10 kali", "vi": "Lắc ống hít 10 lần", "th": "เขย่าอุปกรณ์สูดพ่น 10 ครั้ง", "tl": "Igulong ang inhaler ng 10 beses", "ja": "吸入器を10回振る" },
+          "note":   { "zh-TW": "直立握住，用力上下搖動", "en": "Hold upright and shake vigorously", "id": "Pegang tegak dan kocok dengan kuat", "vi": "Cầm thẳng đứng và lắc mạnh", "th": "ถือตั้งตรงและเขย่าแรง ๆ", "tl": "Hawakan nang tuwid at igulong nang maigting", "ja": "縦に持ち、力強く振る" }
+        },
+        {
+          "action": { "zh-TW": "移除吸嘴蓋，呼氣至底", "en": "Remove cap, exhale fully", "id": "Buka tutup mulut, hembuskan napas sepenuhnya", "vi": "Mở nắp, thở ra hết", "th": "เปิดฝาครอบปากดูด หายใจออกให้หมด", "tl": "Alisin ang takip, huminga palabas nang buo", "ja": "キャップを外し、息を吐き切る" },
+          "note":   { "zh-TW": "盡量呼出肺中的空氣", "en": "Breathe out as much air as possible", "id": "Keluarkan udara dari paru-paru sebanyak mungkin", "vi": "Thở ra càng nhiều không khí càng tốt", "th": "หายใจออกให้มากที่สุดเท่าที่ทำได้", "tl": "Ilabas ang lahat ng hangin sa baga", "ja": "肺の空気をできるだけ全て吐き出す" }
+        },
+        {
+          "action": { "zh-TW": "嘴唇密合吸嘴，緩慢吸氣 4 秒", "en": "Seal lips, inhale slowly for 4 seconds", "id": "Rapatkan bibir, hirup perlahan 4 detik", "vi": "Áp môi vào miệng hít, hít vào chậm 4 giây", "th": "ประกบริมฝีปากที่ปากดูด สูดช้า ๆ 4 วินาที", "tl": "Ikapit ang labi, huminga nang dahan-dahan sa 4 segundo", "ja": "口をマウスピースに密着させ、4秒かけてゆっくり吸う" },
+          "note":   { "zh-TW": "同時按下壓嘴，深深吸入", "en": "Press the canister while inhaling deeply", "id": "Tekan kanister sambil menghirup dalam-dalam", "vi": "Nhấn bình thuốc trong khi hít sâu", "th": "กดกระป๋องพร้อมสูดหายใจเข้าลึก ๆ", "tl": "Pindutin ang canister habang humihinga nang malalim", "ja": "吸いながらボンベを押す" }
+        },
+        {
+          "action": { "zh-TW": "移開吸嘴，閉嘴屏氣 10 秒", "en": "Remove inhaler, hold breath 10 seconds", "id": "Angkat inhaler, tahan napas 10 detik", "vi": "Rút ống hít ra, nín thở 10 giây", "th": "นำอุปกรณ์ออก กลั้นหายใจ 10 วินาที", "tl": "Alisin ang inhaler, pigilin ang hininga ng 10 segundo", "ja": "吸入器を外し、10秒間息を止める" },
+          "note":   { "zh-TW": "讓藥物充分沉積於肺部", "en": "Allows medicine to settle in the lungs", "id": "Memberi waktu obat menyerap ke paru-paru", "vi": "Để thuốc lắng đọng vào phổi", "th": "เพื่อให้ยาตกตะกอนในปอด", "tl": "Para makapasok ang gamot sa baga", "ja": "薬が肺に沈着するのを助ける" }
+        },
+        {
+          "action": { "zh-TW": "慢慢由鼻呼氣", "en": "Exhale slowly through your nose", "id": "Hembuskan napas perlahan melalui hidung", "vi": "Thở ra chậm qua mũi", "th": "หายใจออกช้า ๆ ทางจมูก", "tl": "Huminga palabas nang dahan-dahan sa ilong", "ja": "鼻からゆっくり息を吐く" },
+          "note":   { "zh-TW": "如需第二吸，等待 30–60 秒後重複步驟 1", "en": "Wait 30–60 sec before a second puff", "id": "Tunggu 30–60 detik sebelum hirupan kedua", "vi": "Chờ 30–60 giây trước khi hít lần hai", "th": "รอ 30–60 วินาที ก่อนสูดพ่นครั้งที่สอง", "tl": "Maghintay ng 30–60 segundo bago ang ikalawang puff", "ja": "2回目の吸入前に30〜60秒待つ" }
+        },
+        {
+          "action": { "zh-TW": "使用後清水漱口，吐掉", "en": "Rinse mouth with water and spit", "id": "Berkumur dengan air bersih lalu buang", "vi": "Súc miệng bằng nước sạch rồi nhổ ra", "th": "บ้วนปากด้วยน้ำสะอาดแล้วบ้วนทิ้ง", "tl": "Mag-mouthwash ng tubig at iluwa", "ja": "うがいをして水を吐き出す" },
+          "note":   { "zh-TW": "預防口腔念珠菌感染（類固醇吸入劑適用）", "en": "Prevents oral thrush (steroid inhalers)", "id": "Mencegah sariawan mulut (inhaler steroid)", "vi": "Ngăn ngừa nấm miệng (thuốc hít steroid)", "th": "ป้องกันเชื้อราในช่องปาก (ยาสูดสเตียรอยด์)", "tl": "Upang maiwasan ang oral thrush (steroid inhaler)", "ja": "口腔カンジダ症を予防する（吸入ステロイド用）" }
+        }
+      ],
+      "warnings": [
+        { "zh-TW": "含類固醇成分，使用後務必漱口，預防念珠菌感染", "en": "Contains steroids — always rinse mouth after use", "id": "Mengandung steroid — selalu berkumur setelah digunakan", "vi": "Có chứa steroid — luôn súc miệng sau khi dùng", "th": "มีส่วนผสมของสเตียรอยด์ — ต้องบ้วนปากหลังใช้ทุกครั้ง", "tl": "Naglalaman ng steroid — laging mag-mouthwash pagkatapos gumamit", "ja": "ステロイドを含む — 使用後は必ずうがいする" },
+        { "zh-TW": "若吸入後喘鳴加劇，立即停止並就醫", "en": "If wheezing worsens after use, stop and seek medical attention", "id": "Jika mengi memburuk, hentikan dan segera cari pertolongan medis", "vi": "Nếu thở khò khè nặng hơn, dừng lại và đến cơ sở y tế ngay", "th": "หากอาการหืดแย่ลงหลังใช้ยา ให้หยุดทันทีและไปพบแพทย์", "tl": "Kung lumala ang paghingal, tumigil at humingi ng agarang tulong medikal", "ja": "使用後に喘鳴が悪化した場合は直ちに使用を中止し医師の診察を受ける" }
+      ],
+      "qrUrl": "https://pharmacy.example.com/meds/mdi"
+    },
+
+    {
+      "_note": "NTG, eye drops, patch — see index.html MEDICATIONS for full data. Same structure as above."
+    }
+  ],
+
+  "upcomingMedications": [
+    { "id": "vaginal-suppository", "category": "陰道栓劑",   "color": "#534AB7", "note": "privacy: badge small, name small font" },
+    { "id": "rectal-suppository",  "category": "肛門栓劑",   "color": "#534AB7" },
+    { "id": "subcutaneous",        "category": "皮下注射劑", "color": "#854F0B", "note": "steps >= 7, consider A/B sides" },
+    { "id": "antibiotic-recon",    "category": "抗生素泡製", "color": "#0F6E56", "note": "highlight water volume and expiry" },
+    { "id": "nrt-smoking",         "category": "戒菸用藥",   "color": "#27500A", "note": "include dose escalation schedule" },
+    { "id": "topical-cream",       "category": "外用乳膏",   "color": "#3B6D11" },
+    { "id": "ear-drops",           "category": "耳藥水",     "color": "#185FA5" }
+  ]
+}

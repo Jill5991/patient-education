@@ -1,0 +1,65 @@
+{
+  "id": "paxlovid",
+  "category": "oral",
+  "name": {
+    "zh-TW": "Paxlovid",
+    "en": "Paxlovid",
+    "id": "Paxlovid",
+    "vi": "Paxlovid",
+    "th": "Paxlovid",
+    "tl": "Paxlovid",
+    "ja": "Paxlovid"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "口服藥",
+    "en": "Oral",
+    "id": "Obat oral",
+    "vi": "Thuốc uống",
+    "th": "ยารับประทาน",
+    "tl": "Oral",
+    "ja": "内服薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/paxlovid"
+}

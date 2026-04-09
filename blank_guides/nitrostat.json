@@ -1,0 +1,65 @@
+{
+  "id": "nitrostat",
+  "category": "ntg",
+  "name": {
+    "zh-TW": "Nitrostat",
+    "en": "Nitrostat",
+    "id": "Nitrostat",
+    "vi": "Nitrostat",
+    "th": "Nitrostat",
+    "tl": "Nitrostat",
+    "ja": "Nitrostat"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "舌下錠",
+    "en": "Sublingual",
+    "id": "Sublingual",
+    "vi": "Ngậm dưới lưỡi",
+    "th": "อมใต้ลิ้น",
+    "tl": "Sublingual",
+    "ja": "舌下錠"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/nitrostat"
+}

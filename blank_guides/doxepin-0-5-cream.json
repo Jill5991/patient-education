@@ -1,0 +1,65 @@
+{
+  "id": "doxepin-0-5-cream",
+  "category": "topical",
+  "name": {
+    "zh-TW": "Doxepin 0.5% cream",
+    "en": "Doxepin 0.5% cream",
+    "id": "Doxepin 0.5% cream",
+    "vi": "Doxepin 0.5% cream",
+    "th": "Doxepin 0.5% cream",
+    "tl": "Doxepin 0.5% cream",
+    "ja": "Doxepin 0.5% cream"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/doxepin-0-5-cream"
+}

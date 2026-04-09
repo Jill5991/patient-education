@@ -1,0 +1,65 @@
+{
+  "id": "gi-klean-powder",
+  "category": "powder",
+  "name": {
+    "zh-TW": "GI Klean Powder（腸鏡清腸）",
+    "en": "GI Klean Powder for colonoscopy bowel preparation",
+    "id": "GI Klean Powder for colonoscopy bowel preparation",
+    "vi": "GI Klean Powder for colonoscopy bowel preparation",
+    "th": "GI Klean Powder for colonoscopy bowel preparation",
+    "tl": "GI Klean Powder for colonoscopy bowel preparation",
+    "ja": "GI Klean Powder for colonoscopy bowel preparation"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "粉劑/泡製",
+    "en": "Powder/Reconstitution",
+    "id": "Serbuk",
+    "vi": "Thuốc bột",
+    "th": "ยาผง",
+    "tl": "Powder/Reconstitution",
+    "ja": "粉末剤"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/gi-klean-powder"
+}

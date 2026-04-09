@@ -1,0 +1,65 @@
+{
+  "id": "zinc-oxide-ointment",
+  "category": "topical",
+  "name": {
+    "zh-TW": "Zinc oxide ointment",
+    "en": "Zinc oxide ointment",
+    "id": "Zinc oxide ointment",
+    "vi": "Zinc oxide ointment",
+    "th": "Zinc oxide ointment",
+    "tl": "Zinc oxide ointment",
+    "ja": "Zinc oxide ointment"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/zinc-oxide-ointment"
+}

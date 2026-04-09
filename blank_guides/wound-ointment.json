@@ -1,0 +1,65 @@
+{
+  "id": "wound-ointment",
+  "category": "topical",
+  "name": {
+    "zh-TW": "傷口藥膏（povidone/neomycin/fusidic acid）",
+    "en": "Wound ointment (povidone/neomycin/fusidic acid)",
+    "id": "Wound ointment (povidone/neomycin/fusidic acid)",
+    "vi": "Wound ointment (povidone/neomycin/fusidic acid)",
+    "th": "Wound ointment (povidone/neomycin/fusidic acid)",
+    "tl": "Wound ointment (povidone/neomycin/fusidic acid)",
+    "ja": "Wound ointment (povidone/neomycin/fusidic acid)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/wound-ointment"
+}

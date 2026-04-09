@@ -1,0 +1,65 @@
+{
+  "id": "actein-effervescent",
+  "category": "powder",
+  "name": {
+    "zh-TW": "Actein 發泡錠（acetylcysteine）",
+    "en": "Actein effervescent tablet (acetylcysteine)",
+    "id": "Actein effervescent tablet (acetylcysteine)",
+    "vi": "Actein effervescent tablet (acetylcysteine)",
+    "th": "Actein effervescent tablet (acetylcysteine)",
+    "tl": "Actein effervescent tablet (acetylcysteine)",
+    "ja": "Actein effervescent tablet (acetylcysteine)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "粉劑/泡製",
+    "en": "Powder/Reconstitution",
+    "id": "Serbuk",
+    "vi": "Thuốc bột",
+    "th": "ยาผง",
+    "tl": "Powder/Reconstitution",
+    "ja": "粉末剤"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/actein-effervescent"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "sodium-phosphate-enema",
+  "category": "supp",
+  "name": {
+    "zh-TW": "Fleet Enema（sodium biphosphate/sodium phosphate）",
+    "en": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
+    "id": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
+    "vi": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
+    "th": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
+    "tl": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
+    "ja": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "栓劑/陰道用藥",
+    "en": "Suppository/Vaginal",
+    "id": "Supositoria/Vaginal",
+    "vi": "Đặt âm đạo/hậu môn",
+    "th": "ยาเหน็บ/ช่องคลอด",
+    "tl": "Suppository/Vaginal",
+    "ja": "坐剤/膣用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/sodium-phosphate-enema"
+}

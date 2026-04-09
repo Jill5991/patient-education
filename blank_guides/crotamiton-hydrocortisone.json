@@ -1,0 +1,65 @@
+{
+  "id": "crotamiton-hydrocortisone",
+  "category": "topical",
+  "name": {
+    "zh-TW": "Crotamiton 100mg + hydrocortisone 2.5mg",
+    "en": "Crotamiton 100mg + hydrocortisone 2.5mg",
+    "id": "Crotamiton 100mg + hydrocortisone 2.5mg",
+    "vi": "Crotamiton 100mg + hydrocortisone 2.5mg",
+    "th": "Crotamiton 100mg + hydrocortisone 2.5mg",
+    "tl": "Crotamiton 100mg + hydrocortisone 2.5mg",
+    "ja": "Crotamiton 100mg + hydrocortisone 2.5mg"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/crotamiton-hydrocortisone"
+}

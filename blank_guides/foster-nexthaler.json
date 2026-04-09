@@ -1,0 +1,65 @@
+{
+  "id": "foster-nexthaler",
+  "category": "inhaler",
+  "name": {
+    "zh-TW": "Foster NEXThaler",
+    "en": "Foster NEXThaler (beclomethasone/formoterol)",
+    "id": "Foster NEXThaler (beclomethasone/formoterol)",
+    "vi": "Foster NEXThaler (beclomethasone/formoterol)",
+    "th": "Foster NEXThaler (beclomethasone/formoterol)",
+    "tl": "Foster NEXThaler (beclomethasone/formoterol)",
+    "ja": "Foster NEXThaler (beclomethasone/formoterol)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "吸入劑",
+    "en": "Inhaler",
+    "id": "Inhaler",
+    "vi": "Thuốc hít",
+    "th": "ยาสูดพ่น",
+    "tl": "Inhaler",
+    "ja": "吸入薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/foster-nexthaler"
+}

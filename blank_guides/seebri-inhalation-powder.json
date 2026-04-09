@@ -1,0 +1,65 @@
+{
+  "id": "seebri-inhalation-powder",
+  "category": "inhaler",
+  "name": {
+    "zh-TW": "Seebri 吸入粉劑",
+    "en": "Seebri inhalation powder",
+    "id": "Seebri inhalation powder",
+    "vi": "Seebri inhalation powder",
+    "th": "Seebri inhalation powder",
+    "tl": "Seebri inhalation powder",
+    "ja": "Seebri inhalation powder"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "吸入劑",
+    "en": "Inhaler",
+    "id": "Inhaler",
+    "vi": "Thuốc hít",
+    "th": "ยาสูดพ่น",
+    "tl": "Inhaler",
+    "ja": "吸入薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/seebri-inhalation-powder"
+}

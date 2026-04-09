@@ -1,0 +1,65 @@
+{
+  "id": "painkyl-buccal-film",
+  "category": "oral",
+  "name": {
+    "zh-TW": "Painkyl 口溶膜",
+    "en": "Painkyl buccal soluble films",
+    "id": "Painkyl buccal soluble films",
+    "vi": "Painkyl buccal soluble films",
+    "th": "Painkyl buccal soluble films",
+    "tl": "Painkyl buccal soluble films",
+    "ja": "Painkyl buccal soluble films"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "口服藥",
+    "en": "Oral",
+    "id": "Obat oral",
+    "vi": "Thuốc uống",
+    "th": "ยารับประทาน",
+    "tl": "Oral",
+    "ja": "内服薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/painkyl-buccal-film"
+}

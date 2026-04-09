@@ -1,0 +1,65 @@
+{
+  "id": "vimax-foaming-solution",
+  "category": "topical",
+  "name": {
+    "zh-TW": "Vimax 起泡液（clobetasol 0.05%）",
+    "en": "Vimax foaming solution (clobetasol 0.05%)",
+    "id": "Vimax foaming solution (clobetasol 0.05%)",
+    "vi": "Vimax foaming solution (clobetasol 0.05%)",
+    "th": "Vimax foaming solution (clobetasol 0.05%)",
+    "tl": "Vimax foaming solution (clobetasol 0.05%)",
+    "ja": "Vimax foaming solution (clobetasol 0.05%)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/vimax-foaming-solution"
+}

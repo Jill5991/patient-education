@@ -1,0 +1,65 @@
+{
+  "id": "eye-ointment",
+  "category": "eye",
+  "name": {
+    "zh-TW": "眼藥膏",
+    "en": "Eye ointment",
+    "id": "Eye ointment",
+    "vi": "Eye ointment",
+    "th": "Eye ointment",
+    "tl": "Eye ointment",
+    "ja": "Eye ointment"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "眼耳鼻用藥",
+    "en": "Eye/Ear/Nasal",
+    "id": "Obat mata/telinga/hidung",
+    "vi": "Thuốc mắt/tai/mũi",
+    "th": "ยาตา/หู/จมูก",
+    "tl": "Eye/Ear/Nasal",
+    "ja": "眼・耳・鼻用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/eye-ointment"
+}

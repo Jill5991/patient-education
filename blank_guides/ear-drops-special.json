@@ -1,0 +1,65 @@
+{
+  "id": "ear-drops-special",
+  "category": "eye",
+  "name": {
+    "zh-TW": "耳藥水",
+    "en": "Ear drops",
+    "id": "Ear drops",
+    "vi": "Ear drops",
+    "th": "Ear drops",
+    "tl": "Ear drops",
+    "ja": "Ear drops"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "眼耳鼻用藥",
+    "en": "Eye/Ear/Nasal",
+    "id": "Obat mata/telinga/hidung",
+    "vi": "Thuốc mắt/tai/mũi",
+    "th": "ยาตา/หู/จมูก",
+    "tl": "Eye/Ear/Nasal",
+    "ja": "眼・耳・鼻用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/ear-drops-special"
+}

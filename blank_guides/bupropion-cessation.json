@@ -1,0 +1,65 @@
+{
+  "id": "bupropion-cessation",
+  "category": "smoking",
+  "name": {
+    "zh-TW": "Bupropion（戒菸）",
+    "en": "Bupropion tablet for tobacco cessation",
+    "id": "Bupropion tablet for tobacco cessation",
+    "vi": "Bupropion tablet for tobacco cessation",
+    "th": "Bupropion tablet for tobacco cessation",
+    "tl": "Bupropion tablet for tobacco cessation",
+    "ja": "Bupropion tablet for tobacco cessation"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "戒菸用藥",
+    "en": "Smoking Cessation",
+    "id": "Berhenti merokok",
+    "vi": "Cai thuốc lá",
+    "th": "เลิกบุหรี่",
+    "tl": "Smoking Cessation",
+    "ja": "禁煙補助薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/bupropion-cessation"
+}

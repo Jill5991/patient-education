@@ -1,0 +1,65 @@
+{
+  "id": "anoro-ellipta",
+  "category": "inhaler",
+  "name": {
+    "zh-TW": "Anoro Ellipta",
+    "en": "Anoro Ellipta",
+    "id": "Anoro Ellipta",
+    "vi": "Anoro Ellipta",
+    "th": "Anoro Ellipta",
+    "tl": "Anoro Ellipta",
+    "ja": "Anoro Ellipta"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "吸入劑",
+    "en": "Inhaler",
+    "id": "Inhaler",
+    "vi": "Thuốc hít",
+    "th": "ยาสูดพ่น",
+    "tl": "Inhaler",
+    "ja": "吸入薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/anoro-ellipta"
+}

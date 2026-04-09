@@ -1,0 +1,65 @@
+{
+  "id": "neupro-patch",
+  "category": "topical",
+  "name": {
+    "zh-TW": "Neupro（rotigotine）patch",
+    "en": "Neupro (rotigotine) patch",
+    "id": "Neupro (rotigotine) patch",
+    "vi": "Neupro (rotigotine) patch",
+    "th": "Neupro (rotigotine) patch",
+    "tl": "Neupro (rotigotine) patch",
+    "ja": "Neupro (rotigotine) patch"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/neupro-patch"
+}

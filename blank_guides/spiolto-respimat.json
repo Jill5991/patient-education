@@ -1,0 +1,65 @@
+{
+  "id": "spiolto-respimat",
+  "category": "inhaler",
+  "name": {
+    "zh-TW": "Spiolto Respimat",
+    "en": "Spiolto Respimat (tiotropium/olodaterol)",
+    "id": "Spiolto Respimat (tiotropium/olodaterol)",
+    "vi": "Spiolto Respimat (tiotropium/olodaterol)",
+    "th": "Spiolto Respimat (tiotropium/olodaterol)",
+    "tl": "Spiolto Respimat (tiotropium/olodaterol)",
+    "ja": "Spiolto Respimat (tiotropium/olodaterol)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "吸入劑",
+    "en": "Inhaler",
+    "id": "Inhaler",
+    "vi": "Thuốc hít",
+    "th": "ยาสูดพ่น",
+    "tl": "Inhaler",
+    "ja": "吸入薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/spiolto-respimat"
+}

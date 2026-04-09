@@ -1,0 +1,65 @@
+{
+  "id": "zno-diphenhydramine-dibucaine-camphor-benzalkonium-silicone-oil",
+  "category": "topical",
+  "name": {
+    "zh-TW": "複方氧化鋅外用藥（ZnO等）",
+    "en": "ZnO, diphenhydramine, dibucaine, camphor, benzakonium, silicone oil",
+    "id": "ZnO, diphenhydramine, dibucaine, camphor, benzakonium, silicone oil",
+    "vi": "ZnO, diphenhydramine, dibucaine, camphor, benzakonium, silicone oil",
+    "th": "ZnO, diphenhydramine, dibucaine, camphor, benzakonium, silicone oil",
+    "tl": "ZnO, diphenhydramine, dibucaine, camphor, benzakonium, silicone oil",
+    "ja": "ZnO, diphenhydramine, dibucaine, camphor, benzakonium, silicone oil"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/zno-diphenhydramine-dibucaine-camphor-benzalkonium-silicone-oil"
+}

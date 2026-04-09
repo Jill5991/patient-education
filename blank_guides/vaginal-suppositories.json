@@ -1,0 +1,65 @@
+{
+  "id": "vaginal-suppositories",
+  "category": "supp",
+  "name": {
+    "zh-TW": "陰道栓劑（policresulen/isoconazole/nystatin）",
+    "en": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
+    "id": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
+    "vi": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
+    "th": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
+    "tl": "Vaginal suppositories (policresulen, isoconazole, nystatin)",
+    "ja": "Vaginal suppositories (policresulen, isoconazole, nystatin)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "栓劑/陰道用藥",
+    "en": "Suppository/Vaginal",
+    "id": "Supositoria/Vaginal",
+    "vi": "Đặt âm đạo/hậu môn",
+    "th": "ยาเหน็บ/ช่องคลอด",
+    "tl": "Suppository/Vaginal",
+    "ja": "坐剤/膣用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/vaginal-suppositories"
+}

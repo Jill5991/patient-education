@@ -1,0 +1,65 @@
+{
+  "id": "spiriva-respimat",
+  "category": "inhaler",
+  "name": {
+    "zh-TW": "Spiriva Respimat",
+    "en": "Spiriva Respimat (tiotropium)",
+    "id": "Spiriva Respimat (tiotropium)",
+    "vi": "Spiriva Respimat (tiotropium)",
+    "th": "Spiriva Respimat (tiotropium)",
+    "tl": "Spiriva Respimat (tiotropium)",
+    "ja": "Spiriva Respimat (tiotropium)"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "吸入劑",
+    "en": "Inhaler",
+    "id": "Inhaler",
+    "vi": "Thuốc hít",
+    "th": "ยาสูดพ่น",
+    "tl": "Inhaler",
+    "ja": "吸入薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/spiriva-respimat"
+}

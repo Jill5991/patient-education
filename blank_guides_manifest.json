@@ -1,0 +1,300 @@
+{
+  "count": 59,
+  "items": [
+    {
+      "id": "paxlovid",
+      "file": "blank_guides/paxlovid.json",
+      "name": "Paxlovid"
+    },
+    {
+      "id": "molnupiravir",
+      "file": "blank_guides/molnupiravir.json",
+      "name": "Molnupiravir"
+    },
+    {
+      "id": "nitrostat",
+      "file": "blank_guides/nitrostat.json",
+      "name": "Nitrostat"
+    },
+    {
+      "id": "sodium-phosphate-enema",
+      "file": "blank_guides/sodium-phosphate-enema.json",
+      "name": "Fleet Enema（sodium biphosphate/sodium phosphate）"
+    },
+    {
+      "id": "psyllium-hydrophilic-mucilloid",
+      "file": "blank_guides/psyllium-hydrophilic-mucilloid.json",
+      "name": "洋車前子親水性黏質（6g/包）"
+    },
+    {
+      "id": "relenza",
+      "file": "blank_guides/relenza.json",
+      "name": "Relenza"
+    },
+    {
+      "id": "anoro-ellipta",
+      "file": "blank_guides/anoro-ellipta.json",
+      "name": "Anoro Ellipta"
+    },
+    {
+      "id": "duasma-hfa-200",
+      "file": "blank_guides/duasma-hfa-200.json",
+      "name": "Duasma HFA 200 Inhaler（budesonide）"
+    },
+    {
+      "id": "flixotide-evohaler-50",
+      "file": "blank_guides/flixotide-evohaler-50.json",
+      "name": "Flixotide Evohaler（50 mcg/劑量）"
+    },
+    {
+      "id": "foster-mdi",
+      "file": "blank_guides/foster-mdi.json",
+      "name": "Foster MDI"
+    },
+    {
+      "id": "foster-nexthaler",
+      "file": "blank_guides/foster-nexthaler.json",
+      "name": "Foster NEXThaler"
+    },
+    {
+      "id": "berodual-n",
+      "file": "blank_guides/berodual-n.json",
+      "name": "Berodual N"
+    },
+    {
+      "id": "berotec-n",
+      "file": "blank_guides/berotec-n.json",
+      "name": "Berotec N"
+    },
+    {
+      "id": "seretide-50",
+      "file": "blank_guides/seretide-50.json",
+      "name": "Seretide 50"
+    },
+    {
+      "id": "seretide-250",
+      "file": "blank_guides/seretide-250.json",
+      "name": "Seretide 250"
+    },
+    {
+      "id": "trimbow",
+      "file": "blank_guides/trimbow.json",
+      "name": "Trimbow"
+    },
+    {
+      "id": "relvar-ellipta",
+      "file": "blank_guides/relvar-ellipta.json",
+      "name": "Relvar Ellipta"
+    },
+    {
+      "id": "spiriva-respimat",
+      "file": "blank_guides/spiriva-respimat.json",
+      "name": "Spiriva Respimat"
+    },
+    {
+      "id": "spiolto-respimat",
+      "file": "blank_guides/spiolto-respimat.json",
+      "name": "Spiolto Respimat"
+    },
+    {
+      "id": "seebri-inhalation-powder",
+      "file": "blank_guides/seebri-inhalation-powder.json",
+      "name": "Seebri 吸入粉劑"
+    },
+    {
+      "id": "symbicort-turbuhaler",
+      "file": "blank_guides/symbicort-turbuhaler.json",
+      "name": "Symbicort Turbuhaler"
+    },
+    {
+      "id": "adapalene-0-1-gel",
+      "file": "blank_guides/adapalene-0-1-gel.json",
+      "name": "Adapalene 0.1% gel"
+    },
+    {
+      "id": "benzoyl-peroxide-5",
+      "file": "blank_guides/benzoyl-peroxide-5.json",
+      "name": "Benzoyl peroxide 5%"
+    },
+    {
+      "id": "premarin-vaginal-cream",
+      "file": "blank_guides/premarin-vaginal-cream.json",
+      "name": "Premarin 陰道乳膏（0.65 mg/g）"
+    },
+    {
+      "id": "topical-steroids",
+      "file": "blank_guides/topical-steroids.json",
+      "name": "類固醇外用藥（乳膏/軟膏/乳液）"
+    },
+    {
+      "id": "vimax-foaming-solution",
+      "file": "blank_guides/vimax-foaming-solution.json",
+      "name": "Vimax 起泡液（clobetasol 0.05%）"
+    },
+    {
+      "id": "antifungal-gel-cream",
+      "file": "blank_guides/antifungal-gel-cream.json",
+      "name": "抗黴菌凝膠/乳膏"
+    },
+    {
+      "id": "wound-ointment",
+      "file": "blank_guides/wound-ointment.json",
+      "name": "傷口藥膏（povidone/neomycin/fusidic acid）"
+    },
+    {
+      "id": "chlorpheniramine-lidocaine-menthol-camphor-ointment",
+      "file": "blank_guides/chlorpheniramine-lidocaine-menthol-camphor-ointment.json",
+      "name": "複方止癢止痛軟膏（chlorpheniramine/lidocaine/menthol/camphor）"
+    },
+    {
+      "id": "doxepin-0-5-cream",
+      "file": "blank_guides/doxepin-0-5-cream.json",
+      "name": "Doxepin 0.5% cream"
+    },
+    {
+      "id": "zno-diphenhydramine-dibucaine-camphor-benzalkonium-silicone-oil",
+      "file": "blank_guides/zno-diphenhydramine-dibucaine-camphor-benzalkonium-silicone-oil.json",
+      "name": "複方氧化鋅外用藥（ZnO等）"
+    },
+    {
+      "id": "silver-sulfadiazine-cream",
+      "file": "blank_guides/silver-sulfadiazine-cream.json",
+      "name": "Sulfadiazine silver cream"
+    },
+    {
+      "id": "crotamiton-hydrocortisone",
+      "file": "blank_guides/crotamiton-hydrocortisone.json",
+      "name": "Crotamiton 100mg + hydrocortisone 2.5mg"
+    },
+    {
+      "id": "benzyl-benzoate-25-lotion",
+      "file": "blank_guides/benzyl-benzoate-25-lotion.json",
+      "name": "Benzyl benzoate 25% lotion"
+    },
+    {
+      "id": "high-xylmol",
+      "file": "blank_guides/high-xylmol.json",
+      "name": "High-Xylmol"
+    },
+    {
+      "id": "duofilm-solution",
+      "file": "blank_guides/duofilm-solution.json",
+      "name": "Duofilm 溶液"
+    },
+    {
+      "id": "zinc-oxide-ointment",
+      "file": "blank_guides/zinc-oxide-ointment.json",
+      "name": "Zinc oxide ointment"
+    },
+    {
+      "id": "heparinoid-cream",
+      "file": "blank_guides/heparinoid-cream.json",
+      "name": "Heparinoid cream"
+    },
+    {
+      "id": "ivermectin-cream",
+      "file": "blank_guides/ivermectin-cream.json",
+      "name": "Ivermectin cream"
+    },
+    {
+      "id": "fentanyl-patch",
+      "file": "blank_guides/fentanyl-patch.json",
+      "name": "Fentanyl patch"
+    },
+    {
+      "id": "exelon-patch",
+      "file": "blank_guides/exelon-patch.json",
+      "name": "Exelon patch"
+    },
+    {
+      "id": "flurbiprofen-patch",
+      "file": "blank_guides/flurbiprofen-patch.json",
+      "name": "Flurbiprofen patch"
+    },
+    {
+      "id": "neupro-patch",
+      "file": "blank_guides/neupro-patch.json",
+      "name": "Neupro（rotigotine）patch"
+    },
+    {
+      "id": "painkyl-buccal-film",
+      "file": "blank_guides/painkyl-buccal-film.json",
+      "name": "Painkyl 口溶膜"
+    },
+    {
+      "id": "vaginal-suppositories",
+      "file": "blank_guides/vaginal-suppositories.json",
+      "name": "陰道栓劑（policresulen/isoconazole/nystatin）"
+    },
+    {
+      "id": "nicorette-gum",
+      "file": "blank_guides/nicorette-gum.json",
+      "name": "Nicorette chewing gum"
+    },
+    {
+      "id": "nicotine-patch",
+      "file": "blank_guides/nicotine-patch.json",
+      "name": "Nicotine patch"
+    },
+    {
+      "id": "bupropion-cessation",
+      "file": "blank_guides/bupropion-cessation.json",
+      "name": "Bupropion（戒菸）"
+    },
+    {
+      "id": "varenicline-cessation",
+      "file": "blank_guides/varenicline-cessation.json",
+      "name": "Varenicline（戒菸）"
+    },
+    {
+      "id": "actein-effervescent",
+      "file": "blank_guides/actein-effervescent.json",
+      "name": "Actein 發泡錠（acetylcysteine）"
+    },
+    {
+      "id": "gi-klean-powder",
+      "file": "blank_guides/gi-klean-powder.json",
+      "name": "GI Klean Powder（腸鏡清腸）"
+    },
+    {
+      "id": "bowklean-powder",
+      "file": "blank_guides/bowklean-powder.json",
+      "name": "Bowklean Powder（腸鏡清腸）"
+    },
+    {
+      "id": "anal-ointment",
+      "file": "blank_guides/anal-ointment.json",
+      "name": "肛門軟膏（sodium oleate 等）"
+    },
+    {
+      "id": "eye-drops-special",
+      "file": "blank_guides/eye-drops-special.json",
+      "name": "眼藥水"
+    },
+    {
+      "id": "eye-ointment",
+      "file": "blank_guides/eye-ointment.json",
+      "name": "眼藥膏"
+    },
+    {
+      "id": "ear-drops-special",
+      "file": "blank_guides/ear-drops-special.json",
+      "name": "耳藥水"
+    },
+    {
+      "id": "avamys-nasal-spray",
+      "file": "blank_guides/avamys-nasal-spray.json",
+      "name": "Avamys 鼻噴劑（fluticasone）"
+    },
+    {
+      "id": "nasonex-nasal-spray",
+      "file": "blank_guides/nasonex-nasal-spray.json",
+      "name": "Nasonex 鼻噴劑（mometasone）"
+    },
+    {
+      "id": "sindecon-nasal-spray",
+      "file": "blank_guides/sindecon-nasal-spray.json",
+      "name": "Sindecon 鼻噴劑（oxymetazoline）"
+    }
+  ]
+}

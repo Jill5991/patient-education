@@ -1,0 +1,65 @@
+{
+  "id": "benzyl-benzoate-25-lotion",
+  "category": "topical",
+  "name": {
+    "zh-TW": "Benzyl benzoate 25% lotion",
+    "en": "Benzyl benzoate 25% lotion",
+    "id": "Benzyl benzoate 25% lotion",
+    "vi": "Benzyl benzoate 25% lotion",
+    "th": "Benzyl benzoate 25% lotion",
+    "tl": "Benzyl benzoate 25% lotion",
+    "ja": "Benzyl benzoate 25% lotion"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/benzyl-benzoate-25-lotion"
+}

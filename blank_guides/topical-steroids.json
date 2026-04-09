@@ -1,0 +1,65 @@
+{
+  "id": "topical-steroids",
+  "category": "topical",
+  "name": {
+    "zh-TW": "類固醇外用藥（乳膏/軟膏/乳液）",
+    "en": "Steroids cream/ointment/lotion",
+    "id": "Steroids cream/ointment/lotion",
+    "vi": "Steroids cream/ointment/lotion",
+    "th": "Steroids cream/ointment/lotion",
+    "tl": "Steroids cream/ointment/lotion",
+    "ja": "Steroids cream/ointment/lotion"
+  },
+  "subtitle": {
+    "zh-TW": "",
+    "en": "",
+    "id": "",
+    "vi": "",
+    "th": "",
+    "tl": "",
+    "ja": ""
+  },
+  "badge": {
+    "zh-TW": "外用藥",
+    "en": "Topical",
+    "id": "Obat oles",
+    "vi": "Thuốc bôi",
+    "th": "ยาทาภายนอก",
+    "tl": "Topical",
+    "ja": "外用薬"
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      },
+      "note": {
+        "zh-TW": "",
+        "en": "",
+        "id": "",
+        "vi": "",
+        "th": "",
+        "tl": "",
+        "ja": ""
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/topical-steroids"
+}
