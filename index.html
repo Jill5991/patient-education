@@ -192,16 +192,15 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .s-steps { padding: 0 var(--mx); }
 .step {
   display: grid;
-  grid-template-columns:
-    minmax(0, calc((8 * var(--col)) + (7 * var(--gutter))))
-    minmax(0, calc((4 * var(--col)) + (3 * var(--gutter))));
+  grid-template-columns: repeat(12, minmax(0, var(--col)));
   column-gap: var(--gutter);
-  align-items: stretch;
+  align-items: start;
   padding: var(--base) 0;
   border-bottom: 0.3px solid rgba(0,0,0,0.07);
 }
 .step:last-child { border-bottom: none; }
 .step-left {
+  grid-column: 1 / span 8;
   min-width: 0;
   display: flex;
   align-items: flex-start;
@@ -240,9 +239,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
 /* Right 4-column illustration area */
 .step-ill {
+  grid-column: 9 / span 4;
   width: 100%;
   min-height: calc(16 * var(--mm));
   height: 100%;
+  justify-self: end;
   border: 0.5px dashed rgba(0,0,0,0.14);
   border-radius: calc(1.5 * var(--mm));
   background: #fbfbfb;
@@ -256,6 +257,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center center;
   display: block;
 }
 .step-ill-label {
@@ -274,6 +276,13 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   .step {
     grid-template-columns: minmax(0, 1fr);
     row-gap: calc(0.5 * var(--base));
+  }
+  .step-left,
+  .step-ill {
+    grid-column: 1 / -1;
+  }
+  .step-ill {
+    justify-self: stretch;
   }
   .step-ill {
     min-height: calc(22 * var(--mm));
@@ -326,20 +335,24 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   min-height: calc(25 * var(--mm));
   padding: calc(0.75 * var(--base)) var(--mx) var(--mb);
   display: grid;
-  grid-template-columns:
-    minmax(0, calc((9 * var(--col)) + (8 * var(--gutter))))
-    minmax(0, calc((3 * var(--col)) + (2 * var(--gutter))));
+  grid-template-columns: repeat(12, minmax(0, var(--col)));
   column-gap: var(--gutter);
   align-items: end;
 }
 .s-footer-info {
+  grid-column: 1 / span 9;
   font-size: clamp(11px, calc(3 * var(--mm)), 14px);
   color: #6f6f6f;
   line-height: var(--base);
   letter-spacing: 0.004em;
   overflow-wrap: anywhere;
 }
-.s-footer-qr { text-align: center; justify-self: end; width: clamp(18mm, calc(22 * var(--mm)), 22mm); }
+.s-footer-qr {
+  grid-column: 10 / span 3;
+  text-align: center;
+  justify-self: end;
+  width: clamp(18mm, calc(22 * var(--mm)), 22mm);
+}
 #qr-target {
   width: clamp(18mm, calc(22 * var(--mm)), 22mm);
   height: clamp(18mm, calc(22 * var(--mm)), 22mm);
@@ -5617,7 +5630,7 @@ function render() {
     </div>` : "";
 
   // Warnings HTML
-  const warnHtml = m.warnings.map(w =>
+  const warnHtml = (m.warnings || []).slice(0, 2).map(w =>
     `<div class="s-warn-item">${w[lang] || w["en"]}</div>`
   ).join("");
 
