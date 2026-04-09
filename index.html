@@ -151,8 +151,13 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   padding: var(--mt) var(--mx) calc(2 * var(--base));
   min-height: calc(40 * var(--mm));
 }
-.s-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: calc(3 * var(--mm)); }
-.s-header-left { flex: 1; min-width: 0; }
+.s-header-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, var(--col)));
+  column-gap: var(--gutter);
+  align-items: start;
+}
+.s-header-left { grid-column: 1 / span 9; min-width: 0; }
 .s-name {
   font-size: clamp(18px, calc(7.8 * var(--mm)), 32px); /* ~22pt */
   font-weight: 700;
@@ -174,7 +179,14 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   letter-spacing: 0.006em;
   margin-top: calc(0.15 * var(--base));
 }
-.s-badges { display: flex; flex-direction: column; gap: calc(0.6 * var(--base)); align-items: flex-end; flex-shrink: 0; }
+.s-badges {
+  grid-column: 10 / span 3;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.6 * var(--base));
+  align-items: flex-end;
+}
 .badge-type,
 .badge-emrg {
   font-size: clamp(11px, calc(3.5 * var(--mm)), 15px);
@@ -240,10 +252,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 /* Right 4-column illustration area */
 .step-ill {
   grid-column: 9 / span 4;
-  width: 100%;
+  width: min(100%, calc((3 * var(--col)) + (2 * var(--gutter))));
   min-height: calc(16 * var(--mm));
   height: 100%;
-  margin-left: auto;
   justify-self: end;
   border: 0.5px dashed rgba(0,0,0,0.14);
   border-radius: calc(1.5 * var(--mm));
@@ -283,6 +294,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
     grid-column: 1 / -1;
   }
   .step-ill {
+    width: 100%;
     justify-self: stretch;
   }
   .step-ill {
