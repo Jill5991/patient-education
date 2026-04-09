@@ -119,39 +119,78 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 }
 
 /* ===== Sheet Container ===== */
-.sheet-wrap { padding: 16px; display: flex; justify-content: center; }
+.sheet-wrap { padding: clamp(10px, 2.2vw, 20px); display: flex; justify-content: center; }
 
-/* ===== Sheet (B5 proportioned) ===== */
+/* ===== Sheet (Müller-Brockmann Proportioned) ===== */
 .sheet {
-  width: 100%; max-width: 500px; background: white; border-radius: 4px;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.12); overflow: hidden;
+  width: min(96vw, 176mm);
+  max-width: 176mm;
+  min-width: 320px;
+  background: white;
+  border-radius: 1.2mm;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+  overflow: hidden;
   font-family: var(--font);
+
+  /* B5-based scale system (all values derived from 176mm width) */
+  --mm: calc(100% / 176);
+  --base: calc(5 * var(--mm));      /* baseline grid 5mm */
+  --mx: calc(14 * var(--mm));       /* left/right margin */
+  --mt: calc(18 * var(--mm));       /* top margin zone */
+  --mb: calc(14 * var(--mm));       /* bottom margin zone */
+  --gutter: calc(3 * var(--mm));    /* 12-col gutter */
 }
 
-/* Color band top */
-.s-band { height: 8px; }
+/* Color band top: 4mm */
+.s-band { height: calc(4 * var(--mm)); }
 
-/* Header */
-.s-header { padding: 14px 16px 10px; }
-.s-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+/* Header: 12 columns full width, min 40mm */
+.s-header {
+  padding: var(--mt) var(--mx) calc(2 * var(--base));
+  min-height: calc(40 * var(--mm));
+}
+.s-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: calc(3 * var(--mm)); }
 .s-header-left { flex: 1; min-width: 0; }
-.s-name { font-size: 20px; font-weight: 700; line-height: 1.2; word-break: break-word; }
-.s-sub  { font-size: 10px; color: var(--muted); margin-top: 3px; }
-.s-usage{ font-size: 9px; color: var(--muted); margin-top: 2px; }
-.s-badges { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; flex-shrink: 0; }
-.badge-type { font-size: 9px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
-.badge-emrg { font-size: 9px; font-weight: 700; padding: 4px 10px; border-radius: 4px;
-              background: #993C1D; color: white; white-space: nowrap; }
-.s-hr { border: none; border-top: 0.5px solid rgba(0,0,0,0.1); margin: 0 16px; }
+.s-name {
+  font-size: clamp(18px, calc(7.8 * var(--mm)), 32px); /* ~22pt */
+  font-weight: 700;
+  line-height: calc(2 * var(--base));
+  word-break: break-word;
+}
+.s-sub {
+  font-size: clamp(11px, calc(3.9 * var(--mm)), 16px); /* ~11pt */
+  color: var(--muted);
+  line-height: var(--base);
+  margin-top: calc(0.25 * var(--base));
+}
+.s-usage{
+  font-size: clamp(10px, calc(3.3 * var(--mm)), 14px);
+  color: var(--muted);
+  line-height: var(--base);
+  margin-top: calc(0.15 * var(--base));
+}
+.s-badges { display: flex; flex-direction: column; gap: calc(0.6 * var(--base)); align-items: flex-end; flex-shrink: 0; }
+.badge-type,
+.badge-emrg {
+  font-size: clamp(10px, calc(3.2 * var(--mm)), 14px);
+  font-weight: 600;
+  padding: calc(0.45 * var(--base)) calc(0.8 * var(--base));
+  border-radius: calc(0.8 * var(--mm));
+  white-space: nowrap;
+}
+.badge-emrg { font-weight: 700; background: #993C1D; color: white; }
+.s-hr { border: none; border-top: 0.5px solid rgba(0,0,0,0.1); margin: 0 var(--mx); }
 
-/* Steps */
-.s-steps { padding: 6px 0; }
+/* Steps: left 8 columns + right 4 columns */
+.s-steps { padding: 0 var(--mx); }
 .step {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); /* 8欄:4欄 */
-  align-items: start;
-  column-gap: 11px;
-  padding: 9px 16px;
+  grid-template-columns:
+    minmax(0, calc((97.8 / 148) * 100%))
+    minmax(0, calc((47.4 / 148) * 100%));
+  column-gap: var(--gutter);
+  align-items: stretch;
+  padding: var(--base) 0;
   border-bottom: 0.3px solid rgba(0,0,0,0.07);
 }
 .step:last-child { border-bottom: none; }
@@ -159,23 +198,44 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   min-width: 0;
   display: flex;
   align-items: flex-start;
-  gap: 11px;
+  gap: calc(2.2 * var(--mm));
 }
 .step-num {
-  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; color: white;
+  width: calc(8 * var(--mm));
+  height: calc(8 * var(--mm));
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: calc(0.2 * var(--base));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(10px, calc(3.1 * var(--mm)), 14px);
+  font-weight: 700;
+  color: white;
 }
 .step-body { flex: 1; min-width: 0; }
-.step-action { font-size: 11px; font-weight: 600; line-height: 1.4; color: #1a1a1a; }
-.step-note   { font-size: 9.5px; color: #6b6b6b; margin-top: 2px; line-height: 1.4; }
+.step-action {
+  font-size: clamp(11px, calc(3.35 * var(--mm)), 15px); /* ~10pt */
+  font-weight: 600;
+  line-height: var(--base);
+  color: #1a1a1a;
+  overflow-wrap: anywhere;
+}
+.step-note {
+  font-size: clamp(10px, calc(2.95 * var(--mm)), 14px); /* ~9.5pt */
+  color: #6b6b6b;
+  margin-top: calc(0.2 * var(--base));
+  line-height: var(--base);
+  overflow-wrap: anywhere;
+}
 
 /* Right 4-column illustration area */
 .step-ill {
   width: 100%;
-  min-height: 64px;
+  min-height: calc(16 * var(--mm));
+  height: 100%;
   border: 0.5px dashed rgba(0,0,0,0.14);
-  border-radius: 6px;
+  border-radius: calc(1.5 * var(--mm));
   background: #fbfbfb;
   display: flex;
   align-items: center;
@@ -190,7 +250,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   display: block;
 }
 .step-ill-label {
-  font-size: 8px;
+  font-size: clamp(9px, calc(2.45 * var(--mm)), 12px);
   color: #8a8a8a;
   letter-spacing: 0.2px;
 }
@@ -199,192 +259,87 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .step.hl .step-action { color: #4A1B0C; }
 .step.hl .step-note   { color: #993C1D; font-weight: 500; }
 
+/* Small phones can collapse illustration below text */
 @media (max-width: 640px) {
   .step {
     grid-template-columns: minmax(0, 1fr);
-    row-gap: 8px;
+    row-gap: calc(0.5 * var(--base));
   }
   .step-ill {
-    min-height: 90px;
+    min-height: calc(22 * var(--mm));
   }
 }
 
-/* Info box */
+/* Optional storage box */
 .s-infobox {
-  margin: 4px 16px 8px; padding: 8px 11px; border-radius: 4px;
-  border-left: 3px solid;
+  margin: calc(0.8 * var(--mm)) var(--mx) calc(1.4 * var(--mm));
+  padding: calc(0.6 * var(--base)) calc(0.7 * var(--base));
+  border-radius: calc(1.2 * var(--mm));
+  border-left: calc(3 * var(--mm)) solid;
 }
-.s-infobox-title { font-size: 9px; font-weight: 600; margin-bottom: 2px; }
-.s-infobox-text  { font-size: 8.5px; line-height: 1.5; }
+.s-infobox-title {
+  font-size: clamp(10px, calc(2.9 * var(--mm)), 14px);
+  font-weight: 600;
+  line-height: var(--base);
+  margin-bottom: calc(0.1 * var(--base));
+}
+.s-infobox-text  {
+  font-size: clamp(9px, calc(2.75 * var(--mm)), 13px);
+  line-height: var(--base);
+  overflow-wrap: anywhere;
+}
 
-/* Warning bar */
-.s-warn { padding: 8px 16px 8px 20px; border-left: 4px solid; }
-.s-warn-item { font-size: 8.5px; font-weight: 500; line-height: 1.5; margin-bottom: 3px; padding-left: 10px; position: relative; }
+/* Warning bar: min 15mm high */
+.s-warn {
+  min-height: calc(15 * var(--mm));
+  padding: calc(0.7 * var(--base)) var(--mx) calc(0.7 * var(--base)) calc(var(--mx) + 0.9 * var(--base));
+  border-left: calc(3 * var(--mm)) solid;
+}
+.s-warn-item {
+  font-size: clamp(9px, calc(2.8 * var(--mm)), 13px); /* ~9pt */
+  font-weight: 500;
+  line-height: var(--base);
+  margin-bottom: calc(0.15 * var(--base));
+  padding-left: calc(0.55 * var(--base));
+  position: relative;
+  overflow-wrap: anywhere;
+}
 .s-warn-item::before { content: "●"; position: absolute; left: 0; }
 .s-warn-item:last-child { margin-bottom: 0; }
 
-/* Footer */
+/* Footer: left 9 columns + right 3 columns, min 25mm */
 .s-footer {
-  border-top: 0.5px solid rgba(0,0,0,0.1); padding: 10px 16px;
-  display: flex; justify-content: space-between; align-items: flex-end;
+  border-top: 0.5px solid rgba(0,0,0,0.1);
+  min-height: calc(25 * var(--mm));
+  padding: calc(0.75 * var(--base)) var(--mx) var(--mb);
+  display: grid;
+  grid-template-columns:
+    minmax(0, calc((110.4 / 148) * 100%))
+    minmax(0, calc((34.8 / 148) * 100%));
+  column-gap: var(--gutter);
+  align-items: end;
 }
-.s-footer-info { font-size: 8px; color: #8a8a8a; line-height: 1.7; }
-.s-footer-qr { text-align: center; flex-shrink: 0; margin-left: 12px; }
-.s-footer-qr-label { font-size: 7px; color: #8a8a8a; margin-top: 3px; }
-#qr-target canvas, #qr-target img { width: 64px !important; height: 64px !important; }
-
-/* ===== iPad 10.5" Tuning (Keep B5 Proportion) ===== */
-@media screen and (min-width: 768px) and (max-width: 1180px) and (orientation: portrait) {
-  :root { --ipad-scale: 1.24; }
-
-  .sheet-wrap { padding: calc(16px * var(--ipad-scale)); }
-
-  .sheet {
-    max-width: calc(500px * var(--ipad-scale));
-    border-radius: calc(4px * var(--ipad-scale));
-  }
-
-  .s-band { height: calc(8px * var(--ipad-scale)); }
-  .s-header {
-    padding: calc(14px * var(--ipad-scale)) calc(16px * var(--ipad-scale)) calc(10px * var(--ipad-scale));
-  }
-  .s-header-row { gap: calc(12px * var(--ipad-scale)); }
-
-  .s-name { font-size: calc(20px * var(--ipad-scale)); }
-  .s-sub {
-    font-size: calc(10px * var(--ipad-scale));
-    margin-top: calc(3px * var(--ipad-scale));
-  }
-  .s-usage {
-    font-size: calc(9px * var(--ipad-scale));
-    margin-top: calc(2px * var(--ipad-scale));
-  }
-
-  .s-badges { gap: calc(4px * var(--ipad-scale)); }
-
-  .badge-type,
-  .badge-emrg {
-    font-size: calc(9px * var(--ipad-scale));
-    padding: calc(4px * var(--ipad-scale)) calc(10px * var(--ipad-scale));
-    border-radius: calc(4px * var(--ipad-scale));
-  }
-
-  .s-hr { margin: 0 calc(16px * var(--ipad-scale)); }
-  .s-steps { padding: calc(6px * var(--ipad-scale)) 0; }
-
-  .step {
-    padding: calc(9px * var(--ipad-scale)) calc(16px * var(--ipad-scale));
-    column-gap: calc(11px * var(--ipad-scale));
-  }
-
-  .step-left { gap: calc(11px * var(--ipad-scale)); }
-
-  .step-num {
-    width: calc(22px * var(--ipad-scale));
-    height: calc(22px * var(--ipad-scale));
-    margin-top: calc(1px * var(--ipad-scale));
-    font-size: calc(11px * var(--ipad-scale));
-  }
-
-  .step-action { font-size: calc(11px * var(--ipad-scale)); }
-  .step-note {
-    font-size: calc(9.5px * var(--ipad-scale));
-    margin-top: calc(2px * var(--ipad-scale));
-  }
-
-  .step-ill {
-    min-height: calc(64px * var(--ipad-scale));
-    border-radius: calc(6px * var(--ipad-scale));
-  }
-
-  .step-ill-label {
-    font-size: calc(8px * var(--ipad-scale));
-  }
-
-  .s-infobox {
-    margin: calc(4px * var(--ipad-scale)) calc(16px * var(--ipad-scale)) calc(8px * var(--ipad-scale));
-    padding: calc(8px * var(--ipad-scale)) calc(11px * var(--ipad-scale));
-    border-left-width: calc(3px * var(--ipad-scale));
-    border-radius: calc(4px * var(--ipad-scale));
-  }
-
-  .s-infobox-title {
-    font-size: calc(9px * var(--ipad-scale));
-    margin-bottom: calc(2px * var(--ipad-scale));
-  }
-
-  .s-infobox-text { font-size: calc(8.5px * var(--ipad-scale)); }
-
-  .s-warn {
-    padding: calc(8px * var(--ipad-scale)) calc(16px * var(--ipad-scale)) calc(8px * var(--ipad-scale)) calc(20px * var(--ipad-scale));
-    border-left-width: calc(4px * var(--ipad-scale));
-  }
-
-  .s-warn-item {
-    font-size: calc(8.5px * var(--ipad-scale));
-    margin-bottom: calc(3px * var(--ipad-scale));
-    padding-left: calc(10px * var(--ipad-scale));
-  }
-
-  .s-footer {
-    padding: calc(10px * var(--ipad-scale)) calc(16px * var(--ipad-scale));
-  }
-
-  .s-footer-info { font-size: calc(8px * var(--ipad-scale)); }
-
-  .s-footer-qr {
-    margin-left: calc(12px * var(--ipad-scale));
-  }
-
-  .s-footer-qr-label {
-    font-size: calc(7px * var(--ipad-scale));
-    margin-top: calc(3px * var(--ipad-scale));
-  }
-
-  #qr-target canvas,
-  #qr-target img {
-    width: calc(64px * var(--ipad-scale)) !important;
-    height: calc(64px * var(--ipad-scale)) !important;
-  }
+.s-footer-info {
+  font-size: clamp(9px, calc(2.45 * var(--mm)), 12px); /* >=7.5pt on tablet */
+  color: #6f6f6f;
+  line-height: var(--base);
+  overflow-wrap: anywhere;
 }
-
-/* ===== iPad Finder Scaling ===== */
-@media screen and (min-width: 768px) and (max-width: 1180px) and (orientation: portrait) {
-  .category-bar {
-    padding: calc(8px * var(--ipad-scale)) calc(16px * var(--ipad-scale));
-    gap: calc(8px * var(--ipad-scale));
-  }
-  .cat-btn {
-    font-size: calc(12px * var(--ipad-scale));
-    padding: calc(6px * var(--ipad-scale)) calc(11px * var(--ipad-scale));
-  }
-  .cat-dot {
-    width: calc(8px * var(--ipad-scale));
-    height: calc(8px * var(--ipad-scale));
-  }
-  .cat-count { font-size: calc(11px * var(--ipad-scale)); }
-
-  .finder-row {
-    padding: calc(8px * var(--ipad-scale)) calc(16px * var(--ipad-scale)) calc(10px * var(--ipad-scale));
-    gap: calc(8px * var(--ipad-scale));
-  }
-  .med-search,
-  .med-select {
-    font-size: calc(13px * var(--ipad-scale));
-    padding: calc(8px * var(--ipad-scale)) calc(10px * var(--ipad-scale));
-    border-radius: calc(8px * var(--ipad-scale));
-  }
-
-  .med-bar {
-    padding: calc(10px * var(--ipad-scale)) calc(16px * var(--ipad-scale));
-    gap: calc(8px * var(--ipad-scale));
-  }
-  .med-btn {
-    font-size: calc(13px * var(--ipad-scale));
-    padding: calc(8px * var(--ipad-scale)) calc(14px * var(--ipad-scale));
-    border-radius: calc(8px * var(--ipad-scale));
-  }
-  .med-empty { font-size: calc(12px * var(--ipad-scale)); }
+.s-footer-qr { text-align: center; justify-self: end; width: clamp(18mm, calc(22 * var(--mm)), 22mm); }
+#qr-target {
+  width: clamp(18mm, calc(22 * var(--mm)), 22mm);
+  height: clamp(18mm, calc(22 * var(--mm)), 22mm);
+}
+#qr-target canvas,
+#qr-target img {
+  width: 100% !important;
+  height: 100% !important;
+}
+.s-footer-qr-label {
+  font-size: clamp(8px, calc(2.3 * var(--mm)), 11px); /* ~7pt */
+  color: #7f7f7f;
+  margin-top: calc(0.2 * var(--base));
+  line-height: calc(0.8 * var(--base));
 }
 
 /* ===== Print ===== */
@@ -585,120 +540,6 @@ const MEDICATIONS = [
         "ja":"使用後に喘鳴が悪化した場合は直ちに使用を中止し医師の診察を受ける" }
     ],
     qrUrl: "https://pharmacy.example.com/meds/mdi"
-  },
-
-  // ── 2. NTG Sublingual ───────────────────────────────────
-  {
-    "id": "ntg",
-    color: { main:"#993C1D", light:"#FAECE7", dark:"#4A1B0C", badge:"#F5C4B3", badgeText:"#4A1B0C" },
-    emergency: true,
-    name: {
-      "zh-TW":"硝化甘油舌下錠", "en":"Nitroglycerin Sublingual Tablet",
-      "id":"Tablet Sublingual Nitrogliserin", "vi":"Viên Ngậm Dưới Lưỡi Nitroglycerin",
-      "th":"ยาเม็ดอมใต้ลิ้นไนโตรกลีเซอรีน", "tl":"Nitroglycerin Sublingual Tablet",
-      "ja":"ニトログリセリン舌下錠"
-    },
-    subtitle: {
-      "zh-TW":"心絞痛急性發作緊急使用", "en":"For acute angina attacks — emergency use",
-      "id":"Untuk serangan angina akut — penggunaan darurat", "vi":"Dùng khi đau thắt ngực cấp — khẩn cấp",
-      "th":"ใช้เมื่อเจ็บหน้าอกเฉียบพลัน — กรณีฉุกเฉิน", "tl":"Para sa talamak na angina — emergency na gamit",
-      "ja":"狭心症急性発作時の緊急使用"
-    },
-    badge: {
-      "zh-TW":"舌下錠", "en":"Sublingual", "id":"Sublingual", "vi":"Ngậm dưới lưỡi",
-      "th":"อมใต้ลิ้น", "tl":"Sublingual", "ja":"舌下錠"
-    },
-    steps: [
-      {
-        action:{ "zh-TW":"感到胸痛，立刻坐下或躺下",     "en":"Feel chest pain — sit or lie down immediately",
-                 "id":"Rasakan nyeri dada — segera duduk atau berbaring","vi":"Cảm thấy đau ngực — ngồi hoặc nằm xuống ngay",
-                 "th":"รู้สึกเจ็บหน้าอก — นั่งหรือนอนลงทันที","tl":"Maramdaman ang pananakit ng dibdib — umupo o humiga agad",
-                 "ja":"胸痛を感じたら直ちに座るか横になる" },
-        note:{  "zh-TW":"避免站立，防止血壓驟降導致昏倒",  "en":"Avoid standing — prevents fainting from blood pressure drop",
-                "id":"Hindari berdiri — mencegah pingsan karena penurunan tekanan darah","vi":"Tránh đứng — ngăn ngất xỉu do tụt huyết áp",
-                "th":"หลีกเลี่ยงการยืน เพื่อป้องกันการเป็นลมจากความดันโลหิตต่ำ","tl":"Iwasang tumayo — pumipigil sa pagkahimatay dahil sa pagbaba ng presyon",
-                "ja":"立位を避け、血圧低下による失神を防ぐ" }
-      },
-      {
-        action:{ "zh-TW":"取出 1 片，放於舌頭下方",      "en":"Take 1 tablet, place under your tongue",
-                 "id":"Ambil 1 tablet, letakkan di bawah lidah","vi":"Lấy 1 viên, đặt dưới lưỡi",
-                 "th":"หยิบ 1 เม็ด วางไว้ใต้ลิ้น",       "tl":"Kumuha ng 1 tablet, ilagay sa ilalim ng dila",
-                 "ja":"1錠を取り出し、舌の下に置く" },
-        note:{  "zh-TW":"讓藥片自然溶解，勿吞服、勿咀嚼","en":"Let it dissolve naturally — do not swallow or chew",
-                "id":"Biarkan larut sendiri — jangan ditelan atau dikunyah","vi":"Để tan tự nhiên — không nuốt hoặc nhai",
-                "th":"ให้ละลายเองตามธรรมชาติ อย่ากลืนหรือเคี้ยว","tl":"Hayaang matunaw ito — huwag lunukin o ngumuya",
-                "ja":"自然に溶かす。飲み込んだり噛んだりしない" }
-      },
-      {
-        action:{ "zh-TW":"靜待 5 分鐘，觀察症狀是否緩解","en":"Wait 5 minutes — check if symptoms are relieved",
-                 "id":"Tunggu 5 menit — periksa apakah gejala mereda","vi":"Chờ 5 phút — kiểm tra xem triệu chứng có giảm không",
-                 "th":"รอ 5 นาที — ดูว่าอาการดีขึ้นหรือไม่","tl":"Maghintay ng 5 minuto — tingnan kung gumagaan ang sintomas",
-                 "ja":"5分待って症状が和らぐか確認する" },
-        note:{  "zh-TW":"保持休息，勿劇烈活動",           "en":"Stay resting; avoid exertion",
-                "id":"Tetap beristirahat; hindari aktivitas","vi":"Giữ nghỉ ngơi; tránh vận động mạnh",
-                "th":"พักผ่อนและอย่าออกกำลัง",            "tl":"Manatiling nagpapahinga; iwasan ang pagod",
-                "ja":"安静を保ち、激しい動作を避ける" }
-      },
-      {
-        action:{ "zh-TW":"5 分鐘未緩解，再含第 2 片（最多 3 片）","en":"Not relieved — take 2nd tablet (max 3 tablets total)",
-                 "id":"Belum membaik — minum tablet ke-2 (maks. 3 tablet)","vi":"Chưa giảm — dùng viên thứ 2 (tối đa 3 viên)",
-                 "th":"ไม่ดีขึ้น — อมเม็ดที่ 2 (สูงสุด 3 เม็ด)","tl":"Hindi gumagaan — uminom ng ika-2 tablet (max 3 tablet)",
-                 "ja":"和らがない場合は2錠目を服用（最大3錠）" },
-        note:{  "zh-TW":"3 片後仍未緩解 → 立即撥打 119，等待救護車，不要自行駕車",
-                "en":"Still not relieved after 3 tablets → Call 119 immediately — do not drive",
-                "id":"Masih tidak membaik setelah 3 tablet → Hubungi 119 segera — jangan berkendara",
-                "vi":"Vẫn chưa giảm sau 3 viên → Gọi 119 ngay — không tự lái xe",
-                "th":"ยังไม่ดีขึ้นหลัง 3 เม็ด → โทร 119 ทันที อย่าขับรถเอง",
-                "tl":"Hindi pa rin gumagaan pagkatapos ng 3 tablet → Tumawag ng 119 agad — huwag magmaneho",
-                "ja":"3錠後も和らがない → 直ちに119番 — 自分で運転しない" },
-        highlight: true
-      },
-      {
-        action:{ "zh-TW":"記錄使用時間與用量",            "en":"Record the time and number of tablets used",
-                 "id":"Catat waktu dan jumlah tablet yang digunakan","vi":"Ghi lại thời gian và số viên đã dùng",
-                 "th":"บันทึกเวลาและจำนวนเม็ดที่ใช้",     "tl":"Itala ang oras at bilang ng tablet na ginamit",
-                 "ja":"使用時刻と錠数を記録する" },
-        note:{  "zh-TW":"告知醫師每次發作情形及用藥片數","en":"Report each episode and dose to your doctor",
-                "id":"Laporkan setiap episode dan dosis ke dokter","vi":"Báo cáo từng đợt và liều dùng cho bác sĩ",
-                "th":"แจ้งแพทย์ทุกครั้งที่มีอาการและจำนวนเม็ดที่ใช้","tl":"Iulat ang bawat episode at dosis sa doktor",
-                "ja":"毎回の発作と使用錠数を医師に報告する" }
-      }
-    ],
-    storage: {
-      title:{ "zh-TW":"藥品保存",  "en":"Storage",        "id":"Penyimpanan",  "vi":"Bảo quản",
-              "th":"การเก็บรักษา","tl":"Imbakan",         "ja":"保管方法" },
-      text: { "zh-TW":"棕色原瓶 · 常溫避光 · 勿放冷凍 · 開封後 6 個月更換",
-              "en":"Original brown bottle · Room temp, away from light · Do not freeze · Replace 6 months after opening",
-              "id":"Botol coklat asli · Suhu kamar, hindari cahaya · Jangan dibekukan · Ganti 6 bulan setelah dibuka",
-              "vi":"Lọ nâu gốc · Nhiệt độ phòng, tránh ánh sáng · Không đông lạnh · Thay sau 6 tháng mở",
-              "th":"ขวดสีน้ำตาลเดิม · อุณหภูมิห้อง หลีกเลี่ยงแสง · ห้ามแช่แข็ง · เปลี่ยนหลังเปิดใช้ 6 เดือน",
-              "tl":"Orihinal na brown na bote · Temperatura ng silid, iwasan ang liwanag · Huwag i-freeze · Palitan pagkatapos ng 6 na buwan",
-              "ja":"元の茶色い瓶で保管 · 室温・遮光 · 冷凍禁止 · 開封後6ヶ月で交換" }
-    },
-    warnings: [
-      { "zh-TW":"使用後可能感到頭痛或頭暈，為正常反應，請平躺休息",
-        "en":"Headache or dizziness after use is normal — lie down and rest",
-        "id":"Sakit kepala atau pusing setelah digunakan adalah normal — berbaring dan beristirahat",
-        "vi":"Đau đầu hoặc chóng mặt sau khi dùng là bình thường — nằm xuống nghỉ",
-        "th":"อาการปวดหัวหรือเวียนหัวหลังใช้ยาเป็นเรื่องปกติ — ให้นอนพักผ่อน",
-        "tl":"Ang pananakit ng ulo o pagkahilo pagkatapos gumamit ay normal — humiga at magpahinga",
-        "ja":"使用後の頭痛やめまいは正常反応 — 横になって休む" },
-      { "zh-TW":"勿與 PDE-5 抑制劑（如威而鋼）同時使用，恐致血壓驟降",
-        "en":"Do not use with PDE-5 inhibitors (e.g. Viagra) — risk of severe blood pressure drop",
-        "id":"Jangan gunakan bersama penghambat PDE-5 (mis. Viagra) — risiko penurunan tekanan darah parah",
-        "vi":"Không dùng cùng thuốc ức chế PDE-5 (VD: Viagra) — nguy cơ tụt huyết áp nghiêm trọng",
-        "th":"ห้ามใช้ร่วมกับยา PDE-5 inhibitor (เช่น Viagra) — เสี่ยงต่อความดันโลหิตต่ำอย่างรุนแรง",
-        "tl":"Huwag gamitin kasabay ng PDE-5 inhibitors (hal. Viagra) — panganib ng matinding pagbaba ng presyon",
-        "ja":"PDE-5阻害薬（バイアグラ等）と同時使用禁止 — 重篤な血圧低下の危険" },
-      { "zh-TW":"開封後超過 6 個月，請至藥局更換新藥",
-        "en":"Replace with new supply if opened more than 6 months ago",
-        "id":"Ganti dengan persediaan baru jika sudah dibuka lebih dari 6 bulan",
-        "vi":"Thay thế bằng thuốc mới nếu đã mở hơn 6 tháng",
-        "th":"เปลี่ยนยาใหม่หากเปิดใช้มาเกิน 6 เดือน",
-        "tl":"Palitan ng bago kung nakabukas na nang higit sa 6 na buwan",
-        "ja":"開封後6ヶ月を超えたら新しいものに交換する" }
-    ],
-    qrUrl: "https://pharmacy.example.com/meds/ntg"
   },
 
   // ── 3. Eye Drops ────────────────────────────────────────
@@ -1161,7 +1002,7 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/molnupiravir"
   },
 
-  // ── Placeholder: Nitrostat ─────────────────────────────────────,
+  // ── Nitrostat ─────────────────────────────────────,
   {
       "id": "nitrostat",
       color: {
@@ -1173,22 +1014,22 @@ const MEDICATIONS = [
       },
       emergency: true,
       name: {
-          "zh-TW": "Nitrostat",
-          "en": "Nitrostat",
-          "id": "Nitrostat",
-          "vi": "Nitrostat",
-          "th": "Nitrostat",
-          "tl": "Nitrostat",
-          "ja": "Nitrostat"
+          "zh-TW": "硝化甘油舌下錠",
+          "en": "Nitroglycerin Sublingual Tablet",
+          "id": "Tablet Sublingual Nitrogliserin",
+          "vi": "Viên Ngậm Dưới Lưỡi Nitroglycerin",
+          "th": "ยาเม็ดอมใต้ลิ้นไนโตรกลีเซอรีน",
+          "tl": "Nitroglycerin Sublingual Tablet",
+          "ja": "ニトログリセリン舌下錠"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "心絞痛急性發作緊急使用",
+          "en": "For acute angina attacks — emergency use",
+          "id": "Untuk serangan angina akut — penggunaan darurat",
+          "vi": "Dùng khi đau thắt ngực cấp — khẩn cấp",
+          "th": "ใช้เมื่อเจ็บหน้าอกเฉียบพลัน — กรณีฉุกเฉิน",
+          "tl": "Para sa talamak na angina — emergency na gamit",
+          "ja": "狭心症急性発作時の緊急使用"
       },
       badge: {
           "zh-TW": "舌下錠",
@@ -1202,37 +1043,161 @@ const MEDICATIONS = [
       steps: [
           {
               action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
+                  "zh-TW": "感到胸痛，立刻坐下或躺下",
+                  "en": "Feel chest pain — sit or lie down immediately",
+                  "id": "Rasakan nyeri dada — segera duduk atau berbaring",
+                  "vi": "Cảm thấy đau ngực — ngồi hoặc nằm xuống ngay",
+                  "th": "รู้สึกเจ็บหน้าอก — นั่งหรือนอนลงทันที",
+                  "tl": "Maramdaman ang pananakit ng dibdib — umupo o humiga agad",
+                  "ja": "胸痛を感じたら直ちに座るか横になる"
               },
               note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
+                  "zh-TW": "避免站立，防止血壓驟降導致昏倒",
+                  "en": "Avoid standing — prevents fainting from blood pressure drop",
+                  "id": "Hindari berdiri — mencegah pingsan karena penurunan tekanan darah",
+                  "vi": "Tránh đứng — ngăn ngất xỉu do tụt huyết áp",
+                  "th": "หลีกเลี่ยงการยืน เพื่อป้องกันการเป็นลมจากความดันโลหิตต่ำ",
+                  "tl": "Iwasang tumayo — pumipigil sa pagkahimatay dahil sa pagbaba ng presyon",
+                  "ja": "立位を避け、血圧低下による失神を防ぐ"
+              },
+              illustration: "assets/svg/nitrostat/step-0.png"
+          },
+          {
+              action: {
+                  "zh-TW": "取出 1 片，放於舌頭下方",
+                  "en": "Take 1 tablet, place under your tongue",
+                  "id": "Ambil 1 tablet, letakkan di bawah lidah",
+                  "vi": "Lấy 1 viên, đặt dưới lưỡi",
+                  "th": "หยิบ 1 เม็ด วางไว้ใต้ลิ้น",
+                  "tl": "Kumuha ng 1 tablet, ilagay sa ilalim ng dila",
+                  "ja": "1錠を取り出し、舌の下に置く"
+              },
+              note: {
+                  "zh-TW": "讓藥片自然溶解，勿吞服、勿咀嚼",
+                  "en": "Let it dissolve naturally — do not swallow or chew",
+                  "id": "Biarkan larut sendiri — jangan ditelan atau dikunyah",
+                  "vi": "Để tan tự nhiên — không nuốt hoặc nhai",
+                  "th": "ให้ละลายเองตามธรรมชาติ อย่ากลืนหรือเคี้ยว",
+                  "tl": "Hayaang matunaw ito — huwag lunukin o ngumuya",
+                  "ja": "自然に溶かす。飲み込んだり噛んだりしない"
+              },
+              illustration: "assets/svg/nitrostat/step-1.png"
+          },
+          {
+              action: {
+                  "zh-TW": "靜待 5 分鐘，觀察症狀是否緩解",
+                  "en": "Wait 5 minutes — check if symptoms are relieved",
+                  "id": "Tunggu 5 menit — periksa apakah gejala mereda",
+                  "vi": "Chờ 5 phút — kiểm tra xem triệu chứng có giảm không",
+                  "th": "รอ 5 นาที — ดูว่าอาการดีขึ้นหรือไม่",
+                  "tl": "Maghintay ng 5 minuto — tingnan kung gumagaan ang sintomas",
+                  "ja": "5分待って症状が和らぐか確認する"
+              },
+              note: {
+                  "zh-TW": "保持休息，勿劇烈活動",
+                  "en": "Stay resting; avoid exertion",
+                  "id": "Tetap beristirahat; hindari aktivitas",
+                  "vi": "Giữ nghỉ ngơi; tránh vận động mạnh",
+                  "th": "พักผ่อนและอย่าออกกำลัง",
+                  "tl": "Manatiling nagpapahinga; iwasan ang pagod",
+                  "ja": "安静を保ち、激しい動作を避ける"
+              },
+              illustration: "assets/svg/nitrostat/step-2.png"
+          },
+          {
+              action: {
+                  "zh-TW": "5 分鐘未緩解，再含第 2 片（最多 3 片）",
+                  "en": "Not relieved — take 2nd tablet (max 3 tablets total)",
+                  "id": "Belum membaik — minum tablet ke-2 (maks. 3 tablet)",
+                  "vi": "Chưa giảm — dùng viên thứ 2 (tối đa 3 viên)",
+                  "th": "ไม่ดีขึ้น — อมเม็ดที่ 2 (สูงสุด 3 เม็ด)",
+                  "tl": "Hindi gumagaan — uminom ng ika-2 tablet (max 3 tablet)",
+                  "ja": "和らがない場合は2錠目を服用（最大3錠）"
+              },
+              note: {
+                  "zh-TW": "3 片後仍未緩解 → 立即撥打 119，等待救護車，不要自行駕車",
+                  "en": "Still not relieved after 3 tablets → Call 119 immediately — do not drive",
+                  "id": "Masih tidak membaik setelah 3 tablet → Hubungi 119 segera — jangan berkendara",
+                  "vi": "Vẫn chưa giảm sau 3 viên → Gọi 119 ngay — không tự lái xe",
+                  "th": "ยังไม่ดีขึ้นหลัง 3 เม็ด → โทร 119 ทันที อย่าขับรถเอง",
+                  "tl": "Hindi pa rin gumagaan pagkatapos ng 3 tablet → Tumawag ng 119 agad — huwag magmaneho",
+                  "ja": "3錠後も和らがない → 直ちに119番 — 自分で運転しない"
+              },
+              illustration: "assets/svg/nitrostat/step-3.png",
+              highlight: true
+          },
+          {
+              action: {
+                  "zh-TW": "記錄使用時間與用量",
+                  "en": "Record the time and number of tablets used",
+                  "id": "Catat waktu dan jumlah tablet yang digunakan",
+                  "vi": "Ghi lại thời gian và số viên đã dùng",
+                  "th": "บันทึกเวลาและจำนวนเม็ดที่ใช้",
+                  "tl": "Itala ang oras at bilang ng tablet na ginamit",
+                  "ja": "使用時刻と錠数を記録する"
+              },
+              note: {
+                  "zh-TW": "告知醫師每次發作情形及用藥片數",
+                  "en": "Report each episode and dose to your doctor",
+                  "id": "Laporkan setiap episode dan dosis ke dokter",
+                  "vi": "Báo cáo từng đợt và liều dùng cho bác sĩ",
+                  "th": "แจ้งแพทย์ทุกครั้งที่มีอาการและจำนวนเม็ดที่ใช้",
+                  "tl": "Iulat ang bawat episode at dosis sa doktor",
+                  "ja": "毎回の発作と使用錠数を医師に報告する"
+              },
+              illustration: "assets/svg/nitrostat/step-4.png"
           }
       ],
+      storage: {
+          title: {
+              "zh-TW": "藥品保存",
+              "en": "Storage",
+              "id": "Penyimpanan",
+              "vi": "Bảo quản",
+              "th": "การเก็บรักษา",
+              "tl": "Imbakan",
+              "ja": "保管方法"
+          },
+          text: {
+              "zh-TW": "棕色原瓶 · 常溫避光 · 勿放冷凍 · 開封後 6 個月更換",
+              "en": "Original brown bottle · Room temp, away from light · Do not freeze · Replace 6 months after opening",
+              "id": "Botol coklat asli · Suhu kamar, hindari cahaya · Jangan dibekukan · Ganti 6 bulan setelah dibuka",
+              "vi": "Lọ nâu gốc · Nhiệt độ phòng, tránh ánh sáng · Không đông lạnh · Thay sau 6 tháng mở",
+              "th": "ขวดสีน้ำตาลเดิม · อุณหภูมิห้อง หลีกเลี่ยงแสง · ห้ามแช่แข็ง · เปลี่ยนหลังเปิดใช้ 6 เดือน",
+              "tl": "Orihinal na brown na bote · Temperatura ng silid, iwasan ang liwanag · Huwag i-freeze · Palitan pagkatapos ng 6 na buwan",
+              "ja": "元の茶色い瓶で保管 · 室温・遮光 · 冷凍禁止 · 開封後6ヶ月で交換"
+          }
+      },
       warnings: [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              "zh-TW": "使用後可能感到頭痛或頭暈，為正常反應，請平躺休息",
+              "en": "Headache or dizziness after use is normal — lie down and rest",
+              "id": "Sakit kepala atau pusing setelah digunakan adalah normal — berbaring dan beristirahat",
+              "vi": "Đau đầu hoặc chóng mặt sau khi dùng là bình thường — nằm xuống nghỉ",
+              "th": "อาการปวดหัวหรือเวียนหัวหลังใช้ยาเป็นเรื่องปกติ — ให้นอนพักผ่อน",
+              "tl": "Ang pananakit ng ulo o pagkahilo pagkatapos gumamit ay normal — humiga at magpahinga",
+              "ja": "使用後の頭痛やめまいは正常反応 — 横になって休む"
+          },
+          {
+              "zh-TW": "勿與 PDE-5 抑制劑（如威而鋼）同時使用，恐致血壓驟降",
+              "en": "Do not use with PDE-5 inhibitors (e.g. Viagra) — risk of severe blood pressure drop",
+              "id": "Jangan gunakan bersama penghambat PDE-5 (mis. Viagra) — risiko penurunan tekanan darah parah",
+              "vi": "Không dùng cùng thuốc ức chế PDE-5 (VD: Viagra) — nguy cơ tụt huyết áp nghiêm trọng",
+              "th": "ห้ามใช้ร่วมกับยา PDE-5 inhibitor (เช่น Viagra) — เสี่ยงต่อความดันโลหิตต่ำอย่างรุนแรง",
+              "tl": "Huwag gamitin kasabay ng PDE-5 inhibitors (hal. Viagra) — panganib ng matinding pagbaba ng presyon",
+              "ja": "PDE-5阻害薬（バイアグラ等）と同時使用禁止 — 重篤な血圧低下の危険"
+          },
+          {
+              "zh-TW": "開封後超過 6 個月，請至藥局更換新藥",
+              "en": "Replace with new supply if opened more than 6 months ago",
+              "id": "Ganti dengan persediaan baru jika sudah dibuka lebih dari 6 bulan",
+              "vi": "Thay thế bằng thuốc mới nếu đã mở hơn 6 tháng",
+              "th": "เปลี่ยนยาใหม่หากเปิดใช้มาเกิน 6 เดือน",
+              "tl": "Palitan ng bago kung nakabukas na nang higit sa 6 na buwan",
+              "ja": "開封後6ヶ月を超えたら新しいものに交換する"
           }
       ],
-      qrUrl: "https://pharmacy.example.com/meds/nitrostat"
+      qrUrl: "https://www.youtube.com/watch?v=5GRkMAb8fGc"
   },
 
   // ── Placeholder: Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL) ─────────────────────────────────────,
@@ -5686,20 +5651,28 @@ function render() {
 // ============================================================
 // QR CODE
 // ============================================================
+function getQrRenderSizePx() {
+  const sheet = document.getElementById("sheet");
+  if (!sheet) return 84;
+  const mmPx = sheet.clientWidth / 176;
+  return Math.max(68, Math.round(22 * mmPx));
+}
+
 function generateQR(url) {
   const el = document.getElementById("qr-target");
   if (!el) return;
   el.innerHTML = "";
+  const qrSize = getQrRenderSizePx();
   try {
     new QRCode(el, {
       text: url,
-      width: 64, height: 64,
+      width: qrSize, height: qrSize,
       colorDark: "#1A1A1A",
       colorLight: "#FFFFFF",
       correctLevel: QRCode.CorrectLevel.M
     });
   } catch(e) {
-    el.innerHTML = '<div style="width:64px;height:64px;border:0.5px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:8px;color:#aaa">QR</div>';
+    el.innerHTML = `<div style="width:${qrSize}px;height:${qrSize}px;border:0.5px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:8px;color:#aaa">QR</div>`;
   }
 }
 

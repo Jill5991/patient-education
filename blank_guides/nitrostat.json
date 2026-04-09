@@ -1,23 +1,31 @@
 {
   "id": "nitrostat",
   "category": "ntg",
+  "color": {
+    "main": "#993C1D",
+    "light": "#FAECE7",
+    "dark": "#4A1B0C",
+    "badge": "#F5C4B3",
+    "badgeText": "#4A1B0C"
+  },
+  "emergency": true,
   "name": {
-    "zh-TW": "Nitrostat",
-    "en": "Nitrostat",
-    "id": "Nitrostat",
-    "vi": "Nitrostat",
-    "th": "Nitrostat",
-    "tl": "Nitrostat",
-    "ja": "Nitrostat"
+    "zh-TW": "硝化甘油舌下錠",
+    "en": "Nitroglycerin Sublingual Tablet",
+    "id": "Tablet Sublingual Nitrogliserin",
+    "vi": "Viên Ngậm Dưới Lưỡi Nitroglycerin",
+    "th": "ยาเม็ดอมใต้ลิ้นไนโตรกลีเซอรีน",
+    "tl": "Nitroglycerin Sublingual Tablet",
+    "ja": "ニトログリセリン舌下錠"
   },
   "subtitle": {
-    "zh-TW": "",
-    "en": "",
-    "id": "",
-    "vi": "",
-    "th": "",
-    "tl": "",
-    "ja": ""
+    "zh-TW": "心絞痛急性發作緊急使用",
+    "en": "For acute angina attacks — emergency use",
+    "id": "Untuk serangan angina akut — penggunaan darurat",
+    "vi": "Dùng khi đau thắt ngực cấp — khẩn cấp",
+    "th": "ใช้เมื่อเจ็บหน้าอกเฉียบพลัน — กรณีฉุกเฉิน",
+    "tl": "Para sa talamak na angina — emergency na gamit",
+    "ja": "狭心症急性発作時の緊急使用"
   },
   "badge": {
     "zh-TW": "舌下錠",
@@ -31,35 +39,159 @@
   "steps": [
     {
       "action": {
-        "zh-TW": "",
-        "en": "",
-        "id": "",
-        "vi": "",
-        "th": "",
-        "tl": "",
-        "ja": ""
+        "zh-TW": "感到胸痛，立刻坐下或躺下",
+        "en": "Feel chest pain — sit or lie down immediately",
+        "id": "Rasakan nyeri dada — segera duduk atau berbaring",
+        "vi": "Cảm thấy đau ngực — ngồi hoặc nằm xuống ngay",
+        "th": "รู้สึกเจ็บหน้าอก — นั่งหรือนอนลงทันที",
+        "tl": "Maramdaman ang pananakit ng dibdib — umupo o humiga agad",
+        "ja": "胸痛を感じたら直ちに座るか横になる"
       },
       "note": {
-        "zh-TW": "",
-        "en": "",
-        "id": "",
-        "vi": "",
-        "th": "",
-        "tl": "",
-        "ja": ""
-      }
+        "zh-TW": "避免站立，防止血壓驟降導致昏倒",
+        "en": "Avoid standing — prevents fainting from blood pressure drop",
+        "id": "Hindari berdiri — mencegah pingsan karena penurunan tekanan darah",
+        "vi": "Tránh đứng — ngăn ngất xỉu do tụt huyết áp",
+        "th": "หลีกเลี่ยงการยืน เพื่อป้องกันการเป็นลมจากความดันโลหิตต่ำ",
+        "tl": "Iwasang tumayo — pumipigil sa pagkahimatay dahil sa pagbaba ng presyon",
+        "ja": "立位を避け、血圧低下による失神を防ぐ"
+      },
+      "illustration": "assets/svg/nitrostat/step-0.png"
+    },
+    {
+      "action": {
+        "zh-TW": "取出 1 片，放於舌頭下方",
+        "en": "Take 1 tablet, place under your tongue",
+        "id": "Ambil 1 tablet, letakkan di bawah lidah",
+        "vi": "Lấy 1 viên, đặt dưới lưỡi",
+        "th": "หยิบ 1 เม็ด วางไว้ใต้ลิ้น",
+        "tl": "Kumuha ng 1 tablet, ilagay sa ilalim ng dila",
+        "ja": "1錠を取り出し、舌の下に置く"
+      },
+      "note": {
+        "zh-TW": "讓藥片自然溶解，勿吞服、勿咀嚼",
+        "en": "Let it dissolve naturally — do not swallow or chew",
+        "id": "Biarkan larut sendiri — jangan ditelan atau dikunyah",
+        "vi": "Để tan tự nhiên — không nuốt hoặc nhai",
+        "th": "ให้ละลายเองตามธรรมชาติ อย่ากลืนหรือเคี้ยว",
+        "tl": "Hayaang matunaw ito — huwag lunukin o ngumuya",
+        "ja": "自然に溶かす。飲み込んだり噛んだりしない"
+      },
+      "illustration": "assets/svg/nitrostat/step-1.png"
+    },
+    {
+      "action": {
+        "zh-TW": "靜待 5 分鐘，觀察症狀是否緩解",
+        "en": "Wait 5 minutes — check if symptoms are relieved",
+        "id": "Tunggu 5 menit — periksa apakah gejala mereda",
+        "vi": "Chờ 5 phút — kiểm tra xem triệu chứng có giảm không",
+        "th": "รอ 5 นาที — ดูว่าอาการดีขึ้นหรือไม่",
+        "tl": "Maghintay ng 5 minuto — tingnan kung gumagaan ang sintomas",
+        "ja": "5分待って症状が和らぐか確認する"
+      },
+      "note": {
+        "zh-TW": "保持休息，勿劇烈活動",
+        "en": "Stay resting; avoid exertion",
+        "id": "Tetap beristirahat; hindari aktivitas",
+        "vi": "Giữ nghỉ ngơi; tránh vận động mạnh",
+        "th": "พักผ่อนและอย่าออกกำลัง",
+        "tl": "Manatiling nagpapahinga; iwasan ang pagod",
+        "ja": "安静を保ち、激しい動作を避ける"
+      },
+      "illustration": "assets/svg/nitrostat/step-2.png"
+    },
+    {
+      "action": {
+        "zh-TW": "5 分鐘未緩解，再含第 2 片（最多 3 片）",
+        "en": "Not relieved — take 2nd tablet (max 3 tablets total)",
+        "id": "Belum membaik — minum tablet ke-2 (maks. 3 tablet)",
+        "vi": "Chưa giảm — dùng viên thứ 2 (tối đa 3 viên)",
+        "th": "ไม่ดีขึ้น — อมเม็ดที่ 2 (สูงสุด 3 เม็ด)",
+        "tl": "Hindi gumagaan — uminom ng ika-2 tablet (max 3 tablet)",
+        "ja": "和らがない場合は2錠目を服用（最大3錠）"
+      },
+      "note": {
+        "zh-TW": "3 片後仍未緩解 → 立即撥打 119，等待救護車，不要自行駕車",
+        "en": "Still not relieved after 3 tablets → Call 119 immediately — do not drive",
+        "id": "Masih tidak membaik setelah 3 tablet → Hubungi 119 segera — jangan berkendara",
+        "vi": "Vẫn chưa giảm sau 3 viên → Gọi 119 ngay — không tự lái xe",
+        "th": "ยังไม่ดีขึ้นหลัง 3 เม็ด → โทร 119 ทันที อย่าขับรถเอง",
+        "tl": "Hindi pa rin gumagaan pagkatapos ng 3 tablet → Tumawag ng 119 agad — huwag magmaneho",
+        "ja": "3錠後も和らがない → 直ちに119番 — 自分で運転しない"
+      },
+      "illustration": "assets/svg/nitrostat/step-3.png",
+      "highlight": true
+    },
+    {
+      "action": {
+        "zh-TW": "記錄使用時間與用量",
+        "en": "Record the time and number of tablets used",
+        "id": "Catat waktu dan jumlah tablet yang digunakan",
+        "vi": "Ghi lại thời gian và số viên đã dùng",
+        "th": "บันทึกเวลาและจำนวนเม็ดที่ใช้",
+        "tl": "Itala ang oras at bilang ng tablet na ginamit",
+        "ja": "使用時刻と錠数を記録する"
+      },
+      "note": {
+        "zh-TW": "告知醫師每次發作情形及用藥片數",
+        "en": "Report each episode and dose to your doctor",
+        "id": "Laporkan setiap episode dan dosis ke dokter",
+        "vi": "Báo cáo từng đợt và liều dùng cho bác sĩ",
+        "th": "แจ้งแพทย์ทุกครั้งที่มีอาการและจำนวนเม็ดที่ใช้",
+        "tl": "Iulat ang bawat episode at dosis sa doktor",
+        "ja": "毎回の発作と使用錠数を医師に報告する"
+      },
+      "illustration": "assets/svg/nitrostat/step-4.png"
     }
   ],
+  "storage": {
+    "title": {
+      "zh-TW": "藥品保存",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บรักษา",
+      "tl": "Imbakan",
+      "ja": "保管方法"
+    },
+    "text": {
+      "zh-TW": "棕色原瓶 · 常溫避光 · 勿放冷凍 · 開封後 6 個月更換",
+      "en": "Original brown bottle · Room temp, away from light · Do not freeze · Replace 6 months after opening",
+      "id": "Botol coklat asli · Suhu kamar, hindari cahaya · Jangan dibekukan · Ganti 6 bulan setelah dibuka",
+      "vi": "Lọ nâu gốc · Nhiệt độ phòng, tránh ánh sáng · Không đông lạnh · Thay sau 6 tháng mở",
+      "th": "ขวดสีน้ำตาลเดิม · อุณหภูมิห้อง หลีกเลี่ยงแสง · ห้ามแช่แข็ง · เปลี่ยนหลังเปิดใช้ 6 เดือน",
+      "tl": "Orihinal na brown na bote · Temperatura ng silid, iwasan ang liwanag · Huwag i-freeze · Palitan pagkatapos ng 6 na buwan",
+      "ja": "元の茶色い瓶で保管 · 室温・遮光 · 冷凍禁止 · 開封後6ヶ月で交換"
+    }
+  },
   "warnings": [
     {
-      "zh-TW": "",
-      "en": "",
-      "id": "",
-      "vi": "",
-      "th": "",
-      "tl": "",
-      "ja": ""
+      "zh-TW": "使用後可能感到頭痛或頭暈，為正常反應，請平躺休息",
+      "en": "Headache or dizziness after use is normal — lie down and rest",
+      "id": "Sakit kepala atau pusing setelah digunakan adalah normal — berbaring dan beristirahat",
+      "vi": "Đau đầu hoặc chóng mặt sau khi dùng là bình thường — nằm xuống nghỉ",
+      "th": "อาการปวดหัวหรือเวียนหัวหลังใช้ยาเป็นเรื่องปกติ — ให้นอนพักผ่อน",
+      "tl": "Ang pananakit ng ulo o pagkahilo pagkatapos gumamit ay normal — humiga at magpahinga",
+      "ja": "使用後の頭痛やめまいは正常反応 — 横になって休む"
+    },
+    {
+      "zh-TW": "勿與 PDE-5 抑制劑（如威而鋼）同時使用，恐致血壓驟降",
+      "en": "Do not use with PDE-5 inhibitors (e.g. Viagra) — risk of severe blood pressure drop",
+      "id": "Jangan gunakan bersama penghambat PDE-5 (mis. Viagra) — risiko penurunan tekanan darah parah",
+      "vi": "Không dùng cùng thuốc ức chế PDE-5 (VD: Viagra) — nguy cơ tụt huyết áp nghiêm trọng",
+      "th": "ห้ามใช้ร่วมกับยา PDE-5 inhibitor (เช่น Viagra) — เสี่ยงต่อความดันโลหิตต่ำอย่างรุนแรง",
+      "tl": "Huwag gamitin kasabay ng PDE-5 inhibitors (hal. Viagra) — panganib ng matinding pagbaba ng presyon",
+      "ja": "PDE-5阻害薬（バイアグラ等）と同時使用禁止 — 重篤な血圧低下の危険"
+    },
+    {
+      "zh-TW": "開封後超過 6 個月，請至藥局更換新藥",
+      "en": "Replace with new supply if opened more than 6 months ago",
+      "id": "Ganti dengan persediaan baru jika sudah dibuka lebih dari 6 bulan",
+      "vi": "Thay thế bằng thuốc mới nếu đã mở hơn 6 tháng",
+      "th": "เปลี่ยนยาใหม่หากเปิดใช้มาเกิน 6 เดือน",
+      "tl": "Palitan ng bago kung nakabukas na nang higit sa 6 na buwan",
+      "ja": "開封後6ヶ月を超えたら新しいものに交換する"
     }
   ],
-  "qrUrl": "https://pharmacy.example.com/meds/nitrostat"
+  "qrUrl": "https://www.youtube.com/watch?v=5GRkMAb8fGc"
 }
