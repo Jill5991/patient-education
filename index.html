@@ -252,16 +252,17 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 /* Right 4-column illustration area */
 .step-ill {
   grid-column: 9 / span 4;
-  width: min(100%, calc((3 * var(--col)) + (2 * var(--gutter))));
+  width: 100%;
   min-height: calc(16 * var(--mm));
   height: 100%;
   justify-self: end;
+  padding-right: calc(1 * var(--col) + (1 * var(--gutter)));
   border: 0.5px dashed rgba(0,0,0,0.14);
   border-radius: calc(1.5 * var(--mm));
   background: #fbfbfb;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   overflow: hidden;
 }
 .step-ill img,
