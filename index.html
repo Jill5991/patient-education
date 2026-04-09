@@ -133,12 +133,12 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   font-family: var(--font);
 
   /* B5-based scale system (all values derived from 176mm width) */
-  --mm: calc(100% / 176);
-  --base: calc(5 * var(--mm));      /* baseline grid 5mm */
-  --mx: calc(14 * var(--mm));       /* left/right margin */
-  --mt: calc(18 * var(--mm));       /* top margin zone */
-  --mb: calc(14 * var(--mm));       /* bottom margin zone */
-  --gutter: calc(3 * var(--mm));    /* 12-col gutter */
+  --mm: calc(min(96vw, 176mm) / 176);
+  --base: clamp(14px, calc(5 * var(--mm)), 19px);   /* baseline grid */
+  --mx: clamp(16px, calc(14 * var(--mm)), 53px);    /* left/right margin */
+  --mt: clamp(20px, calc(18 * var(--mm)), 68px);    /* top margin zone */
+  --mb: clamp(14px, calc(14 * var(--mm)), 53px);    /* bottom margin zone */
+  --gutter: clamp(6px, calc(3 * var(--mm)), 12px);  /* 12-col gutter */
 }
 
 /* Color band top: 4mm */
