@@ -155,18 +155,21 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   font-size: clamp(18px, calc(7.8 * var(--mm)), 32px); /* ~22pt */
   font-weight: 700;
   line-height: calc(2 * var(--base));
+  letter-spacing: 0.01em;
   word-break: break-word;
 }
 .s-sub {
   font-size: clamp(11px, calc(3.9 * var(--mm)), 16px); /* ~11pt */
   color: var(--muted);
-  line-height: var(--base);
+  line-height: calc(0.95 * var(--base));
+  letter-spacing: 0.008em;
   margin-top: calc(0.25 * var(--base));
 }
 .s-usage{
   font-size: clamp(10px, calc(3.3 * var(--mm)), 14px);
   color: var(--muted);
-  line-height: var(--base);
+  line-height: calc(0.9 * var(--base));
+  letter-spacing: 0.006em;
   margin-top: calc(0.15 * var(--base));
 }
 .s-badges { display: flex; flex-direction: column; gap: calc(0.6 * var(--base)); align-items: flex-end; flex-shrink: 0; }
@@ -174,6 +177,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .badge-emrg {
   font-size: clamp(10px, calc(3.2 * var(--mm)), 14px);
   font-weight: 600;
+  line-height: calc(0.82 * var(--base));
+  letter-spacing: 0.01em;
   padding: calc(0.45 * var(--base)) calc(0.8 * var(--base));
   border-radius: calc(0.8 * var(--mm));
   white-space: nowrap;
@@ -217,15 +222,17 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .step-action {
   font-size: clamp(11px, calc(3.35 * var(--mm)), 15px); /* ~10pt */
   font-weight: 600;
-  line-height: var(--base);
+  line-height: calc(0.98 * var(--base));
+  letter-spacing: 0.006em;
   color: #1a1a1a;
   overflow-wrap: anywhere;
 }
 .step-note {
   font-size: clamp(10px, calc(2.95 * var(--mm)), 14px); /* ~9.5pt */
   color: #6b6b6b;
-  margin-top: calc(0.2 * var(--base));
-  line-height: var(--base);
+  margin-top: calc(0.15 * var(--base));
+  line-height: calc(0.95 * var(--base));
+  letter-spacing: 0.004em;
   overflow-wrap: anywhere;
 }
 
@@ -251,8 +258,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 }
 .step-ill-label {
   font-size: clamp(9px, calc(2.45 * var(--mm)), 12px);
+  line-height: calc(0.85 * var(--base));
+  letter-spacing: 0.01em;
   color: #8a8a8a;
-  letter-spacing: 0.2px;
 }
 
 .step.hl { background: rgba(216,90,48,0.07); }
@@ -280,12 +288,14 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .s-infobox-title {
   font-size: clamp(10px, calc(2.9 * var(--mm)), 14px);
   font-weight: 600;
-  line-height: var(--base);
+  line-height: calc(0.9 * var(--base));
+  letter-spacing: 0.008em;
   margin-bottom: calc(0.1 * var(--base));
 }
 .s-infobox-text  {
   font-size: clamp(9px, calc(2.75 * var(--mm)), 13px);
-  line-height: var(--base);
+  line-height: calc(0.95 * var(--base));
+  letter-spacing: 0.003em;
   overflow-wrap: anywhere;
 }
 
@@ -298,7 +308,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .s-warn-item {
   font-size: clamp(9px, calc(2.8 * var(--mm)), 13px); /* ~9pt */
   font-weight: 500;
-  line-height: var(--base);
+  line-height: calc(0.95 * var(--base));
+  letter-spacing: 0.004em;
   margin-bottom: calc(0.15 * var(--base));
   padding-left: calc(0.55 * var(--base));
   position: relative;
@@ -322,7 +333,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .s-footer-info {
   font-size: clamp(9px, calc(2.45 * var(--mm)), 12px); /* >=7.5pt on tablet */
   color: #6f6f6f;
-  line-height: var(--base);
+  line-height: calc(0.9 * var(--base));
+  letter-spacing: 0.004em;
   overflow-wrap: anywhere;
 }
 .s-footer-qr { text-align: center; justify-self: end; width: clamp(18mm, calc(22 * var(--mm)), 22mm); }
@@ -340,6 +352,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   color: #7f7f7f;
   margin-top: calc(0.2 * var(--base));
   line-height: calc(0.8 * var(--base));
+  letter-spacing: 0.008em;
 }
 
 /* ===== Print ===== */
