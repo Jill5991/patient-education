@@ -113,6 +113,34 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   font-size: 12px; color: var(--muted); padding: 8px 2px;
 }
 
+/* ===== In-sheet Page Bar ===== */
+.page-bar {
+  padding: 0 16px 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.page-bar:empty { display: none; }
+.page-btn {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--muted);
+  font-family: var(--font);
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.page-btn.active {
+  border-color: var(--acc-main);
+  background: var(--acc-light);
+  color: var(--acc-dark);
+  font-weight: 600;
+}
+
 @media (max-width: 640px) {
   .finder-row { flex-direction: column; }
   .med-select { width: 100%; max-width: none; }
@@ -737,7 +765,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
 /* ===== Print ===== */
 @media print {
-  .topbar, .lang-bar, .category-bar, .finder-row, .med-bar { display: none !important; }
+  .topbar, .lang-bar, .category-bar, .finder-row, .med-bar, .page-bar { display: none !important; }
   body { background: white; }
   .sheet-wrap { padding: 0; }
   .sheet {
@@ -771,6 +799,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   <select class="med-select" id="medSelect"></select>
 </div>
 <div class="med-bar" id="medBar"></div>
+<div class="page-bar" id="pageBar"></div>
 <div class="sheet-wrap">
   <div class="sheet" id="sheet">
     <div style="padding:40px;text-align:center;color:#aaa;font-size:13px">載入中…</div>
@@ -1824,78 +1853,500 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/relenza"
   },
 
-  // ── Placeholder: Anoro Ellipta ─────────────────────────────────────,
+  // ── Trelegy Ellipta ─────────────────────────────────────,
   {
-      "id": "anoro-ellipta",
-      color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
+    "id": "trelegy-ellipta",
+    "category": "inhaler",
+    "color": {
+      "main": "#0F6E56",
+      "light": "#E1F5EE",
+      "dark": "#04342C",
+      "badge": "#9FE1CB",
+      "badgeText": "#04342C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "肺樂喜 易利達乾粉吸入劑",
+      "en": "Trelegy Ellipta",
+      "id": "Trelegy Ellipta",
+      "vi": "Trelegy Ellipta",
+      "th": "Trelegy Ellipta",
+      "tl": "Trelegy Ellipta",
+      "ja": "Trelegy Ellipta"
+    },
+    "subtitle": {
+      "zh-TW": "Fluticasone furoate / Umeclidinium / Vilanterol <br>｜每日一次",
+      "en": "Fluticasone furoate / Umeclidinium / Vilanterol | once daily",
+      "id": "Fluticasone furoate / Umeclidinium / Vilanterol | sekali sehari",
+      "vi": "Fluticasone furoate / Umeclidinium / Vilanterol | ngày 1 lần",
+      "th": "Fluticasone furoate / Umeclidinium / Vilanterol | วันละครั้ง",
+      "tl": "Fluticasone furoate / Umeclidinium / Vilanterol | isang beses araw-araw",
+      "ja": "Fluticasone furoate / Umeclidinium / Vilanterol｜1日1回"
+    },
+    "headerBadge": {
+      "zh-TW": "Ellipta 裝置",
+      "en": "Ellipta device",
+      "id": "Alat Ellipta",
+      "vi": "Thiết bị Ellipta",
+      "th": "อุปกรณ์ Ellipta",
+      "tl": "Ellipta device",
+      "ja": "Ellipta デバイス"
+    },
+    "badge": {
+      "zh-TW": "每日一次｜三合一保養藥",
+      "en": "Once daily | Triple maintenance inhaler",
+      "id": "Sekali sehari | pengontrol tiga kombinasi",
+      "vi": "Ngày 1 lần | thuốc kiểm soát 3 thành phần",
+      "th": "วันละครั้ง | ยาควบคุม 3 ตัวยา",
+      "tl": "Isang beses araw-araw | Tatlong-sangkap na maintenance inhaler",
+      "ja": "1日1回｜3剤配合の維持吸入薬"
+    },
+    "preStepsInfo": {
+      "tone": {
+        "bg": "#E6F1FB",
+        "border": "#185FA5",
+        "text": "#042C53"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Anoro Ellipta",
-          "en": "Anoro Ellipta",
-          "id": "Anoro Ellipta",
-          "vi": "Anoro Ellipta",
-          "th": "Anoro Ellipta",
-          "tl": "Anoro Ellipta",
-          "ja": "Anoro Ellipta"
+      "title": {
+        "zh-TW": "使用重點",
+        "en": "Key point",
+        "id": "Poin penting",
+        "vi": "Điểm cần nhớ",
+        "th": "ข้อสำคัญ",
+        "tl": "Mahalagang paalala",
+        "ja": "使用のポイント"
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      "text": {
+        "zh-TW": "這是每天 1 次的保養吸入劑（三合一：含類固醇與兩種支氣管擴張劑）。急性發作時，請改用急救吸入劑（如：備勞喘 Berotec-N），不要自己加量。",
+        "en": "This is a once-daily maintenance inhaler with 3 medicines: 1 steroid and 2 bronchodilators. If your symptoms suddenly flare up, use a rescue inhaler such as Berotec-N. Do not increase the dose on your own.",
+        "id": "Ini adalah inhaler pemeliharaan sekali sehari (kombinasi tiga obat: steroid dan dua bronkodilator). Bila gejala mendadak memburuk, gunakan inhaler darurat seperti Berotec-N. Jangan menambah dosis sendiri.",
+        "vi": "Đây là thuốc hít duy trì dùng 1 lần mỗi ngày (phối hợp 3 thành phần: steroid và 2 thuốc giãn phế quản). Khi lên cơn cấp, hãy dùng thuốc hít cắt cơn như Berotec-N. Không tự tăng liều.",
+        "th": "ยานี้เป็นยาสูดควบคุมแบบวันละครั้ง (ยาผสม 3 ชนิด: สเตียรอยด์และยาขยายหลอดลม 2 ชนิด) หากอาการกำเริบเฉียบพลัน ให้ใช้ยาสูดฉุกเฉิน เช่น Berotec-N แทน และห้ามเพิ่มขนาดยาเอง",
+        "tl": "Ito ay maintenance inhaler na ginagamit isang beses araw-araw. Mayroon itong 1 steroid at 2 bronchodilator. Kapag biglang lumala ang sintomas, gumamit ng rescue inhaler gaya ng Berotec-N. Huwag magdagdag ng dosis nang kusa.",
+        "ja": "これは1日1回使う維持吸入薬です（ステロイド1成分＋気管支拡張薬2成分の3剤配合）。症状が急に悪化したときは、Berotec-N などの救急用吸入薬を使ってください。自己判断で増量しないでください。"
+      }
+    },
+    "steps": [
+      {
+        "action": {
+          "zh-TW": "推開蓋子",
+          "en": "Open the cover",
+          "id": "Buka penutup",
+          "vi": "Mở nắp",
+          "th": "เปิดฝาครอบ",
+          "tl": "Buksan ang takip",
+          "ja": "カバーを開ける"
+        },
+        "note": {
+          "zh-TW": "下滑吸口蓋到最底，聽到「喀嚓」聲。劑量視窗會少 1 格。要吸藥時才打開；每打開 1 次，就少 1 劑。",
+          "en": "Slide the mouthpiece cover down all the way until you hear a click. The dose counter goes down by 1. Open it only when you are ready to inhale. Every time you open it, you lose 1 dose.",
+          "id": "Geser penutup corong sampai mentok hingga terdengar bunyi klik. Jendela dosis akan berkurang 1. Buka hanya saat akan menghirup obat. Setiap kali dibuka, 1 dosis akan hilang.",
+          "vi": "Trượt nắp đầu ngậm xuống hết cỡ đến khi nghe tiếng “tách”. Ô đếm liều sẽ giảm 1. Chỉ mở khi sẵn sàng hít thuốc. Mỗi lần mở là mất 1 liều.",
+          "th": "เลื่อนฝาครอบปากสูดลงจนสุดจนได้ยินเสียงคลิก หน้าต่างนับยาจะลดลง 1 ครั้ง เปิดเมื่อพร้อมสูดยาเท่านั้น ทุกครั้งที่เปิดจะเสียยาไป 1 โดส",
+          "tl": "I-slide pababa ang takip ng mouthpiece hanggang dulo at marinig ang click. Mababawasan ng 1 ang dose counter. Buksan lamang ito kapag handa ka nang lumanghap. Sa bawat pagbukas, mawawala ang 1 dosis.",
+          "ja": "吸入口カバーを最後まで下げて、カチッと音がするのを確認します。用量カウンターが1つ減ります。吸入するときだけ開けてください。開けるたびに1回分失われます。"
+        }
       },
-      badge: {
-          "zh-TW": "吸入劑",
-          "en": "Inhaler",
-          "id": "Inhaler",
-          "vi": "Thuốc hít",
-          "th": "ยาสูดพ่น",
-          "tl": "Inhaler",
-          "ja": "吸入薬"
+      {
+        "action": {
+          "zh-TW": "向外吐氣",
+          "en": "Breathe out away from the mouthpiece",
+          "id": "Buang napas menjauh dari corong",
+          "vi": "Thở ra tránh xa đầu ngậm",
+          "th": "หายใจออกห่างจากปากสูด",
+          "tl": "Huminga palabas palayo sa mouthpiece",
+          "ja": "吸入口から離して息を吐く"
+        },
+        "note": {
+          "zh-TW": "先吐氣至底。不要朝吸嘴吐氣。",
+          "en": "Breathe out fully. Do not blow into the mouthpiece.",
+          "id": "Buang napas sampai habis. Jangan mengembus ke dalam corong.",
+          "vi": "Thở ra hết sức. Không thở vào đầu ngậm.",
+          "th": "หายใจออกให้สุด และอย่าเป่าลมเข้าไปในปากสูด",
+          "tl": "Ilabas ang hininga nang buo. Huwag huminga papasok sa mouthpiece.",
+          "ja": "最後まで息を吐きます。吸入口に向かって息を吹き込まないでください。"
+        }
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/anoro-ellipta"
+      {
+        "action": {
+          "zh-TW": "含住吸嘴",
+          "en": "Seal your lips around the mouthpiece",
+          "id": "Rapatkan bibir pada corong",
+          "vi": "Ngậm kín đầu ngậm",
+          "th": "เม้มริมฝีปากรอบปากสูด",
+          "tl": "Idikit ang labi sa mouthpiece",
+          "ja": "吸入口をしっかりくわえる"
+        },
+        "note": {
+          "zh-TW": "雙唇包緊吸嘴。手指不要擋住通氣孔。",
+          "en": "Close your lips tightly and keep your fingers away from the air vent.",
+          "id": "Rapatkan bibir dan jangan menutupi lubang ventilasi dengan jari.",
+          "vi": "Khép kín môi và không che lỗ thông khí bằng ngón tay.",
+          "th": "เม้มริมฝีปากให้สนิท และอย่าใช้นิ้วบังรูระบายอากาศ",
+          "tl": "Isara nang mahigpit ang labi at huwag takpan ang air vent.",
+          "ja": "唇をしっかり閉じ、通気孔を指でふさがないでください。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "深吸一口氣",
+          "en": "Inhale the medicine",
+          "id": "Hirup obat",
+          "vi": "Hít thuốc",
+          "th": "สูดยาเข้า",
+          "tl": "Langhapin ang gamot",
+          "ja": "薬を吸い込む"
+        },
+        "note": {
+          "zh-TW": "用長而穩定的速度，深吸一口氣到吸飽。",
+          "en": "Take one slow, deep breath in until your lungs feel full.",
+          "id": "Tarik satu napas perlahan dan dalam sampai paru terasa penuh.",
+          "vi": "Hít vào một hơi chậm và sâu đến khi đầy phổi.",
+          "th": "สูดลมหายใจเข้าช้า ๆ และลึกจนสุด",
+          "tl": "Huminga nang mabagal at malalim hanggang mapuno ang baga.",
+          "ja": "肺がいっぱいになるまで、ゆっくり深く吸い込みます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "屏氣 3-4 秒",
+          "en": "Hold your breath for 3-4 seconds",
+          "id": "Tahan napas 3-4 detik",
+          "vi": "Nín thở 3-4 giây",
+          "th": "กลั้นหายใจ 3-4 วินาที",
+          "tl": "Pigilan ang hininga nang 3-4 segundo",
+          "ja": "3-4秒息を止める"
+        },
+        "note": {
+          "zh-TW": "移開吸入器後閉氣至少 3-4 秒。若可以，在舒服的前提下再久一點。",
+          "en": "After removing the inhaler, hold your breath for at least 3-4 seconds. If you can, hold a little longer as long as comfortable.",
+          "id": "Setelah menjauhkan inhaler, tahan napas setidaknya 3-4 detik. Jika bisa, tahan sedikit lebih lama selama masih nyaman.",
+          "vi": "Sau khi rời dụng cụ hít ra, nín thở ít nhất 3-4 giây. Nếu có thể, hãy nín lâu hơn một chút trong giới hạn dễ chịu.",
+          "th": "หลังนำอุปกรณ์ออกจากปากแล้ว ให้กลั้นหายใจอย่างน้อย 3-4 วินาที หากทำได้ ให้กลั้นได้นานขึ้นอีกเล็กน้อยเท่าที่สบาย",
+          "tl": "Pagkaalis ng inhaler, pigilin ang hininga nang hindi bababa sa 3-4 segundo. Kung kaya, pigilin pa nang kaunti basta komportable.",
+          "ja": "吸入器を口から離した後、少なくとも3-4秒息を止めます。できる場合は、無理のない範囲でもう少し長く止めてください。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "恢復正常呼吸",
+          "en": "Return to normal breathing",
+          "id": "Kembali bernapas normal",
+          "vi": "Trở lại nhịp thở bình thường",
+          "th": "กลับมาหายใจตามปกติ",
+          "tl": "Bumalik sa normal na paghinga",
+          "ja": "通常の呼吸に戻す"
+        },
+        "note": {
+          "zh-TW": "慢慢呼氣，恢復平常呼吸。",
+          "en": "Breathe out gently and return to normal breathing.",
+          "id": "Buang napas perlahan lalu kembali bernapas seperti biasa.",
+          "vi": "Thở ra chậm rồi trở lại nhịp thở bình thường.",
+          "th": "ค่อย ๆ หายใจออก แล้วกลับมาหายใจตามปกติ",
+          "tl": "Dahan-dahang huminga palabas at bumalik sa normal na paghinga.",
+          "ja": "ゆっくり息を吐き、通常の呼吸に戻します。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "關上蓋子",
+          "en": "Close the cover",
+          "id": "Tutup kembali",
+          "vi": "Đóng nắp lại",
+          "th": "ปิดฝาครอบ",
+          "tl": "Isara ang takip",
+          "ja": "カバーを閉じる"
+        },
+        "note": {
+          "zh-TW": "把吸口蓋推回原位。",
+          "en": "Slide the mouthpiece cover back up until fully closed.",
+          "id": "Geser kembali penutup corong ke atas sampai tertutup rapat.",
+          "vi": "Trượt nắp đầu ngậm lên lại đến khi đóng kín.",
+          "th": "เลื่อนฝาครอบกลับขึ้นจนปิดสนิท",
+          "tl": "I-slide paitaas ang takip hanggang tuluyang maisara.",
+          "ja": "吸入口カバーを上へ戻し、最後まで閉じます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "漱口並吐出",
+          "en": "Rinse your mouth and spit out",
+          "id": "Berkumur lalu buang airnya",
+          "vi": "Súc miệng rồi nhổ bỏ",
+          "th": "บ้วนปากแล้วบ้วนทิ้ง",
+          "tl": "Magmumog at iluwa",
+          "ja": "うがいをして吐き出す"
+        },
+        "note": {
+          "zh-TW": "用清水漱口後吐掉。不要吞下去。",
+          "en": "Rinse with water and spit it out. Do not swallow.",
+          "id": "Berkumur dengan air lalu buang. Jangan ditelan.",
+          "vi": "Súc miệng bằng nước rồi nhổ ra. Không nuốt.",
+          "th": "บ้วนปากด้วยน้ำแล้วบ้วนทิ้ง ห้ามกลืน",
+          "tl": "Magmumog gamit ang tubig at iluwa. Huwag lunukin.",
+          "ja": "水でうがいをして吐き出します。飲み込まないでください。"
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "zh-TW": "使用後漱口並吐出水，可降低口腔念珠菌感染風險。",
+        "en": "Rinse your mouth and spit out after use to reduce the risk of oral thrush.",
+        "id": "Berkumur lalu buang airnya setelah digunakan untuk menurunkan risiko sariawan jamur di mulut.",
+        "vi": "Súc miệng rồi nhổ ra sau khi dùng để giảm nguy cơ nấm miệng.",
+        "th": "หลังใช้ให้บ้วนปากแล้วบ้วนทิ้ง เพื่อลดความเสี่ยงเชื้อราในปาก",
+        "tl": "Magmumog at iluwa pagkatapos gamitin upang mabawasan ang panganib ng oral thrush.",
+        "ja": "使用後にうがいをして吐き出すことで、口腔カンジダのリスクを下げられます。"
+      },
+      {
+        "zh-TW": "自鋁盒取出後，1 個月內用完。剩不到 10 劑時，視窗左側會出現紅色提示。",
+        "en": "Use within 1 month after opening the foil tray. When fewer than 10 doses remain, a red mark appears on the left side of the counter window.",
+        "id": "Gunakan dalam 1 bulan setelah dikeluarkan dari baki foil. Bila sisa kurang dari 10 dosis, tanda merah muncul di sisi kiri jendela penghitung.",
+        "vi": "Dùng hết trong vòng 1 tháng sau khi lấy ra khỏi khay nhôm. Khi còn dưới 10 liều, bên trái ô đếm sẽ hiện vạch đỏ.",
+        "th": "ใช้ให้หมดภายใน 1 เดือนหลังนำออกจากถาดฟอยล์ และเมื่อเหลือน้อยกว่า 10 ครั้ง จะมีแถบสีแดงที่หน้าต่างนับยา",
+        "tl": "Gamitin sa loob ng 1 buwan matapos buksan ang foil tray. Kapag mas mababa sa 10 dosis ang natitira, may pulang marka sa kaliwang bahagi ng dose counter.",
+        "ja": "アルミトレイ開封後は1か月以内に使い切ってください。残量が10回未満になるとカウンター窓の左側に赤い表示が出ます。"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/trelegy-ellipta"
+  },
+
+  // ── Anoro Ellipta ─────────────────────────────────────,
+  {
+    "id": "anoro-ellipta",
+    "category": "inhaler",
+    "color": {
+      "main": "#0F6E56",
+      "light": "#E1F5EE",
+      "dark": "#04342C",
+      "badge": "#9FE1CB",
+      "badgeText": "#04342C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "安肺樂 易利達乾粉吸入器劑",
+      "en": "Anoro Ellipta",
+      "id": "Anoro Ellipta",
+      "vi": "Anoro Ellipta",
+      "th": "Anoro Ellipta",
+      "tl": "Anoro Ellipta",
+      "ja": "Anoro Ellipta"
+    },
+    "subtitle": {
+      "zh-TW": "Umeclidinium / Vilanterol｜每日一次",
+      "en": "Umeclidinium / Vilanterol | once daily",
+      "id": "Umeclidinium / Vilanterol | sekali sehari",
+      "vi": "Umeclidinium / Vilanterol | ngày 1 lần",
+      "th": "Umeclidinium / Vilanterol | วันละครั้ง",
+      "tl": "Umeclidinium / Vilanterol | isang beses araw-araw",
+      "ja": "Umeclidinium / Vilanterol｜1日1回"
+    },
+    "headerBadge": {
+      "zh-TW": "Ellipta 裝置",
+      "en": "Ellipta device",
+      "id": "Alat Ellipta",
+      "vi": "Thiết bị Ellipta",
+      "th": "อุปกรณ์ Ellipta",
+      "tl": "Ellipta device",
+      "ja": "Ellipta デバイス"
+    },
+    "badge": {
+      "zh-TW": "每日一次｜雙效支氣管擴張劑",
+      "en": "Once daily | dual bronchodilator",
+      "id": "Sekali sehari | bronkodilator ganda",
+      "vi": "Ngày 1 lần | giãn phế quản kép",
+      "th": "วันละครั้ง | ยาขยายหลอดลม 2 ตัวยา",
+      "tl": "Isang beses araw-araw | Dalawang bronchodilator",
+      "ja": "1日1回｜2剤配合の気管支拡張薬"
+    },
+    "preStepsInfo": {
+      "tone": {
+        "bg": "#E6F1FB",
+        "border": "#185FA5",
+        "text": "#042C53"
+      },
+      "title": {
+        "zh-TW": "使用重點",
+        "en": "Key point",
+        "id": "Poin penting",
+        "vi": "Điểm cần nhớ",
+        "th": "ข้อสำคัญ",
+        "tl": "Mahalagang paalala",
+        "ja": "使用のポイント"
+      },
+      "text": {
+        "zh-TW": "這是每天 1 次的保養吸入劑（兩種長效支氣管擴張劑）。急性發作時，請改用急救吸入劑（如：備勞喘 Berotec-N），不要自己加量。",
+        "en": "This is a once-daily maintenance inhaler with 2 long-acting bronchodilators. If your symptoms suddenly flare up, use a rescue inhaler such as Berotec-N. Do not increase the dose on your own.",
+        "id": "Ini adalah inhaler pemeliharaan sekali sehari (dua bronkodilator kerja panjang). Bila gejala mendadak memburuk, gunakan inhaler darurat seperti Berotec-N. Jangan menambah dosis sendiri.",
+        "vi": "Đây là thuốc hít duy trì dùng 1 lần mỗi ngày (2 thuốc giãn phế quản tác dụng kéo dài). Khi lên cơn cấp, hãy dùng thuốc hít cắt cơn như Berotec-N. Không tự tăng liều.",
+        "th": "ยานี้เป็นยาสูดควบคุมแบบวันละครั้ง (ยาขยายหลอดลมออกฤทธิ์ยาว 2 ชนิด) หากอาการกำเริบเฉียบพลัน ให้ใช้ยาสูดฉุกเฉิน เช่น Berotec-N แทน และห้ามเพิ่มขนาดยาเอง",
+        "tl": "Ito ay maintenance inhaler na ginagamit isang beses araw-araw. Mayroon itong 2 long-acting bronchodilator. Kapag biglang lumala ang sintomas, gumamit ng rescue inhaler gaya ng Berotec-N. Huwag magdagdag ng dosis nang kusa.",
+        "ja": "これは1日1回使う維持吸入薬です（長時間作用型の気管支拡張薬2成分）。症状が急に悪化したときは、Berotec-N などの救急用吸入薬を使ってください。自己判断で増量しないでください。"
+      }
+    },
+    "steps": [
+      {
+        "action": {
+          "zh-TW": "推開蓋子",
+          "en": "Open the cover",
+          "id": "Buka penutup",
+          "vi": "Mở nắp",
+          "th": "เปิดฝาครอบ",
+          "tl": "Buksan ang takip",
+          "ja": "カバーを開ける"
+        },
+        "note": {
+          "zh-TW": "下滑吸口蓋到最底，聽到「喀嚓」聲。劑量視窗會少 1 格。要吸藥時才打開；每打開 1 次，就少 1 劑。",
+          "en": "Slide the mouthpiece cover down all the way until you hear a click. The dose counter goes down by 1. Open it only when you are ready to inhale. Every time you open it, you lose 1 dose.",
+          "id": "Geser penutup corong sampai mentok hingga terdengar bunyi klik. Jendela dosis akan berkurang 1. Buka hanya saat akan menghirup obat. Setiap kali dibuka, 1 dosis akan hilang.",
+          "vi": "Trượt nắp đầu ngậm xuống hết cỡ đến khi nghe tiếng “tách”. Ô đếm liều sẽ giảm 1. Chỉ mở khi sẵn sàng hít thuốc. Mỗi lần mở là mất 1 liều.",
+          "th": "เลื่อนฝาครอบปากสูดลงจนสุดจนได้ยินเสียงคลิก หน้าต่างนับยาจะลดลง 1 ครั้ง เปิดเมื่อพร้อมสูดยาเท่านั้น ทุกครั้งที่เปิดจะเสียยาไป 1 โดส",
+          "tl": "I-slide pababa ang takip ng mouthpiece hanggang dulo at marinig ang click. Mababawasan ng 1 ang dose counter. Buksan lamang ito kapag handa ka nang lumanghap. Sa bawat pagbukas, mawawala ang 1 dosis.",
+          "ja": "吸入口カバーを最後まで下げて、カチッと音がするのを確認します。用量カウンターが1つ減ります。吸入するときだけ開けてください。開けるたびに1回分失われます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "向外吐氣",
+          "en": "Breathe out away from the mouthpiece",
+          "id": "Buang napas menjauh dari corong",
+          "vi": "Thở ra tránh xa đầu ngậm",
+          "th": "หายใจออกห่างจากปากสูด",
+          "tl": "Huminga palabas palayo sa mouthpiece",
+          "ja": "吸入口から離して息を吐く"
+        },
+        "note": {
+          "zh-TW": "先吐氣至底。不要朝吸嘴吐氣。",
+          "en": "Breathe out fully. Do not blow into the mouthpiece.",
+          "id": "Buang napas sampai habis. Jangan mengembus ke dalam corong.",
+          "vi": "Thở ra hết sức. Không thở vào đầu ngậm.",
+          "th": "หายใจออกให้สุด และอย่าเป่าลมเข้าไปในปากสูด",
+          "tl": "Ilabas ang hininga nang buo. Huwag huminga papasok sa mouthpiece.",
+          "ja": "最後まで息を吐きます。吸入口に向かって息を吹き込まないでください。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "含住吸嘴",
+          "en": "Seal your lips around the mouthpiece",
+          "id": "Rapatkan bibir pada corong",
+          "vi": "Ngậm kín đầu ngậm",
+          "th": "เม้มริมฝีปากรอบปากสูด",
+          "tl": "Idikit ang labi sa mouthpiece",
+          "ja": "吸入口をしっかりくわえる"
+        },
+        "note": {
+          "zh-TW": "雙唇包緊吸嘴。手指不要擋住通氣孔。",
+          "en": "Close your lips tightly and keep your fingers away from the air vent.",
+          "id": "Rapatkan bibir dan jangan menutupi lubang ventilasi dengan jari.",
+          "vi": "Khép kín môi và không che lỗ thông khí bằng ngón tay.",
+          "th": "เม้มริมฝีปากให้สนิท และอย่าใช้นิ้วบังรูระบายอากาศ",
+          "tl": "Isara nang mahigpit ang labi at huwag takpan ang air vent.",
+          "ja": "唇をしっかり閉じ、通気孔を指でふさがないでください。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "深吸一口氣",
+          "en": "Inhale the medicine",
+          "id": "Hirup obat",
+          "vi": "Hít thuốc",
+          "th": "สูดยาเข้า",
+          "tl": "Langhapin ang gamot",
+          "ja": "薬を吸い込む"
+        },
+        "note": {
+          "zh-TW": "用長而穩定的速度，深吸一口氣到吸飽。",
+          "en": "Take one slow, deep breath in until your lungs feel full.",
+          "id": "Tarik satu napas perlahan dan dalam sampai paru terasa penuh.",
+          "vi": "Hít vào một hơi chậm và sâu đến khi đầy phổi.",
+          "th": "สูดลมหายใจเข้าช้า ๆ และลึกจนสุด",
+          "tl": "Huminga nang mabagal at malalim hanggang mapuno ang baga.",
+          "ja": "肺がいっぱいになるまで、ゆっくり深く吸い込みます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "屏氣 5-10 秒",
+          "en": "Hold your breath for 5-10 seconds",
+          "id": "Tahan napas 5-10 detik",
+          "vi": "Nín thở 5-10 giây",
+          "th": "กลั้นหายใจ 5-10 วินาที",
+          "tl": "Pigilan ang hininga nang 5-10 segundo",
+          "ja": "5-10秒息を止める"
+        },
+        "note": {
+          "zh-TW": "移開吸入器後閉氣至少 5-10 秒。若可以，在舒服的前提下再久一點。",
+          "en": "After removing the inhaler, hold your breath for at least 5-10 seconds. If you can, hold a little longer as long as comfortable.",
+          "id": "Setelah menjauhkan inhaler, tahan napas setidaknya 5-10 detik. Jika bisa, tahan sedikit lebih lama selama masih nyaman.",
+          "vi": "Sau khi rời dụng cụ hít ra, nín thở ít nhất 5-10 giây. Nếu có thể, hãy nín lâu hơn một chút trong giới hạn dễ chịu.",
+          "th": "หลังนำอุปกรณ์ออกจากปากแล้ว ให้กลั้นหายใจอย่างน้อย 5-10 วินาที หากทำได้ ให้กลั้นได้นานขึ้นอีกเล็กน้อยเท่าที่สบาย",
+          "tl": "Pagkaalis ng inhaler, pigilin ang hininga nang hindi bababa sa 5-10 segundo. Kung kaya, pigilin pa nang kaunti basta komportable.",
+          "ja": "吸入器を口から離した後、少なくとも5-10秒息を止めます。できる場合は、無理のない範囲でもう少し長く止めてください。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "恢復正常呼吸",
+          "en": "Return to normal breathing",
+          "id": "Kembali bernapas normal",
+          "vi": "Trở lại nhịp thở bình thường",
+          "th": "กลับมาหายใจตามปกติ",
+          "tl": "Bumalik sa normal na paghinga",
+          "ja": "通常の呼吸に戻す"
+        },
+        "note": {
+          "zh-TW": "慢慢呼氣，恢復平常呼吸。",
+          "en": "Breathe out gently and return to normal breathing.",
+          "id": "Buang napas perlahan lalu kembali bernapas seperti biasa.",
+          "vi": "Thở ra chậm rồi trở lại nhịp thở bình thường.",
+          "th": "ค่อย ๆ หายใจออก แล้วกลับมาหายใจตามปกติ",
+          "tl": "Dahan-dahang huminga palabas at bumalik sa normal na paghinga.",
+          "ja": "ゆっくり息を吐き、通常の呼吸に戻します。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "關上蓋子",
+          "en": "Close the cover",
+          "id": "Tutup kembali",
+          "vi": "Đóng nắp lại",
+          "th": "ปิดฝาครอบ",
+          "tl": "Isara ang takip",
+          "ja": "カバーを閉じる"
+        },
+        "note": {
+          "zh-TW": "把吸口蓋推回原位。",
+          "en": "Slide the mouthpiece cover back up until fully closed.",
+          "id": "Geser kembali penutup corong ke atas sampai tertutup rapat.",
+          "vi": "Trượt nắp đầu ngậm lên lại đến khi đóng kín.",
+          "th": "เลื่อนฝาครอบกลับขึ้นจนปิดสนิท",
+          "tl": "I-slide paitaas ang takip hanggang tuluyang maisara.",
+          "ja": "吸入口カバーを上へ戻し、最後まで閉じます。"
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "zh-TW": "自鋁盒取出後，6 週內用完。剩不到 10 劑時，視窗左側會出現紅色提示。",
+        "en": "Use within 6 weeks after opening the foil tray. When fewer than 10 doses remain, a red mark appears on the left side of the counter window.",
+        "id": "Gunakan dalam 6 minggu setelah dikeluarkan dari baki foil. Bila sisa kurang dari 10 dosis, tanda merah muncul di sisi kiri jendela penghitung.",
+        "vi": "Dùng hết trong vòng 6 tuần sau khi lấy ra khỏi khay nhôm. Khi còn dưới 10 liều, bên trái ô đếm sẽ hiện vạch đỏ.",
+        "th": "ใช้ให้หมดภายใน 6 สัปดาห์หลังนำออกจากถาดฟอยล์ และเมื่อเหลือน้อยกว่า 10 ครั้ง จะมีแถบสีแดงที่หน้าต่างนับยา",
+        "tl": "Gamitin sa loob ng 6 na linggo matapos buksan ang foil tray. Kapag mas mababa sa 10 dosis ang natitira, may pulang marka sa kaliwang bahagi ng dose counter.",
+        "ja": "アルミトレイ開封後は6週間以内に使い切ってください。残量が10回未満になるとカウンター窓の左側に赤い表示が出ます。"
+      },
+      {
+        "zh-TW": "每天固定時間吸 1 次。不要自己加量。",
+        "en": "Use once daily at a fixed time each day. Do not increase the dose on your own.",
+        "id": "Gunakan sekali sehari pada waktu yang sama setiap hari. Jangan menambah dosis sendiri.",
+        "vi": "Dùng 1 lần mỗi ngày vào cùng một thời điểm. Không tự tăng liều.",
+        "th": "ใช้วันละครั้งในเวลาเดิมทุกวัน ห้ามเพิ่มขนาดยาเอง",
+        "tl": "Gamitin ito isang beses araw-araw sa parehong oras. Huwag magdagdag ng dosis nang kusa.",
+        "ja": "毎日同じ時間に1日1回使用してください。自己判断で増量しないでください。"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/anoro-ellipta"
   },
 
   // ── Placeholder: Duasma HFA 200 Inhaler (budesonide) ─────────────────────────────────────,
@@ -3159,226 +3610,1618 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/relvar-ellipta"
   },
 
-  // ── Placeholder: Spiriva Respimat (tiotropium) ─────────────────────────────────────,
+  // ── Spiriva Respimat (tiotropium) ─────────────────────────────────────,
   {
-      "id": "spiriva-respimat",
-      color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
-      },
-      emergency: false,
-      name: {
-          "zh-TW": "Spiriva Respimat",
-          "en": "Spiriva Respimat (tiotropium)",
-          "id": "Spiriva Respimat (tiotropium)",
-          "vi": "Spiriva Respimat (tiotropium)",
-          "th": "Spiriva Respimat (tiotropium)",
-          "tl": "Spiriva Respimat (tiotropium)",
-          "ja": "Spiriva Respimat (tiotropium)"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "吸入劑",
-          "en": "Inhaler",
-          "id": "Inhaler",
-          "vi": "Thuốc hít",
-          "th": "ยาสูดพ่น",
-          "tl": "Inhaler",
-          "ja": "吸入薬"
-      },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
+    "id": "spiriva-respimat",
+    "category": "inhaler",
+    "color": {
+      "main": "#0F6E56",
+      "light": "#E1F5EE",
+      "dark": "#04342C",
+      "badge": "#9FE1CB",
+      "badgeText": "#04342C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "適喘樂 舒沛噴吸入劑",
+      "en": "Spiriva Respimat",
+      "id": "Spiriva Respimat",
+      "vi": "Spiriva Respimat",
+      "th": "Spiriva Respimat",
+      "tl": "Spiriva Respimat",
+      "ja": "Spiriva Respimat"
+    },
+    "subtitle": {
+      "zh-TW": "Tiotropium｜Respimat 裝置",
+      "en": "Tiotropium | Respimat device",
+      "id": "Tiotropium | alat Respimat",
+      "vi": "Tiotropium | thiết bị Respimat",
+      "th": "Tiotropium | อุปกรณ์ Respimat",
+      "tl": "Tiotropium | Respimat device",
+      "ja": "Tiotropium｜Respimat デバイス"
+    },
+    "headerBadge": {
+      "zh-TW": "Respimat 裝置",
+      "en": "Respimat device",
+      "id": "Alat Respimat",
+      "vi": "Thiết bị Respimat",
+      "th": "อุปกรณ์ Respimat",
+      "tl": "Respimat device",
+      "ja": "Respimat デバイス"
+    },
+    "pages": [
+      {
+        "pageLabel": {
+          "zh-TW": "A 面｜初次安裝",
+          "en": "Side A | First-time setup",
+          "id": "Sisi A | Persiapan awal",
+          "vi": "Mặt A | Lắp lần đầu",
+          "th": "ด้าน A | เตรียมครั้งแรก",
+          "tl": "Side A | Unang setup",
+          "ja": "A面｜初回セットアップ"
+        },
+        "badge": {
+          "zh-TW": "A 面｜初次安裝",
+          "en": "Side A | First-time setup",
+          "id": "Sisi A | Persiapan awal",
+          "vi": "Mặt A | Lắp lần đầu",
+          "th": "ด้าน A | เตรียมครั้งแรก",
+          "tl": "Side A | Unang setup",
+          "ja": "A面｜初回セットアップ"
+        },
+        "preStepsInfo": {
+          "tone": {
+            "bg": "#E6F1FB",
+            "border": "#185FA5",
+            "text": "#042C53"
+          },
+          "title": {
+            "zh-TW": "初次使用才需執行",
+            "en": "Only for first-time use",
+            "id": "Hanya untuk penggunaan pertama",
+            "vi": "Chỉ làm khi dùng lần đầu",
+            "th": "ทำเฉพาะก่อนใช้ครั้งแรก",
+            "tl": "Para lang sa unang paggamit",
+            "ja": "初回使用時のみ実施"
+          },
+          "text": {
+            "zh-TW": "這一面只在第一次裝藥時做 1 次。做完後，平常請看 B 面。",
+            "en": "Do this side only once when you first set up the inhaler. After that, switch to Side B for daily use.",
+            "id": "Sisi ini hanya dilakukan sekali saat pertama kali menyiapkan inhaler. Setelah itu, gunakan Sisi B untuk pemakaian harian.",
+            "vi": "Trang này chỉ làm 1 lần khi lắp thuốc lần đầu. Sau đó, hãy chuyển sang Mặt B để dùng hằng ngày.",
+            "th": "หน้านี้ทำเพียงครั้งเดียวเมื่อเตรียมเครื่องครั้งแรก หลังจากนั้นให้ใช้ด้าน B สำหรับการใช้ประจำวัน",
+            "tl": "Gawin lamang ang bahaging ito isang beses, sa unang pag-set up ng inhaler. Pagkatapos nito, gamitin ang Side B para sa pang-araw-araw na paggamit.",
+            "ja": "この面は初回セットアップ時に1回だけ行います。以後はB面の毎日の使用手順に切り替えてください。"
           }
-      ],
-      warnings: [
+        },
+        "steps": [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+            "action": {
+              "zh-TW": "拔下透明底座",
+              "en": "Remove the clear base",
+              "id": "Lepas dasar bening",
+              "vi": "Tháo đế trong suốt",
+              "th": "ถอดฐานใส",
+              "tl": "Tanggalin ang malinaw na base",
+              "ja": "透明な底部を外す"
+            },
+            "note": {
+              "zh-TW": "一手按住安全扣，另一手拔下透明底座。",
+              "en": "Press the safety catch, then pull off the clear base.",
+              "id": "Tekan pengunci pengaman lalu tarik dasar bening keluar.",
+              "vi": "Bấm chốt an toàn rồi kéo đế trong suốt ra.",
+              "th": "กดตัวล็อกนิรภัย แล้วดึงฐานใสออก",
+              "tl": "Pindutin ang safety catch saka tanggalin ang malinaw na base.",
+              "ja": "安全ロックを押しながら、透明な底部を引き抜きます。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "裝入藥罐",
+              "en": "Insert the cartridge",
+              "id": "Masukkan tabung obat",
+              "vi": "Lắp ống thuốc",
+              "th": "ใส่ตลับยา",
+              "tl": "Ipasok ang cartridge",
+              "ja": "薬液カートリッジを差し込む"
+            },
+            "note": {
+              "zh-TW": "取出藥罐，窄端朝下放入吸入器。把吸入器放在堅固桌面上，用力向下壓到聽到「喀噠」聲。再看一次，確認藥罐已完全裝入。藥罐一旦裝入，不要再拔出。",
+              "en": "Take out the cartridge and insert the narrow end into the inhaler. Place the inhaler on a firm surface and press down firmly until you hear a click. Check again to make sure the cartridge is fully inserted. Once inserted, do not remove it again.",
+              "id": "Keluarkan tabung obat dan masukkan ujung sempit ke dalam inhaler. Letakkan inhaler di permukaan yang kokoh, lalu tekan kuat ke bawah sampai terdengar bunyi klik. Periksa lagi sampai tabung terpasang penuh. Setelah tabung terpasang, jangan dicabut lagi.",
+              "vi": "Lấy ống thuốc ra và đặt đầu nhỏ vào trong dụng cụ hít. Đặt dụng cụ lên mặt phẳng chắc chắn rồi ấn mạnh xuống đến khi nghe tiếng “tách”. Kiểm tra lại để chắc chắn ống thuốc đã vào hết. Sau khi lắp vào, không rút ra nữa.",
+              "th": "นำตลับยาออกมา สอดด้านแคบลงในเครื่อง วางเครื่องบนพื้นผิวที่แข็งแรง แล้วกดลงแรง ๆ จนได้ยินเสียงคลิก ตรวจอีกครั้งว่าตลับยาเข้าไปจนสุดแล้ว เมื่อติดตั้งแล้วห้ามดึงออกอีก",
+              "tl": "Ilabas ang cartridge at ipasok ang makitid na dulo sa inhaler. Ilagay ang inhaler sa matigas na patag na ibabaw, saka idiin pababa hanggang may marinig na click. Tingnan muli at tiyaking lubusang nakapasok ang cartridge. Kapag naipasok na, huwag na itong tanggalin.",
+              "ja": "薬液カートリッジを取り出し、細い方を下にして吸入器へ差し込みます。吸入器をしっかりした台の上に置き、カチッと音がするまで強く押し込みます。完全に入ったことをもう一度確認してください。いったん装着したら、再び抜かないでください。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "裝回透明底座",
+              "en": "Reattach the clear base",
+              "id": "Pasang kembali dasar bening",
+              "vi": "Lắp lại đế trong suốt",
+              "th": "ใส่ฐานใสกลับ",
+              "tl": "Ikabit muli ang malinaw na base",
+              "ja": "透明な底部を取り付ける"
+            },
+            "note": {
+              "zh-TW": "把透明底座裝回去，直到安全扣卡住。裝回後，不要再拆下。",
+              "en": "Reattach the clear base until the safety catch locks. After reattaching it, do not remove it again.",
+              "id": "Pasang kembali dasar bening sampai pengunci terkunci. Setelah terpasang, jangan dilepas lagi.",
+              "vi": "Lắp lại đế trong suốt cho đến khi chốt an toàn khóa vào. Sau khi lắp lại, không tháo ra nữa.",
+              "th": "ใส่ฐานใสกลับจนตัวล็อกเข้าที่ หลังจากใส่กลับแล้วห้ามถอดออกอีก",
+              "tl": "Ikabit muli ang malinaw na base hanggang kumapit ang safety catch. Kapag naibalik na ito, huwag na itong tanggalin muli.",
+              "ja": "透明な底部を戻し、安全ロックがかかるまで押し込みます。いったん戻したら、再び外さないでください。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "旋轉半圈",
+              "en": "Turn the base half a turn",
+              "id": "Putar setengah lingkaran",
+              "vi": "Xoay nửa vòng",
+              "th": "หมุนครึ่งรอบ",
+              "tl": "Paikutin nang kalahating ikot",
+              "ja": "半回転させる"
+            },
+            "note": {
+              "zh-TW": "每次轉動前，先把蓋子蓋緊。依箭頭方向旋轉透明底座半圈，直到聽到「喀」聲。",
+              "en": "Keep the cap closed and turn the clear base half a turn until it clicks.",
+              "id": "Dalam keadaan tutup tertutup, putar dasar bening setengah putaran sampai berbunyi klik.",
+              "vi": "Đậy nắp kín rồi xoay đế trong suốt nửa vòng đến khi nghe tiếng “tách”.",
+              "th": "ปิดฝาให้สนิท แล้วหมุนฐานใสครึ่งรอบจนได้ยินเสียงคลิก",
+              "tl": "Isarang mabuti ang takip at paikutin ang malinaw na base nang kalahating ikot hanggang may click.",
+              "ja": "キャップを閉じたまま、透明な底部を半回転させ、カチッと音がするまで回します。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "朝地面噴 1 次",
+              "en": "Spray toward the ground",
+              "id": "Semprot ke arah lantai",
+              "vi": "Xịt xuống đất",
+              "th": "พ่นลงพื้น",
+              "tl": "I-spray patungo sa sahig",
+              "ja": "地面に向けて噴霧する"
+            },
+            "note": {
+              "zh-TW": "打開蓋子，吸入器朝向地面，按下給藥按鈕 1 次，再蓋上蓋子。",
+              "en": "Open the cap, point the inhaler toward the ground, and press the dose-release button once.",
+              "id": "Buka tutup, arahkan inhaler ke lantai, lalu tekan tombol obat satu kali.",
+              "vi": "Mở nắp, hướng dụng cụ hít xuống đất rồi bấm nút phun thuốc 1 lần.",
+              "th": "เปิดฝา หันเครื่องลงพื้น แล้วกดปุ่มพ่นยา 1 ครั้ง",
+              "tl": "Buksan ang takip, itutok ang inhaler sa sahig, at pindutin ang dose button nang isang beses.",
+              "ja": "キャップを開け、吸入器を地面に向けて、噴霧ボタンを1回押します。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "重複直到看到霧狀藥液",
+              "en": "Repeat until a mist appears",
+              "id": "Ulangi sampaiครบ 6 semprotan",
+              "vi": "Lặp lại đủ 6 lần xịt",
+              "th": "ทำซ้ำให้ครบ 6 ครั้ง",
+              "tl": "Ulitin hanggang lumabas ang ambon ng gamot",
+              "ja": "霧が見えるまで繰り返す"
+            },
+            "note": {
+              "zh-TW": "重複「旋轉半圈 → 開蓋 → 朝地面噴藥 → 蓋上蓋子」，直到看到霧狀藥液。看到後，再多做 3 次。共噴 6 次。",
+              "en": "Repeat: turn -> open -> spray toward the ground -> close, until a mist appears. Once you see the mist, repeat 3 more times. Total: 6 sprays.",
+              "id": "Ulangi putar -> buka -> semprot ke lantai sampai muncul kabut, lalu ulangi 3 kali lagi. Total 6 semprotan.",
+              "vi": "Lặp lại xoay -> mở nắp -> xịt xuống đất đến khi thấy sương thuốc, rồi lặp thêm 3 lần nữa. Tổng cộng 6 lần xịt.",
+              "th": "ทำซ้ำ หมุน -> เปิดฝา -> พ่นลงพื้น จนเห็นละอองยา แล้วทำต่ออีก 3 ครั้ง รวมทั้งหมด 6 ครั้ง",
+              "tl": "Ulitin ang: ikot -> bukas -> spray sa sahig -> sara, hanggang may lumabas na ambon ng gamot. Kapag may lumabas nang ambon, ulitin pa nang 3 beses. Kabuuan: 6 na spray.",
+              "ja": "「回す→開ける→地面に向けて噴霧→閉じる」を霧が見えるまで繰り返します。霧が見えたら、さらに3回繰り返します。合計6回です。"
+            }
           }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/spiriva-respimat"
+        ],
+        "warnings": [
+          {
+            "zh-TW": "超過 7 天未使用：使用前先向地面噴 1 次。超過 21 天未使用：重新做初次安裝步驟。",
+            "en": "If unused for more than 7 days: spray once toward the ground before use. If unused for more than 21 days: repeat the first-time setup steps.",
+            "id": "Jika tidak digunakan lebih dari 7 hari: semprot sekali ke arah lantai sebelum dipakai. Jika lebih dari 21 hari: ulangi langkah persiapan awal.",
+            "vi": "Nếu không dùng quá 7 ngày: xịt 1 lần xuống đất trước khi dùng. Nếu không dùng quá 21 ngày: lặp lại quy trình lắp đặt ban đầu.",
+            "th": "หากไม่ได้ใช้เกิน 7 วัน ให้พ่นลงพื้น 1 ครั้งก่อนใช้ หากไม่ได้ใช้เกิน 21 วัน ให้ทำขั้นตอนเตรียมครั้งแรกใหม่",
+            "tl": "Kung hindi nagamit nang mahigit 7 araw: mag-spray muna ng isang beses sa sahig bago gamitin. Kung mahigit 21 araw: ulitin ang unang setup.",
+            "ja": "7日を超えて未使用の場合は使用前に地面へ1回噴霧します。21日を超えて未使用の場合は初回セットアップをやり直してください。"
+          },
+          {
+            "zh-TW": "指針進入紅色區域時，大約還剩 7 天藥量。藥罐裝入後，3 個月後丟棄。",
+            "en": "When the indicator enters the red zone, about 7 days of medicine remain. Discard 3 months after inserting the cartridge.",
+            "id": "Saat penunjuk masuk ke zona merah, obat tersisa sekitar 7 hari. Buang 3 bulan setelah tabung obat dipasang.",
+            "vi": "Khi kim chỉ vào vùng đỏ, còn khoảng 7 ngày thuốc. Bỏ đi sau 3 tháng kể từ khi lắp ống thuốc.",
+            "th": "เมื่อเข็มชี้เข้าสู่โซนสีแดง จะเหลือยาประมาณ 7 วัน ทิ้งหลังใส่ตลับยาแล้ว 3 เดือน",
+            "tl": "Kapag pumasok ang indicator sa pulang bahagi, may natitirang humigit-kumulang 7 araw na gamot. Itapon pagkalipas ng 3 buwan mula nang maipasok ang cartridge.",
+            "ja": "指針が赤い範囲に入ると、薬は約7日分残っています。カートリッジ装着後3か月で廃棄してください。"
+          }
+        ],
+        "qrUrl": "https://pharmacy.example.com/meds/spiriva-respimat#setup"
+      },
+      {
+        "pageLabel": {
+          "zh-TW": "B 面｜每日使用",
+          "en": "Side B | Daily use",
+          "id": "Sisi B | Pemakaian harian",
+          "vi": "Mặt B | Dùng hằng ngày",
+          "th": "ด้าน B | ใช้ทุกวัน",
+          "tl": "Side B | Araw-araw na paggamit",
+          "ja": "B面｜毎日の使用"
+        },
+        "badge": {
+          "zh-TW": "B 面｜每日使用",
+          "en": "Side B | Daily use",
+          "id": "Sisi B | Pemakaian harian",
+          "vi": "Mặt B | Dùng hằng ngày",
+          "th": "ด้าน B | ใช้ทุกวัน",
+          "tl": "Side B | Araw-araw na paggamit",
+          "ja": "B面｜毎日の使用"
+        },
+        "preStepsInfo": {
+          "tone": {
+            "bg": "#E6F1FB",
+            "border": "#185FA5",
+            "text": "#042C53"
+          },
+          "title": {
+            "zh-TW": "每天使用",
+            "en": "Daily use",
+            "id": "Pemakaian harian",
+            "vi": "Dùng hằng ngày",
+            "th": "ใช้ทุกวัน",
+            "tl": "Araw-araw na paggamit",
+            "ja": "毎日の使用"
+          },
+          "text": {
+            "zh-TW": "Spiriva 不含類固醇，使用後不需漱口。通常每天吸 1 次，每次吸 2 劑，兩劑間隔 30-60 秒。",
+            "en": "Spiriva does not contain steroid, so no mouth rinse is needed after use. Usually inhale once a day, 2 doses each time, 30-60 seconds apart.",
+            "id": "Spiriva tidak mengandung steroid, jadi tidak perlu berkumur setelah digunakan. Biasanya dihirup 1 kali sehari, 2 dosis setiap kali, dengan jarak 30-60 detik.",
+            "vi": "Spiriva không chứa steroid nên không cần súc miệng sau khi dùng. Thường hít 1 lần mỗi ngày, mỗi lần 2 liều, cách nhau 30-60 giây.",
+            "th": "Spiriva ไม่มียาสเตียรอยด์ จึงไม่ต้องบ้วนปากหลังใช้ โดยทั่วไปให้สูดวันละ 1 ครั้ง ครั้งละ 2 สูด ห่างกัน 30-60 วินาที",
+            "tl": "Ang Spiriva ay walang steroid, kaya hindi kailangang magmumog pagkatapos gamitin. Karaniwang ginagamit ito isang beses sa isang araw: 2 dosis bawat paggamit, na may pagitan na 30-60 segundo.",
+            "ja": "Spirivaにはステロイドが含まれていないため、使用後のうがいは不要です。通常は1日1回、1回につき2吸入し、各吸入は30-60秒あけます。"
+          }
+        },
+        "steps": [
+          {
+            "action": {
+              "zh-TW": "旋轉半圈",
+              "en": "Turn the base half a turn",
+              "id": "Putar setengah lingkaran untuk menyiapkan dosis",
+              "vi": "Xoay nửa vòng để nạp thuốc",
+              "th": "หมุนครึ่งรอบเพื่อเตรียมยา",
+              "tl": "Paikutin nang kalahating ikot para ihanda ang dosis",
+              "ja": "半回転させて準備する"
+            },
+            "note": {
+              "zh-TW": "蓋緊蓋子，旋轉透明底座半圈至聽到「喀」聲。",
+              "en": "Keep the cap closed and turn the clear base half a turn until it clicks.",
+              "id": "Dalam keadaan tutup tertutup, putar dasar bening setengah putaran sampai berbunyi klik.",
+              "vi": "Đậy nắp kín rồi xoay đế trong suốt nửa vòng đến khi nghe tiếng “tách”.",
+              "th": "ปิดฝาให้สนิท แล้วหมุนฐานใสครึ่งรอบจนได้ยินเสียงคลิก",
+              "tl": "Isara nang mabuti ang takip at paikutin ang malinaw na base nang kalahating ikot hanggang may click.",
+              "ja": "キャップを閉じたまま、透明な底部を半回転させ、カチッと音がするまで回します。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "打開蓋子",
+              "en": "Open the cap",
+              "id": "Buka tutup",
+              "vi": "Mở nắp",
+              "th": "เปิดฝา",
+              "tl": "Buksan ang takip",
+              "ja": "キャップを開ける"
+            },
+            "note": {
+              "zh-TW": "從側邊把蓋子完全打開。",
+              "en": "Open the cap fully.",
+              "id": "Buka tutup sepenuhnya.",
+              "vi": "Mở nắp hoàn toàn.",
+              "th": "เปิดฝาให้สุด",
+              "tl": "Buksan nang buo ang takip.",
+              "ja": "キャップを最後まで開けます。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "向外吐氣",
+              "en": "Breathe out away from the mouthpiece",
+              "id": "Buang napas menjauh dari corong",
+              "vi": "Thở ra tránh xa đầu ngậm",
+              "th": "หายใจออกห่างจากปากสูด",
+              "tl": "Huminga palabas palayo sa mouthpiece",
+              "ja": "吸入口から離して息を吐く"
+            },
+            "note": {
+              "zh-TW": "先吐氣至底。不要朝口含器吐氣。",
+              "en": "Breathe out fully. Do not blow into the mouthpiece.",
+              "id": "Buang napas sampai habis. Jangan mengembus ke dalam corong.",
+              "vi": "Thở ra hết sức. Không thở vào đầu ngậm.",
+              "th": "หายใจออกให้สุด และอย่าเป่าลมเข้าไปในปากสูด",
+              "tl": "Ilabas ang hininga nang buo. Huwag huminga papasok sa mouthpiece.",
+              "ja": "最後まで息を吐きます。吸入口に向かって息を吹き込まないでください。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "按下按鈕並慢慢吸氣",
+              "en": "Inhale the medicine",
+              "id": "Hirup obat",
+              "vi": "Hít thuốc",
+              "th": "สูดยาเข้า",
+              "tl": "Langhapin ang gamot",
+              "ja": "薬を吸い込む"
+            },
+            "note": {
+              "zh-TW": "嘴巴含住口含器。不要遮住通氣孔。按下黑色給藥按鈕，同時慢慢深吸一口氣。",
+              "en": "Seal your lips around the mouthpiece without covering the air vents. Press the dose-release button and breathe in slowly and deeply at the same time.",
+              "id": "Rapatkan bibir pada corong tanpa menutupi lubang udara. Tekan tombol obat sambil menarik napas perlahan dan dalam.",
+              "vi": "Ngậm kín đầu ngậm, không che lỗ thoát khí. Bấm nút phun thuốc đồng thời hít vào chậm và sâu.",
+              "th": "เม้มริมฝีปากรอบปากสูดโดยไม่บังรูระบายอากาศ กดปุ่มพ่นยาและสูดช้า ๆ ลึก ๆ พร้อมกัน",
+              "tl": "Idikit ang labi sa mouthpiece nang hindi natatakpan ang air vent. Pindutin ang dose button habang mabagal at malalim na humihinga papasok.",
+              "ja": "通気孔をふさがずに吸入口をくわえ、噴霧ボタンを押しながら、ゆっくり深く吸い込みます。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "屏氣 10 秒",
+              "en": "Hold your breath for 10 seconds",
+              "id": "Tahan napas 10 detik",
+              "vi": "Nín thở 10 giây",
+              "th": "กลั้นหายใจ 10 วินาที",
+              "tl": "Pigilan ang hininga nang 10 segundo",
+              "ja": "10秒息を止める"
+            },
+            "note": {
+              "zh-TW": "吸完後移開吸入器，閉緊雙唇，閉氣 10 秒。若做不到，就在舒服的前提下盡量久。",
+              "en": "Hold your breath for 10 seconds after inhaling. If you cannot, hold as long as you comfortably can.",
+              "id": "Setelah menghirup, tahan napas 10 detik. Jika tidak bisa, tahan semampunya.",
+              "vi": "Sau khi hít xong, nín thở 10 giây. Nếu không được, hãy nín lâu nhất có thể.",
+              "th": "หลังสูดยาแล้วกลั้นหายใจ 10 วินาที หากทำไม่ได้ให้กลั้นนานที่สุดเท่าที่ทำได้",
+              "tl": "Pagkatapos lumanghap, pigilin ang hininga nang 10 segundo. Kung hindi kaya, pigilin nang kaya mo.",
+              "ja": "吸入後、10秒息を止めます。難しい場合は、できる範囲でなるべく長く止めてください。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "再吸第 2 劑",
+              "en": "Take the second dose",
+              "id": "Gunakan dosis kedua",
+              "vi": "Hít liều thứ hai",
+              "th": "สูดครั้งที่สอง",
+              "tl": "Gamitin ang pangalawang dosis",
+              "ja": "2回目を吸入する"
+            },
+            "note": {
+              "zh-TW": "蓋上蓋子，等 30-60 秒，再重複步驟 1-5。正常情況每天吸 1 次，共吸 2 劑。",
+              "en": "Close the cap. Wait 30-60 seconds, then repeat steps 1-5 for the second dose. Usually use it once a day for a total of 2 doses.",
+              "id": "Tutup kembali alat, tunggu 30-60 detik, lalu ulangi langkah 1-5. Biasanya digunakan 1 kali sehari, total 2 dosis.",
+              "vi": "Đóng nắp lại, chờ 30-60 giây rồi lặp lại bước 1-5. Thường dùng 1 lần mỗi ngày, tổng cộng 2 liều.",
+              "th": "ปิดฝา รอ 30-60 วินาที แล้วทำซ้ำขั้นตอน 1-5 โดยทั่วไปใช้วันละ 1 ครั้ง รวม 2 สูด",
+              "tl": "Isara ang takip, maghintay ng 30-60 segundo, saka ulitin ang hakbang 1-5 para sa ikalawang dosis. Karaniwang ginagamit ito isang beses sa isang araw, kabuuang 2 dosis.",
+              "ja": "キャップを閉じ、30-60秒待ってから2回目として手順1-5を繰り返します。通常は1日1回、合計2吸入です。"
+            }
+          }
+        ],
+        "warnings": [
+          {
+            "zh-TW": "超過 7 天未使用：使用前先向地面噴 1 次。超過 21 天未使用：重新做初次安裝步驟。",
+            "en": "If unused for more than 7 days: spray once toward the ground before use. If unused for more than 21 days: repeat the first-time setup steps.",
+            "id": "Jika tidak digunakan lebih dari 7 hari: semprot sekali ke arah lantai sebelum dipakai. Jika lebih dari 21 hari: ulangi langkah persiapan awal.",
+            "vi": "Nếu không dùng quá 7 ngày: xịt 1 lần xuống đất trước khi dùng. Nếu không dùng quá 21 ngày: lặp lại quy trình lắp đặt ban đầu.",
+            "th": "หากไม่ได้ใช้เกิน 7 วัน ให้พ่นลงพื้น 1 ครั้งก่อนใช้ หากไม่ได้ใช้เกิน 21 วัน ให้ทำขั้นตอนเตรียมครั้งแรกใหม่",
+            "tl": "Kung hindi nagamit nang mahigit 7 araw: mag-spray muna ng isang beses sa sahig bago gamitin. Kung mahigit 21 araw: ulitin ang unang setup.",
+            "ja": "7日を超えて未使用の場合は使用前に地面へ1回噴霧します。21日を超えて未使用の場合は初回セットアップをやり直してください。"
+          },
+          {
+            "zh-TW": "指針進入紅色區域時，大約還剩 7 天藥量。藥罐裝入後，3 個月後丟棄。",
+            "en": "When the indicator enters the red zone, about 7 days of medicine remain. Discard 3 months after inserting the cartridge.",
+            "id": "Saat penunjuk masuk ke zona merah, obat tersisa sekitar 7 hari. Buang 3 bulan setelah tabung obat dipasang.",
+            "vi": "Khi kim chỉ vào vùng đỏ, còn khoảng 7 ngày thuốc. Bỏ đi sau 3 tháng kể từ khi lắp ống thuốc.",
+            "th": "เมื่อเข็มชี้เข้าสู่โซนสีแดง จะเหลือยาประมาณ 7 วัน ทิ้งหลังใส่ตลับยาแล้ว 3 เดือน",
+            "tl": "Kapag pumasok ang indicator sa pulang bahagi, may natitirang humigit-kumulang 7 araw na gamot. Itapon pagkalipas ng 3 buwan mula nang maipasok ang cartridge.",
+            "ja": "指針が赤い範囲に入ると、薬は約7日分残っています。カートリッジ装着後3か月で廃棄してください。"
+          }
+        ],
+        "qrUrl": "https://pharmacy.example.com/meds/spiriva-respimat#daily"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/spiriva-respimat"
   },
 
-  // ── Placeholder: Spiolto Respimat (tiotropium/olodaterol) ─────────────────────────────────────,
+  // ── Spiolto Respimat (tiotropium/olodaterol) ─────────────────────────────────────,
   {
-      "id": "spiolto-respimat",
-      color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
-      },
-      emergency: false,
-      name: {
-          "zh-TW": "Spiolto Respimat",
-          "en": "Spiolto Respimat (tiotropium/olodaterol)",
-          "id": "Spiolto Respimat (tiotropium/olodaterol)",
-          "vi": "Spiolto Respimat (tiotropium/olodaterol)",
-          "th": "Spiolto Respimat (tiotropium/olodaterol)",
-          "tl": "Spiolto Respimat (tiotropium/olodaterol)",
-          "ja": "Spiolto Respimat (tiotropium/olodaterol)"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "吸入劑",
-          "en": "Inhaler",
-          "id": "Inhaler",
-          "vi": "Thuốc hít",
-          "th": "ยาสูดพ่น",
-          "tl": "Inhaler",
-          "ja": "吸入薬"
-      },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
+    "id": "spiolto-respimat",
+    "category": "inhaler",
+    "color": {
+      "main": "#0F6E56",
+      "light": "#E1F5EE",
+      "dark": "#04342C",
+      "badge": "#9FE1CB",
+      "badgeText": "#04342C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "適倍樂 舒沛噴吸入劑",
+      "en": "Spiolto Respimat",
+      "id": "Spiolto Respimat",
+      "vi": "Spiolto Respimat",
+      "th": "Spiolto Respimat",
+      "tl": "Spiolto Respimat",
+      "ja": "Spiolto Respimat"
+    },
+    "subtitle": {
+      "zh-TW": "Tiotropium / Olodaterol｜Respimat 裝置",
+      "en": "Tiotropium / Olodaterol | Respimat device",
+      "id": "Tiotropium / Olodaterol | alat Respimat",
+      "vi": "Tiotropium / Olodaterol | thiết bị Respimat",
+      "th": "Tiotropium / Olodaterol | อุปกรณ์ Respimat",
+      "tl": "Tiotropium / Olodaterol | Respimat device",
+      "ja": "Tiotropium / Olodaterol｜Respimat デバイス"
+    },
+    "headerBadge": {
+      "zh-TW": "Respimat 裝置",
+      "en": "Respimat device",
+      "id": "Alat Respimat",
+      "vi": "Thiết bị Respimat",
+      "th": "อุปกรณ์ Respimat",
+      "tl": "Respimat device",
+      "ja": "Respimat デバイス"
+    },
+    "pages": [
+      {
+        "pageLabel": {
+          "zh-TW": "A 面｜初次安裝",
+          "en": "Side A | First-time setup",
+          "id": "Sisi A | Persiapan awal",
+          "vi": "Mặt A | Lắp lần đầu",
+          "th": "ด้าน A | เตรียมครั้งแรก",
+          "tl": "Side A | Unang setup",
+          "ja": "A面｜初回セットアップ"
+        },
+        "badge": {
+          "zh-TW": "A 面｜初次安裝",
+          "en": "Side A | First-time setup",
+          "id": "Sisi A | Persiapan awal",
+          "vi": "Mặt A | Lắp lần đầu",
+          "th": "ด้าน A | เตรียมครั้งแรก",
+          "tl": "Side A | Unang setup",
+          "ja": "A面｜初回セットアップ"
+        },
+        "preStepsInfo": {
+          "tone": {
+            "bg": "#E6F1FB",
+            "border": "#185FA5",
+            "text": "#042C53"
+          },
+          "title": {
+            "zh-TW": "初次使用才需執行",
+            "en": "Only for first-time use",
+            "id": "Hanya untuk penggunaan pertama",
+            "vi": "Chỉ làm khi dùng lần đầu",
+            "th": "ทำเฉพาะก่อนใช้ครั้งแรก",
+            "tl": "Para lang sa unang paggamit",
+            "ja": "初回使用時のみ実施"
+          },
+          "text": {
+            "zh-TW": "這一面只在第一次裝藥時做 1 次。做完後，平常請看 B 面。",
+            "en": "Do this side only once when you first set up the inhaler. After that, switch to Side B for daily use.",
+            "id": "Sisi ini hanya dilakukan sekali saat pertama kali menyiapkan inhaler. Setelah itu, gunakan Sisi B untuk pemakaian harian.",
+            "vi": "Trang này chỉ làm 1 lần khi lắp thuốc lần đầu. Sau đó, hãy chuyển sang Mặt B để dùng hằng ngày.",
+            "th": "หน้านี้ทำเพียงครั้งเดียวเมื่อเตรียมเครื่องครั้งแรก หลังจากนั้นให้ใช้ด้าน B สำหรับการใช้ประจำวัน",
+            "tl": "Gawin lamang ang bahaging ito isang beses, sa unang pag-set up ng inhaler. Pagkatapos nito, gamitin ang Side B para sa pang-araw-araw na paggamit.",
+            "ja": "この面は初回セットアップ時に1回だけ行います。以後はB面の毎日の使用手順に切り替えてください。"
           }
-      ],
-      warnings: [
+        },
+        "steps": [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+            "action": {
+              "zh-TW": "拔下透明底座",
+              "en": "Remove the clear base",
+              "id": "Lepas dasar bening",
+              "vi": "Tháo đế trong suốt",
+              "th": "ถอดฐานใส",
+              "tl": "Tanggalin ang malinaw na base",
+              "ja": "透明な底部を外す"
+            },
+            "note": {
+              "zh-TW": "一手按住安全扣，另一手拔下透明底座。",
+              "en": "Press the safety catch, then pull off the clear base.",
+              "id": "Tekan pengunci pengaman lalu tarik dasar bening keluar.",
+              "vi": "Bấm chốt an toàn rồi kéo đế trong suốt ra.",
+              "th": "กดตัวล็อกนิรภัย แล้วดึงฐานใสออก",
+              "tl": "Pindutin ang safety catch saka tanggalin ang malinaw na base.",
+              "ja": "安全ロックを押しながら、透明な底部を引き抜きます。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "裝入藥罐",
+              "en": "Insert the cartridge",
+              "id": "Masukkan tabung obat",
+              "vi": "Lắp ống thuốc",
+              "th": "ใส่ตลับยา",
+              "tl": "Ipasok ang cartridge",
+              "ja": "薬液カートリッジを差し込む"
+            },
+            "note": {
+              "zh-TW": "取出藥罐，窄端朝下放入吸入器。把吸入器放在堅固桌面上，用力向下壓到聽到「喀噠」聲。再看一次，確認藥罐已完全裝入。藥罐一旦裝入，不要再拔出。",
+              "en": "Take out the cartridge and insert the narrow end into the inhaler. Place the inhaler on a firm surface and press down firmly until you hear a click. Check again to make sure the cartridge is fully inserted. Once inserted, do not remove it again.",
+              "id": "Keluarkan tabung obat dan masukkan ujung sempit ke dalam inhaler. Letakkan inhaler di permukaan yang kokoh, lalu tekan kuat ke bawah sampai terdengar bunyi klik. Periksa lagi sampai tabung terpasang penuh. Setelah tabung terpasang, jangan dicabut lagi.",
+              "vi": "Lấy ống thuốc ra và đặt đầu nhỏ vào trong dụng cụ hít. Đặt dụng cụ lên mặt phẳng chắc chắn rồi ấn mạnh xuống đến khi nghe tiếng “tách”. Kiểm tra lại để chắc chắn ống thuốc đã vào hết. Sau khi lắp vào, không rút ra nữa.",
+              "th": "นำตลับยาออกมา สอดด้านแคบลงในเครื่อง วางเครื่องบนพื้นผิวที่แข็งแรง แล้วกดลงแรง ๆ จนได้ยินเสียงคลิก ตรวจอีกครั้งว่าตลับยาเข้าไปจนสุดแล้ว เมื่อติดตั้งแล้วห้ามดึงออกอีก",
+              "tl": "Ilabas ang cartridge at ipasok ang makitid na dulo sa inhaler. Ilagay ang inhaler sa matigas na patag na ibabaw, saka idiin pababa hanggang may marinig na click. Tingnan muli at tiyaking lubusang nakapasok ang cartridge. Kapag naipasok na, huwag na itong tanggalin.",
+              "ja": "薬液カートリッジを取り出し、細い方を下にして吸入器へ差し込みます。吸入器をしっかりした台の上に置き、カチッと音がするまで強く押し込みます。完全に入ったことをもう一度確認してください。いったん装着したら、再び抜かないでください。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "裝回透明底座",
+              "en": "Reattach the clear base",
+              "id": "Pasang kembali dasar bening",
+              "vi": "Lắp lại đế trong suốt",
+              "th": "ใส่ฐานใสกลับ",
+              "tl": "Ikabit muli ang malinaw na base",
+              "ja": "透明な底部を取り付ける"
+            },
+            "note": {
+              "zh-TW": "把透明底座裝回去，直到安全扣卡住。裝回後，不要再拆下。",
+              "en": "Reattach the clear base until the safety catch locks. After reattaching it, do not remove it again.",
+              "id": "Pasang kembali dasar bening sampai pengunci terkunci. Setelah terpasang, jangan dilepas lagi.",
+              "vi": "Lắp lại đế trong suốt cho đến khi chốt an toàn khóa vào. Sau khi lắp lại, không tháo ra nữa.",
+              "th": "ใส่ฐานใสกลับจนตัวล็อกเข้าที่ หลังจากใส่กลับแล้วห้ามถอดออกอีก",
+              "tl": "Ikabit muli ang malinaw na base hanggang kumapit ang safety catch. Kapag naibalik na ito, huwag na itong tanggalin muli.",
+              "ja": "透明な底部を戻し、安全ロックがかかるまで押し込みます。いったん戻したら、再び外さないでください。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "旋轉半圈",
+              "en": "Turn the base half a turn",
+              "id": "Putar setengah lingkaran",
+              "vi": "Xoay nửa vòng",
+              "th": "หมุนครึ่งรอบ",
+              "tl": "Paikutin nang kalahating ikot",
+              "ja": "半回転させる"
+            },
+            "note": {
+              "zh-TW": "每次轉動前，先把蓋子蓋緊。依箭頭方向旋轉透明底座半圈，直到聽到「喀」聲。",
+              "en": "Keep the cap closed and turn the clear base half a turn until it clicks.",
+              "id": "Dalam keadaan tutup tertutup, putar dasar bening setengah putaran sampai berbunyi klik.",
+              "vi": "Đậy nắp kín rồi xoay đế trong suốt nửa vòng đến khi nghe tiếng “tách”.",
+              "th": "ปิดฝาให้สนิท แล้วหมุนฐานใสครึ่งรอบจนได้ยินเสียงคลิก",
+              "tl": "Isarang mabuti ang takip at paikutin ang malinaw na base nang kalahating ikot hanggang may click.",
+              "ja": "キャップを閉じたまま、透明な底部を半回転させ、カチッと音がするまで回します。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "朝地面噴 1 次",
+              "en": "Spray toward the ground",
+              "id": "Semprot ke arah lantai",
+              "vi": "Xịt xuống đất",
+              "th": "พ่นลงพื้น",
+              "tl": "I-spray patungo sa sahig",
+              "ja": "地面に向けて噴霧する"
+            },
+            "note": {
+              "zh-TW": "打開蓋子，吸入器朝向地面，按下給藥按鈕 1 次，再蓋上蓋子。",
+              "en": "Open the cap, point the inhaler toward the ground, and press the dose-release button once.",
+              "id": "Buka tutup, arahkan inhaler ke lantai, lalu tekan tombol obat satu kali.",
+              "vi": "Mở nắp, hướng dụng cụ hít xuống đất rồi bấm nút phun thuốc 1 lần.",
+              "th": "เปิดฝา หันเครื่องลงพื้น แล้วกดปุ่มพ่นยา 1 ครั้ง",
+              "tl": "Buksan ang takip, itutok ang inhaler sa sahig, at pindutin ang dose button nang isang beses.",
+              "ja": "キャップを開け、吸入器を地面に向けて、噴霧ボタンを1回押します。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "重複直到看到霧狀藥液",
+              "en": "Repeat until a mist appears",
+              "id": "Ulangi sampaiครบ 6 semprotan",
+              "vi": "Lặp lại đủ 6 lần xịt",
+              "th": "ทำซ้ำให้ครบ 6 ครั้ง",
+              "tl": "Ulitin hanggang lumabas ang ambon ng gamot",
+              "ja": "霧が見えるまで繰り返す"
+            },
+            "note": {
+              "zh-TW": "重複「旋轉半圈 → 開蓋 → 朝地面噴藥 → 蓋上蓋子」，直到看到霧狀藥液。看到後，再多做 3 次。共噴 6 次。",
+              "en": "Repeat: turn -> open -> spray toward the ground -> close, until a mist appears. Once you see the mist, repeat 3 more times. Total: 6 sprays.",
+              "id": "Ulangi putar -> buka -> semprot ke lantai sampai muncul kabut, lalu ulangi 3 kali lagi. Total 6 semprotan.",
+              "vi": "Lặp lại xoay -> mở nắp -> xịt xuống đất đến khi thấy sương thuốc, rồi lặp thêm 3 lần nữa. Tổng cộng 6 lần xịt.",
+              "th": "ทำซ้ำ หมุน -> เปิดฝา -> พ่นลงพื้น จนเห็นละอองยา แล้วทำต่ออีก 3 ครั้ง รวมทั้งหมด 6 ครั้ง",
+              "tl": "Ulitin ang: ikot -> bukas -> spray sa sahig -> sara, hanggang may lumabas na ambon ng gamot. Kapag may lumabas nang ambon, ulitin pa nang 3 beses. Kabuuan: 6 na spray.",
+              "ja": "「回す→開ける→地面に向けて噴霧→閉じる」を霧が見えるまで繰り返します。霧が見えたら、さらに3回繰り返します。合計6回です。"
+            }
           }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/spiolto-respimat"
+        ],
+        "warnings": [
+          {
+            "zh-TW": "超過 7 天未使用：使用前先向地面噴 1 次。超過 21 天未使用：重新做初次安裝步驟。",
+            "en": "If unused for more than 7 days: spray once toward the ground before use. If unused for more than 21 days: repeat the first-time setup steps.",
+            "id": "Jika tidak digunakan lebih dari 7 hari: semprot sekali ke arah lantai sebelum dipakai. Jika lebih dari 21 hari: ulangi langkah persiapan awal.",
+            "vi": "Nếu không dùng quá 7 ngày: xịt 1 lần xuống đất trước khi dùng. Nếu không dùng quá 21 ngày: lặp lại quy trình lắp đặt ban đầu.",
+            "th": "หากไม่ได้ใช้เกิน 7 วัน ให้พ่นลงพื้น 1 ครั้งก่อนใช้ หากไม่ได้ใช้เกิน 21 วัน ให้ทำขั้นตอนเตรียมครั้งแรกใหม่",
+            "tl": "Kung hindi nagamit nang mahigit 7 araw: mag-spray muna ng isang beses sa sahig bago gamitin. Kung mahigit 21 araw: ulitin ang unang setup.",
+            "ja": "7日を超えて未使用の場合は使用前に地面へ1回噴霧します。21日を超えて未使用の場合は初回セットアップをやり直してください。"
+          },
+          {
+            "zh-TW": "指針進入紅色區域時，大約還剩 7 天藥量。藥罐裝入後，3 個月後丟棄。",
+            "en": "When the indicator enters the red zone, about 7 days of medicine remain. Discard 3 months after inserting the cartridge.",
+            "id": "Saat penunjuk masuk ke zona merah, obat tersisa sekitar 7 hari. Buang 3 bulan setelah tabung obat dipasang.",
+            "vi": "Khi kim chỉ vào vùng đỏ, còn khoảng 7 ngày thuốc. Bỏ đi sau 3 tháng kể từ khi lắp ống thuốc.",
+            "th": "เมื่อเข็มชี้เข้าสู่โซนสีแดง จะเหลือยาประมาณ 7 วัน ทิ้งหลังใส่ตลับยาแล้ว 3 เดือน",
+            "tl": "Kapag pumasok ang indicator sa pulang bahagi, may natitirang humigit-kumulang 7 araw na gamot. Itapon pagkalipas ng 3 buwan mula nang maipasok ang cartridge.",
+            "ja": "指針が赤い範囲に入ると、薬は約7日分残っています。カートリッジ装着後3か月で廃棄してください。"
+          }
+        ],
+        "qrUrl": "https://pharmacy.example.com/meds/spiolto-respimat#setup"
+      },
+      {
+        "pageLabel": {
+          "zh-TW": "B 面｜每日使用",
+          "en": "Side B | Daily use",
+          "id": "Sisi B | Pemakaian harian",
+          "vi": "Mặt B | Dùng hằng ngày",
+          "th": "ด้าน B | ใช้ทุกวัน",
+          "tl": "Side B | Araw-araw na paggamit",
+          "ja": "B面｜毎日の使用"
+        },
+        "badge": {
+          "zh-TW": "B 面｜每日使用",
+          "en": "Side B | Daily use",
+          "id": "Sisi B | Pemakaian harian",
+          "vi": "Mặt B | Dùng hằng ngày",
+          "th": "ด้าน B | ใช้ทุกวัน",
+          "tl": "Side B | Araw-araw na paggamit",
+          "ja": "B面｜毎日の使用"
+        },
+        "preStepsInfo": {
+          "tone": {
+            "bg": "#E6F1FB",
+            "border": "#185FA5",
+            "text": "#042C53"
+          },
+          "title": {
+            "zh-TW": "每天使用",
+            "en": "Daily use",
+            "id": "Pemakaian harian",
+            "vi": "Dùng hằng ngày",
+            "th": "ใช้ทุกวัน",
+            "tl": "Araw-araw na paggamit",
+            "ja": "毎日の使用"
+          },
+          "text": {
+            "zh-TW": "Spiolto 不含類固醇，使用後不需漱口。通常每天吸 1 次，每次吸 2 劑，兩劑間隔 30-60 秒。",
+            "en": "Spiolto does not contain steroid, so no mouth rinse is needed after use. Usually inhale once a day, 2 doses each time, 30-60 seconds apart.",
+            "id": "Spiolto tidak mengandung steroid, jadi tidak perlu berkumur setelah digunakan. Biasanya dihirup 1 kali sehari, 2 dosis setiap kali, dengan jarak 30-60 detik.",
+            "vi": "Spiolto không chứa steroid nên không cần súc miệng sau khi dùng. Thường hít 1 lần mỗi ngày, mỗi lần 2 liều, cách nhau 30-60 giây.",
+            "th": "Spiolto ไม่มียาสเตียรอยด์ จึงไม่ต้องบ้วนปากหลังใช้ โดยทั่วไปให้สูดวันละ 1 ครั้ง ครั้งละ 2 สูด ห่างกัน 30-60 วินาที",
+            "tl": "Ang Spiolto ay walang steroid, kaya hindi kailangang magmumog pagkatapos gamitin. Karaniwang ginagamit ito isang beses sa isang araw: 2 dosis bawat paggamit, na may pagitan na 30-60 segundo.",
+            "ja": "Spioltoにはステロイドが含まれていないため、使用後のうがいは不要です。通常は1日1回、1回につき2吸入し、各吸入は30-60秒あけます。"
+          }
+        },
+        "steps": [
+          {
+            "action": {
+              "zh-TW": "旋轉半圈",
+              "en": "Turn the base half a turn",
+              "id": "Putar setengah lingkaran untuk menyiapkan dosis",
+              "vi": "Xoay nửa vòng để nạp thuốc",
+              "th": "หมุนครึ่งรอบเพื่อเตรียมยา",
+              "tl": "Paikutin nang kalahating ikot para ihanda ang dosis",
+              "ja": "半回転させて準備する"
+            },
+            "note": {
+              "zh-TW": "蓋緊蓋子，旋轉透明底座半圈至聽到「喀」聲。",
+              "en": "Keep the cap closed and turn the clear base half a turn until it clicks.",
+              "id": "Dalam keadaan tutup tertutup, putar dasar bening setengah putaran sampai berbunyi klik.",
+              "vi": "Đậy nắp kín rồi xoay đế trong suốt nửa vòng đến khi nghe tiếng “tách”.",
+              "th": "ปิดฝาให้สนิท แล้วหมุนฐานใสครึ่งรอบจนได้ยินเสียงคลิก",
+              "tl": "Isara nang mabuti ang takip at paikutin ang malinaw na base nang kalahating ikot hanggang may click.",
+              "ja": "キャップを閉じたまま、透明な底部を半回転させ、カチッと音がするまで回します。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "打開蓋子",
+              "en": "Open the cap",
+              "id": "Buka tutup",
+              "vi": "Mở nắp",
+              "th": "เปิดฝา",
+              "tl": "Buksan ang takip",
+              "ja": "キャップを開ける"
+            },
+            "note": {
+              "zh-TW": "從側邊把蓋子完全打開。",
+              "en": "Open the cap fully.",
+              "id": "Buka tutup sepenuhnya.",
+              "vi": "Mở nắp hoàn toàn.",
+              "th": "เปิดฝาให้สุด",
+              "tl": "Buksan nang buo ang takip.",
+              "ja": "キャップを最後まで開けます。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "向外吐氣",
+              "en": "Breathe out away from the mouthpiece",
+              "id": "Buang napas menjauh dari corong",
+              "vi": "Thở ra tránh xa đầu ngậm",
+              "th": "หายใจออกห่างจากปากสูด",
+              "tl": "Huminga palabas palayo sa mouthpiece",
+              "ja": "吸入口から離して息を吐く"
+            },
+            "note": {
+              "zh-TW": "先吐氣至底。不要朝口含器吐氣。",
+              "en": "Breathe out fully. Do not blow into the mouthpiece.",
+              "id": "Buang napas sampai habis. Jangan mengembus ke dalam corong.",
+              "vi": "Thở ra hết sức. Không thở vào đầu ngậm.",
+              "th": "หายใจออกให้สุด และอย่าเป่าลมเข้าไปในปากสูด",
+              "tl": "Ilabas ang hininga nang buo. Huwag huminga papasok sa mouthpiece.",
+              "ja": "最後まで息を吐きます。吸入口に向かって息を吹き込まないでください。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "按下按鈕並慢慢吸氣",
+              "en": "Inhale the medicine",
+              "id": "Hirup obat",
+              "vi": "Hít thuốc",
+              "th": "สูดยาเข้า",
+              "tl": "Langhapin ang gamot",
+              "ja": "薬を吸い込む"
+            },
+            "note": {
+              "zh-TW": "嘴巴含住口含器。不要遮住通氣孔。按下黑色給藥按鈕，同時慢慢深吸一口氣。",
+              "en": "Seal your lips around the mouthpiece without covering the air vents. Press the dose-release button and breathe in slowly and deeply at the same time.",
+              "id": "Rapatkan bibir pada corong tanpa menutupi lubang udara. Tekan tombol obat sambil menarik napas perlahan dan dalam.",
+              "vi": "Ngậm kín đầu ngậm, không che lỗ thoát khí. Bấm nút phun thuốc đồng thời hít vào chậm và sâu.",
+              "th": "เม้มริมฝีปากรอบปากสูดโดยไม่บังรูระบายอากาศ กดปุ่มพ่นยาและสูดช้า ๆ ลึก ๆ พร้อมกัน",
+              "tl": "Idikit ang labi sa mouthpiece nang hindi natatakpan ang air vent. Pindutin ang dose button habang mabagal at malalim na humihinga papasok.",
+              "ja": "通気孔をふさがずに吸入口をくわえ、噴霧ボタンを押しながら、ゆっくり深く吸い込みます。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "屏氣 10 秒",
+              "en": "Hold your breath for 10 seconds",
+              "id": "Tahan napas 10 detik",
+              "vi": "Nín thở 10 giây",
+              "th": "กลั้นหายใจ 10 วินาที",
+              "tl": "Pigilan ang hininga nang 10 segundo",
+              "ja": "10秒息を止める"
+            },
+            "note": {
+              "zh-TW": "吸完後移開吸入器，閉緊雙唇，閉氣 10 秒。若做不到，就在舒服的前提下盡量久。",
+              "en": "Hold your breath for 10 seconds after inhaling. If you cannot, hold as long as you comfortably can.",
+              "id": "Setelah menghirup, tahan napas 10 detik. Jika tidak bisa, tahan semampunya.",
+              "vi": "Sau khi hít xong, nín thở 10 giây. Nếu không được, hãy nín lâu nhất có thể.",
+              "th": "หลังสูดยาแล้วกลั้นหายใจ 10 วินาที หากทำไม่ได้ให้กลั้นนานที่สุดเท่าที่ทำได้",
+              "tl": "Pagkatapos lumanghap, pigilin ang hininga nang 10 segundo. Kung hindi kaya, pigilin nang kaya mo.",
+              "ja": "吸入後、10秒息を止めます。難しい場合は、できる範囲でなるべく長く止めてください。"
+            }
+          },
+          {
+            "action": {
+              "zh-TW": "再吸第 2 劑",
+              "en": "Take the second dose",
+              "id": "Gunakan dosis kedua",
+              "vi": "Hít liều thứ hai",
+              "th": "สูดครั้งที่สอง",
+              "tl": "Gamitin ang pangalawang dosis",
+              "ja": "2回目を吸入する"
+            },
+            "note": {
+              "zh-TW": "蓋上蓋子，等 30-60 秒，再重複步驟 1-5。正常情況每天吸 1 次，共吸 2 劑。",
+              "en": "Close the cap. Wait 30-60 seconds, then repeat steps 1-5 for the second dose. Usually use it once a day for a total of 2 doses.",
+              "id": "Tutup kembali alat, tunggu 30-60 detik, lalu ulangi langkah 1-5. Biasanya digunakan 1 kali sehari, total 2 dosis.",
+              "vi": "Đóng nắp lại, chờ 30-60 giây rồi lặp lại bước 1-5. Thường dùng 1 lần mỗi ngày, tổng cộng 2 liều.",
+              "th": "ปิดฝา รอ 30-60 วินาที แล้วทำซ้ำขั้นตอน 1-5 โดยทั่วไปใช้วันละ 1 ครั้ง รวม 2 สูด",
+              "tl": "Isara ang takip, maghintay ng 30-60 segundo, saka ulitin ang hakbang 1-5 para sa ikalawang dosis. Karaniwang ginagamit ito isang beses sa isang araw, kabuuang 2 dosis.",
+              "ja": "キャップを閉じ、30-60秒待ってから2回目として手順1-5を繰り返します。通常は1日1回、合計2吸入です。"
+            }
+          }
+        ],
+        "warnings": [
+          {
+            "zh-TW": "超過 7 天未使用：使用前先向地面噴 1 次。超過 21 天未使用：重新做初次安裝步驟。",
+            "en": "If unused for more than 7 days: spray once toward the ground before use. If unused for more than 21 days: repeat the first-time setup steps.",
+            "id": "Jika tidak digunakan lebih dari 7 hari: semprot sekali ke arah lantai sebelum dipakai. Jika lebih dari 21 hari: ulangi langkah persiapan awal.",
+            "vi": "Nếu không dùng quá 7 ngày: xịt 1 lần xuống đất trước khi dùng. Nếu không dùng quá 21 ngày: lặp lại quy trình lắp đặt ban đầu.",
+            "th": "หากไม่ได้ใช้เกิน 7 วัน ให้พ่นลงพื้น 1 ครั้งก่อนใช้ หากไม่ได้ใช้เกิน 21 วัน ให้ทำขั้นตอนเตรียมครั้งแรกใหม่",
+            "tl": "Kung hindi nagamit nang mahigit 7 araw: mag-spray muna ng isang beses sa sahig bago gamitin. Kung mahigit 21 araw: ulitin ang unang setup.",
+            "ja": "7日を超えて未使用の場合は使用前に地面へ1回噴霧します。21日を超えて未使用の場合は初回セットアップをやり直してください。"
+          },
+          {
+            "zh-TW": "指針進入紅色區域時，大約還剩 7 天藥量。藥罐裝入後，3 個月後丟棄。",
+            "en": "When the indicator enters the red zone, about 7 days of medicine remain. Discard 3 months after inserting the cartridge.",
+            "id": "Saat penunjuk masuk ke zona merah, obat tersisa sekitar 7 hari. Buang 3 bulan setelah tabung obat dipasang.",
+            "vi": "Khi kim chỉ vào vùng đỏ, còn khoảng 7 ngày thuốc. Bỏ đi sau 3 tháng kể từ khi lắp ống thuốc.",
+            "th": "เมื่อเข็มชี้เข้าสู่โซนสีแดง จะเหลือยาประมาณ 7 วัน ทิ้งหลังใส่ตลับยาแล้ว 3 เดือน",
+            "tl": "Kapag pumasok ang indicator sa pulang bahagi, may natitirang humigit-kumulang 7 araw na gamot. Itapon pagkalipas ng 3 buwan mula nang maipasok ang cartridge.",
+            "ja": "指針が赤い範囲に入ると、薬は約7日分残っています。カートリッジ装着後3か月で廃棄してください。"
+          }
+        ],
+        "qrUrl": "https://pharmacy.example.com/meds/spiolto-respimat#daily"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/spiolto-respimat"
   },
 
-  // ── Placeholder: Seebri inhalation powder ─────────────────────────────────────,
+  // ── Onbrez Breezhaler ─────────────────────────────────────,
   {
-      "id": "seebri-inhalation-powder",
-      color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
+    "id": "onbrez-breezhaler",
+    "category": "inhaler",
+    "color": {
+      "main": "#0F6E56",
+      "light": "#E1F5EE",
+      "dark": "#04342C",
+      "badge": "#9FE1CB",
+      "badgeText": "#04342C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "昂舒",
+      "en": "Onbrez Breezhaler",
+      "id": "Onbrez Breezhaler",
+      "vi": "Onbrez Breezhaler",
+      "th": "Onbrez Breezhaler",
+      "tl": "Onbrez Breezhaler",
+      "ja": "オンブレス ブリーズヘラー"
+    },
+    "subtitle": {
+      "zh-TW": "Onbrez Breezhaler　Indacaterol 150 mcg／粒",
+      "en": "Onbrez Breezhaler | Indacaterol 150 mcg/capsule",
+      "id": "Onbrez Breezhaler | Indacaterol 150 mcg/kapsul",
+      "vi": "Onbrez Breezhaler | Indacaterol 150 mcg/viên",
+      "th": "Onbrez Breezhaler | Indacaterol 150 ไมโครกรัม/แคปซูล",
+      "tl": "Onbrez Breezhaler | Indacaterol 150 mcg/kapsula",
+      "ja": "Onbrez Breezhaler｜Indacaterol 150 mcg/カプセル"
+    },
+    "headerBadge": {
+      "zh-TW": "吸入膠囊",
+      "en": "Inhalation capsule",
+      "id": "Kapsul inhalasi",
+      "vi": "Viên nang hít",
+      "th": "แคปซูลสูด",
+      "tl": "Kapsulang panglanghap",
+      "ja": "吸入カプセル"
+    },
+    "badge": {
+      "zh-TW": "每日一次",
+      "en": "Once daily",
+      "id": "Sekali sehari",
+      "vi": "Ngày một lần",
+      "th": "วันละครั้ง",
+      "tl": "Isang beses araw-araw",
+      "ja": "1日1回"
+    },
+    "preStepsInfo": {
+      "tone": {
+        "bg": "#E6F1FB",
+        "border": "#185FA5",
+        "text": "#042C53"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Seebri 吸入粉劑",
-          "en": "Seebri inhalation powder",
-          "id": "Seebri inhalation powder",
-          "vi": "Seebri inhalation powder",
-          "th": "Seebri inhalation powder",
-          "tl": "Seebri inhalation powder",
-          "ja": "Seebri inhalation powder"
+      "title": {
+        "zh-TW": "使用重點",
+        "en": "Key point",
+        "id": "Poin penting",
+        "vi": "Điểm cần nhớ",
+        "th": "ข้อสำคัญ",
+        "tl": "Mahalagang paalala",
+        "ja": "使用のポイント"
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      "text": {
+        "zh-TW": "此藥為長效乙二型支氣管擴張劑（LABA），每天固定時間使用一粒。症狀急性發作時，請改用急救吸入劑（如：備勞喘 Berotec-N），勿增加本藥劑量。",
+        "en": "This medicine is a long-acting beta2 bronchodilator (LABA). Use 1 capsule at the same time every day. If your symptoms suddenly flare up, use a rescue inhaler such as Berotec-N. Do not increase the dose on your own.",
+        "id": "Obat ini adalah bronkodilator beta2 kerja panjang (LABA). Gunakan 1 kapsul pada waktu yang sama setiap hari. Bila gejala tiba-tiba memburuk, gunakan inhaler darurat seperti Berotec-N. Jangan menambah dosis obat ini sendiri.",
+        "vi": "Thuốc này là thuốc giãn phế quản beta2 tác dụng kéo dài (LABA). Dùng 1 viên vào cùng một thời điểm mỗi ngày. Khi lên cơn cấp, hãy dùng thuốc hít cắt cơn như Berotec-N, không tự tăng liều thuốc này.",
+        "th": "ยานี้เป็นยาขยายหลอดลมชนิด beta2 ออกฤทธิ์ยาว (LABA) ใช้วันละ 1 แคปซูลเวลาเดิมทุกวัน หากอาการกำเริบเฉียบพลัน ให้ใช้ยาสูดฉุกเฉิน เช่น Berotec-N แทน และห้ามเพิ่มขนาดยานี้เอง",
+        "tl": "Ang gamot na ito ay long-acting beta2 bronchodilator (LABA). Gumamit ng 1 kapsula sa parehong oras araw-araw. Kung biglang lumala ang sintomas, gumamit ng rescue inhaler gaya ng Berotec-N. Huwag magdagdag ng dosis nang kusa.",
+        "ja": "この薬は長時間作用型β2刺激薬（LABA）です。毎日同じ時間に1カプセル吸入します。症状が急に悪化したときは、Berotec-N などの救急用吸入薬を使ってください。自己判断で増量しないでください。"
+      }
+    },
+    "steps": [
+      {
+        "action": {
+          "zh-TW": "取出膠囊",
+          "en": "Remove one capsule",
+          "id": "Ambil satu kapsul",
+          "vi": "Lấy một viên nang",
+          "th": "นำแคปซูลออกมา",
+          "tl": "Kunin ang kapsula",
+          "ja": "カプセルを取り出す"
+        },
+        "note": {
+          "zh-TW": "沿虛線剝下一格鋁箔，撕開背面保護膜，以乾手取出膠囊。未使用膠囊請留在鋁箔內防潮，取出後立即使用。",
+          "en": "Peel off one blister along the dotted line, peel back the foil, and remove the capsule with dry hands. Keep unused capsules in the foil to protect from moisture. Use immediately after removal.",
+          "id": "Sobek satu blister mengikuti garis putus-putus, buka lapisan foil, lalu ambil kapsul dengan tangan kering. Simpan kapsul yang belum digunakan di dalam foil agar terlindung dari lembap. Setelah dikeluarkan, segera gunakan.",
+          "vi": "Tách một ô thuốc theo đường răng cưa, bóc lớp nhôm phía sau và lấy viên nang bằng tay khô. Giữ viên nang chưa dùng trong vỉ nhôm để tránh ẩm. Lấy ra xong phải dùng ngay.",
+          "th": "ฉีกแผงยาออกมาตามรอยปรุ ลอกฟอยล์ด้านหลัง และหยิบแคปซูลด้วยมือที่แห้ง เก็บแคปซูลที่ยังไม่ได้ใช้ไว้ในแผงฟอยล์เพื่อกันความชื้น และเมื่อแกะออกแล้วให้ใช้ทันที",
+          "tl": "Hatiin ang isang blister sa may guhit, balatan ang foil sa likod, at kunin ang kapsula gamit ang tuyong kamay. Itago ang hindi pa ginagamit na kapsula sa foil upang hindi mamasa. Kapag nailabas na, gamitin agad.",
+          "ja": "ミシン目に沿って1カプセル分を切り離し、裏のフォイルをはがして、乾いた手でカプセルを取り出します。未使用のカプセルは湿気を避けるためアルミ包装内で保管し、取り出したらすぐに使用します。"
+        }
       },
-      badge: {
-          "zh-TW": "吸入劑",
-          "en": "Inhaler",
-          "id": "Inhaler",
-          "vi": "Thuốc hít",
-          "th": "ยาสูดพ่น",
-          "tl": "Inhaler",
-          "ja": "吸入薬"
+      {
+        "action": {
+          "zh-TW": "打開吸入器",
+          "en": "Open the inhaler",
+          "id": "Buka inhaler",
+          "vi": "Mở dụng cụ hít",
+          "th": "เปิดอุปกรณ์สูด",
+          "tl": "Buksan ang inhaler",
+          "ja": "吸入器を開く"
+        },
+        "note": {
+          "zh-TW": "拔開帽蓋，掀開口含器，可見膠囊室。",
+          "en": "Remove the cap and tilt open the mouthpiece to see the capsule chamber.",
+          "id": "Lepas tutup lalu buka corong mulut hingga terlihat ruang kapsul.",
+          "vi": "Tháo nắp rồi mở đầu ngậm để thấy buồng đặt viên nang.",
+          "th": "ถอดฝาครอบออก แล้วยกปากสูดขึ้น จะเห็นช่องใส่แคปซูล",
+          "tl": "Alisin ang takip at ibuka ang mouthpiece para makita ang lagayan ng kapsula.",
+          "ja": "キャップを外し、マウスピースを開くとカプセル室が見えます。"
+        }
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/seebri-inhalation-powder"
+      {
+        "action": {
+          "zh-TW": "放入膠囊",
+          "en": "Place the capsule",
+          "id": "Masukkan kapsul",
+          "vi": "Đặt viên nang vào",
+          "th": "ใส่แคปซูล",
+          "tl": "Ilagay ang kapsula",
+          "ja": "カプセルを入れる"
+        },
+        "note": {
+          "zh-TW": "將膠囊置於中央凹槽，蓋上口含器，直到聽到「喀」聲。",
+          "en": "Place the capsule in the center chamber, then close the mouthpiece until it clicks.",
+          "id": "Letakkan kapsul di ruang tengah, lalu tutup corong sampai terdengar bunyi klik.",
+          "vi": "Đặt viên nang vào rãnh giữa rồi đóng đầu ngậm đến khi nghe tiếng “tách”.",
+          "th": "วางแคปซูลลงในร่องตรงกลาง แล้วปิดปากสูดจนได้ยินเสียง “คลิก”",
+          "tl": "Ilagay ang kapsula sa gitnang puwesto at isara ang mouthpiece hanggang marinig ang “click”.",
+          "ja": "カプセルを中央のくぼみに置き、カチッと音がするまでマウスピースを閉じます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "刺破膠囊",
+          "en": "Pierce the capsule",
+          "id": "Tusuk kapsul",
+          "vi": "Chọc thủng viên nang",
+          "th": "เจาะแคปซูล",
+          "tl": "Tusukin ang kapsula",
+          "ja": "カプセルに穴を開ける"
+        },
+        "note": {
+          "zh-TW": "吸嘴朝上，兩側按鈕同時按到底後立即放開（只按一次）。",
+          "en": "Hold the mouthpiece upright, press both side buttons fully at the same time, then release immediately. Press only once.",
+          "id": "Pegang corong tegak ke atas, tekan kedua tombol samping bersamaan sampai penuh lalu segera lepaskan. Tekan hanya sekali.",
+          "vi": "Giữ đầu ngậm hướng lên trên, ấn đồng thời hai nút bên hông xuống hết cỡ rồi thả ra ngay. Chỉ ấn 1 lần.",
+          "th": "หันปากสูดขึ้นด้านบน กดปุ่มสองข้างพร้อมกันให้สุดแล้วปล่อยทันที (กดเพียงครั้งเดียว)",
+          "tl": "Itaas ang mouthpiece, pindutin nang sabay ang magkabilang button hanggang dulo saka bitawan agad. Isang beses lang pindutin.",
+          "ja": "吸入口を上に向け、左右のボタンを同時に最後まで押してすぐ離します（押すのは1回だけ）。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "向外吐氣",
+          "en": "Breathe out away from the mouthpiece",
+          "id": "Buang napas menjauh dari corong",
+          "vi": "Thở ra ở hướng xa đầu ngậm",
+          "th": "หายใจออกออกห่างจากปากสูด",
+          "tl": "Huminga palabas palayo sa mouthpiece",
+          "ja": "吸入口から離して息を吐く"
+        },
+        "note": {
+          "zh-TW": "對著遠離吸嘴的方向，緩慢吐氣至底。",
+          "en": "Breathe out slowly and fully in a direction away from the mouthpiece.",
+          "id": "Buang napas perlahan sampai habis ke arah menjauh dari corong.",
+          "vi": "Thở ra chậm và hết cỡ theo hướng tránh xa đầu ngậm.",
+          "th": "หายใจออกช้า ๆ ให้สุด โดยหันออกจากปากสูด",
+          "tl": "Dahan-dahang ilabas ang hininga nang buo palayo sa mouthpiece.",
+          "ja": "吸入口から離れた方向へ、ゆっくり最後まで息を吐きます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "按下按鈕並慢慢吸氣",
+          "en": "Inhale the medicine",
+          "id": "Hirup obat",
+          "vi": "Hít thuốc",
+          "th": "สูดยาเข้า",
+          "tl": "Langhapin ang gamot",
+          "ja": "薬を吸い込む"
+        },
+        "note": {
+          "zh-TW": "含住吸嘴，快速深吸一口氣至飽，吸藥時應聽到「呼嚕」旋轉聲。",
+          "en": "Seal your lips around the mouthpiece and take one fast, deep breath in. You should hear a whirring sound as the capsule spins.",
+          "id": "Rapatkan bibir pada corong lalu tarik napas cepat dan dalam satu kali sampai penuh. Anda seharusnya mendengar bunyi kapsul berputar.",
+          "vi": "Ngậm kín đầu ngậm rồi hít một hơi thật nhanh và sâu. Bạn nên nghe tiếng viên nang quay “rè rè”.",
+          "th": "เม้มริมฝีปากกับปากสูด แล้วสูดลมหายใจเข้าลึกและเร็วหนึ่งครั้งจนสุด ควรได้ยินเสียงแคปซูลหมุน",
+          "tl": "Idikit ang labi sa mouthpiece at huminga nang mabilis at malalim nang isang beses hanggang mapuno. Dapat marinig ang pag-ikot ng kapsula.",
+          "ja": "口を密着させて、すばやく深く一息で吸い込みます。カプセルが回る音が聞こえるはずです。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "閉氣",
+          "en": "Hold your breath",
+          "id": "Tahan napas",
+          "vi": "Nín thở",
+          "th": "กลั้นหายใจ",
+          "tl": "Pigilan ang hininga",
+          "ja": "息を止める"
+        },
+        "note": {
+          "zh-TW": "移開吸入器，閉氣 5–10 秒，再恢復正常呼吸。",
+          "en": "Remove the inhaler, hold your breath for 5-10 seconds, then return to normal breathing.",
+          "id": "Lepaskan inhaler, tahan napas 5-10 detik, lalu kembali bernapas seperti biasa.",
+          "vi": "Rời dụng cụ hít ra, nín thở 5-10 giây rồi thở lại bình thường.",
+          "th": "นำอุปกรณ์ออกจากปาก กลั้นหายใจ 5-10 วินาที แล้วกลับมาหายใจตามปกติ",
+          "tl": "Alisin ang inhaler, pigilin ang hininga nang 5-10 segundo, saka bumalik sa normal na paghinga.",
+          "ja": "吸入器を口から離し、5-10秒息を止めてから普通に呼吸します。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "確認排空",
+          "en": "Check whether the capsule is empty",
+          "id": "Periksa apakah kapsul sudah kosong",
+          "vi": "Kiểm tra viên nang đã hết thuốc chưa",
+          "th": "ตรวจว่าแคปซูลหมดหรือยัง",
+          "tl": "Tingnan kung ubos na ang kapsula",
+          "ja": "カプセルが空か確認する"
+        },
+        "note": {
+          "zh-TW": "打開口含器，查看膠囊是否透明空殼；若仍有粉末，重複第 5-7 步。",
+          "en": "Open the mouthpiece and check whether the capsule is now a clear empty shell. If powder remains, repeat steps 5-7.",
+          "id": "Buka corong dan periksa apakah kapsul sudah menjadi cangkang bening yang kosong. Bila masih ada serbuk, ulangi langkah 5-7.",
+          "vi": "Mở đầu ngậm và kiểm tra xem viên nang đã thành vỏ rỗng trong suốt chưa. Nếu còn bột, lặp lại bước 5-7.",
+          "th": "เปิดปากสูด ตรวจว่าแคปซูลกลายเป็นเปลือกใสว่างหรือยัง หากยังมีผงยา ให้ทำซ้ำขั้นตอน 5-7",
+          "tl": "Buksan ang mouthpiece at tingnan kung malinaw at walang laman na ang kapsula. Kung may pulbos pa, ulitin ang hakbang 5-7.",
+          "ja": "マウスピースを開き、カプセルが透明な空の殻になっているか確認します。粉が残っていれば手順5-7を繰り返します。"
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "zh-TW": "膠囊不可吞服，口服途徑無效。",
+        "en": "Do not swallow the capsule. It does not work by mouth.",
+        "id": "Kapsul tidak boleh ditelan. Obat ini tidak bekerja bila diminum.",
+        "vi": "Không được nuốt viên nang. Thuốc không có tác dụng khi uống.",
+        "th": "ห้ามกลืนแคปซูล ยานี้ไม่ได้ผลเมื่อรับประทาน",
+        "tl": "Huwag lunukin ang kapsula. Hindi ito tatalab kapag nilunok.",
+        "ja": "カプセルは飲み込まないでください。飲んでも効きません。"
+      },
+      {
+        "zh-TW": "若沒聽到膠囊轉動聲，輕拍底座讓膠囊鬆開後再吸。不要再按按鈕。",
+        "en": "If you do not hear the capsule spinning, tap the base gently to loosen it, then inhale again. Do not press the buttons again.",
+        "id": "Bila tidak terdengar bunyi kapsul berputar, ketuk ringan bagian dasar untuk melonggarkannya lalu hirup lagi. Jangan menekan tombol sekali lagi.",
+        "vi": "Nếu không nghe thấy tiếng viên nang quay, hãy gõ nhẹ phần đáy để viên nang lỏng ra rồi hít lại. Không bấm nút thêm lần nữa.",
+        "th": "หากไม่ได้ยินเสียงแคปซูลหมุน ให้เคาะฐานเบา ๆ เพื่อให้แคปซูลคลายตัวแล้วสูดใหม่ ห้ามกดปุ่มซ้ำ",
+        "tl": "Kung hindi mo marinig ang pag-ikot ng kapsula, tapikin nang marahan ang ilalim para lumuwag ang kapsula at saka muling lumanghap. Huwag nang pindutin muli ang button.",
+        "ja": "カプセルが回る音が聞こえないときは、底部を軽くたたいてカプセルをゆるめてから、もう一度吸入してください。ボタンは押し直さないでください。"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/onbrez-breezhaler"
+  },
+
+  // ── Ultibro Breezhaler ─────────────────────────────────────,
+  {
+    "id": "ultibro-breezhaler",
+    "category": "inhaler",
+    "color": {
+      "main": "#0F6E56",
+      "light": "#E1F5EE",
+      "dark": "#04342C",
+      "badge": "#9FE1CB",
+      "badgeText": "#04342C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "昂帝博",
+      "en": "Ultibro Breezhaler",
+      "id": "Ultibro Breezhaler",
+      "vi": "Ultibro Breezhaler",
+      "th": "Ultibro Breezhaler",
+      "tl": "Ultibro Breezhaler",
+      "ja": "アルティブロ ブリーズヘラー"
+    },
+    "subtitle": {
+      "zh-TW": "Ultibro Breezhaler　Indacaterol 110 mcg＋Glycopyrronium 50 mcg／粒",
+      "en": "Ultibro Breezhaler | Indacaterol 110 mcg + Glycopyrronium 50 mcg/capsule",
+      "id": "Ultibro Breezhaler | Indacaterol 110 mcg + Glycopyrronium 50 mcg/kapsul",
+      "vi": "Ultibro Breezhaler | Indacaterol 110 mcg + Glycopyrronium 50 mcg/viên",
+      "th": "Ultibro Breezhaler | Indacaterol 110 ไมโครกรัม + Glycopyrronium 50 ไมโครกรัม/แคปซูล",
+      "tl": "Ultibro Breezhaler | Indacaterol 110 mcg + Glycopyrronium 50 mcg/kapsula",
+      "ja": "Ultibro Breezhaler｜Indacaterol 110 mcg＋Glycopyrronium 50 mcg/カプセル"
+    },
+    "headerBadge": {
+      "zh-TW": "吸入膠囊",
+      "en": "Inhalation capsule",
+      "id": "Kapsul inhalasi",
+      "vi": "Viên nang hít",
+      "th": "แคปซูลสูด",
+      "tl": "Kapsulang panglanghap",
+      "ja": "吸入カプセル"
+    },
+    "badge": {
+      "zh-TW": "每日一次｜雙效支氣管擴張劑",
+      "en": "Once daily | Dual bronchodilator",
+      "id": "Sekali sehari | Bronkodilator ganda",
+      "vi": "Ngày một lần | Giãn phế quản kép",
+      "th": "วันละครั้ง | ยาขยายหลอดลมสองฤทธิ์",
+      "tl": "Isang beses araw-araw | Dalawang bronchodilator",
+      "ja": "1日1回｜2剤配合の気管支拡張薬"
+    },
+    "preStepsInfo": {
+      "tone": {
+        "bg": "#E6F1FB",
+        "border": "#185FA5",
+        "text": "#042C53"
+      },
+      "title": {
+        "zh-TW": "使用重點",
+        "en": "Key point",
+        "id": "Poin penting",
+        "vi": "Điểm cần nhớ",
+        "th": "ข้อสำคัญ",
+        "tl": "Mahalagang paalala",
+        "ja": "使用のポイント"
+      },
+      "text": {
+        "zh-TW": "此藥同時含兩種長效成分：長效乙二型刺激劑（LABA）＋長效抗膽鹼藥物（LAMA），每天固定時間使用一粒，不可因症狀未改善而自行加量。症狀急性發作時，請改用急救吸入劑。",
+        "en": "This medicine contains 2 long-acting bronchodilators: a LABA and a LAMA. Use 1 capsule at the same time every day. If your symptoms do not improve, do not increase the dose on your own. If your symptoms suddenly flare up, use a rescue inhaler.",
+        "id": "Obat ini mengandung dua komponen kerja panjang: LABA dan LAMA. Gunakan 1 kapsul pada waktu yang sama setiap hari. Jangan menambah dosis sendiri bila gejala tidak membaik. Bila gejala akut kambuh, gunakan inhaler darurat.",
+        "vi": "Thuốc này chứa hai thành phần tác dụng kéo dài: LABA và LAMA. Dùng 1 viên vào cùng một thời điểm mỗi ngày. Không tự tăng liều nếu triệu chứng chưa cải thiện. Khi lên cơn cấp, hãy dùng thuốc hít cắt cơn.",
+        "th": "ยานี้มีตัวยาออกฤทธิ์ยาว 2 ชนิด คือ LABA และ LAMA ใช้วันละ 1 แคปซูลเวลาเดิมทุกวัน หากอาการไม่ดีขึ้นห้ามเพิ่มขนาดยาเอง หากอาการกำเริบเฉียบพลันให้ใช้ยาสูดฉุกเฉิน",
+        "tl": "Ang gamot na ito ay may 2 long-acting bronchodilator: LABA at LAMA. Gumamit ng 1 kapsula sa parehong oras araw-araw. Kung hindi gumagaan ang sintomas, huwag magdagdag ng dosis nang kusa. Kapag biglang sumumpong ang sintomas, gumamit ng rescue inhaler.",
+        "ja": "この薬には長時間作用型の成分が2種類（LABA＋LAMA）入っています。毎日同じ時間に1カプセル吸入します。症状が改善しなくても、自己判断で増量しないでください。症状が急に悪化したときは、救急用吸入薬を使ってください。"
+      }
+    },
+    "steps": [
+      {
+        "action": {
+          "zh-TW": "取出膠囊",
+          "en": "Remove one capsule",
+          "id": "Ambil satu kapsul",
+          "vi": "Lấy một viên nang",
+          "th": "นำแคปซูลออกมา",
+          "tl": "Kunin ang kapsula",
+          "ja": "カプセルを取り出す"
+        },
+        "note": {
+          "zh-TW": "沿虛線剝下一格鋁箔，撕開背面保護膜，以乾手取出膠囊。未使用膠囊請留在鋁箔內防潮，取出後立即使用。",
+          "en": "Peel off one blister along the dotted line, peel back the foil, and remove the capsule with dry hands. Keep unused capsules in the foil to protect from moisture. Use immediately after removal.",
+          "id": "Sobek satu blister mengikuti garis putus-putus, buka lapisan foil, lalu ambil kapsul dengan tangan kering. Simpan kapsul yang belum digunakan di dalam foil agar terlindung dari lembap. Setelah dikeluarkan, segera gunakan.",
+          "vi": "Tách một ô thuốc theo đường răng cưa, bóc lớp nhôm phía sau và lấy viên nang bằng tay khô. Giữ viên nang chưa dùng trong vỉ nhôm để tránh ẩm. Lấy ra xong phải dùng ngay.",
+          "th": "ฉีกแผงยาออกมาตามรอยปรุ ลอกฟอยล์ด้านหลัง และหยิบแคปซูลด้วยมือที่แห้ง เก็บแคปซูลที่ยังไม่ได้ใช้ไว้ในแผงฟอยล์เพื่อกันความชื้น และเมื่อแกะออกแล้วให้ใช้ทันที",
+          "tl": "Hatiin ang isang blister sa may guhit, balatan ang foil sa likod, at kunin ang kapsula gamit ang tuyong kamay. Itago ang hindi pa ginagamit na kapsula sa foil upang hindi mamasa. Kapag nailabas na, gamitin agad.",
+          "ja": "ミシン目に沿って1カプセル分を切り離し、裏のフォイルをはがして、乾いた手でカプセルを取り出します。未使用のカプセルは湿気を避けるためアルミ包装内で保管し、取り出したらすぐに使用します。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "打開吸入器",
+          "en": "Open the inhaler",
+          "id": "Buka inhaler",
+          "vi": "Mở dụng cụ hít",
+          "th": "เปิดอุปกรณ์สูด",
+          "tl": "Buksan ang inhaler",
+          "ja": "吸入器を開く"
+        },
+        "note": {
+          "zh-TW": "拔開帽蓋，掀開口含器，可見膠囊室。",
+          "en": "Remove the cap and tilt open the mouthpiece to see the capsule chamber.",
+          "id": "Lepas tutup lalu buka corong mulut hingga terlihat ruang kapsul.",
+          "vi": "Tháo nắp rồi mở đầu ngậm để thấy buồng đặt viên nang.",
+          "th": "ถอดฝาครอบออก แล้วยกปากสูดขึ้น จะเห็นช่องใส่แคปซูล",
+          "tl": "Alisin ang takip at ibuka ang mouthpiece para makita ang lagayan ng kapsula.",
+          "ja": "キャップを外し、マウスピースを開くとカプセル室が見えます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "放入膠囊",
+          "en": "Place the capsule",
+          "id": "Masukkan kapsul",
+          "vi": "Đặt viên nang vào",
+          "th": "ใส่แคปซูล",
+          "tl": "Ilagay ang kapsula",
+          "ja": "カプセルを入れる"
+        },
+        "note": {
+          "zh-TW": "將膠囊置於中央凹槽，蓋上口含器，直到聽到「喀」聲。",
+          "en": "Place the capsule in the center chamber, then close the mouthpiece until it clicks.",
+          "id": "Letakkan kapsul di ruang tengah, lalu tutup corong sampai terdengar bunyi klik.",
+          "vi": "Đặt viên nang vào rãnh giữa rồi đóng đầu ngậm đến khi nghe tiếng “tách”.",
+          "th": "วางแคปซูลลงในร่องตรงกลาง แล้วปิดปากสูดจนได้ยินเสียง “คลิก”",
+          "tl": "Ilagay ang kapsula sa gitnang puwesto at isara ang mouthpiece hanggang marinig ang “click”.",
+          "ja": "カプセルを中央のくぼみに置き、カチッと音がするまでマウスピースを閉じます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "刺破膠囊",
+          "en": "Pierce the capsule",
+          "id": "Tusuk kapsul",
+          "vi": "Chọc thủng viên nang",
+          "th": "เจาะแคปซูล",
+          "tl": "Tusukin ang kapsula",
+          "ja": "カプセルに穴を開ける"
+        },
+        "note": {
+          "zh-TW": "吸嘴朝上，兩側按鈕同時按到底後立即放開（只按一次）。",
+          "en": "Hold the mouthpiece upright, press both side buttons fully at the same time, then release immediately. Press only once.",
+          "id": "Pegang corong tegak ke atas, tekan kedua tombol samping bersamaan sampai penuh lalu segera lepaskan. Tekan hanya sekali.",
+          "vi": "Giữ đầu ngậm hướng lên trên, ấn đồng thời hai nút bên hông xuống hết cỡ rồi thả ra ngay. Chỉ ấn 1 lần.",
+          "th": "หันปากสูดขึ้นด้านบน กดปุ่มสองข้างพร้อมกันให้สุดแล้วปล่อยทันที (กดเพียงครั้งเดียว)",
+          "tl": "Itaas ang mouthpiece, pindutin nang sabay ang magkabilang button hanggang dulo saka bitawan agad. Isang beses lang pindutin.",
+          "ja": "吸入口を上に向け、左右のボタンを同時に最後まで押してすぐ離します（押すのは1回だけ）。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "向外吐氣",
+          "en": "Breathe out away from the mouthpiece",
+          "id": "Buang napas menjauh dari corong",
+          "vi": "Thở ra ở hướng xa đầu ngậm",
+          "th": "หายใจออกออกห่างจากปากสูด",
+          "tl": "Huminga palabas palayo sa mouthpiece",
+          "ja": "吸入口から離して息を吐く"
+        },
+        "note": {
+          "zh-TW": "對著遠離吸嘴的方向，緩慢吐氣至底。",
+          "en": "Breathe out slowly and fully in a direction away from the mouthpiece.",
+          "id": "Buang napas perlahan sampai habis ke arah menjauh dari corong.",
+          "vi": "Thở ra chậm và hết cỡ theo hướng tránh xa đầu ngậm.",
+          "th": "หายใจออกช้า ๆ ให้สุด โดยหันออกจากปากสูด",
+          "tl": "Dahan-dahang ilabas ang hininga nang buo palayo sa mouthpiece.",
+          "ja": "吸入口から離れた方向へ、ゆっくり最後まで息を吐きます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "按下按鈕並慢慢吸氣",
+          "en": "Inhale the medicine",
+          "id": "Hirup obat",
+          "vi": "Hít thuốc",
+          "th": "สูดยาเข้า",
+          "tl": "Langhapin ang gamot",
+          "ja": "薬を吸い込む"
+        },
+        "note": {
+          "zh-TW": "含住吸嘴，快速深吸一口氣至飽，吸藥時應聽到「呼嚕」旋轉聲。",
+          "en": "Seal your lips around the mouthpiece and take one fast, deep breath in. You should hear a whirring sound as the capsule spins.",
+          "id": "Rapatkan bibir pada corong lalu tarik napas cepat dan dalam satu kali sampai penuh. Anda seharusnya mendengar bunyi kapsul berputar.",
+          "vi": "Ngậm kín đầu ngậm rồi hít một hơi thật nhanh và sâu. Bạn nên nghe tiếng viên nang quay “rè rè”.",
+          "th": "เม้มริมฝีปากกับปากสูด แล้วสูดลมหายใจเข้าลึกและเร็วหนึ่งครั้งจนสุด ควรได้ยินเสียงแคปซูลหมุน",
+          "tl": "Idikit ang labi sa mouthpiece at huminga nang mabilis at malalim nang isang beses hanggang mapuno. Dapat marinig ang pag-ikot ng kapsula.",
+          "ja": "口を密着させて、すばやく深く一息で吸い込みます。カプセルが回る音が聞こえるはずです。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "閉氣",
+          "en": "Hold your breath",
+          "id": "Tahan napas",
+          "vi": "Nín thở",
+          "th": "กลั้นหายใจ",
+          "tl": "Pigilan ang hininga",
+          "ja": "息を止める"
+        },
+        "note": {
+          "zh-TW": "移開吸入器，閉氣 5–10 秒，再恢復正常呼吸。",
+          "en": "Remove the inhaler, hold your breath for 5-10 seconds, then return to normal breathing.",
+          "id": "Lepaskan inhaler, tahan napas 5-10 detik, lalu kembali bernapas seperti biasa.",
+          "vi": "Rời dụng cụ hít ra, nín thở 5-10 giây rồi thở lại bình thường.",
+          "th": "นำอุปกรณ์ออกจากปาก กลั้นหายใจ 5-10 วินาที แล้วกลับมาหายใจตามปกติ",
+          "tl": "Alisin ang inhaler, pigilin ang hininga nang 5-10 segundo, saka bumalik sa normal na paghinga.",
+          "ja": "吸入器を口から離し、5-10秒息を止めてから普通に呼吸します。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "確認排空",
+          "en": "Check whether the capsule is empty",
+          "id": "Periksa apakah kapsul sudah kosong",
+          "vi": "Kiểm tra viên nang đã hết thuốc chưa",
+          "th": "ตรวจว่าแคปซูลหมดหรือยัง",
+          "tl": "Tingnan kung ubos na ang kapsula",
+          "ja": "カプセルが空か確認する"
+        },
+        "note": {
+          "zh-TW": "打開口含器，查看膠囊是否透明空殼；若仍有粉末，重複第 5-7 步。",
+          "en": "Open the mouthpiece and check whether the capsule is now a clear empty shell. If powder remains, repeat steps 5-7.",
+          "id": "Buka corong dan periksa apakah kapsul sudah menjadi cangkang bening yang kosong. Bila masih ada serbuk, ulangi langkah 5-7.",
+          "vi": "Mở đầu ngậm và kiểm tra xem viên nang đã thành vỏ rỗng trong suốt chưa. Nếu còn bột, lặp lại bước 5-7.",
+          "th": "เปิดปากสูด ตรวจว่าแคปซูลกลายเป็นเปลือกใสว่างหรือยัง หากยังมีผงยา ให้ทำซ้ำขั้นตอน 5-7",
+          "tl": "Buksan ang mouthpiece at tingnan kung malinaw at walang laman na ang kapsula. Kung may pulbos pa, ulitin ang hakbang 5-7.",
+          "ja": "マウスピースを開き、カプセルが透明な空の殻になっているか確認します。粉が残っていれば手順5-7を繰り返します。"
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "zh-TW": "膠囊不可吞服，口服途徑無效。",
+        "en": "Do not swallow the capsule. It does not work by mouth.",
+        "id": "Kapsul tidak boleh ditelan. Obat ini tidak bekerja bila diminum.",
+        "vi": "Không được nuốt viên nang. Thuốc không có tác dụng khi uống.",
+        "th": "ห้ามกลืนแคปซูล ยานี้ไม่ได้ผลเมื่อรับประทาน",
+        "tl": "Huwag lunukin ang kapsula. Hindi ito tatalab kapag nilunok.",
+        "ja": "カプセルは飲み込まないでください。飲んでも効きません。"
+      },
+      {
+        "zh-TW": "若沒聽到膠囊轉動聲，輕拍底座讓膠囊鬆開後再吸。不要再按按鈕。",
+        "en": "If you do not hear the capsule spinning, tap the base gently to loosen the capsule, then inhale again. Do not press the buttons again.",
+        "id": "Jika tidak terdengar bunyi kapsul berputar, ketuk ringan bagian dasar agar kapsul terlepas lalu hirup lagi. Jangan tekan tombol lagi.",
+        "vi": "Nếu không nghe thấy tiếng viên nang quay, hãy gõ nhẹ phần đáy để viên nang lỏng ra rồi hít lại. Không bấm nút thêm lần nữa.",
+        "th": "หากไม่ได้ยินเสียงแคปซูลหมุน ให้เคาะฐานเบา ๆ เพื่อให้แคปซูลคลายตัว แล้วสูดใหม่ ห้ามกดปุ่มซ้ำ",
+        "tl": "Kung hindi mo marinig ang pag-ikot ng kapsula, tapikin nang marahan ang ilalim para lumuwag ang kapsula at saka muling lumanghap. Huwag nang pindutin muli ang mga button.",
+        "ja": "カプセルが回る音が聞こえないときは、底部を軽くたたいてカプセルをゆるめてから、もう一度吸入してください。ボタンは押し直さないでください。"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/ultibro-breezhaler"
+  },
+
+  // ── Seebri Breezhaler ─────────────────────────────────────,
+  {
+    "id": "seebri-inhalation-powder",
+    "category": "inhaler",
+    "color": {
+      "main": "#0F6E56",
+      "light": "#E1F5EE",
+      "dark": "#04342C",
+      "badge": "#9FE1CB",
+      "badgeText": "#04342C"
+    },
+    "emergency": false,
+    "name": {
+      "zh-TW": "吸補力",
+      "en": "Seebri Breezhaler",
+      "id": "Seebri Breezhaler",
+      "vi": "Seebri Breezhaler",
+      "th": "Seebri Breezhaler",
+      "tl": "Seebri Breezhaler",
+      "ja": "シーブリ ブリーズヘラー"
+    },
+    "subtitle": {
+      "zh-TW": "Seebri Breezhaler　Glycopyrronium 50 mcg／粒",
+      "en": "Seebri Breezhaler | Glycopyrronium 50 mcg/capsule",
+      "id": "Seebri Breezhaler | Glycopyrronium 50 mcg/kapsul",
+      "vi": "Seebri Breezhaler | Glycopyrronium 50 mcg/viên",
+      "th": "Seebri Breezhaler | Glycopyrronium 50 ไมโครกรัม/แคปซูล",
+      "tl": "Seebri Breezhaler | Glycopyrronium 50 mcg/kapsula",
+      "ja": "Seebri Breezhaler｜Glycopyrronium 50 mcg/カプセル"
+    },
+    "headerBadge": {
+      "zh-TW": "吸入膠囊",
+      "en": "Inhalation capsule",
+      "id": "Kapsul inhalasi",
+      "vi": "Viên nang hít",
+      "th": "แคปซูลสูด",
+      "tl": "Kapsulang panglanghap",
+      "ja": "吸入カプセル"
+    },
+    "badge": {
+      "zh-TW": "每日一次",
+      "en": "Once daily",
+      "id": "Sekali sehari",
+      "vi": "Ngày một lần",
+      "th": "วันละครั้ง",
+      "tl": "Isang beses araw-araw",
+      "ja": "1日1回"
+    },
+    "preStepsInfo": {
+      "tone": {
+        "bg": "#E6F1FB",
+        "border": "#185FA5",
+        "text": "#042C53"
+      },
+      "title": {
+        "zh-TW": "使用重點",
+        "en": "Key point",
+        "id": "Poin penting",
+        "vi": "Điểm cần nhớ",
+        "th": "ข้อสำคัญ",
+        "tl": "Mahalagang paalala",
+        "ja": "使用のポイント"
+      },
+      "text": {
+        "zh-TW": "此藥為長效抗膽鹼支氣管擴張劑（LAMA），每天固定時間使用一粒。有青光眼、排尿困難、心血管疾病或乳糖不耐症病史者，使用前請先告知醫師。",
+        "en": "This medicine is a long-acting anticholinergic bronchodilator (LAMA). Use 1 capsule at the same time every day. Tell your doctor before use if you have glaucoma, difficulty urinating, cardiovascular disease, or lactose intolerance.",
+        "id": "Obat ini adalah bronkodilator antikolinergik kerja panjang (LAMA). Gunakan 1 kapsul pada waktu yang sama setiap hari. Beri tahu dokter sebelum digunakan bila Anda punya glaukoma, sulit berkemih, penyakit kardiovaskular, atau intoleransi laktosa.",
+        "vi": "Thuốc này là thuốc giãn phế quản kháng cholinergic tác dụng kéo dài (LAMA). Dùng 1 viên vào cùng một thời điểm mỗi ngày. Hãy báo bác sĩ trước khi dùng nếu bạn có glaucoma, tiểu khó, bệnh tim mạch hoặc không dung nạp lactose.",
+        "th": "ยานี้เป็นยาขยายหลอดลมชนิดต้านโคลิเนอร์จิกออกฤทธิ์ยาว (LAMA) ใช้วันละ 1 แคปซูลเวลาเดิมทุกวัน หากมีประวัติต้อหิน ปัสสาวะลำบาก โรคหัวใจและหลอดเลือด หรือแพ้แลคโตส ควรแจ้งแพทย์ก่อนใช้",
+        "tl": "Ang gamot na ito ay long-acting anticholinergic bronchodilator (LAMA). Gumamit ng 1 kapsula sa parehong oras araw-araw. Bago gamitin, sabihin sa doktor kung may glaucoma, hirap umihi, sakit sa puso o daluyan ng dugo, o lactose intolerance.",
+        "ja": "この薬は長時間作用型抗コリン性気管支拡張薬（LAMA）です。毎日同じ時間に1カプセル吸入します。緑内障、排尿しにくさ、心血管疾患、または乳糖不耐症の既往がある場合は、使用前に医師へ伝えてください。"
+      }
+    },
+    "steps": [
+      {
+        "action": {
+          "zh-TW": "取出膠囊",
+          "en": "Remove one capsule",
+          "id": "Ambil satu kapsul",
+          "vi": "Lấy một viên nang",
+          "th": "นำแคปซูลออกมา",
+          "tl": "Kunin ang kapsula",
+          "ja": "カプセルを取り出す"
+        },
+        "note": {
+          "zh-TW": "沿虛線剝下一格鋁箔，撕開背面保護膜，以乾手取出膠囊。未使用膠囊請留在鋁箔內防潮，取出後立即使用。",
+          "en": "Peel off one blister along the dotted line, peel back the foil, and remove the capsule with dry hands. Keep unused capsules in the foil to protect from moisture. Use immediately after removal.",
+          "id": "Sobek satu blister mengikuti garis putus-putus, buka lapisan foil, lalu ambil kapsul dengan tangan kering. Simpan kapsul yang belum digunakan di dalam foil agar terlindung dari lembap. Setelah dikeluarkan, segera gunakan.",
+          "vi": "Tách một ô thuốc theo đường răng cưa, bóc lớp nhôm phía sau và lấy viên nang bằng tay khô. Giữ viên nang chưa dùng trong vỉ nhôm để tránh ẩm. Lấy ra xong phải dùng ngay.",
+          "th": "ฉีกแผงยาออกมาตามรอยปรุ ลอกฟอยล์ด้านหลัง และหยิบแคปซูลด้วยมือที่แห้ง เก็บแคปซูลที่ยังไม่ได้ใช้ไว้ในแผงฟอยล์เพื่อกันความชื้น และเมื่อแกะออกแล้วให้ใช้ทันที",
+          "tl": "Hatiin ang isang blister sa may guhit, balatan ang foil sa likod, at kunin ang kapsula gamit ang tuyong kamay. Itago ang hindi pa ginagamit na kapsula sa foil upang hindi mamasa. Kapag nailabas na, gamitin agad.",
+          "ja": "ミシン目に沿って1カプセル分を切り離し、裏のフォイルをはがして、乾いた手でカプセルを取り出します。未使用のカプセルは湿気を避けるためアルミ包装内で保管し、取り出したらすぐに使用します。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "打開吸入器",
+          "en": "Open the inhaler",
+          "id": "Buka inhaler",
+          "vi": "Mở dụng cụ hít",
+          "th": "เปิดอุปกรณ์สูด",
+          "tl": "Buksan ang inhaler",
+          "ja": "吸入器を開く"
+        },
+        "note": {
+          "zh-TW": "拔開帽蓋，掀開口含器，可見膠囊室。",
+          "en": "Remove the cap and tilt open the mouthpiece to see the capsule chamber.",
+          "id": "Lepas tutup lalu buka corong mulut hingga terlihat ruang kapsul.",
+          "vi": "Tháo nắp rồi mở đầu ngậm để thấy buồng đặt viên nang.",
+          "th": "ถอดฝาครอบออก แล้วยกปากสูดขึ้น จะเห็นช่องใส่แคปซูล",
+          "tl": "Alisin ang takip at ibuka ang mouthpiece para makita ang lagayan ng kapsula.",
+          "ja": "キャップを外し、マウスピースを開くとカプセル室が見えます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "放入膠囊",
+          "en": "Place the capsule",
+          "id": "Masukkan kapsul",
+          "vi": "Đặt viên nang vào",
+          "th": "ใส่แคปซูล",
+          "tl": "Ilagay ang kapsula",
+          "ja": "カプセルを入れる"
+        },
+        "note": {
+          "zh-TW": "將膠囊置於中央凹槽，蓋上口含器，直到聽到「喀」聲。",
+          "en": "Place the capsule in the center chamber, then close the mouthpiece until it clicks.",
+          "id": "Letakkan kapsul di ruang tengah, lalu tutup corong sampai terdengar bunyi klik.",
+          "vi": "Đặt viên nang vào rãnh giữa rồi đóng đầu ngậm đến khi nghe tiếng “tách”.",
+          "th": "วางแคปซูลลงในร่องตรงกลาง แล้วปิดปากสูดจนได้ยินเสียง “คลิก”",
+          "tl": "Ilagay ang kapsula sa gitnang puwesto at isara ang mouthpiece hanggang marinig ang “click”.",
+          "ja": "カプセルを中央のくぼみに置き、カチッと音がするまでマウスピースを閉じます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "刺破膠囊",
+          "en": "Pierce the capsule",
+          "id": "Tusuk kapsul",
+          "vi": "Chọc thủng viên nang",
+          "th": "เจาะแคปซูล",
+          "tl": "Tusukin ang kapsula",
+          "ja": "カプセルに穴を開ける"
+        },
+        "note": {
+          "zh-TW": "吸嘴朝上，兩側按鈕同時按到底後立即放開（只按一次）。",
+          "en": "Hold the mouthpiece upright, press both side buttons fully at the same time, then release immediately. Press only once.",
+          "id": "Pegang corong tegak ke atas, tekan kedua tombol samping bersamaan sampai penuh lalu segera lepaskan. Tekan hanya sekali.",
+          "vi": "Giữ đầu ngậm hướng lên trên, ấn đồng thời hai nút bên hông xuống hết cỡ rồi thả ra ngay. Chỉ ấn 1 lần.",
+          "th": "หันปากสูดขึ้นด้านบน กดปุ่มสองข้างพร้อมกันให้สุดแล้วปล่อยทันที (กดเพียงครั้งเดียว)",
+          "tl": "Itaas ang mouthpiece, pindutin nang sabay ang magkabilang button hanggang dulo saka bitawan agad. Isang beses lang pindutin.",
+          "ja": "吸入口を上に向け、左右のボタンを同時に最後まで押してすぐ離します（押すのは1回だけ）。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "向外吐氣",
+          "en": "Breathe out away from the mouthpiece",
+          "id": "Buang napas menjauh dari corong",
+          "vi": "Thở ra ở hướng xa đầu ngậm",
+          "th": "หายใจออกออกห่างจากปากสูด",
+          "tl": "Huminga palabas palayo sa mouthpiece",
+          "ja": "吸入口から離して息を吐く"
+        },
+        "note": {
+          "zh-TW": "對著遠離吸嘴的方向，緩慢吐氣至底。",
+          "en": "Breathe out slowly and fully in a direction away from the mouthpiece.",
+          "id": "Buang napas perlahan sampai habis ke arah menjauh dari corong.",
+          "vi": "Thở ra chậm và hết cỡ theo hướng tránh xa đầu ngậm.",
+          "th": "หายใจออกช้า ๆ ให้สุด โดยหันออกจากปากสูด",
+          "tl": "Dahan-dahang ilabas ang hininga nang buo palayo sa mouthpiece.",
+          "ja": "吸入口から離れた方向へ、ゆっくり最後まで息を吐きます。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "按下按鈕並慢慢吸氣",
+          "en": "Inhale the medicine",
+          "id": "Hirup obat",
+          "vi": "Hít thuốc",
+          "th": "สูดยาเข้า",
+          "tl": "Langhapin ang gamot",
+          "ja": "薬を吸い込む"
+        },
+        "note": {
+          "zh-TW": "含住吸嘴，快速深吸一口氣至飽，吸藥時應聽到「呼嚕」旋轉聲。",
+          "en": "Seal your lips around the mouthpiece and take one fast, deep breath in. You should hear a whirring sound as the capsule spins.",
+          "id": "Rapatkan bibir pada corong lalu tarik napas cepat dan dalam satu kali sampai penuh. Anda seharusnya mendengar bunyi kapsul berputar.",
+          "vi": "Ngậm kín đầu ngậm rồi hít một hơi thật nhanh và sâu. Bạn nên nghe tiếng viên nang quay “rè rè”.",
+          "th": "เม้มริมฝีปากกับปากสูด แล้วสูดลมหายใจเข้าลึกและเร็วหนึ่งครั้งจนสุด ควรได้ยินเสียงแคปซูลหมุน",
+          "tl": "Idikit ang labi sa mouthpiece at huminga nang mabilis at malalim nang isang beses hanggang mapuno. Dapat marinig ang pag-ikot ng kapsula.",
+          "ja": "口を密着させて、すばやく深く一息で吸い込みます。カプセルが回る音が聞こえるはずです。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "閉氣",
+          "en": "Hold your breath",
+          "id": "Tahan napas",
+          "vi": "Nín thở",
+          "th": "กลั้นหายใจ",
+          "tl": "Pigilan ang hininga",
+          "ja": "息を止める"
+        },
+        "note": {
+          "zh-TW": "移開吸入器，閉氣 5–10 秒，再恢復正常呼吸。",
+          "en": "Remove the inhaler, hold your breath for 5-10 seconds, then return to normal breathing.",
+          "id": "Lepaskan inhaler, tahan napas 5-10 detik, lalu kembali bernapas seperti biasa.",
+          "vi": "Rời dụng cụ hít ra, nín thở 5-10 giây rồi thở lại bình thường.",
+          "th": "นำอุปกรณ์ออกจากปาก กลั้นหายใจ 5-10 วินาที แล้วกลับมาหายใจตามปกติ",
+          "tl": "Alisin ang inhaler, pigilin ang hininga nang 5-10 segundo, saka bumalik sa normal na paghinga.",
+          "ja": "吸入器を口から離し、5-10秒息を止めてから普通に呼吸します。"
+        }
+      },
+      {
+        "action": {
+          "zh-TW": "確認排空",
+          "en": "Check whether the capsule is empty",
+          "id": "Periksa apakah kapsul sudah kosong",
+          "vi": "Kiểm tra viên nang đã hết thuốc chưa",
+          "th": "ตรวจว่าแคปซูลหมดหรือยัง",
+          "tl": "Tingnan kung ubos na ang kapsula",
+          "ja": "カプセルが空か確認する"
+        },
+        "note": {
+          "zh-TW": "打開口含器，查看膠囊是否透明空殼；若仍有粉末，重複第 5-7 步。",
+          "en": "Open the mouthpiece and check whether the capsule is now a clear empty shell. If powder remains, repeat steps 5-7.",
+          "id": "Buka corong dan periksa apakah kapsul sudah menjadi cangkang bening yang kosong. Bila masih ada serbuk, ulangi langkah 5-7.",
+          "vi": "Mở đầu ngậm và kiểm tra xem viên nang đã thành vỏ rỗng trong suốt chưa. Nếu còn bột, lặp lại bước 5-7.",
+          "th": "เปิดปากสูด ตรวจว่าแคปซูลกลายเป็นเปลือกใสว่างหรือยัง หากยังมีผงยา ให้ทำซ้ำขั้นตอน 5-7",
+          "tl": "Buksan ang mouthpiece at tingnan kung malinaw at walang laman na ang kapsula. Kung may pulbos pa, ulitin ang hakbang 5-7.",
+          "ja": "マウスピースを開き、カプセルが透明な空の殻になっているか確認します。粉が残っていれば手順5-7を繰り返します。"
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "zh-TW": "膠囊不可吞服，口服途徑無效。",
+        "en": "Do not swallow the capsule. It does not work by mouth.",
+        "id": "Kapsul tidak boleh ditelan. Obat ini tidak bekerja bila diminum.",
+        "vi": "Không được nuốt viên nang. Thuốc không có tác dụng khi uống.",
+        "th": "ห้ามกลืนแคปซูล ยานี้ไม่ได้ผลเมื่อรับประทาน",
+        "tl": "Huwag lunukin ang kapsula. Hindi ito tatalab kapag nilunok.",
+        "ja": "カプセルは飲み込まないでください。飲んでも効きません。"
+      },
+      {
+        "zh-TW": "若沒聽到膠囊轉動聲，輕拍底座讓膠囊鬆開後再吸。不要再按按鈕。",
+        "en": "If you do not hear the capsule spinning, tap the base gently to loosen the capsule, then inhale again. Do not press the buttons again.",
+        "id": "Jika tidak terdengar bunyi kapsul berputar, ketuk ringan bagian dasar agar kapsul terlepas lalu hirup lagi. Jangan tekan tombol lagi.",
+        "vi": "Nếu không nghe thấy tiếng viên nang quay, hãy gõ nhẹ phần đáy để viên nang lỏng ra rồi hít lại. Không bấm nút thêm lần nữa.",
+        "th": "หากไม่ได้ยินเสียงแคปซูลหมุน ให้เคาะฐานเบา ๆ เพื่อให้แคปซูลคลายตัว แล้วสูดใหม่ ห้ามกดปุ่มซ้ำ",
+        "tl": "Kung hindi mo marinig ang pag-ikot ng kapsula, tapikin nang marahan ang ilalim para lumuwag ang kapsula at saka muling lumanghap. Huwag nang pindutin muli ang mga button.",
+        "ja": "カプセルが回る音が聞こえないときは、底部を軽くたたいてカプセルをゆるめてから、もう一度吸入してください。ボタンは押し直さないでください。"
+      }
+    ],
+    "qrUrl": "https://pharmacy.example.com/meds/seebri-inhalation-powder"
   },
 
   // ── Placeholder: Symbicort Turbuhaler ─────────────────────────────────────,
@@ -7750,6 +9593,7 @@ const MEDICATIONS = [
 // ============================================================
 let lang   = "zh-TW";
 let medIdx = 0;
+let pageIdx = 0;
 let qrInstance = null;
 let activeCategory = "all";
 let medSearch = "";
@@ -7815,10 +9659,37 @@ function getFilteredMedList() {
   });
 }
 
+function syncPageIndex() {
+  const med = MEDICATIONS[medIdx];
+  if (!med || !Array.isArray(med.pages) || !med.pages.length) {
+    pageIdx = 0;
+    return;
+  }
+  pageIdx = Math.max(0, Math.min(pageIdx, med.pages.length - 1));
+}
+
+function getRenderedMed() {
+  const med = MEDICATIONS[medIdx];
+  if (!med) return null;
+  if (!Array.isArray(med.pages) || !med.pages.length) return med;
+  syncPageIndex();
+  const page = med.pages[pageIdx] || {};
+  return {
+    ...med,
+    ...page,
+    id: med.id,
+    name: med.name,
+    color: med.color,
+    category: med.category,
+    pages: med.pages
+  };
+}
+
 function ensureMedVisible() {
   const list = getFilteredMedList();
   if (!list.length) return;
   if (!list.some(item => item.index === medIdx)) medIdx = list[0].index;
+  syncPageIndex();
   setAccent(MEDICATIONS[medIdx].color);
 }
 
@@ -7832,6 +9703,7 @@ function init() {
   ensureMedVisible();
   renderCategoryBar();
   renderMedBar();
+  renderPageBar();
   render();
 }
 
@@ -7872,6 +9744,7 @@ function setLang(code) {
   renderLangBar();
   renderCategoryBar();
   renderMedBar();
+  renderPageBar();
   render();
 }
 
@@ -7899,6 +9772,7 @@ function setCategory(key) {
   ensureMedVisible();
   renderCategoryBar();
   renderMedBar();
+  renderPageBar();
   render();
 }
 
@@ -7944,8 +9818,33 @@ function renderMedBar() {
 function setMed(i) {
   if (Number.isNaN(i) || !MEDICATIONS[i]) return;
   medIdx = i;
+  pageIdx = 0;
   setAccent(MEDICATIONS[i].color);
   renderMedBar();
+  renderPageBar();
+  render();
+}
+
+function renderPageBar() {
+  const bar = document.getElementById("pageBar");
+  if (!bar) return;
+  const med = MEDICATIONS[medIdx];
+  if (!med || !Array.isArray(med.pages) || med.pages.length < 2) {
+    bar.innerHTML = "";
+    return;
+  }
+  syncPageIndex();
+  bar.innerHTML = med.pages.map((page, index) => {
+    const label = (page.pageLabel && (page.pageLabel[lang] || page.pageLabel["en"])) || `Page ${index + 1}`;
+    return `<button class="page-btn${index===pageIdx?" active":""}" onclick="setPage(${index})">${label}</button>`;
+  }).join("");
+}
+
+function setPage(i) {
+  const med = MEDICATIONS[medIdx];
+  if (!med || !Array.isArray(med.pages) || !med.pages[i]) return;
+  pageIdx = i;
+  renderPageBar();
   render();
 }
 
@@ -8081,7 +9980,10 @@ function renderReferenceSheet(m, c, t, ui, localize) {
 // RENDER SHEET
 // ============================================================
 function render() {
-  const m  = MEDICATIONS[medIdx];
+  renderPageBar();
+  const baseMed = MEDICATIONS[medIdx];
+  const m  = getRenderedMed();
+  if (!m) return;
   const c  = m.color;
   const t  = k => (m[k] && (m[k][lang] || m[k]["en"])) || "";
   const ui = k => UI[k][lang] || UI[k]["en"];
@@ -8167,8 +10069,9 @@ function render() {
 
   const sheet = document.getElementById("sheet");
   sheet.className = `sheet ref-nitrostat${lang === "zh-TW" ? "" : " is-compact"}`;
-  sheet.dataset.med = m.id;
+  sheet.dataset.med = baseMed.id;
   sheet.dataset.category = m.category || "";
+  sheet.dataset.page = Array.isArray(baseMed.pages) ? String(pageIdx) : "";
   sheet.innerHTML = renderReferenceSheet(m, c, t, ui, localize);
 
   generateQR(m.qrUrl + "?lang=" + lang);
