@@ -829,13 +829,13 @@ const UI = {
 // LANGUAGES
 // ============================================================
 const LANGS = [
-  { code:"zh-TW", label:"中文",        flag:"🇹🇼" },
-  { code:"en",    label:"English",     flag:"🇬🇧" },
-  { code:"id",    label:"Indonesia",   flag:"🇮🇩" },
-  { code:"vi",    label:"Tiếng Việt",  flag:"🇻🇳" },
-  { code:"th",    label:"ภาษาไทย",     flag:"🇹🇭" },
-  { code:"tl",    label:"Filipino",    flag:"🇵🇭" },
-  { code:"ja",    label:"日本語",       flag:"🇯🇵" }
+  { code:"zh-TW", label:"中文" },
+  { code:"en",    label:"English" },
+  { code:"id",    label:"Bahasa Indonesia" },
+  { code:"vi",    label:"Tiếng Việt" },
+  { code:"th",    label:"ไทย" },
+  { code:"tl",    label:"Filipino" },
+  { code:"ja",    label:"日本語" }
 ];
 
 const CATEGORY_ORDER = ["all", "inhaler", "ntg", "topical", "eye", "supp", "inject", "smoking", "powder", "oral", "other"];
@@ -10919,7 +10919,7 @@ function bindFinderEvents() {
 function renderLangBar() {
   const bar = document.getElementById("langBar");
   bar.innerHTML = LANGS.map(l =>
-    `<button class="lang-btn${l.code===lang?" active":""}" onclick="setLang('${l.code}')">${l.flag} ${l.label}</button>`
+    `<button class="lang-btn${l.code===lang?" active":""}" onclick="setLang('${l.code}')">${l.label}</button>`
   ).join("");
 }
 
