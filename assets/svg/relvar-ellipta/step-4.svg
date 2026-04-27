@@ -1,0 +1,7 @@
+<svg viewBox="0 0 38 38" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="19" cy="15" r="11"/>
+  <path d="M19 5 L19 15"/>
+  <path d="M19 15 L25 15"/>
+  <circle cx="19" cy="15" r="1.5" fill="#1A1A1A" stroke="none"/>
+  <text x="9" y="32" font-size="6" fill="#1A1A1A" stroke="none" font-family="Inter,sans-serif" font-weight="700">3-4 秒</text>
+</svg>

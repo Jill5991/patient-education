@@ -1,0 +1,11 @@
+<svg viewBox="0 0 38 38" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="11" cy="15" r="7"/>
+  <path d="M9 12 Q11 9 13 12"/>
+  <path d="M7 10 Q10 6 14 9" stroke-dasharray="1.5 1"/>
+  <path d="M18 15 L34 15"/>
+  <path d="M30 12 L34 15 L30 18"/>
+  <path d="M18 19 L30 19" stroke-dasharray="2 1.5" opacity=".5"/>
+  <path d="M18 23 L26 23" stroke-dasharray="2 1.5" opacity=".3"/>
+  <line x1="4" y1="25" x2="18" y2="25" stroke-dasharray="1 1.5" stroke="#BA7517"/>
+  <text x="3" y="33" font-size="4.5" fill="#BA7517" stroke="none" font-family="Inter,sans-serif">勿對吸嘴吐氣</text>
+</svg>

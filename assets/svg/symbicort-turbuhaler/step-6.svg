@@ -1,0 +1,8 @@
+<svg viewBox="0 0 38 38" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11 6 L11 21 Q11 27 19 27 Q27 27 27 21 L27 6"/>
+  <path d="M9 6 h20"/>
+  <path d="M16 16 Q19 22 22 16" stroke-dasharray="2 1.5"/>
+  <path d="M10 34 Q19 29 28 34"/>
+  <path d="M24 31 L28 34 L25 37"/>
+  <text x="6" y="38" font-size="4.5" fill="#1A1A1A" stroke="none" font-family="Inter,sans-serif">漱口並吐掉</text>
+</svg>
