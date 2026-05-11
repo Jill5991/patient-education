@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M44 36h30l6 10v34H38V46l6-10z"/>
+  <path d="M38 56h42"/>
+  <path d="M98 44c10 4 18 12 22 24"/>
+  <path d="M118 68l8 2-4 8"/>
+  <path d="M112 30c8 0 14 6 14 14"/>
+  <text x="58" y="98" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">rinse & spit</text>
+</svg>
