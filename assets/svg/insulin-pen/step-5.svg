@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M58 34c12-10 32-10 44 0"/>
+  <path d="M50 46c18-8 42-8 60 0"/>
+  <path d="M58 58c12 10 32 10 44 0"/>
+  <path d="M32 82l16-16 12 12-16 16z"/>
+  <path d="M44 70l10 10"/>
+  <text x="46" y="104" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">swab</text>
+</svg>

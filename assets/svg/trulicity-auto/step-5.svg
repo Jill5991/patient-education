@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="54" y="24" width="32" height="70" rx="10"/>
+  <circle cx="70" cy="30" r="8"/>
+  <path d="M98 48l20 0"/>
+  <path d="M110 40l14 8-14 8" fill="#1A1A1A" stroke="none"/>
+  <text x="122" y="42" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">click 1</text>
+</svg>

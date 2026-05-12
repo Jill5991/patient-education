@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="36" y="24" width="30" height="70" rx="10"/>
+  <rect x="74" y="30" width="52" height="56" rx="6"/>
+  <path d="M84 42h32"/>
+  <path d="M84 54h32"/>
+  <path d="M84 66h32"/>
+  <circle cx="52" cy="72" r="6" fill="#1A1A1A" stroke="none"/>
+  <text x="100" y="98" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">discard</text>
+</svg>

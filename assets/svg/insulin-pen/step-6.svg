@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M54 72c8-18 22-32 42-40"/>
+  <path d="M96 32l20 16"/>
+  <path d="M116 48l10 0"/>
+  <path d="M86 36v14"/>
+  <path d="M34 56c12 0 20 10 20 24"/>
+  <circle cx="124" cy="74" r="16"/>
+  <path d="M124 64v10l7 4"/>
+  <text x="124" y="102" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">hold</text>
+</svg>

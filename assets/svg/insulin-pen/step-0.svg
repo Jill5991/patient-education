@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M32 84c8-10 18-16 30-20"/>
+  <path d="M52 60l12 10-10 12-12-10z"/>
+  <path d="M74 24h24a8 8 0 0 1 8 8v60a8 8 0 0 1-8 8H74a8 8 0 0 1-8-8V32a8 8 0 0 1 8-8z"/>
+  <rect x="78" y="42" width="16" height="12" rx="2"/>
+  <path d="M74 18h24"/>
+  <text x="86" y="51" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">check</text>
+  <text x="30" y="97" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">wash</text>
+</svg>

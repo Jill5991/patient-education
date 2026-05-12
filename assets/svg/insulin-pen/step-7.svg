@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M36 72l20-20 14 14-20 20z"/>
+  <path d="M62 46l18-18"/>
+  <path d="M80 28l10 10"/>
+  <path d="M110 54h22v38h-22z"/>
+  <path d="M106 54h30"/>
+  <path d="M116 62h10"/>
+  <path d="M116 72h10"/>
+  <text x="122" y="106" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">sharps</text>
+</svg>

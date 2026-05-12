@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="38" cy="72" r="16"/>
+  <path d="M38 58v28"/>
+  <path d="M24 70h28"/>
+  <circle cx="82" cy="68" r="15"/>
+  <path d="M82 53v30"/>
+  <circle cx="124" cy="46" r="12"/>
+  <path d="M124 34v24"/>
+  <path d="M15 28c8-6 18-10 30-10s24 4 32 12"/>
+  <text x="38" y="100" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">abdomen</text>
+  <text x="82" y="96" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">thigh</text>
+  <text x="124" y="68" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">arm</text>
+</svg>

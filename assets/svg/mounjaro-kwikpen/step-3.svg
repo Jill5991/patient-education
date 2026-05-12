@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M54 24h28a7 7 0 0 1 7 7v58a7 7 0 0 1-7 7H54a7 7 0 0 1-7-7V31a7 7 0 0 1 7-7z"/>
+  <rect x="58" y="44" width="20" height="14" rx="2"/>
+  <text x="68" y="54" text-anchor="middle" font-size="10" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">1 dose</text>
+  <path d="M92 74c14-4 22-10 26-18"/>
+  <path d="M113 48l10 4-4 10"/>
+  <path d="M102 82l-2-10 10-2"/>
+</svg>

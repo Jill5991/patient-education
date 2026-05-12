@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M70 22h22a7 7 0 0 1 7 7v60a7 7 0 0 1-7 7H70a7 7 0 0 1-7-7V29a7 7 0 0 1 7-7z"/>
+  <path d="M80 18v-8"/>
+  <path d="M116 34c10 6 16 14 18 24"/>
+  <path d="M132 54l2 8-8 2"/>
+  <circle cx="80" cy="16" r="2" fill="#1A1A1A" stroke="none"/>
+  <text x="124" y="28" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">prime q dose</text>
+</svg>

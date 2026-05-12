@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M46 20h28a7 7 0 0 1 7 7v58a7 7 0 0 1-7 7H46a7 7 0 0 1-7-7V27a7 7 0 0 1 7-7z"/>
+  <path d="M88 44l18 18"/>
+  <path d="M90 62l18-18"/>
+  <path d="M116 28h24v58h-24z"/>
+  <path d="M122 36h12"/>
+  <text x="128" y="98" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">sharps</text>
+</svg>

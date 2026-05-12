@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="54" y="24" width="32" height="70" rx="10"/>
+  <circle cx="102" cy="40" r="14"/>
+  <path d="M102 40l0-8"/>
+  <path d="M102 40l8 0"/>
+  <path d="M102 40l0 8"/>
+  <path d="M102 40l-8 0"/>
+  <path d="M118 44c4 10 2 20-6 28"/>
+  <text x="118" y="24" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">unlock</text>
+</svg>
