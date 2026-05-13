@@ -6924,9 +6924,10 @@ const MEDICATIONS = [
       qrUrl: "https://az-media.astrazeneca.com.tw/symbicort-turbuhaler"
   },
 
-  // ── Placeholder: Adapalene 0.1% gel ─────────────────────────────────────,
+  // ── Adapalene 0.1% gel ─────────────────────────────────────,
   {
       "id": "adapalene-0-1-gel",
+      "category": "topical",
       color: {
           main: "#3B6D11",
           light: "#EAF3DE",
@@ -6936,71 +6937,254 @@ const MEDICATIONS = [
       },
       emergency: false,
       name: {
-          "zh-TW": "Adapalene 0.1% gel",
-          "en": "Adapalene 0.1% gel",
-          "id": "Adapalene 0.1% gel",
-          "vi": "Adapalene 0.1% gel",
-          "th": "Adapalene 0.1% gel",
-          "tl": "Adapalene 0.1% gel",
-          "ja": "Adapalene 0.1% gel"
+          "zh-TW": "阿達帕林凝膠",
+          "en": "Adapalene 0.1% Gel",
+          "id": "Gel Adapalene 0.1%",
+          "vi": "Gel Adapalene 0,1%",
+          "th": "เจล Adapalene 0.1%",
+          "tl": "Adapalene 0.1% Gel",
+          "ja": "アダパレン 0.1%ゲル"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Adapalene 0.1% Gel｜15 g/tube｜治療粉刺與青春痘",
+          "en": "Adapalene 0.1% Gel | 15 g/tube | For acne treatment",
+          "id": "Adapalene 0.1% Gel | 15 g/tube | Untuk jerawat",
+          "vi": "Adapalene 0,1% Gel | 15 g/tuýp | Điều trị mụn trứng cá",
+          "th": "Adapalene 0.1% Gel | 15 g/tube | รักษาสิว",
+          "tl": "Adapalene 0.1% Gel | 15 g/tube | Para sa acne",
+          "ja": "Adapalene 0.1% Gel｜15 g/tube｜にきび治療"
+      },
+      headerBadge: {
+          "zh-TW": "晚間使用",
+          "en": "Night use",
+          "id": "Dipakai malam hari",
+          "vi": "Dùng buổi tối",
+          "th": "ใช้ตอนกลางคืน",
+          "tl": "Gamit sa gabi",
+          "ja": "夜に使用"
+      },
+      usage: {
+          "zh-TW": "每天睡前 1 次",
+          "en": "Apply once nightly",
+          "id": "Oleskan sekali setiap malam",
+          "vi": "Bôi 1 lần mỗi tối",
+          "th": "ทาวันละ 1 ครั้งก่อนนอน",
+          "tl": "Ipahid isang beses gabi-gabi",
+          "ja": "毎晩1回塗る"
       },
       badge: {
-          "zh-TW": "外用藥",
-          "en": "Topical",
-          "id": "Obat oles",
-          "vi": "Thuốc bôi",
-          "th": "ยาทาภายนอก",
-          "tl": "Topical",
-          "ja": "外用薬"
+          "zh-TW": "痤瘡外用凝膠",
+          "en": "Acne gel",
+          "id": "Gel jerawat",
+          "vi": "Gel trị mụn",
+          "th": "เจลรักษาสิว",
+          "tl": "Gel para sa acne",
+          "ja": "にきび用ゲル"
+      },
+      preStepsInfo: {
+          title: {
+              "zh-TW": "使用重點",
+              "en": "Key Points",
+              "id": "Poin Penting",
+              "vi": "Điểm Chính",
+              "th": "จุดสำคัญ",
+              "tl": "Mahahalagang Punto",
+              "ja": "使い方の要点"
+          },
+          text: {
+              "zh-TW": "這是外用 A 酸，治療粉刺與青春痘。\n要擦整個長痘區，不是只點單顆痘痘。\n剛開始較乾或微刺常見，通常幾週後會減輕。",
+              "en": "This is a topical retinoid for acne.\nApply it to the whole acne-prone area, not just one pimple.\nDryness or mild stinging is common at first and usually gets better after a few weeks.",
+              "id": "Ini adalah retinoid topikal untuk jerawat.\nOleskan ke seluruh area yang berjerawat, bukan hanya satu jerawat.\nKulit kering atau rasa perih ringan sering terjadi di awal dan biasanya berkurang setelah beberapa minggu.",
+              "vi": "Đây là retinoid bôi ngoài da để trị mụn.\nBôi lên toàn bộ vùng da có mụn, không chỉ chấm từng nốt.\nKhô da hoặc châm chích nhẹ lúc đầu là thường gặp và thường giảm sau vài tuần.",
+              "th": "นี่คือยากลุ่มเรตินอยด์ทาภายนอกสำหรับรักษาสิว\nให้ทาทั่วบริเวณที่เป็นสิว ไม่ใช่แต้มเฉพาะเม็ดเดียว\nช่วงแรกอาจแห้งหรือตึงยิบเล็กน้อย ซึ่งมักจะดีขึ้นภายในไม่กี่สัปดาห์",
+              "tl": "Ito ay topical retinoid para sa acne.\nIpahid sa buong bahaging madaling tubuan ng pimples, hindi lang sa iisang taghiyawat.\nKaraniwan ang pagkatuyo o banayad na hapdi sa simula, at madalas itong humuhupa pagkalipas ng ilang linggo.",
+              "ja": "これはにきび治療の外用レチノイドです。\n1個のにきびだけでなく、にきびができやすい範囲全体に塗ります。\n使い始めは乾燥や軽い刺激が出やすいですが、多くは数週間でやわらぎます。"
+          }
       },
       steps: [
           {
               action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
+                  "zh-TW": "洗臉，輕拍擦乾",
+                  "en": "Wash your face and pat it dry",
+                  "id": "Cuci wajah lalu tepuk hingga kering",
+                  "vi": "Rửa mặt rồi thấm khô nhẹ",
+                  "th": "ล้างหน้าแล้วซับให้แห้ง",
+                  "tl": "Hugasan ang mukha at patuyuin nang marahan",
+                  "ja": "顔を洗い、やさしく水気を取る"
               },
               note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
+                  "zh-TW": "皮膚要完全乾再擦。",
+                  "en": "Apply only after the skin is fully dry.",
+                  "id": "Oleskan hanya saat kulit sudah benar-benar kering.",
+                  "vi": "Chỉ bôi khi da đã khô hẳn.",
+                  "th": "ทาเมื่อผิวแห้งสนิทแล้วเท่านั้น",
+                  "tl": "Ipahid lamang kapag ganap nang tuyo ang balat.",
+                  "ja": "皮膚が完全に乾いてから塗る。"
+              },
+              illustration: "assets/svg/topical-acne/step-0.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "擠出豌豆大小藥膏",
+                  "en": "Squeeze out a pea-sized amount",
+                  "id": "Keluarkan obat sebesar kacang polong",
+                  "vi": "Lấy lượng thuốc bằng hạt đậu",
+                  "th": "บีบยาออกมาเท่าเมล็ดถั่ว",
+                  "tl": "Magpiga ng gamot na kasinlaki ng gisantes",
+                  "ja": "えんどう豆大を出す"
+              },
+              note: {
+                  "zh-TW": "整臉只要一粒豌豆大小。",
+                  "en": "One pea-sized amount is enough for the whole face.",
+                  "id": "Obat sebesar kacang polong sudah cukup untuk seluruh wajah.",
+                  "vi": "Một lượng bằng hạt đậu là đủ cho cả mặt.",
+                  "th": "ปริมาณเท่าเมล็ดถั่วพอสำหรับทั้งใบหน้า",
+                  "tl": "Sapat na ang isang gisantes na dami para sa buong mukha.",
+                  "ja": "顔全体でえんどう豆大1つ分で足りる。"
+              },
+              illustration: "assets/svg/topical-acne/step-1.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "薄擦整個長痘區",
+                  "en": "Spread a thin layer over the whole acne-prone area",
+                  "id": "Oles tipis ke seluruh area yang berjerawat",
+                  "vi": "Bôi một lớp mỏng lên toàn bộ vùng có mụn",
+                  "th": "ทาบาง ๆ ให้ทั่วบริเวณที่เป็นสิว",
+                  "tl": "Ipahid nang manipis sa buong bahaging may acne",
+                  "ja": "にきびが出る範囲全体に薄く塗る"
+              },
+              note: {
+                  "zh-TW": "這不是只點單顆痘痘的藥。",
+                  "en": "This is not just a spot treatment for one pimple.",
+                  "id": "Ini bukan obat totol untuk satu jerawat saja.",
+                  "vi": "Đây không phải thuốc chỉ chấm từng nốt mụn.",
+                  "th": "ยานี้ไม่ใช่ยาสำหรับแต้มเฉพาะสิวเม็ดเดียว",
+                  "tl": "Hindi ito para lang sa iisang taghiyawat.",
+                  "ja": "1個だけに点づけする薬ではありません。"
+              },
+              illustration: "assets/svg/topical-acne/step-2.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "避開眼睛、嘴唇、鼻孔與破皮處",
+                  "en": "Keep it away from the eyes, lips, nostrils, and broken skin",
+                  "id": "Hindari mata, bibir, lubang hidung, dan kulit yang terluka",
+                  "vi": "Tránh mắt, môi, lỗ mũi và vùng da trầy xước",
+                  "th": "หลีกเลี่ยงตา ริมฝีปาก รูจมูก และผิวที่ถลอก",
+                  "tl": "Iwasan ang mata, labi, butas ng ilong, at sugat na balat",
+                  "ja": "目・唇・鼻の穴・傷のある部位を避ける"
+              },
+              note: {
+                  "zh-TW": "若碰到，立刻用清水沖洗。",
+                  "en": "If it gets there, rinse right away with water.",
+                  "id": "Jika terkena, segera bilas dengan air.",
+                  "vi": "Nếu dính vào, rửa ngay bằng nước.",
+                  "th": "หากโดน ให้รีบล้างออกด้วยน้ำทันที",
+                  "tl": "Kung madikitan, banlawan agad ng tubig.",
+                  "ja": "付着したらすぐに水で洗い流す。"
+              },
+              illustration: "assets/svg/topical-acne/step-3.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "用後洗手",
+                  "en": "Wash your hands after use",
+                  "id": "Cuci tangan setelah memakai obat",
+                  "vi": "Rửa tay sau khi bôi",
+                  "th": "ล้างมือหลังใช้ยา",
+                  "tl": "Hugasan ang kamay pagkatapos gamitin",
+                  "ja": "使用後に手を洗う"
+              },
+              note: {
+                  "zh-TW": "洗完手再碰眼睛或臉。",
+                  "en": "Wash first before touching the eyes or face.",
+                  "id": "Cuci tangan dulu sebelum menyentuh mata atau wajah.",
+                  "vi": "Rửa tay trước khi chạm vào mắt hoặc mặt.",
+                  "th": "ล้างมือก่อนจับตาหรือใบหน้า",
+                  "tl": "Maghugas muna bago humawak sa mata o mukha.",
+                  "ja": "目や顔に触る前に手を洗う。"
+              },
+              illustration: "assets/svg/topical-acne/step-5.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "白天外出擦防曬",
+                  "en": "Use sunscreen when you go out during the day",
+                  "id": "Gunakan tabir surya saat keluar di siang hari",
+                  "vi": "Ban ngày ra ngoài thì thoa kem chống nắng",
+                  "th": "หากออกแดดตอนกลางวัน ให้ทากันแดด",
+                  "tl": "Gumamit ng sunscreen kapag lalabas sa araw",
+                  "ja": "日中に外出するときは日焼け止めを使う"
+              },
+              note: {
+                  "zh-TW": "請用 SPF 30 以上。",
+                  "en": "Use SPF 30 or higher.",
+                  "id": "Gunakan SPF 30 atau lebih.",
+                  "vi": "Dùng SPF 30 trở lên.",
+                  "th": "ใช้ SPF 30 ขึ้นไป",
+                  "tl": "Gumamit ng SPF 30 pataas.",
+                  "ja": "SPF30以上を使う。"
+              },
+              illustration: "assets/svg/topical-acne/step-4.svg"
           }
       ],
+      storage: {
+          title: {
+              "zh-TW": "藥品保存",
+              "en": "Storage",
+              "id": "Penyimpanan",
+              "vi": "Bảo quản",
+              "th": "การเก็บรักษา",
+              "tl": "Imbakan",
+              "ja": "保管方法"
+          },
+          text: {
+              "zh-TW": "室溫 20–25°C 保存，避免冷凍。\n若外盒另有期限標示，請依外盒為準。",
+              "en": "Store at room temperature, 20–25°C, and protect it from freezing.\nIf the carton shows another expiry or beyond-use date, follow the carton.",
+              "id": "Simpan pada suhu ruang 20–25°C dan jangan dibekukan.\nJika kotak luar mencantumkan batas waktu lain, ikuti keterangan pada kotak.",
+              "vi": "Bảo quản ở nhiệt độ phòng 20–25°C, tránh để đông lạnh.\nNếu hộp ngoài có ghi hạn dùng khác, hãy làm theo thông tin trên hộp.",
+              "th": "เก็บที่อุณหภูมิห้อง 20–25°C และห้ามแช่แข็ง\nหากกล่องยาระบุวันหมดอายุหรือระยะใช้หลังเปิดไว้ต่างกัน ให้ยึดตามกล่องยา",
+              "tl": "Itago sa room temperature na 20–25°C at huwag i-freeze.\nKung may ibang petsa o beyond-use date sa kahon, iyon ang sundin.",
+              "ja": "20–25°Cの室温で保存し、凍結を避ける。\n外箱に別の使用期限表示があれば、それに従う。"
+          }
+      },
       warnings: [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              "zh-TW": "每天睡前 1 次，不要一天超過 1 次。",
+              "en": "Use it once nightly and do not use it more than once a day.",
+              "id": "Gunakan sekali tiap malam dan jangan lebih dari sekali sehari.",
+              "vi": "Dùng 1 lần mỗi tối và không dùng quá 1 lần một ngày.",
+              "th": "ใช้วันละ 1 ครั้งก่อนนอน และห้ามใช้เกินวันละ 1 ครั้ง",
+              "tl": "Gamitin isang beses gabi-gabi at huwag hihigit sa isang beses sa isang araw.",
+              "ja": "毎晩1回とし、1日に2回以上使わない。"
+          },
+          {
+              "zh-TW": "前幾週乾燥、脫皮或泛紅較常見；若刺激很明顯，請停用並回診。",
+              "en": "Dryness, peeling, or redness is common in the first few weeks. Stop using it and ask your doctor if the irritation becomes severe.",
+              "id": "Kulit kering, mengelupas, atau kemerahan sering terjadi pada beberapa minggu pertama. Hentikan dulu pemakaian dan hubungi dokter bila iritasi menjadi berat.",
+              "vi": "Khô da, bong tróc hoặc đỏ da thường gặp trong vài tuần đầu. Hãy ngừng dùng và đi khám nếu kích ứng rõ rệt.",
+              "th": "ช่วงสองสามสัปดาห์แรกอาจแห้ง ลอก หรือแดงได้บ่อย หากระคายเคืองมากให้หยุดใช้และกลับไปพบแพทย์",
+              "tl": "Karaniwan ang pagkatuyo, pagbabalat, o pamumula sa mga unang linggo. Itigil muna at magpatingin kung matindi ang iritasyon.",
+              "ja": "使い始めの数週間は乾燥・皮むけ・赤みが出やすい。刺激が強い場合は中止して受診する。"
+          },
+          {
+              "zh-TW": "懷孕、哺乳或準備懷孕前，先問醫師。",
+              "en": "Ask your doctor before use if you are pregnant, breast-feeding, or planning pregnancy.",
+              "id": "Tanyakan kepada dokter sebelum memakai jika Anda hamil, menyusui, atau sedang merencanakan kehamilan.",
+              "vi": "Hãy hỏi bác sĩ trước khi dùng nếu bạn đang mang thai, cho con bú hoặc dự định mang thai.",
+              "th": "หากตั้งครรภ์ ให้นมบุตร หรือกำลังวางแผนตั้งครรภ์ ให้ปรึกษาแพทย์ก่อนใช้",
+              "tl": "Magtanong muna sa doktor bago gamitin kung buntis, nagpapasuso, o nagpaplanong magbuntis.",
+              "ja": "妊娠中・授乳中・妊娠を考えている場合は、使用前に医師へ相談する。"
           }
       ],
       qrUrl: "https://pharmacy.example.com/meds/adapalene-0-1-gel"
   },
 
-  // ── Placeholder: Benzoyl peroxide 5% ─────────────────────────────────────,
+  // ── Benzoyl peroxide 5% gel ─────────────────────────────────────,
   {
       "id": "benzoyl-peroxide-5",
+      "category": "topical",
       color: {
           main: "#3B6D11",
           light: "#EAF3DE",
@@ -7010,66 +7194,747 @@ const MEDICATIONS = [
       },
       emergency: false,
       name: {
-          "zh-TW": "Benzoyl peroxide 5%",
-          "en": "Benzoyl peroxide 5%",
-          "id": "Benzoyl peroxide 5%",
-          "vi": "Benzoyl peroxide 5%",
-          "th": "Benzoyl peroxide 5%",
-          "tl": "Benzoyl peroxide 5%",
-          "ja": "Benzoyl peroxide 5%"
+          "zh-TW": "苯甲醯過氧化物凝膠",
+          "en": "Benzoyl Peroxide 5% Gel",
+          "id": "Gel Benzoyl Peroxide 5%",
+          "vi": "Gel Benzoyl Peroxide 5%",
+          "th": "เจล Benzoyl Peroxide 5%",
+          "tl": "Benzoyl Peroxide 5% Gel",
+          "ja": "過酸化ベンゾイル 5%ゲル"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Benzoyl Peroxide 5% Gel｜10 g/tube｜治療痤瘡",
+          "en": "Benzoyl Peroxide 5% Gel | 10 g/tube | For acne treatment",
+          "id": "Benzoyl Peroxide 5% Gel | 10 g/tube | Untuk jerawat",
+          "vi": "Benzoyl Peroxide 5% Gel | 10 g/tuýp | Điều trị mụn trứng cá",
+          "th": "Benzoyl Peroxide 5% Gel | 10 g/tube | รักษาสิว",
+          "tl": "Benzoyl Peroxide 5% Gel | 10 g/tube | Para sa acne",
+          "ja": "Benzoyl Peroxide 5% Gel｜10 g/tube｜にきび治療"
+      },
+      headerBadge: {
+          "zh-TW": "先從每日 1 次",
+          "en": "Start once daily",
+          "id": "Mulai 1 kali sehari",
+          "vi": "Bắt đầu 1 lần/ngày",
+          "th": "เริ่มวันละ 1 ครั้ง",
+          "tl": "Magsimula sa isang beses araw-araw",
+          "ja": "まず1日1回から"
+      },
+      usage: {
+          "zh-TW": "先每天 1 次",
+          "en": "Start with once daily",
+          "id": "Mulai dengan sekali sehari",
+          "vi": "Bắt đầu với 1 lần mỗi ngày",
+          "th": "เริ่มใช้วันละ 1 ครั้ง",
+          "tl": "Magsimula sa isang beses bawat araw",
+          "ja": "まず1日1回から始める"
       },
       badge: {
-          "zh-TW": "外用藥",
-          "en": "Topical",
-          "id": "Obat oles",
-          "vi": "Thuốc bôi",
-          "th": "ยาทาภายนอก",
-          "tl": "Topical",
-          "ja": "外用薬"
+          "zh-TW": "痤瘡外用凝膠",
+          "en": "Acne gel",
+          "id": "Gel jerawat",
+          "vi": "Gel trị mụn",
+          "th": "เจลรักษาสิว",
+          "tl": "Gel para sa acne",
+          "ja": "にきび用ゲル"
+      },
+      preStepsInfo: {
+          title: {
+              "zh-TW": "使用重點",
+              "en": "Key Points",
+              "id": "Poin Penting",
+              "vi": "Điểm Chính",
+              "th": "จุดสำคัญ",
+              "tl": "Mahahalagang Punto",
+              "ja": "使い方の要点"
+          },
+          text: {
+              "zh-TW": "這是治痘痘外用藥。\n先從每天 1 次開始。\n若太乾、太紅或刺痛，可先改成隔天 1 次。",
+              "en": "This is a topical acne medicine.\nStart with once daily.\nIf your skin gets too dry, too red, or stings too much, cut back to every other day first.",
+              "id": "Ini adalah obat oles untuk jerawat.\nMulailah dengan 1 kali sehari.\nJika kulit terlalu kering, terlalu merah, atau terlalu perih, kurangi dulu menjadi selang sehari.",
+              "vi": "Đây là thuốc bôi trị mụn.\nBắt đầu với 1 lần mỗi ngày.\nNếu da quá khô, quá đỏ hoặc rát nhiều, hãy giảm xuống cách ngày 1 lần trước.",
+              "th": "นี่คือยาทาภายนอกรักษาสิว\nเริ่มจากวันละ 1 ครั้ง\nหากผิวแห้งมาก แดงมาก หรือแสบมาก ให้ลดเหลือวันเว้นวันก่อน",
+              "tl": "Ito ay topical na gamot para sa acne.\nMagsimula sa isang beses bawat araw.\nKung sobrang tuyo, sobrang pula, o mahapdi ang balat, bawasan muna sa bawat ibang araw.",
+              "ja": "これはにきび治療の外用薬です。\nまず1日1回から始めます。\n乾燥・赤み・刺激が強い場合は、まず隔日に減らします。"
+          }
       },
       steps: [
           {
               action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
+                  "zh-TW": "洗臉，輕拍擦乾",
+                  "en": "Wash your face and pat it dry",
+                  "id": "Cuci wajah lalu tepuk sampai kering",
+                  "vi": "Rửa mặt rồi thấm khô nhẹ",
+                  "th": "ล้างหน้าแล้วซับให้แห้ง",
+                  "tl": "Hugasan ang mukha at patuyuin nang marahan",
+                  "ja": "顔を洗い、やさしく水気を取る"
               },
               note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
+                  "zh-TW": "洗完即可擦。",
+                  "en": "You can apply it right after washing.",
+                  "id": "Boleh langsung dioles setelah mencuci wajah.",
+                  "vi": "Có thể bôi ngay sau khi rửa mặt.",
+                  "th": "ทาได้ทันทีหลังล้างหน้า",
+                  "tl": "Maaaring ipahid agad pagkatapos maghilamos.",
+                  "ja": "洗顔後すぐに塗ってよい。"
+              },
+              illustration: "assets/svg/topical-acne/step-0.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "擠出豌豆大小藥膏",
+                  "en": "Squeeze out a pea-sized amount",
+                  "id": "Keluarkan obat sebesar kacang polong",
+                  "vi": "Lấy lượng thuốc bằng hạt đậu",
+                  "th": "บีบยาออกมาเท่าเมล็ดถั่ว",
+                  "tl": "Magpiga ng gamot na kasinlaki ng gisantes",
+                  "ja": "えんどう豆大を出す"
+              },
+              note: {
+                  "zh-TW": "先少量開始。",
+                  "en": "Start with a small amount first.",
+                  "id": "Mulai dari jumlah sedikit dulu.",
+                  "vi": "Hãy bắt đầu với lượng ít.",
+                  "th": "เริ่มจากปริมาณน้อยก่อน",
+                  "tl": "Magsimula muna sa kaunting dami.",
+                  "ja": "まず少量から始める。"
+              },
+              illustration: "assets/svg/topical-acne/step-1.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "薄擦整個長痘區",
+                  "en": "Spread a thin layer over the whole acne-prone area",
+                  "id": "Oles tipis ke seluruh area yang berjerawat",
+                  "vi": "Bôi một lớp mỏng lên toàn bộ vùng có mụn",
+                  "th": "ทาบาง ๆ ให้ทั่วบริเวณที่เป็นสิว",
+                  "tl": "Ipahid nang manipis sa buong bahaging may acne",
+                  "ja": "にきびが出る範囲全体に薄く塗る"
+              },
+              note: {
+                  "zh-TW": "避開眼睛、嘴唇、口鼻與破皮處。",
+                  "en": "Keep it away from the eyes, lips, mouth, nose, and broken skin.",
+                  "id": "Hindari mata, bibir, mulut, hidung, dan kulit yang terluka.",
+                  "vi": "Tránh mắt, môi, miệng, mũi và vùng da trầy xước.",
+                  "th": "หลีกเลี่ยงตา ริมฝีปาก ปาก จมูก และผิวที่ถลอก",
+                  "tl": "Iwasan ang mata, labi, bibig, ilong, at sugat na balat.",
+                  "ja": "目・唇・口・鼻・傷のある部位を避ける。"
+              },
+              illustration: "assets/svg/topical-acne/step-2.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "用後洗手",
+                  "en": "Wash your hands after use",
+                  "id": "Cuci tangan setelah memakai obat",
+                  "vi": "Rửa tay sau khi bôi",
+                  "th": "ล้างมือหลังใช้ยา",
+                  "tl": "Hugasan ang kamay pagkatapos gamitin",
+                  "ja": "使用後に手を洗う"
+              },
+              note: {
+                  "zh-TW": "藥品沒乾前不要碰毛巾或衣物。",
+                  "en": "Do not touch towels or clothes before the medicine dries.",
+                  "id": "Jangan menyentuh handuk atau pakaian sebelum obat kering.",
+                  "vi": "Đừng chạm vào khăn hoặc quần áo trước khi thuốc khô.",
+                  "th": "อย่าให้ผ้าขนหนูหรือเสื้อผ้าสัมผัสยาก่อนยาแห้ง",
+                  "tl": "Huwag munang humawak sa tuwalya o damit bago matuyo ang gamot.",
+                  "ja": "薬が乾く前にタオルや衣類へ触れない。"
+              },
+              illustration: "assets/svg/topical-acne/step-5.svg"
           }
       ],
+      storage: {
+          title: {
+              "zh-TW": "藥品保存",
+              "en": "Storage",
+              "id": "Penyimpanan",
+              "vi": "Bảo quản",
+              "th": "การเก็บรักษา",
+              "tl": "Imbakan",
+              "ja": "保管方法"
+          },
+          text: {
+              "zh-TW": "室溫 15–30°C 保存。\n用後蓋緊管蓋，避免高溫。",
+              "en": "Store at 15–30°C.\nClose the cap tightly after use and avoid high heat.",
+              "id": "Simpan pada suhu 15–30°C.\nTutup rapat setelah dipakai dan hindari panas tinggi.",
+              "vi": "Bảo quản ở 15–30°C.\nĐậy nắp kín sau khi dùng và tránh nhiệt độ cao.",
+              "th": "เก็บที่อุณหภูมิ 15–30°C\nปิดฝาให้แน่นหลังใช้และหลีกเลี่ยงความร้อนสูง",
+              "tl": "Itago sa 15–30°C.\nIsarang mabuti ang takip pagkatapos gamitin at iwasan ang matinding init.",
+              "ja": "15–30°Cで保存する。\n使用後はしっかりキャップを閉め、高温を避ける。"
+          }
+      },
       warnings: [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              "zh-TW": "皮膚太乾、太紅或刺痛時，可先改成隔天 1 次。",
+              "en": "If the skin becomes too dry, too red, or stings, reduce it to every other day first.",
+              "id": "Jika kulit terlalu kering, terlalu merah, atau terasa perih, kurangi dulu menjadi selang sehari.",
+              "vi": "Nếu da quá khô, quá đỏ hoặc rát, hãy giảm xuống cách ngày 1 lần trước.",
+              "th": "หากผิวแห้งมาก แดงมาก หรือแสบ ให้ลดเหลือวันเว้นวันก่อน",
+              "tl": "Kung sobrang tuyo, sobrang pula, o mahapdi ang balat, bawasan muna sa bawat ibang araw.",
+              "ja": "乾燥・赤み・刺激が強い場合は、まず隔日に減らす。"
+          },
+          {
+              "zh-TW": "這個藥會漂白頭髮、毛巾、枕套與衣物。",
+              "en": "This medicine can bleach hair, towels, pillowcases, and clothes.",
+              "id": "Obat ini dapat memudarkan warna rambut, handuk, sarung bantal, dan pakaian.",
+              "vi": "Thuốc này có thể làm bạc màu tóc, khăn, vỏ gối và quần áo.",
+              "th": "ยานี้อาจทำให้ผม ผ้าขนหนู ปลอกหมอน และเสื้อผ้าสีซีดได้",
+              "tl": "Maaaring magpaputi ng buhok, tuwalya, punda ng unan, at damit ang gamot na ito.",
+              "ja": "この薬は髪・タオル・枕カバー・衣類を脱色することがある。"
+          },
+          {
+              "zh-TW": "白天外出時，請擦防曬。",
+              "en": "Use sunscreen when you go out during the day.",
+              "id": "Gunakan tabir surya saat keluar di siang hari.",
+              "vi": "Ban ngày ra ngoài, hãy dùng kem chống nắng.",
+              "th": "หากออกแดดตอนกลางวัน ให้ทากันแดด",
+              "tl": "Gumamit ng sunscreen kapag lalabas sa araw.",
+              "ja": "日中に外出するときは日焼け止めを使う。"
           }
       ],
       qrUrl: "https://pharmacy.example.com/meds/benzoyl-peroxide-5"
+  },
+
+  // ── Benovate scalp solution ─────────────────────────────────────,
+  {
+      "id": "benovate-solution",
+      "category": "topical",
+      color: {
+          main: "#3B6D11",
+          light: "#EAF3DE",
+          dark: "#173404",
+          badge: "#C0DD97",
+          badgeText: "#173404"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "貝若菲頭皮藥水",
+          "en": "Benovate Scalp Solution",
+          "id": "Larutan Kulit Kepala Benovate",
+          "vi": "Dung dịch da đầu Benovate",
+          "th": "Benovate ยาทาหนังศีรษะ",
+          "tl": "Benovate Scalp Solution",
+          "ja": "Benovate 頭皮用液"
+      },
+      subtitle: {
+          "zh-TW": "Benovate Solution｜Betamethasone valerate 0.1%｜頭皮外用溶液",
+          "en": "Benovate Solution | Betamethasone valerate 0.1% | Scalp solution",
+          "id": "Benovate Solution | Betamethasone valerate 0.1% | Larutan untuk kulit kepala",
+          "vi": "Benovate Solution | Betamethasone valerate 0,1% | Dung dịch bôi da đầu",
+          "th": "Benovate Solution | Betamethasone valerate 0.1% | ยาทาหนังศีรษะ",
+          "tl": "Benovate Solution | Betamethasone valerate 0.1% | Pang-anit na solusyon",
+          "ja": "Benovate Solution｜Betamethasone valerate 0.1%｜頭皮外用液"
+      },
+      headerBadge: {
+          "zh-TW": "頭皮類固醇",
+          "en": "Scalp steroid",
+          "id": "Steroid kulit kepala",
+          "vi": "Steroid da đầu",
+          "th": "สเตียรอยด์หนังศีรษะ",
+          "tl": "Steroid para sa anit",
+          "ja": "頭皮用ステロイド"
+      },
+      usage: {
+          "zh-TW": "通常早晚使用，依醫囑調整",
+        "en": "Usually apply it in the morning and at night, then use it less often as directed",
+          "id": "Biasanya dipakai pagi dan malam, lalu dikurangi sesuai petunjuk",
+          "vi": "Thường bôi sáng và tối, sau đó giảm dần theo chỉ định",
+          "th": "มักใช้เช้าและก่อนนอน แล้วปรับตามแพทย์สั่ง",
+        "tl": "Karaniwang ipinapahid ito sa umaga at gabi, saka binabawasan ayon sa bilin ng doktor",
+        "ja": "通常は朝と夜に使い、その後は指示に従って回数を減らします"
+      },
+      badge: {
+          "zh-TW": "頭皮外用溶液",
+          "en": "Scalp solution",
+          "id": "Larutan kulit kepala",
+          "vi": "Dung dịch da đầu",
+          "th": "ยาทาหนังศีรษะ",
+          "tl": "Scalp solution",
+          "ja": "頭皮外用液"
+      },
+      preStepsInfo: {
+          title: {
+              "zh-TW": "使用重點",
+              "en": "Key Points",
+              "id": "Poin Penting",
+              "vi": "Điểm Chính",
+              "th": "จุดสำคัญ",
+              "tl": "Mahahalagang Punto",
+              "ja": "使い方の要点"
+          },
+          text: {
+              "zh-TW": "這是頭皮類固醇藥水。\n通常早晚擦，改善後可依醫囑減少次數。\n只能擦頭皮患處，不要整頭塗。",
+              "en": "This is a steroid scalp solution.\nIt is usually applied in the morning and at night, then used less often as your scalp improves.\nApply it only to the affected areas, not the whole scalp.",
+              "id": "Ini adalah larutan steroid untuk kulit kepala.\nBiasanya dipakai pagi dan malam, lalu dikurangi sesuai petunjuk saat kulit kepala membaik.\nOleskan hanya pada bagian yang sakit, bukan ke seluruh kulit kepala.",
+              "vi": "Đây là thuốc steroid dạng dung dịch dùng cho da đầu.\nThường bôi sáng và tối, rồi giảm dần số lần theo chỉ định khi da đầu đã cải thiện.\nChỉ bôi lên vùng bị bệnh, không bôi toàn bộ da đầu.",
+              "th": "นี่คือยาสเตียรอยด์ชนิดน้ำสำหรับหนังศีรษะ\nโดยทั่วไปใช้เช้าและก่อนนอน และเมื่ออาการดีขึ้นอาจลดความถี่ลงตามแพทย์สั่ง\nทาเฉพาะบริเวณหนังศีรษะที่เป็นโรค ไม่ต้องทาทั่วทั้งศีรษะ",
+              "tl": "Ito ay steroid na solusyon para sa anit.\nKaraniwang ipinapahid ito sa umaga at gabi, at puwedeng bawasan kapag bumuti na ang anit.\nIpahid lamang sa apektadong bahagi ng anit, hindi sa buong anit.",
+              "ja": "これは頭皮用のステロイド液です。\n通常は朝と夜に使い、よくなってきたら指示に従って回数を減らします。\n患部の頭皮だけに塗り、頭全体には塗りません。"
+          }
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "洗手，確認頭皮是乾的",
+                  "en": "Wash your hands and make sure the scalp is dry",
+                  "id": "Cuci tangan dan pastikan kulit kepala kering",
+                  "vi": "Rửa tay và bảo đảm da đầu khô",
+                  "th": "ล้างมือและตรวจว่าหนังศีรษะแห้ง",
+                  "tl": "Hugasan ang kamay at tiyaking tuyo ang anit",
+                  "ja": "手を洗い、頭皮が乾いていることを確認する"
+              },
+              note: {
+                  "zh-TW": "洗頭後要先吹乾或自然乾。",
+                  "en": "After washing your hair, dry it first.",
+                  "id": "Setelah keramas, keringkan dulu sebelum memakai obat.",
+                  "vi": "Sau khi gội đầu, phải làm khô trước khi bôi.",
+                  "th": "หลังสระผมต้องเป่าให้แห้งหรือปล่อยให้แห้งก่อน",
+                  "tl": "Pagkatapos mag-shampoo, patuyuin muna bago ipahid.",
+                  "ja": "洗髪後は先に乾かしてから使います。"
+              },
+              illustration: "assets/svg/scalp-solution/step-0.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "撥開頭髮，露出患處",
+                  "en": "Part the hair and expose the affected area",
+                  "id": "Belah rambut dan buka area yang sakit",
+                  "vi": "Vạch tóc để lộ vùng da đầu bị bệnh",
+                  "th": "แสกผมให้เห็นบริเวณที่เป็น",
+                  "tl": "Paghiwalayin ang buhok at ilantad ang apektadong bahagi",
+                  "ja": "髪を分け、患部を見えるようにする"
+              },
+              note: {
+                  "zh-TW": "只擦患處，不擦整頭。",
+                  "en": "Apply it only to the affected area, not the whole scalp.",
+                  "id": "Oleskan hanya pada area yang sakit, bukan ke seluruh kulit kepala.",
+                  "vi": "Chỉ bôi lên vùng bị bệnh, không bôi cả đầu.",
+                  "th": "ทาเฉพาะบริเวณที่เป็น ไม่ต้องทาทั่วหนังศีรษะ",
+                  "tl": "Ipahid lamang sa apektadong bahagi, hindi sa buong anit.",
+                  "ja": "患部だけに塗り、頭皮全体には塗らない。"
+              },
+              illustration: "assets/svg/scalp-solution/step-1.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "滴少量藥水在患處",
+                  "en": "Place a small amount of liquid on the affected area",
+                  "id": "Teteskan sedikit larutan pada area yang sakit",
+                  "vi": "Nhỏ một lượng ít thuốc lên vùng da đầu bị bệnh",
+                  "th": "หยดยาปริมาณเล็กน้อยลงบนบริเวณที่เป็น",
+                  "tl": "Magpatak ng kaunting gamot sa apektadong bahagi",
+                  "ja": "患部に少量の液を落とす"
+              },
+              note: {
+                  "zh-TW": "以剛好覆蓋患處為準。",
+                  "en": "Use only enough to cover the affected area.",
+                  "id": "Gunakan secukupnya untuk menutupi area yang sakit.",
+                  "vi": "Chỉ dùng vừa đủ để phủ vùng bị bệnh.",
+                  "th": "ใช้เพียงพอให้คลุมบริเวณที่เป็นเท่านั้น",
+                  "tl": "Gumamit lamang ng sapat para matakpan ang apektadong bahagi.",
+                  "ja": "患部を覆える程度の量だけ使う。"
+              },
+              illustration: "assets/svg/scalp-solution/step-2.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "用指腹輕按讓藥水散開",
+                  "en": "Gently press with your fingertips to spread it",
+                  "id": "Tekan lembut dengan ujung jari agar obat menyebar",
+                  "vi": "Dùng đầu ngón tay ấn nhẹ để thuốc lan ra",
+                  "th": "ใช้นิ้วกดเบา ๆ ให้ยากระจาย",
+                  "tl": "Dahan-dahang idiin gamit ang dulo ng daliri para kumalat ang gamot",
+                  "ja": "指の腹でやさしく押さえて広げる"
+              },
+              note: {
+                  "zh-TW": "不要用力抓揉。",
+                  "en": "Do not rub or scratch hard.",
+                  "id": "Jangan menggosok atau menggaruk dengan kuat.",
+                  "vi": "Không chà xát hoặc gãi mạnh.",
+                  "th": "อย่าถูหรือเกาแรง ๆ",
+                  "tl": "Huwag kuskusin o kamutin nang madiin.",
+                  "ja": "強くこすったり引っかいたりしない。"
+              },
+              illustration: "assets/svg/scalp-solution/step-3.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "等自然乾燥",
+                  "en": "Let it dry naturally",
+                  "id": "Biarkan kering sendiri",
+                  "vi": "Để khô tự nhiên",
+                  "th": "ปล่อยให้แห้งเองตามธรรมชาติ",
+                  "tl": "Hayaan itong matuyo nang kusa",
+                  "ja": "自然に乾かす"
+              },
+              note: {
+                  "zh-TW": "這是留置藥水，不要馬上洗掉。",
+                  "en": "This is a leave-on medicine. Do not wash it off right away.",
+                  "id": "Ini obat leave-on. Jangan langsung dibilas.",
+                  "vi": "Đây là thuốc để lưu lại trên da. Đừng rửa ngay.",
+                  "th": "ยานี้เป็นชนิดทิ้งไว้บนผิว ห้ามล้างออกทันที",
+                  "tl": "Ito ay leave-on na gamot. Huwag agad banlawan.",
+                  "ja": "これは洗い流さない薬である。すぐに洗い落とさない。"
+              },
+              illustration: "assets/svg/scalp-solution/step-4.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "再洗手",
+                  "en": "Wash your hands again",
+                  "id": "Cuci tangan lagi",
+                  "vi": "Rửa tay lại",
+                  "th": "ล้างมืออีกครั้ง",
+                  "tl": "Hugasan muli ang kamay",
+                  "ja": "もう一度手を洗う"
+              },
+              note: {
+                  "zh-TW": "洗完手再碰眼睛或臉。",
+                  "en": "Wash first before touching the eyes or face.",
+                  "id": "Cuci tangan dulu sebelum menyentuh mata atau wajah.",
+                  "vi": "Rửa tay trước khi chạm vào mắt hoặc mặt.",
+                  "th": "ล้างมือก่อนจับตาหรือใบหน้า",
+                  "tl": "Maghugas muna bago humawak sa mata o mukha.",
+                  "ja": "目や顔に触る前に手を洗う。"
+              },
+              illustration: "assets/svg/scalp-solution/step-5.svg"
+          }
+      ],
+      storage: {
+          title: {
+              "zh-TW": "藥品保存",
+              "en": "Storage",
+              "id": "Penyimpanan",
+              "vi": "Bảo quản",
+              "th": "การเก็บรักษา",
+              "tl": "Imbakan",
+              "ja": "保管方法"
+          },
+          text: {
+              "zh-TW": "25°C 以下保存，蓋緊瓶蓋。\n避光，遠離火源與高溫。",
+              "en": "Store below 25°C and keep the bottle tightly closed.\nProtect it from light and keep it away from heat and flames.",
+              "id": "Simpan di bawah 25°C dan tutup botol rapat.\nLindungi dari cahaya dan jauhkan dari panas serta api.",
+              "vi": "Bảo quản dưới 25°C và đậy kín nắp chai.\nTránh ánh sáng, tránh nhiệt và lửa.",
+              "th": "เก็บต่ำกว่า 25°C และปิดฝาให้แน่น\nหลีกเลี่ยงแสง ความร้อน และเปลวไฟ",
+              "tl": "Itago sa temperaturang mas mababa sa 25°C at isarang mabuti ang bote.\nIwasan ang liwanag, init, at apoy.",
+              "ja": "25°C以下で保存し、ボトルをしっかり閉める。\n光・高温・火気を避ける。"
+          }
+      },
+      warnings: [
+          {
+              "zh-TW": "只擦頭皮，不碰眼睛、臉部和黏膜。",
+              "en": "Use it on the scalp only. Keep it away from the eyes, face, and mucous membranes.",
+              "id": "Gunakan hanya pada kulit kepala. Jauhkan dari mata, wajah, dan mukosa.",
+              "vi": "Chỉ dùng trên da đầu. Tránh mắt, mặt và niêm mạc.",
+              "th": "ใช้เฉพาะหนังศีรษะ หลีกเลี่ยงตา ใบหน้า และเยื่อบุ",
+              "tl": "Sa anit lamang gamitin. Iwasan ang mata, mukha, at mucosa.",
+              "ja": "頭皮のみに使用し、目・顔・粘膜を避ける。"
+          },
+          {
+              "zh-TW": "不要連續每天擦很多週；皮膚變薄或刺激時請回診。",
+              "en": "Do not use it every day for many weeks unless your doctor told you to. Go back for review if the skin becomes thin or irritated.",
+              "id": "Jangan dipakai setiap hari selama berminggu-minggu kecuali dokter menyuruh demikian. Kembali berobat bila kulit menipis atau teriritasi.",
+              "vi": "Không dùng hằng ngày liên tục nhiều tuần trừ khi bác sĩ dặn như vậy. Hãy tái khám nếu da mỏng đi hoặc bị kích ứng.",
+              "th": "อย่าใช้ทุกวันต่อเนื่องหลายสัปดาห์ หากผิวบางลงหรือระคายเคืองให้กลับไปพบแพทย์",
+              "tl": "Huwag gamitin araw-araw nang tuluy-tuloy sa maraming linggo. Magpatingin kung numinipis o naiirita ang balat.",
+              "ja": "医師の指示なく何週間も毎日使い続けない。皮膚が薄くなったり刺激が出たりしたら受診する。"
+          },
+          {
+              "zh-TW": "這個藥易燃；使用時與剛擦完都要遠離火源、抽菸與吹風機。",
+              "en": "This medicine is flammable. Keep it away from flames, smoking, and hair dryers during use and right after application.",
+              "id": "Obat ini mudah terbakar. Jauhkan dari api, rokok, dan pengering rambut saat penggunaan dan segera setelah dipakai.",
+              "vi": "Thuốc này dễ cháy. Tránh lửa, thuốc lá và máy sấy tóc trong lúc dùng và ngay sau khi bôi.",
+              "th": "ยานี้ติดไฟได้ง่าย ระหว่างใช้และหลังทาทันทีต้องอยู่ห่างจากเปลวไฟ บุหรี่ และไดร์เป่าผม",
+              "tl": "Madaling magliyab ang gamot na ito. Ilayo sa apoy, sigarilyo, at hair dryer habang ginagamit at kaagad pagkatapos ipahid.",
+              "ja": "この薬は可燃性である。使用中と塗布直後は火気・喫煙・ヘアドライヤーを避ける。"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/benovate-solution"
+  },
+
+  // ── Amorolfine nail lacquer ─────────────────────────────────────,
+  {
+      "id": "amorolfine-nail-lacquer",
+      "category": "topical",
+      color: {
+          main: "#3B6D11",
+          light: "#EAF3DE",
+          dark: "#173404",
+          badge: "#C0DD97",
+          badgeText: "#173404"
+      },
+      emergency: false,
+      name: {
+          "zh-TW": "阿莫羅芬指甲藥膜",
+          "en": "Amorolfine 5% Nail Lacquer",
+          "id": "Cat kuku Amorolfine 5%",
+          "vi": "Sơn móng Amorolfine 5%",
+          "th": "น้ำยาทาเล็บ Amorolfine 5%",
+          "tl": "Amorolfine 5% Nail Lacquer",
+          "ja": "アモロルフィン 5% 爪用ラッカー"
+      },
+      subtitle: {
+          "zh-TW": "Amorolfine 5% Nail Lacquer｜抗黴菌指甲藥膜",
+          "en": "Amorolfine 5% Nail Lacquer | Antifungal nail lacquer",
+          "id": "Amorolfine 5% Nail Lacquer | Cat kuku antijamur",
+          "vi": "Amorolfine 5% Nail Lacquer | Sơn móng kháng nấm",
+          "th": "Amorolfine 5% Nail Lacquer | น้ำยาทาเล็บต้านเชื้อรา",
+          "tl": "Amorolfine 5% Nail Lacquer | Antifungal nail lacquer",
+          "ja": "Amorolfine 5% Nail Lacquer｜抗真菌爪用ラッカー"
+      },
+      headerBadge: {
+          "zh-TW": "每週 1–2 次",
+          "en": "Once or twice a week",
+          "id": "1-2 kali seminggu",
+          "vi": "1-2 lần mỗi tuần",
+          "th": "สัปดาห์ละ 1-2 ครั้ง",
+          "tl": "Isang beses o dalawang beses bawat linggo",
+          "ja": "週1〜2回"
+      },
+      usage: {
+          "zh-TW": "每週 1 至 2 次，依醫囑使用",
+          "en": "Apply it once or twice a week as directed",
+          "id": "Oleskan 1 sampai 2 kali seminggu sesuai petunjuk",
+          "vi": "Bôi 1 đến 2 lần mỗi tuần theo chỉ định",
+          "th": "ทา 1 ถึง 2 ครั้งต่อสัปดาห์ตามแพทย์สั่ง",
+          "tl": "Ipahid ito isang beses o dalawang beses bawat linggo ayon sa bilin",
+          "ja": "医師の指示どおり週1〜2回塗る"
+      },
+      badge: {
+          "zh-TW": "抗黴菌指甲藥膜",
+          "en": "Antifungal nail lacquer",
+          "id": "Cat kuku antijamur",
+          "vi": "Sơn móng kháng nấm",
+          "th": "น้ำยาทาเล็บต้านเชื้อรา",
+          "tl": "Antifungal nail lacquer",
+          "ja": "抗真菌爪用ラッカー"
+      },
+      preStepsInfo: {
+          title: {
+              "zh-TW": "使用重點",
+              "en": "Key Points",
+              "id": "Poin Penting",
+              "vi": "Điểm Chính",
+              "th": "จุดสำคัญ",
+              "tl": "Mahahalagang Punto",
+              "ja": "使い方の要点"
+          },
+          text: {
+              "zh-TW": "每週 1 到 2 次，依醫囑使用。\n治療期間不建議使用人工指甲或一般指甲油。\n要持續擦到健康指甲長出來。",
+              "en": "Use it once or twice a week as directed.\nDo not use artificial nails or regular nail polish during treatment.\nKeep using it until healthy nail grows out.",
+              "id": "Gunakan 1 sampai 2 kali seminggu sesuai petunjuk.\nSelama pengobatan, tidak dianjurkan memakai kuku buatan atau cat kuku biasa.\nTeruskan sampai kuku yang sehat tumbuh kembali.",
+              "vi": "Dùng 1 đến 2 lần mỗi tuần theo chỉ định.\nTrong thời gian điều trị, không nên dùng móng giả hoặc sơn móng thường.\nTiếp tục dùng cho đến khi móng khỏe mọc ra.",
+              "th": "ใช้ 1 ถึง 2 ครั้งต่อสัปดาห์ตามแพทย์สั่ง\nระหว่างการรักษาไม่แนะนำให้ใช้เล็บปลอมหรือยาทาเล็บทั่วไป\nใช้ต่อเนื่องจนกว่าเล็บใหม่ที่ปกติจะงอกออกมา",
+              "tl": "Gamitin nang 1 hanggang 2 beses bawat linggo ayon sa bilin.\nHindi inirerekomenda ang artificial nails o regular na nail polish habang ginagamot.\nIpagpatuloy hanggang tumubo ang malusog na kuko.",
+              "ja": "医師の指示どおり週1〜2回使います。\n治療中は付け爪や通常のマニキュアは使わないでください。\n健康な爪が伸びてくるまで続けます。"
+          }
+      },
+      steps: [
+          {
+              action: {
+                  "zh-TW": "用酒精棉片擦掉舊藥膜",
+                  "en": "Remove the old lacquer with an alcohol swab",
+                  "id": "Bersihkan lapisan obat lama dengan kapas beralkohol",
+                  "vi": "Lau bỏ lớp thuốc cũ bằng gạc cồn",
+                  "th": "เช็ดฟิล์มยาจากรอบก่อนออกด้วยแผ่นแอลกอฮอล์",
+                  "tl": "Punasan ng alcohol swab ang lumang patong ng gamot",
+                  "ja": "アルコール綿で古い薬膜を落とす"
+              },
+              note: {
+                  "zh-TW": "若還有舊藥膜，要先擦乾淨。",
+                  "en": "Remove all of the old lacquer first.",
+                  "id": "Jika masih ada lapisan obat lama, bersihkan dulu sampai habis.",
+                  "vi": "Nếu vẫn còn lớp thuốc cũ, hãy lau sạch trước.",
+                  "th": "หากยังมีฟิล์มยารอบก่อนอยู่ ต้องเช็ดออกให้หมดก่อน",
+                  "tl": "Kung may natira pang lumang patong ng gamot, alisin muna ito nang buo.",
+                  "ja": "古い薬膜が残っている場合は、先にきれいに落とす。"
+              },
+              illustration: "assets/svg/nail-lacquer/step-0.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "用指甲銼把患甲表面儘量銼平",
+                  "en": "Use a nail file to file the affected nail as flat as you can",
+                  "id": "Gunakan kikir kuku untuk meratakan permukaan kuku yang sakit sebisa mungkin",
+                  "vi": "Dùng dũa móng dũa phẳng bề mặt móng bệnh càng phẳng càng tốt",
+                  "th": "ใช้ตะไบเล็บค่อย ๆ ตะไบผิวเล็บที่เป็นให้เรียบที่สุดเท่าที่ทำได้",
+                  "tl": "Gumamit ng nail file para papantayin ang ibabaw ng apektadong kuko hangga't kaya",
+                  "ja": "爪やすりで患爪の表面をできるだけ平らにする"
+              },
+              note: {
+                  "zh-TW": "不要和健康指甲共用同一支銼刀。",
+                  "en": "Do not use the same nail file on healthy nails.",
+                  "id": "Jangan gunakan kikir yang sama pada kuku yang sehat.",
+                  "vi": "Không dùng chung dũa này cho móng khỏe.",
+                  "th": "อย่าใช้ตะไบอันเดียวกันกับเล็บปกติ",
+                  "tl": "Huwag gamitin ang parehong nail file sa malulusog na kuko.",
+                  "ja": "健康な爪と同じやすりを使わない。"
+              },
+              illustration: "assets/svg/nail-lacquer/step-1.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "用酒精棉片清潔患甲",
+                  "en": "Clean the nail with an alcohol swab",
+                  "id": "Bersihkan kuku dengan kapas alkohol",
+                  "vi": "Làm sạch móng bằng gạc cồn",
+                  "th": "เช็ดทำความสะอาดเล็บด้วยแผ่นแอลกอฮอล์",
+                  "tl": "Linisin ang kuko gamit ang alcohol swab",
+                  "ja": "アルコール綿で爪を清潔にする"
+              },
+              note: {
+                  "zh-TW": "等表面乾了再上藥。",
+                  "en": "Wait until the surface is dry before applying the lacquer.",
+                  "id": "Tunggu sampai permukaannya kering sebelum mengoleskan obat.",
+                  "vi": "Chờ bề mặt khô rồi mới bôi thuốc.",
+                  "th": "รอให้ผิวเล็บแห้งก่อนแล้วจึงทายา",
+                  "tl": "Hintaying matuyo ang ibabaw bago ipahid ang gamot.",
+                  "ja": "表面が乾いてから薬を塗る。"
+              },
+              illustration: "assets/svg/nail-lacquer/step-2.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "薄擦整片患甲",
+                  "en": "Apply a thin layer over the whole affected nail",
+                  "id": "Oleskan tipis ke seluruh kuku yang sakit",
+                  "vi": "Bôi một lớp mỏng lên toàn bộ móng bị bệnh",
+                  "th": "ทาบาง ๆ ให้ทั่วเล็บที่เป็น",
+                  "tl": "Ipahid nang manipis sa buong apektadong kuko",
+                  "ja": "患爪全体に薄く塗る"
+              },
+              note: {
+                  "zh-TW": "指甲前緣也要擦到。",
+                  "en": "Cover the front edge of the nail too.",
+                  "id": "Oleskan juga pada tepi depan kuku.",
+                  "vi": "Bôi cả phần đầu móng.",
+                  "th": "ทาบริเวณขอบปลายเล็บด้วย",
+                  "tl": "Pahiran din ang harapang gilid ng kuko.",
+                  "ja": "爪の先端部分にも塗る。"
+              },
+              illustration: "assets/svg/nail-lacquer/step-3.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "等 3 分鐘乾燥",
+                  "en": "Let it dry for 3 minutes",
+                  "id": "Biarkan kering selama 3 menit",
+                  "vi": "Để khô trong 3 phút",
+                  "th": "ปล่อยให้แห้ง 3 นาที",
+                  "tl": "Patuyuin nang 3 minuto",
+                  "ja": "3分ほど乾かす"
+              },
+              note: {
+                  "zh-TW": "等完全乾燥後再碰襪子或衣物。",
+                  "en": "Wait until it is fully dry before putting on socks or clothing.",
+                  "id": "Tunggu sampai benar-benar kering sebelum memakai kaus kaki atau pakaian.",
+                  "vi": "Chờ khô hẳn rồi mới đi tất hoặc chạm vào quần áo.",
+                  "th": "รอให้แห้งสนิทก่อนสัมผัสถุงเท้าหรือเสื้อผ้า",
+                  "tl": "Hintaying matuyong mabuti bago dumikit sa medyas o damit.",
+                  "ja": "十分に乾いてから靴下や衣類に触れるようにする。"
+              },
+              illustration: "assets/svg/nail-lacquer/step-4.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "用酒精棉片擦淨塗抹棒，再蓋緊瓶蓋",
+                  "en": "Wipe the applicator clean with an alcohol swab, then close the bottle tightly",
+                  "id": "Bersihkan aplikator dengan kapas beralkohol, lalu tutup botol rapat",
+                  "vi": "Dùng gạc cồn lau sạch que bôi rồi đậy kín nắp chai",
+                  "th": "ใช้แผ่นแอลกอฮอล์เช็ดไม้ทาให้สะอาด แล้วปิดฝาขวดให้แน่น",
+                  "tl": "Punasan nang malinis ang applicator gamit ang alcohol swab, saka isarang mabuti ang bote",
+                  "ja": "アルコール綿で塗布具を拭き取り、ボトルをしっかり閉める"
+              },
+              note: {
+                  "zh-TW": "可用剛才清潔指甲的酒精棉片擦拭。",
+                  "en": "You may use the same alcohol swab that cleaned the nail.",
+                  "id": "Boleh memakai kapas beralkohol yang tadi dipakai untuk membersihkan kuku.",
+                  "vi": "Có thể dùng chính miếng gạc cồn vừa dùng để lau móng.",
+                  "th": "สามารถใช้แผ่นแอลกอฮอล์แผ่นเดียวกับที่เช็ดเล็บเมื่อครู่ได้",
+                  "tl": "Maaaring gamitin ang kaparehong alcohol swab na ginamit sa paglilinis ng kuko.",
+                  "ja": "さきほど爪を拭いたアルコール綿をそのまま使ってよい。"
+              },
+              illustration: "assets/svg/nail-lacquer/step-5.svg"
+          }
+      ],
+      infoBoxes: [
+          {
+              tone: {
+                  bg: "#F2F2F2",
+                  border: "#7A7A7A",
+                  text: "#3F3F3F"
+              },
+              title: {
+                  "zh-TW": "療程",
+                  "en": "Treatment Course",
+                  "id": "Lama Pengobatan",
+                  "vi": "Thời Gian Điều Trị",
+                  "th": "ระยะเวลาการรักษา",
+                  "tl": "Tagal ng Gamutan",
+                  "ja": "治療期間"
+              },
+              text: {
+                  "zh-TW": "手指甲通常約 6 個月。\n腳趾甲通常約 9–12 個月。\n持續擦到健康指甲長出來。",
+                  "en": "Fingernails usually need about 6 months.\nToenails usually need about 9 to 12 months.\nKeep using it until healthy nail grows out.",
+                  "id": "Kuku tangan biasanya sekitar 6 bulan.\nKuku kaki biasanya sekitar 9 sampai 12 bulan.\nTeruskan sampai kuku sehat tumbuh kembali.",
+                  "vi": "Móng tay thường cần khoảng 6 tháng.\nMóng chân thường cần khoảng 9 đến 12 tháng.\nTiếp tục dùng cho đến khi móng khỏe mọc ra.",
+                  "th": "เล็บมือมักใช้เวลาประมาณ 6 เดือน\nเล็บเท้ามักใช้เวลาประมาณ 9–12 เดือน\nใช้ต่อเนื่องจนกว่าเล็บใหม่ที่ปกติจะงอกออกมา",
+                  "tl": "Karaniwang humahaba sa mga 6 na buwan para sa kuko sa kamay.\nKaraniwang 9 hanggang 12 buwan para sa kuko sa paa.\nIpagpatuloy hanggang tumubo ang malusog na kuko.",
+                  "ja": "手の爪は通常約6か月かかる。\n足の爪は通常約9〜12か月かかる。\n健康な爪が伸びてくるまで続ける。"
+              }
+          }
+      ],
+      storage: {
+          title: {
+              "zh-TW": "藥品保存",
+              "en": "Storage",
+              "id": "Penyimpanan",
+              "vi": "Bảo quản",
+              "th": "การเก็บรักษา",
+              "tl": "Imbakan",
+              "ja": "保管方法"
+          },
+          text: {
+              "zh-TW": "30°C 以下保存，遠離熱源。\n每次用後都要蓋緊瓶蓋。",
+              "en": "Store below 30°C and keep it away from heat.\nClose the bottle tightly after every use.",
+              "id": "Simpan di bawah 30°C dan jauhkan dari panas.\nTutup botol rapat setiap selesai digunakan.",
+              "vi": "Bảo quản dưới 30°C và tránh nguồn nhiệt.\nĐậy kín nắp chai sau mỗi lần dùng.",
+              "th": "เก็บต่ำกว่า 30°C และให้ห่างจากความร้อน\nปิดฝาขวดให้แน่นทุกครั้งหลังใช้",
+              "tl": "Itago sa temperaturang mas mababa sa 30°C at ilayo sa init.\nIsarang mabuti ang bote tuwing matapos gamitin.",
+              "ja": "30°C以下で保存し、熱源を避ける。\n毎回使用後はボトルをしっかり閉める。"
+          }
+      },
+      warnings: [
+          {
+              "zh-TW": "懷孕、哺乳或準備懷孕時，先問醫師。",
+              "en": "Ask your doctor before use if you are pregnant, breast-feeding, or planning pregnancy.",
+              "id": "Tanyakan kepada dokter sebelum memakai jika Anda hamil, menyusui, atau sedang merencanakan kehamilan.",
+              "vi": "Hãy hỏi bác sĩ trước khi dùng nếu bạn đang mang thai, cho con bú hoặc dự định mang thai.",
+              "th": "หากตั้งครรภ์ ให้นมบุตร หรือกำลังวางแผนตั้งครรภ์ ให้ปรึกษาแพทย์ก่อนใช้",
+              "tl": "Magtanong muna sa doktor bago gamitin kung buntis, nagpapasuso, o nagpaplanong magbuntis.",
+              "ja": "妊娠中・授乳中・妊娠を考えている場合は、使用前に医師へ相談する。"
+          },
+          {
+              "zh-TW": "若碰到眼睛或耳朵，立刻用清水沖洗。",
+              "en": "If it gets into the eyes or ears, rinse right away with water.",
+              "id": "Jika terkena mata atau telinga, segera bilas dengan air.",
+              "vi": "Nếu dính vào mắt hoặc tai, rửa ngay bằng nước.",
+              "th": "หากเข้าตาหรือหู ให้รีบล้างออกด้วยน้ำทันที",
+              "tl": "Kung mapunta sa mata o tainga, banlawan agad ng tubig.",
+              "ja": "目や耳に入ったら、すぐに水で洗い流す。"
+          },
+          {
+              "zh-TW": "這個藥易燃；遠離火源、香菸與吹風機。",
+              "en": "This medicine is flammable. Keep it away from flames, smoking, and hair dryers.",
+              "id": "Obat ini mudah terbakar. Jauhkan dari api, rokok, dan pengering rambut.",
+              "vi": "Thuốc này dễ cháy. Tránh lửa, thuốc lá và máy sấy tóc.",
+              "th": "ยานี้ติดไฟได้ง่าย ให้อยู่ห่างจากเปลวไฟ บุหรี่ และไดร์เป่าผม",
+              "tl": "Madaling magliyab ang gamot na ito. Ilayo sa apoy, sigarilyo, at hair dryer.",
+              "ja": "この薬は可燃性である。火気・喫煙・ヘアドライヤーを避ける。"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/amorolfine-nail-lacquer"
   },
 
   // ── Premarin vaginal cream ─────────────────────────────────────,
@@ -8135,9 +9000,10 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/high-xylmol"
   },
 
-  // ── Placeholder: Duofilm solution (salicylic acid 16.7% + lactic acid 16.7%) ─────────────────────────────────────,
+  // ── Duofilm solution ─────────────────────────────────────,
   {
       "id": "duofilm-solution",
+      "category": "topical",
       color: {
           main: "#3B6D11",
           light: "#EAF3DE",
@@ -8147,63 +9013,251 @@ const MEDICATIONS = [
       },
       emergency: false,
       name: {
-          "zh-TW": "Duofilm 溶液",
-          "en": "Duofilm solution (salicylic acid 16.7% + lactic acid 16.7%)",
-          "id": "Duofilm solution (salicylic acid 16.7% + lactic acid 16.7%)",
-          "vi": "Duofilm solution (salicylic acid 16.7% + lactic acid 16.7%)",
-          "th": "Duofilm solution (salicylic acid 16.7% + lactic acid 16.7%)",
-          "tl": "Duofilm solution (salicylic acid 16.7% + lactic acid 16.7%)",
-          "ja": "Duofilm solution (salicylic acid 16.7% + lactic acid 16.7%)"
+          "zh-TW": "Duofilm 治疣液",
+          "en": "Duofilm Solution",
+          "id": "Larutan Duofilm",
+          "vi": "Dung dịch Duofilm",
+          "th": "Duofilm น้ำยารักษาหูด",
+          "tl": "Duofilm Solution",
+          "ja": "Duofilm 治疣液"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Duofilm Solution｜Salicylic acid 16.7% + Lactic acid 15%｜15 mL/bottle",
+          "en": "Duofilm Solution | Salicylic acid 16.7% + Lactic acid 15% | 15 mL/bottle",
+          "id": "Duofilm Solution | Salicylic acid 16.7% + Lactic acid 15% | 15 mL/botol",
+          "vi": "Duofilm Solution | Salicylic acid 16,7% + Lactic acid 15% | 15 mL/chai",
+          "th": "Duofilm Solution | Salicylic acid 16.7% + Lactic acid 15% | 15 mL/ขวด",
+          "tl": "Duofilm Solution | Salicylic acid 16.7% + Lactic acid 15% | 15 mL/bote",
+          "ja": "Duofilm Solution｜Salicylic acid 16.7% + Lactic acid 15%｜15 mL/bottle"
+      },
+      headerBadge: {
+          "zh-TW": "睡前 1 次",
+          "en": "Once nightly",
+          "id": "Sekali sebelum tidur",
+          "vi": "1 lần trước khi ngủ",
+          "th": "ก่อนนอนวันละ 1 ครั้ง",
+          "tl": "Isang beses bago matulog",
+          "ja": "就寝前1回"
+      },
+      usage: {
+          "zh-TW": "每天睡前 1 次",
+          "en": "Apply once daily at bedtime",
+          "id": "Oleskan sekali sehari sebelum tidur",
+          "vi": "Bôi 1 lần mỗi ngày trước khi ngủ",
+          "th": "ทาวันละ 1 ครั้งก่อนนอน",
+          "tl": "Ipahid isang beses araw-araw bago matulog",
+          "ja": "毎日就寝前に1回塗る"
       },
       badge: {
-          "zh-TW": "外用藥",
-          "en": "Topical",
-          "id": "Obat oles",
-          "vi": "Thuốc bôi",
-          "th": "ยาทาภายนอก",
-          "tl": "Topical",
-          "ja": "外用薬"
+          "zh-TW": "治疣外用溶液",
+          "en": "Wart treatment solution",
+          "id": "Larutan untuk kutil",
+          "vi": "Dung dịch trị mụn cóc",
+          "th": "น้ำยารักษาหูด",
+          "tl": "Solusyon para sa kulugo",
+          "ja": "いぼ治療用外用液"
+      },
+      preStepsInfo: {
+          title: {
+              "zh-TW": "使用重點",
+              "en": "Key Points",
+              "id": "Poin Penting",
+              "vi": "Điểm Chính",
+              "th": "จุดสำคัญ",
+              "tl": "Mahahalagang Punto",
+              "ja": "使い方の要点"
+          },
+          text: {
+              "zh-TW": "只擦在疣上。\n大顆疣或腳底疣，乾後可再蓋貼布。\n若連用 12 週仍沒好，請詢問醫師或藥師。",
+              "en": "Apply it only to the wart.\nIf the wart is large or on the foot, you may cover it after the liquid dries.\nIf it has not improved after 12 weeks, ask your doctor or pharmacist.",
+              "id": "Oleskan hanya pada kutil.\nJika kutil besar atau berada di telapak kaki, Anda boleh menutupnya setelah obat kering.\nJika belum membaik setelah 12 minggu, tanyakan kepada dokter atau apoteker.",
+              "vi": "Chỉ bôi lên mụn cóc.\nNếu mụn cóc lớn hoặc ở lòng bàn chân, có thể dán lại sau khi thuốc khô.\nHãy hỏi bác sĩ hoặc dược sĩ nếu chưa cải thiện sau 12 tuần.",
+              "th": "ทาเฉพาะบนหูดเท่านั้น\nหากหูดมีขนาดใหญ่หรืออยู่ที่ฝ่าเท้า สามารถปิดพลาสเตอร์ได้หลังยาแห้ง\nหากใช้ต่อเนื่อง 12 สัปดาห์แล้วยังไม่ดีขึ้น ให้ปรึกษาแพทย์หรือเภสัชกร",
+              "tl": "Sa kulugo lamang ito ipahid.\nKung malaki ang kulugo o nasa talampakan, maaari itong takpan matapos matuyo ang gamot.\nMagtanong sa doktor o parmasyutiko kung hindi pa rin bumuti matapos ang 12 linggo.",
+              "ja": "いぼだけに塗ります。\n大きないぼや足の裏のいぼは、乾いたあとに絆創膏で覆ってもかまいません。\n12週間使っても良くならない場合は、医師または薬剤師に相談します。"
+          }
       },
       steps: [
           {
               action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
+                  "zh-TW": "取下舊貼布",
+                  "en": "Remove the old plaster",
+                  "id": "Lepas plester lama",
+                  "vi": "Tháo miếng dán cũ",
+                  "th": "เอาพลาสเตอร์เก่าออก",
+                  "tl": "Tanggalin ang lumang plaster",
+                  "ja": "古い絆創膏を外す"
               },
               note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
+                  "zh-TW": "若沒有貼布，可直接跳過。",
+                  "en": "If there is no plaster, you can skip this step.",
+                  "id": "Jika tidak memakai plester, langkah ini boleh dilewati.",
+                  "vi": "Nếu không có miếng dán, có thể bỏ qua bước này.",
+                  "th": "หากไม่ได้ปิดพลาสเตอร์ไว้ สามารถข้ามขั้นตอนนี้ได้",
+                  "tl": "Kung walang plaster, maaari mong laktawan ang hakbang na ito.",
+                  "ja": "絆創膏がなければ、この手順は省いてよい。"
+              },
+              illustration: "assets/svg/wart-solution/step-0.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "溫水浸泡患處 5 分鐘",
+                  "en": "Soak the area in warm water for 5 minutes",
+                  "id": "Rendam area tersebut dalam air hangat selama 5 menit",
+                  "vi": "Ngâm vùng đó trong nước ấm 5 phút",
+                  "th": "แช่บริเวณนั้นในน้ำอุ่น 5 นาที",
+                  "tl": "Ibabad ang bahaging iyon sa maligamgam na tubig nang 5 minuto",
+                  "ja": "患部をぬるま湯に5分浸す"
+              },
+              note: {
+                  "zh-TW": "讓角質變軟。",
+                  "en": "This softens the thick skin.",
+                  "id": "Ini akan melunakkan kulit yang menebal.",
+                  "vi": "Bước này giúp làm mềm lớp sừng dày.",
+                  "th": "เพื่อให้ผิวหนา ๆ นุ่มลง",
+                  "tl": "Palalambutin nito ang makapal na balat.",
+                  "ja": "角質をやわらかくするため。"
+              },
+              illustration: "assets/svg/wart-solution/step-1.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "擦乾後，用浮石或磨甲刀輕磨硬皮",
+                  "en": "After drying, gently rub the hard skin with a pumice stone or nail file",
+                  "id": "Setelah kering, gosok bagian kulit yang keras secara lembut dengan batu apung atau kikir kuku",
+                  "vi": "Sau khi lau khô, dùng đá bọt hoặc dũa móng chà nhẹ phần da cứng",
+                  "th": "หลังซับแห้งแล้ว ใช้หินพัมมิสหรือตะไบเล็บขัดหนังแข็งเบา ๆ",
+                  "tl": "Pagkatapos patuyuin, dahan-dahang kiskisin ang matigas na balat gamit ang pumice stone o nail file",
+                  "ja": "乾かしてから、軽石や爪やすりで硬い皮膚をやさしくこする"
+              },
+              note: {
+                  "zh-TW": "不要磨到出血；若沒有厚硬角質，可跳過。",
+                  "en": "Do not rub until it bleeds. If there is no thick hard skin, skip this step.",
+                  "id": "Jangan sampai berdarah. Jika tidak ada lapisan kulit keras yang tebal, langkah ini boleh dilewati.",
+                  "vi": "Không chà đến mức chảy máu. Nếu không có lớp da cứng dày, có thể bỏ qua bước này.",
+                  "th": "อย่าขัดจนเลือดออก หากไม่มีหนังแข็งหนา สามารถข้ามขั้นตอนนี้ได้",
+                  "tl": "Huwag kiskisin hanggang dumugo. Kung walang makapal at matigas na balat, puwedeng laktawan ang hakbang na ito.",
+                  "ja": "出血するまでこすらない。厚く硬い皮膚がなければ、この手順は省いてよい。"
+              },
+              illustration: "assets/svg/wart-solution/step-2.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "用附刷頭薄擦第 1 層藥液",
+                  "en": "Use the brush to apply the first thin layer",
+                  "id": "Gunakan kuas untuk mengoleskan lapisan tipis pertama",
+                  "vi": "Dùng đầu cọ bôi lớp mỏng thứ nhất",
+                  "th": "ใช้หัวแปรงทายาชั้นบาง ๆ ชั้นแรก",
+                  "tl": "Gamitin ang brush para ipahid ang unang manipis na patong",
+                  "ja": "付属のブラシで1層目を薄く塗る"
+              },
+              note: {
+                  "zh-TW": "只擦在疣上，不要碰到正常皮膚。",
+                  "en": "Apply it only on the wart, not on the healthy skin around it.",
+                  "id": "Oleskan hanya pada kutil, jangan sampai mengenai kulit sehat di sekitarnya.",
+                  "vi": "Chỉ bôi lên mụn cóc, không để thuốc chạm vào vùng da lành xung quanh.",
+                  "th": "ทาเฉพาะบนหูด อย่าให้โดนผิวปกติรอบ ๆ",
+                  "tl": "Sa kulugo lamang ito ipahid at huwag mapunta sa normal na balat sa paligid.",
+                  "ja": "いぼだけに塗り、周囲の正常な皮膚につけない。"
+              },
+              illustration: "assets/svg/wart-solution/step-3.svg"
+          },
+          {
+              action: {
+                  "zh-TW": "等第 1 層乾後，再擦第 2 層",
+                  "en": "After the first coat dries, apply the second coat",
+                  "id": "Setelah lapisan pertama kering, oleskan lapisan kedua",
+                  "vi": "Đợi lớp thứ nhất khô rồi bôi lớp thứ hai",
+                  "th": "รอให้ชั้นแรกแห้งก่อน แล้วทาชั้นที่สอง",
+                  "tl": "Kapag tuyo na ang unang patong, ipahid ang ikalawang patong",
+                  "ja": "1層目が乾いたら、2層目を塗る"
+              },
+              note: {
+                  "zh-TW": "每天睡前 1 次；腳底或較大的疣，可乾後再蓋貼布。",
+                  "en": "Use it once nightly. For a foot wart or a large wart, you may cover it after it dries.",
+                  "id": "Gunakan sekali setiap malam. Untuk kutil di telapak kaki atau kutil besar, Anda boleh menutupnya setelah kering.",
+                  "vi": "Dùng 1 lần mỗi tối. Nếu là mụn cóc ở bàn chân hoặc mụn cóc lớn, có thể dán thêm sau khi thuốc khô.",
+                  "th": "ใช้วันละครั้งก่อนนอน หากเป็นหูดที่ฝ่าเท้าหรือหูดขนาดใหญ่ สามารถปิดพลาสเตอร์เพิ่มได้หลังยาแห้ง",
+                  "tl": "Gamitin isang beses gabi-gabi. Kung kulugo sa paa o malaki ang kulugo, maaari itong takpan pagkatapos matuyo.",
+                  "ja": "毎晩1回使う。足の裏や大きないぼなら、乾いてから絆創膏で覆ってよい。"
+              },
+              illustration: "assets/svg/wart-solution/step-4.svg"
+          }
+      ],
+      infoBoxes: [
+          {
+              tone: {
+                  bg: "#F2F2F2",
+                  border: "#7A7A7A",
+                  text: "#3F3F3F"
+              },
+              title: {
+                  "zh-TW": "治療時間",
+                  "en": "Treatment Timing",
+                  "id": "Waktu Pengobatan",
+                  "vi": "Thời Gian Điều Trị",
+                  "th": "ระยะเวลาในการรักษา",
+                  "tl": "Timing ng Gamutan",
+                  "ja": "治療の目安"
+              },
+              text: {
+                  "zh-TW": "每天 1 次，最好睡前。\n通常 1–2 週開始變小，4–8 週效果最明顯。\n最長連用 12 週。",
+                  "en": "Use it once daily, preferably at bedtime.\nYou may start to see shrinkage in 1 to 2 weeks, and the best effect is usually seen after 4 to 8 weeks.\nDo not continue beyond 12 weeks unless told otherwise.",
+                  "id": "Gunakan sekali sehari, sebaiknya sebelum tidur.\nKutil bisa mulai mengecil dalam 1 sampai 2 minggu, dan hasil terbaik biasanya terlihat setelah 4 sampai 8 minggu.\nJangan gunakan lebih dari 12 minggu kecuali ada petunjuk lain.",
+                  "vi": "Dùng 1 lần mỗi ngày, tốt nhất trước khi ngủ.\nMụn cóc có thể bắt đầu nhỏ lại sau 1 đến 2 tuần, và hiệu quả rõ nhất thường thấy sau 4 đến 8 tuần.\nKhông nên dùng quá 12 tuần trừ khi được dặn khác.",
+                  "th": "ใช้วันละ 1 ครั้ง โดยเฉพาะก่อนนอน\nหูดอาจเริ่มเล็กลงใน 1–2 สัปดาห์ และมักเห็นผลชัดที่สุดใน 4–8 สัปดาห์\nไม่ควรใช้เกิน 12 สัปดาห์ เว้นแต่แพทย์สั่งไว้ต่างจากนี้",
+                  "tl": "Gamitin isang beses bawat araw, mas mainam bago matulog.\nMaaaring magsimulang lumiit ang kulugo sa loob ng 1 hanggang 2 linggo, at kadalasang pinakamalinaw ang epekto pagkalipas ng 4 hanggang 8 linggo.\nHuwag ituloy lampas 12 linggo maliban kung may ibang bilin.",
+                  "ja": "1日1回、できれば就寝前に使う。\n1〜2週間で小さくなり始めることがあり、4〜8週間で効果が最も分かりやすいことが多い。\n特別な指示がない限り、12週間を超えて続けない。"
               }
           }
       ],
+      storage: {
+          title: {
+              "zh-TW": "藥品保存",
+              "en": "Storage",
+              "id": "Penyimpanan",
+              "vi": "Bảo quản",
+              "th": "การเก็บรักษา",
+              "tl": "Imbakan",
+              "ja": "保管方法"
+          },
+          text: {
+              "zh-TW": "室溫保存，瓶蓋隨手蓋緊。\n含酒精，使用時與剛擦完都要遠離火源。",
+              "en": "Store at room temperature and close the bottle tightly after use.\nIt contains alcohol, so keep it away from flames during use and right after application.",
+              "id": "Simpan pada suhu ruang dan tutup botol rapat setelah dipakai.\nObat ini mengandung alkohol, jadi jauhkan dari api saat digunakan dan segera setelah dioleskan.",
+              "vi": "Bảo quản ở nhiệt độ phòng và đậy kín nắp chai sau khi dùng.\nThuốc có chứa cồn, vì vậy phải tránh lửa trong lúc dùng và ngay sau khi bôi.",
+              "th": "เก็บที่อุณหภูมิห้องและปิดฝาขวดให้แน่นหลังใช้\nยานี้มีแอลกอฮอล์ จึงต้องอยู่ห่างจากเปลวไฟระหว่างใช้และทันทีหลังทา",
+              "tl": "Itago sa room temperature at isarang mabuti ang bote pagkatapos gamitin.\nMay alkohol ito kaya dapat ilayo sa apoy habang ginagamit at kaagad pagkatapos ipahid.",
+              "ja": "室温で保存し、使用後はボトルをしっかり閉める。\nアルコールを含むため、使用中と塗布直後は火気を避ける。"
+          }
+      },
       warnings: [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              "zh-TW": "臉、生殖器、肛門、痣、胎記、破皮、發炎或感染處不要用。",
+              "en": "Do not use it on the face, genitals, anus, moles, birthmarks, broken skin, or inflamed or infected skin.",
+              "id": "Jangan gunakan pada wajah, kelamin, anus, tahi lalat, tanda lahir, kulit terluka, atau kulit yang meradang atau terinfeksi.",
+              "vi": "Không dùng cho mặt, cơ quan sinh dục, hậu môn, nốt ruồi, bớt, da trầy xước, da viêm hoặc da nhiễm trùng.",
+              "th": "ห้ามใช้กับใบหน้า อวัยวะเพศ ทวารหนัก ไฝ ปาน ผิวถลอก ผิวอักเสบ หรือผิวติดเชื้อ",
+              "tl": "Huwag gamitin sa mukha, ari, puwit, nunal, birthmark, sugat na balat, o balat na namamaga o may impeksiyon.",
+              "ja": "顔・外陰部・肛門・ほくろ・あざ・傷のある皮膚・炎症や感染のある皮膚には使わない。"
+          },
+          {
+              "zh-TW": "糖尿病、血液循環差或手腳感覺差時，先問醫師。",
+              "en": "Ask your doctor first if you have diabetes, poor circulation, or reduced feeling in the hands or feet.",
+              "id": "Tanyakan kepada dokter terlebih dahulu jika Anda menderita diabetes, sirkulasi darah buruk, atau kurang rasa pada tangan atau kaki.",
+              "vi": "Hãy hỏi bác sĩ trước nếu bạn bị đái tháo đường, tuần hoàn kém hoặc giảm cảm giác ở tay chân.",
+              "th": "หากเป็นเบาหวาน การไหลเวียนเลือดไม่ดี หรือมีความรู้สึกที่มือเท้าลดลง ให้ปรึกษาแพทย์ก่อน",
+              "tl": "Magtanong muna sa doktor kung may diabetes, mahinang sirkulasyon, o mahina ang pakiramdam sa kamay o paa.",
+              "ja": "糖尿病・血行不良・手足の感覚低下がある場合は、先に医師へ相談する。"
+          },
+          {
+              "zh-TW": "2 歲以下不要用；12 歲以下需成人協助。",
+              "en": "Do not use it in children under 2 years old. Children under 12 should use it with adult help.",
+              "id": "Jangan gunakan pada anak di bawah 2 tahun. Anak di bawah 12 tahun sebaiknya memakai obat ini dengan bantuan orang dewasa.",
+              "vi": "Không dùng cho trẻ dưới 2 tuổi. Trẻ dưới 12 tuổi cần có người lớn hỗ trợ khi dùng.",
+              "th": "ห้ามใช้ในเด็กอายุต่ำกว่า 2 ปี และเด็กอายุต่ำกว่า 12 ปีควรมีผู้ใหญ่ช่วยใช้",
+              "tl": "Huwag gamitin sa batang wala pang 2 taong gulang. Ang mga batang wala pang 12 ay dapat may tulong ng nakatatanda sa paggamit.",
+              "ja": "2歳未満には使わない。12歳未満は大人の手助けのもとで使う。"
           }
       ],
       qrUrl: "https://pharmacy.example.com/meds/duofilm-solution"
