@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="22" y="18" width="116" height="84" rx="16"/>
+  <circle cx="48" cy="46" r="4" fill="#1A1A1A"/>
+  <circle cx="64" cy="46" r="4"/>
+  <circle cx="80" cy="46" r="4"/>
+  <circle cx="96" cy="46" r="4"/>
+  <circle cx="112" cy="46" r="4"/>
+  <circle cx="48" cy="64" r="4"/>
+  <circle cx="64" cy="64" r="4" fill="#1A1A1A"/>
+  <circle cx="80" cy="64" r="4"/>
+  <circle cx="96" cy="64" r="4"/>
+  <circle cx="112" cy="64" r="4"/>
+  <path d="M50 30c8-6 18-9 30-9"/>
+  <path d="M76 25l8-4-2 8"/>
+  <path d="M52 84c8 0 14 0 18 0"/>
+  <path d="M52 88c4-8 8-12 14-12s10 4 14 12"/>
+  <path d="M66 74v14"/>
+  <text x="108" y="84" text-anchor="middle" font-size="10" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">1 finger</text>
+</svg>

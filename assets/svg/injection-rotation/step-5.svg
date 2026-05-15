@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M44 16c10 0 18 8 18 18v9H26v-9c0-10 8-18 18-18z"/>
+  <path d="M26 46h36l6 50H20l6-50z"/>
+  <rect x="20" y="54" width="10" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B"/>
+  <path d="M20 42c0-8 6-14 14-14" stroke="#C53131"/>
+  <path d="M18 38l6 6M24 38l-6 6" stroke="#C53131"/>
+  <path d="M112 16c10 0 18 8 18 18v9H94v-9c0-10 8-18 18-18z"/>
+  <path d="M94 46h36l6 50H88l6-50z"/>
+  <rect x="104" y="52" width="16" height="28" rx="6" fill="#FAEEDA" stroke="#854F0B"/>
+  <rect x="96" y="58" width="8" height="20" rx="4" fill="#FAEEDA" stroke="#854F0B"/>
+  <path d="M112 84c8 0 14-6 14-14" stroke="#2F8A48"/>
+  <path d="M126 70l-2 7-6-4" stroke="#2F8A48"/>
+  <text x="44" y="109" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">avoid elbow / inner area</text>
+  <text x="112" y="109" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">outer arm / thigh</text>
+</svg>

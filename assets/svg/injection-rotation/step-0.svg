@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M80 14c18 0 30 11 30 28v34H50V42c0-17 12-28 30-28z"/>
+  <path d="M56 88c8-4 16-6 24-6s16 2 24 6"/>
+  <circle cx="63" cy="48" r="9" stroke="#C53131"/>
+  <path d="M58 43l10 10M68 43L58 53" stroke="#C53131"/>
+  <circle cx="97" cy="60" r="8" stroke="#C53131"/>
+  <path d="M91 60c2-3 4-4 6-4s4 1 6 4" stroke="#C53131"/>
+  <path d="M91 64c2-2 4-3 6-3s4 1 6 3" stroke="#C53131"/>
+  <path d="M76 64c2-2 5-2 7 0s2 5 0 7-5 2-7 0-2-5 0-7z" stroke="#C53131"/>
+  <path d="M72 29h16" stroke="#2F8A48"/>
+  <path d="M76 25l-4 4 4 4" stroke="#2F8A48"/>
+  <path d="M84 25l4 4-4 4" stroke="#2F8A48"/>
+  <text x="80" y="108" text-anchor="middle" font-size="9" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">avoid lumps / scars</text>
+</svg>

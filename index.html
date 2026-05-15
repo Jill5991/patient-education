@@ -689,6 +689,25 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   font-size: 16px;
   line-height: 1.55;
 }
+.ref-ntg-rotation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ref-ntg-rotation-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ref-ntg-rotation-label {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.ref-ntg-rotation-body {
+  font-size: 16px;
+  line-height: 1.6;
+}
 .ref-ntg-warn {
   padding: 10px 20px 10px 24px;
   border-left: 4px solid;
@@ -17637,6 +17656,762 @@ const MEDICATIONS = [
 
 ]; // end MEDICATIONS
 
+const INJECTION_PEN_IDS = new Set([
+  "novorapid",
+  "apidra",
+  "novomix-30",
+  "humalog-mix50",
+  "ryzodeg",
+  "levemir",
+  "toujeo",
+  "tresiba",
+  "victoza",
+  "trulicity",
+  "ozempic",
+  "mounjaro",
+  "soliqua"
+]);
+
+const GLP1_STYLE_PEN_IDS = new Set([
+  "victoza",
+  "trulicity",
+  "ozempic",
+  "mounjaro",
+  "soliqua"
+]);
+
+const I18N_CODES = ["zh-TW", "en", "id", "vi", "th", "tl", "ja"];
+
+function tx(zh, en, id, vi, th, tl, ja) {
+  return { "zh-TW": zh, en, id, vi, th, tl, ja };
+}
+
+function cloneValue(value) {
+  return value == null ? value : JSON.parse(JSON.stringify(value));
+}
+
+function appendLocalizedLine(baseMap, extraMap) {
+  const out = {};
+  I18N_CODES.forEach((code) => {
+    const base = (baseMap && (baseMap[code] || baseMap.en)) || "";
+    const extra = (extraMap && (extraMap[code] || extraMap.en)) || "";
+    out[code] = base && extra ? `${base}\n${extra}` : (base || extra);
+  });
+  return out;
+}
+
+function pickLocalized(map, code) {
+  return (map && (map[code] || map.en)) || "";
+}
+
+function upperFirst(text) {
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+}
+
+const STORAGE_DURATION = {
+  fourWeeks: tx(
+    "4 週內用完",
+    "use within 4 weeks",
+    "gunakan dalam 4 minggu",
+    "dùng hết trong 4 tuần",
+    "ใช้ให้หมดภายใน 4 สัปดาห์",
+    "gamitin sa loob ng 4 na linggo",
+    "4週間以内に使い切る"
+  ),
+  sixWeeks: tx(
+    "6 週內用完",
+    "use within 6 weeks",
+    "gunakan dalam 6 minggu",
+    "dùng hết trong 6 tuần",
+    "ใช้ให้หมดภายใน 6 สัปดาห์",
+    "gamitin sa loob ng 6 na linggo",
+    "6週間以内に使い切る"
+  ),
+  eightWeeks: tx(
+    "8 週內用完",
+    "use within 8 weeks",
+    "gunakan dalam 8 minggu",
+    "dùng hết trong 8 tuần",
+    "ใช้ให้หมดภายใน 8 สัปดาห์",
+    "gamitin sa loob ng 8 na linggo",
+    "8週間以内に使い切る"
+  ),
+  twentyEightDays: tx(
+    "28 天內用完",
+    "use within 28 days",
+    "gunakan dalam 28 hari",
+    "dùng hết trong 28 ngày",
+    "ใช้ให้หมดภายใน 28 วัน",
+    "gamitin sa loob ng 28 araw",
+    "28日以内に使い切る"
+  ),
+  thirtyDays: tx(
+    "30 天內用完",
+    "use within 30 days",
+    "gunakan dalam 30 hari",
+    "dùng hết trong 30 ngày",
+    "ใช้ให้หมดภายใน 30 วัน",
+    "gamitin sa loob ng 30 araw",
+    "30日以内に使い切る"
+  ),
+  fiftySixDays: tx(
+    "56 天內用完",
+    "use within 56 days",
+    "gunakan dalam 56 hari",
+    "dùng hết trong 56 ngày",
+    "ใช้ให้หมดภายใน 56 วัน",
+    "gamitin sa loob ng 56 araw",
+    "56日以内に使い切る"
+  )
+};
+
+const ROOM_TEMP_LABEL = {
+  le25: tx("≤25°C", "up to 25°C", "hingga 25°C", "đến 25°C", "ไม่เกิน 25°C", "hanggang 25°C", "25°C以下"),
+  le30: tx("≤30°C", "up to 30°C", "hingga 30°C", "đến 30°C", "ไม่เกิน 30°C", "hanggang 30°C", "30°C以下"),
+  lt30: tx("<30°C", "below 30°C", "di bawah 30°C", "dưới 30°C", "ต่ำกว่า 30°C", "mas mababa sa 30°C", "30°C未満"),
+  range15to30: tx("15–30°C", "15–30°C", "15–30°C", "15–30°C", "15–30°C", "15–30°C", "15–30°C")
+};
+
+function buildDualStorageText(roomMap, durationMap) {
+  return tx(
+    `未開封：放冰箱冷藏室 2–8°C，勿放冷凍室，避光保存。\n開始使用後：依原廠規定，可冷藏或放室溫 ${pickLocalized(roomMap, "zh-TW")}；${pickLocalized(durationMap, "zh-TW")}。若環境長時間高於建議室溫，請避開日曬、車內與熱源，必要時可放回冰箱冷藏室。注射前可先回溫到室溫。`,
+    `Unopened: keep in a refrigerator at 2–8°C. Do not freeze. Protect from light.\nIn use: according to the manufacturer, you may keep it refrigerated or at room temperature ${pickLocalized(roomMap, "en")}. ${upperFirst(pickLocalized(durationMap, "en"))}. If the environment stays above the recommended temperature for a long time, protect it from sunlight, parked cars, and heat. If needed, you may return it to the refrigerator. Let it come back to room temperature before injecting.`,
+    `Belum dibuka: simpan di lemari es 2–8°C, jangan dibekukan, dan lindungi dari cahaya.\nSaat sedang digunakan: sesuai petunjuk pabrik, pena boleh disimpan di lemari es atau pada suhu ruang ${pickLocalized(roomMap, "id")}; ${pickLocalized(durationMap, "id")}. Jika lingkungan lama berada di atas suhu yang dianjurkan, jauhkan dari sinar matahari, mobil yang terparkir, dan sumber panas. Bila perlu, pena boleh dikembalikan ke lemari es. Biarkan kembali ke suhu ruang sebelum disuntikkan.`,
+    `Chưa mở: bảo quản trong ngăn mát tủ lạnh 2–8°C, không được đông lạnh và tránh ánh sáng.\nKhi đang dùng: theo hướng dẫn của hãng, có thể bảo quản lạnh hoặc ở nhiệt độ phòng ${pickLocalized(roomMap, "vi")}; ${pickLocalized(durationMap, "vi")}. Nếu môi trường ở lâu trên mức nhiệt được khuyến nghị, hãy tránh nắng, xe đỗ kín và nguồn nhiệt. Khi cần, có thể cất lại vào ngăn mát tủ lạnh. Trước khi tiêm, hãy để bút trở lại nhiệt độ phòng.`,
+    `ก่อนใช้: เก็บในตู้เย็นช่องธรรมดา 2–8°C ห้ามแช่แข็ง และเก็บให้พ้นแสง\nเมื่อเริ่มใช้แล้ว: ตามคำแนะนำของผู้ผลิต สามารถเก็บในตู้เย็นหรือที่อุณหภูมิห้อง ${pickLocalized(roomMap, "th")} ได้; ${pickLocalized(durationMap, "th")} หากต้องอยู่ในสภาพแวดล้อมที่ร้อนเกินอุณหภูมิที่แนะนำเป็นเวลานาน ให้หลีกเลี่ยงแสงแดด รถที่จอดตากแดด และแหล่งความร้อน หากจำเป็นสามารถนำกลับเข้าตู้เย็นได้ และควรรอให้ยากลับสู่อุณหภูมิห้องก่อนฉีด`,
+    `Bago buksan: itago sa refrigerator na 2–8°C, huwag i-freeze, at ilayo sa liwanag.\nHabang ginagamit: ayon sa tagagawa, maaaring itago sa refrigerator o sa room temperature na ${pickLocalized(roomMap, "tl")}; ${pickLocalized(durationMap, "tl")}. Kung matagal na mas mainit kaysa sa inirerekomendang temperatura ang paligid, ilayo ito sa sikat ng araw, nakaparadang sasakyan, at init. Kung kailangan, maaari itong ibalik sa refrigerator. Hayaang bumalik sa room temperature bago magturok.`,
+    `未開封：冷蔵室 2–8°C で保管し、凍結させず、遮光して保存する。\n使用開始後：メーカー指示に従い、冷蔵または ${pickLocalized(roomMap, "ja")} の室温で保存できる。${pickLocalized(durationMap, "ja")}。高温環境が長く続く場合は、直射日光、車内、熱源を避け、必要なら冷蔵室へ戻してよい。注射前には室温に戻す。`
+  );
+}
+
+function buildRoomOnlyStorageText(roomMap, durationMap) {
+  return tx(
+    `未開封：放冰箱冷藏室 2–8°C，勿放冷凍室，避光保存。\n開始使用後：依原廠規定，放室溫 ${pickLocalized(roomMap, "zh-TW")} 保存，不建議再放回冰箱；${pickLocalized(durationMap, "zh-TW")}。若環境長時間高於建議室溫，請避開日曬、車內與熱源，可用保冷袋或隔熱包幫助降溫，但不要直接接觸冰塊或冷媒。注射前可先回溫到室溫。`,
+    `Unopened: keep in a refrigerator at 2–8°C. Do not freeze. Protect from light.\nIn use: according to the manufacturer, keep it at room temperature ${pickLocalized(roomMap, "en")} and do not routinely put it back in the refrigerator. ${upperFirst(pickLocalized(durationMap, "en"))}. If the environment stays above the recommended temperature for a long time, protect it from sunlight, parked cars, and heat. You may use an insulated cooling bag, but do not let it touch ice or a cold pack directly. Let it come back to room temperature before injecting.`,
+    `Belum dibuka: simpan di lemari es 2–8°C, jangan dibekukan, dan lindungi dari cahaya.\nSaat sedang digunakan: sesuai petunjuk pabrik, simpan pada suhu ruang ${pickLocalized(roomMap, "id")} dan tidak dianjurkan untuk dimasukkan kembali ke lemari es; ${pickLocalized(durationMap, "id")}. Jika lingkungan lama berada di atas suhu yang dianjurkan, jauhkan dari sinar matahari, mobil yang terparkir, dan sumber panas. Anda boleh memakai tas pendingin berinsulasi, tetapi jangan sampai pena menyentuh es atau cold pack secara langsung. Biarkan kembali ke suhu ruang sebelum disuntikkan.`,
+    `Chưa mở: bảo quản trong ngăn mát tủ lạnh 2–8°C, không được đông lạnh và tránh ánh sáng.\nKhi đang dùng: theo hướng dẫn của hãng, bảo quản ở nhiệt độ phòng ${pickLocalized(roomMap, "vi")} và không nên tự ý cất lại vào tủ lạnh; ${pickLocalized(durationMap, "vi")}. Nếu môi trường ở lâu trên mức nhiệt được khuyến nghị, hãy tránh nắng, xe đỗ kín và nguồn nhiệt. Có thể dùng túi giữ mát cách nhiệt, nhưng không để bút chạm trực tiếp vào đá hoặc túi lạnh. Trước khi tiêm, hãy để bút trở lại nhiệt độ phòng.`,
+    `ก่อนใช้: เก็บในตู้เย็นช่องธรรมดา 2–8°C ห้ามแช่แข็ง และเก็บให้พ้นแสง\nเมื่อเริ่มใช้แล้ว: ตามคำแนะนำของผู้ผลิต ให้เก็บที่อุณหภูมิห้อง ${pickLocalized(roomMap, "th")} และไม่แนะนำให้นำกลับเข้าตู้เย็น; ${pickLocalized(durationMap, "th")} หากต้องอยู่ในสภาพแวดล้อมที่ร้อนเกินอุณหภูมิที่แนะนำเป็นเวลานาน ให้หลีกเลี่ยงแสงแดด รถที่จอดตากแดด และแหล่งความร้อน สามารถใช้กระเป๋าเก็บความเย็นแบบมีฉนวนช่วยลดความร้อนได้ แต่ห้ามให้ปากกาแตะน้ำแข็งหรือเจลเย็นโดยตรง และควรรอให้ยากลับสู่อุณหภูมิห้องก่อนฉีด`,
+    `Bago buksan: itago sa refrigerator na 2–8°C, huwag i-freeze, at ilayo sa liwanag.\nHabang ginagamit: ayon sa tagagawa, itago sa room temperature na ${pickLocalized(roomMap, "tl")} at hindi inirerekomendang ibalik sa refrigerator; ${pickLocalized(durationMap, "tl")}. Kung matagal na mas mainit kaysa sa inirerekomendang temperatura ang paligid, ilayo ito sa sikat ng araw, nakaparadang sasakyan, at init. Maaari kang gumamit ng insulated cooling bag, pero huwag hayaang direktang dumikit ang pen sa yelo o cold pack. Hayaang bumalik sa room temperature bago magturok.`,
+    `未開封：冷蔵室 2–8°C で保管し、凍結させず、遮光して保存する。\n使用開始後：メーカー指示に従い、${pickLocalized(roomMap, "ja")} の室温で保存し、通常は冷蔵庫へ戻さない。${pickLocalized(durationMap, "ja")}。高温環境が長く続く場合は、直射日光、車内、熱源を避け、保冷バッグの使用はよいが、氷や保冷剤に直接触れさせない。注射前には室温に戻す。`
+  );
+}
+
+function buildMounjaroStorageText() {
+  return tx(
+    "未開封：放冰箱冷藏室 2–8°C，勿放冷凍室，避光保存。\n開始使用後：可放室溫 ≤30°C 保存；30 天後或用滿 4 劑就丟棄。",
+    "Unopened: keep in a refrigerator at 2–8°C. Do not freeze. Protect from light.\nIn use: keep at room temperature up to 30°C. Discard after 30 days or after all 4 doses have been used.",
+    "Belum dibuka: simpan di lemari es 2–8°C, jangan dibekukan, dan lindungi dari cahaya.\nSaat sedang digunakan: simpan pada suhu ruang hingga 30°C. Buang setelah 30 hari atau setelah keempat dosis habis digunakan.",
+    "Chưa mở: bảo quản trong ngăn mát tủ lạnh 2–8°C, không được đông lạnh và tránh ánh sáng.\nKhi đang dùng: bảo quản ở nhiệt độ phòng đến 30°C. Bỏ đi sau 30 ngày hoặc sau khi đã dùng đủ 4 liều.",
+    "ก่อนใช้: เก็บในตู้เย็นช่องธรรมดา 2–8°C ห้ามแช่แข็ง และเก็บให้พ้นแสง\nเมื่อเริ่มใช้แล้ว: เก็บที่อุณหภูมิห้องไม่เกิน 30°C ทิ้งหลังครบ 30 วันหรือเมื่อใช้ครบ 4 โดส",
+    "Bago buksan: itago sa refrigerator na 2–8°C, huwag i-freeze, at ilayo sa liwanag.\nHabang ginagamit: itago sa room temperature hanggang 30°C. Itapon pagkalipas ng 30 araw o kapag nagamit na ang lahat ng 4 na dosis.",
+    "未開封：冷蔵室 2–8°C で保管し、凍結させず、遮光して保存する。\n使用開始後：30°C以下の室温で保存する。30日後、または4回分を使い切ったら廃棄する。"
+  );
+}
+
+function buildTrulicityStorageText() {
+  return tx(
+    "未使用前：放冰箱冷藏室 2–8°C，勿放冷凍室，建議放回原盒避光。\n若暫時無法冷藏，可放室溫 <30°C 最多 14 天。",
+    "Before use: keep in a refrigerator at 2–8°C. Do not freeze. Keep it in the original carton to protect from light.\nIf you temporarily cannot refrigerate it, you may keep it at room temperature below 30°C for up to 14 days.",
+    "Sebelum digunakan: simpan di lemari es 2–8°C, jangan dibekukan, dan simpan dalam kotak aslinya agar terlindung dari cahaya.\nJika sementara waktu tidak dapat didinginkan, pena dapat disimpan pada suhu ruang di bawah 30°C sampai 14 hari.",
+    "Trước khi dùng: bảo quản trong ngăn mát tủ lạnh 2–8°C, không được đông lạnh và nên để trong hộp gốc để tránh ánh sáng.\nNếu tạm thời không thể bảo quản lạnh, có thể để ở nhiệt độ phòng dưới 30°C tối đa 14 ngày.",
+    "ก่อนใช้: เก็บในตู้เย็นช่องธรรมดา 2–8°C ห้ามแช่แข็ง และควรเก็บไว้ในกล่องเดิมเพื่อกันแสง\nหากจำเป็นและไม่สามารถแช่เย็นชั่วคราวได้ สามารถเก็บที่อุณหภูมิห้องต่ำกว่า 30°C ได้ไม่เกิน 14 วัน",
+    "Bago gamitin: itago sa refrigerator na 2–8°C, huwag i-freeze, at panatilihin sa orihinal na kahon upang maprotektahan sa liwanag.\nKung pansamantalang hindi ito mai-refrigerate, maaari itong itago sa room temperature na mas mababa sa 30°C hanggang 14 na araw.",
+    "使用前：冷蔵室 2–8°C で保管し、凍結させず、遮光のため元の箱に入れておく。\n一時的に冷蔵できない場合は、30°C未満の室温で最長14日間保存できる。"
+  );
+}
+
+const INJECTION_STORAGE_TEXT_OVERRIDES = {
+  novorapid: buildDualStorageText(ROOM_TEMP_LABEL.le30, STORAGE_DURATION.fourWeeks),
+  apidra: buildRoomOnlyStorageText(ROOM_TEMP_LABEL.le25, STORAGE_DURATION.twentyEightDays),
+  "novomix-30": buildRoomOnlyStorageText(ROOM_TEMP_LABEL.lt30, STORAGE_DURATION.fourWeeks),
+  "humalog-mix50": buildRoomOnlyStorageText(ROOM_TEMP_LABEL.lt30, STORAGE_DURATION.twentyEightDays),
+  ryzodeg: buildDualStorageText(ROOM_TEMP_LABEL.le30, STORAGE_DURATION.fourWeeks),
+  levemir: buildDualStorageText(ROOM_TEMP_LABEL.le30, STORAGE_DURATION.sixWeeks),
+  toujeo: buildRoomOnlyStorageText(ROOM_TEMP_LABEL.le30, STORAGE_DURATION.fiftySixDays),
+  tresiba: buildDualStorageText(ROOM_TEMP_LABEL.le30, STORAGE_DURATION.eightWeeks),
+  victoza: buildDualStorageText(ROOM_TEMP_LABEL.le30, STORAGE_DURATION.thirtyDays),
+  trulicity: buildTrulicityStorageText(),
+  ozempic: buildDualStorageText(ROOM_TEMP_LABEL.range15to30, STORAGE_DURATION.fiftySixDays),
+  mounjaro: buildMounjaroStorageText(),
+  soliqua: buildRoomOnlyStorageText(ROOM_TEMP_LABEL.le25, STORAGE_DURATION.twentyEightDays)
+};
+
+const PEN_HOLD_UNTIL_WITHDRAW_NOTE = tx(
+  "拇指持續按住按鈕，不可鬆開，直到拔出針頭，可減少藥液滲漏，也較不容易讓血液回吸進筆管。",
+  "Keep your thumb pressing the button and do not let go until the needle is out. This helps reduce medicine leakage and makes blood less likely to flow back into the pen.",
+  "Tetap tekan tombol dengan ibu jari dan jangan lepaskan sampai jarum ditarik keluar. Ini membantu mengurangi kebocoran obat dan membuat darah lebih kecil kemungkinannya masuk kembali ke dalam pena.",
+  "Giữ ngón cái ấn nút liên tục và không buông ra cho đến khi rút kim ra. Cách này giúp giảm rò thuốc và giảm nguy cơ máu chảy ngược vào bút.",
+  "ใช้นิ้วโป้งกดปุ่มค้างไว้และอย่าปล่อยจนกว่าจะดึงเข็มออก วิธีนี้ช่วยลดการรั่วของยาและช่วยลดโอกาสที่เลือดจะไหลย้อนกลับเข้าไปในปากกา",
+  "Panatilihing nakapindot ang button gamit ang hinlalaki at huwag bibitaw hanggang mahugot ang karayom. Nakakatulong ito para mabawasan ang tagas ng gamot at para mas mababa ang posibilidad na pumasok ang dugo pabalik sa pen.",
+  "親指でボタンを押したまま、針を抜くまで離さない。こうすると薬液の漏れを減らし、血液がペン内へ逆流しにくくなる。"
+);
+
+const PEN_HOLD_UNTIL_WITHDRAW_NOTE_WITHOUT_THUMB = tx(
+  "按鈕要持續壓住，不可鬆開，直到拔出針頭，可減少藥液滲漏，也較不容易讓血液回吸進筆管。",
+  "Keep the button pressed and do not let go until the needle is out. This helps reduce medicine leakage and makes blood less likely to flow back into the pen.",
+  "Tahan tombol tetap ditekan dan jangan lepaskan sampai jarum ditarik keluar. Ini membantu mengurangi kebocoran obat dan membuat darah lebih kecil kemungkinannya masuk kembali ke dalam pena.",
+  "Giữ nút ấn liên tục và không buông ra cho đến khi rút kim ra. Cách này giúp giảm rò thuốc và giảm nguy cơ máu chảy ngược vào bút.",
+  "กดปุ่มค้างไว้และอย่าปล่อยจนกว่าจะดึงเข็มออก วิธีนี้ช่วยลดการรั่วของยาและช่วยลดโอกาสที่เลือดจะไหลย้อนกลับเข้าไปในปากกา",
+  "Panatilihing nakapindot ang button at huwag bibitaw hanggang mahugot ang karayom. Nakakatulong ito para mabawasan ang tagas ng gamot at para mas mababa ang posibilidad na pumasok ang dugo pabalik sa pen.",
+  "ボタンを押したまま、針を抜くまで離さない。こうすると薬液の漏れを減らし、血液がペン内へ逆流しにくくなる。"
+);
+
+const INJECT_PAGE_A_LABEL = tx(
+  "A 面｜注射步驟",
+  "Side A | Injection steps",
+  "Sisi A | Langkah suntik",
+  "Mặt A | Các bước tiêm",
+  "ด้าน A | ขั้นตอนการฉีด",
+  "Side A | Mga hakbang sa iniksyon",
+  "A面｜注射手順"
+);
+
+const INJECT_PAGE_B_LABEL = tx(
+  "B 面｜輪替部位",
+  "Side B | Rotation sites",
+  "Sisi B | Rotasi lokasi",
+  "Mặt B | Luân phiên vị trí",
+  "ด้าน B | การสลับตำแหน่งฉีด",
+  "Side B | Pagpapalit ng lugar",
+  "B面｜部位ローテーション"
+);
+
+const INJECT_PAGE_A_HINT = tx(
+  "輪替注射部位與避開硬塊，請看 B 面。",
+  "See Side B for site rotation and how to avoid lumps.",
+  "Lihat Sisi B untuk rotasi lokasi suntikan dan cara menghindari benjolan.",
+  "Xem Mặt B để biết cách luân phiên vị trí tiêm và tránh chỗ nổi cục.",
+  "ดูด้าน B สำหรับการสลับตำแหน่งฉีดและการหลีกเลี่ยงก้อนแข็ง",
+  "Tingnan ang Side B para sa rotation ng lugar ng turok at pag-iwas sa mga bukol.",
+  "注射部位のローテーションとしこりの避け方はB面を参照。"
+);
+
+function getInjectionRotationSiteNote(medId) {
+  if (GLP1_STYLE_PEN_IDS.has(medId)) {
+    return tx(
+      "腹部、大腿或上臂可用。若也打胰島素，兩針不要太近。詳細輪替方式請看 B 面。",
+      "Use the abdomen, thigh, or upper arm. If you also use insulin, do not place the two injections too close together. See Side B for the full rotation method.",
+      "Gunakan perut, paha, atau lengan atas. Jika juga memakai insulin, jangan terlalu mendekatkan dua suntikan. Lihat Sisi B untuk cara rotasi lengkap.",
+      "Có thể tiêm ở bụng, đùi hoặc cánh tay trên. Nếu cũng tiêm insulin, hai mũi không nên quá gần nhau. Xem Mặt B để biết cách luân phiên đầy đủ.",
+      "ฉีดได้ที่หน้าท้อง ต้นขา หรือแขนส่วนบน หากฉีดอินซูลินด้วย อย่าฉีดสองเข็มใกล้กันเกินไป ดูด้าน B สำหรับวิธีสลับตำแหน่งแบบเต็ม",
+      "Maaaring sa tiyan, hita, o itaas na braso. Kung gumagamit din ng insulin, huwag masyadong paglapitin ang dalawang turok. Tingnan ang Side B para sa buong paraan ng pag-rotate.",
+      "腹部・大腿・上腕に注射できる。インスリンも使う場合は、2か所を近づけすぎない。詳しいローテーションはB面を参照。"
+    );
+  }
+  return tx(
+    "腹部、大腿或上臂可用。詳細輪替方式請看 B 面。",
+    "Use the abdomen, thigh, or upper arm. See Side B for the full rotation method.",
+    "Gunakan perut, paha, atau lengan atas. Lihat Sisi B untuk cara rotasi lengkap.",
+    "Có thể tiêm ở bụng, đùi hoặc cánh tay trên. Xem Mặt B để biết cách luân phiên đầy đủ.",
+    "ฉีดได้ที่หน้าท้อง ต้นขา หรือแขนส่วนบน ดูด้าน B สำหรับวิธีสลับตำแหน่งแบบเต็ม",
+    "Maaaring sa tiyan, hita, o itaas na braso. Tingnan ang Side B para sa buong paraan ng pag-rotate.",
+    "腹部・大腿・上腕に注射できる。詳しいローテーションはB面を参照。"
+  );
+}
+
+const INJECT_PAGE_A_CLEAN_HINT = tx(
+  "等酒精乾後再打。詳細輪替方式請看 B 面。",
+  "Let the alcohol dry before injecting. See Side B for the full rotation method.",
+  "Tunggu alkohol mengering sebelum menyuntik. Lihat Sisi B untuk cara rotasi lengkap.",
+  "Chờ cồn khô rồi mới tiêm. Xem Mặt B để biết cách luân phiên đầy đủ.",
+  "รอให้แอลกอฮอล์แห้งก่อนฉีด ดูด้าน B สำหรับวิธีสลับตำแหน่งแบบเต็ม",
+  "Hayaang matuyo ang alcohol bago magturok. Tingnan ang Side B para sa buong paraan ng pag-rotate.",
+  "アルコールが乾いてから打つ。詳しいローテーションはB面を参照。"
+);
+
+function buildInjectionFrontPage(med) {
+  const steps = cloneValue(med.steps || []);
+  steps.forEach((step) => {
+    const actionZh = (step && step.action && step.action["zh-TW"]) || "";
+    if (/選擇注射部位/.test(actionZh)) {
+      step.note = getInjectionRotationSiteNote(med.id);
+    }
+    if (/消毒注射部位|消毒皮膚/.test(actionZh)) {
+      step.note = INJECT_PAGE_A_CLEAN_HINT;
+    }
+  });
+
+  const preStepsInfo = cloneValue(med.preStepsInfo || null);
+  if (preStepsInfo && preStepsInfo.text) {
+    preStepsInfo.text = appendLocalizedLine(preStepsInfo.text, INJECT_PAGE_A_HINT);
+  }
+
+  return {
+    pageLabel: INJECT_PAGE_A_LABEL,
+    headerBadge: INJECT_PAGE_A_LABEL,
+    preStepsInfo,
+    steps,
+    infoBoxes: cloneValue(med.infoBoxes || []),
+    storage: cloneValue(med.storage || null),
+    warnings: cloneValue(med.warnings || []),
+    qrUrl: med.qrUrl || ""
+  };
+}
+
+function buildInjectionRotationPage(med) {
+  const isGlp1Style = GLP1_STYLE_PEN_IDS.has(med.id);
+  const neutralTone = { bg: "#F2F2F2", border: "#7A7A7A", text: "#3F3F3F" };
+
+  const steps = [
+    {
+      section: tx(
+        "可以打哪裡",
+        "Where can you inject?",
+        "Di mana boleh menyuntik?",
+        "Có thể tiêm ở đâu?",
+        "ฉีดตรงไหนได้บ้าง",
+        "Saan maaaring magturok?",
+        "どこに打てる？"
+      ),
+      action: tx(
+        "先選一側和一個部位",
+        "Choose one side and one body area first",
+        "Pilih dulu satu sisi dan satu bagian tubuh",
+        "Trước hết chọn một bên và một vị trí tiêm",
+        "เริ่มจากเลือก 1 ข้างและ 1 ตำแหน่ง",
+        "Pumili muna ng isang side at isang bahagi ng katawan",
+        "まず片側と1つの部位を選ぶ"
+      ),
+      note: isGlp1Style
+        ? tx(
+            "可用左腹部、右腹部、左大腿、右大腿或上臂。若同天還有胰島素，兩針不要打太近。",
+            "You may use the abdomen, thigh, or upper arm. If you also inject insulin on the same day, do not place the two injections too close together.",
+            "Anda boleh memakai perut, paha, atau lengan atas. Jika pada hari yang sama juga menyuntik insulin, jangan menempatkan dua suntikan terlalu berdekatan.",
+            "Có thể tiêm ở bụng, đùi hoặc cánh tay trên. Nếu cùng ngày còn tiêm insulin, đừng tiêm hai mũi quá gần nhau.",
+            "ฉีดได้ที่หน้าท้อง ต้นขา หรือแขนส่วนบน หากวันเดียวกันยังฉีดอินซูลินอีก อย่าฉีดสองเข็มใกล้กันเกินไป",
+            "Maaaring sa tiyan, hita, o itaas na braso. Kung may insulin ka ring ituturok sa parehong araw, huwag masyadong paglapitin ang dalawang turok.",
+            "腹部・大腿・上腕が使える。同じ日にインスリンも打つなら、2か所を近づけすぎない。"
+          )
+        : tx(
+            "可用左腹部、右腹部、左大腿、右大腿或上臂。若醫護已教過，也可用臀部外上側。",
+            "You may use the abdomen, thigh, or upper arm. If your clinician has taught you how, the upper outer buttock can also be used.",
+            "Anda boleh memakai perut, paha, atau lengan atas. Jika tenaga kesehatan sudah mengajarkannya, bagian bokong atas-luar juga boleh digunakan.",
+            "Có thể tiêm ở bụng, đùi hoặc cánh tay trên. Nếu nhân viên y tế đã hướng dẫn, có thể dùng thêm vùng mông ngoài phía trên.",
+            "ฉีดได้ที่หน้าท้อง ต้นขา หรือแขนส่วนบน หากบุคลากรทางการแพทย์เคยสอนไว้ อาจใช้ก้นด้านนอกส่วนบนได้ด้วย",
+            "Maaaring sa tiyan, hita, o itaas na braso. Kung naturuan ka na ng clinician, maaari ring gamitin ang itaas-panlabas na puwitan.",
+            "腹部・大腿・上腕が使える。医療者に教わっていれば、臀部の外上側も使える。"
+          ),
+      afterBox: {
+        tone: neutralTone,
+        title: isGlp1Style
+          ? tx(
+              "GLP-1 提醒",
+              "GLP-1 reminder",
+              "Pengingat GLP-1",
+              "Nhắc nhở về GLP-1",
+              "ข้อเตือนใจ GLP-1",
+              "Paalala sa GLP-1",
+              "GLP-1の注意"
+            )
+          : tx(
+              "吸收提醒",
+              "Absorption reminder",
+              "Pengingat penyerapan",
+              "Nhắc nhở về hấp thu",
+              "ข้อเตือนใจเรื่องการดูดซึม",
+              "Paalala sa pagsipsip ng gamot",
+              "吸収の注意"
+            ),
+        text: isGlp1Style
+          ? tx(
+              "GLP-1 可在左腹部、右腹部、左大腿、右大腿或上臂輪替。若同天還有胰島素，兩針之間也要隔至少 1 指寬。",
+              "GLP-1 can be rotated through the abdomen, thigh, or upper arm. If you also use insulin on the same day, keep the two injections separated.",
+              "GLP-1 dapat dirotasi di perut, paha, atau lengan atas. Jika pada hari yang sama juga memakai insulin, beri jarak antara kedua suntikan.",
+              "GLP-1 có thể luân phiên ở bụng, đùi hoặc cánh tay trên. Nếu cùng ngày còn dùng insulin, hãy giữ khoảng cách giữa hai mũi.",
+              "GLP-1 สามารถสลับฉีดที่หน้าท้อง ต้นขา หรือแขนส่วนบนได้ หากวันเดียวกันยังใช้อินซูลิน ให้เว้นระยะระหว่างสองเข็ม",
+              "Maaaring i-rotate ang GLP-1 sa tiyan, hita, o itaas na braso. Kung may insulin ka rin sa parehong araw, mag-iwan ng pagitan sa dalawang turok.",
+              "GLP-1は腹部・大腿・上腕でローテーションできる。同じ日にインスリンも使うなら、2か所の間隔をあける。"
+            )
+          : tx(
+              "餐時或速效胰島素通常腹部較快。長效或混合型胰島素，請先固定同一側同一部位，例如先用左腹部或左大腿，讓吸收較穩。",
+              "Mealtime or rapid insulin is usually absorbed faster in the abdomen. For basal or mixed insulin, stay with one larger area first so absorption is steadier.",
+              "Insulin waktu makan atau kerja cepat biasanya lebih cepat diserap di perut. Untuk insulin basal atau campuran, tetaplah dulu pada satu area besar agar penyerapan lebih stabil.",
+              "Insulin tác dụng nhanh hoặc dùng lúc ăn thường hấp thu nhanh hơn ở bụng. Với insulin nền hoặc insulin trộn sẵn, hãy giữ cùng một vùng lớn trước để hấp thu ổn định hơn.",
+              "อินซูลินมื้ออาหารหรือออกฤทธิ์เร็วมักดูดซึมที่หน้าท้องได้เร็วกว่า สำหรับอินซูลินพื้นฐานหรือชนิดผสม ให้คงบริเวณใหญ่เดิมก่อน เพื่อให้การดูดซึมสม่ำเสมอกว่า",
+              "Ang mealtime o rapid insulin ay karaniwang mas mabilis ma-absorb sa tiyan. Para sa basal o mixed insulin, manatili muna sa isang malaking area para mas pare-pareho ang pagsipsip.",
+              "食事時インスリンや速効型インスリンは腹部のほうが吸収が速いことが多い。基礎インスリンや混合型インスリンは、まず同じ大きな範囲を保つと吸収が安定しやすい。"
+            )
+      },
+      illustration: "assets/svg/injection-rotation/step-1.svg"
+    },
+    {
+      action: tx(
+        "腹部最常用，離肚臍至少 2.5 公分",
+        "If you use the abdomen, stay at least 2.5 cm away from the navel",
+        "Bila menyuntik di perut, jaga jarak minimal 2,5 cm dari pusar",
+        "Nếu tiêm ở bụng, giữ cách rốn ít nhất 2,5 cm",
+        "หากฉีดที่หน้าท้อง ให้ห่างสะดืออย่างน้อย 2.5 ซม.",
+        "Kung sa tiyan magtuturok, lumayo nang hindi bababa sa 2.5 cm mula sa pusod",
+        "腹部に打つなら、へそから少なくとも2.5 cm離す"
+      ),
+      note: tx(
+        "可把腹部分成 4 小區塊，照順序輪替。不要打在肚臍周圍。",
+        "You may divide the abdomen into 4 smaller zones and rotate through them in order. Do not inject around the navel.",
+        "Perut dapat dibagi menjadi 4 zona kecil lalu dipakai bergiliran secara berurutan. Jangan menyuntik di sekitar pusar.",
+        "Có thể chia bụng thành 4 vùng nhỏ rồi luân phiên theo thứ tự. Không tiêm quanh rốn.",
+        "อาจแบ่งหน้าท้องเป็น 4 โซนเล็กแล้วสลับตามลำดับ อย่าฉีดรอบสะดือ",
+        "Maaaring hatiin ang tiyan sa 4 na maliliit na zone at paikutan ang mga ito nang sunod-sunod. Huwag magturok sa paligid ng pusod.",
+        "腹部は4つの小さな区画に分けて順番に回してよい。へその周りには打たない。"
+      ),
+      illustration: "assets/svg/injection-rotation/step-2.svg"
+    },
+    {
+      action: tx(
+        "手臂和大腿只打建議區域",
+        "Use only the recommended parts of the arm and thigh",
+        "Gunakan hanya bagian lengan dan paha yang dianjurkan",
+        "Chỉ tiêm ở phần được khuyến nghị của tay và đùi",
+        "ฉีดเฉพาะบริเวณแขนและต้นขาที่แนะนำ",
+        "Sa braso at hita, sa mga inirerekomendang bahagi lamang magturok",
+        "腕と太ももは推奨部位だけに打つ"
+      ),
+      note: tx(
+        "手臂打外側中段；大腿打前外側。靠手肘、內側或腹股溝不要打。",
+        "Use the middle outer upper arm and the front-outer thigh. Avoid the elbow area, the inner side, and the groin.",
+        "Gunakan bagian tengah luar lengan atas dan bagian depan-luar paha. Hindari dekat siku, sisi dalam, dan lipat paha.",
+        "Tiêm ở phần giữa mặt ngoài cánh tay trên và mặt trước-ngoài của đùi. Tránh gần khuỷu tay, mặt trong và vùng bẹn.",
+        "ฉีดที่ช่วงกลางด้านนอกของต้นแขน และด้านหน้า-ด้านนอกของต้นขา หลีกเลี่ยงใกล้ข้อศอก ด้านใน และขาหนีบ",
+        "Gamitin ang gitnang panlabas na bahagi ng itaas na braso at ang harap-panlabas na hita. Iwasan ang malapit sa siko, panloob na bahagi, at singit.",
+        "上腕は外側の中央、大腿は前外側を使う。ひじの近く、内側、そけい部の近くは避ける。"
+      ),
+      illustration: "assets/svg/injection-rotation/step-5.svg"
+    },
+    {
+      section: tx(
+        "怎麼換位置",
+        "How do you rotate spots?",
+        "Bagaimana mengganti titik suntikan?",
+        "Luân phiên vị trí như thế nào?",
+        "สลับจุดฉีดอย่างไร",
+        "Paano palitan ang puwesto?",
+        "どうやって場所を回す？"
+      ),
+      action: tx(
+        "每一針和上一針至少隔 1 指寬",
+        "Keep each injection at least one finger-width from the last one",
+        "Jarakkan setiap suntikan setidaknya selebar 1 jari dari titik sebelumnya",
+        "Mỗi mũi tiêm cách mũi trước ít nhất 1 bề ngang ngón tay",
+        "ให้แต่ละเข็มห่างจากเข็มก่อนอย่างน้อย 1 ความกว้างนิ้ว",
+        "Mag-iwan ng hindi bababa sa isang daliring agwat mula sa huling turok",
+        "前回の注射から少なくとも指1本分は離す"
+      ),
+      note: tx(
+        "不要一直打同一點。每次往旁邊移 1 指寬。",
+        "Do not keep using the exact same spot. Move one finger-width to the next spot each time.",
+        "Jangan terus memakai titik yang sama persis. Pindah satu lebar jari ke titik berikutnya setiap kali.",
+        "Không dùng mãi đúng một điểm. Mỗi lần hãy dịch sang điểm kế bên 1 bề ngang ngón tay.",
+        "อย่าฉีดซ้ำที่จุดเดิมทุกครั้ง แต่ละครั้งให้ขยับไปอีก 1 ความกว้างนิ้ว",
+        "Huwag laging sa eksaktong parehong tuldok magturok. Sa bawat pagkakataon, lumipat nang isang daliring lapad.",
+        "まったく同じ点に打ち続けない。毎回、指1本分ずつ隣へ移る。"
+      ),
+      afterBox: {
+        tone: neutralTone,
+        title: tx(
+          "如何輪替注射點",
+          "How to rotate injection spots",
+          "Cara merotasi titik suntikan",
+          "Cách luân phiên điểm tiêm",
+          "วิธีสลับจุดฉีด",
+          "Paano i-rotate ang mga tuldok ng turok",
+          "注射点の回し方"
+        ),
+        html: tx(
+          `<div class="ref-ntg-rotation-list">
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 一天打 1 次</div>
+              <div class="ref-ntg-rotation-body">腹部可分左上、左下、右下、右上 4 區，可順時針或逆時針輪替。<br>每一區各用 7 天，每天在同一區內往旁邊移 1 指寬。</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 一天打 2 次</div>
+              <div class="ref-ntg-rotation-body">同一天打同樣左側的上、下腹部。<br>早打上腹，晚打下腹；左側完成 7 天後，再換右側。</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 一天打 3 次</div>
+              <div class="ref-ntg-rotation-body">前 2 針照上面做，第 3 針可打同樣左側大腿。<br>左側完成 7 天後，再換右側；大腿也同樣左右輪替。</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 一天打 4 次</div>
+              <div class="ref-ntg-rotation-body">可用同樣左側的上腹、下腹、大腿、上臂（或臀部）。<br>每個部位都先固定同一側，再換另一側。</div>
+            </div>
+          </div>`,
+          `<div class="ref-ntg-rotation-list">
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• Once a day</div>
+              <div class="ref-ntg-rotation-body">Divide the abdomen into 4 zones: upper left, lower left, lower right, and upper right. Rotate clockwise or counterclockwise.<br>Use each zone for 7 days, and move one finger-width within that zone each day.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• Twice a day</div>
+              <div class="ref-ntg-rotation-body">Use the upper and lower abdomen on the same left side on the same day.<br>Use the upper abdomen first and the lower abdomen later. After 7 days on the left side, switch to the right side.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• Three times a day</div>
+              <div class="ref-ntg-rotation-body">Follow the same first 2 injections, then use the left thigh for the third injection.<br>After 7 days on the left side, switch to the right side. Rotate the thigh left and right the same way.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• Four times a day</div>
+              <div class="ref-ntg-rotation-body">You may use the upper abdomen, lower abdomen, thigh, and upper arm on the same left side, or the buttock if your clinician has taught you.<br>For each body area, stay on one side first, then switch to the other side.</div>
+            </div>
+          </div>`,
+          `<div class="ref-ntg-rotation-list">
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 1 kali sehari</div>
+              <div class="ref-ntg-rotation-body">Bagi perut menjadi 4 area: kiri atas, kiri bawah, kanan bawah, dan kanan atas. Rotasikan searah atau berlawanan arah jarum jam.<br>Gunakan setiap area selama 7 hari, lalu di dalam area itu pindah satu lebar jari setiap hari.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 2 kali sehari</div>
+              <div class="ref-ntg-rotation-body">Pada hari yang sama, gunakan perut atas dan perut bawah di sisi kiri yang sama.<br>Gunakan perut atas lebih dulu dan perut bawah kemudian. Setelah 7 hari di sisi kiri, pindah ke sisi kanan.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 3 kali sehari</div>
+              <div class="ref-ntg-rotation-body">Ikuti dua suntikan pertama seperti di atas, lalu gunakan paha kiri untuk suntikan ketiga.<br>Setelah 7 hari di sisi kiri, pindah ke sisi kanan. Paha juga dirotasi kiri dan kanan dengan cara yang sama.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 4 kali sehari</div>
+              <div class="ref-ntg-rotation-body">Anda dapat memakai perut atas, perut bawah, paha, dan lengan atas di sisi kiri yang sama, atau bokong jika tenaga kesehatan sudah mengajarkannya.<br>Untuk setiap area tubuh, tetap di satu sisi dulu lalu pindah ke sisi lainnya.</div>
+            </div>
+          </div>`,
+          `<div class="ref-ntg-rotation-list">
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 1 lần mỗi ngày</div>
+              <div class="ref-ntg-rotation-body">Chia bụng thành 4 vùng: trên trái, dưới trái, dưới phải và trên phải. Luân phiên theo chiều kim đồng hồ hoặc ngược chiều kim đồng hồ.<br>Mỗi vùng dùng 7 ngày, và trong cùng vùng đó mỗi ngày dịch sang bên cạnh 1 bề ngang ngón tay.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 2 lần mỗi ngày</div>
+              <div class="ref-ntg-rotation-body">Trong cùng một ngày, dùng bụng trên và bụng dưới ở cùng bên trái.<br>Tiêm bụng trên trước, bụng dưới sau. Sau 7 ngày ở bên trái, chuyển sang bên phải.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 3 lần mỗi ngày</div>
+              <div class="ref-ntg-rotation-body">Hai mũi đầu làm như trên, mũi thứ ba có thể tiêm ở đùi trái.<br>Sau 7 ngày ở bên trái, chuyển sang bên phải. Đùi cũng luân phiên trái rồi phải theo cách tương tự.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 4 lần mỗi ngày</div>
+              <div class="ref-ntg-rotation-body">Có thể dùng bụng trên, bụng dưới, đùi và cánh tay trên cùng bên trái, hoặc mông nếu nhân viên y tế đã hướng dẫn.<br>Mỗi vùng cơ thể nên cố định một bên trước rồi mới đổi sang bên kia.</div>
+            </div>
+          </div>`,
+          `<div class="ref-ntg-rotation-list">
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• วันละ 1 ครั้ง</div>
+              <div class="ref-ntg-rotation-body">แบ่งหน้าท้องเป็น 4 ส่วน คือ ซ้ายบน ซ้ายล่าง ขวาล่าง และขวาบน แล้วสลับแบบตามเข็มหรือทวนเข็มนาฬิกา<br>ใช้แต่ละส่วน 7 วัน และในส่วนเดียวกันให้ขยับวันละ 1 ความกว้างนิ้ว</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• วันละ 2 ครั้ง</div>
+              <div class="ref-ntg-rotation-body">ในวันเดียวกันให้ใช้หน้าท้องส่วนบนและล่างของข้างซ้ายเดียวกัน<br>ครั้งแรกใช้หน้าท้องส่วนบน ครั้งต่อไปใช้หน้าท้องส่วนล่าง ใช้ครบ 7 วันที่ข้างซ้ายแล้วค่อยเปลี่ยนไปข้างขวา</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• วันละ 3 ครั้ง</div>
+              <div class="ref-ntg-rotation-body">สองเข็มแรกทำเหมือนเดิม แล้วเข็มที่ 3 เปลี่ยนไปฉีดต้นขาซ้าย<br>ใช้ครบ 7 วันที่ข้างซ้ายแล้วค่อยเปลี่ยนไปข้างขวา และต้นขาก็สลับซ้ายขวาแบบเดียวกัน</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• วันละ 4 ครั้ง</div>
+              <div class="ref-ntg-rotation-body">ใช้หน้าท้องส่วนบน หน้าท้องส่วนล่าง ต้นขา และแขนส่วนบนของข้างซ้ายเดียวกัน หรือใช้ก้นถ้าบุคลากรทางการแพทย์เคยสอนไว้<br>ในแต่ละตำแหน่ง ให้ใช้ข้างเดิมก่อน แล้วค่อยเปลี่ยนไปอีกข้าง</div>
+            </div>
+          </div>`,
+          `<div class="ref-ntg-rotation-list">
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 1 beses sa isang araw</div>
+              <div class="ref-ntg-rotation-body">Hatiin ang tiyan sa 4 na bahagi: kaliwang itaas, kaliwang ibaba, kanang ibaba, at kanang itaas. I-rotate ito nang clockwise o counterclockwise.<br>Gamitin ang bawat bahagi sa loob ng 7 araw, at sa loob ng bahaging iyon ay lumipat nang isang daliring lapad bawat araw.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 2 beses sa isang araw</div>
+              <div class="ref-ntg-rotation-body">Sa parehong araw, gamitin ang itaas at ibabang tiyan sa parehong kaliwang side.<br>Unahin ang itaas na tiyan at saka ang ibabang tiyan. Pagkatapos ng 7 araw sa kaliwang side, lumipat sa kanang side.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 3 beses sa isang araw</div>
+              <div class="ref-ntg-rotation-body">Sundin ang unang 2 turok gaya ng nasa itaas, pagkatapos ay gamitin ang kaliwang hita para sa ikatlong turok.<br>Pagkatapos ng 7 araw sa kaliwang side, lumipat sa kanang side. I-rotate rin ang hita pakaliwa at pakanan sa parehong paraan.</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 4 beses sa isang araw</div>
+              <div class="ref-ntg-rotation-body">Maaaring gamitin ang itaas na tiyan, ibabang tiyan, hita, at itaas na braso sa parehong kaliwang side, o puwitan kung itinuro na ito ng clinician.<br>Sa bawat bahagi ng katawan, manatili muna sa isang side bago lumipat sa kabilang side.</div>
+            </div>
+          </div>`,
+          `<div class="ref-ntg-rotation-list">
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 1日1回</div>
+              <div class="ref-ntg-rotation-body">腹部を左上、左下、右下、右上の4区画に分け、時計回りまたは反時計回りで回す。<br>各区画を7日ずつ使い、その区画の中では毎日、指1本分ずつ隣へ移る。</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 1日2回</div>
+              <div class="ref-ntg-rotation-body">同じ日に、同じ左側の上腹部と下腹部を使う。<br>先に上腹部、次に下腹部を使い、左側を7日使ったら右側へ替える。</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 1日3回</div>
+              <div class="ref-ntg-rotation-body">最初の2回は同じやり方で、3回目は左大腿にする。<br>左側を7日使ったら右側へ替え、大腿も同じように左右で回す。</div>
+            </div>
+            <div class="ref-ntg-rotation-item">
+              <div class="ref-ntg-rotation-label">• 1日4回</div>
+              <div class="ref-ntg-rotation-body">同じ左側の上腹部、下腹部、大腿、上腕を使う。医療者に教わっていれば臀部も使える。<br>それぞれの部位で、まず同じ側を使ってから反対側へ替える。</div>
+            </div>
+          </div>`
+        )
+      },
+      illustration: "assets/svg/injection-rotation/step-3.svg"
+    },
+    {
+      action: tx(
+        "先固定同一側，再在同側換點",
+        "Stay on the same side first, then move to the next spot on that side",
+        "Tetap di sisi yang sama dulu, lalu pindah ke titik berikutnya di sisi itu",
+        "Trước hết giữ cùng một bên, rồi đổi sang điểm kế tiếp ở bên đó",
+        "คงไว้ที่ข้างเดิมก่อน แล้วค่อยเปลี่ยนจุดในข้างนั้น",
+        "Manatili muna sa parehong side, saka lumipat sa susunod na puwesto sa side na iyon",
+        "まず同じ側を保ち、その側の次の場所へ移る"
+      ),
+      note: tx(
+        "例如先用左腹部，再換右腹部。不要今天左腹、明天右手、後天左腿一直跳。",
+        "For example, stay with the left abdomen first, then switch to the right abdomen later. Do not jump from the left abdomen one day to the right arm the next day and the left thigh after that.",
+        "Misalnya, gunakan dulu perut kiri lalu belakangan pindah ke perut kanan. Jangan hari ini di perut kiri, besok di lengan kanan, lalu lusa di paha kiri.",
+        "Ví dụ, trước hết dùng bụng bên trái rồi sau đó mới đổi sang bụng bên phải. Đừng hôm nay tiêm bụng trái, ngày mai lại đổi sang tay phải, hôm sau lại đổi sang đùi trái.",
+        "เช่น เริ่มจากหน้าท้องซ้ายก่อน แล้วค่อยเปลี่ยนไปหน้าท้องขวา อย่าสลับจากหน้าท้องซ้ายไปแขนขวา แล้ววันถัดไปไปต้นขาซ้าย",
+        "Halimbawa, manatili muna sa kaliwang tiyan at saka lamang lumipat sa kanang tiyan. Huwag magpalipat-lipat mula kaliwang tiyan, tungo sa kanang braso, tapos sa kaliwang hita sa mga susunod na araw.",
+        "たとえば最初は左腹部を使い、その後で右腹部へ替える。今日は左腹部、明日は右腕、あさっては左大腿というように飛ばさない。"
+      ),
+      illustration: "assets/svg/injection-rotation/step-4.svg"
+    },
+    {
+      section: tx(
+        "哪些地方先不要打",
+        "Which places should you avoid first?",
+        "Bagian mana yang sebaiknya dihindari dulu?",
+        "Những chỗ nào trước hết nên tránh?",
+        "ตรงไหนที่ควรหลีกเลี่ยงก่อน",
+        "Aling mga lugar ang dapat iwasan muna?",
+        "どこは先に避ける？"
+      ),
+      action: tx(
+        "先看皮膚",
+        "Look at the skin first",
+        "Lihat kulitnya dulu",
+        "Nhìn da trước",
+        "ดูก่อนว่าผิวหนังเป็นอย่างไร",
+        "Tingnan muna ang balat",
+        "まず皮膚を見る"
+      ),
+      note: tx(
+        "紅、腫、熱、痛、瘀青、破皮或感染處不要打。",
+        "Do not inject into areas that are red, swollen, warm, painful, bruised, broken, or infected.",
+        "Jangan menyuntik pada area yang merah, bengkak, hangat, nyeri, memar, lecet, atau terinfeksi.",
+        "Không tiêm vào chỗ đỏ, sưng, nóng, đau, bầm tím, trầy xước hoặc nhiễm trùng.",
+        "อย่าฉีดบริเวณที่แดง บวม ร้อน เจ็บ ช้ำ ถลอก หรือมีการติดเชื้อ",
+        "Huwag magturok sa bahaging mapula, namamaga, mainit, masakit, may pasa, may sugat, o may impeksiyon.",
+        "赤い、腫れている、熱い、痛い、あざ、傷、感染のある場所には打たない。"
+      ),
+      illustration: "assets/svg/injection-rotation/step-0.svg"
+    },
+    {
+      action: tx(
+        "再摸一摸",
+        "Then feel the area",
+        "Lalu rabalah",
+        "Sau đó sờ thử",
+        "แล้วลองคลำดู",
+        "Pagkatapos, kapain ito",
+        "次に触ってみる"
+      ),
+      note: tx(
+        "摸到硬塊、凹陷或變硬，先避開。若同一區常出血、常瘀青，或一直摸到硬塊、凹陷，告訴醫師、護理師或藥師。",
+        "If you feel a lump, dent, or hard area, avoid it. If the same area often bleeds, bruises, or keeps feeling lumpy or dented, tell your doctor, nurse, or pharmacist.",
+        "Jika terasa benjolan, cekungan, atau bagian yang mengeras, hindari area itu. Jika area yang sama sering berdarah, sering memar, atau terus terasa berbenjol atau cekung, beri tahu dokter, perawat, atau apoteker.",
+        "Nếu sờ thấy cục, chỗ lõm hoặc chỗ bị cứng, hãy tránh vùng đó. Nếu cùng một vùng thường chảy máu, hay bầm tím, hoặc cứ sờ thấy cục hay lõm, hãy báo cho bác sĩ, điều dưỡng hoặc dược sĩ.",
+        "ถ้าคลำได้ก้อนแข็ง รอยบุ๋ม หรือผิวหนังแข็งขึ้น ให้หลีกเลี่ยงบริเวณนั้น หากบริเวณเดิมมีเลือดออกง่าย ช้ำบ่อย หรือยังคลำได้ก้อนแข็งหรือรอยบุ๋ม ให้บอกแพทย์ พยาบาล หรือเภสัชกร",
+        "Kung may makapang bukol, hukay, o matigas na bahagi, iwasan ang puwestong iyon. Kung ang parehong area ay madalas dumugo, magpasa, o paulit-ulit na may bukol o hukay, sabihin ito sa doktor, nars, o parmasyutiko.",
+        "しこり、へこみ、硬くなった場所を感じたら、その部位を避ける。同じ範囲で出血やあざが多い、またはしこりやへこみを繰り返し感じるなら、医師・看護師・薬剤師に伝える。"
+      ),
+      illustration: "assets/svg/injection-rotation/step-0.svg"
+    }
+  ];
+
+  const warnings = [
+    tx(
+      "不要透過衣服注射。酒精乾了再打。",
+      "Do not inject through clothing. Let the alcohol dry before you inject.",
+      "Jangan menyuntik menembus pakaian. Tunggu alkohol mengering sebelum menyuntik.",
+      "Không tiêm xuyên qua quần áo. Chờ cồn khô rồi mới tiêm.",
+      "อย่าฉีดผ่านเสื้อผ้า และรอให้แอลกอฮอล์แห้งก่อนฉีด",
+      "Huwag magturok sa ibabaw ng damit. Hayaang matuyo ang alcohol bago mag-inject.",
+      "衣服の上から注射しない。アルコールが乾いてから打つ。"
+    ),
+    tx(
+      "若常在同一點摸到硬塊或凹陷，先避開並告訴醫師、護理師或藥師。",
+      "If you often feel a lump or dent in the same spot, avoid it and tell your doctor, nurse, or pharmacist.",
+      "Jika Anda sering merasakan benjolan atau cekungan di titik yang sama, hindari area itu lalu beri tahu dokter, perawat, atau apoteker.",
+      "Nếu bạn thường sờ thấy cục hoặc chỗ lõm ở cùng một điểm, hãy tránh điểm đó và báo cho bác sĩ, điều dưỡng hoặc dược sĩ.",
+      "หากมักคลำได้ก้อนแข็งหรือรอยบุ๋มที่จุดเดิม ให้หลีกเลี่ยงจุดนั้นและบอกแพทย์ พยาบาล หรือเภสัชกร",
+      "Kung madalas kang makapang bukol o hukay sa parehong puwesto, iwasan ito at sabihin sa doktor, nars, o parmasyutiko.",
+      "同じ場所でしこりやへこみをよく感じるなら、その部位を避けて医師・看護師・薬剤師に伝える。"
+    )
+  ];
+
+  return {
+    pageLabel: INJECT_PAGE_B_LABEL,
+    headerBadge: INJECT_PAGE_B_LABEL,
+    steps,
+    infoBoxes: [],
+    storage: null,
+    warnings,
+    qrUrl: med.qrUrl || ""
+  };
+}
+
+
+MEDICATIONS.forEach((med) => {
+  if (!INJECTION_PEN_IDS.has(med.id)) return;
+  if (med.storage && med.storage.text && INJECTION_STORAGE_TEXT_OVERRIDES[med.id]) {
+    med.storage.text = cloneValue(INJECTION_STORAGE_TEXT_OVERRIDES[med.id]);
+  }
+
+  const stepList = Array.isArray(med.steps) ? med.steps : [];
+  stepList.forEach((step) => {
+    const actionZh = (step && step.action && step.action["zh-TW"]) || "";
+    const noteZh = (step && step.note && step.note["zh-TW"]) || "";
+
+    if (/刺入皮膚，按到 0，數到/.test(actionZh)) {
+      step.note = appendLocalizedLine(
+        PEN_HOLD_UNTIL_WITHDRAW_NOTE,
+        /不要按摩/.test(noteZh)
+          ? tx(
+              "注射後不要按摩。",
+              "Do not rub the site afterward.",
+              "Jangan menggosok area suntikan setelahnya.",
+              "Không xoa chỗ tiêm sau đó.",
+              "หลังฉีดอย่านวดบริเวณที่ฉีด",
+              "Huwag kuskusin ang lugar pagkatapos magturok.",
+              "注射後はもまない。"
+            )
+          : null
+      );
+    }
+
+    if (med.id === "victoza" && /慢慢數到 6，再拔針/.test(actionZh)) {
+      step.note = PEN_HOLD_UNTIL_WITHDRAW_NOTE;
+    }
+
+    if (med.id === "ozempic" && /慢慢數到 6，再拔針/.test(actionZh)) {
+      step.note = PEN_HOLD_UNTIL_WITHDRAW_NOTE;
+    }
+
+    if (med.id === "mounjaro" && /慢慢數到 5，再拔針/.test(actionZh)) {
+      step.note = appendLocalizedLine(
+        PEN_HOLD_UNTIL_WITHDRAW_NOTE_WITHOUT_THUMB,
+        tx(
+          "看到完成記號，再把針拔出。",
+          "Remove the needle only after you see the completion mark.",
+          "Cabut jarum hanya setelah tanda selesai terlihat.",
+          "Chỉ rút kim sau khi đã thấy dấu hoàn tất.",
+          "ดึงเข็มออกเมื่อเห็นสัญลักษณ์ว่ายาให้ครบแล้ว",
+          "Bunutin lamang ang karayom kapag nakita na ang tanda ng pagkakumpleto.",
+          "完了の印が見えてから針を抜く。"
+        )
+      );
+    }
+  });
+
+  if (Array.isArray(med.pages) && med.pages.length) return;
+  med.pages = [
+    buildInjectionFrontPage(med),
+    buildInjectionRotationPage(med)
+  ];
+});
+
 // ============================================================
 // STATE
 // ============================================================
@@ -17910,11 +18685,13 @@ function renderReferenceInfoBox(box, fallbackTone, localize) {
   const border = tone.border || fallbackTone.border;
   const textColor = tone.text || fallbackTone.text;
   const title = localize(box.title);
+  const html = localize(box.html);
   const text = localize(box.text);
-  if (!title && !text) return "";
+  if (!title && !text && !html) return "";
   return `<div class="ref-ntg-infobox" style="background:${bg};border-color:${border}">
     ${title ? `<div class="ref-ntg-infobox-title" style="color:${textColor}">${title}</div>` : ""}
-    ${text ? `<div class="ref-ntg-infobox-text" style="color:${textColor}">${text}</div>` : ""}
+    ${html ? `<div class="ref-ntg-infobox-text" style="color:${textColor}">${html}</div>` : ""}
+    ${!html && text ? `<div class="ref-ntg-infobox-text" style="color:${textColor}">${text}</div>` : ""}
   </div>`;
 }
 

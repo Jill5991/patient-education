@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M48 18c10 0 18 8 18 18v8h-36v-8c0-10 8-18 18-18z"/>
+  <path d="M30 48h36l6 52H24l6-52z"/>
+  <rect x="36" y="52" width="12" height="16" rx="3" fill="#FAEEDA" stroke="#854F0B"/>
+  <rect x="48" y="52" width="12" height="16" rx="3" fill="#FAEEDA" stroke="#854F0B"/>
+  <rect x="24" y="72" width="14" height="22" rx="4" fill="#FAEEDA" stroke="#854F0B"/>
+  <rect x="58" y="72" width="14" height="22" rx="4" fill="#FAEEDA" stroke="#854F0B"/>
+  <path d="M108 20c9 0 16 7 16 16v7H92v-7c0-9 7-16 16-16z"/>
+  <path d="M92 46h32l4 44H88l4-44z"/>
+  <rect x="95" y="52" width="10" height="14" rx="3" fill="#FAEEDA" stroke="#854F0B"/>
+  <rect x="111" y="52" width="10" height="14" rx="3" fill="#FAEEDA" stroke="#854F0B"/>
+  <circle cx="136" cy="26" r="12"/>
+  <path d="M136 20v7l4 2"/>
+  <text x="48" y="111" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">abdomen / thigh</text>
+  <text x="108" y="111" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">arm same time</text>
+</svg>

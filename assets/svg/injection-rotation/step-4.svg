@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="28" cy="28" r="12"/>
+  <path d="M28 22v7l4 2"/>
+  <path d="M72 18c18 0 30 12 30 30v18H42V48c0-18 12-30 30-30z"/>
+  <path d="M42 70c6-3 16-5 30-5s24 2 30 5"/>
+  <path d="M55 44c8-6 20-6 34 0" stroke="#854F0B"/>
+  <path d="M89 44l-4-7 8 2" stroke="#854F0B"/>
+  <path d="M55 54c8 6 20 6 34 0" stroke="#854F0B"/>
+  <path d="M55 54l4 7-8-2" stroke="#854F0B"/>
+  <circle cx="120" cy="42" r="8" stroke="#2F8A48"/>
+  <path d="M116 42l3 3 6-7" stroke="#2F8A48"/>
+  <text x="120" y="58" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">same area</text>
+  <text x="78" y="108" text-anchor="middle" font-size="8.5" fill="#1A1A1A" stroke="none" font-family="Arial, sans-serif">same time, move spot</text>
+</svg>
