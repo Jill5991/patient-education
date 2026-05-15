@@ -1044,136 +1044,6 @@ const MEDICATIONS = [
     qrUrl: "https://pharmacy.example.com/meds/patch"
   },
 
-  // ── 5. Subcutaneous Injection ──────────────────────────
-  {
-    "id": "subcutaneous",
-    color: { main:"#854F0B", light:"#FAEEDA", dark:"#412402", badge:"#FAC775", badgeText:"#412402" },
-    emergency: false,
-    name: {
-      "zh-TW":"皮下注射劑（胰島素筆）", "en":"Subcutaneous Injection (Insulin Pen)",
-      "id":"Suntikan Subkutan (Pena Insulin)", "vi":"Tiêm Dưới Da (Bút Insulin)",
-      "th":"ยาฉีดใต้ผิวหนัง (ปากกาอินซูลิน)", "tl":"Iniksiyong Pang-ilalim ng Balat (Insulin Pen)",
-      "ja":"皮下注射薬（インスリンペン）"
-    },
-    subtitle: {
-      "zh-TW":"請依步驟安全注射", "en":"Use these steps for safe injection",
-      "id":"Ikuti langkah ini untuk suntikan yang aman", "vi":"Thực hiện theo các bước để tiêm an toàn",
-      "th":"ทำตามขั้นตอนเพื่อฉีดอย่างปลอดภัย", "tl":"Sundin ang mga hakbang para sa ligtas na iniksyon",
-      "ja":"安全に注射するため手順に従ってください"
-    },
-    badge: {
-      "zh-TW":"皮下注射", "en":"Subcutaneous", "id":"Subkutan", "vi":"Tiêm dưới da",
-      "th":"ฉีดใต้ผิวหนัง", "tl":"Subcutaneous", "ja":"皮下注射"
-    },
-    steps: [
-      {
-        action:{ "zh-TW":"洗手並準備注射筆", "en":"Wash hands and prepare the injection pen",
-                 "id":"Cuci tangan dan siapkan pena suntik", "vi":"Rửa tay và chuẩn bị bút tiêm",
-                 "th":"ล้างมือและเตรียมปากกาฉีด", "tl":"Hugasan ang kamay at ihanda ang injection pen",
-                 "ja":"手を洗い、注射ペンを準備する" },
-        note:{  "zh-TW":"以肥皂洗手至少 20 秒", "en":"Wash with soap for at least 20 seconds",
-                "id":"Cuci dengan sabun minimal 20 detik", "vi":"Rửa tay bằng xà phòng ít nhất 20 giây",
-                "th":"ล้างด้วยสบู่อย่างน้อย 20 วินาที", "tl":"Maghugas gamit ang sabon nang hindi bababa sa 20 segundo",
-                "ja":"石けんで20秒以上手を洗う" }
-      },
-      {
-        action:{ "zh-TW":"核對藥名與注射劑量", "en":"Confirm medication name and dose",
-                 "id":"Periksa nama obat dan dosis", "vi":"Kiểm tra tên thuốc và liều tiêm",
-                 "th":"ตรวจสอบชื่อยาและขนาดยา", "tl":"Tiyakin ang pangalan ng gamot at dosis",
-                 "ja":"薬剤名と注射量を確認する" },
-        note:{  "zh-TW":"確認標籤與效期", "en":"Check label and expiration date",
-                "id":"Periksa label dan tanggal kedaluwarsa", "vi":"Kiểm tra nhãn và hạn dùng",
-                "th":"ตรวจฉลากและวันหมดอายุ", "tl":"Suriin ang label at expiration date",
-                "ja":"ラベルと使用期限を確認する" }
-      },
-      {
-        action:{ "zh-TW":"裝上新針頭並排氣 2 單位", "en":"Attach a new needle and prime 2 units",
-                 "id":"Pasang jarum baru dan lakukan prime 2 unit", "vi":"Gắn kim mới và đuổi khí 2 đơn vị",
-                 "th":"ใส่เข็มใหม่และไล่อากาศ 2 ยูนิต", "tl":"Ikabit ang bagong karayom at mag-prime ng 2 units",
-                 "ja":"新しい針を装着し、2単位で空打ちする" },
-        note:{  "zh-TW":"針尖見到藥滴再注射", "en":"Inject only after a drop appears at the tip",
-                "id":"Suntik setelah terlihat tetes obat di ujung", "vi":"Chỉ tiêm khi thấy giọt thuốc ở đầu kim",
-                "th":"ฉีดเมื่อเห็นหยดยาที่ปลายเข็ม", "tl":"Mag-inject lamang kapag may patak na sa dulo ng karayom",
-                "ja":"針先に薬液が出たことを確認してから注射する" }
-      },
-      {
-        action:{ "zh-TW":"選擇注射部位並輪替位置", "en":"Choose an injection site and rotate locations",
-                 "id":"Pilih area suntikan dan lakukan rotasi lokasi", "vi":"Chọn vị trí tiêm và luân phiên vị trí",
-                 "th":"เลือกตำแหน่งฉีดและสลับตำแหน่งทุกครั้ง", "tl":"Pumili ng lugar ng iniksyon at i-rotate ang lokasyon",
-                 "ja":"注射部位を選び、毎回場所を変える" },
-        note:{  "zh-TW":"腹部、大腿、上臂皆可", "en":"Abdomen, thigh, or upper arm can be used",
-                "id":"Dapat di perut, paha, atau lengan atas", "vi":"Có thể tiêm ở bụng, đùi, hoặc cánh tay trên",
-                "th":"ฉีดที่หน้าท้อง ต้นขา หรือแขนส่วนบนได้", "tl":"Maaaring sa tiyan, hita, o itaas na braso",
-                "ja":"腹部・大腿・上腕を使用できる" }
-      },
-      {
-        action:{ "zh-TW":"捏起皮膚，90 度刺入", "en":"Pinch skin and insert at 90°",
-                 "id":"Cubit kulit dan tusuk 90°", "vi":"Nâng nhẹ da và đâm kim góc 90°",
-                 "th":"บีบผิวหนังและแทงเข็มมุม 90°", "tl":"Pisil ang balat at itusok sa 90°",
-                 "ja":"皮膚をつまみ、90度で刺入する" },
-        note:{  "zh-TW":"體型較瘦可用 45 度", "en":"Use 45° if very lean",
-                "id":"Gunakan 45° bila tubuh sangat kurus", "vi":"Có thể dùng góc 45° nếu quá gầy",
-                "th":"หากผอมมากอาจใช้มุม 45°", "tl":"Maaaring 45° kung payat ang pasyente",
-                "ja":"痩せ型の場合は45度でも可" }
-      },
-      {
-        action:{ "zh-TW":"按下注射鈕到底，數到 10", "en":"Press injection button fully and count to 10",
-                 "id":"Tekan tombol suntik penuh lalu hitung sampai 10", "vi":"Ấn hết nút tiêm và đếm đến 10",
-                 "th":"กดปุ่มฉีดจนสุดและนับถึง 10", "tl":"Pindutin nang todo ang injection button at bumilang hanggang 10",
-                 "ja":"注射ボタンを最後まで押し、10秒数える" },
-        note:{  "zh-TW":"維持原位，避免藥液回流", "en":"Keep needle in place to prevent backflow",
-                "id":"Pertahankan posisi untuk mencegah obat keluar", "vi":"Giữ nguyên kim để tránh thuốc trào ngược",
-                "th":"คงเข็มไว้เพื่อลดการไหลย้อนของยา", "tl":"Panatilihin ang posisyon upang maiwasan ang pag-agos pabalik",
-                "ja":"薬液逆流を防ぐため位置を保つ" }
-      },
-      {
-        action:{ "zh-TW":"拔針後立即丟入針具回收盒", "en":"Remove needle and discard in a sharps container",
-                 "id":"Cabut jarum lalu buang ke wadah benda tajam", "vi":"Rút kim và bỏ ngay vào hộp đựng vật sắc nhọn",
-                 "th":"ดึงเข็มออกแล้วทิ้งในกล่องทิ้งเข็มทันที", "tl":"Alisin ang karayom at itapon agad sa sharps container",
-                 "ja":"針を抜き、直ちにシャープス容器へ廃棄する" },
-        note:{  "zh-TW":"按壓注射處 5 秒並記錄時間", "en":"Press site for 5 seconds and record the time",
-                "id":"Tekan area suntik 5 detik dan catat waktunya", "vi":"Ấn vị trí tiêm 5 giây và ghi lại thời gian",
-                "th":"กดบริเวณฉีด 5 วินาทีและบันทึกเวลา", "tl":"Pindutin ang lugar ng iniksyon ng 5 segundo at itala ang oras",
-                "ja":"注射部位を5秒圧迫し、時刻を記録する" }
-      }
-    ],
-    storage: {
-      title:{ "zh-TW":"藥品保存", "en":"Storage", "id":"Penyimpanan", "vi":"Bảo quản",
-              "th":"การเก็บรักษา", "tl":"Imbakan", "ja":"保管方法" },
-      text: { "zh-TW":"未開封冷藏 2–8°C；使用中可室溫保存，並依說明書期限更換",
-              "en":"Unopened: refrigerate at 2–8°C; in-use: room temperature, replace per product label",
-              "id":"Belum dibuka: simpan 2–8°C; saat dipakai: suhu ruang, ganti sesuai label",
-              "vi":"Chưa mở: bảo quản 2–8°C; đang dùng: để nhiệt độ phòng, thay theo hướng dẫn",
-              "th":"ยังไม่เปิดใช้: แช่เย็น 2–8°C; ระหว่างใช้: อุณหภูมิห้อง เปลี่ยนตามฉลากยา",
-              "tl":"Hindi pa bukas: i-refrigerate sa 2–8°C; habang gamit: room temperature, palitan ayon sa label",
-              "ja":"未開封は2〜8°Cで冷蔵、使用中は室温保存し添付文書の期限で交換" }
-    },
-    warnings: [
-      { "zh-TW":"血糖低於 70 mg/dL 或出現冒汗、手抖、心悸，先補充 15 g 糖，15 分鐘後再測",
-        "en":"If glucose is below 70 mg/dL or sweating/tremor/palpitations occur, take 15 g sugar and recheck in 15 minutes",
-        "id":"Jika gula darah <70 mg/dL atau muncul keringat dingin, gemetar, jantung berdebar, konsumsi 15 g gula lalu cek ulang 15 menit",
-        "vi":"Nếu đường huyết <70 mg/dL hoặc có vã mồ hôi, run tay, hồi hộp, uống 15 g đường và đo lại sau 15 phút",
-        "th":"หากน้ำตาลต่ำกว่า 70 mg/dL หรือมีเหงื่อออก มือสั่น ใจสั่น ให้รับน้ำตาล 15 กรัมและตรวจซ้ำใน 15 นาที",
-        "tl":"Kung glucose ay mas mababa sa 70 mg/dL o may pagpapawis, panginginig, at palpitations, uminom ng 15 g asukal at sukatin muli pagkalipas ng 15 minuto",
-        "ja":"血糖が70mg/dL未満、または発汗・ふるえ・動悸がある場合は糖15gを摂取し15分後に再測定する" },
-      { "zh-TW":"針頭不可重複使用，注射筆不可與他人共用",
-        "en":"Do not reuse needles, and never share injection pens",
-        "id":"Jangan gunakan ulang jarum, dan jangan berbagi pena suntik",
-        "vi":"Không tái sử dụng kim và không dùng chung bút tiêm",
-        "th":"ห้ามใช้เข็มซ้ำ และห้ามใช้ปากกาฉีดร่วมกับผู้อื่น",
-        "tl":"Huwag muling gamitin ang karayom at huwag magbahagi ng injection pen",
-        "ja":"針の再使用は禁止、注射ペンの共有もしない" },
-      { "zh-TW":"注射處若持續紅腫、硬塊或疼痛，請回診評估",
-        "en":"If redness, lump, or pain persists at the injection site, return for evaluation",
-        "id":"Jika kemerahan, benjolan, atau nyeri menetap di lokasi suntik, kembali kontrol",
-        "vi":"Nếu chỗ tiêm đỏ, cứng hoặc đau kéo dài, hãy quay lại khám",
-        "th":"หากตำแหน่งฉีดยังแดง บวมแข็ง หรือปวดต่อเนื่อง ให้กลับมาตรวจ",
-        "tl":"Kung tuloy-tuloy ang pamumula, bukol, o pananakit sa lugar ng iniksyon, magpatingin muli",
-        "ja":"注射部位の発赤・しこり・痛みが続く場合は再受診する" }
-    ],
-    qrUrl: "https://pharmacy.example.com/meds/subcutaneous"
-  }
-,
   // ── Placeholder: Paxlovid ─────────────────────────────────────,
   {
       "id": "paxlovid",
@@ -13852,13 +13722,13 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "消毒筆端，裝上新針頭",
-                  "en": "Clean the pen tip and attach a new needle",
-                  "id": "Bersihkan ujung pena dan pasang jarum baru",
-                  "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                  "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                  "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                  "ja": "ペン先を消毒し、新しい針を付ける"
+                  "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                  "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                  "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                  "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                  "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                  "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                  "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
               },
               "note": {
                   "zh-TW": "每次都用新針頭。針頭未裝前，不要按壓按鈕。",
@@ -13873,7 +13743,7 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "排空測試：轉 2 單位，按到 0",
+                  "zh-TW": "排氣測試：轉 2 單位，按到 0",
                   "en": "Flow check: dial 2 units and press to 0",
                   "id": "Uji aliran: putar 2 unit lalu tekan ke 0",
                   "vi": "Kiểm tra lưu thông: vặn 2 đơn vị rồi ấn về 0",
@@ -13882,13 +13752,13 @@ const MEDICATIONS = [
                   "ja": "通りを確認する：2単位に合わせて0まで押す"
               },
               "note": {
-                  "zh-TW": "每次注射前都要測試。針頭朝上，確認針尖有藥滴。若沒有，可重複最多 6 次。",
-                  "en": "Do this before every injection. Point the needle up and make sure a drop appears at the tip. If not, repeat up to 6 times.",
-                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas dan pastikan ada tetes di ujungnya. Jika belum ada, ulangi sampai 6 kali.",
-                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên và xác nhận có giọt thuốc ở đầu kim. Nếu chưa có, lặp lại tối đa 6 lần.",
-                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นและดูว่ามีหยดยาที่ปลายเข็มหรือไม่ ถ้าไม่มี ให้ทำซ้ำได้สูงสุด 6 ครั้ง",
-                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at tiyaking may patak sa dulo. Kung wala, ulitin hanggang 6 na beses.",
-                  "ja": "毎回の注射前に行う。針先を上に向け、先端に薬滴が出ることを確認する。出なければ最大6回まで繰り返す。"
+                  "zh-TW": "每次注射前都要做排氣測試。針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端。看到藥滴再注射。若沒有藥滴，請更換針頭並重做排氣測試，最多重做 6 次。若仍沒有藥滴，請換新筆。",
+                  "en": "Do this before every injection. Point the needle up and gently tap the cartridge a few times so any air bubbles rise to the top. Inject only after a drop appears at the tip. If no drop appears, change the needle and repeat the flow check, up to 6 times in total. If you still do not see a drop, use a new pen.",
+                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas lalu ketuk kartrid obat perlahan beberapa kali agar gelembung udara naik ke atas. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ganti jarum lalu ulangi uji aliran, maksimal total 6 kali. Jika tetap tidak ada tetes obat, gunakan pena baru.",
+                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên rồi gõ nhẹ ống thuốc vài cái để bọt khí nổi lên trên. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, hãy thay kim rồi làm lại bước kiểm tra lưu thông, tối đa 6 lần. Nếu vẫn không có giọt thuốc, hãy dùng bút mới.",
+                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นแล้วใช้นิ้วเคาะตลับยาเบา ๆ หลายครั้ง เพื่อให้ฟองอากาศลอยขึ้นด้านบน เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้เปลี่ยนเข็มแล้วทดสอบการไหลซ้ำ รวมแล้วไม่เกิน 6 ครั้ง หากยังไม่เห็นหยดยา ให้เปลี่ยนปากกาใหม่",
+                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at marahang pitikin ang cartridge nang ilang beses para umakyat sa itaas ang mga bula ng hangin. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, palitan ang karayom at ulitin ang flow check, hanggang 6 na beses sa kabuuan. Kung wala pa ring patak, gumamit ng bagong pen.",
+                  "ja": "毎回の注射前に行う。針先を上に向け、薬液カートリッジを指で軽く数回たたいて気泡を上に集める。薬滴が出てから注射する。薬滴が出ない場合は針を交換して通りの確認をやり直し、合計6回まで繰り返す。それでも薬滴が出なければ新しいペンを使う。"
               },
               "highlight": true,
               "illustration": "assets/svg/insulin-pen/step-2.svg"
@@ -14131,13 +14001,13 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "消毒筆端，裝上新針頭",
-                  "en": "Clean the pen tip and attach a new needle",
-                  "id": "Bersihkan ujung pena dan pasang jarum baru",
-                  "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                  "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                  "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                  "ja": "ペン先を消毒し、新しい針を付ける"
+                  "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                  "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                  "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                  "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                  "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                  "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                  "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
               },
               "note": {
                   "zh-TW": "每次都用新針頭。針頭未裝前，不要按壓按鈕。",
@@ -14152,7 +14022,7 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "安全測試：轉 2 單位，按到 0",
+                  "zh-TW": "排氣測試：轉 2 單位，按到 0",
                   "en": "Safety test: dial 2 units and press to 0",
                   "id": "Uji keamanan: putar 2 unit lalu tekan ke 0",
                   "vi": "Kiểm tra an toàn: vặn 2 đơn vị rồi ấn về 0",
@@ -14161,13 +14031,13 @@ const MEDICATIONS = [
                   "ja": "安全テスト：2単位に合わせて0まで押す"
               },
               "note": {
-                  "zh-TW": "每次注射前都要測試。針頭朝上，確認針尖有藥滴。若沒有，重複安全測試；仍沒有就換針頭或新筆。",
-                  "en": "Do this before every injection. Point the needle up and make sure a drop appears at the tip. If no drop appears, repeat the safety test. If there is still no drop, change the needle or use a new pen.",
-                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas dan pastikan ada tetes di ujungnya. Jika belum ada, ulangi uji keamanan. Jika tetap tidak ada, ganti jarum atau gunakan pena baru.",
-                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên và xác nhận có giọt thuốc ở đầu kim. Nếu chưa có, lặp lại kiểm tra an toàn. Nếu vẫn chưa có, thay kim hoặc dùng bút mới.",
-                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นและดูว่ามีหยดยาที่ปลายเข็มหรือไม่ ถ้าไม่มีให้ทดสอบซ้ำ และถ้ายังไม่มีก็เปลี่ยนเข็มหรือใช้ปากกาใหม่",
-                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at tiyaking may patak sa dulo. Kung wala, ulitin ang safety test. Kung wala pa rin, palitan ang karayom o gumamit ng bagong pen.",
-                  "ja": "毎回の注射前に行う。針先を上に向け、先端に薬滴が出ることを確認する。出なければ安全テストを繰り返し、それでも出なければ針またはペンを交換する。"
+                  "zh-TW": "每次注射前都要做排氣測試。看到藥滴再注射。若沒有藥滴，可重做最多 3 次。若第 3 次後仍沒有藥滴，請更換針頭並重做排氣測試。若還是沒有藥滴，請換新筆。",
+                  "en": "Do this before every injection. Inject only after a drop appears at the tip. If no drop appears, repeat up to 3 times. If there is still no drop after the third time, change the needle and repeat the safety test. If you still do not see a drop, use a new pen.",
+                  "id": "Lakukan ini sebelum setiap suntikan. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ulangi sampai 3 kali. Jika setelah percobaan ketiga masih belum ada tetes obat, ganti jarum lalu ulangi uji keamanan. Jika tetap tidak ada tetes obat, gunakan pena baru.",
+                  "vi": "Làm bước này trước mỗi lần tiêm. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, lặp lại tối đa 3 lần. Nếu sau lần thứ 3 vẫn chưa có giọt thuốc, hãy thay kim rồi làm lại bước kiểm tra bút. Nếu vẫn không có giọt thuốc, hãy dùng bút mới.",
+                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้ทำซ้ำได้สูงสุด 3 ครั้ง หากหลังครั้งที่ 3 ยังไม่เห็นหยดยา ให้เปลี่ยนเข็มแล้วทำการทดสอบซ้ำ หากยังไม่เห็นหยดยา ให้เปลี่ยนปากกาใหม่",
+                  "tl": "Gawin ito bago bawat iniksyon. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, ulitin hanggang 3 beses. Kung wala pa ring patak pagkatapos ng ikatlong pagsubok, palitan ang karayom at ulitin ang safety test. Kung wala pa rin, gumamit ng bagong pen.",
+                  "ja": "毎回の注射前に行う。薬滴が出てから注射する。薬滴が出ない場合は最大3回までやり直す。3回行っても薬滴が出なければ針を交換して安全テストをやり直す。それでも薬滴が出なければ新しいペンを使う。"
               },
               "highlight": true,
               "illustration": "assets/svg/insulin-pen/step-2.svg"
@@ -14432,13 +14302,13 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "消毒筆端，裝上新針頭",
-                  "en": "Clean the pen tip and attach a new needle",
-                  "id": "Bersihkan ujung pena dan pasang jarum baru",
-                  "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                  "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                  "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                  "ja": "ペン先を消毒し、新しい針を付ける"
+                  "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                  "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                  "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                  "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                  "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                  "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                  "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
               },
               "note": {
                   "zh-TW": "每次都用新針頭。針頭未裝前，不要按壓按鈕。",
@@ -14453,7 +14323,7 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "排空測試：轉 2 單位，按到 0",
+                  "zh-TW": "排氣測試：轉 2 單位，按到 0",
                   "en": "Flow check: dial 2 units and press to 0",
                   "id": "Uji aliran: putar 2 unit lalu tekan ke 0",
                   "vi": "Kiểm tra lưu thông: vặn 2 đơn vị rồi ấn về 0",
@@ -14462,13 +14332,13 @@ const MEDICATIONS = [
                   "ja": "通りを確認する：2単位に合わせて0まで押す"
               },
               "note": {
-                  "zh-TW": "每次注射前都要測試。針頭朝上，確認針尖有藥滴。",
-                  "en": "Do this before every injection. Point the needle up and make sure a drop appears at the tip.",
-                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas dan pastikan ada tetes di ujungnya.",
-                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên và xác nhận có giọt thuốc ở đầu kim.",
-                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นและดูว่ามีหยดยาที่ปลายเข็มหรือไม่",
-                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at tiyaking may patak sa dulo.",
-                  "ja": "毎回の注射前に行う。針先を上に向け、先端に薬滴が出ることを確認する。"
+                  "zh-TW": "每次注射前都要做排氣測試。針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端。看到藥滴再注射。若沒有藥滴，請更換針頭並重做排氣測試，最多重做 6 次。若仍沒有藥滴，請換新筆。",
+                  "en": "Do this before every injection. Point the needle up and gently tap the cartridge a few times so any air bubbles rise to the top. Inject only after a drop appears at the tip. If no drop appears, change the needle and repeat the flow check, up to 6 times in total. If you still do not see a drop, use a new pen.",
+                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas lalu ketuk kartrid obat perlahan beberapa kali agar gelembung udara naik ke atas. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ganti jarum lalu ulangi uji aliran, maksimal total 6 kali. Jika tetap tidak ada tetes obat, gunakan pena baru.",
+                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên rồi gõ nhẹ ống thuốc vài cái để bọt khí nổi lên trên. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, hãy thay kim rồi làm lại bước kiểm tra lưu thông, tối đa 6 lần. Nếu vẫn không có giọt thuốc, hãy dùng bút mới.",
+                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นแล้วใช้นิ้วเคาะตลับยาเบา ๆ หลายครั้ง เพื่อให้ฟองอากาศลอยขึ้นด้านบน เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้เปลี่ยนเข็มแล้วทดสอบการไหลซ้ำ รวมแล้วไม่เกิน 6 ครั้ง หากยังไม่เห็นหยดยา ให้เปลี่ยนปากกาใหม่",
+                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at marahang pitikin ang cartridge nang ilang beses para umakyat sa itaas ang mga bula ng hangin. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, palitan ang karayom at ulitin ang flow check, hanggang 6 na beses sa kabuuan. Kung wala pa ring patak, gumamit ng bagong pen.",
+                  "ja": "毎回の注射前に行う。針先を上に向け、薬液カートリッジを指で軽く数回たたいて気泡を上に集める。薬滴が出てから注射する。薬滴が出ない場合は針を交換して通りの確認をやり直し、合計6回まで繰り返す。それでも薬滴が出なければ新しいペンを使う。"
               },
               "highlight": true,
               "illustration": "assets/svg/insulin-pen/step-2.svg"
@@ -14733,13 +14603,13 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "消毒筆端，裝上新針頭",
-                  "en": "Clean the pen tip and attach a new needle",
-                  "id": "Bersihkan ujung pena dan pasang jarum baru",
-                  "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                  "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                  "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                  "ja": "ペン先を消毒し、新しい針を付ける"
+                  "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                  "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                  "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                  "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                  "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                  "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                  "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
               },
               "note": {
                   "zh-TW": "每次都用新針頭。針頭未裝前，不要按壓按鈕。",
@@ -14754,7 +14624,7 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "排空測試：轉 1 或 2 單位",
+                  "zh-TW": "排氣測試：轉 1 或 2 單位",
                   "en": "Prime the pen: dial 1 or 2 units",
                   "id": "Priming pena: putar 1 atau 2 unit",
                   "vi": "Đuổi khí: vặn 1 hoặc 2 đơn vị",
@@ -14763,13 +14633,13 @@ const MEDICATIONS = [
                   "ja": "空打ち：1または2単位に合わせる"
               },
               "note": {
-                  "zh-TW": "每次注射前都要做。針頭朝上，按壓直到針尖有藥滴。",
-                  "en": "Do this before every injection. Point the needle up and press until a drop appears at the tip.",
-                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas dan tekan sampai ada tetes di ujungnya.",
-                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên và ấn cho đến khi có giọt thuốc ở đầu kim.",
-                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นและกดจนมีหยดยาที่ปลายเข็ม",
-                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at pindutin hanggang may patak sa dulo.",
-                  "ja": "毎回の注射前に行う。針先を上に向け、先端に薬滴が出るまで押す。"
+                  "zh-TW": "每次注射前都要做排氣測試。針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端。看到藥滴再注射。若沒有藥滴，可重做最多 4 次。若仍沒有藥滴，請更換針頭並重做排氣測試，確認注射筆與針頭運作正常。",
+                  "en": "Do this before every injection. Point the needle up and gently tap the cartridge a few times so any air bubbles rise to the top. Inject only after a drop appears at the tip. If no drop appears, repeat up to 4 times. If you still do not see a drop, change the needle and repeat the priming steps to make sure the pen and needle are working properly.",
+                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas lalu ketuk kartrid obat perlahan beberapa kali agar gelembung udara naik ke atas. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ulangi sampai 4 kali. Jika masih tidak ada, ganti jarum lalu ulangi langkah priming untuk memastikan pena dan jarum berfungsi dengan baik.",
+                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên rồi gõ nhẹ ống thuốc vài cái để bọt khí nổi lên trên. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, lặp lại tối đa 4 lần. Nếu vẫn chưa có, hãy thay kim rồi làm lại bước đuổi khí để bảo đảm bút và kim hoạt động bình thường.",
+                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นแล้วใช้นิ้วเคาะตลับยาเบา ๆ หลายครั้ง เพื่อให้ฟองอากาศลอยขึ้นด้านบน เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้ทำซ้ำได้สูงสุด 4 ครั้ง หากยังไม่เห็น ให้เปลี่ยนเข็มแล้วทำขั้นตอนไล่อากาศซ้ำ เพื่อให้แน่ใจว่าปากกาและเข็มทำงานได้ตามปกติ",
+                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at marahang pitikin ang cartridge nang ilang beses para umakyat sa itaas ang mga bula ng hangin. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, ulitin hanggang 4 na beses. Kung wala pa rin, palitan ang karayom at ulitin ang priming steps para matiyak na maayos ang pen at karayom.",
+                  "ja": "毎回の注射前に行う。針先を上に向け、薬液カートリッジを指で軽く数回たたいて気泡を上に集める。薬滴が出てから注射する。薬滴が出ない場合は最大4回までやり直す。それでも出なければ針を交換し、ペンと針が正常に作動することを確認するために空打ちをやり直す。"
               },
               "highlight": true,
               "illustration": "assets/svg/insulin-pen/step-2.svg"
@@ -15012,13 +14882,13 @@ const MEDICATIONS = [
               },
               {
                     "action": {
-                          "zh-TW": "消毒筆端，裝上新針頭",
-                          "en": "Clean the pen tip and attach a new needle",
-                          "id": "Bersihkan ujung pena dan pasang jarum baru",
-                          "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                          "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                          "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                          "ja": "ペン先を消毒し、新しい針を付ける"
+                          "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                          "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                          "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                          "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                          "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                          "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                          "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
                     },
                     "note": {
                           "zh-TW": "拔除內針蓋，保留外針蓋。每次都用新針頭。",
@@ -15033,7 +14903,7 @@ const MEDICATIONS = [
               },
               {
                     "action": {
-                          "zh-TW": "通暢測試：轉 2 單位，按到 0",
+                          "zh-TW": "排氣測試：轉 2 單位，按到 0",
                           "en": "Flow check: dial 2 units and press to 0",
                           "id": "Uji aliran: putar 2 unit lalu tekan ke 0",
                           "vi": "Kiểm tra lưu thông: vặn 2 đơn vị rồi ấn về 0",
@@ -15042,13 +14912,13 @@ const MEDICATIONS = [
                           "ja": "通りを確認する：2単位に合わせて0まで押す"
                     },
                     "note": {
-                          "zh-TW": "每次注射前都要測試。針頭朝上，確認針尖有藥滴。若沒有，可重複最多 6 次；仍沒有就換針頭。",
-                          "en": "Do this before every injection. Point the needle up and make sure a drop appears at the tip. If not, repeat up to 6 times. If there is still no drop, change the needle.",
-                          "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas dan pastikan ada tetes di ujungnya. Jika belum ada, ulangi sampai 6 kali. Jika masih tidak ada, ganti jarum.",
-                          "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên và xác nhận có giọt thuốc ở đầu kim. Nếu chưa có, lặp lại tối đa 6 lần. Nếu vẫn chưa có, hãy thay kim.",
-                          "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นและดูว่ามีหยดยาที่ปลายเข็มหรือไม่ ถ้าไม่มี ให้ทำซ้ำได้สูงสุด 6 ครั้ง และหากยังไม่มีก็เปลี่ยนเข็ม",
-                          "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at tiyaking may patak sa dulo. Kung wala, ulitin hanggang 6 na beses. Kung wala pa rin, palitan ang karayom.",
-                          "ja": "毎回の注射前に行う。針先を上に向け、先端に薬滴が出ることを確認する。出なければ最大6回まで繰り返し、それでも出なければ針を交換する。"
+                          "zh-TW": "每次注射前都要做排氣測試。針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端。看到藥滴再注射。若沒有藥滴，請更換針頭並重做排氣測試，最多重做 6 次。若仍沒有藥滴，請換新筆。",
+                          "en": "Do this before every injection. Point the needle up and gently tap the cartridge a few times so any air bubbles rise to the top. Inject only after a drop appears at the tip. If no drop appears, change the needle and repeat the flow check, up to 6 times in total. If you still do not see a drop, use a new pen.",
+                          "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas lalu ketuk kartrid obat perlahan beberapa kali agar gelembung udara naik ke atas. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ganti jarum lalu ulangi uji aliran, maksimal total 6 kali. Jika tetap tidak ada tetes obat, gunakan pena baru.",
+                          "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên rồi gõ nhẹ ống thuốc vài cái để bọt khí nổi lên trên. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, hãy thay kim rồi làm lại bước kiểm tra lưu thông, tối đa 6 lần. Nếu vẫn không có giọt thuốc, hãy dùng bút mới.",
+                          "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นแล้วใช้นิ้วเคาะตลับยาเบา ๆ หลายครั้ง เพื่อให้ฟองอากาศลอยขึ้นด้านบน เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้เปลี่ยนเข็มแล้วทดสอบการไหลซ้ำ รวมแล้วไม่เกิน 6 ครั้ง หากยังไม่เห็นหยดยา ให้เปลี่ยนปากกาใหม่",
+                          "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at marahang pitikin ang cartridge nang ilang beses para umakyat sa itaas ang mga bula ng hangin. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, palitan ang karayom at ulitin ang flow check, hanggang 6 na beses sa kabuuan. Kung wala pa ring patak, gumamit ng bagong pen.",
+                          "ja": "毎回の注射前に行う。針先を上に向け、薬液カートリッジを指で軽く数回たたいて気泡を上に集める。薬滴が出てから注射する。薬滴が出ない場合は針を交換して通りの確認をやり直し、合計6回まで繰り返す。それでも薬滴が出なければ新しいペンを使う。"
                     },
                     "illustration": "assets/svg/insulin-pen/step-2.svg"
               },
@@ -15337,13 +15207,13 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "消毒筆端，裝上新針頭",
-                  "en": "Clean the pen tip and attach a new needle",
-                  "id": "Bersihkan ujung pena dan pasang jarum baru",
-                  "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                  "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                  "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                  "ja": "ペン先を消毒し、新しい針を付ける"
+                  "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                  "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                  "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                  "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                  "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                  "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                  "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
               },
               "note": {
                   "zh-TW": "每次都用新針頭。針頭未裝前，不要按壓按鈕。",
@@ -15358,7 +15228,7 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "排空測試：轉 2 單位，按到 0",
+                  "zh-TW": "排氣測試：轉 2 單位，按到 0",
                   "en": "Flow check: dial 2 units and press to 0",
                   "id": "Uji aliran: putar 2 unit lalu tekan ke 0",
                   "vi": "Kiểm tra lưu thông: vặn 2 đơn vị rồi ấn về 0",
@@ -15367,13 +15237,13 @@ const MEDICATIONS = [
                   "ja": "通りを確認する：2単位に合わせて0まで押す"
               },
               "note": {
-                  "zh-TW": "每次注射前都要測試。針頭朝上，確認針尖有藥滴。若沒有，可重複最多 6 次。",
-                  "en": "Do this before every injection. Point the needle up and make sure a drop appears at the tip. If not, repeat up to 6 times.",
-                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas dan pastikan ada tetes di ujungnya. Jika belum ada, ulangi sampai 6 kali.",
-                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên và xác nhận có giọt thuốc ở đầu kim. Nếu chưa có, lặp lại tối đa 6 lần.",
-                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นและดูว่ามีหยดยาที่ปลายเข็มหรือไม่ ถ้าไม่มี ให้ทำซ้ำได้สูงสุด 6 ครั้ง",
-                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at tiyaking may patak sa dulo. Kung wala, ulitin hanggang 6 na beses.",
-                  "ja": "毎回の注射前に行う。針先を上に向け、先端に薬滴が出ることを確認する。出なければ最大6回まで繰り返す。"
+                  "zh-TW": "每次注射前都要做排氣測試。針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端。看到藥滴再注射。若沒有藥滴，請更換針頭並重做排氣測試，最多重做 6 次。若仍沒有藥滴，請換新筆。",
+                  "en": "Do this before every injection. Point the needle up and gently tap the cartridge a few times so any air bubbles rise to the top. Inject only after a drop appears at the tip. If no drop appears, change the needle and repeat the flow check, up to 6 times in total. If you still do not see a drop, use a new pen.",
+                  "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas lalu ketuk kartrid obat perlahan beberapa kali agar gelembung udara naik ke atas. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ganti jarum lalu ulangi uji aliran, maksimal total 6 kali. Jika tetap tidak ada tetes obat, gunakan pena baru.",
+                  "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên rồi gõ nhẹ ống thuốc vài cái để bọt khí nổi lên trên. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, hãy thay kim rồi làm lại bước kiểm tra lưu thông, tối đa 6 lần. Nếu vẫn không có giọt thuốc, hãy dùng bút mới.",
+                  "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นแล้วใช้นิ้วเคาะตลับยาเบา ๆ หลายครั้ง เพื่อให้ฟองอากาศลอยขึ้นด้านบน เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้เปลี่ยนเข็มแล้วทดสอบการไหลซ้ำ รวมแล้วไม่เกิน 6 ครั้ง หากยังไม่เห็นหยดยา ให้เปลี่ยนปากกาใหม่",
+                  "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at marahang pitikin ang cartridge nang ilang beses para umakyat sa itaas ang mga bula ng hangin. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, palitan ang karayom at ulitin ang flow check, hanggang 6 na beses sa kabuuan. Kung wala pa ring patak, gumamit ng bagong pen.",
+                  "ja": "毎回の注射前に行う。針先を上に向け、薬液カートリッジを指で軽く数回たたいて気泡を上に集める。薬滴が出てから注射する。薬滴が出ない場合は針を交換して通りの確認をやり直し、合計6回まで繰り返す。それでも薬滴が出なければ新しいペンを使う。"
               },
               "highlight": true,
               "illustration": "assets/svg/insulin-pen/step-2.svg"
@@ -15616,13 +15486,13 @@ const MEDICATIONS = [
               },
               {
                     "action": {
-                          "zh-TW": "消毒筆端，裝上新針頭",
-                          "en": "Clean the pen tip and attach a new needle",
-                          "id": "Bersihkan ujung pena dan pasang jarum baru",
-                          "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                          "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                          "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                          "ja": "ペン先を消毒し、新しい針を付ける"
+                          "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                          "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                          "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                          "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                          "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                          "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                          "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
                     },
                     "note": {
                           "zh-TW": "拔除內針蓋，保留外針蓋。每次都用新針頭。",
@@ -15637,7 +15507,7 @@ const MEDICATIONS = [
               },
               {
                     "action": {
-                          "zh-TW": "通暢測試：轉 3 單位，按到底",
+                          "zh-TW": "排氣測試：轉 3 單位，按到底",
                           "en": "Safety test: dial 3 units and press fully",
                           "id": "Uji keamanan: putar 3 unit lalu tekan penuh",
                           "vi": "Thử bút: vặn 3 đơn vị rồi ấn hết",
@@ -15646,13 +15516,13 @@ const MEDICATIONS = [
                           "ja": "安全テスト：3単位に合わせて最後まで押す"
                     },
                     "note": {
-                          "zh-TW": "每次注射前都要測試。若無藥滴，可重複最多 3 次；仍沒有就換針頭。",
-                          "en": "Do this before every injection. If no drop appears, repeat up to 3 times. If there is still no drop, change the needle.",
-                          "id": "Lakukan ini sebelum setiap suntikan. Jika belum ada tetes, ulangi sampai 3 kali. Jika masih tidak ada, ganti jarum.",
-                          "vi": "Làm bước này trước mỗi lần tiêm. Nếu chưa có giọt thuốc, lặp lại tối đa 3 lần. Nếu vẫn chưa có, hãy thay kim.",
-                          "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง ถ้าไม่มีหยดยา ให้ทำซ้ำได้สูงสุด 3 ครั้ง และหากยังไม่มีก็เปลี่ยนเข็ม",
-                          "tl": "Gawin ito bago bawat iniksyon. Kung walang patak, ulitin hanggang 3 beses. Kung wala pa rin, palitan ang karayom.",
-                          "ja": "毎回の注射前に行う。薬滴が出なければ最大3回まで繰り返し、それでも出なければ針を交換する。"
+                          "zh-TW": "每次注射前都要做排氣測試。看到藥滴再注射。若沒有藥滴，可重做最多 3 次。若第 3 次後仍沒有藥滴，請更換針頭並重做排氣測試。若還是沒有藥滴，請換新筆。",
+                          "en": "Do this before every injection. Inject only after a drop appears at the tip. If no drop appears, repeat up to 3 times. If there is still no drop after the third time, change the needle and repeat the safety test. If you still do not see a drop, use a new pen.",
+                          "id": "Lakukan ini sebelum setiap suntikan. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ulangi sampai 3 kali. Jika setelah percobaan ketiga masih belum ada tetes obat, ganti jarum lalu ulangi uji keamanan. Jika tetap tidak ada tetes obat, gunakan pena baru.",
+                          "vi": "Làm bước này trước mỗi lần tiêm. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, lặp lại tối đa 3 lần. Nếu sau lần thứ 3 vẫn chưa có giọt thuốc, hãy thay kim rồi làm lại bước kiểm tra bút. Nếu vẫn không có giọt thuốc, hãy dùng bút mới.",
+                          "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้ทำซ้ำได้สูงสุด 3 ครั้ง หากหลังครั้งที่ 3 ยังไม่เห็นหยดยา ให้เปลี่ยนเข็มแล้วทำการทดสอบซ้ำ หากยังไม่เห็นหยดยา ให้เปลี่ยนปากกาใหม่",
+                          "tl": "Gawin ito bago bawat iniksyon. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, ulitin hanggang 3 beses. Kung wala pa ring patak pagkatapos ng ikatlong pagsubok, palitan ang karayom at ulitin ang safety test. Kung wala pa rin, gumamit ng bagong pen.",
+                          "ja": "毎回の注射前に行う。薬滴が出てから注射する。薬滴が出ない場合は最大3回までやり直す。3回行っても薬滴が出なければ針を交換して安全テストをやり直す。それでも薬滴が出なければ新しいペンを使う。"
                     },
                     "illustration": "assets/svg/insulin-pen/step-2.svg"
               },
@@ -15914,13 +15784,13 @@ const MEDICATIONS = [
               },
               {
                     "action": {
-                          "zh-TW": "消毒筆端，裝上新針頭",
-                          "en": "Clean the pen tip and attach a new needle",
-                          "id": "Bersihkan ujung pena dan pasang jarum baru",
-                          "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                          "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                          "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                          "ja": "ペン先を消毒し、新しい針を付ける"
+                          "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                          "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                          "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                          "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                          "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                          "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                          "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
                     },
                     "note": {
                           "zh-TW": "拔除內針蓋，保留外針蓋。每次都用新針頭。",
@@ -15935,7 +15805,7 @@ const MEDICATIONS = [
               },
               {
                     "action": {
-                          "zh-TW": "通暢測試：轉 2 單位，按到 0",
+                          "zh-TW": "排氣測試：轉 2 單位，按到 0",
                           "en": "Flow check: dial 2 units and press to 0",
                           "id": "Uji aliran: putar 2 unit lalu tekan ke 0",
                           "vi": "Kiểm tra lưu thông: vặn 2 đơn vị rồi ấn về 0",
@@ -15944,13 +15814,13 @@ const MEDICATIONS = [
                           "ja": "通りを確認する：2単位に合わせて0まで押す"
                     },
                     "note": {
-                          "zh-TW": "每次注射前都要測試。針頭朝上，確認針尖有藥滴。若無藥滴，可重複最多 6 次。",
-                          "en": "Do this before every injection. Point the needle up and make sure a drop appears at the tip. If no drop appears, repeat up to 6 times.",
-                          "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas dan pastikan ada tetes di ujungnya. Jika belum ada, ulangi sampai 6 kali.",
-                          "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên và xác nhận có giọt thuốc ở đầu kim. Nếu chưa có, lặp lại tối đa 6 lần.",
-                          "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นและดูว่ามีหยดยาที่ปลายเข็มหรือไม่ ถ้าไม่มี ให้ทำซ้ำได้สูงสุด 6 ครั้ง",
-                          "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at tiyaking may patak sa dulo. Kung wala, ulitin hanggang 6 na beses.",
-                          "ja": "毎回の注射前に行う。針先を上に向け、先端に薬滴が出ることを確認する。出なければ最大6回まで繰り返す。"
+                          "zh-TW": "每次注射前都要做排氣測試。針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端。看到藥滴再注射。若沒有藥滴，請更換針頭並重做排氣測試，最多重做 6 次。若仍沒有藥滴，請換新筆。",
+                          "en": "Do this before every injection. Point the needle up and gently tap the cartridge a few times so any air bubbles rise to the top. Inject only after a drop appears at the tip. If no drop appears, change the needle and repeat the flow check, up to 6 times in total. If you still do not see a drop, use a new pen.",
+                          "id": "Lakukan ini sebelum setiap suntikan. Arahkan jarum ke atas lalu ketuk kartrid obat perlahan beberapa kali agar gelembung udara naik ke atas. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ganti jarum lalu ulangi uji aliran, maksimal total 6 kali. Jika tetap tidak ada tetes obat, gunakan pena baru.",
+                          "vi": "Làm bước này trước mỗi lần tiêm. Hướng kim lên trên rồi gõ nhẹ ống thuốc vài cái để bọt khí nổi lên trên. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, hãy thay kim rồi làm lại bước kiểm tra lưu thông, tối đa 6 lần. Nếu vẫn không có giọt thuốc, hãy dùng bút mới.",
+                          "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง หันเข็มขึ้นแล้วใช้นิ้วเคาะตลับยาเบา ๆ หลายครั้ง เพื่อให้ฟองอากาศลอยขึ้นด้านบน เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้เปลี่ยนเข็มแล้วทดสอบการไหลซ้ำ รวมแล้วไม่เกิน 6 ครั้ง หากยังไม่เห็นหยดยา ให้เปลี่ยนปากกาใหม่",
+                          "tl": "Gawin ito bago bawat iniksyon. Ituro paitaas ang karayom at marahang pitikin ang cartridge nang ilang beses para umakyat sa itaas ang mga bula ng hangin. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, palitan ang karayom at ulitin ang flow check, hanggang 6 na beses sa kabuuan. Kung wala pa ring patak, gumamit ng bagong pen.",
+                          "ja": "毎回の注射前に行う。針先を上に向け、薬液カートリッジを指で軽く数回たたいて気泡を上に集める。薬滴が出てから注射する。薬滴が出ない場合は針を交換して通りの確認をやり直し、合計6回まで繰り返す。それでも薬滴が出なければ新しいペンを使う。"
                     },
                     "illustration": "assets/svg/insulin-pen/step-2.svg"
               },
@@ -16206,13 +16076,13 @@ const MEDICATIONS = [
               "ja": "使い方の要点"
           },
           text: {
-              "zh-TW": "每天一次，任何時間都可。\n第一次使用新筆時才需要排氣。\n劑量常從 0.6 mg 開始，再依醫囑調整。",
-              "en": "Use it once daily at any time of day.\nPrime only when you use a new pen for the first time.\nThe dose often starts at 0.6 mg and is adjusted by your doctor.",
-              "id": "Gunakan sekali sehari pada waktu apa pun.\nLakukan prime hanya saat pertama kali memakai pena baru.\nDosis biasanya dimulai dari 0,6 mg lalu disesuaikan oleh dokter.",
-              "vi": "Dùng 1 lần mỗi ngày, vào bất kỳ thời điểm nào.\nChỉ cần đuổi khí khi dùng bút mới lần đầu.\nLiều thường bắt đầu từ 0,6 mg rồi được bác sĩ điều chỉnh.",
-              "th": "ใช้วันละ 1 ครั้ง เวลาใดก็ได้\nไล่อากาศเฉพาะตอนใช้ปากกาใหม่ครั้งแรก\nขนาดยามักเริ่มที่ 0.6 mg แล้วแพทย์จะปรับให้",
-              "tl": "Gamitin ito isang beses araw-araw sa anumang oras.\nMag-prime lamang kapag unang gamit ng bagong pen.\nKaraniwang nagsisimula ang dosis sa 0.6 mg at ina-adjust ng doktor.",
-              "ja": "1日1回、時間はいつでもよい。\n新しいペンを初めて使うときだけ空打ちする。\n用量は0.6 mgから始まり、医師が調整することが多い。"
+              "zh-TW": "每天一次，任何時間都可。\n每支新筆第一次使用前，先做排氣檢查；同一支筆之後不用重複。\n劑量常從 0.6 mg 開始，再依醫囑調整。",
+              "en": "Use it once daily at any time of day.\nBefore the first use of each new pen, do an air check once; you do not need to repeat it with the same pen.\nThe dose often starts at 0.6 mg and is adjusted by your doctor.",
+              "id": "Gunakan sekali sehari pada waktu apa pun.\nSebelum pemakaian pertama setiap pena baru, lakukan pemeriksaan udara sekali; dengan pena yang sama Anda tidak perlu mengulanginya.\nDosis biasanya dimulai dari 0,6 mg lalu disesuaikan oleh dokter.",
+              "vi": "Dùng 1 lần mỗi ngày, vào bất kỳ thời điểm nào.\nTrước lần dùng đầu tiên của mỗi bút mới, làm kiểm tra đuổi khí một lần; với cùng cây bút thì không cần lặp lại.\nLiều thường bắt đầu từ 0,6 mg rồi được bác sĩ điều chỉnh.",
+              "th": "ใช้วันละ 1 ครั้ง เวลาใดก็ได้\nก่อนใช้ปากกาใหม่แต่ละด้ามครั้งแรก ให้ตรวจไล่อากาศ 1 ครั้ง; เมื่อใช้ปากกาเดิมต่อ ไม่ต้องทำซ้ำ\nขนาดยามักเริ่มที่ 0.6 mg แล้วแพทย์จะปรับให้",
+              "tl": "Gamitin ito isang beses araw-araw sa anumang oras.\nBago unang gamitin ang bawat bagong pen, magsagawa ng air check nang isang beses; hindi na ito inuulit sa parehong pen.\nKaraniwang nagsisimula ang dosis sa 0.6 mg at ina-adjust ng doktor.",
+              "ja": "1日1回、時間はいつでもよい。\n新しいペンを初めて使う前に空打ちを1回確認し、同じペンでは繰り返さない。\n用量は0.6 mgから始まり、医師が調整することが多い。"
           }
       },
       steps: [
@@ -16260,22 +16130,22 @@ const MEDICATIONS = [
           },
           {
               action: {
-                  "zh-TW": "第一次使用新筆時，排氣到看到藥滴",
-                  "en": "For a new pen only, prime until a drop appears",
-                  "id": "Untuk pena baru saja, lakukan prime sampai muncul tetes obat",
-                  "vi": "Chỉ với bút mới, đuổi khí đến khi thấy giọt thuốc",
-                  "th": "เฉพาะปากกาใหม่ ให้ไล่อากาศจนเห็นหยดยา",
-                  "tl": "Para sa bagong pen lamang, mag-prime hanggang may patak ng gamot",
-                  "ja": "新しいペンの初回だけ、薬液が出るまで空打ちする"
+                  "zh-TW": "第一次使用新筆時，做排氣檢查",
+                  "en": "Before first use of a new pen, do an air check",
+                  "id": "Saat pertama kali memakai pena baru, lakukan pemeriksaan udara",
+                  "vi": "Lần đầu dùng bút mới, làm kiểm tra đuổi khí",
+                  "th": "เมื่อใช้ปากกาใหม่ครั้งแรก ให้ตรวจไล่อากาศ",
+                  "tl": "Sa unang gamit ng bagong pen, magsagawa ng air check",
+                  "ja": "新しいペンを初めて使うときは空打ちを確認する"
               },
               note: {
-                  "zh-TW": "轉到排氣符號，針頭朝上，按到 0 mg。沒有藥滴時，不要注射。",
-                  "en": "Turn to the flow-check symbol, point the needle up, and press to 0 mg. Do not inject if no drop appears.",
-                  "id": "Putar ke simbol cek aliran, arahkan jarum ke atas, lalu tekan sampai 0 mg. Jangan suntik jika tidak ada tetes.",
-                  "vi": "Vặn tới ký hiệu kiểm tra dòng chảy, hướng kim lên trên, rồi ấn tới 0 mg. Không tiêm nếu chưa thấy giọt thuốc.",
-                  "th": "หมุนไปที่สัญลักษณ์ไล่อากาศ หันเข็มขึ้น แล้วกดจนถึง 0 mg ถ้ายังไม่เห็นหยดยา ห้ามฉีด",
-                  "tl": "Iikot sa simbolo ng flow check, ituro paitaas ang karayom, at pindutin hanggang 0 mg. Huwag mag-inject kung walang patak.",
-                  "ja": "フローチェック記号に合わせ、針先を上に向けて0 mgまで押す。薬滴が出なければ注射しない。"
+                  "zh-TW": "旋轉到排氣標示線（--）。針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端，再按到 0 mg。若沒有藥滴，可重複最多 6 次；若仍沒有藥滴，請換新筆。看到藥滴再注射。",
+                  "en": "Turn to the air-check mark (--). Hold the needle up, gently tap the cartridge a few times so any air bubbles rise to the top, then press until 0 mg. If no drop appears, repeat up to 6 times. If there is still no drop, use a new pen. Inject only after a drop appears.",
+                  "id": "Putar ke tanda pemeriksaan udara (--). Arahkan jarum ke atas, ketuk kartrid obat perlahan beberapa kali agar gelembung udara naik ke atas, lalu tekan sampai 0 mg. Jika tidak ada tetes, ulangi sampai maksimal 6 kali. Jika tetap tidak ada tetes, gunakan pena baru. Suntik hanya setelah muncul tetes obat.",
+                  "vi": "Vặn tới vạch kiểm tra đuổi khí (--). Hướng kim lên trên, gõ nhẹ ống thuốc vài cái để bọt khí nổi lên trên, rồi ấn tới 0 mg. Nếu chưa thấy giọt thuốc, có thể lặp lại tối đa 6 lần. Nếu vẫn không có giọt thuốc, hãy đổi bút mới. Chỉ tiêm sau khi thấy giọt thuốc.",
+                  "th": "หมุนไปที่สัญลักษณ์ตรวจไล่อากาศ (--)\nหันเข็มขึ้น แล้วใช้นิ้วเคาะตลับยาเบา ๆ หลายครั้งเพื่อให้ฟองอากาศลอยขึ้นด้านบน จากนั้นกดจนถึง 0 mg หากยังไม่เห็นหยดยา ให้ทำซ้ำได้สูงสุด 6 ครั้ง หากยังไม่มีหยดยา ให้เปลี่ยนปากกาใหม่ เห็นหยดยาแล้วจึงฉีด",
+                  "tl": "Iikot sa marka ng air check (--). Ituro paitaas ang karayom, marahang pitikin ang cartridge nang ilang beses para umakyat sa itaas ang mga bula ng hangin, saka pindutin hanggang 0 mg. Kung walang patak, ulitin nang hanggang 6 na beses. Kung wala pa ring patak, gumamit ng bagong pen. Mag-inject lamang kapag may lumabas nang patak.",
+                  "ja": "排気確認マーク（--）に合わせる。針先を上に向け、薬液カートリッジを指で軽く数回たたいて気泡を上に集めてから、0 mgになるまで押す。薬滴が出なければ最大6回まで繰り返し、それでも出なければ新しいペンに替える。薬滴が出てから注射する。"
               },
               illustration: "assets/svg/glp1-pen/step-2.svg"
           },
@@ -16856,13 +16726,13 @@ const MEDICATIONS = [
               "ja": "使い方の要点"
           },
           text: {
-              "zh-TW": "每週一次，請固定星期施打。\n每一支新筆第一次使用前才需要排氣。\n劑量常從 0.25 mg 開始，再依醫囑調整。",
-              "en": "Use it once a week on the same day.\nPrime only before the first use of each new pen.\nThe dose often starts at 0.25 mg and is adjusted by your doctor.",
-              "id": "Gunakan seminggu sekali pada hari yang tetap.\nLakukan prime hanya sebelum pemakaian pertama pada setiap pena baru.\nDosis biasanya dimulai dari 0,25 mg lalu disesuaikan oleh dokter.",
-              "vi": "Dùng 1 lần mỗi tuần vào một ngày cố định.\nChỉ cần đuổi khí trước lần dùng đầu tiên của mỗi bút mới.\nLiều thường bắt đầu từ 0,25 mg rồi được bác sĩ điều chỉnh.",
-              "th": "ใช้สัปดาห์ละ 1 ครั้งในวันเดิม\nไล่อากาศเฉพาะก่อนใช้ปากกาใหม่แต่ละด้ามครั้งแรก\nขนาดยามักเริ่มที่ 0.25 mg แล้วแพทย์จะปรับให้",
-              "tl": "Gamitin ito isang beses bawat linggo sa isang nakatakdang araw.\nMag-prime lamang bago unang gamit ng bawat bagong pen.\nKaraniwang nagsisimula ang dosis sa 0.25 mg at ina-adjust ng doktor.",
-              "ja": "週1回、決まった曜日に使う。\n空打ちが必要なのは、新しいペンを最初に使う前だけである。\n用量は0.25 mgから始まり、医師が調整することが多い。"
+              "zh-TW": "每週一次，請固定星期施打。\n每支新筆第一次使用前，先做排氣檢查；同一支筆之後不用重複。\n劑量常從 0.25 mg 開始，再依醫囑調整。",
+              "en": "Use it once a week on the same day.\nBefore the first use of each new pen, do an air check once; you do not need to repeat it with the same pen.\nThe dose often starts at 0.25 mg and is adjusted by your doctor.",
+              "id": "Gunakan seminggu sekali pada hari yang tetap.\nSebelum pemakaian pertama setiap pena baru, lakukan pemeriksaan udara sekali; dengan pena yang sama Anda tidak perlu mengulanginya.\nDosis biasanya dimulai dari 0,25 mg lalu disesuaikan oleh dokter.",
+              "vi": "Dùng 1 lần mỗi tuần vào một ngày cố định.\nTrước lần dùng đầu tiên của mỗi bút mới, làm kiểm tra đuổi khí một lần; với cùng cây bút thì không cần lặp lại.\nLiều thường bắt đầu từ 0,25 mg rồi được bác sĩ điều chỉnh.",
+              "th": "ใช้สัปดาห์ละ 1 ครั้งในวันเดิม\nก่อนใช้ปากกาใหม่แต่ละด้ามครั้งแรก ให้ตรวจไล่อากาศ 1 ครั้ง; เมื่อใช้ปากกาเดิมต่อ ไม่ต้องทำซ้ำ\nขนาดยามักเริ่มที่ 0.25 mg แล้วแพทย์จะปรับให้",
+              "tl": "Gamitin ito isang beses bawat linggo sa isang nakatakdang araw.\nBago unang gamitin ang bawat bagong pen, magsagawa ng air check nang isang beses; hindi na ito inuulit sa parehong pen.\nKaraniwang nagsisimula ang dosis sa 0.25 mg at ina-adjust ng doktor.",
+              "ja": "週1回、決まった曜日に使う。\n新しいペンを初めて使う前に空打ちを1回確認し、同じペンでは繰り返さない。\n用量は0.25 mgから始まり、医師が調整することが多い。"
           }
       },
       steps: [
@@ -16910,22 +16780,22 @@ const MEDICATIONS = [
           },
           {
               action: {
-                  "zh-TW": "每一支新筆第一次使用前，排氣到看到藥滴",
-                  "en": "Before the first use of each new pen, prime until a drop appears",
-                  "id": "Sebelum pemakaian pertama setiap pena baru, lakukan prime sampai muncul tetes obat",
-                  "vi": "Trước lần dùng đầu tiên của mỗi bút mới, đuổi khí đến khi thấy giọt thuốc",
-                  "th": "ก่อนใช้ปากกาใหม่แต่ละด้ามครั้งแรก ให้ไล่อากาศจนเห็นหยดยา",
-                  "tl": "Bago unang gamitin ang bawat bagong pen, mag-prime hanggang may patak ng gamot",
-                  "ja": "新しいペンを初めて使う前に、薬液が出るまで空打ちする"
+                  "zh-TW": "每一支新筆第一次使用前，做排氣檢查",
+                  "en": "Before the first use of each new pen, do an air check",
+                  "id": "Sebelum pemakaian pertama setiap pena baru, lakukan pemeriksaan udara",
+                  "vi": "Trước lần dùng đầu tiên của mỗi bút mới, làm kiểm tra đuổi khí",
+                  "th": "ก่อนใช้ปากกาใหม่แต่ละด้ามครั้งแรก ให้ตรวจไล่อากาศ",
+                  "tl": "Bago unang gamitin ang bawat bagong pen, magsagawa ng air check",
+                  "ja": "新しいペンを初めて使う前に空打ちを確認する"
               },
               note: {
-                  "zh-TW": "之後每週施打時，不用重複排氣。沒有藥滴時，不要注射。",
-                  "en": "You do not need to prime again for weekly doses with the same pen. Do not inject if no drop appears.",
-                  "id": "Anda tidak perlu melakukan prime lagi untuk dosis mingguan dengan pena yang sama. Jangan suntik jika tidak ada tetes.",
-                  "vi": "Không cần đuổi khí lại cho các lần tiêm hằng tuần với cùng cây bút. Không tiêm nếu chưa thấy giọt thuốc.",
-                  "th": "เมื่อเป็นเข็มประจำสัปดาห์ของปากกาเดิม ไม่ต้องไล่อากาศซ้ำ ถ้ายังไม่เห็นหยดยา ห้ามฉีด",
-                  "tl": "Hindi na kailangang mag-prime muli para sa lingguhang dosis gamit ang parehong pen. Huwag mag-inject kung walang patak.",
-                  "ja": "同じペンでの毎週の注射では、空打ちを繰り返す必要はない。薬滴が出なければ注射しない。"
+                  "zh-TW": "旋轉到排氣符號。針尖朝上，按住注射鈕直到顯示 0 mg。若沒有藥滴，可重複最多 6 次；若仍沒有藥滴，請更換針頭後再重做 1 次。若還是沒有藥滴，請不要使用這支筆。看到藥滴再注射。之後每週施打時，不用重複排氣。",
+                  "en": "Turn to the air-check symbol. Hold the needle up and press the dose button until 0 mg shows. If no drop appears, repeat up to 6 times. If there is still no drop, change the needle and repeat the air check 1 more time. If there is still no drop, do not use this pen. Inject only after a drop appears. With the same pen, you do not need to repeat this air check for later weekly doses.",
+                  "id": "Putar ke simbol pemeriksaan udara. Arahkan jarum ke atas lalu tekan tombol dosis sampai muncul 0 mg. Jika tidak ada tetes, ulangi sampai maksimal 6 kali. Jika tetap tidak ada tetes, ganti jarum lalu ulangi pemeriksaan udara 1 kali lagi. Jika masih tidak ada tetes, jangan gunakan pena ini. Suntik hanya setelah muncul tetes obat. Dengan pena yang sama, Anda tidak perlu mengulanginya pada suntikan mingguan berikutnya.",
+                  "vi": "Vặn tới ký hiệu kiểm tra đuổi khí. Hướng kim lên trên rồi ấn nút tiêm đến khi hiện 0 mg. Nếu chưa thấy giọt thuốc, có thể lặp lại tối đa 6 lần. Nếu vẫn không có giọt thuốc, hãy thay kim rồi làm lại kiểm tra đuổi khí thêm 1 lần nữa. Nếu vẫn chưa có giọt thuốc, không dùng cây bút này. Chỉ tiêm sau khi thấy giọt thuốc. Với cùng cây bút, các lần tiêm hằng tuần sau đó không cần lặp lại bước này.",
+                  "th": "หมุนไปที่สัญลักษณ์ตรวจไล่อากาศ หันเข็มขึ้น แล้วกดปุ่มยาจนแสดง 0 mg หากยังไม่เห็นหยดยา ให้ทำซ้ำได้สูงสุด 6 ครั้ง หากยังไม่มีหยดยา ให้เปลี่ยนเข็มแล้วตรวจไล่อากาศซ้ำอีก 1 ครั้ง ถ้ายังไม่มีหยดยาอีก ห้ามใช้ปากกาด้ามนี้ เห็นหยดยาแล้วจึงฉีด และเมื่อใช้ปากกาเดิมต่อในสัปดาห์ถัดไป ไม่ต้องไล่อากาศซ้ำ",
+                  "tl": "Iikot sa simbolo ng air check. Ituro paitaas ang karayom at pindutin ang dose button hanggang magpakita ng 0 mg. Kung walang patak, ulitin nang hanggang 6 na beses. Kung wala pa ring patak, palitan ang karayom at ulitin ang air check nang 1 beses pa. Kung wala pa rin, huwag gamitin ang pen na ito. Mag-inject lamang kapag may lumabas nang patak. Sa parehong pen, hindi na kailangang ulitin ito sa mga susunod na lingguhang dosis.",
+                  "ja": "排気確認の記号に合わせる。針先を上に向け、0 mgが表示されるまで注入ボタンを押す。薬滴が出なければ最大6回まで繰り返し、それでも出なければ針を交換してもう1回だけ排気確認をする。それでも薬滴が出なければ、このペンは使用しない。薬滴が出てから注射する。同じペンでは、その後の毎週の注射でこの確認を繰り返す必要はない。"
               },
               illustration: "assets/svg/glp1-pen/step-2.svg"
           },
@@ -17244,13 +17114,13 @@ const MEDICATIONS = [
                   "ja": "毎回の注射前に、薬液が出るまで空打ちする"
               },
               note: {
-                  "zh-TW": "轉到排氣位置，針頭朝上，按到底並慢慢數到 5。",
-                  "en": "Turn to the prime position, point the needle up, then press fully and count slowly to 5.",
-                  "id": "Putar ke posisi prime, arahkan jarum ke atas, lalu tekan penuh dan hitung perlahan sampai 5.",
-                  "vi": "Vặn tới vị trí đuổi khí, hướng kim lên trên, rồi ấn hết và đếm chậm đến 5.",
-                  "th": "หมุนไปที่ตำแหน่งไล่อากาศ หันเข็มขึ้น แล้วกดจนสุดพร้อมนับช้า ๆ ถึง 5",
-                  "tl": "Iikot sa prime position, ituro paitaas ang karayom, saka pindutin nang todo at dahan-dahang bumilang hanggang 5.",
-                  "ja": "空打ち位置に合わせ、針先を上に向けて最後まで押し、ゆっくり5まで数える。"
+                  "zh-TW": "轉到排氣位置，針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端，再按到底並慢慢數到 5。",
+                  "en": "Turn to the prime position, point the needle up, gently tap the cartridge a few times so any air bubbles rise to the top, then press fully and count slowly to 5.",
+                  "id": "Putar ke posisi prime, arahkan jarum ke atas, ketuk kartrid obat perlahan beberapa kali agar gelembung udara naik ke atas, lalu tekan penuh dan hitung perlahan sampai 5.",
+                  "vi": "Vặn tới vị trí đuổi khí, hướng kim lên trên, gõ nhẹ ống thuốc vài cái để bọt khí nổi lên trên, rồi ấn hết và đếm chậm đến 5.",
+                  "th": "หมุนไปที่ตำแหน่งไล่อากาศ หันเข็มขึ้น แล้วใช้นิ้วเคาะตลับยาเบา ๆ หลายครั้งเพื่อให้ฟองอากาศลอยขึ้นด้านบน จากนั้นกดจนสุดพร้อมนับช้า ๆ ถึง 5",
+                  "tl": "Iikot sa prime position, ituro paitaas ang karayom, marahang pitikin ang cartridge nang ilang beses para umakyat sa itaas ang mga bula ng hangin, saka pindutin nang todo at dahan-dahang bumilang hanggang 5.",
+                  "ja": "空打ち位置に合わせ、針先を上に向けて薬液カートリッジを指で軽く数回たたいて気泡を上に集めてから、最後まで押してゆっくり5まで数える。"
               },
               illustration: "assets/svg/mounjaro-kwikpen/step-2.svg"
           },
@@ -17539,13 +17409,13 @@ const MEDICATIONS = [
               },
               {
                     "action": {
-                          "zh-TW": "消毒筆端，裝上新針頭",
-                          "en": "Clean the pen tip and attach a new needle",
-                          "id": "Bersihkan ujung pena dan pasang jarum baru",
-                          "vi": "Sát trùng đầu bút rồi gắn kim mới",
-                          "th": "เช็ดปลายปากกาแล้วใส่เข็มใหม่",
-                          "tl": "Linisin ang dulo ng pen at ikabit ang bagong karayom",
-                          "ja": "ペン先を消毒し、新しい針を付ける"
+                          "zh-TW": "用酒精棉片擦拭筆頭橡皮膜，裝上新針頭",
+                          "en": "Wipe the rubber seal with an alcohol swab and attach a new needle",
+                          "id": "Usap segel karet di ujung pena dengan kapas alkohol, lalu pasang jarum baru",
+                          "vi": "Dùng bông cồn lau màng cao su ở đầu bút rồi gắn kim mới",
+                          "th": "ใช้สำลีชุบแอลกอฮอล์เช็ดแผ่นยางที่ปลายปากกา แล้วใส่เข็มใหม่",
+                          "tl": "Punasan ng alcohol swab ang rubber seal sa dulo ng pen at ikabit ang bagong karayom",
+                          "ja": "アルコール綿でペン先のゴム膜を拭き、新しい針を付ける"
                     },
                     "note": {
                           "zh-TW": "拔除內針蓋，保留外針蓋。每次都用新針頭。",
@@ -17560,7 +17430,7 @@ const MEDICATIONS = [
               },
               {
                     "action": {
-                          "zh-TW": "通暢測試：轉 2 單位，按到底",
+                          "zh-TW": "排氣測試：轉 2 單位，按到底",
                           "en": "Safety test: dial 2 units and press fully",
                           "id": "Uji keamanan: putar 2 unit lalu tekan penuh",
                           "vi": "Thử bút: vặn 2 đơn vị rồi ấn hết",
@@ -17569,13 +17439,13 @@ const MEDICATIONS = [
                           "ja": "安全テスト：2単位に合わせて最後まで押す"
                     },
                     "note": {
-                          "zh-TW": "每次注射前都要測試。若無藥滴，可重複最多 3 次。",
-                          "en": "Do this before every injection. If no drop appears, repeat up to 3 times.",
-                          "id": "Lakukan ini sebelum setiap suntikan. Jika belum ada tetes, ulangi sampai 3 kali.",
-                          "vi": "Làm bước này trước mỗi lần tiêm. Nếu chưa có giọt thuốc, lặp lại tối đa 3 lần.",
-                          "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง ถ้าไม่มีหยดยา ให้ทำซ้ำได้สูงสุด 3 ครั้ง",
-                          "tl": "Gawin ito bago bawat iniksyon. Kung walang patak, ulitin hanggang 3 beses.",
-                          "ja": "毎回の注射前に行う。薬滴が出なければ最大3回まで繰り返す。"
+                          "zh-TW": "每次注射前都要做排氣測試。看到藥滴再注射。若沒有藥滴，可重做最多 3 次。若第 3 次後仍沒有藥滴，請更換針頭並重做排氣測試。若還是沒有藥滴，請換新筆。",
+                          "en": "Do this before every injection. Inject only after a drop appears at the tip. If no drop appears, repeat up to 3 times. If there is still no drop after the third time, change the needle and repeat the safety test. If you still do not see a drop, use a new pen.",
+                          "id": "Lakukan ini sebelum setiap suntikan. Suntik hanya setelah terlihat tetes obat di ujung jarum. Jika belum ada tetes obat, ulangi sampai 3 kali. Jika setelah percobaan ketiga masih belum ada tetes obat, ganti jarum lalu ulangi uji keamanan. Jika tetap tidak ada tetes obat, gunakan pena baru.",
+                          "vi": "Làm bước này trước mỗi lần tiêm. Chỉ tiêm khi thấy giọt thuốc ở đầu kim. Nếu chưa có giọt thuốc, lặp lại tối đa 3 lần. Nếu sau lần thứ 3 vẫn chưa có giọt thuốc, hãy thay kim rồi làm lại bước kiểm tra bút. Nếu vẫn không có giọt thuốc, hãy dùng bút mới.",
+                          "th": "ทำขั้นตอนนี้ก่อนฉีดทุกครั้ง เห็นหยดยาที่ปลายเข็มแล้วจึงฉีด หากยังไม่เห็นหยดยา ให้ทำซ้ำได้สูงสุด 3 ครั้ง หากหลังครั้งที่ 3 ยังไม่เห็นหยดยา ให้เปลี่ยนเข็มแล้วทำการทดสอบซ้ำ หากยังไม่เห็นหยดยา ให้เปลี่ยนปากกาใหม่",
+                          "tl": "Gawin ito bago bawat iniksyon. Mag-inject lamang kapag may patak na sa dulo. Kung walang patak, ulitin hanggang 3 beses. Kung wala pa ring patak pagkatapos ng ikatlong pagsubok, palitan ang karayom at ulitin ang safety test. Kung wala pa rin, gumamit ng bagong pen.",
+                          "ja": "毎回の注射前に行う。薬滴が出てから注射する。薬滴が出ない場合は最大3回までやり直す。3回行っても薬滴が出なければ針を交換して安全テストをやり直す。それでも薬滴が出なければ新しいペンを使う。"
                     },
                     "illustration": "assets/svg/insulin-pen/step-2.svg"
               },
