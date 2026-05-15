@@ -12604,301 +12604,1523 @@ const MEDICATIONS = [
     "qrUrl": "https://pharmacy.example.com/meds/albothyl-vaginal-suppository"
   },
 
-  // ── Placeholder: Nicorette chewing gum ─────────────────────────────────────,
+    // ── Smoking cessation: Nicorette Freshmint gum ─────────────────────────────────────,
   {
-      "id": "nicorette-gum",
-      color: {
-          main: "#27500A",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#97C459",
-          badgeText: "#173404"
+    "id": "nicorette-freshmint-gum",
+    "category": "smoking",
+    color: {
+      main: "#27500A",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#97C459",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "尼古清薄荷咀嚼錠",
+      "en": "Nicorette Freshmint Gum",
+      "id": "Nicorette Freshmint Gum",
+      "vi": "Nicorette Freshmint Gum",
+      "th": "Nicorette Freshmint Gum",
+      "tl": "Nicorette Freshmint Gum",
+      "ja": "ニコレット フレッシュミントガム"
+    },
+    subtitle: {
+      "zh-TW": "Nicorette Freshmint | Nicotine chewing gum | 2 mg / 4 mg",
+      "en": "Nicorette Freshmint | Nicotine chewing gum | 2 mg / 4 mg",
+      "id": "Nicorette Freshmint | Permen karet nikotin | 2 mg / 4 mg",
+      "vi": "Nicorette Freshmint | Kẹo nhai nicotine | 2 mg / 4 mg",
+      "th": "Nicorette Freshmint | หมากฝรั่งนิโคติน | 2 mg / 4 mg",
+      "tl": "Nicorette Freshmint | Nicotine chewing gum | 2 mg / 4 mg",
+      "ja": "Nicorette Freshmint | ニコチンガム | 2 mg / 4 mg"
+    },
+    usage: {
+      "zh-TW": "想抽菸時再用，不要同時吸菸",
+      "en": "Use it when a craving starts. Do not smoke while using it.",
+      "id": "Gunakan saat keinginan merokok muncul. Jangan merokok pada saat yang sama.",
+      "vi": "Dùng khi lên cơn thèm thuốc. Không hút thuốc cùng lúc.",
+      "th": "ใช้เมื่ออยากสูบบุหรี่ และห้ามสูบพร้อมกัน",
+      "tl": "Gamitin kapag may pagnanasa sa sigarilyo. Huwag manigarilyo habang ginagamit ito.",
+      "ja": "吸いたくなった時に使う。同時に喫煙しない。"
+    },
+    badge: {
+      "zh-TW": "NRT 咀嚼錠",
+      "en": "NRT Gum",
+      "id": "Permen Karet NRT",
+      "vi": "Kẹo nhai NRT",
+      "th": "หมากฝรั่ง NRT",
+      "tl": "Nicotine Gum",
+      "ja": "NRT ガム"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道 2 件事",
+        "en": "Know these 2 things first",
+        "id": "Ketahui 2 hal ini lebih dulu",
+        "vi": "Biết trước 2 điều này",
+        "th": "รู้ 2 เรื่องนี้ก่อน",
+        "tl": "Alamin muna ang 2 bagay na ito",
+        "ja": "先に2つ確認"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Nicorette chewing gum",
-          "en": "Nicorette chewing gum",
-          "id": "Nicorette chewing gum",
-          "vi": "Nicorette chewing gum",
-          "th": "Nicorette chewing gum",
-          "tl": "Nicorette chewing gum",
-          "ja": "Nicorette chewing gum"
+      text: {
+        "zh-TW": "這是尼古丁替代療法，幫你減少想抽菸的感覺。\n使用期間不要同時吸菸，也不要合併其他尼古丁產品。",
+        "en": "This is nicotine replacement therapy that helps reduce cravings.\nDo not smoke or use other nicotine products at the same time.",
+        "id": "Ini adalah terapi pengganti nikotin untuk membantu mengurangi keinginan merokok.\nJangan merokok atau memakai produk nikotin lain pada saat yang sama.",
+        "vi": "Đây là liệu pháp thay thế nicotine giúp giảm cơn thèm thuốc.\nKhông hút thuốc hay dùng thêm sản phẩm nicotine khác cùng lúc.",
+        "th": "นี่คือการทดแทนนิโคตินเพื่อช่วยลดความอยากบุหรี่\nห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นพร้อมกัน",
+        "tl": "Nicotine replacement therapy ito para mabawasan ang pagnanasa sa sigarilyo.\nHuwag manigarilyo o gumamit ng ibang nicotine product habang ginagamit ito.",
+        "ja": "ニコチンへの欲求を減らすためのニコチン代替療法です。\n使用中は喫煙したり、他のニコチン製品を併用したりしない。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "選擇適合劑量",
+          "en": "Choose the right strength",
+          "id": "Pilih kekuatan yang sesuai",
+          "vi": "Chọn hàm lượng phù hợp",
+          "th": "เลือกขนาดยาที่เหมาะสม",
+          "tl": "Piliin ang tamang lakas",
+          "ja": "適切な強さを選ぶ"
+        },
+        note: {
+          "zh-TW": "每天吸菸少於 25 支用 2 mg；25 支以上用 4 mg。",
+          "en": "Use 2 mg if you smoke fewer than 25 cigarettes a day. Use 4 mg if you smoke 25 or more.",
+          "id": "Gunakan 2 mg bila Anda merokok kurang dari 25 batang per hari. Gunakan 4 mg bila 25 batang atau lebih.",
+          "vi": "Dùng 2 mg nếu bạn hút dưới 25 điếu mỗi ngày. Dùng 4 mg nếu hút từ 25 điếu trở lên.",
+          "th": "ถ้าสูบน้อยกว่า 25 มวนต่อวัน ใช้ 2 mg ถ้าสูบตั้งแต่ 25 มวนขึ้นไป ใช้ 4 mg",
+          "tl": "Gamitin ang 2 mg kung mas mababa sa 25 stick ang yosi mo bawat araw. Gamitin ang 4 mg kung 25 o higit pa.",
+          "ja": "1日25本未満なら2 mg、25本以上なら4 mgを使う。"
+        },
+        illustration: "assets/svg/nicorette-freshmint-gum/step-0.svg",
+        highlight: true
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        action: {
+          "zh-TW": "慢慢嚼 15–20 下",
+          "en": "Chew slowly 15-20 times",
+          "id": "Kunyah pelan 15-20 kali",
+          "vi": "Nhai chậm 15-20 lần",
+          "th": "เคี้ยวช้า ๆ 15-20 ครั้ง",
+          "tl": "Nguyain nang dahan-dahan nang 15-20 beses",
+          "ja": "ゆっくり15-20回かむ"
+        },
+        note: {
+          "zh-TW": "有刺刺感或薄荷感就先停。這代表尼古丁已經釋出；一直猛嚼，容易把太多尼古丁吞進肚子，反而更容易打嗝、胃不舒服或火燒心。",
+          "en": "Stop when you feel a tingle or mint taste. That means nicotine is being released. If you keep chewing hard, you may swallow too much nicotine and get hiccups, heartburn, or an upset stomach.",
+          "id": "Berhenti saat terasa kesemutan atau rasa mint. Itu berarti nikotin mulai keluar. Jika terus dikunyah kuat-kuat, terlalu banyak nikotin bisa tertelan dan membuat cegukan, perih ulu hati, atau lambung tidak nyaman.",
+          "vi": "Ngừng khi thấy cay nhẹ hoặc vị bạc hà. Điều đó có nghĩa là nicotine đã bắt đầu được giải phóng. Nếu nhai liên tục quá mạnh, bạn dễ nuốt quá nhiều nicotine và bị nấc, nóng rát dạ dày hoặc khó chịu bụng.",
+          "th": "เมื่อรู้สึกซ่าหรือรสมินต์ชัดขึ้นให้หยุดก่อน นั่นแปลว่านิโคตินเริ่มออกมาแล้ว หากเคี้ยวแรงและต่อเนื่องเกินไป อาจกลืนนิโคตินมากเกิน ทำให้สะอึก แสบร้อนกลางอก หรือไม่สบายท้องได้",
+          "tl": "Huminto kapag may pangingiliti o malinaw na lasang mint na. Ibig sabihin nito ay nailalabas na ang nicotine. Kung nguyain mo ito nang tuloy-tuloy at madiin, baka makalunok ka ng sobrang nicotine at magdulot ito ng sinok, heartburn, o pananakit ng sikmura.",
+          "ja": "刺激感やミント感が出たら止める。これはニコチンが出てきた合図。強く噛み続けるとニコチンを飲み込みすぎて、しゃっくり、胸やけ、胃の不快感が出やすくなる。"
+        },
+        illustration: "assets/svg/nicorette-freshmint-gum/step-1.svg"
       },
-      badge: {
-          "zh-TW": "戒菸用藥",
-          "en": "Smoking Cessation",
-          "id": "Berhenti merokok",
-          "vi": "Cai thuốc lá",
-          "th": "เลิกบุหรี่",
-          "tl": "Smoking Cessation",
-          "ja": "禁煙補助薬"
+      {
+        action: {
+          "zh-TW": "停在牙齦和臉頰間",
+          "en": "Park it between your gum and cheek",
+          "id": "Letakkan di antara gusi dan pipi",
+          "vi": "Ngậm giữa nướu và má",
+          "th": "พักไว้ระหว่างเหงือกกับกระพุ้งแก้ม",
+          "tl": "Ipit sa pagitan ng gilagid at pisngi",
+          "ja": "歯ぐきと頬の間に置く"
+        },
+        note: {
+          "zh-TW": "先不要咬，讓尼古丁慢慢從牙齦和臉頰間吸收。這樣吸收比較穩，也比較不會把尼古丁吞進肚子。",
+          "en": "Do not chew yet. Let the nicotine absorb slowly through your gums and the inside of your cheek. This gives steadier absorption and helps you avoid swallowing too much nicotine.",
+          "id": "Jangan dikunyah dulu. Biarkan nikotin diserap perlahan melalui gusi dan sisi dalam pipi. Cara ini membuat penyerapan lebih stabil dan membantu mencegah terlalu banyak nikotin tertelan.",
+          "vi": "Chưa nhai tiếp. Hãy để nicotine hấp thu chậm qua nướu và mặt trong má. Cách này giúp hấp thu ổn định hơn và giảm nuốt nicotine xuống dạ dày.",
+          "th": "ยังไม่ต้องเคี้ยวต่อ ปล่อยให้นิโคตินค่อย ๆ ดูดซึมผ่านเหงือกและกระพุ้งแก้ม วิธีนี้ทำให้ฤทธิ์สม่ำเสมอกว่าและช่วยลดการกลืนนิโคตินลงท้อง",
+          "tl": "Huwag munang nguyain ulit. Hayaang dahan-dahang ma-absorb ang nicotine sa gilagid at loob ng pisngi. Mas pantay ang pagpasok nito at mas nababawasan ang nicotine na nalulunok papuntang tiyan.",
+          "ja": "すぐには噛まず、歯ぐきと頬の内側からニコチンをゆっくり吸収させる。この方が効き方が安定し、ニコチンを胃に飲み込みにくい。"
+        },
+        illustration: "assets/svg/nicorette-freshmint-gum/step-2.svg"
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/nicorette-gum"
+      {
+        action: {
+          "zh-TW": "刺激感退後，再慢慢嚼",
+          "en": "Chew slowly again after the tingle fades",
+          "id": "Kunyah lagi pelan setelah rasa tingling hilang",
+          "vi": "Khi hết cay nhẹ thì nhai chậm lại",
+          "th": "เมื่อความซ่าลดลง ให้เคี้ยวช้า ๆ อีกครั้ง",
+          "tl": "Kapag nawala ang pangingiliti, nguyain ulit nang dahan-dahan",
+          "ja": "刺激感が消えたら、またゆっくりかむ"
+        },
+        note: {
+          "zh-TW": "重複「嚼一下、停一下」。每再慢慢嚼幾下，就是再放出一點尼古丁，效果會比較穩；每片約用 30 分鐘。",
+          "en": "Repeat the chew-and-park cycle. Each time you chew a little again, a little more nicotine is released, so the effect stays steadier. Use each piece for about 30 minutes.",
+          "id": "Ulangi pola kunyah lalu diamkan. Setiap kali Anda mengunyah lagi sebentar, sedikit nikotin akan keluar lagi sehingga efeknya lebih stabil. Gunakan setiap potong sekitar 30 menit.",
+          "vi": "Lặp lại cách nhai rồi ngậm yên. Mỗi lần nhai thêm vài cái, sẽ có thêm một ít nicotine được giải phóng nên tác dụng ổn định hơn. Mỗi viên dùng khoảng 30 phút.",
+          "th": "ทำซ้ำแบบเคี้ยวแล้วพัก ทุกครั้งที่เคี้ยวเพิ่มอีกเล็กน้อย นิโคตินจะค่อย ๆ ออกมาเพิ่ม ทำให้ฤทธิ์สม่ำเสมอกว่า ใช้แต่ละชิ้นประมาณ 30 นาที",
+          "tl": "Ulitin ang nguyat-pahinga na paraan. Sa bawat kaunting nguyang muli, kaunting nicotine pa ang nailalabas kaya mas pantay ang epekto. Gamitin ang bawat piraso nang mga 30 minuto.",
+          "ja": "かむ・止めるを繰り返す。少しずつまた噛むたびにニコチンが少し追加で出るので、効き方がより安定する。1個を約30分使う。"
+        },
+        illustration: "assets/svg/nicorette-freshmint-gum/step-3.svg"
+      },
+      {
+        action: {
+          "zh-TW": "30 分鐘後包紙丟棄",
+          "en": "Wrap it and throw it away after 30 minutes",
+          "id": "Bungkus lalu buang setelah 30 menit",
+          "vi": "Sau 30 phút thì gói giấy và bỏ đi",
+          "th": "หลัง 30 นาทีให้ห่อกระดาษแล้วทิ้ง",
+          "tl": "Pagkalipas ng 30 minuto, balutin sa papel at itapon",
+          "ja": "30分後に紙に包んで捨てる"
+        },
+        note: {
+          "zh-TW": "遠離兒童和寵物，殘留尼古丁對牠們有害。",
+          "en": "Keep used gum away from children and pets. Leftover nicotine can harm them.",
+          "id": "Jauhkan dari anak-anak dan hewan peliharaan. Sisa nikotin dapat berbahaya bagi mereka.",
+          "vi": "Để xa trẻ em và vật nuôi. Nicotine còn sót lại có thể gây hại cho chúng.",
+          "th": "เก็บให้ห่างเด็กและสัตว์เลี้ยง เพราะนิโคตินที่เหลืออยู่เป็นอันตรายได้",
+          "tl": "Ilayo sa mga bata at alagang hayop. Mapanganib sa kanila ang natitirang nicotine.",
+          "ja": "子どもやペットの手の届かないようにする。残ったニコチンは有害。"
+        },
+        illustration: "assets/svg/nicorette-freshmint-gum/step-4.svg"
+      }
+    ],
+    infoBoxes: [
+      {
+        tone: { bg: "#F2F2F2", border: "#7A7A7A", text: "#3F3F3F" },
+        title: {
+          "zh-TW": "用量遞減計畫（12 週）",
+          "en": "Taper plan (12 weeks)",
+          "id": "Rencana penurunan dosis (12 minggu)",
+          "vi": "Kế hoạch giảm liều (12 tuần)",
+          "th": "แผนลดยา (12 สัปดาห์)",
+          "tl": "Plano ng unti-unting bawas dosis (12 linggo)",
+          "ja": "減量計画（12週）"
+        },
+        text: {
+          "zh-TW": "第 1–6 週：每 1–2 小時 1 片（每天至少 9 片）。\n第 7–9 週：每 2–4 小時 1 片。\n第 10–12 週：每 4–8 小時 1 片。",
+          "en": "Weeks 1-6: 1 piece every 1-2 hours, with at least 9 pieces a day.\nWeeks 7-9: 1 piece every 2-4 hours.\nWeeks 10-12: 1 piece every 4-8 hours.",
+          "id": "Minggu 1-6: 1 buah tiap 1-2 jam, minimal 9 buah per hari.\nMinggu 7-9: 1 buah tiap 2-4 jam.\nMinggu 10-12: 1 buah tiap 4-8 jam.",
+          "vi": "Tuần 1-6: 1 miếng mỗi 1-2 giờ, ít nhất 9 miếng mỗi ngày.\nTuần 7-9: 1 miếng mỗi 2-4 giờ.\nTuần 10-12: 1 miếng mỗi 4-8 giờ.",
+          "th": "สัปดาห์ที่ 1-6: 1 ชิ้นทุก 1-2 ชั่วโมง อย่างน้อยวันละ 9 ชิ้น\nสัปดาห์ที่ 7-9: 1 ชิ้นทุก 2-4 ชั่วโมง\nสัปดาห์ที่ 10-12: 1 ชิ้นทุก 4-8 ชั่วโมง",
+          "tl": "Linggo 1-6: 1 piraso bawat 1-2 oras, at hindi bababa sa 9 na piraso bawat araw.\nLinggo 7-9: 1 piraso bawat 2-4 oras.\nLinggo 10-12: 1 piraso bawat 4-8 oras.",
+          "ja": "1-6週：1-2時間ごとに1個、1日少なくとも9個。\n7-9週：2-4時間ごとに1個。\n10-12週：4-8時間ごとに1個。"
+        }
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "置室溫（≤25°C），避免潮濕與高溫。\n保持鋁箔包裝密封到使用前。",
+        "en": "Store at room temperature (≤25°C). Keep away from heat and moisture.\nKeep the foil sealed until you use it.",
+        "id": "Simpan pada suhu ruang (≤25°C), jauhkan dari panas dan lembap.\nBiarkan kemasan foil tetap tertutup sampai akan digunakan.",
+        "vi": "Bảo quản ở nhiệt độ phòng (≤25°C), tránh nóng và ẩm.\nGiữ kín vỉ cho đến ngay trước khi dùng.",
+        "th": "เก็บที่อุณหภูมิห้อง (≤25°C) หลีกเลี่ยงความร้อนและความชื้น\nเก็บซองฟอยล์ให้ปิดสนิทจนกว่าจะใช้",
+        "tl": "Itago sa room temperature (≤25°C) at ilayo sa init at halumigmig.\nPanatilihing selyado ang foil hanggang sa oras ng paggamit.",
+        "ja": "室温（≤25°C）で保管し、高温多湿を避ける。\n使用直前までアルミ包装を密封しておく。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "使用前後 15 分鐘避免進食、飲水或漱口水。",
+        "en": "Avoid food, drinks, or mouthwash for 15 minutes before and after use.",
+        "id": "Hindari makan, minum, atau obat kumur 15 menit sebelum dan sesudah penggunaan.",
+        "vi": "Tránh ăn, uống hoặc dùng nước súc miệng trong 15 phút trước và sau khi dùng.",
+        "th": "หลีกเลี่ยงอาหาร เครื่องดื่ม หรือ น้ำยาบ้วนปาก 15 นาทีก่อนและหลังใช้",
+        "tl": "Iwasan ang pagkain, inumin, o mouthwash 15 minuto bago at pagkatapos gamitin.",
+        "ja": "使用前後15分は飲食や洗口液を避ける。"
+      },
+      {
+        "zh-TW": "使用本品期間不可同時吸菸或使用其他尼古丁產品。",
+        "en": "Do not smoke or use other nicotine products while using this product.",
+        "id": "Jangan merokok atau memakai produk nikotin lain saat menggunakan produk ini.",
+        "vi": "Không hút thuốc hay dùng thêm sản phẩm nicotine khác khi đang dùng thuốc này.",
+        "th": "ระหว่างใช้ยานี้ ห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นร่วมกัน",
+        "tl": "Huwag manigarilyo o gumamit ng ibang nicotine product habang ginagamit ito.",
+        "ja": "使用中は喫煙したり、他のニコチン製品を使ったりしない。"
+      },
+      {
+        "zh-TW": "每天最多 24 片；假牙或口腔潰瘍請先告知藥師。",
+        "en": "Do not use more than 24 pieces a day. Tell your pharmacist if you wear dentures or have mouth ulcers.",
+        "id": "Jangan memakai lebih dari 24 buah per hari. Beri tahu apoteker bila memakai gigi palsu atau ada sariawan.",
+        "vi": "Không dùng quá 24 miếng mỗi ngày. Hãy báo dược sĩ nếu bạn đeo răng giả hoặc có loét miệng.",
+        "th": "ห้ามใช้เกินวันละ 24 ชิ้น หากใส่ฟันปลอมหรือมีแผลในปาก ให้แจ้งเภสัชกรก่อน",
+        "tl": "Huwag hihigit sa 24 na piraso bawat araw. Sabihin sa parmasyutiko kung may pustiso ka o singaw sa bibig.",
+        "ja": "1日24個を超えて使わない。入れ歯や口内炎がある場合は薬剤師に伝える。"
+      }
+    ],
+    qrUrl: "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=3805&lang=zh-TW"
   },
 
-  // ── Placeholder: Nicotine patch ─────────────────────────────────────,
+  // ── Smoking cessation: Nicotinell TTS patch ─────────────────────────────────────,
   {
-      "id": "nicotine-patch",
-      color: {
-          main: "#27500A",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#97C459",
-          badgeText: "#173404"
+    "id": "nicotinell-tts-patch",
+    "category": "smoking",
+    color: {
+      main: "#27500A",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#97C459",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "尼古丁貼片",
+      "en": "Nicotinell TTS Patch",
+      "id": "Nicotinell TTS Patch",
+      "vi": "Nicotinell TTS Patch",
+      "th": "Nicotinell TTS Patch",
+      "tl": "Nicotinell TTS Patch",
+      "ja": "ニコチネル TTS パッチ"
+    },
+    subtitle: {
+      "zh-TW": "Nicotinell TTS | Nicotine transdermal patch | 7 / 14 / 21 mg/day",
+      "en": "Nicotinell TTS | Nicotine transdermal patch | 7 / 14 / 21 mg/day",
+      "id": "Nicotinell TTS | Patch nikotin transdermal | 7 / 14 / 21 mg/hari",
+      "vi": "Nicotinell TTS | Miếng dán nicotine qua da | 7 / 14 / 21 mg/ngày",
+      "th": "Nicotinell TTS | แผ่นแปะนิโคตินผ่านผิวหนัง | 7 / 14 / 21 mg/วัน",
+      "tl": "Nicotinell TTS | Nicotine transdermal patch | 7 / 14 / 21 mg/day",
+      "ja": "Nicotinell TTS | ニコチン経皮パッチ | 7 / 14 / 21 mg/日"
+    },
+    usage: {
+      "zh-TW": "每天 1 片，依計畫逐步減量",
+      "en": "Use one patch each day and taper down as planned.",
+      "id": "Gunakan 1 patch setiap hari dan turunkan dosis sesuai rencana.",
+      "vi": "Mỗi ngày dùng 1 miếng dán và giảm liều theo kế hoạch.",
+      "th": "ใช้วันละ 1 แผ่น และค่อย ๆ ลดขนาดตามแผน",
+      "tl": "Gumamit ng isang patch bawat araw at dahan-dahang bawasan ayon sa plano.",
+      "ja": "1日1枚を使い、計画に沿って減量する。"
+    },
+    badge: {
+      "zh-TW": "NRT 貼片",
+      "en": "NRT Patch",
+      "id": "Patch NRT",
+      "vi": "Miếng dán NRT",
+      "th": "แผ่นแปะ NRT",
+      "tl": "Nicotine Patch",
+      "ja": "NRT パッチ"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道 2 件事",
+        "en": "Know these 2 things first",
+        "id": "Ketahui 2 hal ini lebih dulu",
+        "vi": "Biết trước 2 điều này",
+        "th": "รู้ 2 เรื่องนี้ก่อน",
+        "tl": "Alamin muna ang 2 bagay na ito",
+        "ja": "先に2つ確認"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Nicotine patch",
-          "en": "Nicotine patch",
-          "id": "Nicotine patch",
-          "vi": "Nicotine patch",
-          "th": "Nicotine patch",
-          "tl": "Nicotine patch",
-          "ja": "Nicotine patch"
+      text: {
+        "zh-TW": "貼片每天只貼 1 片，固定同一時間更換。\n使用貼片期間不要同時吸菸，也不要合併其他尼古丁產品。",
+        "en": "Use only one patch a day and change it at the same time each day.\nDo not smoke or use other nicotine products at the same time.",
+        "id": "Gunakan hanya satu patch sehari dan ganti pada jam yang sama setiap hari.\nJangan merokok atau memakai produk nikotin lain pada saat yang sama.",
+        "vi": "Mỗi ngày chỉ dùng 1 miếng và thay vào cùng một giờ.\nKhông hút thuốc hay dùng thêm sản phẩm nicotine khác cùng lúc.",
+        "th": "ใช้วันละ 1 แผ่นและเปลี่ยนเวลาเดิมทุกวัน\nห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นร่วมกัน",
+        "tl": "Isang patch lang bawat araw at palitan ito sa parehong oras araw-araw.\nHuwag manigarilyo o gumamit ng ibang nicotine product habang gamit ito.",
+        "ja": "1日1枚だけ使い、毎日同じ時間に貼り替える。\n使用中は喫煙したり、他のニコチン製品を併用したりしない。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "依吸菸量選貼片",
+          "en": "Choose the patch strength",
+          "id": "Pilih kekuatan patch",
+          "vi": "Chọn cỡ miếng dán",
+          "th": "เลือกขนาดแผ่นแปะ",
+          "tl": "Piliin ang lakas ng patch",
+          "ja": "パッチの強さを選ぶ"
+        },
+        note: {
+          "zh-TW": "每天吸菸超過 20 支，從 21 mg 開始；20 支以下，從 14 mg 開始。",
+          "en": "If you smoke more than 20 cigarettes a day, start with 21 mg. If you smoke 20 or fewer, start with 14 mg.",
+          "id": "Jika Anda merokok lebih dari 20 batang per hari, mulai dengan 21 mg. Jika 20 batang atau kurang, mulai dengan 14 mg.",
+          "vi": "Nếu hút trên 20 điếu mỗi ngày, bắt đầu với 21 mg. Nếu 20 điếu trở xuống, bắt đầu với 14 mg.",
+          "th": "ถ้าสูบมากกว่า 20 มวนต่อวัน เริ่มที่ 21 mg ถ้า 20 มวนหรือน้อยกว่า เริ่มที่ 14 mg",
+          "tl": "Kung higit sa 20 stick bawat araw ang yosi mo, magsimula sa 21 mg. Kung 20 o mas kaunti, magsimula sa 14 mg.",
+          "ja": "1日20本超なら21 mgから、20本以下なら14 mgから始める。"
+        },
+        illustration: "assets/svg/nicotinell-tts-patch/step-0.svg",
+        highlight: true
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        action: {
+          "zh-TW": "選乾淨乾燥無毛處",
+          "en": "Pick a clean, dry, hairless area",
+          "id": "Pilih area yang bersih, kering, dan tidak berbulu",
+          "vi": "Chọn vùng da sạch, khô, ít lông",
+          "th": "เลือกผิวหนังที่สะอาด แห้ง และไม่มีขน",
+          "tl": "Pumili ng malinis, tuyo, at walang balahibong bahagi ng balat",
+          "ja": "清潔で乾いた毛の少ない場所を選ぶ"
+        },
+        note: {
+          "zh-TW": "可貼上臂外側、前胸、背部或臀部。皮膚如果有水、汗、乳液或太多毛髮，貼片會比較不黏，藥進入皮膚也會不穩。",
+          "en": "You may use the outer upper arm, chest, back, or buttock. Water, sweat, lotion, or too much hair can keep the patch from sticking well, and the medicine may enter your skin less evenly.",
+          "id": "Boleh ditempel di lengan atas bagian luar, dada, punggung, atau bokong. Air, keringat, losion, atau terlalu banyak rambut dapat membuat patch kurang menempel, dan obat juga bisa masuk ke kulit dengan tidak stabil.",
+          "vi": "Có thể dán ở mặt ngoài cánh tay trên, ngực, lưng hoặc mông. Nếu da có nước, mồ hôi, kem dưỡng hoặc quá nhiều lông, miếng dán sẽ bám kém hơn và thuốc vào da cũng không ổn định.",
+          "th": "แปะได้ที่ด้านนอกต้นแขน หน้าอก หลัง หรือก้น หากมีน้ำ เหงื่อ โลชั่น หรือขนมาก แผ่นแปะจะติดไม่ดี และนิโคตินก็อาจเข้าสู่ผิวได้ไม่สม่ำเสมอ",
+          "tl": "Maaaring ikabit sa labas ng itaas na braso, dibdib, likod, o puwitan. Kapag may tubig, pawis, lotion, o masyadong maraming balahibo, maaaring hindi dumikit nang maayos ang patch at hindi rin pantay ang pagpasok ng gamot sa balat.",
+          "ja": "上腕外側、胸、背中、臀部に貼れる。水分、汗、ローション、毛が多いとパッチがつきにくくなり、薬も皮膚にむらなく入りにくい。"
+        },
+        illustration: "assets/svg/nicotinell-tts-patch/step-1.svg"
       },
-      badge: {
-          "zh-TW": "戒菸用藥",
-          "en": "Smoking Cessation",
-          "id": "Berhenti merokok",
-          "vi": "Cai thuốc lá",
-          "th": "เลิกบุหรี่",
-          "tl": "Smoking Cessation",
-          "ja": "禁煙補助薬"
+      {
+        action: {
+          "zh-TW": "撕開貼片，按壓 30 秒",
+          "en": "Apply the patch and press for 30 seconds",
+          "id": "Tempel patch lalu tekan 30 detik",
+          "vi": "Dán miếng dán rồi ấn 30 giây",
+          "th": "แปะแผ่นแล้วกด 30 วินาที",
+          "tl": "Ikabit ang patch at idiin sa loob ng 30 segundo",
+          "ja": "貼って30秒押さえる"
+        },
+        note: {
+          "zh-TW": "確認邊緣完全貼平，不可剪開貼片。貼平一點，藥效也會比較穩。",
+          "en": "Make sure all edges are flat. Do not cut the patch. A flat, secure patch helps the medicine work more steadily.",
+          "id": "Pastikan semua tepi menempel rata. Jangan menggunting patch. Patch yang menempel rata akan membantu obat bekerja lebih stabil.",
+          "vi": "Bảo đảm các mép dán phẳng sát da. Không cắt miếng dán. Miếng dán phẳng và chắc sẽ giúp thuốc tác dụng ổn định hơn.",
+          "th": "ให้แน่ใจว่าขอบแนบสนิททั้งหมด และห้ามตัดแผ่นแปะ เมื่อแผ่นแปะติดเรียบและแน่น ฤทธิ์ยาจะสม่ำเสมอกว่า",
+          "tl": "Tiyaking dikit na dikit ang mga gilid. Huwag putulin ang patch. Kapag maayos at patag ang pagkakadikit, mas pantay din ang epekto ng gamot.",
+          "ja": "端までしっかり貼りつける。パッチは切らない。平らにしっかり貼れると、薬の効き方も安定しやすい。"
+        },
+        illustration: "assets/svg/nicotinell-tts-patch/step-2.svg"
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/nicotine-patch"
+      {
+        action: {
+          "zh-TW": "每天同時更換新貼片",
+          "en": "Change to a new patch at the same time each day",
+          "id": "Ganti patch baru pada jam yang sama setiap hari",
+          "vi": "Thay miếng mới vào cùng một giờ mỗi ngày",
+          "th": "เปลี่ยนแผ่นใหม่เวลาเดิมทุกวัน",
+          "tl": "Palitan ng bagong patch sa parehong oras bawat araw",
+          "ja": "毎日同じ時間に新しいパッチへ替える"
+        },
+        note: {
+          "zh-TW": "先取下舊貼片，對折後包紙丟棄。",
+          "en": "Remove the old patch first. Fold it in half, wrap it, and throw it away.",
+          "id": "Lepas patch lama dulu. Lipat dua, bungkus, lalu buang.",
+          "vi": "Tháo miếng cũ trước. Gấp đôi, gói lại rồi bỏ đi.",
+          "th": "ถอดแผ่นเก่าออกก่อน พับครึ่ง ห่อ แล้วทิ้ง",
+          "tl": "Alisin muna ang lumang patch. Tiklupin sa kalahati, balutin, at itapon.",
+          "ja": "先に古いパッチをはがし、半分に折って包んで捨てる。"
+        },
+        illustration: "assets/svg/nicotinell-tts-patch/step-3.svg"
+      },
+      {
+        action: {
+          "zh-TW": "同一部位隔 7 天再貼",
+          "en": "Wait 7 days before using the same site again",
+          "id": "Tunggu 7 hari sebelum memakai tempat yang sama lagi",
+          "vi": "Chờ 7 ngày mới dán lại đúng vị trí cũ",
+          "th": "เว้นอย่างน้อย 7 วันก่อนแปะซ้ำตำแหน่งเดิม",
+          "tl": "Maghintay ng 7 araw bago gamitin muli ang parehong lugar",
+          "ja": "同じ場所は7日あけてから再使用する"
+        },
+        note: {
+          "zh-TW": "每次換不同位置，可減少皮膚刺激。一直貼同一處，比較容易紅、癢或刺激。",
+          "en": "Use a different spot each time to reduce skin irritation. Using the same spot over and over makes redness, itching, and irritation more likely.",
+          "id": "Gunakan titik yang berbeda setiap kali untuk mengurangi iritasi kulit. Bila terus dipakai di tempat yang sama, kulit lebih mudah merah, gatal, dan iritasi.",
+          "vi": "Mỗi lần đổi sang vị trí khác để giảm kích ứng da. Nếu cứ dán mãi một chỗ, da sẽ dễ đỏ, ngứa và kích ứng hơn.",
+          "th": "เปลี่ยนตำแหน่งทุกครั้งเพื่อลดการระคายเคืองผิวหนัง หากติดซ้ำที่เดิมบ่อย ๆ ผิวจะยิ่งแดง คัน หรือระคายเคืองง่ายขึ้น",
+          "tl": "Iba-ibahin ang puwesto sa bawat gamit para mabawasan ang iritasyon sa balat. Kapag paulit-ulit sa iisang bahagi, mas madaling mamula, mangati, at mairita ang balat.",
+          "ja": "毎回場所を変えると皮膚刺激を減らせる。同じ場所に繰り返し貼ると、赤み、かゆみ、刺激が起こりやすくなる。"
+        },
+        illustration: "assets/svg/nicotinell-tts-patch/step-4.svg"
+      }
+    ],
+    infoBoxes: [
+      {
+        tone: { bg: "#F2F2F2", border: "#7A7A7A", text: "#3F3F3F" },
+        title: {
+          "zh-TW": "劑量遞減計畫（12 週）",
+          "en": "Taper plan (12 weeks)",
+          "id": "Rencana penurunan dosis (12 minggu)",
+          "vi": "Kế hoạch giảm liều (12 tuần)",
+          "th": "แผนลดยา (12 สัปดาห์)",
+          "tl": "Plano ng unti-unting bawas (12 linggo)",
+          "ja": "減量計画（12週）"
+        },
+        text: {
+          "zh-TW": "第 1–4 週：21 mg/天。\n第 5–8 週：14 mg/天。\n第 9–12 週：7 mg/天。",
+          "en": "Weeks 1-4: 21 mg a day.\nWeeks 5-8: 14 mg a day.\nWeeks 9-12: 7 mg a day.",
+          "id": "Minggu 1-4: 21 mg per hari.\nMinggu 5-8: 14 mg per hari.\nMinggu 9-12: 7 mg per hari.",
+          "vi": "Tuần 1-4: 21 mg mỗi ngày.\nTuần 5-8: 14 mg mỗi ngày.\nTuần 9-12: 7 mg mỗi ngày.",
+          "th": "สัปดาห์ที่ 1-4: 21 mg/วัน\nสัปดาห์ที่ 5-8: 14 mg/วัน\nสัปดาห์ที่ 9-12: 7 mg/วัน",
+          "tl": "Linggo 1-4: 21 mg bawat araw.\nLinggo 5-8: 14 mg bawat araw.\nLinggo 9-12: 7 mg bawat araw.",
+          "ja": "1-4週：21 mg/日。\n5-8週：14 mg/日。\n9-12週：7 mg/日。"
+        }
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "置室溫（≤25°C），保持鋁箔袋密封，避免日照與高溫。\n使用前才撕開鋁箔袋。",
+        "en": "Store at room temperature (≤25°C). Keep the foil pouch sealed and away from sunlight and heat.\nOpen the pouch only when you are ready to use it.",
+        "id": "Simpan pada suhu ruang (≤25°C). Simpan kantong foil tetap tertutup dan jauhkan dari panas serta sinar matahari.\nBuka foil hanya saat akan dipakai.",
+        "vi": "Bảo quản ở nhiệt độ phòng (≤25°C), giữ kín túi nhôm, tránh nắng và nóng.\nChỉ mở túi khi chuẩn bị dùng.",
+        "th": "เก็บที่อุณหภูมิห้อง (≤25°C) เก็บซองฟอยล์ให้ปิดสนิทและหลีกเลี่ยงแสงแดดกับความร้อน\nเปิดซองเมื่อจะใช้เท่านั้น",
+        "tl": "Itago sa room temperature (≤25°C). Panatilihing selyado ang foil pouch at ilayo sa araw at init.\nBuksan lang ang pouch kapag gagamitin na.",
+        "ja": "室温（≤25°C）で保管し、アルミ袋を密封したまま日光と高温を避ける。\n使う直前にだけ袋を開ける。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "貼片部位避免熱源，例如熱水浴、電熱毯或三溫暖。",
+        "en": "Keep the patch away from heat sources such as hot baths, electric blankets, or saunas.",
+        "id": "Jauhkan area patch dari sumber panas seperti mandi air panas, selimut listrik, atau sauna.",
+        "vi": "Tránh để vùng dán gặp nguồn nhiệt như tắm nước nóng, chăn điện hoặc xông hơi.",
+        "th": "หลีกเลี่ยงความร้อนที่บริเวณแผ่นแปะ เช่น อาบน้ำร้อน ผ้าห่มไฟฟ้า หรือซาวน่า",
+        "tl": "Iwasan ang init sa lugar ng patch, gaya ng mainit na paligo, electric blanket, o sauna.",
+        "ja": "パッチ部位を熱源（熱い風呂、電気毛布、サウナなど）に当てない。"
+      },
+      {
+        "zh-TW": "使用貼片期間不可同時吸菸或使用其他尼古丁產品。",
+        "en": "Do not smoke or use other nicotine products while wearing the patch.",
+        "id": "Jangan merokok atau memakai produk nikotin lain saat menggunakan patch.",
+        "vi": "Không hút thuốc hay dùng thêm sản phẩm nicotine khác khi đang dán thuốc.",
+        "th": "ระหว่างติดแผ่นแปะ ห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นร่วมกัน",
+        "tl": "Huwag manigarilyo o gumamit ng ibang nicotine product habang nakasuot ang patch.",
+        "ja": "パッチ使用中は喫煙したり、他のニコチン製品を使ったりしない。"
+      },
+      {
+        "zh-TW": "若持續紅疹、起水泡或嚴重刺激，告知醫師或藥師。",
+        "en": "Tell your doctor or pharmacist if the skin stays red, blisters, or becomes badly irritated.",
+        "id": "Beri tahu dokter atau apoteker bila kulit tetap merah, melepuh, atau sangat teriritasi.",
+        "vi": "Hãy báo bác sĩ hoặc dược sĩ nếu da đỏ kéo dài, nổi bóng nước hoặc kích ứng nặng.",
+        "th": "หากผิวหนังแดงนาน มีตุ่มน้ำ หรือระคายเคืองมาก ให้แจ้งแพทย์หรือเภสัชกร",
+        "tl": "Sabihin sa doktor o parmasyutiko kung nananatiling mapula ang balat, nagkakapaltos, o matinding naiirita.",
+        "ja": "赤みが続く、水ぶくれが出る、強く刺激される場合は医師または薬剤師に伝える。"
+      }
+    ],
+    qrUrl: "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=3805&lang=zh-TW"
   },
 
-  // ── Placeholder: Bupropion tablet for tobacco cessation ─────────────────────────────────────,
+  // ── Smoking cessation: Nicotine inhalator ─────────────────────────────────────,
   {
-      "id": "bupropion-cessation",
-      color: {
-          main: "#27500A",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#97C459",
-          badgeText: "#173404"
+    "id": "nicotine-inhaler",
+    "category": "smoking",
+    color: {
+      main: "#27500A",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#97C459",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "尼古丁吸入劑",
+      "en": "Nicotine Inhalator",
+      "id": "Nicotine Inhalator",
+      "vi": "Nicotine Inhalator",
+      "th": "Nicotine Inhalator",
+      "tl": "Nicotine Inhalator",
+      "ja": "ニコチン吸入器"
+    },
+    subtitle: {
+      "zh-TW": "Nicotine Inhalator | Nicotine cartridge | 10 mg/cartridge",
+      "en": "Nicotine Inhalator | Nicotine cartridge | 10 mg/cartridge",
+      "id": "Nicotine Inhalator | Cartridge nikotin | 10 mg/kartrid",
+      "vi": "Nicotine Inhalator | Ống nicotine | 10 mg/ống",
+      "th": "Nicotine Inhalator | ตลับนิโคติน | 10 mg/ตลับ",
+      "tl": "Nicotine Inhalator | Nicotine cartridge | 10 mg/cartridge",
+      "ja": "Nicotine Inhalator | ニコチンカートリッジ | 10 mg/本"
+    },
+    usage: {
+      "zh-TW": "想抽菸時再用，尼古丁在口腔吸收",
+      "en": "Use it when a craving starts. The nicotine is absorbed through the lining of your mouth.",
+      "id": "Gunakan saat keinginan merokok muncul. Nikotin diserap di mulut.",
+      "vi": "Dùng khi lên cơn thèm thuốc. Nicotine hấp thu ở miệng.",
+      "th": "ใช้เมื่ออยากสูบบุหรี่ นิโคตินจะดูดซึมในช่องปาก",
+      "tl": "Gamitin kapag may pagnanasa sa sigarilyo. Sa bibig naa-absorb ang nicotine.",
+      "ja": "吸いたくなった時に使う。ニコチンは口の中で吸収される。"
+    },
+    badge: {
+      "zh-TW": "NRT 吸入劑",
+      "en": "NRT Inhaler",
+      "id": "Inhalator NRT",
+      "vi": "Dụng cụ hít NRT",
+      "th": "อุปกรณ์สูด NRT",
+      "tl": "Nicotine Inhaler",
+      "ja": "NRT 吸入器"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道 2 件事",
+        "en": "Know these 2 things first",
+        "id": "Ketahui 2 hal ini lebih dulu",
+        "vi": "Biết trước 2 điều này",
+        "th": "รู้ 2 เรื่องนี้ก่อน",
+        "tl": "Alamin muna ang 2 bagay na ito",
+        "ja": "先に2つ確認"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Bupropion（戒菸）",
-          "en": "Bupropion tablet for tobacco cessation",
-          "id": "Bupropion tablet for tobacco cessation",
-          "vi": "Bupropion tablet for tobacco cessation",
-          "th": "Bupropion tablet for tobacco cessation",
-          "tl": "Bupropion tablet for tobacco cessation",
-          "ja": "Bupropion tablet for tobacco cessation"
+      text: {
+        "zh-TW": "這不是氣喘吸入器，不需要把氣吸到肺裡。\n使用期間不要同時吸菸，也不要合併其他尼古丁產品。",
+        "en": "This is not an asthma inhaler. You do not need to inhale into your lungs.\nDo not smoke or use other nicotine products at the same time.",
+        "id": "Ini bukan inhaler asma. Anda tidak perlu menariknya sampai ke paru-paru.\nJangan merokok atau memakai produk nikotin lain pada saat yang sama.",
+        "vi": "Đây không phải ống hít hen. Bạn không cần hít sâu xuống phổi.\nKhông hút thuốc hay dùng thêm sản phẩm nicotine khác cùng lúc.",
+        "th": "นี่ไม่ใช่อุปกรณ์สูดยาหอบหืด ไม่ต้องสูดลึกถึงปอด\nห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นร่วมกัน",
+        "tl": "Hindi ito pang-asthma na inhaler. Hindi kailangang huminga nang malalim hanggang baga.\nHuwag manigarilyo o gumamit ng ibang nicotine product kasabay nito.",
+        "ja": "これは喘息用吸入器ではなく、肺まで深く吸い込む必要はない。\n使用中は喫煙したり、他のニコチン製品を併用したりしない。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "插入尼古丁吸管",
+          "en": "Insert the nicotine cartridge",
+          "id": "Masukkan cartridge nikotin",
+          "vi": "Lắp ống nicotine vào",
+          "th": "ใส่ตลับนิโคติน",
+          "tl": "Ipasok ang nicotine cartridge",
+          "ja": "ニコチンカートリッジを差し込む"
+        },
+        note: {
+          "zh-TW": "聽到喀聲代表裝好，確認吸管坐穩。",
+          "en": "A click means it is in place. Make sure the cartridge sits firmly.",
+          "id": "Bunyi klik berarti sudah terpasang. Pastikan cartridge terpasang mantap.",
+          "vi": "Nghe tiếng tách là đã lắp đúng. Kiểm tra ống đã vào chắc.",
+          "th": "ได้ยินเสียงคลิกแปลว่าใส่เข้าที่แล้ว ตรวจว่าตลับแน่นดี",
+          "tl": "Kapag may click, ibig sabihin tama ang pagkakapasok. Tiyaking matibay ang pagkakakabit.",
+          "ja": "カチッと音がすれば正しく入っている。しっかり固定されていることを確認する。"
+        },
+        illustration: "assets/svg/nicotine-inhaler/step-0.svg"
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        action: {
+          "zh-TW": "短短吸一口到口腔",
+          "en": "Take short, shallow puffs into your mouth",
+          "id": "Hisap pendek dan dangkal ke mulut",
+          "vi": "Hít ngắn và nông vào miệng",
+          "th": "สูดสั้น ๆ ตื้น ๆ เข้าช่องปาก",
+          "tl": "Humigop nang maiikli at mabababaw papasok sa bibig",
+          "ja": "短く浅く口の中へ吸う"
+        },
+        note: {
+          "zh-TW": "不需要吸到肺部，深吸反而容易嗆咳。這支不是氣喘吸入器，尼古丁主要是在嘴巴和喉嚨吸收。",
+          "en": "Do not inhale into your lungs. Deep inhalation can make you cough. This is not an asthma inhaler. The nicotine is absorbed mainly through your mouth and throat.",
+          "id": "Tidak perlu menarik sampai ke paru-paru. Tarikan dalam justru mudah membuat batuk. Ini bukan inhaler asma. Nikotin terutama diserap lewat mulut dan tenggorokan.",
+          "vi": "Không cần hít sâu xuống phổi. Hít sâu dễ gây ho hoặc sặc. Đây không phải ống hít hen. Nicotine chủ yếu hấp thu qua miệng và họng.",
+          "th": "ไม่ต้องสูดลึกถึงปอด เพราะจะทำให้ไอหรือระคายคอได้ง่าย นี่ไม่ใช่อุปกรณ์สูดยาหอบหืด นิโคตินจะดูดซึมหลักผ่านปากและลำคอ",
+          "tl": "Hindi kailangang huminga hanggang baga. Ang sobrang lalim na paghigop ay maaaring magpaubo sa iyo. Hindi ito pang-asthma na inhaler. Pangunahin sa bibig at lalamunan naa-absorb ang nicotine.",
+          "ja": "肺まで吸い込まない。深く吸うとかえってむせやすい。これは喘息用吸入器ではなく、ニコチンは主に口や喉から吸収される。"
+        },
+        illustration: "assets/svg/nicotine-inhaler/step-1.svg",
+        highlight: true
       },
-      badge: {
-          "zh-TW": "戒菸用藥",
-          "en": "Smoking Cessation",
-          "id": "Berhenti merokok",
-          "vi": "Cai thuốc lá",
-          "th": "เลิกบุหรี่",
-          "tl": "Smoking Cessation",
-          "ja": "禁煙補助薬"
+      {
+        action: {
+          "zh-TW": "間歇吸到約 20 分鐘",
+          "en": "Use it off and on for about 20 minutes",
+          "id": "Gunakan selang-seling sampai sekitar 20 menit",
+          "vi": "Dùng ngắt quãng khoảng 20 phút",
+          "th": "ใช้เป็นช่วง ๆ รวมประมาณ 20 นาที",
+          "tl": "Gamitin nang pahinto-hinto nang mga 20 minuto",
+          "ja": "約20分、間をあけながら使う"
+        },
+        note: {
+          "zh-TW": "可以吸一下停一下，不需要連續一直吸。這樣尼古丁會慢慢進來，比一直猛吸更舒服，也比較不容易刺激喉嚨。",
+          "en": "You can puff, pause, and puff again. You do not need to use it continuously. This lets nicotine come in more gradually, which is more comfortable and less likely to irritate your throat.",
+          "id": "Anda bisa hisap lalu berhenti sebentar, kemudian hisap lagi. Tidak perlu terus-menerus. Cara ini membuat nikotin masuk lebih bertahap, lebih nyaman, dan tidak mudah mengiritasi tenggorokan.",
+          "vi": "Có thể hít một chút rồi nghỉ, sau đó hít lại. Không cần dùng liên tục. Cách này giúp nicotine vào từ từ hơn, dễ chịu hơn và ít kích ứng họng hơn.",
+          "th": "สูดสลับพักได้ ไม่จำเป็นต้องสูดต่อเนื่องตลอด วิธีนี้ทำให้นิโคตินค่อย ๆ เข้าสู่ร่างกาย สบายกว่า และระคายคอน้อยกว่า",
+          "tl": "Maaaring humigop, huminto sandali, at humigop ulit. Hindi kailangang tuluy-tuloy. Sa ganitong paraan, mas dahan-dahang pumapasok ang nicotine, mas komportable, at hindi gaanong nakakairita sa lalamunan.",
+          "ja": "吸って休み、また吸う。続けてずっと使う必要はない。この方がニコチンがゆっくり入るので、より楽で、喉も刺激されにくい。"
+        },
+        illustration: "assets/svg/nicotine-inhaler/step-2.svg"
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/bupropion-cessation"
+      {
+        action: {
+          "zh-TW": "用完取出吸管丟棄",
+          "en": "Remove and discard the cartridge after use",
+          "id": "Lepas dan buang cartridge setelah dipakai",
+          "vi": "Dùng xong lấy ống ra rồi bỏ đi",
+          "th": "ใช้เสร็จให้นำตลับออกแล้วทิ้ง",
+          "tl": "Alisin at itapon ang cartridge pagkatapos gamitin",
+          "ja": "使用後はカートリッジを外して捨てる"
+        },
+        note: {
+          "zh-TW": "包紙後丟棄，遠離兒童和寵物。",
+          "en": "Wrap it before throwing it away, and keep it away from children and pets.",
+          "id": "Bungkus sebelum dibuang, dan jauhkan dari anak-anak serta hewan peliharaan.",
+          "vi": "Gói lại rồi mới bỏ đi, để xa trẻ em và vật nuôi.",
+          "th": "ห่อก่อนทิ้ง และเก็บให้ห่างเด็กกับสัตว์เลี้ยง",
+          "tl": "Balutin muna bago itapon at ilayo sa mga bata at alagang hayop.",
+          "ja": "包んで捨て、子どもやペットの手の届かないようにする。"
+        },
+        illustration: "assets/svg/nicotine-inhaler/step-3.svg"
+      },
+      {
+        action: {
+          "zh-TW": "天冷先握暖 1–2 分鐘",
+          "en": "Warm it in your hand for 1-2 minutes if the weather is cold",
+          "id": "Hangatkan di tangan 1-2 menit bila cuaca dingin",
+          "vi": "Trời lạnh thì ủ ấm trong tay 1-2 phút",
+          "th": "ถ้าอากาศเย็น ให้กำไว้ 1-2 นาทีเพื่อให้อุ่นขึ้น",
+          "tl": "Kung malamig ang panahon, painitin muna sa kamay nang 1-2 minuto",
+          "ja": "寒い時は1-2分手で温める"
+        },
+        note: {
+          "zh-TW": "太冷時尼古丁揮發較差，效果會變弱。先用手握暖一點，吸到的尼古丁會比較穩。",
+          "en": "Nicotine vaporizes less well when it is cold, so the effect may be weaker. Warming it in your hand first helps the nicotine come out more steadily.",
+          "id": "Nikotin lebih sulit menguap saat dingin, sehingga efeknya bisa lebih lemah. Menghangatkannya dulu di tangan membantu nikotin keluar lebih stabil.",
+          "vi": "Khi quá lạnh, nicotine bay hơi kém hơn nên tác dụng có thể yếu đi. Làm ấm bằng tay trước sẽ giúp nicotine thoát ra ổn định hơn.",
+          "th": "เมื่อตลับเย็นเกินไป นิโคตินจะระเหยได้ไม่ดี ทำให้ฤทธิ์ลดลง การกำให้อุ่นก่อนจะช่วยให้นิโคตินออกมาได้สม่ำเสมอกว่า",
+          "tl": "Kapag masyadong malamig, mahina ang pag-singaw ng nicotine kaya humihina rin ang epekto. Kung painitin muna ito sa kamay, mas pantay ang paglabas ng nicotine.",
+          "ja": "冷えすぎるとニコチンが気化しにくくなり、効き目が弱くなる。先に手で少し温めると、ニコチンがより安定して出やすくなる。"
+        },
+        illustration: "assets/svg/nicotine-inhaler/step-4.svg"
+      }
+    ],
+    infoBoxes: [
+      {
+        tone: { bg: "#F2F2F2", border: "#7A7A7A", text: "#3F3F3F" },
+        title: {
+          "zh-TW": "用量遞減計畫（12 週）",
+          "en": "Taper plan (12 weeks)",
+          "id": "Rencana penurunan dosis (12 minggu)",
+          "vi": "Kế hoạch giảm liều (12 tuần)",
+          "th": "แผนลดยา (12 สัปดาห์)",
+          "tl": "Plano ng unti-unting bawas dosis (12 linggo)",
+          "ja": "減量計画（12週）"
+        },
+        text: {
+          "zh-TW": "第 1–8 週：每天 6–12 根，依需求使用。\n第 9–12 週：慢慢減少到每天 3 根以下。\n每天最多 12 根。",
+          "en": "Weeks 1-8: use 6-12 cartridges a day as needed.\nWeeks 9-12: taper down to fewer than 3 cartridges a day.\nDo not use more than 12 cartridges a day.",
+          "id": "Minggu 1-8: gunakan 6-12 cartridge per hari sesuai kebutuhan.\nMinggu 9-12: kurangi perlahan sampai kurang dari 3 cartridge per hari.\nJangan lebih dari 12 cartridge per hari.",
+          "vi": "Tuần 1-8: dùng 6-12 ống mỗi ngày tùy nhu cầu.\nTuần 9-12: giảm dần xuống dưới 3 ống mỗi ngày.\nKhông dùng quá 12 ống mỗi ngày.",
+          "th": "สัปดาห์ที่ 1-8: ใช้วันละ 6-12 ตลับตามความต้องการ\nสัปดาห์ที่ 9-12: ค่อย ๆ ลดเหลือน้อยกว่าวันละ 3 ตลับ\nห้ามใช้เกินวันละ 12 ตลับ",
+          "tl": "Linggo 1-8: gumamit ng 6-12 cartridge bawat araw ayon sa pangangailangan.\nLinggo 9-12: dahan-dahang bawasan hanggang mas mababa sa 3 cartridge bawat araw.\nHuwag hihigit sa 12 cartridge bawat araw.",
+          "ja": "1-8週：必要に応じて1日6-12本使う。\n9-12週：1日3本未満まで徐々に減らす。\n1日12本を超えて使わない。"
+        }
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "置室溫（15–30°C），避免冷藏與高溫。\n低溫會降低尼古丁揮發效率，使用前可先握暖。",
+        "en": "Store at room temperature (15-30°C). Do not refrigerate, and keep away from heat.\nCold temperatures reduce nicotine vapor release, so warm it in your hand before use if needed.",
+        "id": "Simpan pada suhu ruang (15-30°C). Jangan didinginkan, dan jauhkan dari panas.\nSuhu dingin mengurangi penguapan nikotin, jadi hangatkan di tangan sebelum digunakan bila perlu.",
+        "vi": "Bảo quản ở nhiệt độ phòng (15-30°C), không để lạnh và tránh nóng.\nNhiệt độ thấp làm nicotine bay hơi kém, nên có thể ủ ấm trong tay trước khi dùng.",
+        "th": "เก็บที่อุณหภูมิห้อง (15-30°C) ไม่ต้องแช่เย็น และหลีกเลี่ยงความร้อน\nอุณหภูมิต่ำจะทำให้นิโคตินระเหยได้น้อยลง จึงอาจต้องอุ่นในมือก่อนใช้",
+        "tl": "Itago sa room temperature (15-30°C). Huwag i-refrigerate at ilayo sa init.\nKapag malamig, mahina ang pag-singaw ng nicotine kaya maaaring painitin muna sa kamay bago gamitin.",
+        "ja": "室温（15-30°C）で保管し、冷蔵せず高温を避ける。\n低温ではニコチンが気化しにくいため、必要なら使用前に手で温める。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "使用前後 15 分鐘避免進食或飲料。",
+        "en": "Avoid food or drinks for 15 minutes before and after use.",
+        "id": "Hindari makan atau minum 15 menit sebelum dan sesudah penggunaan.",
+        "vi": "Tránh ăn uống trong 15 phút trước và sau khi dùng.",
+        "th": "หลีกเลี่ยงอาหารหรือเครื่องดื่ม 15 นาทีก่อนและหลังใช้",
+        "tl": "Iwasan ang pagkain o inumin 15 minuto bago at pagkatapos gamitin.",
+        "ja": "使用前後15分は飲食を避ける。"
+      },
+      {
+        "zh-TW": "使用期間不可同時吸菸或使用其他尼古丁產品。",
+        "en": "Do not smoke or use other nicotine products while using this inhalator.",
+        "id": "Jangan merokok atau memakai produk nikotin lain saat memakai inhalator ini.",
+        "vi": "Không hút thuốc hay dùng thêm sản phẩm nicotine khác khi đang dùng ống hít này.",
+        "th": "ระหว่างใช้อุปกรณ์นี้ ห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นร่วมกัน",
+        "tl": "Huwag manigarilyo o gumamit ng ibang nicotine product habang ginagamit ang inhalator na ito.",
+        "ja": "使用中は喫煙したり、他のニコチン製品を使ったりしない。"
+      },
+      {
+        "zh-TW": "有氣喘或慢性肺病時，使用前先告知醫師。",
+        "en": "Tell your doctor before use if you have asthma or chronic lung disease.",
+        "id": "Beri tahu dokter sebelum memakai bila Anda punya asma atau penyakit paru kronis.",
+        "vi": "Nếu có hen hoặc bệnh phổi mạn tính, hãy báo bác sĩ trước khi dùng.",
+        "th": "หากมีโรคหอบหืดหรือโรคปอดเรื้อรัง ให้แจ้งแพทย์ก่อนใช้",
+        "tl": "Sabihin muna sa doktor bago gamitin kung may hika o malalang sakit sa baga.",
+        "ja": "喘息や慢性肺疾患がある場合は、使用前に医師へ伝える。"
+      }
+    ],
+    qrUrl: "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=3805&lang=zh-TW"
   },
 
-  // ── Placeholder: Varenicline tablet for tobacco cessation ─────────────────────────────────────,
+  // ── Smoking cessation: NiQuitin mint lozenges ─────────────────────────────────────,
   {
-      "id": "varenicline-cessation",
-      color: {
-          main: "#27500A",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#97C459",
-          badgeText: "#173404"
+    "id": "niquitin-mint-lozenge",
+    "category": "smoking",
+    color: {
+      main: "#27500A",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#97C459",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "力抗戒菸薄荷口含錠",
+      "en": "NiQuitin Mint Lozenges",
+      "id": "NiQuitin Mint Lozenges",
+      "vi": "NiQuitin Mint Lozenges",
+      "th": "NiQuitin Mint Lozenges",
+      "tl": "NiQuitin Mint Lozenges",
+      "ja": "ニコチン ミントトローチ"
+    },
+    subtitle: {
+      "zh-TW": "NiQuitin Mint Lozenges | Nicotine lozenge | 2 mg / 4 mg",
+      "en": "NiQuitin Mint Lozenges | Nicotine lozenge | 2 mg / 4 mg",
+      "id": "NiQuitin Mint Lozenges | Tablet hisap nikotin | 2 mg / 4 mg",
+      "vi": "NiQuitin Mint Lozenges | Viên ngậm nicotine | 2 mg / 4 mg",
+      "th": "NiQuitin Mint Lozenges | เม็ดอม nicotine | 2 mg / 4 mg",
+      "tl": "NiQuitin Mint Lozenges | Nicotine lozenge | 2 mg / 4 mg",
+      "ja": "NiQuitin Mint Lozenges | ニコチントローチ | 2 mg / 4 mg"
+    },
+    usage: {
+      "zh-TW": "想抽菸時再用，不可咬碎或吞整顆",
+      "en": "Use it when a craving starts. Do not chew it or swallow it whole.",
+      "id": "Gunakan saat keinginan merokok muncul. Jangan dikunyah atau ditelan utuh.",
+      "vi": "Dùng khi lên cơn thèm thuốc. Không nhai hay nuốt nguyên viên.",
+      "th": "ใช้เมื่ออยากสูบบุหรี่ ห้ามเคี้ยวหรือกลืนทั้งเม็ด",
+      "tl": "Gamitin kapag may pagnanasa sa sigarilyo. Huwag nguyain o lunukin nang buo.",
+      "ja": "吸いたくなった時に使う。噛んだり丸のみしたりしない。"
+    },
+    badge: {
+      "zh-TW": "NRT 口含錠",
+      "en": "NRT Lozenge",
+      "id": "Tablet Hisap NRT",
+      "vi": "Viên ngậm NRT",
+      "th": "เม็ดอม NRT",
+      "tl": "NRT Lozenge",
+      "ja": "NRT トローチ"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道 2 件事",
+        "en": "Know these 2 things first",
+        "id": "Ketahui 2 hal ini lebih dulu",
+        "vi": "Biết trước 2 điều này",
+        "th": "รู้ 2 เรื่องนี้ก่อน",
+        "tl": "Alamin muna ang 2 bagay na ito",
+        "ja": "先に2つ確認"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Varenicline（戒菸）",
-          "en": "Varenicline tablet for tobacco cessation",
-          "id": "Varenicline tablet for tobacco cessation",
-          "vi": "Varenicline tablet for tobacco cessation",
-          "th": "Varenicline tablet for tobacco cessation",
-          "tl": "Varenicline tablet for tobacco cessation",
-          "ja": "Varenicline tablet for tobacco cessation"
+      text: {
+        "zh-TW": "這是尼古丁替代療法，幫你減少想抽菸的感覺。\n使用期間不要同時吸菸，也不要合併其他尼古丁產品。",
+        "en": "This is nicotine replacement therapy that helps reduce cravings.\nDo not smoke or use other nicotine products at the same time.",
+        "id": "Ini adalah terapi pengganti nikotin untuk membantu mengurangi keinginan merokok.\nJangan merokok atau memakai produk nikotin lain pada saat yang sama.",
+        "vi": "Đây là liệu pháp thay thế nicotine giúp giảm cơn thèm thuốc.\nKhông hút thuốc hay dùng thêm sản phẩm nicotine khác cùng lúc.",
+        "th": "นี่คือการทดแทนนิโคตินเพื่อช่วยลดความอยากบุหรี่\nห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นร่วมกัน",
+        "tl": "Nicotine replacement therapy ito para mabawasan ang pagnanasa sa sigarilyo.\nHuwag manigarilyo o gumamit ng ibang nicotine product habang ginagamit ito.",
+        "ja": "ニコチンへの欲求を減らすためのニコチン代替療法です。\n使用中は喫煙したり、他のニコチン製品を併用したりしない。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "依第一根菸時間選劑量",
+          "en": "Choose the strength by the time of your first cigarette",
+          "id": "Pilih kekuatan berdasarkan waktu rokok pertama",
+          "vi": "Chọn hàm lượng theo thời điểm hút điếu đầu tiên",
+          "th": "เลือกขนาดยาตามเวลาที่สูบบุหรี่มวนแรก",
+          "tl": "Piliin ang lakas ayon sa oras ng unang sigarilyo",
+          "ja": "最初の1本を吸う時間で強さを選ぶ"
+        },
+        note: {
+          "zh-TW": "醒後 30 分鐘內就吸菸，用 4 mg；超過 30 分鐘才吸菸，用 2 mg。",
+          "en": "Use 4 mg if you smoke within 30 minutes of waking. Use 2 mg if you smoke later than 30 minutes after waking.",
+          "id": "Gunakan 4 mg bila Anda merokok dalam 30 menit setelah bangun. Gunakan 2 mg bila lebih dari 30 menit setelah bangun.",
+          "vi": "Dùng 4 mg nếu bạn hút trong vòng 30 phút sau khi thức dậy. Dùng 2 mg nếu hút muộn hơn 30 phút.",
+          "th": "ถ้าสูบภายใน 30 นาทีหลังตื่นนอน ใช้ 4 mg ถ้าสูบหลังจาก 30 นาที ใช้ 2 mg",
+          "tl": "Gamitin ang 4 mg kung naninigarilyo ka sa loob ng 30 minuto pagkagising. Gamitin ang 2 mg kung lampas 30 minuto pa bago ka manigarilyo.",
+          "ja": "起床後30分以内に吸うなら4 mg、30分を過ぎてから吸うなら2 mgを使う。"
+        },
+        illustration: "assets/svg/niquitin-mint-lozenge/step-0.svg",
+        highlight: true
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        action: {
+          "zh-TW": "前後 15 分鐘不進食",
+          "en": "Avoid food or drinks for 15 minutes before and after use",
+          "id": "Hindari makan atau minum 15 menit sebelum dan sesudah penggunaan",
+          "vi": "Không ăn uống trong 15 phút trước và sau khi dùng",
+          "th": "งดอาหารหรือเครื่องดื่ม 15 นาทีก่อนและหลังใช้",
+          "tl": "Iwasan ang pagkain o inumin 15 minuto bago at pagkatapos gamitin",
+          "ja": "使用前後15分は飲食しない"
+        },
+        note: {
+          "zh-TW": "漱口水也先不要用，以免影響吸收。咖啡、茶、可樂、果汁也先暫停，這些飲料會改變口腔環境，讓尼古丁比較不好吸收。",
+          "en": "Also avoid mouthwash during that time because it can affect absorption. Avoid coffee, tea, cola, and juice too, because they can change the inside of your mouth and make nicotine absorb less well.",
+          "id": "Hindari juga obat kumur pada waktu itu karena bisa memengaruhi penyerapan. Hindari juga kopi, teh, cola, dan jus karena minuman ini dapat mengubah kondisi di dalam mulut sehingga nikotin lebih sulit diserap.",
+          "vi": "Cũng tránh dùng nước súc miệng trong thời gian đó vì có thể ảnh hưởng hấp thu. Cà phê, trà, cola và nước trái cây cũng nên tạm tránh vì có thể làm thay đổi môi trường trong miệng và khiến nicotine hấp thu kém hơn.",
+          "th": "รวมถึงงดใช้น้ำยาบ้วนปากในช่วงนั้นด้วย เพราะอาจรบกวนการดูดซึม ควรงดกาแฟ ชา โคล่า และน้ำผลไม้ด้วย เพราะอาจเปลี่ยนสภาพในปากและทำให้นิโคตินดูดซึมได้แย่ลง",
+          "tl": "Iwasan din ang mouthwash sa panahong iyon dahil maaaring maapektuhan ang absorption. Iwasan din ang kape, tsaa, cola, at juice dahil maaari nilang baguhin ang kondisyon sa loob ng bibig at pahinain ang pag-absorb ng nicotine.",
+          "ja": "その間は洗口液も避け、吸収を妨げないようにする。コーヒー、茶、コーラ、ジュースも口の中の環境を変えてニコチンが吸収されにくくなることがあるので避ける。"
+        },
+        illustration: "assets/svg/niquitin-mint-lozenge/step-1.svg"
       },
-      badge: {
-          "zh-TW": "戒菸用藥",
-          "en": "Smoking Cessation",
-          "id": "Berhenti merokok",
-          "vi": "Cai thuốc lá",
-          "th": "เลิกบุหรี่",
-          "tl": "Smoking Cessation",
-          "ja": "禁煙補助薬"
+      {
+        action: {
+          "zh-TW": "含著讓它慢慢溶化",
+          "en": "Let it dissolve slowly in your mouth",
+          "id": "Biarkan larut perlahan di mulut",
+          "vi": "Ngậm cho tan từ từ trong miệng",
+          "th": "อมไว้ให้ละลายช้า ๆ ในปาก",
+          "tl": "Hayaan itong matunaw nang dahan-dahan sa bibig",
+          "ja": "口の中でゆっくり溶かす"
+        },
+        note: {
+          "zh-TW": "不可咀嚼，也不可整顆吞下。這顆藥主要是在口腔慢慢吸收；如果咬碎或吞下去，效果會變差，也比較容易胃不舒服。",
+          "en": "Do not chew it, and do not swallow it whole. This medicine works mainly by being absorbed slowly in your mouth. If you chew or swallow it, it may work less well and may upset your stomach.",
+          "id": "Jangan dikunyah dan jangan ditelan utuh. Obat ini bekerja terutama dengan diserap perlahan di mulut. Jika dikunyah atau ditelan, efeknya bisa berkurang dan lambung lebih mudah tidak nyaman.",
+          "vi": "Không nhai và không nuốt nguyên viên. Thuốc này chủ yếu hấp thu chậm trong miệng. Nếu nhai hoặc nuốt, thuốc có thể kém hiệu quả hơn và dễ gây khó chịu dạ dày.",
+          "th": "ห้ามเคี้ยว และห้ามกลืนทั้งเม็ด ยานี้ออกฤทธิ์หลักจากการค่อย ๆ ดูดซึมในปาก หากเคี้ยวหรือกลืนลงไป ฤทธิ์อาจลดลงและทำให้ระคายท้องได้ง่ายขึ้น",
+          "tl": "Huwag nguyain at huwag lunukin nang buo. Pangunahin itong gumagana sa pamamagitan ng mabagal na pag-absorb sa bibig. Kung nguyain o lunukin ito, maaaring humina ang epekto at mas madali kang sumakit ang tiyan.",
+          "ja": "噛まず、丸のみもしない。この薬は口の中でゆっくり吸収されることで主に効く。噛んだり飲み込んだりすると効き目が弱くなり、胃も不快になりやすい。"
+        },
+        illustration: "assets/svg/niquitin-mint-lozenge/step-2.svg"
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/varenicline-cessation"
+      {
+        action: {
+          "zh-TW": "每 15 分鐘換一側含",
+          "en": "Move it to a different side every 15 minutes",
+          "id": "Pindahkan ke sisi lain setiap 15 menit",
+          "vi": "Cứ 15 phút đổi sang vị trí khác",
+          "th": "ทุก 15 นาทีให้เปลี่ยนตำแหน่งอม",
+          "tl": "Ilipat sa ibang bahagi bawat 15 minuto",
+          "ja": "15分ごとに位置を変える"
+        },
+        note: {
+          "zh-TW": "大約 20–30 分鐘會完全溶化。每隔 15 分鐘換一側，藥會在口腔不同位置慢慢吸收，也比較不容易刺激同一處。",
+          "en": "It usually dissolves completely in about 20-30 minutes. Moving it to the other side every 15 minutes helps the medicine absorb slowly in different parts of your mouth and helps prevent one spot from getting irritated.",
+          "id": "Biasanya akan larut habis dalam sekitar 20-30 menit. Memindahkannya ke sisi lain setiap 15 menit membantu obat diserap perlahan di beberapa bagian mulut dan mengurangi iritasi di satu titik yang sama.",
+          "vi": "Thường tan hết sau khoảng 20-30 phút. Việc chuyển sang bên kia mỗi 15 phút giúp thuốc hấp thu chậm ở nhiều vị trí trong miệng và giảm kích ứng một chỗ.",
+          "th": "โดยทั่วไปจะละลายหมดในประมาณ 20-30 นาที การย้ายไปอีกข้างทุก 15 นาทีช่วยให้ยาค่อย ๆ ดูดซึมในหลายตำแหน่งของปาก และลดการระคายเคืองจุดเดิม",
+          "tl": "Karaniwang tuluyang natutunaw sa loob ng mga 20-30 minuto. Ang paglipat nito sa kabilang bahagi bawat 15 minuto ay tumutulong para dahan-dahang ma-absorb ang gamot sa iba't ibang bahagi ng bibig at para hindi mairita ang iisang puwesto.",
+          "ja": "通常は20-30分ほどで完全に溶ける。15分ごとに反対側へ移すことで、口の中のいろいろな場所でゆっくり吸収され、同じ場所が刺激されにくくなる。"
+        },
+        illustration: "assets/svg/niquitin-mint-lozenge/step-3.svg"
+      },
+      {
+        action: {
+          "zh-TW": "完全溶完再吞下",
+          "en": "Swallow only after it has fully dissolved",
+          "id": "Telan hanya setelah larut seluruhnya",
+          "vi": "Chỉ nuốt sau khi đã tan hết",
+          "th": "กลืนได้เมื่อเม็ดอมละลายหมดแล้ว",
+          "tl": "Lunukin lamang kapag tuluyang natunaw na",
+          "ja": "完全に溶けてから飲み込む"
+        },
+        note: {
+          "zh-TW": "不要用牙齒咬碎。讓它慢慢溶掉，尼古丁進入身體會比較穩。",
+          "en": "Do not crush it with your teeth. Letting it dissolve slowly helps nicotine enter your body more steadily.",
+          "id": "Jangan dihancurkan dengan gigi. Membiarkannya larut perlahan membantu nikotin masuk ke tubuh lebih stabil.",
+          "vi": "Không dùng răng cắn nát. Để thuốc tan chậm sẽ giúp nicotine vào cơ thể ổn định hơn.",
+          "th": "อย่าใช้ฟันกัดให้แตก การปล่อยให้ละลายช้า ๆ จะช่วยให้นิโคตินเข้าสู่ร่างกายอย่างสม่ำเสมอกว่า",
+          "tl": "Huwag durugin gamit ang ngipin. Mas pantay ang pagpasok ng nicotine sa katawan kapag hinayaang matunaw ito nang dahan-dahan.",
+          "ja": "歯で砕かない。ゆっくり溶かす方がニコチンがより安定して体に入る。"
+        },
+        illustration: "assets/svg/niquitin-mint-lozenge/step-4.svg"
+      }
+    ],
+    infoBoxes: [
+      {
+        tone: { bg: "#F2F2F2", border: "#7A7A7A", text: "#3F3F3F" },
+        title: {
+          "zh-TW": "用量遞減計畫（12 週）",
+          "en": "Taper plan (12 weeks)",
+          "id": "Rencana penurunan dosis (12 minggu)",
+          "vi": "Kế hoạch giảm liều (12 tuần)",
+          "th": "แผนลดยา (12 สัปดาห์)",
+          "tl": "Plano ng unti-unting bawas dosis (12 linggo)",
+          "ja": "減量計画（12週）"
+        },
+        text: {
+          "zh-TW": "第 1–6 週：每 1–2 小時 1 錠（每天至少 9 錠）。\n第 7–9 週：每 2–4 小時 1 錠。\n第 10–12 週：每 4–8 小時 1 錠。",
+          "en": "Weeks 1-6: 1 lozenge every 1-2 hours, with at least 9 lozenges a day.\nWeeks 7-9: 1 lozenge every 2-4 hours.\nWeeks 10-12: 1 lozenge every 4-8 hours.",
+          "id": "Minggu 1-6: 1 tablet hisap tiap 1-2 jam, minimal 9 tablet per hari.\nMinggu 7-9: 1 tablet hisap tiap 2-4 jam.\nMinggu 10-12: 1 tablet hisap tiap 4-8 jam.",
+          "vi": "Tuần 1-6: 1 viên mỗi 1-2 giờ, ít nhất 9 viên mỗi ngày.\nTuần 7-9: 1 viên mỗi 2-4 giờ.\nTuần 10-12: 1 viên mỗi 4-8 giờ.",
+          "th": "สัปดาห์ที่ 1-6: 1 เม็ดทุก 1-2 ชั่วโมง อย่างน้อยวันละ 9 เม็ด\nสัปดาห์ที่ 7-9: 1 เม็ดทุก 2-4 ชั่วโมง\nสัปดาห์ที่ 10-12: 1 เม็ดทุก 4-8 ชั่วโมง",
+          "tl": "Linggo 1-6: 1 lozenge bawat 1-2 oras, at hindi bababa sa 9 na lozenge bawat araw.\nLinggo 7-9: 1 lozenge bawat 2-4 oras.\nLinggo 10-12: 1 lozenge bawat 4-8 oras.",
+          "ja": "1-6週：1-2時間ごとに1錠、1日少なくとも9錠。\n7-9週：2-4時間ごとに1錠。\n10-12週：4-8時間ごとに1錠。"
+        }
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "置室溫（≤25°C），避免潮濕與高溫。\n保持鋁箔包裝密封到使用前。",
+        "en": "Store at room temperature (≤25°C). Keep away from heat and moisture.\nKeep the blister sealed until you use it.",
+        "id": "Simpan pada suhu ruang (≤25°C), jauhkan dari panas dan lembap.\nBiarkan kemasan blister tetap tertutup sampai akan digunakan.",
+        "vi": "Bảo quản ở nhiệt độ phòng (≤25°C), tránh nóng và ẩm.\nGiữ kín vỉ cho đến ngay trước khi dùng.",
+        "th": "เก็บที่อุณหภูมิห้อง (≤25°C) หลีกเลี่ยงความร้อนและความชื้น\nเก็บแผงยาให้ปิดสนิทจนกว่าจะใช้",
+        "tl": "Itago sa room temperature (≤25°C) at ilayo sa init at halumigmig.\nPanatilihing selyado ang blister hanggang sa oras ng paggamit.",
+        "ja": "室温（≤25°C）で保管し、高温多湿を避ける。\n使用直前までブリスター包装を密封しておく。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "使用前後 15 分鐘避免進食、飲料或漱口水。",
+        "en": "Avoid food, drinks, or mouthwash for 15 minutes before and after use.",
+        "id": "Hindari makan, minum, atau obat kumur 15 menit sebelum dan sesudah penggunaan.",
+        "vi": "Tránh ăn, uống hoặc dùng nước súc miệng trong 15 phút trước và sau khi dùng.",
+        "th": "หลีกเลี่ยงอาหาร เครื่องดื่ม หรือ น้ำยาบ้วนปาก 15 นาทีก่อนและหลังใช้",
+        "tl": "Iwasan ang pagkain, inumin, o mouthwash 15 minuto bago at pagkatapos gamitin.",
+        "ja": "使用前後15分は飲食や洗口液を避ける。"
+      },
+      {
+        "zh-TW": "使用期間不可同時吸菸或使用其他尼古丁產品。",
+        "en": "Do not smoke or use other nicotine products while using this lozenge.",
+        "id": "Jangan merokok atau memakai produk nikotin lain saat memakai tablet hisap ini.",
+        "vi": "Không hút thuốc hay dùng thêm sản phẩm nicotine khác khi đang dùng viên ngậm này.",
+        "th": "ระหว่างใช้เม็ดอมนี้ ห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นร่วมกัน",
+        "tl": "Huwag manigarilyo o gumamit ng ibang nicotine product habang ginagamit ang lozenge na ito.",
+        "ja": "使用中は喫煙したり、他のニコチン製品を使ったりしない。"
+      },
+      {
+        "zh-TW": "每天最多 20 錠；12 週後仍停不掉時請告知醫師。",
+        "en": "Do not use more than 20 lozenges a day. Tell your doctor if you still cannot stop after 12 weeks.",
+        "id": "Jangan memakai lebih dari 20 tablet per hari. Beri tahu dokter bila setelah 12 minggu Anda masih belum bisa berhenti.",
+        "vi": "Không dùng quá 20 viên mỗi ngày. Hãy báo bác sĩ nếu sau 12 tuần bạn vẫn chưa thể ngừng.",
+        "th": "ห้ามใช้เกินวันละ 20 เม็ด หากครบ 12 สัปดาห์แล้วยังหยุดไม่ได้ ให้แจ้งแพทย์",
+        "tl": "Huwag hihigit sa 20 lozenge bawat araw. Sabihin sa doktor kung hindi ka pa rin makahinto pagkalipas ng 12 linggo.",
+        "ja": "1日20錠を超えて使わない。12週後もやめられない場合は医師に伝える。"
+      }
+    ],
+    qrUrl: "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=3805&lang=zh-TW"
   },
+
+  // ── Smoking cessation: Bupropion SR ─────────────────────────────────────,
+  {
+    "id": "bupropion-sr",
+    "category": "smoking",
+    color: {
+      main: "#27500A",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#97C459",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "丁氨苯丙酮緩釋錠",
+      "en": "Bupropion SR",
+      "id": "Bupropion SR",
+      "vi": "Bupropion SR",
+      "th": "Bupropion SR",
+      "tl": "Bupropion SR",
+      "ja": "ブプロピオン徐放錠"
+    },
+    subtitle: {
+      "zh-TW": "Bupropion HCl sustained-release tablets | 150 mg/tablet",
+      "en": "Bupropion HCl sustained-release tablets | 150 mg/tablet",
+      "id": "Tablet sustained-release bupropion HCl | 150 mg/tablet",
+      "vi": "Viên giải phóng kéo dài bupropion HCl | 150 mg/viên",
+      "th": "ยาเม็ดออกฤทธิ์เนิ่น bupropion HCl | 150 mg/เม็ด",
+      "tl": "Bupropion HCl sustained-release tablets | 150 mg/tablet",
+      "ja": "ブプロピオン塩酸塩徐放錠 | 150 mg/錠"
+    },
+    usage: {
+      "zh-TW": "先開始吃藥，再設定戒菸日",
+      "en": "Start the tablets first, then set your quit date.",
+      "id": "Mulai minum obat dulu, lalu tetapkan hari berhenti merokok.",
+      "vi": "Bắt đầu uống thuốc trước, rồi mới đặt ngày bỏ thuốc.",
+      "th": "เริ่มยาก่อน แล้วค่อยกำหนดวันหยุดสูบ",
+      "tl": "Simulan muna ang tableta, saka magtakda ng quit date.",
+      "ja": "まず服薬を始め、その後に禁煙日を決める。"
+    },
+    badge: {
+      "zh-TW": "處方戒菸藥",
+      "en": "Prescription Quit-Smoking Medicine",
+      "id": "Obat resep untuk berhenti merokok",
+      "vi": "Thuốc cai thuốc lá kê đơn",
+      "th": "ยาช่วยเลิกบุหรี่ชนิดสั่งแพทย์",
+      "tl": "Inireresetang gamot sa pagtigil sa paninigarilyo",
+      "ja": "処方禁煙薬"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道 2 件事",
+        "en": "Know these 2 things first",
+        "id": "Ketahui 2 hal ini lebih dulu",
+        "vi": "Biết trước 2 điều này",
+        "th": "รู้ 2 เรื่องนี้ก่อน",
+        "tl": "Alamin muna ang 2 bagay na ito",
+        "ja": "先に2つ確認"
+      },
+      text: {
+        "zh-TW": "這不是尼古丁替代療法。前 7 天可先照常吸菸。\n到你設定的戒菸日當天，再完全停菸。",
+        "en": "This is not nicotine replacement therapy. You may still smoke during the first 7 days.\nStop smoking completely on your planned quit date.",
+        "id": "Ini bukan terapi pengganti nikotin. Anda masih boleh merokok selama 7 hari pertama.\nBerhenti total pada hari berhenti merokok yang Anda tentukan.",
+        "vi": "Đây không phải liệu pháp thay thế nicotine. Bạn vẫn có thể hút trong 7 ngày đầu.\nĐến ngày bỏ thuốc đã hẹn, hãy ngừng hoàn toàn.",
+        "th": "ยานี้ไม่ใช่นิโคตินทดแทน ช่วง 7 วันแรกยังอาจสูบได้ตามปกติ\nเมื่อถึงวันหยุดสูบที่กำหนดไว้ ให้หยุดสูบทันที",
+        "tl": "Hindi ito nicotine replacement therapy. Maaari ka pang manigarilyo sa unang 7 araw.\nSa quit date na itinakda mo, tuluyan nang tumigil sa paninigarilyo.",
+        "ja": "これはニコチン代替療法ではない。最初の7日間は喫煙していてよい。\n決めた禁煙日になったら完全にやめる。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "第 1–7 天早上吃 1 顆",
+          "en": "Take 1 tablet each morning on days 1-7",
+          "id": "Hari 1-7 minum 1 tablet setiap pagi",
+          "vi": "Ngày 1-7 uống 1 viên mỗi sáng",
+          "th": "วันที่ 1-7 กินวันละ 1 เม็ดตอนเช้า",
+          "tl": "Sa araw 1-7, uminom ng 1 tableta tuwing umaga",
+          "ja": "1-7日目は朝に1錠飲む"
+        },
+        note: {
+          "zh-TW": "這一週先讓身體適應，暫時不用立刻停菸。",
+          "en": "This first week helps your body adjust. You do not have to stop smoking right away.",
+          "id": "Minggu pertama ini membantu tubuh menyesuaikan diri. Anda belum harus langsung berhenti merokok.",
+          "vi": "Tuần đầu giúp cơ thể làm quen. Bạn chưa cần bỏ thuốc lá ngay lập tức.",
+          "th": "สัปดาห์แรกนี้ให้ร่างกายปรับตัวก่อน ยังไม่ต้องหยุดสูบทันที",
+          "tl": "Tinutulungan ng unang linggong ito ang katawan na mag-adjust. Hindi mo pa kailangang huminto agad sa paninigarilyo.",
+          "ja": "最初の1週間は体を慣らす期間。すぐに禁煙しなくてもよい。"
+        },
+        illustration: "assets/svg/bupropion-sr/step-0.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "第 8 天起早晚各 1 顆",
+          "en": "From day 8, take 1 tablet in the morning and 1 in the late afternoon",
+          "id": "Mulai hari ke-8, minum 1 tablet pagi dan 1 tablet sore",
+          "vi": "Từ ngày 8, uống 1 viên buổi sáng và 1 viên buổi chiều",
+          "th": "ตั้งแต่วันที่ 8 กินวันละ 2 ครั้ง เช้าและเย็น",
+          "tl": "Mula araw 8, uminom ng 1 tableta sa umaga at 1 tableta sa dapithapon",
+          "ja": "8日目から朝と夕方に1錠ずつ飲む"
+        },
+        note: {
+          "zh-TW": "兩次至少隔 8 小時，晚上不要太晚吃。",
+          "en": "Leave at least 8 hours between doses, and do not take the evening dose too late.",
+          "id": "Beri jarak sedikitnya 8 jam antar dosis, dan jangan minum dosis sore terlalu malam.",
+          "vi": "Hai lần cách nhau ít nhất 8 giờ, và đừng uống liều chiều quá muộn.",
+          "th": "เว้นอย่างน้อย 8 ชั่วโมงระหว่างยา 2 ครั้ง และอย่ากินมื้อเย็นดึกเกินไป",
+          "tl": "Mag-iwan ng hindi bababa sa 8 oras sa pagitan ng dalawang dosis, at huwag inumin nang sobrang gabi ang pangalawang tableta.",
+          "ja": "2回の間隔を少なくとも8時間あけ、夕方分は遅すぎる時間に飲まない。"
+        },
+        illustration: "assets/svg/bupropion-sr/step-1.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "整粒配水吞下",
+          "en": "Swallow the tablet whole with water",
+          "id": "Telan tablet utuh dengan air",
+          "vi": "Nuốt nguyên viên với nước",
+          "th": "กลืนทั้งเม็ดพร้อมน้ำ",
+          "tl": "Lunukin nang buo ang tableta kasabay ng tubig",
+          "ja": "水で丸ごと飲み込む"
+        },
+        note: {
+          "zh-TW": "不可壓碎、剝半或嚼碎，以免增加副作用與癲癇風險。",
+          "en": "Do not crush, split, or chew it. That can raise side effects and seizure risk.",
+          "id": "Jangan dihancurkan, dibelah, atau dikunyah. Hal ini bisa meningkatkan efek samping dan risiko kejang.",
+          "vi": "Không nghiền, bẻ đôi hay nhai. Làm vậy có thể tăng tác dụng phụ và nguy cơ co giật.",
+          "th": "ห้ามบด หักครึ่ง หรือเคี้ยว เพราะจะเพิ่มผลข้างเคียงและความเสี่ยงชัก",
+          "tl": "Huwag durugin, hatiin, o nguyain. Maaaring tumaas ang side effect at panganib ng seizure.",
+          "ja": "砕いたり半分に割ったり噛んだりしない。副作用やけいれんの危険が高まる。"
+        },
+        illustration: "assets/svg/bupropion-sr/step-2.svg"
+      },
+      {
+        action: {
+          "zh-TW": "第 1–2 週設定戒菸日",
+          "en": "Set your quit date during the first 1-2 weeks",
+          "id": "Tetapkan hari berhenti merokok pada minggu 1-2",
+          "vi": "Đặt ngày bỏ thuốc trong 1-2 tuần đầu",
+          "th": "กำหนดวันหยุดสูบในช่วงสัปดาห์ที่ 1-2",
+          "tl": "Itakda ang quit date sa loob ng unang 1-2 linggo",
+          "ja": "最初の1-2週で禁煙日を決める"
+        },
+        note: {
+          "zh-TW": "通常在第 2 週開始停菸；若醫師有彈性計畫，最晚可到第 35 天。",
+          "en": "Most people stop in week 2. If your doctor uses a flexible plan, the latest quit date may be day 35.",
+          "id": "Sebagian besar orang berhenti pada minggu ke-2. Bila dokter memakai rencana fleksibel, hari berhenti paling lambat bisa sampai hari ke-35.",
+          "vi": "Đa số sẽ bỏ thuốc vào tuần 2. Nếu bác sĩ dùng kế hoạch linh hoạt, muộn nhất có thể đến ngày 35.",
+          "th": "คนส่วนใหญ่มักหยุดสูบในสัปดาห์ที่ 2 หากแพทย์ใช้แผนแบบยืดหยุ่น วันหยุดสูบอาจเลื่อนได้ถึงวันที่ 35",
+          "tl": "Karamihan ay tumitigil sa linggo 2. Kung flexible quit plan ang gamit ng doktor mo, maaaring umabot hanggang araw 35 ang pinakahuling quit date.",
+          "ja": "多くは2週目に禁煙する。医師が柔軟な計画を使う場合は、最長で35日目まで延ばせることがある。"
+        },
+        illustration: "assets/svg/bupropion-sr/step-3.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "療程至少 7 週",
+          "en": "Continue for at least 7 weeks",
+          "id": "Lanjutkan setidaknya 7 minggu",
+          "vi": "Dùng ít nhất 7 tuần",
+          "th": "ใช้ต่ออย่างน้อย 7 สัปดาห์",
+          "tl": "Ipagpatuloy nang hindi bababa sa 7 linggo",
+          "ja": "少なくとも7週間続ける"
+        },
+        note: {
+          "zh-TW": "醫師評估後可延長到 12 週，不要自行停藥或改劑量。",
+          "en": "Your doctor may extend treatment to 12 weeks. Do not stop or change the dose on your own.",
+          "id": "Dokter dapat memperpanjang sampai 12 minggu bila perlu. Jangan berhenti atau mengubah dosis sendiri.",
+          "vi": "Bác sĩ có thể kéo dài đến 12 tuần nếu cần. Đừng tự ý ngừng hoặc đổi liều.",
+          "th": "แพทย์อาจพิจารณายืดถึง 12 สัปดาห์ได้ อย่าหยุดหรือปรับยาเอง",
+          "tl": "Maaaring pahabain ng doktor hanggang 12 linggo kung kailangan. Huwag titigil o babaguhin ang dosis nang sarili lang.",
+          "ja": "必要なら医師が12週間まで延長することがある。自己判断で中止や変更をしない。"
+        },
+        illustration: "assets/svg/bupropion-sr/step-4.svg"
+      }
+    ],
+    infoBoxes: [
+      {
+        tone: { bg: "#F2F2F2", border: "#7A7A7A", text: "#3F3F3F" },
+        title: {
+          "zh-TW": "劑量遞增計畫",
+          "en": "Build-up plan",
+          "id": "Rencana peningkatan dosis",
+          "vi": "Kế hoạch tăng liều",
+          "th": "แผนเพิ่มขนาดยา",
+          "tl": "Plano ng pagtaas ng dosis",
+          "ja": "増量計画"
+        },
+        text: {
+          "zh-TW": "第 1–7 天：150 mg 每天 1 次（早上）。\n第 8 天起：150 mg 每天 2 次（早上 + 傍晚）。\n兩次之間至少隔 8 小時。",
+          "en": "Days 1-7: 150 mg once each morning.\nFrom day 8: 150 mg twice a day, morning and late afternoon.\nLeave at least 8 hours between doses.",
+          "id": "Hari 1-7: 150 mg sekali tiap pagi.\nMulai hari ke-8: 150 mg dua kali sehari, pagi dan sore.\nBeri jarak setidaknya 8 jam antar dosis.",
+          "vi": "Ngày 1-7: 150 mg mỗi sáng 1 lần.\nTừ ngày 8: 150 mg ngày 2 lần, sáng và chiều.\nHai lần cách nhau ít nhất 8 giờ.",
+          "th": "วันที่ 1-7: 150 mg วันละครั้งตอนเช้า\nตั้งแต่วันที่ 8: 150 mg วันละ 2 ครั้ง เช้าและเย็น\nเว้นอย่างน้อย 8 ชั่วโมงระหว่างยา",
+          "tl": "Araw 1-7: 150 mg isang beses bawat umaga.\nMula araw 8: 150 mg dalawang beses bawat araw, umaga at dapithapon.\nMag-iwan ng hindi bababa sa 8 oras sa pagitan ng dosis.",
+          "ja": "1-7日目：150 mgを毎朝1回。\n8日目から：150 mgを朝と夕方に1日2回。\n2回の間隔は少なくとも8時間あける。"
+        }
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "置室溫（≤25°C），避免潮濕。\n保持原包裝到服用前。",
+        "en": "Store at room temperature (≤25°C) and keep it dry.\nKeep it in the original packaging until you take it.",
+        "id": "Simpan pada suhu ruang (≤25°C) dan jaga tetap kering.\nBiarkan dalam kemasan aslinya sampai waktunya diminum.",
+        "vi": "Bảo quản ở nhiệt độ phòng (≤25°C), tránh ẩm.\nGiữ trong bao bì gốc cho đến khi dùng.",
+        "th": "เก็บที่อุณหภูมิห้อง (≤25°C) และหลีกเลี่ยงความชื้น\nเก็บในบรรจุภัณฑ์เดิมจนกว่าจะรับประทาน",
+        "tl": "Itago sa room temperature (≤25°C) at panatilihing tuyo.\nPanatilihin ito sa orihinal na pakete hanggang inumin na.",
+        "ja": "室温（≤25°C）で保管し、湿気を避ける。\n服用するまでは元の包装のままにする。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "情緒變化、憂鬱、焦躁或自傷念頭時，立即停藥並回診。",
+        "en": "Stop the medicine and seek care right away if you notice mood changes, depression, severe agitation, or self-harm thoughts.",
+        "id": "Hentikan obat dan segera periksa bila muncul perubahan suasana hati, depresi, gelisah berat, atau pikiran melukai diri sendiri.",
+        "vi": "Ngừng thuốc và đi khám ngay nếu có thay đổi cảm xúc, trầm cảm, kích động nặng hoặc ý nghĩ tự làm hại bản thân.",
+        "th": "หากมีอารมณ์เปลี่ยน ซึมเศร้า กระสับกระส่ายมาก หรือคิดทำร้ายตนเอง ให้หยุดยาและพบแพทย์ทันที",
+        "tl": "Itigil ang gamot at magpatingin agad kung may pagbabago sa ugali, depresyon, matinding pagkaaligaga, o pag-iisip na saktan ang sarili.",
+        "ja": "気分の変化、抑うつ、強い焦燥、自傷念慮が出たら、すぐ中止して受診する。"
+      },
+      {
+        "zh-TW": "服藥期間避免飲酒，也不可和 MAOI 類藥物併用。",
+        "en": "Avoid alcohol while taking this medicine, and do not combine it with MAOI medicines.",
+        "id": "Hindari alkohol selama memakai obat ini, dan jangan dipakai bersama obat golongan MAOI.",
+        "vi": "Tránh uống rượu khi dùng thuốc này, và không dùng cùng thuốc nhóm MAOI.",
+        "th": "หลีกเลี่ยงแอลกอฮอล์ระหว่างใช้ยา และห้ามใช้ร่วมกับยากลุ่ม MAOI",
+        "tl": "Iwasan ang alak habang iniinom ito, at huwag isabay sa mga gamot na MAOI.",
+        "ja": "服用中は飲酒を避け、MAOI系薬とは併用しない。"
+      },
+      {
+        "zh-TW": "不可壓碎或嚼碎；兩次服藥間隔至少 8 小時。",
+        "en": "Do not crush or chew it, and leave at least 8 hours between doses.",
+        "id": "Jangan dihancurkan atau dikunyah, dan beri jarak setidaknya 8 jam antar dosis.",
+        "vi": "Không nghiền hay nhai, và hai lần uống phải cách nhau ít nhất 8 giờ.",
+        "th": "ห้ามบดหรือเคี้ยว และต้องเว้นอย่างน้อย 8 ชั่วโมงระหว่างยา",
+        "tl": "Huwag durugin o nguyain, at mag-iwan ng hindi bababa sa 8 oras sa pagitan ng mga dosis.",
+        "ja": "砕いたり噛んだりせず、2回の服用間隔を少なくとも8時間あける。"
+      }
+    ],
+    qrUrl: "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=3805&lang=zh-TW"
+  },
+
+  // ── Smoking cessation: Varenicline (Champix) ─────────────────────────────────────,
+  {
+    "id": "varenicline-champix",
+    "category": "smoking",
+    color: {
+      main: "#27500A",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#97C459",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "戒必適",
+      "en": "Champix",
+      "id": "Champix",
+      "vi": "Champix",
+      "th": "Champix",
+      "tl": "Champix",
+      "ja": "チャンピックス"
+    },
+    subtitle: {
+      "zh-TW": "Varenicline tartrate tablets | 0.5 mg / 1 mg",
+      "en": "Varenicline tartrate tablets | 0.5 mg / 1 mg",
+      "id": "Tablet varenicline tartrate | 0.5 mg / 1 mg",
+      "vi": "Viên varenicline tartrate | 0.5 mg / 1 mg",
+      "th": "ยาเม็ด varenicline tartrate | 0.5 mg / 1 mg",
+      "tl": "Varenicline tartrate tablets | 0.5 mg / 1 mg",
+      "ja": "バレニクリン酒石酸塩錠 | 0.5 mg / 1 mg"
+    },
+    usage: {
+      "zh-TW": "第 1 週漸增劑量，第 2 週開始戒菸",
+      "en": "Your dose increases during week 1. Most people quit in week 2.",
+      "id": "Dosis dinaikkan selama minggu pertama, dan kebanyakan orang berhenti pada minggu kedua.",
+      "vi": "Liều tăng dần trong tuần đầu, và đa số bắt đầu bỏ thuốc ở tuần thứ hai.",
+      "th": "ค่อย ๆ เพิ่มขนาดยาในสัปดาห์แรก และส่วนใหญ่เริ่มหยุดสูบในสัปดาห์ที่สอง",
+      "tl": "Unti-unting tumataas ang dosis sa unang linggo, at karamihan ay humihinto sa ikalawang linggo.",
+      "ja": "1週目で徐々に増量し、多くは2週目に禁煙を始める。"
+    },
+    badge: {
+      "zh-TW": "處方戒菸藥",
+      "en": "Prescription Quit-Smoking Medicine",
+      "id": "Obat resep untuk berhenti merokok",
+      "vi": "Thuốc cai thuốc lá kê đơn",
+      "th": "ยาช่วยเลิกบุหรี่ชนิดสั่งแพทย์",
+      "tl": "Inireresetang gamot sa pagtigil sa paninigarilyo",
+      "ja": "処方禁煙薬"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道 2 件事",
+        "en": "Know these 2 things first",
+        "id": "Ketahui 2 hal ini lebih dulu",
+        "vi": "Biết trước 2 điều này",
+        "th": "รู้ 2 เรื่องนี้ก่อน",
+        "tl": "Alamin muna ang 2 bagay na ito",
+        "ja": "先に2つ確認"
+      },
+      text: {
+        "zh-TW": "這不是尼古丁替代療法。前 1 週先慢慢加到目標劑量。\n通常第 2 週開始停菸；若醫師有彈性計畫，最晚可到第 35 天。",
+        "en": "This is not nicotine replacement therapy. During the first week, slowly increase to the target dose.\nMost people quit smoking in week 2. If your doctor uses a flexible plan, the latest quit date may be day 35.",
+        "id": "Ini bukan terapi pengganti nikotin. Pada minggu pertama, dosis dinaikkan perlahan sampai dosis target.\nSebagian besar orang berhenti pada minggu kedua. Bila dokter memakai rencana fleksibel, hari berhenti paling lambat bisa sampai hari ke-35.",
+        "vi": "Đây không phải liệu pháp thay thế nicotine. Trong tuần đầu, liều sẽ tăng dần đến liều đích.\nĐa số bỏ thuốc ở tuần 2. Nếu bác sĩ dùng kế hoạch linh hoạt, muộn nhất có thể đến ngày 35.",
+        "th": "ยานี้ไม่ใช่นิโคตินทดแทน ในสัปดาห์แรกจะค่อย ๆ เพิ่มยาจนถึงขนาดเป้าหมาย\nคนส่วนใหญ่มักหยุดสูบในสัปดาห์ที่ 2 หากแพทย์ใช้แผนแบบยืดหยุ่น วันหยุดสูบอาจเลื่อนได้ถึงวันที่ 35",
+        "tl": "Hindi ito nicotine replacement therapy. Sa unang linggo, unti-unting itataas ang dosis hanggang sa target na dosis.\nKaramihan ay humihinto sa linggo 2. Kung flexible quit plan ang gamit ng doktor, maaaring umabot hanggang araw 35 ang pinakahuling quit date.",
+        "ja": "これはニコチン代替療法ではない。最初の1週間で目標量まで徐々に増量する。\n多くは2週目に禁煙するが、医師が柔軟な計画を使う場合は35日目まで延ばせることがある。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "第 1–3 天早餐後 0.5 mg 1 顆",
+          "en": "Days 1-3: take 0.5 mg after breakfast",
+          "id": "Hari 1-3: minum 0,5 mg setelah sarapan",
+          "vi": "Ngày 1-3: uống 0,5 mg sau bữa sáng",
+          "th": "วันที่ 1-3 กิน 0.5 mg หลังอาหารเช้า",
+          "tl": "Araw 1-3: uminom ng 0.5 mg pagkatapos ng almusal",
+          "ja": "1-3日目：朝食後に0.5 mgを1錠飲む"
+        },
+        note: {
+          "zh-TW": "這幾天先讓身體適應。",
+          "en": "These first few days help your body adjust.",
+          "id": "Beberapa hari pertama ini membantu tubuh menyesuaikan diri.",
+          "vi": "Vài ngày đầu giúp cơ thể làm quen.",
+          "th": "ช่วงแรกนี้ให้ร่างกายปรับตัวก่อน",
+          "tl": "Sa unang mga araw na ito, tinutulungan munang mag-adjust ang katawan.",
+          "ja": "最初の数日は体を慣らすための期間。"
+        },
+        illustration: "assets/svg/varenicline-champix/step-0.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "第 4–7 天早晚各 0.5 mg 1 顆",
+          "en": "Days 4-7: take 0.5 mg twice a day",
+          "id": "Hari 4-7: minum 0,5 mg dua kali sehari",
+          "vi": "Ngày 4-7: uống 0,5 mg ngày 2 lần",
+          "th": "วันที่ 4-7 กิน 0.5 mg วันละ 2 ครั้ง",
+          "tl": "Araw 4-7: uminom ng 0.5 mg dalawang beses sa isang araw",
+          "ja": "4-7日目：0.5 mgを1日2回飲む"
+        },
+        note: {
+          "zh-TW": "早餐後和晚餐後服用，兩次間隔約 8 小時。",
+          "en": "Take it after breakfast and after dinner, about 8 hours apart.",
+          "id": "Minum setelah sarapan dan setelah makan malam, dengan jarak sekitar 8 jam.",
+          "vi": "Uống sau bữa sáng và sau bữa tối, cách nhau khoảng 8 giờ.",
+          "th": "กินหลังอาหารเช้าและหลังอาหารเย็น ห่างกันประมาณ 8 ชั่วโมง",
+          "tl": "Inumin pagkatapos ng almusal at pagkatapos ng hapunan, na may pagitan na mga 8 oras.",
+          "ja": "朝食後と夕食後に、約8時間あけて飲む。"
+        },
+        illustration: "assets/svg/varenicline-champix/step-1.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "第 8 天起早晚各 1 mg 1 顆",
+          "en": "From day 8: take 1 mg twice a day",
+          "id": "Mulai hari ke-8: minum 1 mg dua kali sehari",
+          "vi": "Từ ngày 8: uống 1 mg ngày 2 lần",
+          "th": "ตั้งแต่วันที่ 8 กิน 1 mg วันละ 2 ครั้ง",
+          "tl": "Mula araw 8: uminom ng 1 mg dalawang beses sa isang araw",
+          "ja": "8日目から：1 mgを1日2回飲む"
+        },
+        note: {
+          "zh-TW": "維持這個劑量到療程結束。",
+          "en": "Stay on this dose until the end of treatment.",
+          "id": "Lanjutkan dosis ini sampai akhir terapi.",
+          "vi": "Duy trì liều này đến hết liệu trình.",
+          "th": "ใช้ขนาดยานี้ต่อไปจนจบคอร์ส",
+          "tl": "Ituloy ang dosis na ito hanggang matapos ang gamutan.",
+          "ja": "治療終了までこの量を続ける。"
+        },
+        illustration: "assets/svg/varenicline-champix/step-2.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "第 8–14 天設定戒菸日",
+          "en": "Set your quit date between days 8 and 14",
+          "id": "Tetapkan hari berhenti merokok antara hari ke-8 dan ke-14",
+          "vi": "Đặt ngày bỏ thuốc trong khoảng ngày 8 đến ngày 14",
+          "th": "กำหนดวันหยุดสูบในช่วงวันที่ 8-14",
+          "tl": "Itakda ang quit date sa pagitan ng araw 8 at 14",
+          "ja": "8-14日目の間に禁煙日を決める"
+        },
+        note: {
+          "zh-TW": "多數人在第 2 週開始停菸；若醫師有彈性計畫，最晚可到第 35 天。",
+          "en": "Most people stop in week 2. If your doctor uses a flexible plan, the latest quit date may be day 35.",
+          "id": "Sebagian besar orang berhenti pada minggu ke-2. Bila dokter memakai rencana fleksibel, hari berhenti paling lambat bisa sampai hari ke-35.",
+          "vi": "Đa số sẽ bỏ thuốc ở tuần 2. Nếu bác sĩ dùng kế hoạch linh hoạt, muộn nhất có thể đến ngày 35.",
+          "th": "คนส่วนใหญ่มักหยุดสูบในสัปดาห์ที่ 2 หากแพทย์ใช้แผนแบบยืดหยุ่น วันหยุดสูบอาจเลื่อนได้ถึงวันที่ 35",
+          "tl": "Karamihan ay tumitigil sa linggo 2. Kung flexible quit plan ang gamit ng doktor, maaaring umabot hanggang araw 35 ang pinakahuling quit date.",
+          "ja": "多くは2週目に禁煙する。医師が柔軟な計画を使う場合は、最長で35日目まで延ばせることがある。"
+        },
+        illustration: "assets/svg/varenicline-champix/step-3.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "每次隨餐配水吞服",
+          "en": "Take each dose after food with water",
+          "id": "Minum setiap dosis setelah makan dengan air",
+          "vi": "Mỗi lần uống sau ăn với nước",
+          "th": "กินยาหลังอาหารพร้อมน้ำทุกครั้ง",
+          "tl": "Inumin ang bawat dosis pagkatapos kumain kasabay ng tubig",
+          "ja": "毎回食後に水で飲む"
+        },
+        note: {
+          "zh-TW": "這樣可減少噁心感，是最常見的副作用。",
+          "en": "This helps reduce nausea, which is the most common side effect.",
+          "id": "Cara ini membantu mengurangi mual, yang merupakan efek samping paling sering.",
+          "vi": "Cách này giúp giảm buồn nôn, là tác dụng phụ thường gặp nhất.",
+          "th": "วิธีนี้ช่วยลดอาการคลื่นไส้ ซึ่งเป็นผลข้างเคียงที่พบบ่อยที่สุด",
+          "tl": "Nakakatulong ito para mabawasan ang pagduduwal, na siyang pinakakaraniwang epekto.",
+          "ja": "もっとも多い副作用である吐き気を減らすのに役立つ。"
+        },
+        illustration: "assets/svg/varenicline-champix/step-4.svg"
+      }
+    ],
+    infoBoxes: [
+      {
+        tone: { bg: "#F2F2F2", border: "#7A7A7A", text: "#3F3F3F" },
+        title: {
+          "zh-TW": "劑量遞增計畫（第 1 週）",
+          "en": "Build-up plan (week 1)",
+          "id": "Rencana peningkatan dosis (minggu 1)",
+          "vi": "Kế hoạch tăng liều (tuần 1)",
+          "th": "แผนเพิ่มขนาดยา (สัปดาห์แรก)",
+          "tl": "Plano ng pagtaas ng dosis (unang linggo)",
+          "ja": "増量計画（第1週）"
+        },
+        text: {
+          "zh-TW": "第 1–3 天：0.5 mg 每天 1 次。\n第 4–7 天：0.5 mg 每天 2 次。\n第 8 天起：1 mg 每天 2 次，持續到第 12 週。",
+          "en": "Days 1-3: 0.5 mg once a day.\nDays 4-7: 0.5 mg twice a day.\nFrom day 8: 1 mg twice a day through week 12.",
+          "id": "Hari 1-3: 0,5 mg sekali sehari.\nHari 4-7: 0,5 mg dua kali sehari.\nMulai hari ke-8: 1 mg dua kali sehari sampai minggu ke-12.",
+          "vi": "Ngày 1-3: 0,5 mg ngày 1 lần.\nNgày 4-7: 0,5 mg ngày 2 lần.\nTừ ngày 8: 1 mg ngày 2 lần đến hết tuần 12.",
+          "th": "วันที่ 1-3: 0.5 mg วันละครั้ง\nวันที่ 4-7: 0.5 mg วันละ 2 ครั้ง\nตั้งแต่วันที่ 8: 1 mg วันละ 2 ครั้ง จนถึงสัปดาห์ที่ 12",
+          "tl": "Araw 1-3: 0.5 mg isang beses sa isang araw.\nAraw 4-7: 0.5 mg dalawang beses sa isang araw.\nMula araw 8: 1 mg dalawang beses sa isang araw hanggang linggo 12.",
+          "ja": "1-3日目：0.5 mgを1日1回。\n4-7日目：0.5 mgを1日2回。\n8日目から：1 mgを1日2回、12週まで続ける。"
+        }
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "置室溫（≤30°C），避免潮濕。\n保持原包裝到服用前。",
+        "en": "Store at room temperature (≤30°C) and keep it dry.\nKeep it in the original packaging until you take it.",
+        "id": "Simpan pada suhu ruang (≤30°C) dan jaga tetap kering.\nBiarkan dalam kemasan aslinya sampai waktunya diminum.",
+        "vi": "Bảo quản ở nhiệt độ phòng (≤30°C), tránh ẩm.\nGiữ trong bao bì gốc cho đến khi dùng.",
+        "th": "เก็บที่อุณหภูมิห้อง (≤30°C) และหลีกเลี่ยงความชื้น\nเก็บในบรรจุภัณฑ์เดิมจนกว่าจะรับประทาน",
+        "tl": "Itago sa room temperature (≤30°C) at panatilihing tuyo.\nPanatilihin ito sa orihinal na pakete hanggang inumin na.",
+        "ja": "室温（≤30°C）で保管し、湿気を避ける。\n服用するまでは元の包装のままにする。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "情緒變化、憂鬱、焦躁或自傷念頭時，立即停藥並回診。",
+        "en": "Stop the medicine and seek care right away if you notice mood changes, depression, severe agitation, or self-harm thoughts.",
+        "id": "Hentikan obat dan segera periksa bila muncul perubahan suasana hati, depresi, gelisah berat, atau pikiran melukai diri sendiri.",
+        "vi": "Ngừng thuốc và đi khám ngay nếu có thay đổi cảm xúc, trầm cảm, kích động nặng hoặc ý nghĩ tự làm hại bản thân.",
+        "th": "หากมีอารมณ์เปลี่ยน ซึมเศร้า กระสับกระส่ายมาก หรือคิดทำร้ายตนเอง ให้หยุดยาและพบแพทย์ทันที",
+        "tl": "Itigil ang gamot at magpatingin agad kung may pagbabago sa ugali, depresyon, matinding pagkaaligaga, o pag-iisip na saktan ang sarili.",
+        "ja": "気分の変化、抑うつ、強い焦燥、自傷念慮が出たら、すぐ中止して受診する。"
+      },
+      {
+        "zh-TW": "若頭暈、嗜睡或注意力差，先不要開車或操作機械。",
+        "en": "Do not drive or use machines if you feel dizzy, sleepy, or less alert.",
+        "id": "Jangan menyetir atau mengoperasikan mesin bila merasa pusing, mengantuk, atau kurang waspada.",
+        "vi": "Đừng lái xe hay vận hành máy nếu bạn thấy chóng mặt, buồn ngủ hoặc kém tỉnh táo.",
+        "th": "หากเวียนศีรษะ ง่วง หรือสมาธิลดลง อย่าขับรถหรือใช้เครื่องจักร",
+        "tl": "Huwag magmaneho o gumamit ng makina kung nakakaramdam ka ng hilo, antok, o hindi alerto.",
+        "ja": "めまい、眠気、注意力低下がある時は運転や機械操作をしない。"
+      },
+      {
+        "zh-TW": "腎功能不佳、懷孕或正在哺乳時，服藥前先告知醫師。",
+        "en": "Tell your doctor before use if you have kidney problems, are pregnant, or are breastfeeding.",
+        "id": "Beri tahu dokter sebelum memakai bila ada gangguan ginjal, sedang hamil, atau menyusui.",
+        "vi": "Hãy báo bác sĩ trước khi dùng nếu bạn có bệnh thận, đang mang thai hoặc cho con bú.",
+        "th": "หากไตทำงานไม่ดี ตั้งครรภ์ หรือให้นมบุตร ให้แจ้งแพทย์ก่อนใช้ยา",
+        "tl": "Sabihin muna sa doktor bago gamitin kung may sakit sa bato, buntis, o nagpapasuso.",
+        "ja": "腎機能低下、妊娠中、授乳中の場合は、使用前に医師へ伝える。"
+      }
+    ],
+    qrUrl: "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=3805&lang=zh-TW"
+  },
+
 
   // ── Placeholder: Actein effervescent tablet (acetylcysteine) ─────────────────────────────────────,
   {
