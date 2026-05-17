@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="170" viewBox="0 0 240 170">
+  <rect x="8" y="8" width="224" height="154" rx="12" fill="#ffffff" stroke="#d8ddd2" stroke-dasharray="4 4"/>
+  <g stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M103 38c-15 5-27 17-31 31l-6 24c-2 7-1 14 2 20l10 19"/>
+    <path d="M137 38c15 5 27 17 31 31l6 24c2 7 1 14-2 20l-10 19"/>
+    <path d="M92 48c8-8 19-12 28-12s20 4 28 12"/>
+    <path d="M84 118h72"/>
+    <path d="M90 118l-9 26"/>
+    <path d="M150 118l9 26"/>
+  </g>
+  <circle cx="120" cy="92" r="24" fill="#f8d8d3" stroke="#b45d4c" stroke-width="3"/>
+  <path d="M120 72v40M100 92h40" stroke="#b45d4c" stroke-width="4" stroke-linecap="round"/>
+  <text x="120" y="152" text-anchor="middle" font-size="15" fill="#555">貼在最痛處</text>
+</svg>

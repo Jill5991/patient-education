@@ -857,14 +857,15 @@ const LANGS = [
   { code:"ja",    label:"日本語" }
 ];
 
-const CATEGORY_ORDER = ["all", "inhaler", "ntg", "topical", "eye", "supp", "inject", "smoking", "powder", "oral", "other"];
+const CATEGORY_ORDER = ["all", "inhaler", "nasal", "ntg", "topical", "eye", "supp", "inject", "smoking", "powder", "oral", "other"];
 
 const CATEGORY_META = {
   all:     { color: "#5E5E5E", label: { "zh-TW":"全部", "en":"All", "id":"Semua", "vi":"Tất cả", "th":"ทั้งหมด", "tl":"Lahat", "ja":"すべて" } },
   inhaler: { color: "#0F6E56", label: { "zh-TW":"吸入劑", "en":"Inhalers", "id":"Inhaler", "vi":"Thuốc hít", "th":"ยาสูดพ่น", "tl":"Inhaler", "ja":"吸入薬" } },
+  nasal:   { color: "#185FA5", label: { "zh-TW":"鼻噴劑", "en":"Nasal Sprays", "id":"Semprotan hidung", "vi":"Thuốc xịt mũi", "th":"ยาพ่นจมูก", "tl":"Nasal Sprays", "ja":"鼻用スプレー" } },
   ntg:     { color: "#993C1D", label: { "zh-TW":"急救用藥", "en":"Emergency", "id":"Obat darurat", "vi":"Thuốc cấp cứu", "th":"ยาฉุกเฉิน", "tl":"Pang-emergency", "ja":"救急薬" } },
   topical: { color: "#3B6D11", label: { "zh-TW":"外用藥/貼片", "en":"Topical/Patch", "id":"Obat oles/Patch", "vi":"Thuốc bôi/Patch", "th":"ยาทา/แผ่นแปะ", "tl":"Topical/Patch", "ja":"外用薬/貼付薬" } },
-  eye:     { color: "#185FA5", label: { "zh-TW":"眼耳鼻用藥", "en":"Eye/Ear/Nasal", "id":"Mata/Telinga/Hidung", "vi":"Mắt/Tai/Mũi", "th":"ตา/หู/จมูก", "tl":"Eye/Ear/Nasal", "ja":"眼・耳・鼻" } },
+  eye:     { color: "#185FA5", label: { "zh-TW":"眼耳用藥", "en":"Eye/Ear", "id":"Mata/Telinga", "vi":"Mắt/Tai", "th":"ตา/หู", "tl":"Eye/Ear", "ja":"眼・耳" } },
   supp:    { color: "#534AB7", label: { "zh-TW":"栓劑/陰道", "en":"Supp/Vaginal", "id":"Supositoria/Vaginal", "vi":"Đặt âm đạo/hậu môn", "th":"ยาเหน็บ/ช่องคลอด", "tl":"Supp/Vaginal", "ja":"坐剤/膣用" } },
   inject:  { color: "#854F0B", label: { "zh-TW":"注射劑", "en":"Injection", "id":"Injeksi", "vi":"Thuốc tiêm", "th":"ยาฉีด", "tl":"Injection", "ja":"注射剤" } },
   smoking: { color: "#27500A", label: { "zh-TW":"戒菸用藥", "en":"Smoking Cessation", "id":"Berhenti Merokok", "vi":"Cai thuốc", "th":"เลิกบุหรี่", "tl":"Smoking Cessation", "ja":"禁煙補助" } },
@@ -970,97 +971,6 @@ const MEDICATIONS = [
         "ja":"開封後1ヶ月を超えたら廃棄して新しいものに交換する" }
     ],
     qrUrl: "https://pharmacy.example.com/meds/eyedrops"
-  },
-
-  // ── 4. Patch / 貼片 ─────────────────────────────────────
-  {
-    "id": "patch",
-    color: { main:"#3B6D11", light:"#EAF3DE", dark:"#173404", badge:"#C0DD97", badgeText:"#173404" },
-    emergency: false,
-    name: {
-      "zh-TW":"藥物貼片", "en":"Transdermal Patch",
-      "id":"Koyo Obat (Patch)", "vi":"Miếng Dán Thuốc",
-      "th":"แผ่นแปะยา", "tl":"Transdermal Patch", "ja":"貼付薬（パッチ）"
-    },
-    subtitle: {
-      "zh-TW":"請依步驟正確貼藥", "en":"Follow these steps for correct application",
-      "id":"Ikuti langkah-langkah untuk aplikasi yang benar","vi":"Làm theo từng bước để dán đúng cách",
-      "th":"ทำตามขั้นตอนเพื่อติดแผ่นแปะอย่างถูกต้อง","tl":"Sundin ang mga hakbang para sa tamang paglalagay",
-      "ja":"手順に従って正しく貼付してください"
-    },
-    badge: {
-      "zh-TW":"貼片", "en":"Patch", "id":"Koyo", "vi":"Miếng dán",
-      "th":"แผ่นแปะ", "tl":"Patch", "ja":"パッチ"
-    },
-    steps: [
-      {
-        action:{ "zh-TW":"選擇平坦乾淨的皮膚部位",        "en":"Choose a clean, flat skin site",
-                 "id":"Pilih area kulit yang bersih dan rata","vi":"Chọn vùng da sạch và phẳng",
-                 "th":"เลือกบริเวณผิวหนังที่สะอาดและเรียบ","tl":"Pumili ng malinis at patag na bahagi ng balat",
-                 "ja":"清潔で平らな皮膚を選ぶ" },
-        note:{  "zh-TW":"建議部位：胸部、上臂外側、大腿內側、背部","en":"Recommended: chest, upper arm, inner thigh, or back",
-                "id":"Direkomendasikan: dada, lengan atas, paha dalam, atau punggung","vi":"Khuyến cáo: ngực, bắp tay trên, đùi trong, hoặc lưng",
-                "th":"แนะนำ: หน้าอก ต้นแขนบน ต้นขาด้านใน หรือหลัง","tl":"Inirerekomenda: dibdib, itaas na braso, panloob na hita, o likod",
-                "ja":"推奨部位：胸、上腕外側、内腿、背中" }
-      },
-      {
-        action:{ "zh-TW":"移除舊貼片，對折後丟棄",        "en":"Remove old patch, fold in half and discard",
-                 "id":"Lepas patch lama, lipat dua dan buang","vi":"Gỡ miếng dán cũ, gấp đôi và bỏ vào thùng rác",
-                 "th":"ถอดแผ่นแปะเก่าออก พับครึ่งแล้วทิ้ง","tl":"Alisin ang lumang patch, tikluin nang kalahati at itapon",
-                 "ja":"古いパッチを剥がし、半分に折って廃棄する" },
-        note:{  "zh-TW":"對折可避免藥物殘留接觸他人或兒童","en":"Folding prevents contact with medication residue — keep away from children",
-                "id":"Melipat mencegah kontak dengan sisa obat — jauhkan dari anak-anak","vi":"Gấp đôi để tránh tiếp xúc với thuốc còn lại — để xa trẻ em",
-                "th":"การพับช่วยป้องกันการสัมผัสยาที่เหลือ — เก็บให้ห่างจากเด็ก","tl":"Ang pagtitiklop ay pumipigil sa pakikipag-ugnayan sa natitirang gamot — panatilihing malayo sa mga bata",
-                "ja":"折ることで薬剤残留との接触を防ぐ — 子どもの手の届かないところに廃棄" }
-      },
-      {
-        action:{ "zh-TW":"清洗並完全擦乾貼藥部位",        "en":"Clean and completely dry the skin area",
-                 "id":"Bersihkan dan keringkan sepenuhnya area kulit","vi":"Làm sạch và lau khô hoàn toàn vùng da",
-                 "th":"ทำความสะอาดและเช็ดผิวหนังให้แห้งสนิท","tl":"Linisin at tuuyin nang buo ang bahagi ng balat",
-                 "ja":"貼付部位をきれいに洗い、完全に乾かす" },
-        note:{  "zh-TW":"勿使用乳液或酒精，以免影響黏著力","en":"Avoid lotions or alcohol — may affect adhesion",
-                "id":"Hindari losion atau alkohol — dapat mempengaruhi daya rekat","vi":"Tránh kem dưỡng hoặc cồn — có thể ảnh hưởng đến độ bám dính",
-                "th":"หลีกเลี่ยงโลชั่นหรือแอลกอฮอล์ อาจทำให้ไม่ติดแน่น","tl":"Iwasan ang lotion o alkohol — maaaring makaapekto sa pagdikit",
-                "ja":"ローションやアルコールは使用しない — 粘着力に影響する" }
-      },
-      {
-        action:{ "zh-TW":"貼上新貼片，用手掌按壓 30 秒", "en":"Apply new patch, press firmly with palm for 30 seconds",
-                 "id":"Tempelkan patch baru, tekan kuat dengan telapak tangan 30 detik","vi":"Dán miếng dán mới, ấn chặt bằng lòng bàn tay 30 giây",
-                 "th":"ติดแผ่นแปะใหม่ กดด้วยฝ่ามือแน่น 30 วินาที","tl":"Ikapit ang bagong patch, pindutin nang malakas ng palad ng 30 segundo",
-                 "ja":"新しいパッチを貼り、手のひらで30秒押さえる" },
-        note:{  "zh-TW":"確認四邊緣均密合皮膚，記錄貼藥時間","en":"Ensure all edges adhere firmly — record application time",
-                "id":"Pastikan semua tepi menempel kuat — catat waktu pemasangan","vi":"Đảm bảo tất cả các mép dán kín — ghi lại giờ dán",
-                "th":"ตรวจสอบว่าขอบทุกด้านติดแน่น — บันทึกเวลาที่ติดแผ่น","tl":"Tiyakin na lahat ng gilid ay nakadikit — itala ang oras ng paglalagay",
-                "ja":"全ての端が密着していることを確認 — 貼付時刻を記録する" }
-      },
-      {
-        action:{ "zh-TW":"每次輪替貼藥部位，同一位置間隔 7 天以上","en":"Rotate sites — avoid the same spot for at least 7 days",
-                 "id":"Rotasi area pemasangan — hindari tempat yang sama selama minimal 7 hari","vi":"Luân phiên vị trí dán — tránh cùng vị trí trong ít nhất 7 ngày",
-                 "th":"สลับตำแหน่งการติดแผ่นทุกครั้ง — หลีกเลี่ยงบริเวณเดิมอย่างน้อย 7 วัน","tl":"Mag-rotate ng mga site — iwasan ang parehong lugar ng hindi bababa sa 7 araw",
-                 "ja":"貼付部位を毎回変える — 同じ場所は最低7日間空ける" },
-        note:{  "zh-TW":"防止皮膚刺激和過敏反應",        "en":"Prevents skin irritation and allergic reactions",
-                "id":"Mencegah iritasi kulit dan reaksi alergi","vi":"Ngăn ngừa kích ứng da và phản ứng dị ứng",
-                "th":"ป้องกันการระคายเคืองผิวและอาการแพ้","tl":"Pinipigilan ang pangangati ng balat at mga reaksyong alerhiya",
-                "ja":"皮膚刺激やアレルギー反応を防ぐ" }
-      }
-    ],
-    warnings: [
-      { "zh-TW":"貼片處避免接觸熱源（熱水浴、電熱毯），可能加速藥物釋放",
-        "en":"Avoid heat sources on patch site (hot bath, electric blanket) — may accelerate drug release",
-        "id":"Hindari sumber panas pada area patch (mandi air panas, selimut listrik) — dapat mempercepat pelepasan obat",
-        "vi":"Tránh nguồn nhiệt trên vị trí dán (tắm nước nóng, chăn điện) — có thể tăng tốc giải phóng thuốc",
-        "th":"หลีกเลี่ยงความร้อนที่บริเวณแผ่นแปะ (อาบน้ำร้อน ผ้าห่มไฟฟ้า) อาจทำให้ยาออกฤทธิ์เร็วขึ้น",
-        "tl":"Iwasan ang init sa lugar ng patch (mainit na paliligo, electric blanket) — maaaring mapabilis ang paglalabas ng gamot",
-        "ja":"パッチ部位への熱（熱い風呂、電気毛布）を避ける — 薬の放出が加速する可能性がある" },
-      { "zh-TW":"皮膚出現持續紅疹或水泡，請回診告知醫師",
-        "en":"If persistent redness or blisters develop at the site, consult your doctor",
-        "id":"Jika muncul kemerahan atau lecet yang persisten di area tersebut, konsultasikan ke dokter",
-        "vi":"Nếu xuất hiện mẩn đỏ hoặc phồng rộp kéo dài tại vị trí dán, hãy đến gặp bác sĩ",
-        "th":"หากมีผื่นแดงหรือตุ่มน้ำอย่างต่อเนื่องที่บริเวณแผ่นแปะ ให้ปรึกษาแพทย์",
-        "tl":"Kung magkaroon ng paulit-ulit na pamumula o mga paltos sa lugar ng patch, kumonsulta sa doktor",
-        "ja":"貼付部位に持続的な発赤や水疱が生じた場合は医師に相談する" }
-    ],
-    qrUrl: "https://pharmacy.example.com/meds/patch"
   },
 
   // ── Placeholder: Paxlovid ─────────────────────────────────────,
@@ -11809,302 +11719,1841 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/ivermectin-cream"
   },
 
-  // ── Placeholder: Fentanyl patch ─────────────────────────────────────,
-  {
-      "id": "fentanyl-patch",
-      color: {
-          main: "#3B6D11",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#C0DD97",
-          badgeText: "#173404"
-      },
-      emergency: false,
-      name: {
-          "zh-TW": "Fentanyl patch",
-          "en": "Fentanyl patch",
-          "id": "Fentanyl patch",
-          "vi": "Fentanyl patch",
-          "th": "Fentanyl patch",
-          "tl": "Fentanyl patch",
-          "ja": "Fentanyl patch"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "外用藥",
-          "en": "Topical",
-          "id": "Obat oles",
-          "vi": "Thuốc bôi",
-          "th": "ยาทาภายนอก",
-          "tl": "Topical",
-          "ja": "外用薬"
-      },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/fentanyl-patch"
-  },
 
-  // ── Placeholder: Exelon patch ─────────────────────────────────────,
-  {
-      "id": "exelon-patch",
-      color: {
-          main: "#3B6D11",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#C0DD97",
-          badgeText: "#173404"
-      },
-      emergency: false,
-      name: {
-          "zh-TW": "Exelon patch",
-          "en": "Exelon patch",
-          "id": "Exelon patch",
-          "vi": "Exelon patch",
-          "th": "Exelon patch",
-          "tl": "Exelon patch",
-          "ja": "Exelon patch"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "外用藥",
-          "en": "Topical",
-          "id": "Obat oles",
-          "vi": "Thuốc bôi",
-          "th": "ยาทาภายนอก",
-          "tl": "Topical",
-          "ja": "外用薬"
-      },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/exelon-patch"
-  },
 
-  // ── Placeholder: Flurbiprofen patch ─────────────────────────────────────,
+  // ── Fentanyl patch ─────────────────────────────────────,
   {
-      "id": "flurbiprofen-patch",
-      color: {
-          main: "#3B6D11",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#C0DD97",
-          badgeText: "#173404"
-      },
-      emergency: false,
-      name: {
-          "zh-TW": "Flurbiprofen patch",
-          "en": "Flurbiprofen patch",
-          "id": "Flurbiprofen patch",
-          "vi": "Flurbiprofen patch",
-          "th": "Flurbiprofen patch",
-          "tl": "Flurbiprofen patch",
-          "ja": "Flurbiprofen patch"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "外用藥",
-          "en": "Topical",
-          "id": "Obat oles",
-          "vi": "Thuốc bôi",
-          "th": "ยาทาภายนอก",
-          "tl": "Topical",
-          "ja": "外用薬"
-      },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/flurbiprofen-patch"
+  "id": "fentanyl-patch",
+  "category": "topical",
+  "color": {
+    "main": "#3B6D11",
+    "light": "#EAF3DE",
+    "dark": "#173404",
+    "badge": "#C0DD97",
+    "badgeText": "#173404"
   },
+  "emergency": false,
+  "name": {
+    "zh-TW": "吩坦尼穿皮貼片",
+    "en": "Fentanyl Transdermal Patch",
+    "id": "Fentanyl Transdermal Patch",
+    "vi": "Fentanyl Transdermal Patch",
+    "th": "Fentanyl Transdermal Patch",
+    "tl": "Fentanyl Transdermal Patch",
+    "ja": "Fentanyl Transdermal Patch"
+  },
+  "subtitle": {
+    "zh-TW": "Durogesic® D-Trans｜Fentanyl｜12 / 25 / 50 mcg/hr｜72h",
+    "en": "Durogesic D-Trans | Fentanyl | 12 / 25 / 50 mcg/hr | 72h",
+    "id": "Durogesic D-Trans | Fentanyl | 12 / 25 / 50 mcg/hr | 72h",
+    "vi": "Durogesic D-Trans | Fentanyl | 12 / 25 / 50 mcg/hr | 72h",
+    "th": "Durogesic D-Trans | Fentanyl | 12 / 25 / 50 mcg/hr | 72h",
+    "tl": "Durogesic D-Trans | Fentanyl | 12 / 25 / 50 mcg/hr | 72h",
+    "ja": "Durogesic D-Trans | Fentanyl | 12 / 25 / 50 mcg/hr | 72h"
+  },
+  "headerBadge": {
+    "zh-TW": "每 72 小時換 1 片",
+    "en": "Change every 72 hours",
+    "id": "Ganti setiap 72 jam",
+    "vi": "Thay mỗi 72 giờ",
+    "th": "เปลี่ยนทุก 72 ชั่วโมง",
+    "tl": "Palitan bawat 72 oras",
+    "ja": "72時間ごとに貼り替え"
+  },
+  "usage": {
+    "zh-TW": "長效止痛貼片。一次只貼 1 片。不是痛時才加貼。",
+    "en": "Long-acting pain patch. Use only 1 patch at a time. Do not apply extra patches when the pain flares up.",
+    "id": "Ini adalah patch pereda nyeri kerja panjang. Gunakan hanya 1 patch setiap kali. Jangan menambah patch saat nyeri bertambah.",
+    "vi": "Đây là miếng dán giảm đau tác dụng kéo dài. Mỗi lần chỉ dán 1 miếng. Không tự dán thêm khi đau tăng lên.",
+    "th": "เป็นแผ่นแปะบรรเทาปวดออกฤทธิ์นาน ใช้ครั้งละ 1 แผ่นเท่านั้น ห้ามแปะเพิ่มเองเมื่อปวดมากขึ้น",
+    "tl": "Ito ay pangmatagalang pain patch. Isang patch lang bawat gamit. Huwag magdagdag ng patch kapag sumakit nang higit.",
+    "ja": "長時間作用する痛み止めの貼付剤です。1回に1枚だけ貼ってください。痛みが強いからといって追加で貼らないでください。"
+  },
+  "badge": {
+    "zh-TW": "止痛貼片",
+    "en": "Pain Patch",
+    "id": "Patch pereda nyeri",
+    "vi": "Miếng dán giảm đau",
+    "th": "แผ่นแปะบรรเทาปวด",
+    "tl": "Patch pampawala ng sakit",
+    "ja": "鎮痛貼付剤"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#EAF3DE",
+      "border": "#3B6D11",
+      "text": "#173404"
+    },
+    "text": {
+      "zh-TW": "貼新片前，先撕下舊片。不要貼在剛洗熱水澡、剛熱敷或正在發燒發熱的皮膚上。",
+      "en": "Remove the old patch before applying a new one. Do not put the new patch on skin that is hot from a bath, a heating pad, or a fever.",
+      "id": "Lepaskan patch lama sebelum menempelkan yang baru. Jangan tempel pada kulit yang masih panas setelah mandi air panas, kompres hangat, atau saat sedang demam.",
+      "vi": "Gỡ miếng dán cũ trước khi dán miếng mới. Không dán lên da đang nóng sau khi tắm nước nóng, chườm nóng hoặc khi đang sốt.",
+      "th": "เอาแผ่นเก่าออกก่อนติดแผ่นใหม่ อย่าติดบนผิวที่ยังร้อนจากการอาบน้ำร้อน การประคบร้อน หรือขณะมีไข้",
+      "tl": "Alisin muna ang lumang patch bago ikabit ang bago. Huwag idikit sa balat na mainit pa mula sa paligong mainit, hot pack, o lagnat.",
+      "ja": "新しい貼付剤を貼る前に、必ず古いものをはがしてください。入浴直後、温熱パッド使用後、発熱中など皮膚が熱いときには貼らないでください。"
+    }
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "取下舊貼片",
+        "en": "Remove the old patch",
+        "id": "Lepaskan patch lama",
+        "vi": "Gỡ miếng dán cũ",
+        "th": "ลอกแผ่นแปะเก่าออก",
+        "tl": "Alisin ang lumang patch",
+        "ja": "古い貼付剤をはがす"
+      },
+      "note": {
+        "zh-TW": "對折後包好丟棄，遠離兒童和寵物。",
+        "en": "Fold it in half and throw it away safely. Keep it away from children and pets.",
+        "id": "Lipat dua patch bekas lalu buang dengan aman. Jauhkan dari anak-anak dan hewan peliharaan.",
+        "vi": "Gấp đôi miếng dán đã dùng rồi bỏ đi an toàn. Để xa trẻ em và thú nuôi.",
+        "th": "พับครึ่งแล้วทิ้งอย่างปลอดภัย และเก็บให้พ้นมือเด็กกับสัตว์เลี้ยง",
+        "tl": "Tiklupin sa kalahati at itapon nang ligtas. Ilayo sa mga bata at alagang hayop.",
+        "ja": "半分に折って安全に捨て、子どもやペットに触れさせないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/fold-dispose.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "選擇乾淨乾燥平坦皮膚",
+        "en": "Choose clean, dry, flat skin",
+        "id": "Pilih kulit yang bersih, kering, dan rata",
+        "vi": "Chọn vùng da sạch, khô và phẳng",
+        "th": "เลือกผิวหนังที่สะอาด แห้ง และเรียบ",
+        "tl": "Pumili ng balat na malinis, tuyo, at patag",
+        "ja": "清潔で乾いた平らな皮膚を選ぶ"
+      },
+      "note": {
+        "zh-TW": "上背、上臂外側或上胸前可貼。不要貼在傷口、紅疹或剛刮毛處。",
+        "en": "Use the upper back, outer upper arm, or upper chest. Do not place it on cuts, rashes, or freshly shaved skin.",
+        "id": "Tempel di punggung bagian atas, lengan atas bagian luar, atau dada bagian atas. Jangan tempel pada luka, ruam, atau kulit yang baru dicukur.",
+        "vi": "Có thể dán ở lưng trên, mặt ngoài cánh tay trên hoặc ngực trên. Không dán lên vết thương, vùng phát ban hoặc da mới cạo lông.",
+        "th": "ติดได้ที่หลังส่วนบน ต้นแขนด้านนอก หรือหน้าอกส่วนบน ห้ามติดบนแผล ผื่น หรือผิวที่เพิ่งโกนขน",
+        "tl": "Maaaring ikabit sa itaas na likod, panlabas na bahagi ng itaas na braso, o itaas na dibdib. Huwag idikit sa sugat, pantal, o balat na bagong ahit.",
+        "ja": "上背部、上腕の外側、胸の上部に貼れます。傷、発疹、剃った直後の皮膚には貼らないでください。"
+      },
+      "illustration": "assets/svg/patch-sites/fentanyl-sites.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "打開包裝，取出貼片",
+        "en": "Open the pouch and take out the patch",
+        "id": "Buka kemasan dan keluarkan patch",
+        "vi": "Mở túi và lấy miếng dán ra",
+        "th": "เปิดซองและนำแผ่นแปะออก",
+        "tl": "Buksan ang supot at kunin ang patch",
+        "ja": "袋を開けて貼付剤を取り出す"
+      },
+      "note": {
+        "zh-TW": "不可裁切，也不要碰黏膠面。",
+        "en": "Do not cut the patch, and avoid touching the sticky side.",
+        "id": "Jangan menggunting patch, dan usahakan jangan menyentuh sisi yang lengket.",
+        "vi": "Không được cắt miếng dán và hạn chế chạm vào mặt dính.",
+        "th": "ห้ามตัดแผ่นแปะ และพยายามอย่าแตะด้านกาว",
+        "tl": "Huwag putulin ang patch, at iwasang hawakan ang malagkit na bahagi.",
+        "ja": "貼付剤は切らず、粘着面にはなるべく触れないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/open-sachet.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "撕開保護膜",
+        "en": "Peel off the backing",
+        "id": "Lepaskan lapisan pelindung",
+        "vi": "Bóc lớp bảo vệ",
+        "th": "ลอกแผ่นรองออก",
+        "tl": "Alisin ang backing",
+        "ja": "保護フィルムをはがす"
+      },
+      "note": {
+        "zh-TW": "先撕一半，再慢慢貼上，較容易貼平。",
+        "en": "Apply one half first, then peel the rest so the patch lies flatter.",
+        "id": "Tempelkan setengah bagian dulu, lalu lepas sisanya agar patch menempel rata.",
+        "vi": "Dán trước một nửa, rồi bóc phần còn lại để miếng dán áp phẳng hơn.",
+        "th": "ติดครึ่งแรกก่อน แล้วค่อยลอกส่วนที่เหลือออกเพื่อให้แผ่นแนบเรียบ",
+        "tl": "Idikit muna ang kalahati, saka alisin ang natitira para mas dumikit nang pantay.",
+        "ja": "半分を先に貼ると、残りも平らに貼りやすくなります。"
+      },
+      "illustration": "assets/svg/patch-shared/peel-half.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "貼上後按壓 30 秒",
+        "en": "Apply the patch and press for 30 seconds",
+        "id": "Tempel patch lalu tekan selama 30 detik",
+        "vi": "Dán miếng dán rồi ấn 30 giây",
+        "th": "ติดแผ่นแปะแล้วกดไว้ 30 วินาที",
+        "tl": "Idikit ang patch at idiin sa loob ng 30 segundo",
+        "ja": "貼って30秒押さえる"
+      },
+      "note": {
+        "zh-TW": "用手掌按壓，確認四邊都黏好。",
+        "en": "Press with your palm and make sure all edges stick well.",
+        "id": "Tekan dengan telapak tangan dan pastikan semua tepinya menempel rapat.",
+        "vi": "Dùng lòng bàn tay ấn chặt và kiểm tra các mép đều dính kín.",
+        "th": "กดด้วยฝ่ามือและตรวจดูว่าขอบทุกด้านแนบสนิท",
+        "tl": "Idiing mabuti gamit ang palad at tiyaking dikit na dikit ang lahat ng gilid.",
+        "ja": "手のひらで押さえ、端までしっかり貼れているか確認します。"
+      },
+      "illustration": "assets/svg/patch-shared/apply-press.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "用清水洗手",
+        "en": "Wash your hands with water",
+        "id": "Cuci tangan dengan air",
+        "vi": "Rửa tay bằng nước",
+        "th": "ล้างมือด้วยน้ำ",
+        "tl": "Hugasan ang mga kamay ng tubig",
+        "ja": "水で手を洗う"
+      },
+      "note": {
+        "zh-TW": "摸過貼片後，先洗手，再摸眼睛或嘴巴。",
+        "en": "After handling the patch, wash your hands before touching your eyes or mouth.",
+        "id": "Setelah memegang patch, cuci tangan sebelum menyentuh mata atau mulut.",
+        "vi": "Sau khi chạm vào miếng dán, hãy rửa tay trước khi chạm vào mắt hoặc miệng.",
+        "th": "หลังจับแผ่นแปะแล้ว ให้ล้างมือก่อนจับตาหรือปาก",
+        "tl": "Pagkatapos humawak ng patch, hugasan muna ang mga kamay bago humawak sa mata o bibig.",
+        "ja": "貼付剤に触れた後は、目や口を触る前に手を洗ってください。"
+      },
+      "illustration": "assets/svg/patch-shared/wash-hands.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "每 72 小時換 1 片",
+        "en": "Change the patch every 72 hours",
+        "id": "Ganti patch setiap 72 jam",
+        "vi": "Thay miếng dán mỗi 72 giờ",
+        "th": "เปลี่ยนแผ่นแปะทุก 72 ชั่วโมง",
+        "tl": "Palitan ang patch bawat 72 oras",
+        "ja": "72時間ごとに貼り替える"
+      },
+      "note": {
+        "zh-TW": "換到不同位置。同一位置至少 7 天後再貼。",
+        "en": "Use a different site each time. Wait at least 7 days before using the same site again.",
+        "id": "Gunakan lokasi yang berbeda setiap kali. Tunggu setidaknya 7 hari sebelum memakai lokasi yang sama lagi.",
+        "vi": "Mỗi lần hãy dán ở vị trí khác. Chờ ít nhất 7 ngày rồi mới dùng lại đúng vị trí cũ.",
+        "th": "เปลี่ยนตำแหน่งทุกครั้ง และเว้นตำแหน่งเดิมอย่างน้อย 7 วันก่อนใช้ซ้ำ",
+        "tl": "Gumamit ng ibang bahagi sa bawat pagpapalit. Hintayin ang hindi bababa sa 7 araw bago balikan ang parehong puwesto.",
+        "ja": "毎回違う場所に貼り、同じ場所は少なくとも7日あけてから再使用してください。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    }
+  ],
+  "storage": {
+    "title": {
+      "zh-TW": "藥品保存",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บยา",
+      "tl": "Pag-iimbak",
+      "ja": "保管"
+    },
+    "text": {
+      "zh-TW": "未開封置室溫保存，避光避熱。保持原包裝，使用前再打開。",
+      "en": "Store unopened patches at room temperature, away from heat and light. Keep each patch in its pouch until you are ready to use it.",
+      "id": "Simpan patch yang belum dibuka pada suhu ruang, jauh dari panas dan cahaya. Simpan setiap patch di dalam kemasannya sampai akan dipakai.",
+      "vi": "Bảo quản miếng dán chưa mở ở nhiệt độ phòng, tránh nóng và ánh sáng. Giữ từng miếng dán trong túi kín cho đến khi chuẩn bị dùng.",
+      "th": "เก็บแผ่นแปะที่ยังไม่เปิดใช้ไว้ที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสง เก็บไว้ในซองเดิมจนกว่าจะถึงเวลาจะใช้",
+      "tl": "Itago ang hindi pa nabubuksang patch sa temperatura ng kuwarto, malayo sa init at liwanag. Panatilihin ang bawat patch sa supot nito hanggang gagamitin na.",
+      "ja": "未開封の貼付剤は室温で、熱と光を避けて保管してください。使う直前まで1枚ずつ袋に入れたままにします。"
+    }
+  },
+  "warnings": [
+    {
+      "zh-TW": "只能一次貼 1 片，不可裁切。",
+      "en": "Wear only 1 patch at a time. Do not cut it.",
+      "id": "Gunakan hanya 1 patch setiap kali. Jangan digunting.",
+      "vi": "Mỗi lần chỉ dán 1 miếng. Không được cắt miếng dán.",
+      "th": "ใช้ครั้งละ 1 แผ่นเท่านั้น ห้ามตัดแผ่นแปะ",
+      "tl": "Isang patch lang bawat gamit. Huwag itong putulin.",
+      "ja": "1回に1枚だけ貼り、切って使わないでください。"
+    },
+    {
+      "zh-TW": "發燒、熱敷、電熱毯、熱水澡會讓藥跑太快。",
+      "en": "Fever, heating pads, electric blankets, or hot baths can make the medicine release too fast.",
+      "id": "Demam, kompres panas, selimut listrik, atau mandi air panas dapat membuat obat keluar terlalu cepat.",
+      "vi": "Sốt, chườm nóng, chăn điện hoặc tắm nước nóng có thể làm thuốc giải phóng quá nhanh.",
+      "th": "ไข้ การประคบร้อน ผ้าห่มไฟฟ้า หรือการอาบน้ำร้อน อาจทำให้ยาถูกปล่อยออกมาเร็วเกินไป",
+      "tl": "Ang lagnat, heating pad, electric blanket, o mainit na paligo ay maaaring magpalabas ng gamot nang sobrang bilis.",
+      "ja": "発熱、温熱パッド、電気毛布、熱い入浴は薬が出すぎる原因になります。"
+    },
+    {
+      "zh-TW": "很想睡、叫不醒或呼吸變慢，立刻撕下並就醫。",
+      "en": "If you become very sleepy, hard to wake, or breathe slowly, remove the patch and get medical help right away.",
+      "id": "Jika Anda sangat mengantuk, sulit dibangunkan, atau napas melambat, lepas patch dan segera cari pertolongan medis.",
+      "vi": "Nếu bạn buồn ngủ nhiều, khó đánh thức hoặc thở chậm, hãy gỡ miếng dán và đi khám ngay.",
+      "th": "ถ้าง่วงมาก ปลุกไม่ค่อยตื่น หรือหายใจช้าลง ให้ลอกแผ่นแปะออกและรีบไปพบแพทย์ทันที",
+      "tl": "Kung sobrang antok, mahirap gisingin, o mabagal ang paghinga, alisin ang patch at magpatingin agad.",
+      "ja": "強い眠気、起こしても起きにくい、呼吸が遅いときは、すぐにはがして受診してください。"
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/fentanyl-patch"
+},
 
-  // ── Placeholder: Neupro (rotigotine) patch ─────────────────────────────────────,
+  // ── Exelon patch ─────────────────────────────────────,
   {
-      "id": "neupro-patch",
-      color: {
-          main: "#3B6D11",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#C0DD97",
-          badgeText: "#173404"
-      },
-      emergency: false,
-      name: {
-          "zh-TW": "Neupro（rotigotine）patch",
-          "en": "Neupro (rotigotine) patch",
-          "id": "Neupro (rotigotine) patch",
-          "vi": "Neupro (rotigotine) patch",
-          "th": "Neupro (rotigotine) patch",
-          "tl": "Neupro (rotigotine) patch",
-          "ja": "Neupro (rotigotine) patch"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "外用藥",
-          "en": "Topical",
-          "id": "Obat oles",
-          "vi": "Thuốc bôi",
-          "th": "ยาทาภายนอก",
-          "tl": "Topical",
-          "ja": "外用薬"
-      },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/neupro-patch"
+  "id": "exelon-patch",
+  "category": "topical",
+  "color": {
+    "main": "#3B6D11",
+    "light": "#EAF3DE",
+    "dark": "#173404",
+    "badge": "#C0DD97",
+    "badgeText": "#173404"
   },
+  "emergency": false,
+  "name": {
+    "zh-TW": "憶思能穿皮貼片",
+    "en": "Exelon Patch",
+    "id": "Exelon Patch",
+    "vi": "Exelon Patch",
+    "th": "Exelon Patch",
+    "tl": "Exelon Patch",
+    "ja": "Exelon Patch"
+  },
+  "subtitle": {
+    "zh-TW": "Exelon Patch｜Rivastigmine｜4.6 / 9.5 / 13.3 mg/24 hr｜24h",
+    "en": "Exelon Patch | Rivastigmine | 4.6 / 9.5 / 13.3 mg/24 hr | 24h",
+    "id": "Exelon Patch | Rivastigmine | 4.6 / 9.5 / 13.3 mg/24 hr | 24h",
+    "vi": "Exelon Patch | Rivastigmine | 4.6 / 9.5 / 13.3 mg/24 hr | 24h",
+    "th": "Exelon Patch | Rivastigmine | 4.6 / 9.5 / 13.3 mg/24 hr | 24h",
+    "tl": "Exelon Patch | Rivastigmine | 4.6 / 9.5 / 13.3 mg/24 hr | 24h",
+    "ja": "Exelon Patch | Rivastigmine | 4.6 / 9.5 / 13.3 mg/24 hr | 24h"
+  },
+  "headerBadge": {
+    "zh-TW": "每天換 1 片",
+    "en": "Change every day",
+    "id": "Ganti setiap hari",
+    "vi": "Thay mỗi ngày",
+    "th": "เปลี่ยนทุกวัน",
+    "tl": "Palitan araw-araw",
+    "ja": "毎日貼り替え"
+  },
+  "usage": {
+    "zh-TW": "失智症用貼片。每天固定換 1 片。貼新片前，先撕下舊片。",
+    "en": "Dementia patch. Change it once a day at the same time. Remove the old patch before applying a new one.",
+    "id": "Ini adalah patch untuk demensia. Ganti 1 kali sehari pada jam yang sama. Lepaskan patch lama sebelum menempelkan yang baru.",
+    "vi": "Đây là miếng dán dùng cho sa sút trí tuệ. Thay 1 lần mỗi ngày vào cùng một giờ. Gỡ miếng cũ trước khi dán miếng mới.",
+    "th": "เป็นแผ่นแปะสำหรับภาวะสมองเสื่อม เปลี่ยนวันละ 1 ครั้งเวลาเดิม และต้องลอกแผ่นเก่าออกก่อนติดแผ่นใหม่",
+    "tl": "Ito ay patch para sa demensya. Palitan ito isang beses bawat araw sa parehong oras. Alisin muna ang lumang patch bago ikabit ang bago.",
+    "ja": "認知症の症状をやわらげる貼付剤です。毎日同じ時間に1枚貼り替え、新しいものを貼る前に古いものをはがしてください。"
+  },
+  "badge": {
+    "zh-TW": "失智症貼片",
+    "en": "Dementia Patch",
+    "id": "Patch demensia",
+    "vi": "Miếng dán điều trị sa sút trí tuệ",
+    "th": "แผ่นแปะสำหรับภาวะสมองเสื่อม",
+    "tl": "Patch para sa demensya",
+    "ja": "認知症用貼付剤"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#EAF3DE",
+      "border": "#3B6D11",
+      "text": "#173404"
+    },
+    "text": {
+      "zh-TW": "一次只貼 1 片。若停用超過 3 天，重新開始前先問醫師。",
+      "en": "Wear only 1 patch at a time. If you stop using it for more than 3 days, ask your doctor before restarting.",
+      "id": "Gunakan hanya 1 patch setiap kali. Jika berhenti lebih dari 3 hari, tanyakan dulu kepada dokter sebelum mulai lagi.",
+      "vi": "Mỗi lần chỉ dán 1 miếng. Nếu ngừng dùng quá 3 ngày, hãy hỏi bác sĩ trước khi dùng lại.",
+      "th": "ใช้ครั้งละ 1 แผ่นเท่านั้น หากหยุดใช้เกิน 3 วัน ต้องปรึกษาแพทย์ก่อนเริ่มใหม่",
+      "tl": "Isang patch lang bawat gamit. Kung huminto nang lampas 3 araw, magtanong muna sa doktor bago simulan muli.",
+      "ja": "一度に貼るのは1枚だけです。3日を超えて中断した場合は、再開前に医師へ確認してください。"
+    }
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "取下舊貼片",
+        "en": "Remove the old patch",
+        "id": "Lepaskan patch lama",
+        "vi": "Gỡ miếng dán cũ",
+        "th": "ลอกแผ่นแปะเก่าออก",
+        "tl": "Alisin ang lumang patch",
+        "ja": "古い貼付剤をはがす"
+      },
+      "note": {
+        "zh-TW": "對折後包好丟棄，先確認舊片已經拿掉。",
+        "en": "Fold it in half and throw it away safely. Make sure the old patch is completely off first.",
+        "id": "Lipat dua lalu buang dengan aman. Pastikan patch lama sudah benar-benar terlepas.",
+        "vi": "Gấp đôi rồi bỏ đi an toàn. Hãy chắc chắn miếng cũ đã được gỡ hết.",
+        "th": "พับครึ่งแล้วทิ้งอย่างปลอดภัย และตรวจให้แน่ใจว่าเอาแผ่นเก่าออกหมดแล้ว",
+        "tl": "Tiklupin sa kalahati at itapon nang ligtas. Tiyaking natanggal na nang buo ang lumang patch.",
+        "ja": "半分に折って安全に捨て、古い貼付剤が残っていないことを確認してください。"
+      },
+      "illustration": "assets/svg/patch-shared/fold-dispose.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "選擇乾淨乾燥低毛髮皮膚",
+        "en": "Choose clean, dry, low-hair skin",
+        "id": "Pilih kulit yang bersih, kering, dan sedikit rambut",
+        "vi": "Chọn vùng da sạch, khô và ít lông",
+        "th": "เลือกผิวหนังที่สะอาด แห้ง และมีขนน้อย",
+        "tl": "Pumili ng balat na malinis, tuyo, at kakaunti ang balahibo",
+        "ja": "清潔で乾いた、毛の少ない皮膚を選ぶ"
+      },
+      "note": {
+        "zh-TW": "上背、下背、上臂或胸部都可貼。",
+        "en": "You may use the upper back, lower back, upper arm, or chest.",
+        "id": "Boleh ditempel di punggung atas, punggung bawah, lengan atas, atau dada.",
+        "vi": "Có thể dán ở lưng trên, lưng dưới, cánh tay trên hoặc ngực.",
+        "th": "ติดได้ที่หลังส่วนบน หลังส่วนล่าง ต้นแขน หรือหน้าอก",
+        "tl": "Maaaring ikabit sa itaas na likod, ibabang likod, itaas na braso, o dibdib.",
+        "ja": "上背部、下背部、上腕、胸に貼れます。"
+      },
+      "illustration": "assets/svg/patch-sites/rivastigmine-sites.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "打開包裝，取出貼片",
+        "en": "Open the pouch and take out the patch",
+        "id": "Buka kemasan dan keluarkan patch",
+        "vi": "Mở túi và lấy miếng dán ra",
+        "th": "เปิดซองและนำแผ่นแปะออก",
+        "tl": "Buksan ang supot at kunin ang patch",
+        "ja": "袋を開けて貼付剤を取り出す"
+      },
+      "note": {
+        "zh-TW": "使用前再打開，不要先拆開放著。",
+        "en": "Open the pouch only when you are ready to use it.",
+        "id": "Buka kemasan hanya saat Anda siap menggunakannya.",
+        "vi": "Chỉ mở túi ngay trước khi dùng.",
+        "th": "เปิดซองเมื่อพร้อมใช้เท่านั้น",
+        "tl": "Buksan lang ang supot kapag gagamitin na.",
+        "ja": "使う直前に開けてください。"
+      },
+      "illustration": "assets/svg/patch-shared/open-sachet.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "撕開一半保護膜",
+        "en": "Peel off half of the backing",
+        "id": "Lepaskan setengah lapisan pelindung",
+        "vi": "Bóc một nửa lớp bảo vệ",
+        "th": "ลอกแผ่นรองออกครึ่งหนึ่ง",
+        "tl": "Alisin ang kalahati ng backing",
+        "ja": "保護フィルムを半分はがす"
+      },
+      "note": {
+        "zh-TW": "先貼好一半，再撕另一半會比較平整。",
+        "en": "Apply one half first, then peel the rest so the patch lies flatter.",
+        "id": "Tempelkan setengah bagian dulu, lalu lepas sisanya agar patch menempel rata.",
+        "vi": "Dán trước một nửa, rồi bóc phần còn lại để miếng dán áp phẳng hơn.",
+        "th": "ติดครึ่งแรกก่อน แล้วค่อยลอกส่วนที่เหลือออกเพื่อให้แผ่นแนบเรียบ",
+        "tl": "Idikit muna ang kalahati, saka alisin ang natitira para mas dumikit nang pantay.",
+        "ja": "半分を先に貼ると、残りも平らに貼りやすくなります。"
+      },
+      "illustration": "assets/svg/patch-shared/peel-half.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "貼上後按壓 30 秒",
+        "en": "Apply the patch and press for 30 seconds",
+        "id": "Tempel patch lalu tekan selama 30 detik",
+        "vi": "Dán miếng dán rồi ấn 30 giây",
+        "th": "ติดแผ่นแปะแล้วกดไว้ 30 วินาที",
+        "tl": "Idikit ang patch at idiin sa loob ng 30 segundo",
+        "ja": "貼って30秒押さえる"
+      },
+      "note": {
+        "zh-TW": "確認四邊貼平，皮膚上先不要擦乳液、乳霜或粉末。",
+        "en": "Make sure all edges lie flat. Do not put lotion, cream, or powder on the site first.",
+        "id": "Pastikan semua tepi menempel rata. Jangan oleskan losion, krim, atau bedak pada area itu sebelumnya.",
+        "vi": "Kiểm tra các mép đều dính phẳng. Trước khi dán, không bôi kem dưỡng, kem hay phấn lên vị trí đó.",
+        "th": "ตรวจดูว่าขอบทุกด้านแนบสนิท และอย่าทาโลชั่น ครีม หรือแป้งที่ตำแหน่งนั้นก่อนติด",
+        "tl": "Tiyaking pantay ang pagkakadikit ng lahat ng gilid. Huwag munang maglagay ng lotion, cream, o pulbos sa bahaging pagdidikitan.",
+        "ja": "端までしっかり貼れているか確認し、貼る前の部位にはローション・クリーム・パウダーを使わないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/apply-press.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "每 24 小時換 1 片",
+        "en": "Change it every 24 hours",
+        "id": "Ganti setiap 24 jam",
+        "vi": "Thay mỗi 24 giờ",
+        "th": "เปลี่ยนทุก 24 ชั่วโมง",
+        "tl": "Palitan bawat 24 oras",
+        "ja": "24時間ごとに貼り替える"
+      },
+      "note": {
+        "zh-TW": "新片前一定先取下舊片。",
+        "en": "Always remove the old patch before applying a new one.",
+        "id": "Selalu lepaskan patch lama sebelum menempelkan yang baru.",
+        "vi": "Luôn gỡ miếng dán cũ trước khi dán miếng mới.",
+        "th": "ต้องลอกแผ่นเก่าออกก่อนติดแผ่นใหม่ทุกครั้ง",
+        "tl": "Laging alisin ang lumang patch bago ikabit ang bago.",
+        "ja": "新しい貼付剤を貼る前に、古いものを必ずはがしてください。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "同一位置 14 天後再貼",
+        "en": "Wait 14 days before reusing the same site",
+        "id": "Tunggu 14 hari sebelum memakai lokasi yang sama lagi",
+        "vi": "Chờ 14 ngày rồi mới dùng lại đúng vị trí cũ",
+        "th": "เว้นตำแหน่งเดิมอย่างน้อย 14 วันก่อนใช้ซ้ำ",
+        "tl": "Hintayin ang 14 araw bago gamitin muli ang parehong puwesto",
+        "ja": "同じ場所は14日あけてから使う"
+      },
+      "note": {
+        "zh-TW": "每次換不同位置，可減少皮膚刺激。",
+        "en": "Use a different site each time to reduce skin irritation.",
+        "id": "Ganti lokasi setiap kali untuk mengurangi iritasi kulit.",
+        "vi": "Đổi vị trí mỗi lần để giảm kích ứng da.",
+        "th": "เปลี่ยนตำแหน่งทุกครั้งเพื่อลดการระคายเคืองผิวหนัง",
+        "tl": "Magpalit ng puwesto sa bawat araw upang mabawasan ang iritasyon sa balat.",
+        "ja": "毎回場所を変えると、皮膚のかぶれを減らせます。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    }
+  ],
+  "storage": {
+    "title": {
+      "zh-TW": "藥品保存",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บยา",
+      "tl": "Pag-iimbak",
+      "ja": "保管"
+    },
+    "text": {
+      "zh-TW": "未開封維持原袋密封，置室溫保存。避免高溫與潮濕。",
+      "en": "Keep the patch sealed in its original pouch until use. Store it at room temperature away from heat and moisture.",
+      "id": "Simpan patch tetap tersegel di kemasan aslinya sampai akan dipakai. Simpan pada suhu ruang, jauh dari panas dan lembap.",
+      "vi": "Giữ miếng dán kín trong túi gốc cho đến khi dùng. Bảo quản ở nhiệt độ phòng, tránh nóng và ẩm.",
+      "th": "เก็บแผ่นแปะไว้ในซองเดิมจนกว่าจะใช้ และเก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและความชื้น",
+      "tl": "Panatilihin ang patch na nakaselyo sa orihinal na supot hanggang gagamitin na. Itago sa temperatura ng kuwarto, malayo sa init at halumigmig.",
+      "ja": "使う直前まで元の袋に密封したまま保管し、室温で高温多湿を避けてください。"
+    }
+  },
+  "warnings": [
+    {
+      "zh-TW": "一次只貼 1 片，不可裁切或折疊。",
+      "en": "Wear only 1 patch at a time. Do not cut or fold it.",
+      "id": "Gunakan hanya 1 patch setiap kali. Jangan digunting atau dilipat.",
+      "vi": "Mỗi lần chỉ dán 1 miếng. Không được cắt hoặc gấp miếng dán.",
+      "th": "ใช้ครั้งละ 1 แผ่นเท่านั้น ห้ามตัดหรือพับแผ่นแปะ",
+      "tl": "Isang patch lang bawat gamit. Huwag putulin o tiklupin.",
+      "ja": "1回に1枚だけ貼り、切ったり折ったりしないでください。"
+    },
+    {
+      "zh-TW": "若噁心、嘔吐、吃不下或很不舒服，告訴醫師。",
+      "en": "Tell your doctor if you have nausea, vomiting, poor appetite, or feel very unwell.",
+      "id": "Beri tahu dokter jika Anda mual, muntah, nafsu makan menurun, atau merasa sangat tidak enak badan.",
+      "vi": "Hãy báo bác sĩ nếu bạn buồn nôn, nôn, ăn kém hoặc cảm thấy rất khó chịu.",
+      "th": "หากมีคลื่นไส้ อาเจียน เบื่ออาหาร หรือรู้สึกไม่สบายมาก ให้แจ้งแพทย์",
+      "tl": "Sabihin sa doktor kung may pagduduwal, pagsusuka, kawalan ng gana, o kung sobrang sama ng pakiramdam.",
+      "ja": "吐き気、嘔吐、食欲低下、強い体調不良があれば医師に伝えてください。"
+    },
+    {
+      "zh-TW": "停用超過 3 天，重新開始前先問醫師。",
+      "en": "If you stop using it for more than 3 days, ask your doctor before restarting.",
+      "id": "Jika berhenti lebih dari 3 hari, tanyakan dulu kepada dokter sebelum mulai lagi.",
+      "vi": "Nếu ngừng dùng quá 3 ngày, hãy hỏi bác sĩ trước khi dùng lại.",
+      "th": "หากหยุดใช้เกิน 3 วัน ต้องปรึกษาแพทย์ก่อนเริ่มใหม่",
+      "tl": "Kung huminto nang lampas 3 araw, magtanong muna sa doktor bago simulan muli.",
+      "ja": "3日を超えて中断した場合は、再開前に医師へ確認してください。"
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/exelon-patch"
+},
 
+  // ── Flurbiprofen patch ─────────────────────────────────────,
+  {
+  "id": "flurbiprofen-patch",
+  "category": "topical",
+  "color": {
+    "main": "#3B6D11",
+    "light": "#EAF3DE",
+    "dark": "#173404",
+    "badge": "#C0DD97",
+    "badgeText": "#173404"
+  },
+  "emergency": false,
+  "name": {
+    "zh-TW": "富帝芬貼布",
+    "en": "Flur Di Fen Patch",
+    "id": "Flur Di Fen Patch",
+    "vi": "Flur Di Fen Patch",
+    "th": "Flur Di Fen Patch",
+    "tl": "Flur Di Fen Patch",
+    "ja": "Flur Di Fen Patch"
+  },
+  "subtitle": {
+    "zh-TW": "FLUR DI FEN PATCH｜Flurbiprofen 3.33 mg/g｜4 patches/bag",
+    "en": "FLUR DI FEN PATCH | Flurbiprofen 3.33 mg/g | 4 patches/bag",
+    "id": "FLUR DI FEN PATCH | Flurbiprofen 3.33 mg/g | 4 patches/bag",
+    "vi": "FLUR DI FEN PATCH | Flurbiprofen 3.33 mg/g | 4 patches/bag",
+    "th": "FLUR DI FEN PATCH | Flurbiprofen 3.33 mg/g | 4 patches/bag",
+    "tl": "FLUR DI FEN PATCH | Flurbiprofen 3.33 mg/g | 4 patches/bag",
+    "ja": "FLUR DI FEN PATCH | Flurbiprofen 3.33 mg/g | 4 patches/bag"
+  },
+  "headerBadge": {
+    "zh-TW": "每天 2 次",
+    "en": "Twice daily",
+    "id": "Dua kali sehari",
+    "vi": "Ngày 2 lần",
+    "th": "วันละ 2 ครั้ง",
+    "tl": "Dalawang beses sa isang araw",
+    "ja": "1日2回"
+  },
+  "usage": {
+    "zh-TW": "局部消炎止痛貼布。貼在最痛處，不是貼越大塊越有效。",
+    "en": "Local anti-inflammatory pain patch. Put it on the most painful area. Using a larger piece will not make it work better.",
+    "id": "Ini adalah patch antiradang dan pereda nyeri lokal. Tempel pada area yang paling nyeri. Menempelkan lebih besar tidak membuatnya bekerja lebih baik.",
+    "vi": "Đây là miếng dán giảm đau kháng viêm tại chỗ. Dán vào vị trí đau nhất. Dán to hơn cũng không làm thuốc hiệu quả hơn.",
+    "th": "เป็นแผ่นแปะลดอักเสบและบรรเทาปวดเฉพาะที่ ติดตรงตำแหน่งที่ปวดที่สุดก็พอ ไม่จำเป็นต้องติดชิ้นใหญ่กว่าเดิม",
+    "tl": "Ito ay local anti-inflammatory pain patch. Idikit sa pinakamasakit na bahagi. Hindi mas gagaling ang epekto kung mas malaki ang ilalagay.",
+    "ja": "局所の炎症と痛みを抑える貼付剤です。いちばん痛い所に貼ってください。大きく貼っても効果が強くなるわけではありません。"
+  },
+  "badge": {
+    "zh-TW": "局部止痛貼布",
+    "en": "Pain Patch",
+    "id": "Patch pereda nyeri",
+    "vi": "Miếng dán giảm đau",
+    "th": "แผ่นแปะบรรเทาปวด",
+    "tl": "Patch pampawala ng sakit",
+    "ja": "鎮痛貼布"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#EAF3DE",
+      "border": "#3B6D11",
+      "text": "#173404"
+    },
+    "text": {
+      "zh-TW": "先把患部洗乾淨並擦乾。關節等容易脫落的位置，可再用膠帶或繃帶固定。",
+      "en": "Wash and dry the painful area first. If the patch is on a joint and peels off easily, you may secure it with tape or a bandage.",
+      "id": "Cuci lalu keringkan area yang nyeri terlebih dahulu. Jika patch dipasang di sendi dan mudah terlepas, Anda boleh menahannya dengan plester atau perban.",
+      "vi": "Hãy rửa sạch rồi lau khô vùng đau trước. Nếu dán ở khớp và miếng dán dễ bong, có thể cố định thêm bằng băng dính hoặc băng gạc.",
+      "th": "ล้างและเช็ดบริเวณที่ปวดให้แห้งก่อน หากติดตรงข้อแล้วหลุดง่าย สามารถใช้เทปหรือผ้าพันช่วยยึดได้",
+      "tl": "Hugasan at patuyuin muna ang masakit na bahagi. Kung nakadikit sa kasukasuan at madaling matuklap, puwedeng gumamit ng tape o benda para masigurong nakakabit ito.",
+      "ja": "痛い部位を先に洗ってよく乾かしてください。関節などではがれやすいときは、テープや包帯で軽く固定してかまいません。"
+    }
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "清洗並擦乾患部",
+        "en": "Clean and dry the painful area",
+        "id": "Bersihkan dan keringkan area yang nyeri",
+        "vi": "Rửa sạch và lau khô vùng đau",
+        "th": "ทำความสะอาดและเช็ดบริเวณที่ปวดให้แห้ง",
+        "tl": "Linisin at patuyuin ang masakit na bahagi",
+        "ja": "痛い所を洗って乾かす"
+      },
+      "note": {
+        "zh-TW": "皮膚乾燥後再貼，較容易黏住。",
+        "en": "Let the skin dry before you apply the patch so it sticks better.",
+        "id": "Biarkan kulit benar-benar kering sebelum menempelkan patch agar menempel lebih baik.",
+        "vi": "Đợi da khô hẳn rồi mới dán để miếng dán bám tốt hơn.",
+        "th": "รอให้ผิวแห้งสนิทก่อนติด แผ่นจะแนบดีขึ้น",
+        "tl": "Patuyuin muna ang balat bago idikit para mas dumikit nang maayos.",
+        "ja": "皮膚が乾いてから貼ると、はがれにくくなります。"
+      },
+      "illustration": "assets/svg/patch-shared/wash-hands.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "依疼痛範圍裁剪大小",
+        "en": "Cut it to the size you need",
+        "id": "Potong sesuai ukuran yang dibutuhkan",
+        "vi": "Cắt theo kích thước cần dùng",
+        "th": "ตัดให้ได้ขนาดที่ต้องใช้",
+        "tl": "Gupitin ayon sa laki na kailangan",
+        "ja": "痛む範囲に合わせて切る"
+      },
+      "note": {
+        "zh-TW": "可剪成適合大小，不必整片都貼上。",
+        "en": "You may cut it to fit the painful area. You do not need to use the whole patch.",
+        "id": "Patch boleh dipotong sesuai area yang nyeri. Anda tidak harus memakai seluruh patch.",
+        "vi": "Có thể cắt miếng dán cho vừa vùng đau. Không cần dùng hết cả miếng.",
+        "th": "สามารถตัดให้พอดีกับบริเวณที่ปวดได้ ไม่จำเป็นต้องใช้ทั้งแผ่น",
+        "tl": "Maaaring putulin ang patch para magkasya sa masakit na bahagi. Hindi kailangang gamitin ang buong patch.",
+        "ja": "痛む範囲に合わせて切って使えます。1枚を全部使う必要はありません。"
+      },
+      "illustration": "assets/svg/patch-shared/cut-to-size.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "撕開保護膜",
+        "en": "Peel off the backing",
+        "id": "Lepaskan lapisan pelindung",
+        "vi": "Bóc lớp bảo vệ",
+        "th": "ลอกแผ่นรองออก",
+        "tl": "Alisin ang backing",
+        "ja": "保護フィルムをはがす"
+      },
+      "note": {
+        "zh-TW": "黏膠面盡量少碰。",
+        "en": "Touch the sticky side as little as possible.",
+        "id": "Usahakan jangan menyentuh sisi yang lengket.",
+        "vi": "Hạn chế chạm vào mặt dính.",
+        "th": "พยายามอย่าแตะด้านกาว",
+        "tl": "Iwasang hawakan ang malagkit na bahagi hangga’t maaari.",
+        "ja": "粘着面にはなるべく触れないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/peel-half.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "貼在最痛處",
+        "en": "Apply it to the most painful area",
+        "id": "Tempel pada area yang paling nyeri",
+        "vi": "Dán vào vị trí đau nhất",
+        "th": "ติดตรงตำแหน่งที่ปวดที่สุด",
+        "tl": "Idikit sa pinakamasakit na bahagi",
+        "ja": "いちばん痛い所に貼る"
+      },
+      "note": {
+        "zh-TW": "關節等容易脫落部位，可再用膠帶或繃帶固定。",
+        "en": "If it is on a joint and peels off easily, secure it with tape or a bandage.",
+        "id": "Jika ditempel di sendi dan mudah terlepas, tahan dengan plester atau perban.",
+        "vi": "Nếu dán ở khớp và dễ bong, hãy cố định thêm bằng băng dính hoặc băng gạc.",
+        "th": "ถ้าติดตรงข้อแล้วหลุดง่าย ให้ใช้เทปหรือผ้าพันช่วยยึด",
+        "tl": "Kung nasa kasukasuan at madaling matuklap, siguraduhing nakakabit gamit ang tape o benda.",
+        "ja": "関節などではがれやすい場合は、テープや包帯で軽く固定してください。"
+      },
+      "illustration": "assets/svg/patch-sites/local-pain-site.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "早晚各換 1 次",
+        "en": "Change it in the morning and at night",
+        "id": "Ganti pagi dan malam",
+        "vi": "Thay vào buổi sáng và buổi tối",
+        "th": "เปลี่ยนเช้าและเย็น",
+        "tl": "Palitan sa umaga at gabi",
+        "ja": "朝と夜に貼り替える"
+      },
+      "note": {
+        "zh-TW": "若越貼越紅、越痛或越癢，先停用。",
+        "en": "Stop using it if the skin becomes redder, itchier, or more painful.",
+        "id": "Hentikan penggunaan jika kulit makin merah, gatal, atau nyeri.",
+        "vi": "Ngưng dùng nếu da đỏ hơn, ngứa hơn hoặc đau hơn.",
+        "th": "หากผิวแดงขึ้น คันมากขึ้น หรือปวดมากขึ้น ให้หยุดใช้",
+        "tl": "Itigil ang paggamit kung lalong namumula, nangangati, o sumasakit ang balat.",
+        "ja": "赤み、かゆみ、痛みが強くなるときは使用をやめてください。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    }
+  ],
+  "storage": {
+    "title": {
+      "zh-TW": "藥品保存",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บยา",
+      "tl": "Pag-iimbak",
+      "ja": "保管"
+    },
+    "text": {
+      "zh-TW": "置 30°C 以下乾燥陰涼處，避免陽光直射。",
+      "en": "Store below 30°C in a cool, dry place away from direct sunlight.",
+      "id": "Simpan di bawah 30°C, di tempat sejuk dan kering, jauh dari sinar matahari langsung.",
+      "vi": "Bảo quản dưới 30°C, nơi mát và khô, tránh ánh nắng trực tiếp.",
+      "th": "เก็บที่อุณหภูมิต่ำกว่า 30°C ในที่เย็นและแห้ง หลีกเลี่ยงแสงแดดโดยตรง",
+      "tl": "Itago sa temperaturang mas mababa sa 30°C, sa malamig at tuyong lugar, at ilayo sa direktang sikat ng araw.",
+      "ja": "30℃以下の涼しく乾いた場所で、直射日光を避けて保管してください。"
+    }
+  },
+  "warnings": [
+    {
+      "zh-TW": "不要貼在傷口、濕疹、破皮或黏膜上。",
+      "en": "Do not apply it to cuts, eczema, broken skin, or mucous membranes.",
+      "id": "Jangan tempel pada luka, eksim, kulit yang rusak, atau selaput lendir.",
+      "vi": "Không dán lên vết thương, chàm, da trầy xước hoặc niêm mạc.",
+      "th": "ห้ามติดบนแผล ผื่นผิวหนังอักเสบ ผิวหนังที่ถลอก หรือเยื่อบุ",
+      "tl": "Huwag idikit sa sugat, eksema, sirang balat, o mucous membrane.",
+      "ja": "傷、湿疹、傷んだ皮膚、粘膜には貼らないでください。"
+    },
+    {
+      "zh-TW": "2 歲以下兒童使用前先問醫師或藥師。",
+      "en": "Ask a doctor or pharmacist before using it in children younger than 2 years.",
+      "id": "Tanyakan kepada dokter atau apoteker sebelum memakai pada anak di bawah 2 tahun.",
+      "vi": "Hãy hỏi bác sĩ hoặc dược sĩ trước khi dùng cho trẻ dưới 2 tuổi.",
+      "th": "ควรปรึกษาแพทย์หรือเภสัชกรก่อนใช้ในเด็กอายุต่ำกว่า 2 ปี",
+      "tl": "Magtanong muna sa doktor o parmasyutiko bago gamitin sa batang wala pang 2 taong gulang.",
+      "ja": "2歳未満の子どもに使う前には、医師または薬剤師に相談してください。"
+    },
+    {
+      "zh-TW": "若皮膚刺激明顯或疼痛加重，先停用並詢問醫師或藥師。",
+      "en": "Stop using it and ask a doctor or pharmacist if skin irritation is strong or the pain gets worse.",
+      "id": "Hentikan penggunaan dan tanyakan kepada dokter atau apoteker jika iritasi kulit berat atau nyeri makin parah.",
+      "vi": "Ngưng dùng và hỏi bác sĩ hoặc dược sĩ nếu kích ứng da rõ rệt hoặc cơn đau nặng hơn.",
+      "th": "หยุดใช้และปรึกษาแพทย์หรือเภสัชกร หากระคายเคืองผิวมากหรือปวดมากขึ้น",
+      "tl": "Itigil ang paggamit at kumonsulta sa doktor o parmasyutiko kung matindi ang iritasyon sa balat o lumalala ang pananakit.",
+      "ja": "皮膚刺激が強い、または痛みが悪化するときは使用を中止し、医師または薬剤師に相談してください。"
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/flurbiprofen-patch"
+},
+
+  // ── Lidocaine patch ─────────────────────────────────────,
+  {
+  "id": "lidopat-patch",
+  "category": "topical",
+  "color": {
+    "main": "#3B6D11",
+    "light": "#EAF3DE",
+    "dark": "#173404",
+    "badge": "#C0DD97",
+    "badgeText": "#173404"
+  },
+  "emergency": false,
+  "name": {
+    "zh-TW": "遠疼貼",
+    "en": "Lidopat Patch 5%",
+    "id": "Lidopat Patch 5%",
+    "vi": "Lidopat Patch 5%",
+    "th": "Lidopat Patch 5%",
+    "tl": "Lidopat Patch 5%",
+    "ja": "Lidopat Patch 5%"
+  },
+  "subtitle": {
+    "zh-TW": "Lidopat Patch 5%｜Lidocaine｜24 h 內最多貼 12 h",
+    "en": "Lidopat Patch 5% | Lidocaine | Up to 12 hours in 24 hours",
+    "id": "Lidopat Patch 5% | Lidocaine | Up to 12 hours in 24 hours",
+    "vi": "Lidopat Patch 5% | Lidocaine | Up to 12 hours in 24 hours",
+    "th": "Lidopat Patch 5% | Lidocaine | Up to 12 hours in 24 hours",
+    "tl": "Lidopat Patch 5% | Lidocaine | Up to 12 hours in 24 hours",
+    "ja": "Lidopat Patch 5% | Lidocaine | Up to 12 hours in 24 hours"
+  },
+  "headerBadge": {
+    "zh-TW": "24 小時內最多貼 12 小時",
+    "en": "No more than 12 h in 24 h",
+    "id": "Maksimal 12 jam dalam 24 jam",
+    "vi": "Tối đa 12 giờ trong 24 giờ",
+    "th": "ใช้ได้ไม่เกิน 12 ชั่วโมงใน 24 ชั่วโมง",
+    "tl": "Hindi lalampas sa 12 oras sa loob ng 24 oras",
+    "ja": "24時間のうち最長12時間"
+  },
+  "usage": {
+    "zh-TW": "帶狀皰疹後神經痛用。只貼在已癒合但仍疼痛的皮膚。",
+    "en": "For postherpetic neuralgia. Apply only to healed but still painful skin.",
+    "id": "Untuk nyeri saraf setelah herpes zoster. Tempel hanya pada kulit yang sudah sembuh tetapi masih nyeri.",
+    "vi": "Dùng cho đau thần kinh sau zona. Chỉ dán lên vùng da đã lành nhưng vẫn còn đau.",
+    "th": "ใช้สำหรับอาการปวดหลังงูสวัดหายแล้ว ติดเฉพาะผิวที่แผลหายแล้วแต่ยังปวดอยู่",
+    "tl": "Para sa pananakit ng ugat pagkatapos ng shingles. Idikit lamang sa balat na magaling na ngunit masakit pa rin.",
+    "ja": "帯状疱疹後神経痛に使う貼付剤です。治ったあとも痛みが残る皮膚だけに貼ってください。"
+  },
+  "badge": {
+    "zh-TW": "局部止痛貼片",
+    "en": "Pain Patch",
+    "id": "Patch pereda nyeri",
+    "vi": "Miếng dán giảm đau",
+    "th": "แผ่นแปะบรรเทาปวด",
+    "tl": "Patch pampawala ng sakit",
+    "ja": "鎮痛貼付剤"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#EAF3DE",
+      "border": "#3B6D11",
+      "text": "#173404"
+    },
+    "text": {
+      "zh-TW": "一次最多可同時貼 3 片。不要貼在疹子、水泡、破皮或傷口上。",
+      "en": "You may use up to 3 patches at one time. Do not apply them to rashes, blisters, cuts, or broken skin.",
+      "id": "Anda boleh memakai hingga 3 patch sekaligus. Jangan tempel pada ruam, lepuh, luka, atau kulit yang rusak.",
+      "vi": "Có thể dán tối đa 3 miếng cùng lúc. Không dán lên phát ban, mụn nước, vết cắt hay vùng da bị trầy xước.",
+      "th": "ติดพร้อมกันได้สูงสุด 3 แผ่น ห้ามติดบนผื่น ตุ่มน้ำ แผล หรือผิวหนังที่ถลอก",
+      "tl": "Maaaring gumamit ng hanggang 3 patch nang sabay. Huwag idikit sa pantal, paltos, hiwa, o sirang balat.",
+      "ja": "一度に使えるのは最大3枚までです。発疹、水ぶくれ、傷、ただれた皮膚には貼らないでください。"
+    }
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "選擇完整乾淨乾燥皮膚",
+        "en": "Choose intact, clean, dry skin",
+        "id": "Pilih kulit yang utuh, bersih, dan kering",
+        "vi": "Chọn vùng da còn nguyên vẹn, sạch và khô",
+        "th": "เลือกผิวหนังที่สมบูรณ์ สะอาด และแห้ง",
+        "tl": "Pumili ng balat na buo, malinis, at tuyo",
+        "ja": "傷のない清潔で乾いた皮膚を選ぶ"
+      },
+      "note": {
+        "zh-TW": "這片藥只貼在已癒合但還在痛的地方。",
+        "en": "Use it only on skin that has healed but still hurts.",
+        "id": "Gunakan hanya pada kulit yang sudah sembuh tetapi masih nyeri.",
+        "vi": "Chỉ dùng trên vùng da đã lành nhưng vẫn còn đau.",
+        "th": "ใช้เฉพาะผิวที่แผลหายแล้วแต่ยังปวดอยู่",
+        "tl": "Gamitin lamang sa balat na magaling na ngunit masakit pa rin.",
+        "ja": "治っているけれど痛みが残る皮膚だけに使ってください。"
+      },
+      "illustration": "assets/svg/patch-sites/local-pain-site.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "依疼痛範圍裁剪大小",
+        "en": "Cut it to the size you need",
+        "id": "Potong sesuai ukuran yang dibutuhkan",
+        "vi": "Cắt theo kích thước cần dùng",
+        "th": "ตัดให้ได้ขนาดที่ต้องใช้",
+        "tl": "Gupitin ayon sa laki na kailangan",
+        "ja": "必要な大きさに切る"
+      },
+      "note": {
+        "zh-TW": "可先剪成適合大小，再貼上。",
+        "en": "You may cut it before applying it so it fits the painful area better.",
+        "id": "Patch boleh dipotong sebelum ditempel agar sesuai dengan area yang nyeri.",
+        "vi": "Có thể cắt trước khi dán để vừa với vùng đau hơn.",
+        "th": "สามารถตัดก่อนติดเพื่อให้พอดีกับบริเวณที่ปวด",
+        "tl": "Maaaring putulin bago idikit para magkasya sa masakit na bahagi.",
+        "ja": "痛む範囲に合うよう、貼る前に切って使えます。"
+      },
+      "illustration": "assets/svg/patch-shared/cut-to-size.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "撕開保護膜",
+        "en": "Peel off the backing",
+        "id": "Lepaskan lapisan pelindung",
+        "vi": "Bóc lớp bảo vệ",
+        "th": "ลอกแผ่นรองออก",
+        "tl": "Alisin ang backing",
+        "ja": "保護フィルムをはがす"
+      },
+      "note": {
+        "zh-TW": "黏膠面盡量少碰。",
+        "en": "Touch the sticky side as little as possible.",
+        "id": "Usahakan jangan menyentuh sisi yang lengket.",
+        "vi": "Hạn chế chạm vào mặt dính.",
+        "th": "พยายามอย่าแตะด้านกาว",
+        "tl": "Iwasang hawakan ang malagkit na bahagi hangga’t maaari.",
+        "ja": "粘着面にはなるべく触れないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/peel-half.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "貼在最痛處",
+        "en": "Apply it to the most painful area",
+        "id": "Tempel pada area yang paling nyeri",
+        "vi": "Dán vào vị trí đau nhất",
+        "th": "ติดตรงตำแหน่งที่ปวดที่สุด",
+        "tl": "Idikit sa pinakamasakit na bahagi",
+        "ja": "いちばん痛い所に貼る"
+      },
+      "note": {
+        "zh-TW": "疼痛範圍較大時，一次最多可同時貼 3 片。",
+        "en": "If the painful area is large, you may apply up to 3 patches at one time.",
+        "id": "Jika area yang nyeri luas, Anda boleh memakai hingga 3 patch sekaligus.",
+        "vi": "Nếu vùng đau rộng, có thể dán tối đa 3 miếng cùng lúc.",
+        "th": "หากบริเวณที่ปวดกว้าง สามารถติดพร้อมกันได้สูงสุด 3 แผ่น",
+        "tl": "Kung malawak ang masakit na bahagi, maaari kang gumamit ng hanggang 3 patch nang sabay.",
+        "ja": "痛む範囲が広い場合でも、一度に使えるのは最大3枚までです。"
+      },
+      "illustration": "assets/svg/patch-sites/local-pain-site.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "24 小時內最多貼 12 小時",
+        "en": "Wear it for no more than 12 hours in 24 hours",
+        "id": "Gunakan tidak lebih dari 12 jam dalam 24 jam",
+        "vi": "Dán không quá 12 giờ trong 24 giờ",
+        "th": "ติดได้ไม่เกิน 12 ชั่วโมงใน 24 ชั่วโมง",
+        "tl": "Gamitin nang hindi hihigit sa 12 oras sa loob ng 24 oras",
+        "ja": "24時間のうち最長12時間まで貼る"
+      },
+      "note": {
+        "zh-TW": "剩下 12 小時讓皮膚休息。",
+        "en": "Leave the skin patch-free for the other 12 hours.",
+        "id": "Biarkan kulit tanpa patch selama 12 jam sisanya.",
+        "vi": "Để da nghỉ, không dán miếng khác trong 12 giờ còn lại.",
+        "th": "อีก 12 ชั่วโมงที่เหลือให้พักผิว ไม่ต้องติดแผ่นแปะ",
+        "tl": "Pahingahin ang balat nang walang patch sa natitirang 12 oras.",
+        "ja": "残りの12時間は皮膚を休ませてください。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "取下後對折丟棄",
+        "en": "Fold it and throw it away after removal",
+        "id": "Lipat lalu buang setelah dilepas",
+        "vi": "Gỡ ra rồi gấp lại và bỏ đi",
+        "th": "ลอกออกแล้วพับทิ้ง",
+        "tl": "Pagkatapos alisin, tiklupin at itapon",
+        "ja": "はがしたら折って捨てる"
+      },
+      "note": {
+        "zh-TW": "用過的貼片仍有藥，遠離兒童和寵物。",
+        "en": "Used patches still contain medicine. Keep them away from children and pets.",
+        "id": "Patch bekas masih mengandung obat. Jauhkan dari anak-anak dan hewan peliharaan.",
+        "vi": "Miếng dán đã dùng vẫn còn thuốc. Để xa trẻ em và thú nuôi.",
+        "th": "แผ่นที่ใช้แล้วก็ยังมียาอยู่ ต้องเก็บให้พ้นมือเด็กและสัตว์เลี้ยง",
+        "tl": "May laman pang gamot ang nagamit nang patch. Ilayo ito sa mga bata at alagang hayop.",
+        "ja": "使用後も薬が残っています。子どもやペットに触れさせないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/fold-dispose.svg"
+    }
+  ],
+  "storage": {
+    "title": {
+      "zh-TW": "藥品保存",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บยา",
+      "tl": "Pag-iimbak",
+      "ja": "保管"
+    },
+    "text": {
+      "zh-TW": "置室溫乾燥處保存，使用前再打開包裝。",
+      "en": "Store at room temperature in a dry place. Open the pouch only when you are ready to use the patch.",
+      "id": "Simpan pada suhu ruang di tempat kering. Buka kemasan hanya saat akan memakai patch.",
+      "vi": "Bảo quản ở nhiệt độ phòng, nơi khô ráo. Chỉ mở túi ngay trước khi dùng.",
+      "th": "เก็บที่อุณหภูมิห้องในที่แห้ง และเปิดซองเมื่อพร้อมใช้เท่านั้น",
+      "tl": "Itago sa temperatura ng kuwarto sa tuyong lugar. Buksan lang ang supot kapag gagamitin na ang patch.",
+      "ja": "室温の乾燥した場所で保管し、使う直前に袋を開けてください。"
+    }
+  },
+  "warnings": [
+    {
+      "zh-TW": "只貼在完整皮膚，不可貼在疹子、水泡或破皮。",
+      "en": "Apply only to intact skin. Do not use it on rashes, blisters, or broken skin.",
+      "id": "Tempel hanya pada kulit yang utuh. Jangan gunakan pada ruam, lepuh, atau kulit yang rusak.",
+      "vi": "Chỉ dán lên da còn nguyên vẹn. Không dùng trên vùng phát ban, mụn nước hoặc da trầy xước.",
+      "th": "ติดเฉพาะผิวที่สมบูรณ์ ห้ามใช้บนผื่น ตุ่มน้ำ หรือผิวหนังที่ถลอก",
+      "tl": "Idikit lamang sa balat na buo. Huwag gamitin sa pantal, paltos, o sirang balat.",
+      "ja": "傷のない皮膚だけに貼り、発疹、水ぶくれ、傷んだ皮膚には使わないでください。"
+    },
+    {
+      "zh-TW": "若碰到眼睛，立刻用清水或生理食鹽水沖洗。",
+      "en": "If it gets into your eyes, rinse right away with water or saline.",
+      "id": "Jika terkena mata, segera bilas dengan air atau larutan saline.",
+      "vi": "Nếu dính vào mắt, hãy rửa ngay bằng nước hoặc nước muối sinh lý.",
+      "th": "หากเข้าตา ให้ล้างออกทันทีด้วยน้ำหรือน้ำเกลือ",
+      "tl": "Kapag napunta sa mata, banlawan agad ng tubig o saline.",
+      "ja": "目に入ったら、すぐに水または生理食塩水で洗い流してください。"
+    },
+    {
+      "zh-TW": "用過的貼片仍有藥，保存與丟棄時都要遠離兒童和寵物。",
+      "en": "Used patches still contain medicine. Keep them away from children and pets during storage and disposal.",
+      "id": "Patch bekas masih mengandung obat. Jauhkan dari anak-anak dan hewan peliharaan saat disimpan maupun dibuang.",
+      "vi": "Miếng dán đã dùng vẫn còn thuốc. Khi cất giữ hay bỏ đi, phải để xa trẻ em và thú nuôi.",
+      "th": "แผ่นที่ใช้แล้วก็ยังมียาอยู่ ทั้งตอนเก็บและตอนทิ้งต้องให้พ้นมือเด็กและสัตว์เลี้ยง",
+      "tl": "May laman pang gamot ang nagamit nang patch. Ilayo sa mga bata at alagang hayop habang itinatago at itinatapon.",
+      "ja": "使用後の貼付剤にも薬が残っています。保管中も廃棄時も、子どもやペットに近づけないでください。"
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/lidopat-patch"
+},
+
+  // ── Neupro (rotigotine) patch ─────────────────────────────────────,
+  {
+  "id": "neupro-patch",
+  "category": "topical",
+  "color": {
+    "main": "#3B6D11",
+    "light": "#EAF3DE",
+    "dark": "#173404",
+    "badge": "#C0DD97",
+    "badgeText": "#173404"
+  },
+  "emergency": false,
+  "name": {
+    "zh-TW": "紐普洛穿皮貼片",
+    "en": "Neupro Patch",
+    "id": "Neupro Patch",
+    "vi": "Neupro Patch",
+    "th": "Neupro Patch",
+    "tl": "Neupro Patch",
+    "ja": "Neupro Patch"
+  },
+  "subtitle": {
+    "zh-TW": "Neupro｜Rotigotine｜2 / 4 / 6 / 8 mg/24 hr｜24h",
+    "en": "Neupro | Rotigotine | 2 / 4 / 6 / 8 mg/24 hr | 24h",
+    "id": "Neupro | Rotigotine | 2 / 4 / 6 / 8 mg/24 hr | 24h",
+    "vi": "Neupro | Rotigotine | 2 / 4 / 6 / 8 mg/24 hr | 24h",
+    "th": "Neupro | Rotigotine | 2 / 4 / 6 / 8 mg/24 hr | 24h",
+    "tl": "Neupro | Rotigotine | 2 / 4 / 6 / 8 mg/24 hr | 24h",
+    "ja": "Neupro | Rotigotine | 2 / 4 / 6 / 8 mg/24 hr | 24h"
+  },
+  "headerBadge": {
+    "zh-TW": "每天換 1 片",
+    "en": "Change every day",
+    "id": "Ganti setiap hari",
+    "vi": "Thay mỗi ngày",
+    "th": "เปลี่ยนทุกวัน",
+    "tl": "Palitan araw-araw",
+    "ja": "毎日貼り替え"
+  },
+  "usage": {
+    "zh-TW": "控制巴金森氏症或不寧腿症狀。每天固定時間換 1 片。",
+    "en": "For Parkinson disease or restless legs syndrome. Change it once a day at the same time.",
+    "id": "Untuk penyakit Parkinson atau sindrom kaki gelisah. Ganti 1 kali sehari pada jam yang sama.",
+    "vi": "Dùng cho bệnh Parkinson hoặc hội chứng chân bồn chồn. Thay 1 lần mỗi ngày vào cùng một giờ.",
+    "th": "ใช้สำหรับอาการพาร์กินสันหรือโรคขาอยู่ไม่สุข เปลี่ยนวันละ 1 ครั้งเวลาเดิม",
+    "tl": "Para sa Parkinson disease o restless legs syndrome. Palitan isang beses bawat araw sa parehong oras.",
+    "ja": "パーキンソン病またはむずむず脚症候群の症状を抑える貼付剤です。毎日同じ時間に貼り替えてください。"
+  },
+  "badge": {
+    "zh-TW": "巴金森貼片",
+    "en": "Parkinson Patch",
+    "id": "Patch Parkinson",
+    "vi": "Miếng dán Parkinson",
+    "th": "แผ่นแปะสำหรับพาร์กินสัน",
+    "tl": "Patch para sa Parkinson",
+    "ja": "パーキンソン病用貼付剤"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#EAF3DE",
+      "border": "#3B6D11",
+      "text": "#173404"
+    },
+    "text": {
+      "zh-TW": "不可裁切。做 MRI 或心臟電復律前，一定先撕下。",
+      "en": "Do not cut the patch. Always remove it before MRI or cardioversion.",
+      "id": "Jangan menggunting patch. Selalu lepaskan patch sebelum MRI atau kardioversi.",
+      "vi": "Không được cắt miếng dán. Luôn gỡ ra trước khi chụp MRI hoặc sốc điện tim.",
+      "th": "ห้ามตัดแผ่นแปะ และต้องลอกออกก่อนทำ MRI หรือการช็อกไฟฟ้าหัวใจทุกครั้ง",
+      "tl": "Huwag putulin ang patch. Laging alisin ito bago magpa-MRI o cardioversion.",
+      "ja": "貼付剤は切らず、MRIや除細動・電気的治療の前には必ずはがしてください。"
+    }
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "取下舊貼片",
+        "en": "Remove the old patch",
+        "id": "Lepaskan patch lama",
+        "vi": "Gỡ miếng dán cũ",
+        "th": "ลอกแผ่นแปะเก่าออก",
+        "tl": "Alisin ang lumang patch",
+        "ja": "古い貼付剤をはがす"
+      },
+      "note": {
+        "zh-TW": "對折後包好丟棄，先確認舊片已經拿掉。",
+        "en": "Fold it in half and throw it away safely. Make sure the old patch is completely off first.",
+        "id": "Lipat dua lalu buang dengan aman. Pastikan patch lama sudah benar-benar terlepas.",
+        "vi": "Gấp đôi rồi bỏ đi an toàn. Hãy chắc chắn miếng cũ đã được gỡ hết.",
+        "th": "พับครึ่งแล้วทิ้งอย่างปลอดภัย และตรวจให้แน่ใจว่าเอาแผ่นเก่าออกหมดแล้ว",
+        "tl": "Tiklupin sa kalahati at itapon nang ligtas. Tiyaking natanggal na nang buo ang lumang patch.",
+        "ja": "半分に折って安全に捨て、古い貼付剤が残っていないことを確認してください。"
+      },
+      "illustration": "assets/svg/patch-shared/fold-dispose.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "選擇乾淨乾燥完整皮膚",
+        "en": "Choose clean, dry, intact skin",
+        "id": "Pilih kulit yang bersih, kering, dan utuh",
+        "vi": "Chọn vùng da sạch, khô và còn nguyên vẹn",
+        "th": "เลือกผิวหนังที่สะอาด แห้ง และไม่มีแผล",
+        "tl": "Pumili ng balat na malinis, tuyo, at walang sugat",
+        "ja": "清潔で乾いた傷のない皮膚を選ぶ"
+      },
+      "note": {
+        "zh-TW": "肩、上臂、腹部、腰側、臀部或大腿都可貼。",
+        "en": "You may use the shoulder, upper arm, abdomen, flank, hip, or thigh.",
+        "id": "Boleh ditempel di bahu, lengan atas, perut, sisi pinggang, bokong, atau paha.",
+        "vi": "Có thể dán ở vai, cánh tay trên, bụng, hông bên, mông hoặc đùi.",
+        "th": "ติดได้ที่ไหล่ ต้นแขน หน้าท้อง สีข้าง สะโพก หรือโคนขา",
+        "tl": "Maaaring ikabit sa balikat, itaas na braso, tiyan, tagiliran, balakang, o hita.",
+        "ja": "肩、上腕、腹部、わき腹、臀部、大腿に貼れます。"
+      },
+      "illustration": "assets/svg/patch-sites/rotigotine-sites.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "打開包裝，取出貼片",
+        "en": "Open the pouch and take out the patch",
+        "id": "Buka kemasan dan keluarkan patch",
+        "vi": "Mở túi và lấy miếng dán ra",
+        "th": "เปิดซองและนำแผ่นแปะออก",
+        "tl": "Buksan ang supot at kunin ang patch",
+        "ja": "袋を開けて貼付剤を取り出す"
+      },
+      "note": {
+        "zh-TW": "使用前再打開，不要先拆開放著。",
+        "en": "Open the pouch only when you are ready to use it.",
+        "id": "Buka kemasan hanya saat Anda siap menggunakannya.",
+        "vi": "Chỉ mở túi ngay trước khi dùng.",
+        "th": "เปิดซองเมื่อพร้อมใช้เท่านั้น",
+        "tl": "Buksan lang ang supot kapag gagamitin na.",
+        "ja": "使う直前に開けてください。"
+      },
+      "illustration": "assets/svg/patch-shared/open-sachet.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "撕開一半保護膜",
+        "en": "Peel off half of the backing",
+        "id": "Lepaskan setengah lapisan pelindung",
+        "vi": "Bóc một nửa lớp bảo vệ",
+        "th": "ลอกแผ่นรองออกครึ่งหนึ่ง",
+        "tl": "Alisin ang kalahati ng backing",
+        "ja": "保護フィルムを半分はがす"
+      },
+      "note": {
+        "zh-TW": "先貼好一半，再撕另一半會比較平整。",
+        "en": "Apply one half first, then peel the rest so the patch lies flatter.",
+        "id": "Tempelkan setengah bagian dulu, lalu lepas sisanya agar patch menempel rata.",
+        "vi": "Dán trước một nửa, rồi bóc phần còn lại để miếng dán áp phẳng hơn.",
+        "th": "ติดครึ่งแรกก่อน แล้วค่อยลอกส่วนที่เหลือออกเพื่อให้แผ่นแนบเรียบ",
+        "tl": "Idikit muna ang kalahati, saka alisin ang natitira para mas dumikit nang pantay.",
+        "ja": "半分を先に貼ると、残りも平らに貼りやすくなります。"
+      },
+      "illustration": "assets/svg/patch-shared/peel-half.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "貼上後按壓 30 秒",
+        "en": "Apply the patch and press for 30 seconds",
+        "id": "Tempel patch lalu tekan selama 30 detik",
+        "vi": "Dán miếng dán rồi ấn 30 giây",
+        "th": "ติดแผ่นแปะแล้วกดไว้ 30 วินาที",
+        "tl": "Idikit ang patch at idiin sa loob ng 30 segundo",
+        "ja": "貼って30秒押さえる"
+      },
+      "note": {
+        "zh-TW": "確認四邊貼平，不要貼在紅、癢或受傷皮膚上。",
+        "en": "Make sure all edges are flat. Do not apply it to red, itchy, or injured skin.",
+        "id": "Pastikan semua tepi menempel rata. Jangan tempel pada kulit yang merah, gatal, atau terluka.",
+        "vi": "Kiểm tra các mép đều dính phẳng. Không dán lên vùng da đỏ, ngứa hoặc bị tổn thương.",
+        "th": "ตรวจดูว่าขอบทุกด้านแนบสนิท และอย่าติดบนผิวที่แดง คัน หรือมีแผล",
+        "tl": "Tiyaking pantay ang pagkakadikit ng lahat ng gilid. Huwag idikit sa mamula, makati, o sugatang balat.",
+        "ja": "端までしっかり貼れているか確認し、赤い所、かゆい所、傷んだ皮膚には貼らないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/apply-press.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "每天同一時間換 1 片",
+        "en": "Change it at the same time every day",
+        "id": "Ganti pada jam yang sama setiap hari",
+        "vi": "Thay vào cùng một giờ mỗi ngày",
+        "th": "เปลี่ยนในเวลาเดิมทุกวัน",
+        "tl": "Palitan sa parehong oras araw-araw",
+        "ja": "毎日同じ時間に貼り替える"
+      },
+      "note": {
+        "zh-TW": "若脫落，改在新位置貼新片；隔天仍照原本時間更換。",
+        "en": "If it falls off, apply a new patch to a different site and still change it at the usual time the next day.",
+        "id": "Jika patch terlepas, tempelkan patch baru di lokasi lain dan tetap ganti lagi pada waktu biasa keesokan harinya.",
+        "vi": "Nếu miếng dán bong ra, hãy dán miếng mới ở vị trí khác và ngày hôm sau vẫn thay vào giờ thường lệ.",
+        "th": "ถ้าแผ่นแปะหลุด ให้ติดแผ่นใหม่ที่ตำแหน่งอื่น และวันถัดไปยังคงเปลี่ยนตามเวลาเดิม",
+        "tl": "Kung matuklap ang patch, magdikit ng bago sa ibang bahagi at palitan pa rin kinabukasan sa karaniwang oras.",
+        "ja": "途中ではがれたら別の場所に新しいものを貼り、翌日はいつもの時間に貼り替えてください。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "同一位置 14 天後再貼",
+        "en": "Wait 14 days before reusing the same site",
+        "id": "Tunggu 14 hari sebelum memakai lokasi yang sama lagi",
+        "vi": "Chờ 14 ngày rồi mới dùng lại đúng vị trí cũ",
+        "th": "เว้นตำแหน่งเดิมอย่างน้อย 14 วันก่อนใช้ซ้ำ",
+        "tl": "Hintayin ang 14 araw bago gamitin muli ang parehong puwesto",
+        "ja": "同じ場所は14日あけてから使う"
+      },
+      "note": {
+        "zh-TW": "避開熱水澡、熱敷墊、電熱毯與三溫暖。",
+        "en": "Avoid hot baths, heating pads, electric blankets, and saunas.",
+        "id": "Hindari mandi air panas, kompres panas, selimut listrik, dan sauna.",
+        "vi": "Tránh tắm nước nóng, chườm nóng, chăn điện và xông hơi.",
+        "th": "หลีกเลี่ยงการอาบน้ำร้อน การประคบร้อน ผ้าห่มไฟฟ้า และซาวน่า",
+        "tl": "Iwasan ang mainit na paligo, heating pad, electric blanket, at sauna.",
+        "ja": "熱い入浴、温熱パッド、電気毛布、サウナは避けてください。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    }
+  ],
+  "storage": {
+    "title": {
+      "zh-TW": "藥品保存",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บยา",
+      "tl": "Pag-iimbak",
+      "ja": "保管"
+    },
+    "text": {
+      "zh-TW": "維持原袋密封，置室溫保存。避免高溫與陽光直射。",
+      "en": "Keep the patch sealed in its original pouch and store it at room temperature away from heat and direct sunlight.",
+      "id": "Simpan patch tetap tersegel di kemasan aslinya pada suhu ruang, jauh dari panas dan sinar matahari langsung.",
+      "vi": "Giữ miếng dán kín trong túi gốc và bảo quản ở nhiệt độ phòng, tránh nóng và ánh nắng trực tiếp.",
+      "th": "เก็บแผ่นแปะไว้ในซองเดิมที่ปิดสนิท ที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสงแดดโดยตรง",
+      "tl": "Panatilihin ang patch na nakaselyo sa orihinal na supot at itago sa temperatura ng kuwarto, malayo sa init at direktang sikat ng araw.",
+      "ja": "元の袋に密封したまま、室温で熱と直射日光を避けて保管してください。"
+    }
+  },
+  "warnings": [
+    {
+      "zh-TW": "做 MRI 或心臟電復律前，一定先撕下。",
+      "en": "Remove the patch before MRI or cardioversion.",
+      "id": "Lepaskan patch sebelum MRI atau kardioversi.",
+      "vi": "Hãy gỡ miếng dán trước khi chụp MRI hoặc sốc điện tim.",
+      "th": "ต้องลอกแผ่นแปะออกก่อนทำ MRI หรือการช็อกไฟฟ้าหัวใจ",
+      "tl": "Alisin ang patch bago magpa-MRI o cardioversion.",
+      "ja": "MRIや除細動・電気的治療の前には必ずはがしてください。"
+    },
+    {
+      "zh-TW": "不可裁切或折疊。",
+      "en": "Do not cut or fold the patch.",
+      "id": "Jangan menggunting atau melipat patch.",
+      "vi": "Không được cắt hoặc gấp miếng dán.",
+      "th": "ห้ามตัดหรือพับแผ่นแปะ",
+      "tl": "Huwag putulin o tiklupin ang patch.",
+      "ja": "貼付剤は切ったり折ったりしないでください。"
+    },
+    {
+      "zh-TW": "若很想睡、頭暈、幻覺或起身不穩，告訴醫師。",
+      "en": "Tell your doctor if you become very sleepy, dizzy, hallucinate, or feel unsteady when standing up.",
+      "id": "Beri tahu dokter jika Anda sangat mengantuk, pusing, berhalusinasi, atau merasa goyah saat berdiri.",
+      "vi": "Hãy báo bác sĩ nếu bạn buồn ngủ nhiều, chóng mặt, có ảo giác hoặc đứng lên thấy loạng choạng.",
+      "th": "หากง่วงมาก เวียนศีรษะ เห็นภาพหลอน หรือยืนแล้วโคลงเคลง ให้แจ้งแพทย์",
+      "tl": "Sabihin sa doktor kung sobrang antok, nahihilo, nakakakita o nakakarinig ng wala naman, o hindi matatag kapag tumatayo.",
+      "ja": "強い眠気、めまい、幻覚、立ちくらみがあるときは医師に相談してください。"
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/neupro-patch"
+},
+
+  // ── Granisetron patch ─────────────────────────────────────,
+  {
+  "id": "granisetron-patch",
+  "category": "topical",
+  "color": {
+    "main": "#3B6D11",
+    "light": "#EAF3DE",
+    "dark": "#173404",
+    "badge": "#C0DD97",
+    "badgeText": "#173404"
+  },
+  "emergency": false,
+  "name": {
+    "zh-TW": "貼固守穿皮貼片",
+    "en": "Sancuso Patch",
+    "id": "Sancuso Patch",
+    "vi": "Sancuso Patch",
+    "th": "Sancuso Patch",
+    "tl": "Sancuso Patch",
+    "ja": "Sancuso Patch"
+  },
+  "subtitle": {
+    "zh-TW": "Sancuso｜Granisetron｜3.1 mg/24 hr｜最長 7 天",
+    "en": "Sancuso | Granisetron | 3.1 mg/24 hr | Up to 7 days",
+    "id": "Sancuso | Granisetron | 3.1 mg/24 hr | Up to 7 days",
+    "vi": "Sancuso | Granisetron | 3.1 mg/24 hr | Up to 7 days",
+    "th": "Sancuso | Granisetron | 3.1 mg/24 hr | Up to 7 days",
+    "tl": "Sancuso | Granisetron | 3.1 mg/24 hr | Up to 7 days",
+    "ja": "Sancuso | Granisetron | 3.1 mg/24 hr | Up to 7 days"
+  },
+  "headerBadge": {
+    "zh-TW": "化療前 1–2 天貼上",
+    "en": "Apply 1-2 days before chemo",
+    "id": "Tempel 1-2 hari sebelum kemoterapi",
+    "vi": "Dán trước hóa trị 1-2 ngày",
+    "th": "ติดก่อนเคมีบำบัด 1-2 วัน",
+    "tl": "Idikit 1-2 araw bago ang chemotherapy",
+    "ja": "化学療法の1〜2日前に貼る"
+  },
+  "usage": {
+    "zh-TW": "預防化療引起的噁心與嘔吐。不是等噁心來了才貼。",
+    "en": "This patch helps prevent nausea and vomiting from chemotherapy. Put it on before nausea starts, not after.",
+    "id": "Patch ini membantu mencegah mual dan muntah akibat kemoterapi. Tempel sebelum mual mulai, bukan sesudahnya.",
+    "vi": "Miếng dán này giúp phòng ngừa buồn nôn và nôn do hóa trị. Hãy dán trước khi buồn nôn xuất hiện, không phải đợi có triệu chứng rồi mới dán.",
+    "th": "แผ่นแปะนี้ช่วยป้องกันคลื่นไส้อาเจียนจากเคมีบำบัด ต้องติดก่อนมีอาการ ไม่ใช่รอให้คลื่นไส้แล้วค่อยติด",
+    "tl": "Tumutulong ang patch na ito upang maiwasan ang pagduduwal at pagsusuka mula sa chemotherapy. Ikabit ito bago pa magsimula ang pagkahilo ng tiyan, hindi pagkatapos.",
+    "ja": "化学療法による吐き気・嘔吐を予防する貼付剤です。気持ち悪くなってからではなく、その前に貼っておきます。"
+  },
+  "badge": {
+    "zh-TW": "止吐貼片",
+    "en": "Anti-nausea Patch",
+    "id": "Patch antimual",
+    "vi": "Miếng dán chống buồn nôn",
+    "th": "แผ่นแปะแก้คลื่นไส้",
+    "tl": "Patch laban sa pagduduwal",
+    "ja": "制吐貼付剤"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#EAF3DE",
+      "border": "#3B6D11",
+      "text": "#173404"
+    },
+    "text": {
+      "zh-TW": "化療前 24–48 小時先貼。一次只貼 1 片，整段療程最長 7 天。",
+      "en": "Apply it 24-48 hours before chemotherapy. Wear only 1 patch at a time, for no more than 7 days total.",
+      "id": "Tempel 24-48 jam sebelum kemoterapi. Gunakan hanya 1 patch setiap kali dan jangan lebih dari 7 hari total.",
+      "vi": "Dán trước hóa trị 24-48 giờ. Mỗi lần chỉ dán 1 miếng và tổng thời gian dùng không quá 7 ngày.",
+      "th": "ติดก่อนทำเคมีบำบัด 24-48 ชั่วโมง ใช้ครั้งละ 1 แผ่น และใช้รวมกันไม่เกิน 7 วัน",
+      "tl": "Ikabit ito 24-48 oras bago ang chemotherapy. Isang patch lang bawat gamit at huwag lampas sa kabuuang 7 araw.",
+      "ja": "化学療法の24〜48時間前に貼ります。1回に1枚だけ貼り、合計で7日を超えて使わないでください。"
+    }
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "選擇上臂外側乾淨乾燥皮膚",
+        "en": "Choose clean, dry skin on the outer upper arm",
+        "id": "Pilih kulit yang bersih dan kering di bagian luar lengan atas",
+        "vi": "Chọn vùng da sạch và khô ở mặt ngoài cánh tay trên",
+        "th": "เลือกผิวหนังที่สะอาดและแห้งบริเวณต้นแขนด้านนอก",
+        "tl": "Pumili ng malinis at tuyong balat sa panlabas na bahagi ng itaas na braso",
+        "ja": "上腕の外側の清潔で乾いた皮膚を選ぶ"
+      },
+      "note": {
+        "zh-TW": "只貼上臂外側，不要貼其他部位。",
+        "en": "Apply it only to the outer upper arm.",
+        "id": "Tempel hanya di bagian luar lengan atas.",
+        "vi": "Chỉ dán ở mặt ngoài cánh tay trên.",
+        "th": "ติดเฉพาะบริเวณต้นแขนด้านนอกเท่านั้น",
+        "tl": "Sa panlabas na bahagi ng itaas na braso lamang ito dapat idikit.",
+        "ja": "上腕の外側だけに貼ってください。"
+      },
+      "illustration": "assets/svg/patch-sites/upper-arm-only.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "打開包裝，取出貼片",
+        "en": "Open the pouch and take out the patch",
+        "id": "Buka kemasan dan keluarkan patch",
+        "vi": "Mở túi và lấy miếng dán ra",
+        "th": "เปิดซองและนำแผ่นแปะออก",
+        "tl": "Buksan ang supot at kunin ang patch",
+        "ja": "袋を開けて貼付剤を取り出す"
+      },
+      "note": {
+        "zh-TW": "使用前再打開，不要先拆開放著。",
+        "en": "Open the pouch only when you are ready to use it.",
+        "id": "Buka kemasan hanya saat Anda siap menggunakannya.",
+        "vi": "Chỉ mở túi ngay trước khi dùng.",
+        "th": "เปิดซองเมื่อพร้อมใช้เท่านั้น",
+        "tl": "Buksan lang ang supot kapag gagamitin na.",
+        "ja": "使う直前に開けてください。"
+      },
+      "illustration": "assets/svg/patch-shared/open-sachet.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "撕開一半保護膜",
+        "en": "Peel off half of the backing",
+        "id": "Lepaskan setengah lapisan pelindung",
+        "vi": "Bóc một nửa lớp bảo vệ",
+        "th": "ลอกแผ่นรองออกครึ่งหนึ่ง",
+        "tl": "Alisin ang kalahati ng backing",
+        "ja": "保護フィルムを半分はがす"
+      },
+      "note": {
+        "zh-TW": "先貼好一半，再撕另一半會比較平整。",
+        "en": "Apply one half first, then peel the rest so the patch lies flatter.",
+        "id": "Tempelkan setengah bagian dulu, lalu lepas sisanya agar patch menempel rata.",
+        "vi": "Dán trước một nửa, rồi bóc phần còn lại để miếng dán áp phẳng hơn.",
+        "th": "ติดครึ่งแรกก่อน แล้วค่อยลอกส่วนที่เหลือออกเพื่อให้แผ่นแนบเรียบ",
+        "tl": "Idikit muna ang kalahati, saka alisin ang natitira para mas dumikit nang pantay.",
+        "ja": "半分を先に貼ると、残りも平らに貼りやすくなります。"
+      },
+      "illustration": "assets/svg/patch-shared/peel-half.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "貼上後撕開剩餘保護膜",
+        "en": "Apply it and remove the rest of the backing",
+        "id": "Tempelkan sambil melepas sisa lapisan pelindung",
+        "vi": "Dán miếng dán rồi bóc nốt phần bảo vệ còn lại",
+        "th": "ติดแผ่นแปะไปพร้อมกับลอกแผ่นรองส่วนที่เหลือออก",
+        "tl": "Idikit ito habang inaalis ang natitirang backing",
+        "ja": "貼りながら残りのフィルムをはがす"
+      },
+      "note": {
+        "zh-TW": "黏膠面盡量少碰。",
+        "en": "Touch the sticky side as little as possible.",
+        "id": "Usahakan jangan menyentuh sisi yang lengket.",
+        "vi": "Hạn chế chạm vào mặt dính.",
+        "th": "พยายามอย่าแตะด้านกาว",
+        "tl": "Iwasang hawakan ang malagkit na bahagi hangga’t maaari.",
+        "ja": "粘着面にはなるべく触れないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/peel-half.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "按壓 30 秒",
+        "en": "Press for 30 seconds",
+        "id": "Tekan selama 30 detik",
+        "vi": "Ấn 30 giây",
+        "th": "กดไว้ 30 วินาที",
+        "tl": "Idiing mabuti sa loob ng 30 segundo",
+        "ja": "30秒押さえる"
+      },
+      "note": {
+        "zh-TW": "確認四邊貼平後，再用清水洗手。",
+        "en": "Make sure all edges are flat, then wash your hands with water.",
+        "id": "Pastikan semua tepi menempel rata, lalu cuci tangan dengan air.",
+        "vi": "Kiểm tra các mép đều dính phẳng rồi rửa tay bằng nước.",
+        "th": "ตรวจดูว่าขอบทุกด้านแนบสนิท แล้วล้างมือด้วยน้ำ",
+        "tl": "Tiyaking dikit na dikit ang lahat ng gilid, saka hugasan ang mga kamay ng tubig.",
+        "ja": "端までしっかり貼れているか確認し、その後は水で手を洗ってください。"
+      },
+      "illustration": "assets/svg/patch-shared/apply-press.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "化療後至少 24 小時再撕下",
+        "en": "Remove it at least 24 hours after chemotherapy",
+        "id": "Lepaskan setidaknya 24 jam setelah kemoterapi",
+        "vi": "Gỡ ra ít nhất 24 giờ sau hóa trị",
+        "th": "ลอกออกอย่างน้อย 24 ชั่วโมงหลังเคมีบำบัด",
+        "tl": "Alisin ito nang hindi bababa sa 24 oras matapos ang chemotherapy",
+        "ja": "化学療法後、少なくとも24時間たってからはがす"
+      },
+      "note": {
+        "zh-TW": "整段療程最長不要超過 7 天。",
+        "en": "Do not wear it for more than 7 days total.",
+        "id": "Jangan dipakai lebih dari 7 hari total.",
+        "vi": "Không dán quá 7 ngày tổng cộng.",
+        "th": "อย่าติดรวมกันเกิน 7 วัน",
+        "tl": "Huwag isuot nang lampas sa kabuuang 7 araw.",
+        "ja": "合計で7日を超えて貼り続けないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    }
+  ],
+  "storage": {
+    "title": {
+      "zh-TW": "藥品保存",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บยา",
+      "tl": "Pag-iimbak",
+      "ja": "保管"
+    },
+    "text": {
+      "zh-TW": "置室溫保存，保持原包裝密封，使用前再打開。",
+      "en": "Store at room temperature. Keep the patch in its sealed pouch until you are ready to use it.",
+      "id": "Simpan pada suhu ruang. Biarkan patch tetap di dalam kantong tersegel sampai akan dipakai.",
+      "vi": "Bảo quản ở nhiệt độ phòng. Giữ miếng dán trong túi kín cho đến khi chuẩn bị dùng.",
+      "th": "เก็บที่อุณหภูมิห้อง และเก็บแผ่นแปะไว้ในซองปิดสนิทจนกว่าจะถึงเวลาจะใช้",
+      "tl": "Itago sa temperatura ng kuwarto. Panatilihin ang patch sa selyadong supot nito hanggang gagamitin na.",
+      "ja": "室温で保管し、使う直前まで貼付剤を密封袋に入れたままにしてください。"
+    }
+  },
+  "warnings": [
+    {
+      "zh-TW": "不可裁切，一次只貼 1 片。",
+      "en": "Do not cut the patch. Wear only 1 patch at a time.",
+      "id": "Jangan menggunting patch. Gunakan hanya 1 patch setiap kali.",
+      "vi": "Không được cắt miếng dán. Mỗi lần chỉ dán 1 miếng.",
+      "th": "ห้ามตัดแผ่นแปะ และใช้ครั้งละ 1 แผ่นเท่านั้น",
+      "tl": "Huwag putulin ang patch. Isang patch lang bawat gamit.",
+      "ja": "貼付剤は切らず、1回に1枚だけ貼ってください。"
+    },
+    {
+      "zh-TW": "貼片部位避免日曬；撕下後 10 天內也要遮陽。",
+      "en": "Protect the patch site from sunlight while wearing it and for 10 days after removal.",
+      "id": "Lindungi area patch dari sinar matahari saat dipakai dan selama 10 hari setelah dilepas.",
+      "vi": "Bảo vệ vùng dán khỏi ánh nắng khi đang dán và trong 10 ngày sau khi gỡ ra.",
+      "th": "ป้องกันบริเวณที่ติดแผ่นแปะจากแสงแดดระหว่างใช้ และต่ออีก 10 วันหลังลอกออก",
+      "tl": "Protektahan ang bahaging dinikitan mula sa sikat ng araw habang suot ito at sa loob ng 10 araw matapos alisin.",
+      "ja": "貼っている間と、はがした後10日間は貼付部位を日光から守ってください。"
+    },
+    {
+      "zh-TW": "若起水泡、大片紅疹或嚴重刺激，先撕下並告訴醫師。",
+      "en": "Remove it and tell your doctor if the skin blisters, develops a large rash, or becomes badly irritated.",
+      "id": "Lepaskan patch dan beri tahu dokter jika kulit melepuh, timbul ruam luas, atau sangat teriritasi.",
+      "vi": "Hãy gỡ miếng dán và báo bác sĩ nếu da nổi bóng nước, phát ban rộng hoặc kích ứng nhiều.",
+      "th": "ลอกแผ่นแปะออกแล้วแจ้งแพทย์ หากผิวพุพอง มีผื่นกว้าง หรือระคายเคืองมาก",
+      "tl": "Alisin ito at ipaalam sa doktor kung magkakapaltos, magkakaroon ng malawak na pantal, o matinding iritasyon ang balat.",
+      "ja": "水ぶくれ、広い発疹、強いかぶれが出たら、はがして医師に連絡してください。"
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/granisetron-patch"
+},
+
+  // ── Buprenorphine patch ─────────────────────────────────────,
+  {
+  "id": "sovenor-patch",
+  "category": "topical",
+  "color": {
+    "main": "#3B6D11",
+    "light": "#EAF3DE",
+    "dark": "#173404",
+    "badge": "#C0DD97",
+    "badgeText": "#173404"
+  },
+  "emergency": false,
+  "name": {
+    "zh-TW": "Sovenor 穿皮貼片",
+    "en": "Sovenor Transdermal Patch",
+    "id": "Sovenor Transdermal Patch",
+    "vi": "Sovenor Transdermal Patch",
+    "th": "Sovenor Transdermal Patch",
+    "tl": "Sovenor Transdermal Patch",
+    "ja": "Sovenor Transdermal Patch"
+  },
+  "subtitle": {
+    "zh-TW": "Sovenor｜Buprenorphine 5 mcg/hr｜7 days",
+    "en": "Sovenor | Buprenorphine 5 mcg/hr | 7 days",
+    "id": "Sovenor | Buprenorphine 5 mcg/hr | 7 days",
+    "vi": "Sovenor | Buprenorphine 5 mcg/hr | 7 days",
+    "th": "Sovenor | Buprenorphine 5 mcg/hr | 7 days",
+    "tl": "Sovenor | Buprenorphine 5 mcg/hr | 7 days",
+    "ja": "Sovenor | Buprenorphine 5 mcg/hr | 7 days"
+  },
+  "headerBadge": {
+    "zh-TW": "每 7 天換 1 片",
+    "en": "Change every 7 days",
+    "id": "Ganti setiap 7 hari",
+    "vi": "Thay mỗi 7 ngày",
+    "th": "เปลี่ยนทุก 7 วัน",
+    "tl": "Palitan bawat 7 araw",
+    "ja": "7日ごとに貼り替え"
+  },
+  "usage": {
+    "zh-TW": "長效止痛貼片。固定連續貼 7 天，不是痛時才加貼。",
+    "en": "Long-acting pain patch. Wear it continuously for 7 days. Do not add extra patches when the pain flares up.",
+    "id": "Ini adalah patch pereda nyeri kerja panjang. Pakai terus selama 7 hari. Jangan menambah patch saat nyeri bertambah.",
+    "vi": "Đây là miếng dán giảm đau tác dụng kéo dài. Dán liên tục 7 ngày. Không tự dán thêm khi đau tăng lên.",
+    "th": "เป็นแผ่นแปะบรรเทาปวดออกฤทธิ์นาน ติดต่อเนื่อง 7 วัน ห้ามแปะเพิ่มเองเมื่อปวดมากขึ้น",
+    "tl": "Ito ay pangmatagalang pain patch. Isuot ito nang tuloy-tuloy sa loob ng 7 araw. Huwag magdagdag ng patch kapag sumakit nang higit.",
+    "ja": "長時間作用する痛み止めの貼付剤です。7日間続けて貼ります。痛みが強いからといって追加で貼らないでください。"
+  },
+  "badge": {
+    "zh-TW": "長效止痛貼片",
+    "en": "Long-acting Pain Patch",
+    "id": "Patch pereda nyeri kerja panjang",
+    "vi": "Miếng dán giảm đau tác dụng kéo dài",
+    "th": "แผ่นแปะบรรเทาปวดออกฤทธิ์นาน",
+    "tl": "Pangmatagalang patch pampawala ng sakit",
+    "ja": "長時間作用型鎮痛貼付剤"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#EAF3DE",
+      "border": "#3B6D11",
+      "text": "#173404"
+    },
+    "text": {
+      "zh-TW": "這是管制藥。一次只貼 1 片，不可裁切。",
+      "en": "This is a controlled medicine. Wear only 1 patch at a time and do not cut it.",
+      "id": "Ini adalah obat yang diawasi. Gunakan hanya 1 patch setiap kali dan jangan digunting.",
+      "vi": "Đây là thuốc cần kiểm soát đặc biệt. Mỗi lần chỉ dán 1 miếng và không được cắt.",
+      "th": "เป็นยาควบคุมพิเศษ ใช้ครั้งละ 1 แผ่นเท่านั้น และห้ามตัดแผ่นแปะ",
+      "tl": "Ito ay regulated na gamot. Isang patch lang bawat gamit at huwag itong putulin.",
+      "ja": "これは管理が必要な薬です。1回に1枚だけ貼り、切って使わないでください。"
+    }
+  },
+  "steps": [
+    {
+      "action": {
+        "zh-TW": "取下舊貼片",
+        "en": "Remove the old patch",
+        "id": "Lepaskan patch lama",
+        "vi": "Gỡ miếng dán cũ",
+        "th": "ลอกแผ่นแปะเก่าออก",
+        "tl": "Alisin ang lumang patch",
+        "ja": "古い貼付剤をはがす"
+      },
+      "note": {
+        "zh-TW": "對折後包好丟棄，遠離兒童和寵物。",
+        "en": "Fold it in half and throw it away safely. Keep it away from children and pets.",
+        "id": "Lipat dua patch bekas lalu buang dengan aman. Jauhkan dari anak-anak dan hewan peliharaan.",
+        "vi": "Gấp đôi miếng dán đã dùng rồi bỏ đi an toàn. Để xa trẻ em và thú nuôi.",
+        "th": "พับครึ่งแล้วทิ้งอย่างปลอดภัย และเก็บให้พ้นมือเด็กกับสัตว์เลี้ยง",
+        "tl": "Tiklupin sa kalahati at itapon nang ligtas. Ilayo sa mga bata at alagang hayop.",
+        "ja": "半分に折って安全に捨て、子どもやペットに触れさせないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/fold-dispose.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "選擇無毛或少毛皮膚",
+        "en": "Choose hairless or almost hairless skin",
+        "id": "Pilih kulit yang tidak berambut atau hampir tidak berambut",
+        "vi": "Chọn vùng da không có hoặc có rất ít lông",
+        "th": "เลือกผิวที่ไม่มีขนหรือมีขนน้อยมาก",
+        "tl": "Pumili ng balat na walang balahibo o halos walang balahibo",
+        "ja": "毛のない、または少ない皮膚を選ぶ"
+      },
+      "note": {
+        "zh-TW": "上胸、上背或上臂外側可貼。",
+        "en": "Use the upper chest, upper back, or outer upper arm.",
+        "id": "Tempel di dada bagian atas, punggung bagian atas, atau lengan atas bagian luar.",
+        "vi": "Có thể dán ở ngực trên, lưng trên hoặc mặt ngoài cánh tay trên.",
+        "th": "ติดได้ที่หน้าอกส่วนบน หลังส่วนบน หรือด้านนอกของต้นแขน",
+        "tl": "Maaaring ikabit sa itaas na dibdib, itaas na likod, o panlabas na bahagi ng itaas na braso.",
+        "ja": "胸の上部、背中の上部、上腕の外側に貼れます。"
+      },
+      "illustration": "assets/svg/patch-sites/buprenorphine-sites.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "必要時把毛剪短",
+        "en": "Clip the hair short if needed",
+        "id": "Potong pendek rambut jika perlu",
+        "vi": "Nếu cần thì cắt ngắn lông",
+        "th": "หากจำเป็นให้ตัดขนให้สั้น",
+        "tl": "Kung kailangan, gupitin nang maiksi ang balahibo",
+        "ja": "必要なら毛を短く切る"
+      },
+      "note": {
+        "zh-TW": "不要用剃刀刮毛，以免刺激皮膚。",
+        "en": "Do not shave with a razor because it can irritate the skin.",
+        "id": "Jangan mencukur dengan pisau cukur karena dapat mengiritasi kulit.",
+        "vi": "Không cạo bằng dao cạo vì có thể làm kích ứng da.",
+        "th": "อย่าโกนด้วยมีดโกน เพราะอาจระคายเคืองผิวหนัง",
+        "tl": "Huwag ahitin gamit ang labaha dahil maaari nitong iritahin ang balat.",
+        "ja": "カミソリで剃るとかぶれやすいので、剃らないでください。"
+      },
+      "illustration": "assets/svg/patch-sites/buprenorphine-sites.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "打開包裝，取出貼片",
+        "en": "Open the pouch and take out the patch",
+        "id": "Buka kemasan dan keluarkan patch",
+        "vi": "Mở túi và lấy miếng dán ra",
+        "th": "เปิดซองและนำแผ่นแปะออก",
+        "tl": "Buksan ang supot at kunin ang patch",
+        "ja": "袋を開けて貼付剤を取り出す"
+      },
+      "note": {
+        "zh-TW": "黏膠面盡量少碰。",
+        "en": "Touch the sticky side as little as possible.",
+        "id": "Usahakan jangan menyentuh sisi yang lengket.",
+        "vi": "Hạn chế chạm vào mặt dính.",
+        "th": "พยายามอย่าแตะด้านกาว",
+        "tl": "Iwasang hawakan ang malagkit na bahagi hangga’t maaari.",
+        "ja": "粘着面にはなるべく触れないでください。"
+      },
+      "illustration": "assets/svg/patch-shared/open-sachet.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "貼上後按壓 30 秒",
+        "en": "Apply the patch and press for 30 seconds",
+        "id": "Tempel patch lalu tekan selama 30 detik",
+        "vi": "Dán miếng dán rồi ấn 30 giây",
+        "th": "ติดแผ่นแปะแล้วกดไว้ 30 วินาที",
+        "tl": "Idikit ang patch at idiin sa loob ng 30 segundo",
+        "ja": "貼って30秒押さえる"
+      },
+      "note": {
+        "zh-TW": "確認四邊貼平。",
+        "en": "Make sure all edges are flat.",
+        "id": "Pastikan semua tepi menempel rata.",
+        "vi": "Kiểm tra các mép đều dính phẳng.",
+        "th": "ตรวจดูว่าขอบทุกด้านแนบสนิท",
+        "tl": "Tiyaking dikit na dikit ang lahat ng gilid.",
+        "ja": "端までしっかり貼れているか確認してください。"
+      },
+      "illustration": "assets/svg/patch-shared/apply-press.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "每 7 天換 1 片",
+        "en": "Change it every 7 days",
+        "id": "Ganti setiap 7 hari",
+        "vi": "Thay mỗi 7 ngày",
+        "th": "เปลี่ยนทุก 7 วัน",
+        "tl": "Palitan bawat 7 araw",
+        "ja": "7日ごとに貼り替える"
+      },
+      "note": {
+        "zh-TW": "同一位置至少 21 天後再貼。",
+        "en": "Wait at least 21 days before using the same site again.",
+        "id": "Tunggu setidaknya 21 hari sebelum memakai lokasi yang sama lagi.",
+        "vi": "Chờ ít nhất 21 ngày rồi mới dùng lại đúng vị trí cũ.",
+        "th": "เว้นตำแหน่งเดิมอย่างน้อย 21 วันก่อนใช้ซ้ำ",
+        "tl": "Hintayin ang hindi bababa sa 21 araw bago gamitin muli ang parehong puwesto.",
+        "ja": "同じ場所は少なくとも21日あけてから再使用してください。"
+      },
+      "illustration": "assets/svg/patch-shared/calendar-rotate.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "7 天內若脫落就換新位置",
+        "en": "If it falls off within 7 days, use a new site",
+        "id": "Jika terlepas dalam 7 hari, gunakan lokasi baru",
+        "vi": "Nếu bong ra trong vòng 7 ngày, hãy dán ở vị trí mới",
+        "th": "ถ้าหลุดภายใน 7 วัน ให้เปลี่ยนไปติดตำแหน่งใหม่",
+        "tl": "Kung matuklap sa loob ng 7 araw, gumamit ng bagong puwesto",
+        "ja": "7日以内にはがれたら別の場所に貼る"
+      },
+      "note": {
+        "zh-TW": "把掉下來的舊片丟棄，改貼新的 1 片。",
+        "en": "Throw away the patch that fell off and apply 1 new patch to a different site.",
+        "id": "Buang patch yang terlepas lalu tempelkan 1 patch baru di lokasi lain.",
+        "vi": "Bỏ miếng dán đã bong và dán 1 miếng mới ở vị trí khác.",
+        "th": "ทิ้งแผ่นที่หลุดแล้วติดแผ่นใหม่ 1 แผ่นในตำแหน่งอื่น",
+        "tl": "Itapon ang natuklap na patch at magdikit ng 1 bagong patch sa ibang bahagi.",
+        "ja": "はがれた貼付剤は捨て、別の場所に新しいものを1枚貼ってください。"
+      },
+      "illustration": "assets/svg/patch-shared/fold-dispose.svg"
+    }
+  ],
+  "storage": {
+    "title": {
+      "zh-TW": "藥品保存",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บยา",
+      "tl": "Pag-iimbak",
+      "ja": "保管"
+    },
+    "text": {
+      "zh-TW": "置室溫保存，避光避熱。保持原包裝，使用前再打開。",
+      "en": "Store at room temperature away from heat and light. Keep each patch in its pouch until you are ready to use it.",
+      "id": "Simpan pada suhu ruang, jauh dari panas dan cahaya. Simpan setiap patch di dalam kemasannya sampai akan dipakai.",
+      "vi": "Bảo quản ở nhiệt độ phòng, tránh nóng và ánh sáng. Giữ từng miếng dán trong túi kín cho đến khi chuẩn bị dùng.",
+      "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสง เก็บแผ่นแปะไว้ในซองเดิมจนกว่าจะถึงเวลาจะใช้",
+      "tl": "Itago sa temperatura ng kuwarto, malayo sa init at liwanag. Panatilihin ang bawat patch sa supot nito hanggang gagamitin na.",
+      "ja": "室温で熱と光を避けて保管し、使う直前まで1枚ずつ袋に入れたままにしてください。"
+    }
+  },
+  "warnings": [
+    {
+      "zh-TW": "一次只貼 1 片，不可裁切。",
+      "en": "Wear only 1 patch at a time. Do not cut it.",
+      "id": "Gunakan hanya 1 patch setiap kali. Jangan digunting.",
+      "vi": "Mỗi lần chỉ dán 1 miếng. Không được cắt miếng dán.",
+      "th": "ใช้ครั้งละ 1 แผ่นเท่านั้น ห้ามตัดแผ่นแปะ",
+      "tl": "Isang patch lang bawat gamit. Huwag itong putulin.",
+      "ja": "1回に1枚だけ貼り、切って使わないでください。"
+    },
+    {
+      "zh-TW": "避免喝酒、開車、熱敷、電熱毯或熱水澡。",
+      "en": "Avoid alcohol, driving, heating pads, electric blankets, or hot baths.",
+      "id": "Hindari alkohol, menyetir, kompres panas, selimut listrik, atau mandi air panas.",
+      "vi": "Tránh uống rượu, lái xe, chườm nóng, chăn điện hoặc tắm nước nóng.",
+      "th": "หลีกเลี่ยงแอลกอฮอล์ การขับรถ การประคบร้อน ผ้าห่มไฟฟ้า หรือการอาบน้ำร้อน",
+      "tl": "Iwasan ang alak, pagmamaneho, heating pad, electric blanket, o mainit na paligo.",
+      "ja": "飲酒、運転、温熱パッド、電気毛布、熱い入浴は避けてください。"
+    },
+    {
+      "zh-TW": "很想睡、叫不醒或呼吸變慢，立刻就醫。",
+      "en": "Get medical help right away if you become very sleepy, hard to wake, or breathe slowly.",
+      "id": "Segera cari pertolongan medis jika Anda sangat mengantuk, sulit dibangunkan, atau napas melambat.",
+      "vi": "Nếu bạn buồn ngủ nhiều, khó đánh thức hoặc thở chậm, hãy đi khám ngay.",
+      "th": "หากง่วงมาก ปลุกไม่ค่อยตื่น หรือหายใจช้าลง ให้รีบไปพบแพทย์ทันที",
+      "tl": "Magpatingin agad kung sobrang antok, mahirap gisingin, o mabagal ang paghinga.",
+      "ja": "強い眠気、起こしても起きにくい、呼吸が遅いときは、すぐに受診してください。"
+    }
+  ],
+  "qrUrl": "https://pharmacy.example.com/meds/sovenor-patch"
+},
   // ── Placeholder: Painkyl buccal soluble films ─────────────────────────────────────,
   {
       "id": "painkyl-buccal-film",
@@ -14448,13 +15897,13 @@ const MEDICATIONS = [
           "ja": "更新待ち：薬剤師が詳細指導を追記します"
       },
       badge: {
-          "zh-TW": "眼耳鼻用藥",
-          "en": "Eye/Ear/Nasal",
+          "zh-TW": "眼耳用藥",
+          "en": "Eye/Ear",
           "id": "Obat mata/telinga/hidung",
           "vi": "Thuốc mắt/tai/mũi",
           "th": "ยาตา/หู/จมูก",
-          "tl": "Eye/Ear/Nasal",
-          "ja": "眼・耳・鼻用薬"
+          "tl": "Eye/Ear",
+          "ja": "眼・耳用薬"
       },
       steps: [
           {
@@ -14522,13 +15971,13 @@ const MEDICATIONS = [
           "ja": "更新待ち：薬剤師が詳細指導を追記します"
       },
       badge: {
-          "zh-TW": "眼耳鼻用藥",
-          "en": "Eye/Ear/Nasal",
+          "zh-TW": "眼耳用藥",
+          "en": "Eye/Ear",
           "id": "Obat mata/telinga/hidung",
           "vi": "Thuốc mắt/tai/mũi",
           "th": "ยาตา/หู/จมูก",
-          "tl": "Eye/Ear/Nasal",
-          "ja": "眼・耳・鼻用薬"
+          "tl": "Eye/Ear",
+          "ja": "眼・耳用薬"
       },
       steps: [
           {
@@ -14596,13 +16045,13 @@ const MEDICATIONS = [
           "ja": "更新待ち：薬剤師が詳細指導を追記します"
       },
       badge: {
-          "zh-TW": "眼耳鼻用藥",
-          "en": "Eye/Ear/Nasal",
+          "zh-TW": "眼耳用藥",
+          "en": "Eye/Ear",
           "id": "Obat mata/telinga/hidung",
           "vi": "Thuốc mắt/tai/mũi",
           "th": "ยาตา/หู/จมูก",
-          "tl": "Eye/Ear/Nasal",
-          "ja": "眼・耳・鼻用薬"
+          "tl": "Eye/Ear",
+          "ja": "眼・耳用薬"
       },
       steps: [
           {
@@ -14640,227 +16089,735 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/ear-drops-special"
   },
 
-  // ── Placeholder: Avamys nasal spray suspension (fluticasone) ─────────────────────────────────────,
+  // ── Avamys ─────────────────────────────────────,
   {
-      "id": "avamys-nasal-spray",
-      color: {
-          main: "#185FA5",
-          light: "#E6F1FB",
-          dark: "#042C53",
-          badge: "#B5D4F4",
-          badgeText: "#042C53"
-      },
+      "id": "avamys",
+      "category": "nasal",
+      color: { main: "#185FA5", light: "#E6F1FB", dark: "#042C53", badge: "#B5D4F4", badgeText: "#042C53" },
       emergency: false,
       name: {
-          "zh-TW": "Avamys 鼻噴劑（fluticasone）",
-          "en": "Avamys nasal spray suspension (fluticasone)",
-          "id": "Avamys nasal spray suspension (fluticasone)",
-          "vi": "Avamys nasal spray suspension (fluticasone)",
-          "th": "Avamys nasal spray suspension (fluticasone)",
-          "tl": "Avamys nasal spray suspension (fluticasone)",
-          "ja": "Avamys nasal spray suspension (fluticasone)"
+          "zh-TW": "艾敏釋鼻用噴液懸浮劑",
+          "en": "Avamys Nasal Spray",
+          "id": "Avamys semprotan hidung",
+          "vi": "Avamys xịt mũi",
+          "th": "Avamys ยาพ่นจมูก",
+          "tl": "Avamys nasal spray",
+          "ja": "アバミス点鼻薬"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Avamys | fluticasone furoate 27.5 mcg/噴 | 120 噴",
+          "en": "Avamys | fluticasone furoate 27.5 mcg/spray | 120 sprays",
+          "id": "Avamys | fluticasone furoate 27.5 mcg/semprot | 120 semprotan",
+          "vi": "Avamys | fluticasone furoate 27.5 mcg/lần xịt | 120 lần xịt",
+          "th": "Avamys | fluticasone furoate 27.5 mcg/พ่น | 120 ครั้ง",
+          "tl": "Avamys | fluticasone furoate 27.5 mcg/spray | 120 sprays",
+          "ja": "Avamys｜fluticasone furoate 27.5 mcg/噴霧｜120回"
+      },
+      headerBadge: {
+          "zh-TW": "每天規律用",
+          "en": "Use every day",
+          "id": "Pakai setiap hari",
+          "vi": "Dùng đều mỗi ngày",
+          "th": "ใช้สม่ำเสมอทุกวัน",
+          "tl": "Gamitin araw-araw",
+          "ja": "毎日続けて使う"
+      },
+      usage: {
+          "zh-TW": "這是鼻過敏保養藥，不是噴了馬上通鼻；通常連續用幾天後才更明顯。",
+          "en": "This is a controller medicine for allergic rhinitis. It does not open the nose right away; it usually works better after several days of regular use.",
+          "id": "Ini adalah obat perawatan untuk alergi hidung. Bukan untuk langsung melegakan hidung tersumbat; biasanya lebih terasa setelah dipakai teratur beberapa hari.",
+          "vi": "Đây là thuốc kiểm soát viêm mũi dị ứng. Thuốc không làm mũi thông ngay; thường cần dùng đều vài ngày mới thấy rõ hơn.",
+          "th": "ยานี้เป็นยาควบคุมอาการภูมิแพ้จมูก ไม่ได้ช่วยโล่งจมูกทันที มักเห็นผลชัดขึ้นหลังใช้สม่ำเสมอหลายวัน",
+          "tl": "Ito ay pang-maintenance na gamot para sa allergic rhinitis. Hindi ito agad nagpapaluwag ng ilong; kadalasang mas ramdam ang epekto matapos gamitin nang tuloy-tuloy sa loob ng ilang araw.",
+          "ja": "これはアレルギー性鼻炎の維持薬です。すぐに鼻を通す薬ではなく、数日続けて使うと効果が分かりやすくなります。"
+      },
+      preStepsInfo: {
+          title: {
+              "zh-TW": "第一次使用前",
+              "en": "Before first use",
+              "id": "Sebelum pemakaian pertama",
+              "vi": "Trước lần dùng đầu tiên",
+              "th": "ก่อนใช้ครั้งแรก",
+              "tl": "Bago unang gamitin",
+              "ja": "初回使用前"
+          },
+          text: {
+              "zh-TW": "先蓋著瓶蓋用力搖 10 秒。首次使用前、瓶蓋掉了 5 天，或連續 30 天沒用：直立瓶身，對空按壓至少 6 次，直到噴出細霧。",
+              "en": "Shake it hard for 10 seconds with the cap on. Before first use, if the cap has been off for 5 days, or if it has not been used for 30 days, keep the bottle upright and press at least 6 times until you see a fine mist.",
+              "id": "Kocok kuat selama 10 detik saat tutup masih terpasang. Sebelum pemakaian pertama, bila tutup terbuka 5 hari, atau bila tidak dipakai 30 hari, pegang botol tegak lalu semprotkan ke udara sedikitnya 6 kali sampai terlihat kabut halus.",
+              "vi": "Lắc mạnh 10 giây khi nắp vẫn còn đậy. Trước lần dùng đầu tiên, nếu nắp bị mở 5 ngày, hoặc nếu không dùng 30 ngày, giữ chai thẳng đứng và xịt thử ra ngoài ít nhất 6 lần đến khi thấy tia sương mịn.",
+              "th": "เขย่าแรง 10 วินาทีขณะยังปิดฝาอยู่ ก่อนใช้ครั้งแรก หากฝาหลุดนาน 5 วัน หรือไม่ได้ใช้นาน 30 วัน ให้ถือขวดตั้งตรงแล้วกดพ่นออกสู่อากาศอย่างน้อย 6 ครั้งจนเห็นละอองฝอย",
+              "tl": "Kalugin nang malakas sa loob ng 10 segundo habang nakakabit pa ang takip. Bago unang gamitin, kung natanggal ang takip nang 5 araw, o kung hindi nagamit nang 30 araw, hawakan nang patayo at i-prime nang hindi bababa sa 6 na beses hanggang may pinong ambon.",
+              "ja": "キャップを付けたまま10秒しっかり振ります。初回使用前、キャップが5日外れていたとき、または30日使っていないときは、ボトルを立てて細かい霧が出るまで少なくとも6回空噴霧します。"
+          }
       },
       badge: {
-          "zh-TW": "眼耳鼻用藥",
-          "en": "Eye/Ear/Nasal",
-          "id": "Obat mata/telinga/hidung",
-          "vi": "Thuốc mắt/tai/mũi",
-          "th": "ยาตา/หู/จมูก",
-          "tl": "Eye/Ear/Nasal",
-          "ja": "眼・耳・鼻用薬"
+          "zh-TW": "鼻用類固醇",
+          "en": "Nasal steroid",
+          "id": "Steroid hidung",
+          "vi": "Corticosteroid xịt mũi",
+          "th": "สเตียรอยด์พ่นจมูก",
+          "tl": "Nasal steroid",
+          "ja": "鼻用ステロイド"
       },
       steps: [
           {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
+              action: {"zh-TW":"蓋著瓶蓋，用力搖 10 秒","en":"Shake it hard for 10 seconds with the cap on","id":"Kocok kuat 10 detik saat tutup masih terpasang","vi":"Lắc mạnh 10 giây khi nắp vẫn đậy","th":"เขย่าแรง 10 วินาทีขณะยังปิดฝา","tl":"Kalugin nang malakas sa loob ng 10 segundo habang nakakabit ang takip","ja":"キャップを付けたまま10秒しっかり振る"},
+              note: {"zh-TW":"藥液比較黏，搖勻後才噴得出細霧。","en":"The liquid is thick, so shaking helps it spray as a fine mist.","id":"Cairannya cukup kental, jadi perlu dikocok agar keluar sebagai kabut halus.","vi":"Dung dịch khá đặc nên cần lắc để phun ra thành tia sương mịn.","th":"ตัวยาค่อนข้างหนืด จึงต้องเขย่าให้เข้ากันก่อนจึงจะพ่นเป็นละอองฝอยได้","tl":"Malapot ang likido kaya kailangang kalugin para lumabas bilang pinong ambon.","ja":"液がやや粘るため、よく振ると細かい霧として出やすくなります。"},
+              illustration: "assets/svg/nasal-spray-sidebutton/step-0.svg"
+          },
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              action: {"zh-TW":"輕輕擤鼻，清掉鼻內分泌物","en":"Gently blow your nose","id":"Buang ingus perlahan","vi":"Xì mũi nhẹ nhàng","th":"สั่งน้ำมูกเบา ๆ","tl":"Dahan-dahang suminga","ja":"やさしく鼻をかむ"},
+              note: {"zh-TW":"鼻子太塞時，藥容易卡在鼻口，進不去裡面。","en":"If your nose is blocked with mucus, the spray may stay near the opening instead of reaching inside.","id":"Bila lendir terlalu banyak, semprotan bisa tertahan di depan dan tidak masuk ke dalam.","vi":"Nếu nhiều dịch mũi, thuốc dễ đọng ở cửa mũi và không vào sâu bên trong.","th":"ถ้ามีน้ำมูกมาก ยาอาจค้างอยู่แค่หน้ารูจมูกและเข้าไปด้านในได้ไม่ดี","tl":"Kung maraming sipon, maaaring maipon ang spray sa bungad ng ilong at hindi makapasok nang maayos sa loob.","ja":"鼻水が多いと、薬が入り口に留まりやすく奥まで届きにくくなります。"},
+              illustration: "assets/svg/nasal-spray-sidebutton/step-1.svg"
+          },
+          {
+              action: {"zh-TW":"頭微向前，噴嘴放入一側鼻孔","en":"Tilt your head slightly forward and place the nozzle into one nostril","id":"Miringkan kepala sedikit ke depan lalu masukkan ujung semprot ke salah satu lubang hidung","vi":"Cúi đầu nhẹ ra trước rồi đưa đầu xịt vào một bên mũi","th":"ก้มศีรษะไปข้างหน้าเล็กน้อย แล้วสอดหัวพ่นเข้าไปในรูจมูกข้างหนึ่ง","tl":"Bahagyang iyuko ang ulo pasulong at ipasok ang dulo sa isang butas ng ilong","ja":"頭を少し前に傾け、ノズルを片方の鼻の穴に入れる"},
+              note: {"zh-TW":"不要往後仰；藥比較不會流到喉嚨。","en":"Do not tilt your head back; this helps keep the medicine from running down your throat.","id":"Jangan mendongakkan kepala; ini membantu obat tidak mudah mengalir ke tenggorokan.","vi":"Đừng ngửa đầu ra sau; như vậy thuốc đỡ chảy xuống họng hơn.","th":"อย่าเงยหน้าขึ้น เพราะยาจะไหลลงคอได้ง่ายขึ้น","tl":"Huwag iatras ang ulo; mas nakakatulong itong hindi dumaloy ang gamot pababa sa lalamunan.","ja":"頭を後ろに反らさないでください。喉へ流れにくくなります。"},
+              illustration: "assets/svg/nasal-spray-sidebutton/step-2.svg"
+          },
+          {
+              action: {"zh-TW":"把尖端稍微朝外，對著耳朵方向","en":"Aim the tip slightly outward, toward your ear","id":"Arahkan ujung semprot sedikit ke luar, ke arah telinga","vi":"Hướng đầu xịt hơi ra ngoài, về phía tai","th":"หันปลายหัวพ่นออกด้านนอกเล็กน้อย ไปทางหู","tl":"Ihilig nang bahagya palabas ang dulo, papunta sa tainga","ja":"先端を少し外側、耳の方向へ向ける"},
+              note: {"zh-TW":"不要對著鼻中隔，較不容易刺激、流血或破皮。","en":"Do not aim toward the middle wall of the nose. This helps lower irritation and nosebleeds.","id":"Jangan arahkan ke sekat tengah hidung. Cara ini membantu mengurangi iritasi dan mimisan.","vi":"Đừng chĩa vào vách ngăn giữa mũi. Cách này giúp giảm kích ứng và chảy máu mũi.","th":"อย่าเล็งเข้าหาผนังกั้นจมูกตรงกลาง จะช่วยลดการระคายเคืองและเลือดกำเดา","tl":"Huwag itutok sa gitnang tabiki ng ilong. Nakakatulong itong mabawasan ang iritasyon at pagdurugo ng ilong.","ja":"鼻の真ん中の仕切りに向けないでください。刺激や鼻出血を減らしやすくなります。"},
+              illustration: "assets/svg/nasal-spray-sidebutton/step-3.svg"
+          },
+          {
+              action: {"zh-TW":"快速按下側邊按鈕 1 次，同時輕輕吸氣","en":"Press the side button once while breathing in gently through the nose","id":"Tekan tombol samping satu kali sambil menarik napas pelan lewat hidung","vi":"Ấn nút bên hông một lần đồng thời hít nhẹ qua mũi","th":"กดปุ่มด้านข้าง 1 ครั้ง พร้อมสูดลมหายใจเบา ๆ ทางจมูก","tl":"Pindutin ang button sa gilid nang isang beses habang marahang sumisinghot sa ilong","ja":"側面ボタンを1回押しながら、鼻から軽く吸う"},
+              note: {"zh-TW":"輕輕吸就好，不要大力猛吸。若同側要噴第 2 下，再重複一次。","en":"Breathe in gently, not hard. If you need a second spray in the same nostril, repeat once more.","id":"Tarik napas pelan saja, jangan terlalu kuat. Bila perlu semprotan kedua di lubang hidung yang sama, ulangi sekali lagi.","vi":"Chỉ hít nhẹ, không hít mạnh. Nếu cùng một bên cần xịt lần hai, lặp lại thêm một lần.","th":"สูดเบา ๆ ก็พอ ไม่ต้องสูดแรง หากรูจมูกข้างเดิมต้องพ่นครั้งที่ 2 ให้ทำซ้ำอีกครั้ง","tl":"Marahang singhutin lamang, huwag malakas. Kung kailangan ng pangalawang spray sa parehong butas ng ilong, ulitin muli.","ja":"軽く吸うだけで十分です。強く吸い込まないでください。同じ鼻の穴に2回目が必要なら、もう一度繰り返します。"},
+              illustration: "assets/svg/nasal-spray-sidebutton/step-4.svg"
+          },
+          {
+              action: {"zh-TW":"改用口呼氣，另一側重複同樣步驟","en":"Breathe out through your mouth, then repeat on the other side","id":"Embuskan lewat mulut, lalu ulangi pada sisi satunya","vi":"Thở ra bằng miệng rồi lặp lại bên còn lại","th":"หายใจออกทางปาก แล้วทำซ้ำอีกข้าง","tl":"Huminga palabas sa bibig, pagkatapos ulitin sa kabilang butas ng ilong","ja":"口から息を吐き、反対側でも同じように行う"},
+              note: {"zh-TW":"用口呼氣，藥比較不會立刻被吹出來。","en":"Breathing out through the mouth helps keep the spray in place.","id":"Mengembuskan lewat mulut membantu obat tidak langsung terdorong keluar.","vi":"Thở ra bằng miệng giúp thuốc đỡ bị thổi bật ra ngay.","th":"การหายใจออกทางปากช่วยให้ยาไม่ถูกเป่าออกมาทันที","tl":"Ang paghinga palabas sa bibig ay nakakatulong para hindi agad lumabas ang spray.","ja":"口から息を吐くと、薬がすぐ外へ出にくくなります。"},
+              illustration: "assets/svg/nasal-spray-sidebutton/step-5.svg"
+          },
+          {
+              action: {"zh-TW":"用乾紙巾擦噴嘴，蓋回瓶蓋","en":"Wipe the nozzle with a dry tissue and replace the cap","id":"Lap ujung semprot dengan tisu kering lalu pasang kembali tutupnya","vi":"Lau đầu xịt bằng khăn giấy khô rồi đậy nắp lại","th":"เช็ดหัวพ่นด้วยกระดาษทิชชูแห้ง แล้วปิดฝา","tl":"Punasan ng tuyong tisyu ang nozzle at ibalik ang takip","ja":"ノズルを乾いたティッシュで拭き、キャップを戻す"},
+              note: {"zh-TW":"只用乾紙巾擦，不要用水沖，也不要用針通噴孔。","en":"Use only a dry tissue. Do not wash it with water and do not poke the hole with a needle.","id":"Gunakan tisu kering saja. Jangan dicuci dengan air dan jangan menusuk lubangnya dengan jarum.","vi":"Chỉ lau bằng khăn giấy khô. Không rửa bằng nước và không dùng kim chọc lỗ phun.","th":"ใช้ทิชชูแห้งเท่านั้น ไม่ต้องล้างน้ำ และห้ามใช้เข็มแยงรูพ่น","tl":"Tuyong tisyu lamang ang gamitin. Huwag hugasan ng tubig at huwag tusukin ng karayom ang butas ng spray.","ja":"乾いたティッシュだけを使います。水で洗わず、針で穴を突かないでください。"},
+              illustration: "assets/svg/nasal-spray-sidebutton/step-5.svg"
           }
       ],
-      qrUrl: "https://pharmacy.example.com/meds/avamys-nasal-spray"
+      storage: {
+          title: {"zh-TW":"藥品保存","en":"Storage","id":"Penyimpanan","vi":"Bảo quản","th":"การเก็บรักษา","tl":"Imbakan","ja":"保管方法"},
+          text: {
+              "zh-TW": "直立保存，室溫 25°C 以下，勿冷藏或冷凍；開封後 2 個月內用完。",
+              "en": "Store upright below 25°C. Do not refrigerate or freeze. Use within 2 months after opening.",
+              "id": "Simpan tegak pada suhu di bawah 25°C. Jangan didinginkan atau dibekukan. Habiskan dalam 2 bulan setelah dibuka.",
+              "vi": "Bảo quản chai đứng, dưới 25°C. Không để lạnh hoặc đông đá. Dùng hết trong vòng 2 tháng sau khi mở.",
+              "th": "เก็บตั้งตรง ที่อุณหภูมิต่ำกว่า 25°C ห้ามแช่เย็นหรือแช่แข็ง และใช้ให้หมดภายใน 2 เดือนหลังเปิดใช้",
+              "tl": "Itago nang nakatayo sa temperaturang mababa sa 25°C. Huwag ilagay sa refrigerator o freezer. Gamitin sa loob ng 2 buwan matapos buksan.",
+              "ja": "立てて25°C未満で保管し、冷蔵・冷凍はしません。開封後2か月以内に使い切ってください。"
+          }
+      },
+      warnings: [
+          {"zh-TW":"每天規律用，比想用時才噴更有效。","en":"Regular daily use works better than spraying only when symptoms bother you.","id":"Pemakaian teratur setiap hari lebih efektif daripada hanya saat gejala muncul.","vi":"Dùng đều mỗi ngày hiệu quả hơn là chỉ xịt khi khó chịu.","th":"ใช้สม่ำเสมอทุกวันจะได้ผลดีกว่าใช้เฉพาะเวลามีอาการ","tl":"Mas mabisa ang regular na araw-araw na gamit kaysa sa paggamit lamang kapag nakararamdam ng sintomas.","ja":"症状が出た時だけでなく、毎日続けて使う方が効果的です。"},
+          {"zh-TW":"若常流鼻血、鼻內疼痛或鼻潰瘍，先停用並回診。","en":"If you often get nosebleeds, nasal pain, or sores inside the nose, stop and go back for review.","id":"Bila sering mimisan, nyeri di hidung, atau ada luka di dalam hidung, hentikan dulu dan periksa kembali.","vi":"Nếu hay chảy máu mũi, đau trong mũi hoặc có vết loét trong mũi, hãy ngừng dùng và tái khám.","th":"หากมีเลือดกำเดาบ่อย ปวดในจมูก หรือมีแผลในจมูก ให้หยุดใช้และกลับไปพบแพทย์","tl":"Kung madalas ang pagdurugo ng ilong, may pananakit sa loob ng ilong, o may sugat sa loob, itigil muna at magpatingin muli.","ja":"鼻血が続く、鼻の中が痛む、ただれる時は中止して受診してください。"},
+          {"zh-TW":"近期做過鼻部手術、鼻部外傷，或懷孕、哺乳中，請先告知醫師。","en":"Tell your doctor before use if you recently had nose surgery or injury, or if you are pregnant or breastfeeding.","id":"Beri tahu dokter sebelum memakai bila baru menjalani operasi/hidung cedera, atau sedang hamil/menyusui.","vi":"Hãy báo bác sĩ trước khi dùng nếu mới phẫu thuật mũi, chấn thương mũi, hoặc đang mang thai hay cho con bú.","th":"แจ้งแพทย์ก่อนใช้หากเพิ่งผ่าตัดหรือบาดเจ็บที่จมูก หรือกำลังตั้งครรภ์/ให้นมบุตร","tl":"Sabihin sa doktor bago gamitin kung kakagaling lang sa operasyon o pinsala sa ilong, o kung buntis o nagpapasuso.","ja":"最近鼻の手術や外傷があった方、妊娠中・授乳中の方は使用前に医師へ伝えてください。"}
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/avamys"
   },
 
-  // ── Placeholder: Nasonex nasal spray (mometasone) ─────────────────────────────────────,
+  // ── Azetin ─────────────────────────────────────,
   {
-      "id": "nasonex-nasal-spray",
-      color: {
-          main: "#185FA5",
-          light: "#E6F1FB",
-          dark: "#042C53",
-          badge: "#B5D4F4",
-          badgeText: "#042C53"
-      },
+      "id": "azetin",
+      "category": "nasal",
+      color: { main: "#185FA5", light: "#E6F1FB", dark: "#042C53", badge: "#B5D4F4", badgeText: "#042C53" },
       emergency: false,
       name: {
-          "zh-TW": "Nasonex 鼻噴劑（mometasone）",
-          "en": "Nasonex nasal spray (mometasone)",
-          "id": "Nasonex nasal spray (mometasone)",
-          "vi": "Nasonex nasal spray (mometasone)",
-          "th": "Nasonex nasal spray (mometasone)",
-          "tl": "Nasonex nasal spray (mometasone)",
-          "ja": "Nasonex nasal spray (mometasone)"
+          "zh-TW": "愛鼻安鼻用噴液劑",
+          "en": "Azetin Nasal Spray",
+          "id": "Azetin semprotan hidung",
+          "vi": "Azetin xịt mũi",
+          "th": "Azetin ยาพ่นจมูก",
+          "tl": "Azetin nasal spray",
+          "ja": "アゼチン点鼻薬"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Azetin | azelastine HCl 140 mcg/噴 | 100 噴",
+          "en": "Azetin | azelastine HCl 140 mcg/spray | 100 sprays",
+          "id": "Azetin | azelastine HCl 140 mcg/semprot | 100 semprotan",
+          "vi": "Azetin | azelastine HCl 140 mcg/lần xịt | 100 lần xịt",
+          "th": "Azetin | azelastine HCl 140 mcg/พ่น | 100 ครั้ง",
+          "tl": "Azetin | azelastine HCl 140 mcg/spray | 100 sprays",
+          "ja": "Azetin｜azelastine HCl 140 mcg/噴霧｜100回"
+      },
+      headerBadge: {
+          "zh-TW": "症狀來時可用",
+          "en": "Use when symptoms start",
+          "id": "Pakai saat gejala muncul",
+          "vi": "Dùng khi triệu chứng xuất hiện",
+          "th": "ใช้เมื่อมีอาการ",
+          "tl": "Gamitin kapag nagsimula ang sintomas",
+          "ja": "症状が出た時に使える"
+      },
+      usage: {
+          "zh-TW": "通常較快減少鼻癢、打噴嚏和流鼻水；若會想睡，先不要開車。",
+          "en": "It usually works faster for itching, sneezing, and runny nose. If it makes you sleepy, do not drive.",
+          "id": "Biasanya bekerja lebih cepat untuk gatal hidung, bersin, dan pilek. Bila membuat mengantuk, jangan menyetir.",
+          "vi": "Thuốc thường giảm nhanh ngứa mũi, hắt hơi và chảy nước mũi. Nếu buồn ngủ, đừng lái xe.",
+          "th": "ยานี้มักช่วยลดคันจมูก จาม และน้ำมูกได้ค่อนข้างเร็ว หากทำให้ง่วง อย่าขับรถ","tl":"Karaniwan itong mas mabilis kumilos para sa pangangati ng ilong, pagbahing, at sipon. Kung inaantok ka, huwag magmaneho.",
+          "ja": "鼻のかゆみ、くしゃみ、鼻水に比較的早く効きます。眠気が出る時は運転しないでください。"
+      },
+      preStepsInfo: {
+          title: {"zh-TW":"第一次使用前","en":"Before first use","id":"Sebelum pemakaian pertama","vi":"Trước lần dùng đầu tiên","th":"ก่อนใช้ครั้งแรก","tl":"Bago unang gamitin","ja":"初回使用前"},
+          text: {
+              "zh-TW": "首次使用前對空噴 4 次；若超過 3 天沒用，再對空噴 2 次，直到噴出細霧。",
+              "en": "Prime with 4 sprays before first use. If it has not been used for more than 3 days, prime with 2 sprays until you see a fine mist.",
+              "id": "Sebelum pertama kali dipakai, semprotkan ke udara 4 kali. Bila tidak dipakai lebih dari 3 hari, prime 2 kali sampai terlihat kabut halus.",
+              "vi": "Xịt thử ra ngoài 4 lần trước khi dùng lần đầu. Nếu không dùng quá 3 ngày, xịt thử lại 2 lần đến khi thấy tia sương mịn.",
+              "th": "ก่อนใช้ครั้งแรกให้พ่นทิ้ง 4 ครั้ง หากไม่ได้ใช้เกิน 3 วัน ให้พ่นทิ้งอีก 2 ครั้งจนเห็นละอองฝอยสม่ำเสมอ","tl":"Mag-prime ng 4 na beses bago unang gamitin. Kung hindi nagamit nang mahigit 3 araw, mag-prime muli ng 2 beses hanggang may pinong ambon.",
+              "ja": "初回使用前は4回空噴霧します。3日を超えて使っていない場合は、細かい霧が出るまで2回空噴霧してください。"
+          }
       },
       badge: {
-          "zh-TW": "眼耳鼻用藥",
-          "en": "Eye/Ear/Nasal",
-          "id": "Obat mata/telinga/hidung",
-          "vi": "Thuốc mắt/tai/mũi",
-          "th": "ยาตา/หู/จมูก",
-          "tl": "Eye/Ear/Nasal",
-          "ja": "眼・耳・鼻用薬"
+          "zh-TW": "鼻用抗組織胺",
+          "en": "Nasal antihistamine",
+          "id": "Antihistamin hidung",
+          "vi": "Kháng histamine xịt mũi",
+          "th": "ยาต้านฮิสตามีนพ่นจมูก",
+          "tl": "Nasal antihistamine",
+          "ja": "鼻用抗ヒスタミン薬"
       },
       steps: [
           {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
+              action: {"zh-TW":"取下瓶蓋，這是澄清溶液，不需振搖","en":"Remove the cap; this is a clear solution and does not need shaking","id":"Lepas tutup; ini larutan bening dan tidak perlu dikocok","vi":"Mở nắp; đây là dung dịch trong, không cần lắc","th":"เปิดฝา ยานี้เป็นสารละลายใส ไม่ต้องเขย่า","tl":"Tanggalin ang takip; malinaw na likido ito at hindi kailangang kalugin","ja":"キャップを外す。透明な液なので振る必要はありません。"},
+              note: {"zh-TW":"初次使用前或超過 3 天沒用，請先看上方的對空噴說明。","en":"Before first use or after more than 3 days without use, follow the priming instructions above.","id":"Sebelum pertama kali dipakai atau setelah lebih dari 3 hari tidak dipakai, ikuti petunjuk prime di atas.","vi":"Trước lần dùng đầu tiên hoặc sau hơn 3 ngày không dùng, hãy làm theo hướng dẫn xịt thử ở trên.","th":"ก่อนใช้ครั้งแรกหรือหลังไม่ได้ใช้เกิน 3 วัน ให้ทำตามคำแนะนำการพ่นทิ้งด้านบนก่อน","tl":"Bago unang gamitin o kung mahigit 3 araw na hindi nagamit, sundin muna ang priming instructions sa itaas.","ja":"初回使用前または3日を超えて未使用の時は、上の空噴霧の説明に従ってください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-1.svg"
+          },
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              action: {"zh-TW":"輕輕擤鼻，清掉鼻內分泌物","en":"Gently blow your nose","id":"Buang ingus perlahan","vi":"Xì mũi nhẹ nhàng","th":"สั่งน้ำมูกเบา ๆ","tl":"Dahan-dahang suminga","ja":"やさしく鼻をかむ"},
+              note: {"zh-TW":"鼻內太多分泌物時，藥比較不容易碰到鼻黏膜。","en":"Too much mucus can keep the medicine from touching the inside lining of the nose.","id":"Bila lendir terlalu banyak, obat lebih sulit menyentuh lapisan dalam hidung.","vi":"Nếu quá nhiều dịch mũi, thuốc khó chạm được vào niêm mạc mũi.","th":"ถ้ามีน้ำมูกมาก ยาจะสัมผัสเยื่อบุจมูกได้ไม่ดี","tl":"Kung maraming sipon, mas mahirap dumikit ang gamot sa lining ng ilong.","ja":"鼻水が多いと、薬が鼻の粘膜に届きにくくなります。"},
+              illustration: "assets/svg/nasal-spray-standard/step-0.svg"
+          },
+          {
+              action: {"zh-TW":"頭微向前，噴嘴放入一側鼻孔","en":"Tilt your head slightly forward and place the nozzle into one nostril","id":"Miringkan kepala sedikit ke depan lalu masukkan ujung semprot ke salah satu lubang hidung","vi":"Cúi đầu nhẹ ra trước rồi đưa đầu xịt vào một bên mũi","th":"ก้มศีรษะไปข้างหน้าเล็กน้อย แล้วสอดหัวพ่นเข้าไปในรูจมูกข้างหนึ่ง","tl":"Bahagyang iyuko ang ulo pasulong at ipasok ang dulo sa isang butas ng ilong","ja":"頭を少し前に傾け、ノズルを片方の鼻の穴に入れる"},
+              note: {"zh-TW":"不要往後仰，以免苦味流到喉嚨。","en":"Do not tip your head back. This helps keep the bitter taste from running into your throat.","id":"Jangan mendongakkan kepala. Ini membantu rasa pahit tidak mengalir ke tenggorokan.","vi":"Đừng ngửa đầu ra sau để thuốc đỡ chảy xuống họng gây vị đắng.","th":"อย่าเงยหน้าขึ้น เพื่อช่วยลดไม่ให้รสขมไหลลงคอ","tl":"Huwag iatras ang ulo para hindi madaling dumaloy sa lalamunan ang mapait na lasa.","ja":"頭を後ろに反らさないでください。苦味が喉へ流れにくくなります。"},
+              illustration: "assets/svg/nasal-spray-standard/step-2.svg"
+          },
+          {
+              action: {"zh-TW":"把尖端稍微朝外，按壓 1 次，同時輕輕吸氣","en":"Aim the tip slightly outward, press once, and breathe in gently","id":"Arahkan ujung sedikit ke luar, tekan sekali, lalu tarik napas pelan","vi":"Hướng đầu xịt hơi ra ngoài, ấn một lần và hít nhẹ","th":"หันปลายหัวพ่นออกด้านนอกเล็กน้อย กด 1 ครั้ง พร้อมสูดเบา ๆ","tl":"Ihilig nang bahagya palabas ang dulo, pindutin nang isang beses, at marahang suminghot","ja":"先端を少し外側へ向け、1回押して軽く吸う"},
+              note: {"zh-TW":"不要大力猛吸。藥主要停在鼻內，不需要吸到喉嚨。","en":"Do not sniff hard. The medicine should stay inside the nose; it does not need to go down to the throat.","id":"Jangan menarik napas terlalu kuat. Obat sebaiknya tetap di dalam hidung, tidak perlu sampai ke tenggorokan.","vi":"Đừng hít quá mạnh. Thuốc nên ở trong mũi, không cần đi xuống họng.","th":"อย่าสูดแรงเกินไป ยาควรอยู่ในจมูก ไม่ต้องลงไปถึงคอ","tl":"Huwag masyadong malakas ang pagsinghot. Dapat manatili ang gamot sa loob ng ilong at hindi kailangang dumaloy sa lalamunan.","ja":"強く吸い込まないでください。薬は鼻の中に留まれば十分で、喉まで下げる必要はありません。"},
+              illustration: "assets/svg/nasal-spray-standard/step-3.svg"
+          },
+          {
+              action: {"zh-TW":"改用口呼氣；若同側要第 2 下，再重複一次","en":"Breathe out through your mouth; if the same side needs a second spray, repeat once more","id":"Embuskan lewat mulut; bila sisi yang sama perlu semprotan kedua, ulangi sekali lagi","vi":"Thở ra bằng miệng; nếu cùng một bên cần lần xịt thứ hai, lặp lại thêm một lần","th":"หายใจออกทางปาก หากข้างเดิมต้องพ่นครั้งที่ 2 ให้ทำซ้ำอีกครั้ง","tl":"Huminga palabas sa bibig; kung kailangan ng pangalawang spray sa parehong butas ng ilong, ulitin muli","ja":"口から息を吐く。同じ側に2回目が必要なら、もう一度繰り返す"},
+              note: {"zh-TW":"另一側鼻孔也照同樣方式使用。","en":"Use the other nostril the same way.","id":"Gunakan sisi hidung satunya dengan cara yang sama.","vi":"Bên mũi còn lại dùng theo cách giống nhau.","th":"ใช้กับรูจมูกอีกข้างแบบเดียวกัน","tl":"Gamitin din sa kabilang butas ng ilong sa parehong paraan.","ja":"反対側の鼻も同じように使います。"},
+              illustration: "assets/svg/nasal-spray-standard/step-4.svg"
+          },
+          {
+              action: {"zh-TW":"用乾紙巾擦噴嘴，蓋回瓶蓋","en":"Wipe the nozzle with a dry tissue and replace the cap","id":"Lap ujung semprot dengan tisu kering lalu pasang kembali tutupnya","vi":"Lau đầu xịt bằng khăn giấy khô rồi đậy nắp lại","th":"เช็ดหัวพ่นด้วยกระดาษทิชชูแห้ง แล้วปิดฝา","tl":"Punasan ng tuyong tisyu ang nozzle at ibalik ang takip","ja":"ノズルを乾いたティッシュで拭き、キャップを戻す"},
+              note: {"zh-TW":"保持噴嘴乾淨，較不容易堵住。","en":"Keeping the nozzle clean helps prevent clogging.","id":"Menjaga ujung semprot tetap bersih membantu mencegah sumbatan.","vi":"Giữ đầu xịt sạch sẽ giúp giảm nguy cơ bị tắc.","th":"การรักษาหัวพ่นให้สะอาดช่วยลดโอกาสการอุดตัน","tl":"Nakakatulong ang pagpapanatiling malinis ng nozzle para hindi ito mabara.","ja":"ノズルを清潔に保つと詰まりにくくなります。"},
+              illustration: "assets/svg/nasal-spray-standard/step-5.svg"
           }
       ],
-      qrUrl: "https://pharmacy.example.com/meds/nasonex-nasal-spray"
+      storage: {
+          title: {"zh-TW":"藥品保存","en":"Storage","id":"Penyimpanan","vi":"Bảo quản","th":"การเก็บรักษา","tl":"Imbakan","ja":"保管方法"},
+          text: {
+              "zh-TW": "室溫保存，避免高溫與日光直射；不可冷凍。",
+              "en": "Store at room temperature, away from heat and direct light. Do not freeze.",
+              "id": "Simpan pada suhu ruang, jauhkan dari panas dan sinar matahari langsung. Jangan dibekukan.",
+              "vi": "Bảo quản ở nhiệt độ phòng, tránh nóng và ánh nắng trực tiếp. Không để đông đá.",
+              "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสงแดดโดยตรง ห้ามแช่แข็ง","tl":"Itago sa temperaturang kuwarto, iwasan ang init at direktang sikat ng araw. Huwag i-freeze.",
+              "ja": "室温で保管し、高温と直射日光を避けてください。凍らせないでください。"
+          }
+      },
+      warnings: [
+          {"zh-TW":"若會想睡、頭暈，先不要開車或操作機械。","en":"If it makes you sleepy or dizzy, do not drive or use machinery.","id":"Bila membuat mengantuk atau pusing, jangan menyetir atau mengoperasikan mesin.","vi":"Nếu buồn ngủ hoặc chóng mặt, đừng lái xe hay vận hành máy móc.","th":"หากง่วงหรือเวียนศีรษะ อย่าขับรถหรือใช้เครื่องจักร","tl":"Kung inaantok o nahihilo, huwag magmaneho o gumamit ng makinarya.","ja":"眠気やめまいが出る時は、運転や機械操作をしないでください。"},
+          {"zh-TW":"使用後若嘴巴很苦，常是頭太後仰或吸得太用力。","en":"A strong bitter taste often means your head was tipped back too far or you sniffed too hard.","id":"Bila mulut terasa sangat pahit, biasanya kepala terlalu mendongak atau menarik napas terlalu kuat.","vi":"Nếu miệng rất đắng, thường là do ngửa đầu quá nhiều hoặc hít quá mạnh.","th":"หากรู้สึกขมในปากมาก มักเกิดจากเงยหน้ามากเกินไปหรือสูดแรงเกินไป","tl":"Kung sobrang pait sa bibig, kadalasan ay dahil masyadong nakaatras ang ulo o masyadong malakas ang pagsinghot.","ja":"強い苦味がある時は、頭を反らしすぎたか、強く吸いすぎたことがよくあります。"},
+          {"zh-TW":"懷孕、哺乳中，或正在吃會讓人想睡的藥，請先告知醫師。","en":"Tell your doctor before use if you are pregnant, breastfeeding, or taking other medicines that can make you sleepy.","id":"Beri tahu dokter sebelum memakai bila sedang hamil, menyusui, atau minum obat lain yang membuat mengantuk.","vi":"Hãy báo bác sĩ trước khi dùng nếu đang mang thai, cho con bú, hoặc đang dùng thuốc khác gây buồn ngủ.","th":"แจ้งแพทย์ก่อนใช้หากกำลังตั้งครรภ์ ให้นมบุตร หรือใช้ยาอื่นที่ทำให้ง่วง","tl":"Sabihin sa doktor bago gamitin kung buntis, nagpapasuso, o umiinom ng ibang gamot na nakakaantok.","ja":"妊娠中・授乳中の方、または眠気を起こす他の薬を使っている方は、使用前に医師へ伝えてください。"}
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/azetin"
   },
 
-  // ── Placeholder: Sindecon nasal spray (oxymetazoline) ─────────────────────────────────────,
+  // ── Besonin ─────────────────────────────────────,
   {
-      "id": "sindecon-nasal-spray",
-      color: {
-          main: "#185FA5",
-          light: "#E6F1FB",
-          dark: "#042C53",
-          badge: "#B5D4F4",
-          badgeText: "#042C53"
-      },
+      "id": "besonin",
+      "category": "nasal",
+      color: { main: "#185FA5", light: "#E6F1FB", dark: "#042C53", badge: "#B5D4F4", badgeText: "#042C53" },
       emergency: false,
       name: {
-          "zh-TW": "Sindecon 鼻噴劑（oxymetazoline）",
-          "en": "Sindecon nasal spray (oxymetazoline)",
-          "id": "Sindecon nasal spray (oxymetazoline)",
-          "vi": "Sindecon nasal spray (oxymetazoline)",
-          "th": "Sindecon nasal spray (oxymetazoline)",
-          "tl": "Sindecon nasal spray (oxymetazoline)",
-          "ja": "Sindecon nasal spray (oxymetazoline)"
+          "zh-TW": "能舒鼻鼻腔定量噴液劑",
+          "en": "Besonin Nasal Spray",
+          "id": "Besonin semprotan hidung",
+          "vi": "Besonin xịt mũi",
+          "th": "Besonin ยาพ่นจมูก",
+          "tl": "Besonin nasal spray",
+          "ja": "ベソニン点鼻薬"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Besonin | budesonide 64 mcg/噴 | 120 噴",
+          "en": "Besonin | budesonide 64 mcg/spray | 120 sprays",
+          "id": "Besonin | budesonide 64 mcg/semprot | 120 semprotan",
+          "vi": "Besonin | budesonide 64 mcg/lần xịt | 120 lần xịt",
+          "th": "Besonin | budesonide 64 mcg/พ่น | 120 ครั้ง",
+          "tl": "Besonin | budesonide 64 mcg/spray | 120 sprays",
+          "ja": "Besonin｜budesonide 64 mcg/噴霧｜120回"
       },
-      badge: {
-          "zh-TW": "眼耳鼻用藥",
-          "en": "Eye/Ear/Nasal",
-          "id": "Obat mata/telinga/hidung",
-          "vi": "Thuốc mắt/tai/mũi",
-          "th": "ยาตา/หู/จมูก",
-          "tl": "Eye/Ear/Nasal",
-          "ja": "眼・耳・鼻用薬"
+      headerBadge: {"zh-TW":"每天規律用","en":"Use every day","id":"Pakai setiap hari","vi":"Dùng đều mỗi ngày","th":"ใช้สม่ำเสมอทุกวัน","tl":"Gamitin araw-araw","ja":"毎日続けて使う"},
+      usage: {
+          "zh-TW": "這是鼻過敏保養藥，不是噴了馬上通鼻；通常要連續用一段時間才更明顯。",
+          "en": "This is a controller medicine for allergic rhinitis. It does not open the nose right away; it usually works better with regular use over time.",
+          "id": "Ini adalah obat perawatan untuk alergi hidung. Bukan untuk langsung melegakan hidung tersumbat; biasanya lebih terasa bila dipakai teratur.",
+          "vi": "Đây là thuốc kiểm soát viêm mũi dị ứng. Thuốc không làm mũi thông ngay; thường cần dùng đều mới thấy rõ hơn.",
+          "th": "ยานี้เป็นยาควบคุมอาการภูมิแพ้จมูก ไม่ได้ช่วยโล่งจมูกทันที มักเห็นผลดีขึ้นเมื่อใช้สม่ำเสมอ","tl":"Ito ay pang-maintenance na gamot para sa allergic rhinitis. Hindi ito agad nagpapaluwag ng ilong; mas nakikita ang epekto kapag regular na ginagamit.",
+          "ja": "これはアレルギー性鼻炎の維持薬です。すぐに鼻を通す薬ではなく、続けて使うと効果が分かりやすくなります。"
       },
+      preStepsInfo: {
+          title: {"zh-TW":"第一次使用前","en":"Before first use","id":"Sebelum pemakaian pertama","vi":"Trước lần dùng đầu tiên","th":"ก่อนใช้ครั้งแรก","tl":"Bago unang gamitin","ja":"初回使用前"},
+          text: {
+              "zh-TW": "先振搖。首次使用前，先對空噴到看到細霧；若連續 2 天沒用，再先對空噴 1 次。",
+              "en": "Shake first. Before first use, prime until you see a fine mist. If it has not been used for 2 days, prime once again before use.",
+              "id": "Kocok dulu. Sebelum pemakaian pertama, prime sampai terlihat kabut halus. Bila tidak dipakai selama 2 hari, prime sekali lagi sebelum dipakai.",
+              "vi": "Lắc trước. Trước lần dùng đầu tiên, xịt thử đến khi thấy tia sương mịn. Nếu không dùng trong 2 ngày, xịt thử lại 1 lần trước khi dùng.",
+              "th": "เขย่าก่อน ก่อนใช้ครั้งแรกให้พ่นทิ้งจนเห็นละอองฝอย หากไม่ได้ใช้มา 2 วัน ให้พ่นทิ้ง 1 ครั้งก่อนใช้","tl":"Kalugin muna. Bago unang gamitin, mag-prime hanggang may pinong ambon. Kung 2 araw na hindi nagamit, mag-prime muli nang isang beses bago gamitin.",
+              "ja": "最初に振ります。初回使用前は細かい霧が出るまで空噴霧し、2日使っていない場合は使用前にもう1回空噴霧します。"
+          }
+      },
+      badge: {"zh-TW":"鼻用類固醇","en":"Nasal steroid","id":"Steroid hidung","vi":"Corticosteroid xịt mũi","th":"สเตียรอยด์พ่นจมูก","tl":"Nasal steroid","ja":"鼻用ステロイド"},
       steps: [
           {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
+              action: {"zh-TW":"振搖藥瓶，再取下瓶蓋","en":"Shake the bottle, then remove the cap","id":"Kocok botol lalu lepas tutupnya","vi":"Lắc chai rồi mở nắp","th":"เขย่าขวดแล้วเปิดฝา","tl":"Kalugin ang bote at saka tanggalin ang takip","ja":"ボトルを振ってからキャップを外す"},
+              note: {"zh-TW":"這是懸浮液，搖勻後噴出的藥量才比較一致。","en":"This is a suspension, so shaking helps each spray contain a more even dose.","id":"Ini adalah suspensi, jadi mengocok membantu agar tiap semprotan lebih merata dosisnya.","vi":"Đây là hỗn dịch nên cần lắc để mỗi lần xịt có lượng thuốc ổn định hơn.","th":"ยานี้เป็นยาน้ำแขวนตะกอน การเขย่าจะช่วยให้ยาที่พ่นออกมาสม่ำเสมอขึ้น","tl":"Suspension ito kaya nakakatulong ang pagkalog para mas pantay ang dami ng gamot sa bawat spray.","ja":"懸濁液なので、振ることで1回ごとの薬量がそろいやすくなります。"},
+              illustration: "assets/svg/nasal-spray-standard/step-1.svg"
+          },
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              action: {"zh-TW":"輕輕擤鼻，清掉鼻內分泌物","en":"Gently blow your nose","id":"Buang ingus perlahan","vi":"Xì mũi nhẹ nhàng","th":"สั่งน้ำมูกเบา ๆ","tl":"Dahan-dahang suminga","ja":"やさしく鼻をかむ"},
+              note: {"zh-TW":"鼻內太多分泌物時，藥比較不容易沾到鼻黏膜。","en":"Too much mucus makes it harder for the medicine to reach the nasal lining.","id":"Lendir yang terlalu banyak membuat obat lebih sulit mengenai lapisan dalam hidung.","vi":"Nhiều dịch mũi làm thuốc khó tiếp xúc với niêm mạc mũi hơn.","th":"ถ้ามีน้ำมูกมาก ยาจะสัมผัสเยื่อบุจมูกได้ยากขึ้น","tl":"Kung maraming sipon, mas mahirap maabot ng gamot ang lining ng ilong.","ja":"鼻水が多いと、薬が鼻の粘膜に届きにくくなります。"},
+              illustration: "assets/svg/nasal-spray-standard/step-0.svg"
+          },
+          {
+              action: {"zh-TW":"頭微向前，噴嘴放入一側鼻孔","en":"Tilt your head slightly forward and place the nozzle into one nostril","id":"Miringkan kepala sedikit ke depan lalu masukkan ujung semprot ke salah satu lubang hidung","vi":"Cúi đầu nhẹ ra trước rồi đưa đầu xịt vào một bên mũi","th":"ก้มศีรษะไปข้างหน้าเล็กน้อย แล้วสอดหัวพ่นเข้าไปในรูจมูกข้างหนึ่ง","tl":"Bahagyang iyuko ang ulo pasulong at ipasok ang dulo sa isang butas ng ilong","ja":"頭を少し前に傾け、ノズルを片方の鼻の穴に入れる"},
+              note: {"zh-TW":"不要往後仰。","en":"Do not tilt your head back.","id":"Jangan mendongakkan kepala.","vi":"Đừng ngửa đầu ra sau.","th":"อย่าเงยหน้าขึ้น","tl":"Huwag iatras ang ulo.","ja":"頭を後ろに反らさないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-2.svg"
+          },
+          {
+              action: {"zh-TW":"把尖端稍微朝外，按壓 1 次，同時輕輕吸氣","en":"Aim the tip slightly outward, press once, and breathe in gently","id":"Arahkan ujung sedikit ke luar, tekan sekali, lalu tarik napas pelan","vi":"Hướng đầu xịt hơi ra ngoài, ấn một lần và hít nhẹ","th":"หันปลายหัวพ่นออกด้านนอกเล็กน้อย กด 1 ครั้ง พร้อมสูดเบา ๆ","tl":"Ihilig nang bahagya palabas ang dulo, pindutin nang isang beses, at marahang suminghot","ja":"先端を少し外側へ向け、1回押して軽く吸う"},
+              note: {"zh-TW":"不要對著鼻中隔，也不要大力猛吸。","en":"Do not aim at the middle wall of the nose, and do not sniff hard.","id":"Jangan arahkan ke sekat tengah hidung dan jangan menarik napas terlalu kuat.","vi":"Đừng chĩa vào vách ngăn giữa mũi và đừng hít quá mạnh.","th":"อย่าเล็งเข้าหาผนังกั้นจมูก และอย่าสูดแรงเกินไป","tl":"Huwag itutok sa gitnang tabiki ng ilong at huwag suminghot nang malakas.","ja":"鼻の真ん中の仕切りに向けず、強く吸い込まないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-3.svg"
+          },
+          {
+              action: {"zh-TW":"改用口呼氣；若同側要第 2 下，再重複一次","en":"Breathe out through your mouth; if the same side needs a second spray, repeat once more","id":"Embuskan lewat mulut; bila sisi yang sama perlu semprotan kedua, ulangi sekali lagi","vi":"Thở ra bằng miệng; nếu cùng một bên cần lần xịt thứ hai, lặp lại thêm một lần","th":"หายใจออกทางปาก หากข้างเดิมต้องพ่นครั้งที่ 2 ให้ทำซ้ำอีกครั้ง","tl":"Huminga palabas sa bibig; kung kailangan ng pangalawang spray sa parehong butas ng ilong, ulitin muli","ja":"口から息を吐く。同じ側に2回目が必要なら、もう一度繰り返す"},
+              note: {"zh-TW":"另一側鼻孔也照同樣方式使用。","en":"Use the other nostril the same way.","id":"Gunakan sisi hidung satunya dengan cara yang sama.","vi":"Bên mũi còn lại dùng theo cách giống nhau.","th":"ใช้กับรูจมูกอีกข้างแบบเดียวกัน","tl":"Gamitin din sa kabilang butas ng ilong sa parehong paraan.","ja":"反対側の鼻も同じように使います。"},
+              illustration: "assets/svg/nasal-spray-standard/step-4.svg"
+          },
+          {
+              action: {"zh-TW":"用乾紙巾擦噴嘴，蓋回瓶蓋","en":"Wipe the nozzle with a dry tissue and replace the cap","id":"Lap ujung semprot dengan tisu kering lalu pasang kembali tutupnya","vi":"Lau đầu xịt bằng khăn giấy khô rồi đậy nắp lại","th":"เช็ดหัวพ่นด้วยกระดาษทิชชูแห้ง แล้วปิดฝา","tl":"Punasan ng tuyong tisyu ang nozzle at ibalik ang takip","ja":"ノズルを乾いたティッシュで拭き、キャップを戻す"},
+              note: {"zh-TW":"若噴嘴堵住，先照仿單清潔，不要用針去通。","en":"If the nozzle clogs, clean it as instructed. Do not use a pin or needle to open it.","id":"Bila ujung semprot tersumbat, bersihkan sesuai petunjuk. Jangan menusuknya dengan peniti atau jarum.","vi":"Nếu đầu xịt bị tắc, hãy làm sạch theo hướng dẫn. Đừng dùng kim chọc thông.","th":"หากหัวพ่นอุดตัน ให้ทำความสะอาดตามคำแนะนำ อย่าใช้เข็มแยงรูพ่น","tl":"Kung mabara ang nozzle, linisin ayon sa tagubilin. Huwag tusukin ng aspile o karayom.","ja":"ノズルが詰まった時は説明通りに洗浄し、ピンや針で穴を開けないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-5.svg"
           }
       ],
-      qrUrl: "https://pharmacy.example.com/meds/sindecon-nasal-spray"
+      storage: {
+          title: {"zh-TW":"藥品保存","en":"Storage","id":"Penyimpanan","vi":"Bảo quản","th":"การเก็บรักษา","tl":"Imbakan","ja":"保管方法"},
+          text: {
+              "zh-TW": "室溫保存，避免高溫與日光直射；若噴嘴拆下清洗，裝回後再使用。",
+              "en": "Store at room temperature, away from heat and direct light. If you remove the nozzle for cleaning, reattach it before use.",
+              "id": "Simpan pada suhu ruang, jauhkan dari panas dan sinar matahari langsung. Bila ujung semprot dilepas untuk dibersihkan, pasang kembali sebelum dipakai.",
+              "vi": "Bảo quản ở nhiệt độ phòng, tránh nóng và ánh nắng trực tiếp. Nếu tháo đầu xịt ra để rửa, gắn lại trước khi dùng.",
+              "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสงแดดโดยตรง หากถอดหัวพ่นมาล้าง ให้ใส่กลับก่อนใช้","tl":"Itago sa temperaturang kuwarto, iwasan ang init at direktang sikat ng araw. Kung inalis ang nozzle para linisin, ikabit muli bago gamitin.",
+              "ja": "室温で保管し、高温と直射日光を避けてください。洗浄のためノズルを外した場合は、使用前に付け直してください。"
+          }
+      },
+      warnings: [
+          {"zh-TW":"每天規律用，比想到才噴更有效。","en":"Regular daily use works better than spraying only when symptoms bother you.","id":"Pemakaian teratur setiap hari lebih efektif daripada hanya saat gejala muncul.","vi":"Dùng đều mỗi ngày hiệu quả hơn là chỉ xịt khi khó chịu.","th":"ใช้สม่ำเสมอทุกวันจะได้ผลดีกว่าใช้เฉพาะเวลามีอาการ","tl":"Mas mabisa ang regular na araw-araw na gamit kaysa sa paggamit lamang kapag may sintomas.","ja":"症状が出た時だけでなく、毎日続けて使う方が効果的です。"},
+          {"zh-TW":"若常流鼻血、鼻痛或鼻內破皮，請回診。","en":"Go back for review if you often get nosebleeds, nasal pain, or sores inside the nose.","id":"Periksa kembali bila sering mimisan, nyeri hidung, atau ada luka di dalam hidung.","vi":"Hãy tái khám nếu thường chảy máu mũi, đau mũi hoặc có vết trầy trong mũi.","th":"หากมีเลือดกำเดาบ่อย ปวดจมูก หรือมีแผลในจมูก ให้กลับไปพบแพทย์","tl":"Magpatingin muli kung madalas ang pagdurugo ng ilong, may pananakit sa ilong, o may sugat sa loob ng ilong.","ja":"鼻血、鼻の痛み、鼻の中のただれが続く時は受診してください。"},
+          {"zh-TW":"懷孕、哺乳中，或近期做過鼻部手術，請先告知醫師。","en":"Tell your doctor before use if you are pregnant, breastfeeding, or recently had nose surgery.","id":"Beri tahu dokter sebelum memakai bila sedang hamil, menyusui, atau baru menjalani operasi hidung.","vi":"Hãy báo bác sĩ trước khi dùng nếu đang mang thai, cho con bú, hoặc mới phẫu thuật mũi.","th":"แจ้งแพทย์ก่อนใช้หากกำลังตั้งครรภ์ ให้นมบุตร หรือเพิ่งผ่าตัดจมูก","tl":"Sabihin sa doktor bago gamitin kung buntis, nagpapasuso, o kakagaling lang sa operasyon sa ilong.","ja":"妊娠中・授乳中の方、最近鼻の手術を受けた方は使用前に医師へ伝えてください。"}
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/besonin"
   },
+
+  // ── Minirin ─────────────────────────────────────,
+  {
+      "id": "minirin",
+      "category": "nasal",
+      color: { main: "#185FA5", light: "#E6F1FB", dark: "#042C53", badge: "#B5D4F4", badgeText: "#042C53" },
+      emergency: false,
+      name: {
+          "zh-TW": "彌凝鼻腔定量噴液劑",
+          "en": "Minirin Nasal Spray",
+          "id": "Minirin semprotan hidung",
+          "vi": "Minirin xịt mũi",
+          "th": "Minirin ยาพ่นจมูก",
+          "tl": "Minirin nasal spray",
+          "ja": "ミニリン点鼻薬"
+      },
+      subtitle: {
+          "zh-TW": "Minirin | desmopressin 10 mcg/噴 | 2.5 mL（約 25 噴）",
+          "en": "Minirin | desmopressin 10 mcg/spray | 2.5 mL (about 25 sprays)",
+          "id": "Minirin | desmopressin 10 mcg/semprot | 2,5 mL (sekitar 25 semprotan)",
+          "vi": "Minirin | desmopressin 10 mcg/lần xịt | 2,5 mL (khoảng 25 lần xịt)",
+          "th": "Minirin | desmopressin 10 mcg/พ่น | 2.5 mL (ประมาณ 25 ครั้ง)",
+          "tl": "Minirin | desmopressin 10 mcg/spray | 2.5 mL (mga 25 sprays)",
+          "ja": "Minirin｜desmopressin 10 mcg/噴霧｜2.5 mL（約25回）"
+      },
+      headerBadge: {"zh-TW":"依醫囑固定時間用","en":"Use on a fixed schedule","id":"Pakai sesuai jadwal tetap","vi":"Dùng đúng giờ cố định","th":"ใช้ตามเวลาเดิมทุกวัน","tl":"Gamitin sa nakatakdang oras","ja":"決まった時間に使う"},
+      usage: {
+          "zh-TW": "這是控制尿量的鼻噴劑，不是治鼻過敏或通鼻用藥。請照醫囑固定時間使用，並遵守喝水限制。",
+          "en": "This nasal spray is used to control urine output. It is not for allergies or a blocked nose. Use it on schedule and follow your fluid restriction plan.",
+          "id": "Semprotan hidung ini dipakai untuk mengontrol jumlah urine. Ini bukan obat alergi atau pelega hidung tersumbat. Gunakan sesuai jadwal dan ikuti batas minum yang diberikan.",
+          "vi": "Thuốc xịt mũi này dùng để kiểm soát lượng nước tiểu, không phải thuốc dị ứng hay thông mũi. Hãy dùng đúng giờ và tuân thủ giới hạn uống nước.",
+          "th": "ยาพ่นจมูกนี้ใช้ควบคุมปริมาณปัสสาวะ ไม่ใช่ยาภูมิแพ้หรือยาช่วยโล่งจมูก ใช้ตามเวลาเดิมและปฏิบัติตามข้อจำกัดการดื่มน้ำ","tl":"Ang nasal spray na ito ay para kontrolin ang dami ng ihi. Hindi ito gamot sa allergy o para sa baradong ilong. Gamitin sa takdang oras at sundin ang limitasyon sa pag-inom ng likido.",
+          "ja": "この点鼻薬は尿量を調整するための薬で、鼻炎や鼻づまりの薬ではありません。決まった時間に使い、水分制限の指示を守ってください。"
+      },
+      preStepsInfo: {
+          title: {"zh-TW":"第一次使用前","en":"Before first use","id":"Sebelum pemakaian pertama","vi":"Trước lần dùng đầu tiên","th":"ก่อนใช้ครั้งแรก","tl":"Bago unang gamitin","ja":"初回使用前"},
+          text: {
+              "zh-TW": "首次使用前先對空噴 4 次，直到噴出均勻噴霧。之後通常不用每天重複排空。",
+              "en": "Prime with 4 sprays before first use until you see an even spray. After that, you usually do not need to prime it every day.",
+              "id": "Sebelum pemakaian pertama, prime 4 kali sampai terlihat semprotan merata. Setelah itu biasanya tidak perlu prime setiap hari.",
+              "vi": "Xịt thử ra ngoài 4 lần trước khi dùng lần đầu đến khi thấy tia xịt đều. Sau đó thường không cần xịt thử mỗi ngày.",
+              "th": "ก่อนใช้ครั้งแรกให้พ่นทิ้ง 4 ครั้งจนเห็นละอองสม่ำเสมอ หลังจากนั้นโดยทั่วไปไม่ต้องพ่นทิ้งใหม่ทุกวัน","tl":"Mag-prime ng 4 na beses bago unang gamitin hanggang maging pantay ang spray. Pagkatapos nito, karaniwan ay hindi na kailangang i-prime araw-araw.",
+              "ja": "初回使用前は均一な噴霧が出るまで4回空噴霧します。その後は通常、毎日空噴霧を繰り返す必要はありません。"
+          }
+      },
+      infoBoxes: [
+          {
+              title: {"zh-TW":"喝水提醒","en":"Fluid reminder","id":"Pengingat cairan","vi":"Nhắc về lượng nước","th":"คำเตือนเรื่องน้ำดื่ม","tl":"Paalala sa pag-inom","ja":"水分の注意"},
+              text: {
+                  "zh-TW": "請照醫囑控制喝水量。若頭痛、噁心、想吐、特別想睡、抽筋或體重突然增加，請立刻就醫。",
+                  "en": "Limit fluids as instructed. Get medical help right away if you develop headache, nausea, vomiting, unusual sleepiness, cramps, or sudden weight gain.",
+                  "id": "Batasi minum sesuai petunjuk. Segera cari pertolongan medis bila timbul sakit kepala, mual, muntah, sangat mengantuk, kram, atau berat badan naik mendadak.",
+                  "vi": "Hãy hạn chế uống nước theo hướng dẫn. Đi khám ngay nếu bị đau đầu, buồn nôn, nôn, buồn ngủ nhiều, chuột rút hoặc tăng cân đột ngột.",
+                  "th": "จำกัดการดื่มน้ำตามที่แพทย์สั่ง หากมีปวดศีรษะ คลื่นไส้ อาเจียน ง่วงผิดปกติ เป็นตะคริว หรือน้ำหนักขึ้นเร็ว ให้รีบพบแพทย์ทันที","tl":"Limitahan ang pag-inom ayon sa bilin. Magpatingin agad kung sumakit ang ulo, nasusuka, nagsusuka, sobrang inaantok, may pulikat, o biglang tumaba.",
+                  "ja": "指示どおり水分を制限してください。頭痛、吐き気、嘔吐、強い眠気、けいれん、急な体重増加があれば、すぐ受診してください。"
+              },
+              tone: { bg: "#FAEEDA", border: "#BA7517", text: "#633806" }
+          }
+      ],
+      badge: {"zh-TW":"控制尿量鼻噴劑","en":"Urine-control nasal spray","id":"Semprotan hidung pengontrol urine","vi":"Thuốc xịt mũi kiểm soát lượng tiểu","th":"ยาพ่นจมูกควบคุมปริมาณปัสสาวะ","tl":"Urine-control nasal spray","ja":"尿量調整用点鼻薬"},
+      steps: [
+          {
+              action: {"zh-TW":"鼻子很塞時，先輕輕清鼻","en":"If your nose is very blocked, gently clear it first","id":"Jika hidung sangat tersumbat, bersihkan perlahan dulu","vi":"Nếu mũi nghẹt nhiều, hãy làm sạch nhẹ trước","th":"ถ้าจมูกอุดมาก ให้ทำความสะอาดเบา ๆ ก่อน","tl":"Kung sobrang barado ang ilong, linisin muna nang marahan","ja":"鼻づまりが強い時は、先にやさしく鼻を通す"},
+              note: {"zh-TW":"鼻子太塞時，藥可能吸收得不準。","en":"A badly blocked nose can make the dose less reliable.","id":"Hidung yang sangat tersumbat dapat membuat dosis terserap tidak stabil.","vi":"Mũi nghẹt nhiều có thể làm lượng thuốc hấp thu không ổn định.","th":"ถ้าจมูกอุดมาก การดูดซึมยาอาจไม่สม่ำเสมอ","tl":"Kung sobrang barado ang ilong, maaaring hindi maging maayos ang pagsipsip ng dosis.","ja":"鼻づまりが強いと、薬の吸収が安定しないことがあります。"},
+              illustration: "assets/svg/nasal-spray-minirin/step-0.svg"
+          },
+          {
+              action: {"zh-TW":"藥瓶保持直立，選好要噴的鼻孔","en":"Keep the bottle upright and choose the nostril to use","id":"Pegang botol tegak dan tentukan lubang hidung yang akan dipakai","vi":"Giữ chai thẳng đứng và chọn bên mũi sẽ dùng","th":"ถือขวดตั้งตรง แล้วเลือกข้างจมูกที่จะใช้","tl":"Panatilihing patayo ang bote at piliin ang butas ng ilong na gagamitin","ja":"ボトルを立てて持ち、使う鼻の穴を決める"},
+              note: {"zh-TW":"先確認今天要噴幾下、噴哪一側，照醫囑來。","en":"Check how many sprays and which side you should use today, following your prescription.","id":"Pastikan dulu berapa kali semprot dan sisi mana yang harus dipakai hari ini, sesuai resep.","vi":"Hãy kiểm tra hôm nay cần xịt mấy lần và bên nào theo đơn thuốc.","th":"ตรวจดูก่อนว่าวันนี้ต้องพ่นกี่ครั้งและพ่นข้างไหน ตามคำสั่งแพทย์","tl":"Tiyaking ilang spray at aling butas ng ilong ang gagamitin ngayon ayon sa reseta.","ja":"今日何回、どちら側に使うかを処方どおり確認してください。"},
+              illustration: "assets/svg/nasal-spray-minirin/step-1.svg"
+          },
+          {
+              action: {"zh-TW":"讓導管浸到藥液，再把噴嘴放入鼻孔","en":"Tilt the bottle so the dip tube stays in the liquid, then place the nozzle in the nostril","id":"Miringkan botol agar selangnya tetap terendam, lalu masukkan ujung semprot ke lubang hidung","vi":"Nghiêng chai để ống hút vẫn ngập trong thuốc rồi đưa đầu xịt vào mũi","th":"เอียงขวดให้ท่อดูดยาอยู่ในน้ำยา แล้วสอดหัวพ่นเข้าไปในรูจมูก","tl":"Ihilig ang bote para nakalubog ang tubo sa likido, saka ipasok ang nozzle sa butas ng ilong","ja":"チューブが液に浸かる向きにボトルを傾け、ノズルを鼻の穴に入れる"},
+              note: {"zh-TW":"這樣藥才抽得上來。不要大力吸鼻。","en":"This helps the bottle draw up the medicine. Do not sniff hard.","id":"Cara ini membantu obat terangkat ke atas. Jangan menarik napas terlalu kuat lewat hidung.","vi":"Cách này giúp chai hút được thuốc lên. Đừng hít mạnh bằng mũi.","th":"แบบนี้ยาจึงจะถูกดูดขึ้นมา อย่าสูดแรงทางจมูก","tl":"Nakakatulong ito para umakyat ang gamot sa tubo. Huwag suminghot nang malakas.","ja":"こうすると薬を吸い上げやすくなります。強く吸い込まないでください。"},
+              illustration: "assets/svg/nasal-spray-minirin/step-2.svg"
+          },
+          {
+              action: {"zh-TW":"按 1 下噴完；若醫師要 2 下，換另一側再噴","en":"Press once for one spray; if you need 2 sprays, use the other nostril for the second spray","id":"Tekan sekali untuk satu semprotan; bila perlu 2 semprotan, pakai lubang hidung sebelah untuk semprotan kedua","vi":"Ấn một lần cho một nhát xịt; nếu cần 2 nhát, dùng bên mũi còn lại cho nhát thứ hai","th":"กด 1 ครั้งต่อ 1 พ่น หากต้องใช้ 2 พ่น ให้พ่นอีกข้างสำหรับครั้งที่ 2","tl":"Pindutin nang isang beses para sa isang spray; kung 2 spray ang kailangan, gamitin ang kabilang butas ng ilong para sa ikalawang spray","ja":"1回押して1噴霧します。2回必要なら、2回目は反対側の鼻を使います。"},
+              note: {"zh-TW":"噴完後不要大力吸鼻，也不要立刻擤鼻。","en":"Do not sniff hard or blow your nose right away after spraying.","id":"Jangan menarik napas terlalu kuat atau langsung membuang ingus setelah semprot.","vi":"Sau khi xịt, đừng hít mạnh và đừng xì mũi ngay.","th":"หลังพ่นแล้ว อย่าสูดแรง และอย่าสั่งน้ำมูกทันที","tl":"Pagkatapos mag-spray, huwag suminghot nang malakas at huwag agad suminga.","ja":"噴霧後は強く吸い込まず、すぐに鼻をかまないでください。"},
+              illustration: "assets/svg/nasal-spray-minirin/step-2.svg"
+          },
+          {
+              action: {"zh-TW":"蓋回瓶蓋，直立保存","en":"Replace the cap and store it upright","id":"Pasang kembali tutupnya dan simpan tegak","vi":"Đậy nắp lại và bảo quản chai đứng","th":"ปิดฝาแล้วเก็บขวดตั้งตรง","tl":"Ibalik ang takip at itago nang nakatayo","ja":"キャップを戻し、立てて保管する"},
+              note: {"zh-TW":"這瓶大約 25 噴；噴數快用完時要先準備新藥。","en":"This bottle gives about 25 sprays. Arrange a refill before it runs out.","id":"Botol ini memberi sekitar 25 semprotan. Siapkan obat baru sebelum habis.","vi":"Chai này khoảng 25 lần xịt. Hãy chuẩn bị thuốc mới trước khi dùng hết.","th":"ขวดนี้ใช้ได้ประมาณ 25 ครั้ง ควรเตรียมยาขวดใหม่ก่อนหมด","tl":"Humigit-kumulang 25 spray ang laman ng boteng ito. Maghanda ng bagong gamot bago ito maubos.","ja":"このボトルは約25回使えます。なくなる前に次の薬を準備してください。"},
+              illustration: "assets/svg/nasal-spray-minirin/step-3.svg"
+          }
+      ],
+      storage: {
+          title: {"zh-TW":"藥品保存","en":"Storage","id":"Penyimpanan","vi":"Bảo quản","th":"การเก็บรักษา","tl":"Imbakan","ja":"保管方法"},
+          text: {
+              "zh-TW": "直立保存於室溫；不要冷凍，也不要放在高溫處。",
+              "en": "Store upright at room temperature. Do not freeze or keep it in a hot place.",
+              "id": "Simpan tegak pada suhu ruang. Jangan dibekukan atau diletakkan di tempat panas.",
+              "vi": "Bảo quản chai đứng ở nhiệt độ phòng. Không để đông đá hoặc nơi quá nóng.",
+              "th": "เก็บขวดตั้งตรงที่อุณหภูมิห้อง ห้ามแช่แข็งหรือเก็บในที่ร้อน","tl":"Itago nang nakatayo sa temperaturang kuwarto. Huwag i-freeze o ilagay sa mainit na lugar.",
+              "ja": "立てたまま室温で保管し、凍らせたり高温の場所に置いたりしないでください。"
+          }
+      },
+      warnings: [
+          {"zh-TW":"請照醫囑控制喝水量；喝太多水可能讓血鈉過低。","en":"Follow your fluid restriction plan. Drinking too much water can lower your sodium too much.","id":"Ikuti batas minum yang diberikan. Minum terlalu banyak dapat menurunkan natrium terlalu rendah.","vi":"Hãy tuân thủ giới hạn uống nước. Uống quá nhiều có thể làm natri máu xuống quá thấp.","th":"ปฏิบัติตามข้อจำกัดการดื่มน้ำ การดื่มมากเกินไปอาจทำให้โซเดียมต่ำเกินไป","tl":"Sundin ang limitasyon sa pag-inom. Ang sobrang pag-inom ng tubig ay maaaring magpababa nang sobra sa sodium.","ja":"水分制限を守ってください。飲み過ぎるとナトリウムが下がりすぎることがあります。"},
+          {"zh-TW":"若鼻塞很嚴重、正在感冒或一直流鼻水，藥效可能變不準，請先問醫師。","en":"If you have severe congestion, a bad cold, or constant runny nose, absorption may be unreliable. Ask your doctor.","id":"Bila hidung sangat tersumbat, sedang pilek berat, atau terus berair, penyerapan bisa tidak stabil. Tanyakan ke dokter.","vi":"Nếu nghẹt mũi nhiều, cảm nặng hoặc chảy nước mũi liên tục, hấp thu có thể không ổn định. Hãy hỏi bác sĩ.","th":"หากคัดจมูกรุนแรง เป็นหวัดมาก หรือมีน้ำมูกตลอด การดูดซึมยาอาจไม่แน่นอน ควรปรึกษาแพทย์","tl":"Kung matindi ang pagbabara ng ilong, may malubhang sipon, o tuloy-tuloy ang sipon, maaaring hindi pare-pareho ang pagsipsip ng gamot. Kumonsulta sa doktor.","ja":"鼻づまりが強い時、ひどいかぜの時、鼻水が続く時は吸収が不安定になることがあります。医師に相談してください。"},
+          {"zh-TW":"若頭痛、噁心、想吐、特別想睡、抽筋或體重突然增加，立刻就醫。","en":"Get medical help right away if you develop headache, nausea, vomiting, unusual sleepiness, cramps, or sudden weight gain.","id":"Segera cari pertolongan medis bila timbul sakit kepala, mual, muntah, sangat mengantuk, kram, atau berat badan naik mendadak.","vi":"Đi khám ngay nếu bị đau đầu, buồn nôn, nôn, buồn ngủ nhiều, chuột rút hoặc tăng cân đột ngột.","th":"หากมีปวดศีรษะ คลื่นไส้ อาเจียน ง่วงผิดปกติ เป็นตะคริว หรือน้ำหนักขึ้นเร็ว ให้รีบพบแพทย์ทันที","tl":"Magpatingin agad kung sumakit ang ulo, nasusuka, nagsusuka, sobrang inaantok, may pulikat, o biglang tumaba.","ja":"頭痛、吐き気、嘔吐、強い眠気、けいれん、急な体重増加があれば、すぐ受診してください。"}
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/minirin"
+  },
+
+  // ── Nasonex ─────────────────────────────────────,
+  {
+      "id": "nasonex",
+      "category": "nasal",
+      color: { main: "#185FA5", light: "#E6F1FB", dark: "#042C53", badge: "#B5D4F4", badgeText: "#042C53" },
+      emergency: false,
+      name: {
+          "zh-TW": "內舒拿水溶性鼻用噴液劑",
+          "en": "Nasonex Nasal Spray",
+          "id": "Nasonex semprotan hidung",
+          "vi": "Nasonex xịt mũi",
+          "th": "Nasonex ยาพ่นจมูก",
+          "tl": "Nasonex nasal spray",
+          "ja": "ナゾネックス点鼻薬"
+      },
+      subtitle: {
+          "zh-TW": "Nasonex | mometasone furoate 50 mcg/噴 | 140 噴",
+          "en": "Nasonex | mometasone furoate 50 mcg/spray | 140 sprays",
+          "id": "Nasonex | mometasone furoate 50 mcg/semprot | 140 semprotan",
+          "vi": "Nasonex | mometasone furoate 50 mcg/lần xịt | 140 lần xịt",
+          "th": "Nasonex | mometasone furoate 50 mcg/พ่น | 140 ครั้ง",
+          "tl": "Nasonex | mometasone furoate 50 mcg/spray | 140 sprays",
+          "ja": "Nasonex｜mometasone furoate 50 mcg/噴霧｜140回"
+      },
+      headerBadge: {"zh-TW":"每天規律用","en":"Use every day","id":"Pakai setiap hari","vi":"Dùng đều mỗi ngày","th":"ใช้สม่ำเสมอทุกวัน","tl":"Gamitin araw-araw","ja":"毎日続けて使う"},
+      usage: {
+          "zh-TW": "這是鼻過敏保養藥，不是噴了馬上通鼻；通常連續用幾天後較明顯。",
+          "en": "This is a controller medicine for allergic rhinitis. It does not open the nose right away; it usually works better after several days of regular use.",
+          "id": "Ini adalah obat perawatan untuk alergi hidung. Bukan untuk langsung melegakan hidung tersumbat; biasanya lebih terasa setelah dipakai teratur beberapa hari.",
+          "vi": "Đây là thuốc kiểm soát viêm mũi dị ứng. Thuốc không làm mũi thông ngay; thường cần dùng đều vài ngày mới thấy rõ hơn.",
+          "th": "ยานี้เป็นยาควบคุมอาการภูมิแพ้จมูก ไม่ได้ช่วยโล่งจมูกทันที มักเห็นผลชัดขึ้นหลังใช้สม่ำเสมอหลายวัน","tl":"Ito ay pang-maintenance na gamot para sa allergic rhinitis. Hindi ito agad nagpapaluwag ng ilong; kadalasang mas ramdam ang epekto matapos gamitin nang tuloy-tuloy sa loob ng ilang araw.",
+          "ja": "これはアレルギー性鼻炎の維持薬です。すぐに鼻を通す薬ではなく、数日続けて使うと効果が分かりやすくなります。"
+      },
+      preStepsInfo: {
+          title: {"zh-TW":"第一次使用前","en":"Before first use","id":"Sebelum pemakaian pertama","vi":"Trước lần dùng đầu tiên","th":"ก่อนใช้ครั้งแรก","tl":"Bago unang gamitin","ja":"初回使用前"},
+          text: {
+              "zh-TW": "先振搖。首次使用前先對空按壓 10 次；若超過 1 週沒用，再對空按壓 2 次，直到噴出細霧。",
+              "en": "Shake first. Prime 10 times before first use. If it has not been used for more than 1 week, prime it 2 times until you see a fine mist.",
+              "id": "Kocok dulu. Prime 10 kali sebelum pemakaian pertama. Bila tidak dipakai lebih dari 1 minggu, prime lagi 2 kali sampai terlihat kabut halus.",
+              "vi": "Lắc trước. Xịt thử 10 lần trước khi dùng lần đầu. Nếu không dùng hơn 1 tuần, xịt thử lại 2 lần đến khi thấy tia sương mịn.",
+              "th": "เขย่าก่อน ก่อนใช้ครั้งแรกให้พ่นทิ้ง 10 ครั้ง หากไม่ได้ใช้เกิน 1 สัปดาห์ ให้พ่นทิ้งอีก 2 ครั้งจนเห็นละอองฝอย","tl":"Kalugin muna. Mag-prime ng 10 beses bago unang gamitin. Kung hindi nagamit nang mahigit 1 linggo, mag-prime muli ng 2 beses hanggang may pinong ambon.",
+              "ja": "最初に振ります。初回使用前は10回空噴霧し、1週間を超えて使っていない時は細かい霧が出るまで2回空噴霧します。"
+          }
+      },
+      badge: {"zh-TW":"鼻用類固醇","en":"Nasal steroid","id":"Steroid hidung","vi":"Corticosteroid xịt mũi","th":"สเตียรอยด์พ่นจมูก","tl":"Nasal steroid","ja":"鼻用ステロイド"},
+      steps: [
+          {
+              action: {"zh-TW":"振搖藥瓶，再取下瓶蓋","en":"Shake the bottle, then remove the cap","id":"Kocok botol lalu lepas tutupnya","vi":"Lắc chai rồi mở nắp","th":"เขย่าขวดแล้วเปิดฝา","tl":"Kalugin ang bote at saka tanggalin ang takip","ja":"ボトルを振ってからキャップを外す"},
+              note: {"zh-TW":"這是懸浮液，先搖勻再噴。","en":"This is a suspension, so shake it before each use.","id":"Ini adalah suspensi, jadi kocok dulu sebelum tiap pemakaian.","vi":"Đây là hỗn dịch nên cần lắc trước mỗi lần dùng.","th":"ยานี้เป็นยาน้ำแขวนตะกอน จึงต้องเขย่าก่อนใช้ทุกครั้ง","tl":"Suspension ito kaya kailangang kalugin bago ang bawat gamit.","ja":"懸濁液なので、使用前に毎回振ってください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-1.svg"
+          },
+          {
+              action: {"zh-TW":"輕輕擤鼻，清掉鼻內分泌物","en":"Gently blow your nose","id":"Buang ingus perlahan","vi":"Xì mũi nhẹ nhàng","th":"สั่งน้ำมูกเบา ๆ","tl":"Dahan-dahang suminga","ja":"やさしく鼻をかむ"},
+              note: {"zh-TW":"鼻內太多分泌物時，藥比較不容易進去。","en":"Too much mucus makes it harder for the spray to reach inside the nose.","id":"Lendir yang terlalu banyak membuat semprotan lebih sulit masuk ke dalam hidung.","vi":"Nhiều dịch mũi làm thuốc khó đi vào bên trong hơn.","th":"ถ้ามีน้ำมูกมาก ยาจะเข้าไปด้านในได้ยากขึ้น","tl":"Kung maraming sipon, mas mahirap makapasok sa loob ng ilong ang spray.","ja":"鼻水が多いと、薬が鼻の中に届きにくくなります。"},
+              illustration: "assets/svg/nasal-spray-standard/step-0.svg"
+          },
+          {
+              action: {"zh-TW":"頭微向前，噴嘴放入一側鼻孔","en":"Tilt your head slightly forward and place the nozzle into one nostril","id":"Miringkan kepala sedikit ke depan lalu masukkan ujung semprot ke salah satu lubang hidung","vi":"Cúi đầu nhẹ ra trước rồi đưa đầu xịt vào một bên mũi","th":"ก้มศีรษะไปข้างหน้าเล็กน้อย แล้วสอดหัวพ่นเข้าไปในรูจมูกข้างหนึ่ง","tl":"Bahagyang iyuko ang ulo pasulong at ipasok ang dulo sa isang butas ng ilong","ja":"頭を少し前に傾け、ノズルを片方の鼻の穴に入れる"},
+              note: {"zh-TW":"噴嘴保持直立，不要往後仰。","en":"Keep the bottle upright and do not tilt your head back.","id":"Jaga botol tetap tegak dan jangan mendongakkan kepala.","vi":"Giữ chai thẳng đứng và đừng ngửa đầu ra sau.","th":"ถือขวดให้ตรง และอย่าเงยหน้าขึ้น","tl":"Panatilihing patayo ang bote at huwag iatras ang ulo.","ja":"ボトルを立てたまま、頭を後ろに反らさないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-2.svg"
+          },
+          {
+              action: {"zh-TW":"把尖端稍微朝外，按壓 1 次，同時輕輕吸氣","en":"Aim the tip slightly outward, press once, and breathe in gently","id":"Arahkan ujung sedikit ke luar, tekan sekali, lalu tarik napas pelan","vi":"Hướng đầu xịt hơi ra ngoài, ấn một lần và hít nhẹ","th":"หันปลายหัวพ่นออกด้านนอกเล็กน้อย กด 1 ครั้ง พร้อมสูดเบา ๆ","tl":"Ihilig nang bahagya palabas ang dulo, pindutin nang isang beses, at marahang suminghot","ja":"先端を少し外側へ向け、1回押して軽く吸う"},
+              note: {"zh-TW":"朝耳朵方向，不要對著鼻中隔。","en":"Aim toward your ear, not toward the middle wall of the nose.","id":"Arahkan ke telinga, bukan ke sekat tengah hidung.","vi":"Hướng về phía tai, không chĩa vào vách ngăn giữa mũi.","th":"เล็งไปทางหู ไม่ใช่ผนังกั้นจมูกตรงกลาง","tl":"Itutok patungo sa tainga, hindi sa gitnang tabiki ng ilong.","ja":"耳の方向へ向け、鼻の真ん中の仕切りには向けないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-3.svg"
+          },
+          {
+              action: {"zh-TW":"改用口呼氣；若同側要第 2 下，再重複一次","en":"Breathe out through your mouth; if the same side needs a second spray, repeat once more","id":"Embuskan lewat mulut; bila sisi yang sama perlu semprotan kedua, ulangi sekali lagi","vi":"Thở ra bằng miệng; nếu cùng một bên cần lần xịt thứ hai, lặp lại thêm một lần","th":"หายใจออกทางปาก หากข้างเดิมต้องพ่นครั้งที่ 2 ให้ทำซ้ำอีกครั้ง","tl":"Huminga palabas sa bibig; kung kailangan ng pangalawang spray sa parehong butas ng ilong, ulitin muli","ja":"口から息を吐く。同じ側に2回目が必要なら、もう一度繰り返す"},
+              note: {"zh-TW":"另一側鼻孔也照同樣方式使用。","en":"Use the other nostril the same way.","id":"Gunakan sisi hidung satunya dengan cara yang sama.","vi":"Bên mũi còn lại dùng theo cách giống nhau.","th":"ใช้กับรูจมูกอีกข้างแบบเดียวกัน","tl":"Gamitin din sa kabilang butas ng ilong sa parehong paraan.","ja":"反対側の鼻も同じように使います。"},
+              illustration: "assets/svg/nasal-spray-standard/step-4.svg"
+          },
+          {
+              action: {"zh-TW":"用紙巾擦噴嘴，蓋回瓶蓋","en":"Wipe the nozzle and replace the cap","id":"Lap ujung semprot lalu pasang kembali tutupnya","vi":"Lau đầu xịt rồi đậy nắp lại","th":"เช็ดหัวพ่นแล้วปิดฝา","tl":"Punasan ang nozzle at ibalik ang takip","ja":"ノズルを拭き、キャップを戻す"},
+              note: {"zh-TW":"至少每週清洗 1 次：取下噴嘴，用溫水洗淨、晾乾後裝回。不要用針通噴孔。","en":"Clean it at least once a week: remove the nozzle, wash it in warm water, let it dry, and put it back. Do not poke the spray hole with a pin.","id":"Bersihkan setidaknya seminggu sekali: lepaskan ujung semprot, cuci dengan air hangat, keringkan, lalu pasang kembali. Jangan menusuk lubang semprot dengan jarum.","vi":"Làm sạch ít nhất mỗi tuần 1 lần: tháo đầu xịt, rửa bằng nước ấm, để khô rồi gắn lại. Đừng dùng kim chọc lỗ phun.","th":"ทำความสะอาดอย่างน้อยสัปดาห์ละครั้ง: ถอดหัวพ่น ล้างด้วยน้ำอุ่น ผึ่งให้แห้งแล้วใส่กลับ ห้ามใช้เข็มแยงรูพ่น","tl":"Linisin kahit isang beses bawat linggo: tanggalin ang nozzle, hugasan sa maligamgam na tubig, patuyuin, at ibalik. Huwag tusukin ng aspile ang butas ng spray.","ja":"少なくとも週1回は洗浄してください。ノズルを外し、ぬるま湯で洗って乾かしてから戻します。噴霧口を針で突かないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-5.svg"
+          }
+      ],
+      storage: {
+          title: {"zh-TW":"藥品保存","en":"Storage","id":"Penyimpanan","vi":"Bảo quản","th":"การเก็บรักษา","tl":"Imbakan","ja":"保管方法"},
+          text: {
+              "zh-TW": "室溫保存，避免高溫與日光直射；勿冷凍。",
+              "en": "Store at room temperature, away from heat and direct light. Do not freeze.",
+              "id": "Simpan pada suhu ruang, jauhkan dari panas dan sinar matahari langsung. Jangan dibekukan.",
+              "vi": "Bảo quản ở nhiệt độ phòng, tránh nóng và ánh nắng trực tiếp. Không để đông đá.",
+              "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสงแดดโดยตรง ห้ามแช่แข็ง","tl":"Itago sa temperaturang kuwarto, iwasan ang init at direktang sikat ng araw. Huwag i-freeze.",
+              "ja": "室温で保管し、高温と直射日光を避け、凍らせないでください。"
+          }
+      },
+      warnings: [
+          {"zh-TW":"每天規律用，比想到才噴更有效。","en":"Regular daily use works better than spraying only when symptoms bother you.","id":"Pemakaian teratur setiap hari lebih efektif daripada hanya saat gejala muncul.","vi":"Dùng đều mỗi ngày hiệu quả hơn là chỉ xịt khi khó chịu.","th":"ใช้สม่ำเสมอทุกวันจะได้ผลดีกว่าใช้เฉพาะเวลามีอาการ","tl":"Mas mabisa ang regular na araw-araw na gamit kaysa sa paggamit lamang kapag may sintomas.","ja":"症状が出た時だけでなく、毎日続けて使う方が効果的です。"},
+          {"zh-TW":"若常流鼻血、鼻痛或鼻內破皮，請回診。","en":"Go back for review if you often get nosebleeds, nasal pain, or sores inside the nose.","id":"Periksa kembali bila sering mimisan, nyeri hidung, atau ada luka di dalam hidung.","vi":"Hãy tái khám nếu thường chảy máu mũi, đau mũi hoặc có vết trầy trong mũi.","th":"หากมีเลือดกำเดาบ่อย ปวดจมูก หรือมีแผลในจมูก ให้กลับไปพบแพทย์","tl":"Magpatingin muli kung madalas ang pagdurugo ng ilong, may pananakit sa ilong, o may sugat sa loob ng ilong.","ja":"鼻血、鼻の痛み、鼻の中のただれが続く時は受診してください。"},
+          {"zh-TW":"懷孕、哺乳中，或近期做過鼻部手術，請先告知醫師。","en":"Tell your doctor before use if you are pregnant, breastfeeding, or recently had nose surgery.","id":"Beri tahu dokter sebelum memakai bila sedang hamil, menyusui, atau baru menjalani operasi hidung.","vi":"Hãy báo bác sĩ trước khi dùng nếu đang mang thai, cho con bú, hoặc mới phẫu thuật mũi.","th":"แจ้งแพทย์ก่อนใช้หากกำลังตั้งครรภ์ ให้นมบุตร หรือเพิ่งผ่าตัดจมูก","tl":"Sabihin sa doktor bago gamitin kung buntis, nagpapasuso, o kakagaling lang sa operasyon sa ilong.","ja":"妊娠中・授乳中の方、最近鼻の手術を受けた方は使用前に医師へ伝えてください。"}
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/nasonex"
+  },
+
+  // ── Sindecon ─────────────────────────────────────,
+  {
+      "id": "sindecon",
+      "category": "nasal",
+      color: { main: "#993C1D", light: "#FAECE7", dark: "#4A1B0C", badge: "#F5C4B3", badgeText: "#4A1B0C" },
+      emergency: false,
+      name: {
+          "zh-TW": "醫鼻易噴鼻液",
+          "en": "Sindecon Nasal Spray",
+          "id": "Sindecon semprotan hidung",
+          "vi": "Sindecon xịt mũi",
+          "th": "Sindecon ยาพ่นจมูก",
+          "tl": "Sindecon nasal spray",
+          "ja": "シンデコン点鼻薬"
+      },
+      subtitle: {
+          "zh-TW": "Sindecon | oxymetazoline 0.05% | 10 mL",
+          "en": "Sindecon | oxymetazoline 0.05% | 10 mL",
+          "id": "Sindecon | oxymetazoline 0,05% | 10 mL",
+          "vi": "Sindecon | oxymetazoline 0,05% | 10 mL",
+          "th": "Sindecon | oxymetazoline 0.05% | 10 mL",
+          "tl": "Sindecon | oxymetazoline 0.05% | 10 mL",
+          "ja": "Sindecon｜oxymetazoline 0.05%｜10 mL"
+      },
+      headerBadge: {"zh-TW":"連用勿超過 3 天","en":"Do not use for more than 3 days","id":"Jangan dipakai lebih dari 3 hari","vi":"Không dùng quá 3 ngày","th":"อย่าใช้เกิน 3 วัน","tl":"Huwag gamitin nang mahigit 3 araw","ja":"3日を超えて使わない"},
+      usage: {
+          "zh-TW": "這是短期通鼻藥。鼻塞時可暫時使用；連續用超過 3 天，可能越噴越塞。",
+          "en": "This medicine opens a blocked nose for short-term relief. If you use it for more than 3 days in a row, your nose may become even more blocked.",
+          "id": "Obat ini melegakan hidung tersumbat untuk jangka pendek. Bila dipakai terus lebih dari 3 hari, hidung bisa menjadi semakin tersumbat.",
+          "vi": "Thuốc này giúp thông mũi tạm thời. Nếu dùng liên tục quá 3 ngày, mũi có thể nghẹt hơn nữa.",
+          "th": "ยานี้ช่วยให้จมูกโล่งชั่วคราว หากใช้ติดต่อกันเกิน 3 วัน จมูกอาจยิ่งคัดมากขึ้น","tl":"Ang gamot na ito ay para sa panandaliang pagluwag ng baradong ilong. Kung gagamitin nang lampas 3 araw na sunod-sunod, maaaring lalo pang bumara ang ilong.",
+          "ja": "これは鼻づまりを一時的に和らげる薬です。3日を超えて続けて使うと、かえって鼻づまりが強くなることがあります。"
+      },
+      preStepsInfo: {
+          title: {"zh-TW":"使用重點","en":"Key point","id":"Poin penting","vi":"Điểm chính","th":"จุดสำคัญ","tl":"Mahalagang punto","ja":"大事なポイント"},
+          text: {
+              "zh-TW": "這是澄清溶液，不需振搖。成人與 6 歲以上兒童通常每側 2–3 噴，每 10–12 小時一次；24 小時內最多 2 次。",
+              "en": "This is a clear solution and does not need shaking. Adults and children 6 years and older usually use 2 to 3 sprays in each nostril every 10 to 12 hours, with no more than 2 doses in 24 hours.",
+              "id": "Ini larutan bening dan tidak perlu dikocok. Dewasa dan anak usia 6 tahun ke atas biasanya memakai 2–3 semprotan di tiap lubang hidung tiap 10–12 jam, maksimal 2 kali dalam 24 jam.",
+              "vi": "Đây là dung dịch trong, không cần lắc. Người lớn và trẻ từ 6 tuổi thường xịt 2–3 nhát mỗi bên mũi mỗi 10–12 giờ, tối đa 2 lần trong 24 giờ.",
+              "th": "ยานี้เป็นสารละลายใส ไม่ต้องเขย่า ผู้ใหญ่และเด็กอายุ 6 ปีขึ้นไปมักพ่นข้างละ 2–3 ครั้ง ทุก 10–12 ชั่วโมง และไม่เกิน 2 ครั้งใน 24 ชั่วโมง","tl":"Malinaw na likido ito at hindi kailangang kalugin. Ang mga adulto at batang 6 taong gulang pataas ay karaniwang gumagamit ng 2–3 spray sa bawat butas ng ilong bawat 10–12 oras, at hindi hihigit sa 2 dose sa loob ng 24 oras.",
+              "ja": "透明な液なので振る必要はありません。通常、成人と6歳以上の小児は各鼻に2～3回、10～12時間ごとに使用し、24時間で2回を超えません。"
+          }
+      },
+      badge: {"zh-TW":"短期通鼻噴劑","en":"Short-term decongestant","id":"Semprotan pelega hidung sementara","vi":"Thuốc xịt thông mũi ngắn ngày","th":"ยาพ่นลดคัดจมูกระยะสั้น","tl":"Short-term decongestant","ja":"短期用点鼻薬"},
+      steps: [
+          {
+              action: {"zh-TW":"輕輕擤鼻，清掉鼻內分泌物","en":"Gently blow your nose","id":"Buang ingus perlahan","vi":"Xì mũi nhẹ nhàng","th":"สั่งน้ำมูกเบา ๆ","tl":"Dahan-dahang suminga","ja":"やさしく鼻をかむ"},
+              note: {"zh-TW":"鼻子太塞時，藥不容易碰到鼻黏膜。","en":"If the nose is full of mucus, the medicine may not reach the nasal lining well.","id":"Bila hidung penuh lendir, obat sulit mengenai lapisan dalam hidung.","vi":"Nếu mũi đầy dịch, thuốc khó tiếp xúc tốt với niêm mạc mũi.","th":"ถ้าจมูกมีน้ำมูกมาก ยาจะสัมผัสเยื่อบุจมูกได้ไม่ดี","tl":"Kung puno ng sipon ang ilong, maaaring hindi maabot nang maayos ng gamot ang lining ng ilong.","ja":"鼻水が多いと、薬が鼻の粘膜に届きにくくなります。"},
+              illustration: "assets/svg/nasal-spray-standard/step-0.svg"
+          },
+          {
+              action: {"zh-TW":"取下瓶蓋，這是澄清溶液，不需振搖","en":"Remove the cap; this is a clear solution and does not need shaking","id":"Lepas tutup; ini larutan bening dan tidak perlu dikocok","vi":"Mở nắp; đây là dung dịch trong, không cần lắc","th":"เปิดฝา ยานี้เป็นสารละลายใส ไม่ต้องเขย่า","tl":"Tanggalin ang takip; malinaw na likido ito at hindi kailangang kalugin","ja":"キャップを外す。透明な液なので振る必要はありません。"},
+              note: {"zh-TW":"請照醫囑噴，不要自己一直加次數。","en":"Use only as directed and do not keep increasing the number of sprays on your own.","id":"Gunakan sesuai petunjuk dan jangan menambah jumlah semprotan sendiri.","vi":"Hãy dùng đúng hướng dẫn và đừng tự tăng số lần xịt.","th":"ใช้ตามคำแนะนำ และอย่าเพิ่มจำนวนครั้งพ่นเอง","tl":"Gamitin lamang ayon sa tagubilin at huwag basta dagdagan ang dami ng spray.","ja":"指示どおりに使い、自分で回数を増やさないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-1.svg"
+          },
+          {
+              action: {"zh-TW":"頭微向前，噴嘴放入一側鼻孔","en":"Tilt your head slightly forward and place the nozzle into one nostril","id":"Miringkan kepala sedikit ke depan lalu masukkan ujung semprot ke salah satu lubang hidung","vi":"Cúi đầu nhẹ ra trước rồi đưa đầu xịt vào một bên mũi","th":"ก้มศีรษะไปข้างหน้าเล็กน้อย แล้วสอดหัวพ่นเข้าไปในรูจมูกข้างหนึ่ง","tl":"Bahagyang iyuko ang ulo pasulong at ipasok ang dulo sa isang butas ng ilong","ja":"頭を少し前に傾け、ノズルを片方の鼻の穴に入れる"},
+              note: {"zh-TW":"尖端稍微朝外，不要對著鼻中隔。","en":"Aim the tip slightly outward, not toward the middle wall of the nose.","id":"Arahkan ujung sedikit ke luar, bukan ke sekat tengah hidung.","vi":"Hướng đầu xịt hơi ra ngoài, không chĩa vào vách ngăn giữa mũi.","th":"หันปลายหัวพ่นออกด้านนอกเล็กน้อย ไม่เล็งเข้าหาผนังกั้นจมูก","tl":"Ihilig nang bahagya palabas ang dulo, hindi sa gitnang tabiki ng ilong.","ja":"先端を少し外側へ向け、鼻の真ん中の仕切りには向けないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-2.svg"
+          },
+          {
+              action: {"zh-TW":"按 1 次，同時輕輕吸氣","en":"Press once and breathe in gently","id":"Tekan sekali dan tarik napas pelan","vi":"Ấn một lần và hít nhẹ","th":"กด 1 ครั้ง พร้อมสูดเบา ๆ","tl":"Pindutin nang isang beses at marahang suminghot","ja":"1回押して軽く吸う"},
+              note: {"zh-TW":"不要大力猛吸。若同側需要第 2 或第 3 下，再照醫囑重複。","en":"Do not sniff hard. If the same side needs a second or third spray, repeat as directed.","id":"Jangan menarik napas terlalu kuat. Bila sisi yang sama perlu semprotan kedua atau ketiga, ulangi sesuai petunjuk.","vi":"Đừng hít quá mạnh. Nếu cùng một bên cần lần xịt thứ hai hoặc thứ ba, lặp lại theo chỉ định.","th":"อย่าสูดแรงเกินไป หากข้างเดิมต้องพ่นครั้งที่ 2 หรือ 3 ให้ทำซ้ำตามคำสั่งแพทย์","tl":"Huwag suminghot nang malakas. Kung kailangan ng pangalawa o pangatlong spray sa parehong butas ng ilong, ulitin ayon sa tagubilin.","ja":"強く吸い込まないでください。同じ鼻の穴に2回目または3回目が必要なら、指示どおりに繰り返します。"},
+              illustration: "assets/svg/nasal-spray-standard/step-3.svg"
+          },
+          {
+              action: {"zh-TW":"改用口呼氣，另一側重複同樣步驟","en":"Breathe out through your mouth, then repeat on the other side","id":"Embuskan lewat mulut lalu ulangi pada sisi satunya","vi":"Thở ra bằng miệng rồi lặp lại bên còn lại","th":"หายใจออกทางปาก แล้วทำซ้ำอีกข้าง","tl":"Huminga palabas sa bibig, pagkatapos ulitin sa kabilang butas ng ilong","ja":"口から息を吐き、反対側でも同じように行う"},
+              note: {"zh-TW":"24 小時內不要超過 2 次用藥。","en":"Do not use it more than 2 times in 24 hours.","id":"Jangan gunakan lebih dari 2 kali dalam 24 jam.","vi":"Không dùng quá 2 lần trong 24 giờ.","th":"อย่าใช้เกิน 2 ครั้งใน 24 ชั่วโมง","tl":"Huwag gamitin nang higit sa 2 beses sa loob ng 24 oras.","ja":"24時間以内に2回を超えて使わないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-4.svg"
+          },
+          {
+              action: {"zh-TW":"擦噴嘴，蓋回瓶蓋","en":"Wipe the nozzle and replace the cap","id":"Lap ujung semprot lalu pasang kembali tutupnya","vi":"Lau đầu xịt rồi đậy nắp lại","th":"เช็ดหัวพ่นแล้วปิดฝา","tl":"Punasan ang nozzle at ibalik ang takip","ja":"ノズルを拭き、キャップを戻す"},
+              note: {"zh-TW":"共用鼻噴劑容易傳染，請自己專用。","en":"Do not share the spray with others.","id":"Jangan berbagi semprotan dengan orang lain.","vi":"Không dùng chung lọ xịt với người khác.","th":"อย่าใช้ร่วมกับผู้อื่น","tl":"Huwag ipahiram o ipagamit sa iba ang spray.","ja":"他の人と共用しないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-5.svg"
+          }
+      ],
+      storage: {
+          title: {"zh-TW":"藥品保存","en":"Storage","id":"Penyimpanan","vi":"Bảo quản","th":"การเก็บรักษา","tl":"Imbakan","ja":"保管方法"},
+          text: {
+              "zh-TW": "室溫保存，避免高溫與日光直射。",
+              "en": "Store at room temperature, away from heat and direct light.",
+              "id": "Simpan pada suhu ruang, jauhkan dari panas dan sinar matahari langsung.",
+              "vi": "Bảo quản ở nhiệt độ phòng, tránh nóng và ánh nắng trực tiếp.",
+              "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสงแดดโดยตรง","tl":"Itago sa temperaturang kuwarto, iwasan ang init at direktang sikat ng araw.",
+              "ja": "室温で保管し、高温と直射日光を避けてください。"
+          }
+      },
+      warnings: [
+          {"zh-TW":"連續使用不可超過 3 天；超過可能反彈更塞。","en":"Do not use it for more than 3 days in a row. Longer use can cause rebound congestion.","id":"Jangan gunakan terus lebih dari 3 hari. Pemakaian lebih lama dapat menyebabkan hidung semakin tersumbat.","vi":"Không dùng liên tục quá 3 ngày. Dùng lâu hơn có thể gây nghẹt mũi dội ngược nặng hơn.","th":"อย่าใช้ติดต่อกันเกิน 3 วัน เพราะอาจทำให้คัดจมูกมากขึ้นจากการเด้งกลับของอาการ","tl":"Huwag gamitin nang lampas 3 araw na tuluy-tuloy. Maaari itong magdulot ng rebound congestion.","ja":"3日を超えて続けて使わないでください。かえって鼻づまりが悪化することがあります。"},
+          {"zh-TW":"高血壓、心臟病、甲狀腺疾病、青光眼或攝護腺肥大，使用前先問醫師。","en":"Ask your doctor before use if you have high blood pressure, heart disease, thyroid disease, glaucoma, or prostate problems.","id":"Tanyakan ke dokter sebelum memakai bila Anda punya tekanan darah tinggi, penyakit jantung, penyakit tiroid, glaukoma, atau gangguan prostat.","vi":"Hãy hỏi bác sĩ trước khi dùng nếu bạn bị tăng huyết áp, bệnh tim, bệnh tuyến giáp, glaucoma hoặc vấn đề tuyến tiền liệt.","th":"ควรปรึกษาแพทย์ก่อนใช้หากมีความดันโลหิตสูง โรคหัวใจ โรคไทรอยด์ ต้อหิน หรือปัญหาต่อมลูกหมาก","tl":"Magtanong muna sa doktor bago gamitin kung may altapresyon, sakit sa puso, sakit sa thyroid, glaucoma, o problema sa prostate.","ja":"高血圧、心臓病、甲状腺疾患、緑内障、前立腺の問題がある方は使用前に医師へ相談してください。"},
+          {"zh-TW":"6 歲以下兒童請先問醫師。","en":"Ask a doctor before use in children younger than 6 years.","id":"Untuk anak di bawah 6 tahun, tanyakan dulu ke dokter.","vi":"Trẻ dưới 6 tuổi cần hỏi bác sĩ trước khi dùng.","th":"เด็กอายุต่ำกว่า 6 ปี ควรปรึกษาแพทย์ก่อนใช้","tl":"Magtanong muna sa doktor bago gamitin sa batang mas bata sa 6 na taon.","ja":"6歳未満の小児には使用前に医師へ相談してください。"}
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/sindecon"
+  },
+
+  // ── Trisonin ─────────────────────────────────────,
+  {
+      "id": "trisonin",
+      "category": "nasal",
+      color: { main: "#185FA5", light: "#E6F1FB", dark: "#042C53", badge: "#B5D4F4", badgeText: "#042C53" },
+      emergency: false,
+      name: {
+          "zh-TW": "特索寧鼻用噴液劑",
+          "en": "Trisonin Nasal Spray",
+          "id": "Trisonin semprotan hidung",
+          "vi": "Trisonin xịt mũi",
+          "th": "Trisonin ยาพ่นจมูก",
+          "tl": "Trisonin nasal spray",
+          "ja": "トリソニン点鼻薬"
+      },
+      subtitle: {
+          "zh-TW": "Trisonin | triamcinolone acetonide 55 mcg/噴 | 120 噴",
+          "en": "Trisonin | triamcinolone acetonide 55 mcg/spray | 120 sprays",
+          "id": "Trisonin | triamcinolone acetonide 55 mcg/semprot | 120 semprotan",
+          "vi": "Trisonin | triamcinolone acetonide 55 mcg/lần xịt | 120 lần xịt",
+          "th": "Trisonin | triamcinolone acetonide 55 mcg/พ่น | 120 ครั้ง",
+          "tl": "Trisonin | triamcinolone acetonide 55 mcg/spray | 120 sprays",
+          "ja": "Trisonin｜triamcinolone acetonide 55 mcg/噴霧｜120回"
+      },
+      headerBadge: {"zh-TW":"每天規律用","en":"Use every day","id":"Pakai setiap hari","vi":"Dùng đều mỗi ngày","th":"ใช้สม่ำเสมอทุกวัน","tl":"Gamitin araw-araw","ja":"毎日続けて使う"},
+      usage: {
+          "zh-TW": "這是鼻過敏保養藥，不是噴了馬上通鼻；通常連續用幾天後較明顯。",
+          "en": "This is a controller medicine for allergic rhinitis. It does not open the nose right away; it usually works better after several days of regular use.",
+          "id": "Ini adalah obat perawatan untuk alergi hidung. Bukan untuk langsung melegakan hidung tersumbat; biasanya lebih terasa setelah dipakai teratur beberapa hari.",
+          "vi": "Đây là thuốc kiểm soát viêm mũi dị ứng. Thuốc không làm mũi thông ngay; thường cần dùng đều vài ngày mới thấy rõ hơn.",
+          "th": "ยานี้เป็นยาควบคุมอาการภูมิแพ้จมูก ไม่ได้ช่วยโล่งจมูกทันที มักเห็นผลชัดขึ้นหลังใช้สม่ำเสมอหลายวัน","tl":"Ito ay pang-maintenance na gamot para sa allergic rhinitis. Hindi ito agad nagpapaluwag ng ilong; kadalasang mas ramdam ang epekto matapos gamitin nang tuloy-tuloy sa loob ng ilang araw.",
+          "ja": "これはアレルギー性鼻炎の維持薬です。すぐに鼻を通す薬ではなく、数日続けて使うと効果が分かりやすくなります。"
+      },
+      preStepsInfo: {
+          title: {"zh-TW":"第一次使用前","en":"Before first use","id":"Sebelum pemakaian pertama","vi":"Trước lần dùng đầu tiên","th":"ก่อนใช้ครั้งแรก","tl":"Bago unang gamitin","ja":"初回使用前"},
+          text: {
+              "zh-TW": "先振搖。首次使用前先對空噴 5 次；若超過 2 週沒用，再對空噴 1 次。若有頸套或安全夾，使用前先取下。",
+              "en": "Shake first. Prime 5 times before first use. If it has not been used for more than 2 weeks, prime it once again. If your bottle has a neck collar or safety clip, remove it first.",
+              "id": "Kocok dulu. Prime 5 kali sebelum pemakaian pertama. Bila tidak dipakai lebih dari 2 minggu, prime lagi 1 kali. Jika ada cincin leher atau klip pengaman, lepas dulu.",
+              "vi": "Lắc trước. Xịt thử 5 lần trước khi dùng lần đầu. Nếu không dùng hơn 2 tuần, xịt thử lại 1 lần. Nếu chai có vòng cổ hoặc chốt an toàn, hãy tháo ra trước.",
+              "th": "เขย่าก่อน ก่อนใช้ครั้งแรกให้พ่นทิ้ง 5 ครั้ง หากไม่ได้ใช้เกิน 2 สัปดาห์ ให้พ่นทิ้งอีก 1 ครั้ง ถ้ามีปลอกคอหรือคลิปนิรภัย ให้ถอดออกก่อน","tl":"Kalugin muna. Mag-prime ng 5 beses bago unang gamitin. Kung hindi nagamit nang mahigit 2 linggo, mag-prime muli nang 1 beses. Kung may neck collar o safety clip, alisin muna ito.",
+              "ja": "最初に振ります。初回使用前は5回空噴霧し、2週間を超えて使っていない時は1回空噴霧します。ネックカラーや安全クリップがある場合は先に外してください。"
+          }
+      },
+      badge: {"zh-TW":"鼻用類固醇","en":"Nasal steroid","id":"Steroid hidung","vi":"Corticosteroid xịt mũi","th":"สเตียรอยด์พ่นจมูก","tl":"Nasal steroid","ja":"鼻用ステロイド"},
+      steps: [
+          {
+              action: {"zh-TW":"振搖藥瓶，取下頸套或瓶蓋","en":"Shake the bottle and remove the neck collar or cap","id":"Kocok botol lalu lepas cincin leher atau tutupnya","vi":"Lắc chai rồi tháo vòng cổ hoặc nắp","th":"เขย่าขวด แล้วถอดปลอกคอหรือฝาออก","tl":"Kalugin ang bote at tanggalin ang neck collar o takip","ja":"ボトルを振り、ネックカラーまたはキャップを外す"},
+              note: {"zh-TW":"這是懸浮液，先搖勻再噴。","en":"This is a suspension, so shake it before each use.","id":"Ini adalah suspensi, jadi kocok dulu sebelum tiap pemakaian.","vi":"Đây là hỗn dịch nên cần lắc trước mỗi lần dùng.","th":"ยานี้เป็นยาน้ำแขวนตะกอน จึงต้องเขย่าก่อนใช้ทุกครั้ง","tl":"Suspension ito kaya kailangang kalugin bago ang bawat gamit.","ja":"懸濁液なので、使用前に毎回振ってください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-1.svg"
+          },
+          {
+              action: {"zh-TW":"輕輕擤鼻，清掉鼻內分泌物","en":"Gently blow your nose","id":"Buang ingus perlahan","vi":"Xì mũi nhẹ nhàng","th":"สั่งน้ำมูกเบา ๆ","tl":"Dahan-dahang suminga","ja":"やさしく鼻をかむ"},
+              note: {"zh-TW":"鼻內太多分泌物時，藥比較不容易沾到鼻黏膜。","en":"Too much mucus makes it harder for the medicine to reach the nasal lining.","id":"Lendir yang terlalu banyak membuat obat lebih sulit mengenai lapisan dalam hidung.","vi":"Nhiều dịch mũi làm thuốc khó tiếp xúc với niêm mạc mũi hơn.","th":"ถ้ามีน้ำมูกมาก ยาจะสัมผัสเยื่อบุจมูกได้ยากขึ้น","tl":"Kung maraming sipon, mas mahirap maabot ng gamot ang lining ng ilong.","ja":"鼻水が多いと、薬が鼻の粘膜に届きにくくなります。"},
+              illustration: "assets/svg/nasal-spray-standard/step-0.svg"
+          },
+          {
+              action: {"zh-TW":"頭微向前，噴嘴放入一側鼻孔","en":"Tilt your head slightly forward and place the nozzle into one nostril","id":"Miringkan kepala sedikit ke depan lalu masukkan ujung semprot ke salah satu lubang hidung","vi":"Cúi đầu nhẹ ra trước rồi đưa đầu xịt vào một bên mũi","th":"ก้มศีรษะไปข้างหน้าเล็กน้อย แล้วสอดหัวพ่นเข้าไปในรูจมูกข้างหนึ่ง","tl":"Bahagyang iyuko ang ulo pasulong at ipasok ang dulo sa isang butas ng ilong","ja":"頭を少し前に傾け、ノズルを片方の鼻の穴に入れる"},
+              note: {"zh-TW":"噴嘴末端稍微朝外，不要對著鼻中隔。","en":"Aim the tip slightly outward, not toward the middle wall of the nose.","id":"Arahkan ujung sedikit ke luar, bukan ke sekat tengah hidung.","vi":"Hướng đầu xịt hơi ra ngoài, không chĩa vào vách ngăn giữa mũi.","th":"หันปลายหัวพ่นออกด้านนอกเล็กน้อย ไม่เล็งเข้าหาผนังกั้นจมูก","tl":"Ihilig nang bahagya palabas ang dulo, hindi sa gitnang tabiki ng ilong.","ja":"先端を少し外側へ向け、鼻の真ん中の仕切りには向けないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-2.svg"
+          },
+          {
+              action: {"zh-TW":"按壓 1 次，同時輕輕吸氣","en":"Press once and breathe in gently","id":"Tekan sekali dan tarik napas pelan","vi":"Ấn một lần và hít nhẹ","th":"กด 1 ครั้ง พร้อมสูดเบา ๆ","tl":"Pindutin nang isang beses at marahang suminghot","ja":"1回押して軽く吸う"},
+              note: {"zh-TW":"不要大力猛吸。若同側需要第 2 下，再照醫囑重複。","en":"Do not sniff hard. If the same side needs a second spray, repeat as directed.","id":"Jangan menarik napas terlalu kuat. Bila sisi yang sama perlu semprotan kedua, ulangi sesuai petunjuk.","vi":"Đừng hít quá mạnh. Nếu cùng một bên cần lần xịt thứ hai, lặp lại theo chỉ định.","th":"อย่าสูดแรงเกินไป หากข้างเดิมต้องพ่นครั้งที่ 2 ให้ทำซ้ำตามคำสั่งแพทย์","tl":"Huwag suminghot nang malakas. Kung kailangan ng pangalawang spray sa parehong butas ng ilong, ulitin ayon sa tagubilin.","ja":"強く吸い込まないでください。同じ鼻の穴に2回目が必要なら、指示どおりに繰り返します。"},
+              illustration: "assets/svg/nasal-spray-standard/step-3.svg"
+          },
+          {
+              action: {"zh-TW":"改用口呼氣，另一側重複同樣步驟","en":"Breathe out through your mouth, then repeat on the other side","id":"Embuskan lewat mulut lalu ulangi pada sisi satunya","vi":"Thở ra bằng miệng rồi lặp lại bên còn lại","th":"หายใจออกทางปาก แล้วทำซ้ำอีกข้าง","tl":"Huminga palabas sa bibig, pagkatapos ulitin sa kabilang butas ng ilong","ja":"口から息を吐き、反対側でも同じように行う"},
+              note: {"zh-TW":"噴完後 15 分鐘內先不要擤鼻。","en":"Try not to blow your nose for 15 minutes after spraying.","id":"Usahakan tidak membuang ingus selama 15 menit setelah semprot.","vi":"Cố gắng đừng xì mũi trong 15 phút sau khi xịt.","th":"พยายามอย่าสั่งน้ำมูกภายใน 15 นาทีหลังพ่น","tl":"Subukang huwag suminga sa loob ng 15 minuto pagkatapos mag-spray.","ja":"噴霧後15分間はできるだけ鼻をかまないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-4.svg"
+          },
+          {
+              action: {"zh-TW":"擦噴嘴，蓋回瓶蓋，再套回頸套","en":"Wipe the nozzle, replace the cap, and put the neck collar back on","id":"Lap ujung semprot, pasang kembali tutupnya, lalu pasang lagi cincin leher","vi":"Lau đầu xịt, đậy nắp lại rồi gắn lại vòng cổ","th":"เช็ดหัวพ่น ปิดฝา แล้วใส่ปลอกคอกลับ","tl":"Punasan ang nozzle, ibalik ang takip, at ikabit muli ang neck collar","ja":"ノズルを拭き、キャップを戻し、ネックカラーを付け直す"},
+              note: {"zh-TW":"保持噴嘴清潔，不要用針去通噴孔。","en":"Keep the nozzle clean and do not use a pin or needle to open the spray hole.","id":"Jaga ujung semprot tetap bersih dan jangan menusuk lubang semprot dengan jarum.","vi":"Giữ đầu xịt sạch sẽ và đừng dùng kim chọc lỗ phun.","th":"รักษาหัวพ่นให้สะอาด และห้ามใช้เข็มแยงรูพ่น","tl":"Panatilihing malinis ang nozzle at huwag tusukin ng aspile o karayom ang butas ng spray.","ja":"ノズルを清潔に保ち、噴霧口を針で突かないでください。"},
+              illustration: "assets/svg/nasal-spray-standard/step-5.svg"
+          }
+      ],
+      storage: {
+          title: {"zh-TW":"藥品保存","en":"Storage","id":"Penyimpanan","vi":"Bảo quản","th":"การเก็บรักษา","tl":"Imbakan","ja":"保管方法"},
+          text: {
+              "zh-TW": "室溫保存，避免高溫與日光直射；勿冷凍。",
+              "en": "Store at room temperature, away from heat and direct light. Do not freeze.",
+              "id": "Simpan pada suhu ruang, jauhkan dari panas dan sinar matahari langsung. Jangan dibekukan.",
+              "vi": "Bảo quản ở nhiệt độ phòng, tránh nóng và ánh nắng trực tiếp. Không để đông đá.",
+              "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสงแดดโดยตรง ห้ามแช่แข็ง","tl":"Itago sa temperaturang kuwarto, iwasan ang init at direktang sikat ng araw. Huwag i-freeze.",
+              "ja": "室温で保管し、高温と直射日光を避け、凍らせないでください。"
+          }
+      },
+      warnings: [
+          {"zh-TW":"每天規律用，比想到才噴更有效。","en":"Regular daily use works better than spraying only when symptoms bother you.","id":"Pemakaian teratur setiap hari lebih efektif daripada hanya saat gejala muncul.","vi":"Dùng đều mỗi ngày hiệu quả hơn là chỉ xịt khi khó chịu.","th":"ใช้สม่ำเสมอทุกวันจะได้ผลดีกว่าใช้เฉพาะเวลามีอาการ","tl":"Mas mabisa ang regular na araw-araw na gamit kaysa sa paggamit lamang kapag may sintomas.","ja":"症状が出た時だけでなく、毎日続けて使う方が効果的です。"},
+          {"zh-TW":"若常流鼻血、鼻痛或鼻內破皮，請回診。","en":"Go back for review if you often get nosebleeds, nasal pain, or sores inside the nose.","id":"Periksa kembali bila sering mimisan, nyeri hidung, atau ada luka di dalam hidung.","vi":"Hãy tái khám nếu thường chảy máu mũi, đau mũi hoặc có vết trầy trong mũi.","th":"หากมีเลือดกำเดาบ่อย ปวดจมูก หรือมีแผลในจมูก ให้กลับไปพบแพทย์","tl":"Magpatingin muli kung madalas ang pagdurugo ng ilong, may pananakit sa ilong, o may sugat sa loob ng ilong.","ja":"鼻血、鼻の痛み、鼻の中のただれが続く時は受診してください。"},
+          {"zh-TW":"懷孕、哺乳中，或近期做過鼻部手術，請先告知醫師。","en":"Tell your doctor before use if you are pregnant, breastfeeding, or recently had nose surgery.","id":"Beri tahu dokter sebelum memakai bila sedang hamil, menyusui, atau baru menjalani operasi hidung.","vi":"Hãy báo bác sĩ trước khi dùng nếu đang mang thai, cho con bú, hoặc mới phẫu thuật mũi.","th":"แจ้งแพทย์ก่อนใช้หากกำลังตั้งครรภ์ ให้นมบุตร หรือเพิ่งผ่าตัดจมูก","tl":"Sabihin sa doktor bago gamitin kung buntis, nagpapasuso, o kakagaling lang sa operasyon sa ilong.","ja":"妊娠中・授乳中の方、最近鼻の手術を受けた方は使用前に医師へ伝えてください。"}
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/trisonin"
+  },
+
 
   // ── NovoRapid ─────────────────────────────────────,
   {
@@ -19871,10 +21828,11 @@ function inferCategory(m) {
   if (m.category && CATEGORY_META[m.category]) return m.category;
 
   const badge = ((m.badge && (m.badge["zh-TW"] || m.badge["en"])) || "").toLowerCase();
+  if (badge.includes("鼻") || badge.includes("nasal")) return "nasal";
   if (badge.includes("吸入") || badge.includes("inhaler")) return "inhaler";
   if (badge.includes("舌下") || badge.includes("sublingual")) return "ntg";
   if (badge.includes("外用") || badge.includes("topical") || badge.includes("貼片") || badge.includes("patch")) return "topical";
-  if (badge.includes("眼") || badge.includes("耳") || badge.includes("鼻") || badge.includes("eye/ear/nasal")) return "eye";
+  if (badge.includes("眼") || badge.includes("耳") || badge.includes("eye/ear")) return "eye";
   if (badge.includes("栓") || badge.includes("陰道") || badge.includes("supp") || badge.includes("vaginal")) return "supp";
   if (badge.includes("注射") || badge.includes("injection")) return "inject";
   if (badge.includes("戒菸") || badge.includes("smoking")) return "smoking";
@@ -19883,6 +21841,7 @@ function inferCategory(m) {
 
   const main = ((m.color && m.color.main) || "").toLowerCase();
   if (main === "#993c1d") return "ntg";
+  if (main === "#185fa5" && badge.includes("鼻")) return "nasal";
   if (main === "#185fa5") return "eye";
   if (main === "#534ab7") return "supp";
   if (main === "#854f0b") return "inject";

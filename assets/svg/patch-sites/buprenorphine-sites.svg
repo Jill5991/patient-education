@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="170" viewBox="0 0 240 170">
+  <rect x="8" y="8" width="224" height="154" rx="12" fill="#ffffff" stroke="#d8ddd2" stroke-dasharray="4 4"/>
+  <g fill="none" stroke="#777" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M78 30c8-7 18-11 28-11s20 4 28 11"/>
+    <path d="M106 41v25"/>
+    <path d="M78 80c2-17 5-29 11-39"/>
+    <path d="M134 41c6 10 9 22 11 39"/>
+    <path d="M66 80l-10 45"/>
+    <path d="M146 80l10 45"/>
+    <path d="M92 66h28"/>
+    <path d="M110 66v58"/>
+    <path d="M88 124h44"/>
+  </g>
+  <rect x="63" y="26" width="22" height="18" rx="5" fill="#eaf3de" stroke="#3b6d11"/>
+  <rect x="155" y="26" width="22" height="18" rx="5" fill="#eaf3de" stroke="#3b6d11"/>
+  <rect x="57" y="83" width="24" height="18" rx="5" fill="#eaf3de" stroke="#3b6d11"/>
+  <rect x="159" y="83" width="24" height="18" rx="5" fill="#eaf3de" stroke="#3b6d11"/>
+  <text x="120" y="150" text-anchor="middle" font-size="14" fill="#555">上胸、上背或上臂外側</text>
+</svg>

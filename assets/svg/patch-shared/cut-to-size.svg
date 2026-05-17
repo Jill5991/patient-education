@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="170" viewBox="0 0 240 170">
+  <rect x="8" y="8" width="224" height="154" rx="12" fill="#ffffff" stroke="#d8ddd2" stroke-dasharray="4 4"/>
+  <rect x="56" y="52" width="96" height="64" rx="8" fill="#f7f9f4" stroke="#6a8c54" stroke-width="3"/>
+  <line x1="88" y1="52" x2="88" y2="116" stroke="#c7c7c7" stroke-dasharray="5 4" stroke-width="2"/>
+  <line x1="120" y1="52" x2="120" y2="116" stroke="#c7c7c7" stroke-dasharray="5 4" stroke-width="2"/>
+  <line x1="56" y1="84" x2="152" y2="84" stroke="#c7c7c7" stroke-dasharray="5 4" stroke-width="2"/>
+  <g fill="none" stroke="#555" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="176" cy="60" r="11"/>
+    <circle cx="199" cy="60" r="11"/>
+    <path d="M184 66l-28 27"/>
+    <path d="M189 54l18 29"/>
+  </g>
+  <text x="120" y="142" text-anchor="middle" font-size="15" fill="#555">可依疼痛範圍剪裁</text>
+</svg>
