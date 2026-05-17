@@ -857,7 +857,7 @@ const LANGS = [
   { code:"ja",    label:"日本語" }
 ];
 
-const CATEGORY_ORDER = ["all", "inhaler", "nasal", "ntg", "topical", "eye", "supp", "inject", "smoking", "powder", "oral", "other"];
+const CATEGORY_ORDER = ["all", "inhaler", "nasal", "ntg", "topical", "eye", "supp", "inject", "smoking", "oral", "other"];
 
 const CATEGORY_META = {
   all:     { color: "#5E5E5E", label: { "zh-TW":"全部", "en":"All", "id":"Semua", "vi":"Tất cả", "th":"ทั้งหมด", "tl":"Lahat", "ja":"すべて" } },
@@ -870,7 +870,7 @@ const CATEGORY_META = {
   inject:  { color: "#854F0B", label: { "zh-TW":"注射劑", "en":"Injection", "id":"Injeksi", "vi":"Thuốc tiêm", "th":"ยาฉีด", "tl":"Injection", "ja":"注射剤" } },
   smoking: { color: "#27500A", label: { "zh-TW":"戒菸用藥", "en":"Smoking Cessation", "id":"Berhenti Merokok", "vi":"Cai thuốc", "th":"เลิกบุหรี่", "tl":"Smoking Cessation", "ja":"禁煙補助" } },
   powder:  { color: "#0F6E56", label: { "zh-TW":"粉劑/泡製", "en":"Powder/Reconstitution", "id":"Serbuk", "vi":"Thuốc bột", "th":"ยาผง", "tl":"Powder", "ja":"粉末/溶解" } },
-  oral:    { color: "#3B6D11", label: { "zh-TW":"口服藥", "en":"Oral", "id":"Obat oral", "vi":"Thuốc uống", "th":"ยารับประทาน", "tl":"Oral", "ja":"内服薬" } },
+  oral:    { color: "#3B6D11", label: { "zh-TW":"口服藥/泡製", "en":"Oral/Reconstitution", "id":"Obat oral/rekonstitusi", "vi":"Thuốc uống/pha lại", "th":"ยารับประทาน/ยาชง", "tl":"Gamot na iniinom/pagtitimpla", "ja":"内服薬/調製" } },
   other:   { color: "#7A7A7A", label: { "zh-TW":"其他", "en":"Other", "id":"Lainnya", "vi":"Khác", "th":"อื่น ๆ", "tl":"Iba pa", "ja":"その他" } }
 };
 
@@ -973,154 +973,479 @@ const MEDICATIONS = [
     qrUrl: "https://pharmacy.example.com/meds/eyedrops"
   },
 
-  // ── Placeholder: Paxlovid ─────────────────────────────────────,
+  // ── Paxlovid ─────────────────────────────────────,
   {
-      "id": "paxlovid",
-      color: {
-          main: "#3B6D11",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#C0DD97",
-          badgeText: "#173404"
+    "id": "paxlovid",
+    color: {
+      main: "#993C1D",
+      light: "#FAECE7",
+      dark: "#4A1B0C",
+      badge: "#F5C4B3",
+      badgeText: "#4A1B0C"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "Paxlovid",
+      "en": "Paxlovid",
+      "id": "Paxlovid",
+      "vi": "Paxlovid",
+      "th": "Paxlovid",
+      "tl": "Paxlovid",
+      "ja": "Paxlovid"
+    },
+    subtitle: {
+      "zh-TW": "Nirmatrelvir + Ritonavir｜發病 5 日內開始",
+      "en": "Nirmatrelvir + Ritonavir | Start within 5 days of symptom onset",
+      "id": "Nirmatrelvir + Ritonavir | Mulai dalam 5 hari sejak gejala muncul",
+      "vi": "Nirmatrelvir + Ritonavir | Bắt đầu trong vòng 5 ngày từ khi có triệu chứng",
+      "th": "Nirmatrelvir + Ritonavir | เริ่มภายใน 5 วันหลังมีอาการ",
+      "tl": "Nirmatrelvir + Ritonavir | Simulan sa loob ng 5 araw mula nang magsimula ang sintomas",
+      "ja": "ニルマトレルビル + リトナビル｜発症後5日以内に開始"
+    },
+    headerBadge: {
+      "zh-TW": "COVID-19",
+      "en": "COVID-19",
+      "id": "COVID-19",
+      "vi": "COVID-19",
+      "th": "COVID-19",
+      "tl": "COVID-19",
+      "ja": "COVID-19"
+    },
+    usage: {
+      "zh-TW": "每天早晚各 1 次，連續 5 天",
+      "en": "Take it twice a day for 5 days",
+      "id": "Minum 2 kali sehari selama 5 hari",
+      "vi": "Uống 2 lần mỗi ngày trong 5 ngày",
+      "th": "รับประทานวันละ 2 ครั้ง นาน 5 วัน",
+      "tl": "Inumin 2 beses sa isang araw sa loob ng 5 araw",
+      "ja": "1日2回、5日間続けて服用"
+    },
+    badge: {
+      "zh-TW": "口服抗病毒藥",
+      "en": "Oral antiviral",
+      "id": "Obat antivirus oral",
+      "vi": "Thuốc kháng virus đường uống",
+      "th": "ยาต้านไวรัสชนิดรับประทาน",
+      "tl": "Iniinom na antiviral",
+      "ja": "内服抗ウイルス薬"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先看你的包裝",
+        "en": "Check your pack first",
+        "id": "Periksa kemasan Anda dulu",
+        "vi": "Xem vỉ thuốc của bạn trước",
+        "th": "ดูชุดยาของคุณก่อน",
+        "tl": "Tingnan muna ang pakete mo",
+        "ja": "まず自分の包装を確認"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Paxlovid",
-          "en": "Paxlovid",
-          "id": "Paxlovid",
-          "vi": "Paxlovid",
-          "th": "Paxlovid",
-          "tl": "Paxlovid",
-          "ja": "Paxlovid"
+      text: {
+        "zh-TW": "一般每次是粉紅 2 顆加白色 1 顆。若醫師因腎功能調整劑量，你拿到的每次顆數可能不同；一律照藥袋和泡殼分格服用。",
+        "en": "Most people take 2 pink tablets and 1 white tablet each time. If your doctor adjusted the dose for kidney function, your pack may look different. Always follow the label and the blister pack you received.",
+        "id": "Sebagian besar orang minum 2 tablet merah muda dan 1 tablet putih setiap kali. Bila dokter menyesuaikan dosis karena fungsi ginjal, kemasan Anda bisa berbeda. Selalu ikuti etiket dan blister yang Anda terima.",
+        "vi": "Đa số người bệnh uống 2 viên màu hồng và 1 viên màu trắng mỗi lần. Nếu bác sĩ chỉnh liều vì chức năng thận, vỉ thuốc của bạn có thể khác. Luôn làm theo nhãn thuốc và đúng ngăn vỉ bạn nhận được.",
+        "th": "โดยทั่วไปแต่ละครั้งจะรับประทานยาเม็ดสีชมพู 2 เม็ดและสีขาว 1 เม็ด หากแพทย์ปรับขนาดยาตามการทำงานของไต ชุดยาของคุณอาจต่างออกไป ให้ยึดตามฉลากยาและแผงยาที่คุณได้รับเสมอ",
+        "tl": "Kadalasan ay 2 pink na tableta at 1 puting tableta ang iniinom bawat beses. Kung inayos ng doktor ang dosis dahil sa kidney function, maaaring iba ang laman ng pakete mo. Sundin lagi ang label at blister pack na ibinigay sa iyo.",
+        "ja": "通常は1回にピンク2錠と白1錠を服用する。腎機能に合わせて医師が減量した場合は内容が異なることがあるので、必ず薬袋と自分のブリスター包装に従う。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "確認這次要吃哪一格",
+          "en": "Check which blister section to take now",
+          "id": "Periksa blister bagian mana yang harus diminum sekarang",
+          "vi": "Xác nhận ngăn vỉ cần uống lần này",
+          "th": "ตรวจดูว่าครั้งนี้ต้องกินช่องไหน",
+          "tl": "Tingnan kung aling bahagi ng blister ang iinumin ngayon",
+          "ja": "今回飲む区画を確認する"
+        },
+        note: {
+          "zh-TW": "先分清楚早上包或晚上包，再取藥。",
+          "en": "Make sure you are taking the morning or evening dose correctly before removing the tablets.",
+          "id": "Pastikan dulu apakah ini dosis pagi atau malam sebelum mengambil obat.",
+          "vi": "Phân biệt rõ đây là liều sáng hay liều tối rồi mới lấy thuốc.",
+          "th": "ให้แน่ใจก่อนว่านี่คือยาชุดเช้าหรือชุดเย็น แล้วจึงหยิบยา",
+          "tl": "Tiyaking alam mo muna kung ito ay para sa umaga o gabi bago kunin ang gamot.",
+          "ja": "朝の分か夜の分かを確認してから取り出す。"
+        },
+        illustration: "assets/svg/oral-shared/tablets-three.svg"
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        action: {
+          "zh-TW": "用水把這次劑量整次吞下",
+          "en": "Swallow this whole dose with water",
+          "id": "Telan seluruh dosis kali ini dengan air",
+          "vi": "Nuốt trọn liều này với nước",
+          "th": "กลืนยาชุดนี้ทั้งหมดพร้อมน้ำ",
+          "tl": "Lunukin ang buong dosis na ito kasabay ng tubig",
+          "ja": "今回の量を水でまとめて飲み込む"
+        },
+        note: {
+          "zh-TW": "飯前飯後都可；不要剝半、磨粉或嚼碎。",
+          "en": "You may take it with or without food. Do not split, crush, or chew it.",
+          "id": "Boleh diminum dengan atau tanpa makanan. Jangan dibelah, dihancurkan, atau dikunyah.",
+          "vi": "Có thể uống cùng hoặc không cùng thức ăn. Không bẻ, nghiền hay nhai thuốc.",
+          "th": "รับประทานพร้อมอาหารหรือไม่พร้อมอาหารก็ได้ ห้ามหัก บด หรือเคี้ยว",
+          "tl": "Maaaring inumin nang may pagkain o wala. Huwag hatiin, durugin, o nguyain.",
+          "ja": "食前食後どちらでもよい。割ったり砕いたり噛んだりしない。"
+        },
+        illustration: "assets/svg/oral-shared/swallow-water.svg"
       },
-      badge: {
-          "zh-TW": "口服藥",
-          "en": "Oral",
-          "id": "Obat oral",
-          "vi": "Thuốc uống",
-          "th": "ยารับประทาน",
-          "tl": "Oral",
-          "ja": "内服薬"
+      {
+        action: {
+          "zh-TW": "早晚固定時間服用",
+          "en": "Take it at a regular morning and evening time",
+          "id": "Minum pada waktu pagi dan malam yang tetap",
+          "vi": "Uống vào giờ sáng và tối cố định",
+          "th": "กินเวลาเช้าและเย็นให้คงที่",
+          "tl": "Inumin sa pare-parehong oras sa umaga at gabi",
+          "ja": "朝と夜の決まった時間に飲む"
+        },
+        note: {
+          "zh-TW": "兩次大約間隔 12 小時。",
+          "en": "Try to keep about 12 hours between doses.",
+          "id": "Usahakan jaraknya sekitar 12 jam antar dosis.",
+          "vi": "Cố gắng cách nhau khoảng 12 giờ giữa hai liều.",
+          "th": "พยายามเว้นระยะห่างประมาณ 12 ชั่วโมง",
+          "tl": "Sikaping may humigit-kumulang 12 oras sa pagitan ng mga dosis.",
+          "ja": "2回の間隔はおよそ12時間にする。"
+        },
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/paxlovid"
+      {
+        action: {
+          "zh-TW": "連續吃滿 5 天",
+          "en": "Finish the full 5-day course",
+          "id": "Habiskan obat selama 5 hari penuh",
+          "vi": "Uống đủ 5 ngày",
+          "th": "กินต่อเนื่องให้ครบ 5 วัน",
+          "tl": "Tapusin ang buong 5 araw na gamutan",
+          "ja": "5日分を最後まで飲み切る"
+        },
+        note: {
+          "zh-TW": "症狀變輕也不要自己停藥。",
+          "en": "Do not stop early even if you start to feel better.",
+          "id": "Jangan berhenti lebih awal walau sudah merasa lebih baik.",
+          "vi": "Đừng tự ngừng sớm dù triệu chứng đã đỡ hơn.",
+          "th": "แม้อาการดีขึ้นก็ห้ามหยุดยาเอง",
+          "tl": "Huwag tumigil nang maaga kahit gumagaan na ang pakiramdam.",
+          "ja": "症状が軽くなっても自己判断で中止しない。"
+        },
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      },
+      {
+        action: {
+          "zh-TW": "忘記時先看已經晚了多久",
+          "en": "Check how late the missed dose is",
+          "id": "Lihat sudah terlambat berapa lama bila lupa minum",
+          "vi": "Nếu quên liều, hãy xem đã trễ bao lâu",
+          "th": "ถ้าลืมยา ให้ดูก่อนว่าช้าไปกี่ชั่วโมง",
+          "tl": "Kung nakalimot, tingnan muna kung gaano na katagal ang lumipas",
+          "ja": "飲み忘れたら、どれくらい遅れたか確認する"
+        },
+        note: {
+          "zh-TW": "距原定時間未超過 8 小時就補服；超過 8 小時就跳過，下一次照原時間服，不要一次吃兩次。",
+          "en": "If it is within 8 hours of the scheduled time, take it now. If more than 8 hours have passed, skip it and take the next dose at the usual time. Do not double the dose.",
+          "id": "Bila masih dalam 8 jam dari waktu seharusnya, segera minum. Bila sudah lewat lebih dari 8 jam, lewati dosis itu dan minum dosis berikutnya pada waktu biasa. Jangan minum dosis ganda.",
+          "vi": "Nếu còn trong vòng 8 giờ từ thời điểm cần uống, hãy uống ngay. Nếu đã quá 8 giờ, bỏ qua liều đó và uống liều kế tiếp đúng giờ thường lệ. Không uống gấp đôi.",
+          "th": "ถ้ายังไม่เกิน 8 ชั่วโมงจากเวลาที่ควรกิน ให้กินทันที ถ้าเกิน 8 ชั่วโมงแล้ว ให้ข้ามมื้อนั้นและกินมื้อต่อไปตามเวลาปกติ ห้ามกินซ้ำสองเท่า",
+          "tl": "Kung nasa loob pa ng 8 oras mula sa dapat na oras, inumin na agad. Kung lagpas 8 oras na, laktawan iyon at inumin ang susunod sa karaniwang oras. Huwag magdoble ng dosis.",
+          "ja": "予定時刻から8時間以内ならすぐ服用する。8時間を超えていたらその回は飛ばし、次回を通常時間に飲む。2回分を一度に飲まない。"
+        },
+        illustration: "assets/svg/oral-shared/missed-dose.svg",
+        highlight: true
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "室溫乾燥處保存，避光、避熱。\n不要冷藏、冷凍，也不要放在孩童拿得到的地方。",
+        "en": "Store at room temperature in a dry place, away from heat and light.\nDo not refrigerate or freeze. Keep it out of reach of children.",
+        "id": "Simpan pada suhu ruang di tempat kering, jauh dari panas dan cahaya.\nJangan disimpan di kulkas atau freezer. Jauhkan dari jangkauan anak-anak.",
+        "vi": "Bảo quản nơi khô ráo ở nhiệt độ phòng, tránh nóng và ánh sáng.\nKhông để tủ lạnh hoặc ngăn đá. Để xa tầm tay trẻ em.",
+        "th": "เก็บที่อุณหภูมิห้องในที่แห้ง พ้นความร้อนและแสง\nห้ามแช่เย็นหรือแช่แข็ง และเก็บให้พ้นมือเด็ก",
+        "tl": "Itago sa tuyong lugar sa room temperature, malayo sa init at liwanag.\nHuwag i-ref o i-freeze. Ilayo sa abot ng mga bata.",
+        "ja": "室温の乾燥した場所で、光と熱を避けて保管する。\n冷蔵・冷凍しない。子どもの手の届かない所に置く。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "交互作用很多；其他處方藥、成藥、草藥、保健食品都先問醫師或藥師。",
+        "en": "This medicine has many interactions. Ask your doctor or pharmacist before taking any other prescription drugs, over-the-counter medicines, herbs, or supplements.",
+        "id": "Obat ini punya banyak interaksi. Tanyakan dulu kepada dokter atau apoteker sebelum memakai obat resep lain, obat bebas, jamu, atau suplemen.",
+        "vi": "Thuốc này có nhiều tương tác. Hãy hỏi bác sĩ hoặc dược sĩ trước khi dùng thêm thuốc kê toa, thuốc không kê toa, thảo dược hay thực phẩm bổ sung.",
+        "th": "ยานี้มีปฏิกิริยากับยาอื่นได้มาก ก่อนใช้ยาตามใบสั่ง ยาซื้อเอง สมุนไพร หรืออาหารเสริมอื่น ให้ถามแพทย์หรือเภสัชกรก่อน",
+        "tl": "Maraming interaksiyon ang gamot na ito. Magtanong muna sa doktor o parmasyutiko bago uminom ng ibang reseta, OTC, halamang gamot, o supplement.",
+        "ja": "相互作用が多い薬。処方薬、市販薬、漢方、サプリを追加する前に必ず医師または薬剤師へ確認する。"
+      },
+      {
+        "zh-TW": "不要把藥分給別人，也不要自己增減白色或粉紅錠數。",
+        "en": "Do not share this medicine, and do not change the number of pink or white tablets on your own.",
+        "id": "Jangan membagikan obat ini, dan jangan mengubah sendiri jumlah tablet merah muda atau putih.",
+        "vi": "Không chia thuốc cho người khác và không tự ý tăng giảm số viên màu hồng hay màu trắng.",
+        "th": "ห้ามแบ่งยานี้ให้ผู้อื่น และห้ามเพิ่มหรือลดจำนวนยาเม็ดสีชมพูหรือสีขาวเอง",
+        "tl": "Huwag ibahagi ang gamot na ito, at huwag baguhin sa sarili ang bilang ng pink o puting tableta.",
+        "ja": "他人に分けない。ピンク錠や白錠の数を自己判断で増減しない。"
+      },
+      {
+        "zh-TW": "若出現喘、嘴唇舌頭腫、全身紅疹，或皮膚眼白變黃、尿色變深，立即就醫。",
+        "en": "Seek medical care right away if you have trouble breathing, swelling of the lips or tongue, a widespread rash, yellow skin or eyes, or dark urine.",
+        "id": "Segera cari pertolongan medis bila muncul sesak napas, bibir atau lidah bengkak, ruam di seluruh tubuh, kulit atau mata menguning, atau urin berwarna gelap.",
+        "vi": "Đi khám ngay nếu bạn khó thở, sưng môi hoặc lưỡi, nổi ban toàn thân, vàng da vàng mắt hoặc nước tiểu sẫm màu.",
+        "th": "ไปพบแพทย์ทันทีหากหายใจลำบาก ริมฝีปากหรือลิ้นบวม มีผื่นทั่วตัว ตัวเหลืองตาเหลือง หรือปัสสาวะสีเข้ม",
+        "tl": "Magpatingin agad kung hirap huminga, namamaga ang labi o dila, may malawak na pantal, naninilaw ang balat o mata, o umiitim ang ihi.",
+        "ja": "息苦しさ、唇や舌の腫れ、全身の発疹、黄疸、濃い尿が出たらすぐ受診する。"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/meds/paxlovid"
   },
 
-  // ── Placeholder: Molnupiravir ─────────────────────────────────────,
+  // ── Molnupiravir ─────────────────────────────────────,
   {
-      "id": "molnupiravir",
-      color: {
-          main: "#3B6D11",
-          light: "#EAF3DE",
-          dark: "#173404",
-          badge: "#C0DD97",
-          badgeText: "#173404"
+    "id": "molnupiravir",
+    color: {
+      main: "#993C1D",
+      light: "#FAECE7",
+      dark: "#4A1B0C",
+      badge: "#F5C4B3",
+      badgeText: "#4A1B0C"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "莫納皮拉韋",
+      "en": "Molnupiravir",
+      "id": "Molnupiravir",
+      "vi": "Molnupiravir",
+      "th": "Molnupiravir",
+      "tl": "Molnupiravir",
+      "ja": "モルヌピラビル"
+    },
+    subtitle: {
+      "zh-TW": "Molnupiravir 200 mg｜發病 5 日內開始",
+      "en": "Molnupiravir 200 mg | Start within 5 days of symptom onset",
+      "id": "Molnupiravir 200 mg | Mulai dalam 5 hari sejak gejala muncul",
+      "vi": "Molnupiravir 200 mg | Bắt đầu trong vòng 5 ngày từ khi có triệu chứng",
+      "th": "Molnupiravir 200 mg | เริ่มภายใน 5 วันหลังมีอาการ",
+      "tl": "Molnupiravir 200 mg | Simulan sa loob ng 5 araw mula nang magsimula ang sintomas",
+      "ja": "モルヌピラビル 200 mg｜発症後5日以内に開始"
+    },
+    headerBadge: {
+      "zh-TW": "COVID-19",
+      "en": "COVID-19",
+      "id": "COVID-19",
+      "vi": "COVID-19",
+      "th": "COVID-19",
+      "tl": "COVID-19",
+      "ja": "COVID-19"
+    },
+    usage: {
+      "zh-TW": "每 12 小時 1 次，連續 5 天",
+      "en": "Take it every 12 hours for 5 days",
+      "id": "Minum tiap 12 jam selama 5 hari",
+      "vi": "Uống mỗi 12 giờ trong 5 ngày liên tiếp",
+      "th": "รับประทานทุก 12 ชั่วโมง นาน 5 วัน",
+      "tl": "Inumin tuwing 12 oras sa loob ng 5 araw",
+      "ja": "12時間ごとに5日間服用"
+    },
+    badge: {
+      "zh-TW": "口服抗病毒藥",
+      "en": "Oral antiviral",
+      "id": "Obat antivirus oral",
+      "vi": "Thuốc kháng virus đường uống",
+      "th": "ยาต้านไวรัสชนิดรับประทาน",
+      "tl": "Iniinom na antiviral",
+      "ja": "内服抗ウイルス薬"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道 2 件事",
+        "en": "Know these 2 things first",
+        "id": "Ketahui 2 hal ini lebih dulu",
+        "vi": "Biết trước 2 điều này",
+        "th": "รู้ 2 เรื่องนี้ก่อน",
+        "tl": "Alamin muna ang 2 bagay na ito",
+        "ja": "先に2つ確認"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Molnupiravir",
-          "en": "Molnupiravir",
-          "id": "Molnupiravir",
-          "vi": "Molnupiravir",
-          "th": "Molnupiravir",
-          "tl": "Molnupiravir",
-          "ja": "Molnupiravir"
+      text: {
+        "zh-TW": "每次固定吃 4 顆，整個療程共 5 天。懷孕者禁用；具生育能力者需做避孕。",
+        "en": "You always take 4 capsules each time, and the full course is 5 days. Do not use it during pregnancy. People who can become pregnant or make someone pregnant need contraception.",
+        "id": "Setiap kali selalu minum 4 kapsul, dan seluruh terapi berlangsung 5 hari. Jangan gunakan saat hamil. Orang yang bisa hamil atau membuat pasangan hamil perlu memakai kontrasepsi.",
+        "vi": "Mỗi lần luôn uống 4 viên nang, và toàn bộ liệu trình là 5 ngày. Không dùng khi mang thai. Người có khả năng mang thai hoặc làm người khác mang thai cần tránh thai.",
+        "th": "แต่ละครั้งรับประทานครั้งละ 4 แคปซูล และรักษาครบ 5 วัน ห้ามใช้ในหญิงตั้งครรภ์ ผู้ที่อาจตั้งครรภ์หรือทำให้ผู้อื่นตั้งครรภ์ควรคุมกำเนิด",
+        "tl": "Laging 4 na kapsula ang iniinom bawat beses, at 5 araw ang buong gamutan. Huwag gamitin kung buntis. Ang maaaring mabuntis o makapagbuntis ng iba ay kailangang gumamit ng kontrasepsyon.",
+        "ja": "毎回4カプセルを服用し、治療期間は5日間。妊娠中は使用しない。妊娠する可能性がある人、または相手を妊娠させる可能性がある人は避妊が必要。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "先看是不是該吃藥的時間",
+          "en": "Check whether it is time for your dose",
+          "id": "Periksa apakah sekarang waktunya minum obat",
+          "vi": "Xem đã đến giờ uống thuốc chưa",
+          "th": "ตรวจดูก่อนว่าได้เวลากินยาหรือยัง",
+          "tl": "Tingnan kung oras na ba ng pag-inom",
+          "ja": "服用する時間か確認する"
+        },
+        note: {
+          "zh-TW": "兩次大約間隔 12 小時，例如早上 8 點和晚上 8 點。",
+          "en": "Keep about 12 hours between doses, such as 8 AM and 8 PM.",
+          "id": "Usahakan jaraknya sekitar 12 jam, misalnya jam 8 pagi dan jam 8 malam.",
+          "vi": "Giữ khoảng cách khoảng 12 giờ giữa hai liều, ví dụ 8 giờ sáng và 8 giờ tối.",
+          "th": "เว้นระยะห่างประมาณ 12 ชั่วโมง เช่น 8 โมงเช้าและ 2 ทุ่ม",
+          "tl": "Panatilihing may humigit-kumulang 12 oras sa pagitan, gaya ng 8 AM at 8 PM.",
+          "ja": "2回の間隔は約12時間、例えば朝8時と夜8時。"
+        },
+        illustration: "assets/svg/oral-shared/missed-dose.svg"
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        action: {
+          "zh-TW": "每次取出 4 顆膠囊",
+          "en": "Take out 4 capsules for each dose",
+          "id": "Siapkan 4 kapsul untuk setiap dosis",
+          "vi": "Mỗi lần lấy 4 viên nang",
+          "th": "หยิบแคปซูล 4 เม็ดสำหรับแต่ละครั้ง",
+          "tl": "Kumuha ng 4 na kapsula sa bawat dose",
+          "ja": "1回分として4カプセル取り出す"
+        },
+        note: {
+          "zh-TW": "每次都是 4 顆，不要自己增減。",
+          "en": "It is always 4 capsules each time. Do not change the number yourself.",
+          "id": "Setiap kali selalu 4 kapsul. Jangan mengubah jumlahnya sendiri.",
+          "vi": "Mỗi lần luôn là 4 viên. Không tự ý tăng giảm số viên.",
+          "th": "แต่ละครั้งต้อง 4 เม็ดเสมอ ห้ามเพิ่มหรือลดเอง",
+          "tl": "Laging 4 na kapsula bawat beses. Huwag baguhin ang bilang nang kusa.",
+          "ja": "毎回4カプセル。自己判断で増減しない。"
+        },
+        illustration: "assets/svg/oral-shared/capsules-four.svg"
       },
-      badge: {
-          "zh-TW": "口服藥",
-          "en": "Oral",
-          "id": "Obat oral",
-          "vi": "Thuốc uống",
-          "th": "ยารับประทาน",
-          "tl": "Oral",
-          "ja": "内服薬"
+      {
+        action: {
+          "zh-TW": "用水把 4 顆整顆吞下",
+          "en": "Swallow all 4 capsules whole with water",
+          "id": "Telan keempat kapsul utuh dengan air",
+          "vi": "Nuốt cả 4 viên nang với nước",
+          "th": "กลืนแคปซูลทั้ง 4 เม็ดพร้อมน้ำ",
+          "tl": "Lunukin nang buo ang lahat ng 4 na kapsula kasabay ng tubig",
+          "ja": "4カプセルを水でそのまま飲み込む"
+        },
+        note: {
+          "zh-TW": "飯前飯後都可；不要打開、壓碎或咬碎膠囊。",
+          "en": "You may take it with or without food. Do not open, crush, or chew the capsules.",
+          "id": "Boleh diminum dengan atau tanpa makanan. Jangan dibuka, dihancurkan, atau dikunyah.",
+          "vi": "Có thể uống cùng hoặc không cùng thức ăn. Không mở vỏ, nghiền hoặc nhai viên nang.",
+          "th": "รับประทานพร้อมอาหารหรือไม่พร้อมอาหารก็ได้ ห้ามแกะแคปซูล บด หรือเคี้ยว",
+          "tl": "Maaaring inumin nang may pagkain o wala. Huwag buksan, durugin, o nguyain ang kapsula.",
+          "ja": "食前食後どちらでもよい。カプセルを開けたり砕いたり噛んだりしない。"
+        },
+        illustration: "assets/svg/oral-shared/swallow-water.svg"
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/molnupiravir"
+      {
+        action: {
+          "zh-TW": "連續吃滿 5 天",
+          "en": "Finish the full 5-day course",
+          "id": "Habiskan obat selama 5 hari penuh",
+          "vi": "Uống đủ 5 ngày",
+          "th": "กินต่อเนื่องให้ครบ 5 วัน",
+          "tl": "Tapusin ang buong 5 araw na gamutan",
+          "ja": "5日分を最後まで飲み切る"
+        },
+        note: {
+          "zh-TW": "症狀比較好也不要自己停藥。",
+          "en": "Do not stop early even if you start to feel better.",
+          "id": "Jangan berhenti lebih awal walau sudah merasa lebih baik.",
+          "vi": "Đừng tự ngừng sớm dù triệu chứng đã đỡ hơn.",
+          "th": "แม้อาการดีขึ้นก็ห้ามหยุดยาเอง",
+          "tl": "Huwag tumigil nang maaga kahit gumagaan na ang pakiramdam.",
+          "ja": "症状が軽くなっても自己判断で中止しない。"
+        },
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      },
+      {
+        action: {
+          "zh-TW": "忘記時先看已經晚了多久",
+          "en": "Check how late the missed dose is",
+          "id": "Lihat sudah terlambat berapa lama bila lupa minum",
+          "vi": "Nếu quên liều, hãy xem đã trễ bao lâu",
+          "th": "ถ้าลืมยา ให้ดูก่อนว่าช้าไปกี่ชั่วโมง",
+          "tl": "Kung nakalimot, tingnan muna kung gaano na katagal ang lumipas",
+          "ja": "飲み忘れたら、どれくらい遅れたか確認する"
+        },
+        note: {
+          "zh-TW": "距原定時間未超過 10 小時就補服；超過 10 小時就跳過，下一次照原時間服，不要一次吃兩次。",
+          "en": "If it is within 10 hours of the scheduled time, take it now. If more than 10 hours have passed, skip it and take the next dose at the usual time. Do not double the dose.",
+          "id": "Bila masih dalam 10 jam dari waktu seharusnya, segera minum. Bila sudah lewat lebih dari 10 jam, lewati dosis itu dan minum dosis berikutnya pada waktu biasa. Jangan minum dosis ganda.",
+          "vi": "Nếu còn trong vòng 10 giờ từ thời điểm cần uống, hãy uống ngay. Nếu đã quá 10 giờ, bỏ qua liều đó và uống liều kế tiếp đúng giờ thường lệ. Không uống gấp đôi.",
+          "th": "ถ้ายังไม่เกิน 10 ชั่วโมงจากเวลาที่ควรกิน ให้กินทันที ถ้าเกิน 10 ชั่วโมงแล้ว ให้ข้ามมื้อนั้นและกินมื้อต่อไปตามเวลาปกติ ห้ามกินซ้ำสองเท่า",
+          "tl": "Kung nasa loob pa ng 10 oras mula sa dapat na oras, inumin na agad. Kung lagpas 10 oras na, laktawan iyon at inumin ang susunod sa karaniwang oras. Huwag magdoble ng dosis.",
+          "ja": "予定時刻から10時間以内ならすぐ服用する。10時間を超えていたらその回は飛ばし、次回を通常時間に飲む。2回分を一度に飲まない。"
+        },
+        illustration: "assets/svg/oral-shared/missed-dose.svg",
+        highlight: true
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "室溫乾燥處保存，避光、避熱。\n放在孩童拿不到的地方。",
+        "en": "Store at room temperature in a dry place, away from heat and light.\nKeep it out of reach of children.",
+        "id": "Simpan pada suhu ruang di tempat kering, jauh dari panas dan cahaya.\nJauhkan dari jangkauan anak-anak.",
+        "vi": "Bảo quản nơi khô ráo ở nhiệt độ phòng, tránh nóng và ánh sáng.\nĐể xa tầm tay trẻ em.",
+        "th": "เก็บที่อุณหภูมิห้องในที่แห้ง พ้นความร้อนและแสง\nเก็บให้พ้นมือเด็ก",
+        "tl": "Itago sa tuyong lugar sa room temperature, malayo sa init at liwanag.\nIlayo sa abot ng mga bata.",
+        "ja": "室温の乾燥した場所で、光と熱を避けて保管する。\n子どもの手の届かない所に置く。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "懷孕者禁用；女性停藥後 4 天、男性停藥後至少 3 個月要避孕。",
+        "en": "Do not use this medicine during pregnancy. Females should use contraception for 4 days after the last dose, and males should use contraception for at least 3 months after the last dose.",
+        "id": "Jangan gunakan obat ini saat hamil. Perempuan perlu memakai kontrasepsi selama 4 hari setelah dosis terakhir, dan laki-laki perlu memakai kontrasepsi setidaknya 3 bulan setelah dosis terakhir.",
+        "vi": "Không dùng thuốc này khi mang thai. Nữ cần tránh thai trong 4 ngày sau liều cuối, và nam cần tránh thai ít nhất 3 tháng sau liều cuối.",
+        "th": "ห้ามใช้ยานี้ขณะตั้งครรภ์ ผู้หญิงต้องคุมกำเนิดต่ออีก 4 วันหลังยาหมด และผู้ชายต้องคุมกำเนิดอย่างน้อย 3 เดือนหลังยาหมด",
+        "tl": "Huwag gamitin ang gamot na ito kung buntis. Ang babae ay dapat gumamit ng kontrasepsyon sa loob ng 4 na araw matapos ang huling dosis, at ang lalaki ay dapat gumamit ng kontrasepsyon nang hindi bababa sa 3 buwan matapos ang huling dosis.",
+        "ja": "妊娠中は使用しない。女性は最終服用後4日間、男性は少なくとも3か月間避妊する。"
+      },
+      {
+        "zh-TW": "服藥期間及停藥後 4 天內不要哺乳。",
+        "en": "Do not breastfeed while taking this medicine or for 4 days after the last dose.",
+        "id": "Jangan menyusui selama memakai obat ini atau dalam 4 hari setelah dosis terakhir.",
+        "vi": "Không cho con bú trong khi dùng thuốc này hoặc trong 4 ngày sau liều cuối.",
+        "th": "ห้ามให้นมบุตรระหว่างใช้ยานี้ และอีก 4 วันหลังยาหมด",
+        "tl": "Huwag magpasuso habang ginagamit ang gamot na ito at sa loob ng 4 na araw matapos ang huling dosis.",
+        "ja": "服用中および最終服用後4日間は授乳しない。"
+      },
+      {
+        "zh-TW": "若全身紅疹、呼吸困難、臉唇舌腫起，立即就醫。",
+        "en": "Seek medical care right away if you get a widespread rash, trouble breathing, or swelling of the face, lips, or tongue.",
+        "id": "Segera cari pertolongan medis bila muncul ruam di seluruh tubuh, sesak napas, atau bengkak pada wajah, bibir, atau lidah.",
+        "vi": "Đi khám ngay nếu bạn nổi ban toàn thân, khó thở hoặc sưng mặt, môi hay lưỡi.",
+        "th": "ไปพบแพทย์ทันทีหากมีผื่นทั่วตัว หายใจลำบาก หรือหน้า ริมฝีปาก หรือลิ้นบวม",
+        "tl": "Magpatingin agad kung may malawak na pantal, hirap huminga, o pamamaga ng mukha, labi, o dila.",
+        "ja": "全身の発疹、息苦しさ、顔・唇・舌の腫れが出たらすぐ受診する。"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/meds/molnupiravir"
   },
-
   // ── Nitrostat ─────────────────────────────────────,
   {
       "id": "nitrostat",
@@ -15571,80 +15896,1410 @@ const MEDICATIONS = [
   },
 
 
-  // ── Placeholder: Actein effervescent tablet (acetylcysteine) ─────────────────────────────────────,
+  // ── Actein effervescent tablet (acetylcysteine) ─────────────────────────────────────,
   {
-      "id": "actein-effervescent",
-      color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
+    "id": "actein-effervescent",
+    color: {
+      main: "#0F6E56",
+      light: "#E1F5EE",
+      dark: "#04342C",
+      badge: "#9FE1CB",
+      badgeText: "#04342C"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "愛克痰發泡錠",
+      "en": "Actein effervescent tablet",
+      "id": "Tablet effervescent Actein",
+      "vi": "Viên sủi Actein",
+      "th": "ยาเม็ดฟู่ Actein",
+      "tl": "Actein effervescent tablet",
+      "ja": "アクテイン発泡錠"
+    },
+    subtitle: {
+      "zh-TW": "Acetylcysteine 600 mg｜化痰用發泡錠",
+      "en": "Acetylcysteine 600 mg | Effervescent mucolytic tablet",
+      "id": "Acetylcysteine 600 mg | Tablet effervescent peluruh dahak",
+      "vi": "Acetylcysteine 600 mg | Viên sủi làm loãng đờm",
+      "th": "Acetylcysteine 600 mg | ยาเม็ดฟู่ละลายเสมหะ",
+      "tl": "Acetylcysteine 600 mg | Effervescent mucolytic tablet",
+      "ja": "アセチルシステイン 600 mg｜去痰のための発泡錠"
+    },
+    headerBadge: {
+      "zh-TW": "發泡錠",
+      "en": "Effervescent",
+      "id": "Effervescent",
+      "vi": "Viên sủi",
+      "th": "ยาเม็ดฟู่",
+      "tl": "Effervescent",
+      "ja": "発泡錠"
+    },
+    usage: {
+      "zh-TW": "依藥袋標示的次數服用",
+      "en": "Take it as often as the label tells you",
+      "id": "Minum sesuai frekuensi pada etiket obat",
+      "vi": "Dùng theo số lần ghi trên nhãn thuốc",
+      "th": "รับประทานตามจำนวนครั้งที่ระบุบนฉลากยา",
+      "tl": "Inumin ayon sa dalas na nasa label ng gamot",
+      "ja": "薬袋に書かれた回数で服用"
+    },
+    badge: {
+      "zh-TW": "口服發泡錠",
+      "en": "Oral effervescent",
+      "id": "Tablet effervesen oral",
+      "vi": "Thuốc uống viên sủi",
+      "th": "ยารับประทานชนิดเม็ดฟู่",
+      "tl": "Oral effervescent",
+      "ja": "内服発泡錠"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "這不是一般錠劑",
+        "en": "This is not a regular tablet",
+        "id": "Ini bukan tablet biasa",
+        "vi": "Đây không phải viên thuốc thường",
+        "th": "นี่ไม่ใช่ยาเม็ดธรรมดา",
+        "tl": "Hindi ito ordinaryong tableta",
+        "ja": "普通の錠剤ではない"
       },
-      emergency: false,
-      name: {
-          "zh-TW": "Actein 發泡錠（acetylcysteine）",
-          "en": "Actein effervescent tablet (acetylcysteine)",
-          "id": "Actein effervescent tablet (acetylcysteine)",
-          "vi": "Actein effervescent tablet (acetylcysteine)",
-          "th": "Actein effervescent tablet (acetylcysteine)",
-          "tl": "Actein effervescent tablet (acetylcysteine)",
-          "ja": "Actein effervescent tablet (acetylcysteine)"
+      text: {
+        "zh-TW": "一定要先加水溶解再喝，不能整顆吞下。藥有一點硫味是正常現象，不代表變質。",
+        "en": "You must dissolve it in water before drinking it. Do not swallow the tablet whole. A slight sulfur smell is normal and does not mean the medicine is spoiled.",
+        "id": "Tablet ini harus dilarutkan dulu di dalam air sebelum diminum. Jangan ditelan utuh. Sedikit bau sulfur adalah hal normal dan bukan berarti obat rusak.",
+        "vi": "Phải hòa tan trong nước trước khi uống. Không nuốt nguyên viên. Mùi lưu huỳnh nhẹ là bình thường và không có nghĩa là thuốc hỏng.",
+        "th": "ต้องละลายในน้ำก่อนดื่ม ห้ามกลืนทั้งเม็ด กลิ่นกำมะถันเล็กน้อยเป็นเรื่องปกติ ไม่ได้แปลว่ายาเสีย",
+        "tl": "Kailangang tunawin muna ito sa tubig bago inumin. Huwag lunukin nang buo ang tableta. Normal lang ang bahagyang amoy sulfur at hindi ibig sabihin na sira ang gamot.",
+        "ja": "必ず水に溶かしてから飲む。錠剤のまま飲み込まない。少し硫黄のにおいがするのは正常で、変質ではない。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "把發泡錠放進杯子",
+          "en": "Put the effervescent tablet into a cup",
+          "id": "Masukkan tablet effervescent ke dalam gelas",
+          "vi": "Cho viên sủi vào cốc",
+          "th": "ใส่ยาเม็ดฟู่ลงในแก้ว",
+          "tl": "Ilagay ang effervescent tablet sa baso",
+          "ja": "発泡錠をコップに入れる"
+        },
+        note: {
+          "zh-TW": "不要直接吞下。發泡錠進到胃裡才溶開，較容易刺激食道或胃。",
+          "en": "Do not swallow it whole. If it only starts dissolving in your stomach, it is more likely to irritate your throat or stomach.",
+          "id": "Jangan ditelan utuh. Jika baru larut di lambung, obat lebih mudah mengiritasi tenggorokan atau lambung.",
+          "vi": "Không nuốt nguyên viên. Nếu thuốc chỉ bắt đầu tan trong dạ dày, thuốc dễ làm kích ứng họng hoặc dạ dày hơn.",
+          "th": "ห้ามกลืนทั้งเม็ด หากยาไปละลายในกระเพาะทีหลัง จะระคายคอหรือกระเพาะได้ง่ายกว่า",
+          "tl": "Huwag lunukin nang buo. Kung sa tiyan lang ito matutunaw, mas madaling mairita ang lalamunan o sikmura.",
+          "ja": "そのまま飲み込まない。胃の中で溶け始めると、のどや胃を刺激しやすい。"
+        },
+        illustration: "assets/svg/oral-shared/effervescent.svg",
+        highlight: true
       },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+      {
+        action: {
+          "zh-TW": "加入 60–100 毫升溫水",
+          "en": "Add 60-100 mL of warm water",
+          "id": "Tambahkan 60-100 mL air hangat suam-suam kuku",
+          "vi": "Thêm 60-100 mL nước ấm",
+          "th": "เติมน้ำอุ่น 60-100 มล.",
+          "tl": "Lagyan ng 60-100 mL na maligamgam na tubig",
+          "ja": "60-100 mLのぬるま湯を入れる"
+        },
+        note: {
+          "zh-TW": "不要用熱水，也不要用冰水。溫水較容易溶開，也比較不刺激。",
+          "en": "Do not use hot water or ice-cold water. Warm water helps it dissolve more evenly and feels gentler when you drink it.",
+          "id": "Jangan gunakan air panas atau air sangat dingin. Air hangat membantu tablet larut lebih merata dan lebih nyaman diminum.",
+          "vi": "Không dùng nước nóng hay quá lạnh. Nước ấm giúp thuốc tan đều hơn và dễ uống hơn.",
+          "th": "อย่าใช้น้ำร้อนหรือน้ำเย็นจัด น้ำอุ่นช่วยให้ละลายได้สม่ำเสมอและดื่มสบายกว่า",
+          "tl": "Huwag gumamit ng mainit o sobrang malamig na tubig. Mas pantay itong natutunaw sa maligamgam na tubig at mas komportable inumin.",
+          "ja": "熱湯や冷水は使わない。ぬるま湯の方が均一に溶け、飲みやすい。"
+        },
+        illustration: "assets/svg/oral-shared/no-hot-water.svg"
       },
-      badge: {
-          "zh-TW": "粉劑/泡製",
-          "en": "Powder/Reconstitution",
-          "id": "Serbuk",
-          "vi": "Thuốc bột",
-          "th": "ยาผง",
-          "tl": "Powder/Reconstitution",
-          "ja": "粉末剤"
+      {
+        action: {
+          "zh-TW": "等完全溶解後再喝",
+          "en": "Drink it only after it fully dissolves",
+          "id": "Minum hanya setelah larut seluruhnya",
+          "vi": "Chỉ uống sau khi tan hoàn toàn",
+          "th": "ดื่มเมื่อยาเม็ดละลายหมดแล้วเท่านั้น",
+          "tl": "Inumin lamang kapag tuluyan nang natunaw",
+          "ja": "完全に溶けてから飲む"
+        },
+        note: {
+          "zh-TW": "看到沒有明顯顆粒再喝。若聞到一點硫味，屬正常現象。",
+          "en": "Wait until there are no obvious pieces left. A slight sulfur smell is normal.",
+          "id": "Tunggu sampai tidak ada butiran yang jelas tersisa. Sedikit bau sulfur adalah normal.",
+          "vi": "Đợi đến khi không còn cặn rõ rệt. Mùi lưu huỳnh nhẹ là bình thường.",
+          "th": "รอจนไม่เห็นเศษเม็ดยาชัดเจน กลิ่นกำมะถันเล็กน้อยเป็นเรื่องปกติ",
+          "tl": "Hintaying wala nang halatang butil. Normal lang ang bahagyang amoy sulfur.",
+          "ja": "目立つ粒が残っていないことを確認してから飲む。少し硫黄臭がするのは正常。"
+        },
+        illustration: "assets/svg/oral-shared/effervescent.svg"
       },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/actein-effervescent"
+      {
+        action: {
+          "zh-TW": "照藥袋上的次數服用",
+          "en": "Take it as many times as the label tells you",
+          "id": "Minum sesuai jumlah kali pada etiket obat",
+          "vi": "Dùng đúng số lần ghi trên nhãn thuốc",
+          "th": "รับประทานตามจำนวนครั้งที่ระบุบนฉลากยา",
+          "tl": "Inumin ayon sa bilang ng pag-inom na nasa label",
+          "ja": "薬袋に書かれた回数で飲む"
+        },
+        note: {
+          "zh-TW": "平常多喝水，痰比較容易變稀、比較好咳出。",
+          "en": "Drink enough water during the day so mucus can thin out and come up more easily.",
+          "id": "Minum cukup air sepanjang hari supaya dahak lebih encer dan lebih mudah dikeluarkan.",
+          "vi": "Uống đủ nước trong ngày để đờm loãng hơn và dễ khạc ra hơn.",
+          "th": "ดื่มน้ำให้พอระหว่างวัน จะช่วยให้เสมหะเหลวและขับออกได้ง่ายขึ้น",
+          "tl": "Uminom ng sapat na tubig sa maghapon para lumabnaw ang plema at mas madaling mailabas.",
+          "ja": "日中に十分な水分をとると痰が薄まり、出しやすくなる。"
+        },
+        illustration: "assets/svg/oral-shared/hydration.svg"
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "室溫保存，避光、避熱。\n不要冷藏，放在孩童拿不到的地方。",
+        "en": "Store at room temperature, away from heat and light.\nDo not refrigerate. Keep it out of reach of children.",
+        "id": "Simpan pada suhu ruang, jauh dari panas dan cahaya.\nJangan simpan di kulkas. Jauhkan dari jangkauan anak-anak.",
+        "vi": "Bảo quản ở nhiệt độ phòng, tránh nóng và ánh sáng.\nKhông để tủ lạnh. Để xa tầm tay trẻ em.",
+        "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสง\nไม่ต้องแช่เย็น และเก็บให้พ้นมือเด็ก",
+        "tl": "Itago sa room temperature, malayo sa init at liwanag.\nHuwag i-ref. Ilayo sa abot ng mga bata.",
+        "ja": "室温で、熱と光を避けて保管する。\n冷蔵しない。子どもの手の届かない所に置く。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "有氣喘、苯酮尿症、懷孕或哺乳時，先告訴醫師。",
+        "en": "Tell your doctor before use if you have asthma, phenylketonuria, are pregnant, or are breastfeeding.",
+        "id": "Beri tahu dokter sebelum memakai jika Anda punya asma, fenilketonuria, sedang hamil, atau menyusui.",
+        "vi": "Hãy báo bác sĩ trước khi dùng nếu bạn bị hen, phenylketon niệu, đang mang thai hoặc cho con bú.",
+        "th": "หากมีโรคหอบหืด ฟีนิลคีโตนูเรีย ตั้งครรภ์ หรือให้นมบุตร ให้แจ้งแพทย์ก่อนใช้ยา",
+        "tl": "Sabihin muna sa doktor bago gamitin kung may hika, phenylketonuria, buntis, o nagpapasuso.",
+        "ja": "喘息、フェニルケトン尿症、妊娠中、授乳中なら使用前に医師へ伝える。"
+      },
+      {
+        "zh-TW": "不要直接吞發泡錠。一定要先泡開再喝。",
+        "en": "Do not swallow the effervescent tablet whole. Always dissolve it first.",
+        "id": "Jangan telan tablet effervescent utuh. Selalu larutkan dulu.",
+        "vi": "Không nuốt nguyên viên sủi. Luôn phải hòa tan trước khi uống.",
+        "th": "ห้ามกลืนยาเม็ดฟู่ทั้งเม็ด ต้องละลายก่อนเสมอ",
+        "tl": "Huwag lunukin nang buo ang effervescent tablet. Dapat tunawin muna lagi.",
+        "ja": "発泡錠をそのまま飲み込まない。必ず先に溶かしてから飲む。"
+      },
+      {
+        "zh-TW": "若喘更明顯、起紅疹，或臉唇舌頭腫起，立即就醫。",
+        "en": "Seek medical care right away if wheezing gets worse, you develop a rash, or your face, lips, or tongue swell.",
+        "id": "Segera cari pertolongan medis bila mengi memburuk, muncul ruam, atau wajah, bibir, atau lidah membengkak.",
+        "vi": "Đi khám ngay nếu khò khè nặng hơn, nổi ban, hoặc mặt, môi hay lưỡi sưng lên.",
+        "th": "ไปพบแพทย์ทันทีหากหอบมากขึ้น มีผื่น หรือหน้า ริมฝีปาก หรือลิ้นบวม",
+        "tl": "Magpatingin agad kung lumala ang wheezing, nagkapantal, o namamaga ang mukha, labi, o dila.",
+        "ja": "喘鳴が悪化したり、発疹、顔・唇・舌の腫れが出たらすぐ受診する。"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/meds/actein-effervescent"
   },
 
+  // ── Oseltamivir suspension ─────────────────────────────────────,
+  {
+    "id": "oseltamivir-suspension",
+    color: {
+      main: "#0F6E56",
+      light: "#E1F5EE",
+      dark: "#04342C",
+      badge: "#9FE1CB",
+      badgeText: "#04342C"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "克流感懸浮液",
+      "en": "Oseltamivir suspension",
+      "id": "Suspensi oseltamivir",
+      "vi": "Hỗn dịch oseltamivir",
+      "th": "ยาน้ำแขวนตะกอนโอเซลทามิเวียร์",
+      "tl": "Oseltamivir suspension",
+      "ja": "オセルタミビル懸濁液"
+    },
+    subtitle: {
+      "zh-TW": "Tamiflu 膠囊泡製成 15 mg/mL 口服懸液",
+      "en": "Tamiflu capsules prepared into a 15 mg/mL oral suspension",
+      "id": "Kapsul Tamiflu dibuat menjadi suspensi oral 15 mg/mL",
+      "vi": "Pha từ viên Tamiflu thành hỗn dịch uống 15 mg/mL",
+      "th": "เตรียมจากแคปซูล Tamiflu เป็นยาน้ำ 15 mg/mL",
+      "tl": "Tamiflu capsule na ginawang 15 mg/mL oral suspension",
+      "ja": "タミフルカプセルを15 mg/mLの内服懸濁液に調製"
+    },
+    headerBadge: {
+      "zh-TW": "口服懸液",
+      "en": "Oral suspension",
+      "id": "Suspensi oral racikan",
+      "vi": "Hỗn dịch uống",
+      "th": "ยาน้ำแขวนตะกอน",
+      "tl": "Oral suspension",
+      "ja": "内服懸濁液"
+    },
+    usage: {
+      "zh-TW": "依藥袋標示的毫升數服用",
+      "en": "Take the number of mL written on the label",
+      "id": "Minum sesuai jumlah mL yang tertulis pada etiket",
+      "vi": "Uống đúng số mL ghi trên nhãn thuốc",
+      "th": "รับประทานตามจำนวนมิลลิลิตรที่ระบุบนฉลากยา",
+      "tl": "Inumin ang dami ng mL na nakasulat sa label",
+      "ja": "薬袋に書かれたmL量を服用"
+    },
+    badge: {
+      "zh-TW": "口服抗病毒藥",
+      "en": "Oral antiviral",
+      "id": "Obat antivirus oral",
+      "vi": "Thuốc kháng virus đường uống",
+      "th": "ยาต้านไวรัสชนิดรับประทาน",
+      "tl": "Iniinom na antiviral",
+      "ja": "内服抗ウイルス薬"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "這張適用誰",
+        "en": "Who this sheet is for",
+        "id": "Lembar ini untuk siapa",
+        "vi": "Tờ này dành cho ai",
+        "th": "แผ่นนี้ใช้กับใคร",
+        "tl": "Para kanino ang gabay na ito",
+        "ja": "この用紙が当てはまる人"
+      },
+      text: {
+        "zh-TW": "這張適用需要把膠囊泡成 15 mg/mL 懸液的照護者。若藥局已先幫你泡好，從「每次服前先搖勻」開始做即可。",
+        "en": "This sheet is for caregivers who need to turn capsules into a 15 mg/mL suspension. If the pharmacy already prepared it for you, start from “Shake before each dose.”",
+        "id": "Lembar ini untuk pendamping yang perlu membuat kapsul menjadi suspensi 15 mg/mL. Jika apotek sudah menyiapkannya, mulai dari langkah “Kocok sebelum setiap dosis.”",
+        "vi": "Tờ này dành cho người chăm sóc cần pha viên nang thành hỗn dịch 15 mg/mL. Nếu nhà thuốc đã pha sẵn, hãy bắt đầu từ bước “Lắc trước mỗi lần uống.”",
+        "th": "แผ่นนี้ใช้สำหรับผู้ดูแลที่ต้องเตรียมแคปซูลให้เป็นยาน้ำ 15 mg/mL หากร้านยาผสมให้แล้ว ให้เริ่มจากขั้น “เขย่าก่อนทุกครั้ง”",
+        "tl": "Ang gabay na ito ay para sa tagapag-alaga na kailangang gawing 15 mg/mL suspension ang kapsula. Kung naihanda na ito ng botika, magsimula sa “Iling muna bago bawat dosis.”",
+        "ja": "この用紙はカプセルを15 mg/mLの懸濁液に調製する介護者向け。薬局ですでに調製済みなら「毎回よく振る」から始めればよい。"
+      }
+    },
+    infoBoxes: [
+      {
+        title: {
+          "zh-TW": "15 mg/mL 換算",
+          "en": "15 mg/mL quick guide",
+          "id": "Panduan singkat 15 mg/mL",
+          "vi": "Ghi nhớ nhanh 15 mg/mL",
+          "th": "สรุป 15 mg/mL",
+          "tl": "15 mg/mL quick guide",
+          "ja": "15 mg/mL の早見表"
+        },
+        text: {
+          "zh-TW": "2 mL = 30 mg；3 mL = 45 mg；4 mL = 60 mg；5 mL = 75 mg。\n若藥袋寫的是 mL，直接照 mL 量，不用自己換算。",
+          "en": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg.\nIf your label gives the dose in mL, just measure that mL amount. You do not need to calculate it yourself.",
+          "id": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg.\nBila etiket Anda menulis dosis dalam mL, cukup ukur sesuai mL tersebut. Anda tidak perlu menghitung sendiri.",
+          "vi": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg.\nNếu nhãn thuốc ghi bằng mL, chỉ cần đong đúng số mL đó, không cần tự tính lại.",
+          "th": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg\nหากฉลากยาระบุเป็น mL ให้ตวงตาม mL ที่เขียนไว้ได้เลย ไม่ต้องคำนวณเอง",
+          "tl": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg.\nKung mL ang nakasulat sa label, sukatin lang ang daming iyon. Hindi mo kailangang ikaw pa ang magkalkula.",
+          "ja": "2 mL = 30 mg、3 mL = 45 mg、4 mL = 60 mg、5 mL = 75 mg。\n薬袋にmLで書かれていれば、そのmL量を量ればよく、自分で計算しなくてよい。"
+        }
+      }
+    ],
+    steps: [
+      {
+        action: {
+          "zh-TW": "打開藥袋指定顆數的膠囊",
+          "en": "Open the number of capsules written on the label",
+          "id": "Buka jumlah kapsul sesuai yang tertulis pada etiket",
+          "vi": "Mở đúng số viên nang ghi trên nhãn thuốc",
+          "th": "เปิดแคปซูลตามจำนวนที่ฉลากยาระบุ",
+          "tl": "Buksan ang bilang ng kapsulang nakasulat sa label",
+          "ja": "薬袋に書かれた数のカプセルを開ける"
+        },
+        note: {
+          "zh-TW": "顆數和加水量都照藥袋；丟掉膠囊外殼。",
+          "en": "Follow the label for both the number of capsules and the water amount. Throw away the empty capsule shells.",
+          "id": "Ikuti etiket untuk jumlah kapsul dan jumlah air. Buang kulit kapsul yang kosong.",
+          "vi": "Làm theo nhãn thuốc về số viên nang và lượng nước. Bỏ vỏ nang sau khi đổ hết thuốc bột.",
+          "th": "ให้ยึดตามฉลากยาทั้งจำนวนแคปซูลและปริมาณน้ำ แล้วทิ้งเปลือกแคปซูล",
+          "tl": "Sundin ang label para sa bilang ng kapsula at dami ng tubig. Itapon ang walang lamang kapsula.",
+          "ja": "カプセル数も加える水量も薬袋に従う。空のカプセル殻は捨てる。"
+        },
+        illustration: "assets/svg/oral-shared/capsules-four.svg"
+      },
+      {
+        action: {
+          "zh-TW": "把藥粉倒進空藥瓶",
+          "en": "Pour the powder into the empty bottle",
+          "id": "Tuang bubuk obat ke dalam botol yang kosong",
+          "vi": "Đổ bột thuốc vào chai rỗng",
+          "th": "เทผงยาลงในขวดยาเปล่า",
+          "tl": "Ibuhos ang pulbos sa bakanteng bote",
+          "ja": "薬粉を空のボトルに入れる"
+        },
+        note: {
+          "zh-TW": "可用包藥紙輔助，盡量不要灑出來。",
+          "en": "You may use folded paper as a funnel. Try not to spill the powder.",
+          "id": "Anda boleh memakai kertas lipat sebagai corong. Usahakan bubuk tidak tumpah.",
+          "vi": "Có thể dùng giấy gấp làm phễu nhỏ. Cố gắng đừng để bột thuốc đổ ra ngoài.",
+          "th": "อาจใช้กระดาษพับช่วยเป็นกรวยเล็ก ๆ และพยายามอย่าให้ผงยาหก",
+          "tl": "Maaaring gumamit ng nakatiklop na papel bilang maliit na imbudo. Sikaping huwag matapon ang pulbos.",
+          "ja": "折った紙を漏斗代わりに使ってもよい。なるべくこぼさないようにする。"
+        },
+        illustration: "assets/svg/oral-shared/mix-water.svg"
+      },
+      {
+        action: {
+          "zh-TW": "加入指定毫升數的冷開水",
+          "en": "Add the written amount of cooled boiled water",
+          "id": "Tambahkan jumlah air matang dingin sesuai yang tertulis",
+          "vi": "Thêm đúng số mL nước đun sôi để nguội đã ghi",
+          "th": "เติมน้ำต้มสุกที่เย็นแล้วตามจำนวนมิลลิลิตรที่กำหนด",
+          "tl": "Lagyan ng nakasulat na dami ng pinalamig na pinakuluang tubig",
+          "ja": "指定されたmLの冷ました湯冷ましを加える"
+        },
+        note: {
+          "zh-TW": "常見是 20 / 30 / 40 / 50 mL；只用冷開水，不要自己猜。",
+          "en": "Common amounts are 20, 30, 40, or 50 mL. Use only cooled boiled water and do not guess the amount.",
+          "id": "Jumlah yang umum adalah 20, 30, 40, atau 50 mL. Gunakan hanya air matang dingin dan jangan menebak-nebak jumlahnya.",
+          "vi": "Các mức thường gặp là 20, 30, 40 hoặc 50 mL. Chỉ dùng nước đun sôi để nguội và đừng tự đoán lượng nước.",
+          "th": "ปริมาณที่พบบ่อยคือ 20, 30, 40 หรือ 50 มล. ใช้น้ำต้มสุกที่เย็นแล้วเท่านั้น และอย่ากะปริมาณเอง",
+          "tl": "Karaniwang 20, 30, 40, o 50 mL ang dami. Pinalamig na pinakuluang tubig lang ang gamitin at huwag manghula ng dami.",
+          "ja": "20・30・40・50 mLがよくある量。必ず湯冷ましを使い、量を自己判断で変えない。"
+        },
+        illustration: "assets/svg/oral-shared/mix-water.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "蓋緊後用力搖勻",
+          "en": "Close the bottle and shake it hard",
+          "id": "Tutup botol lalu kocok kuat-kuat",
+          "vi": "Đậy nắp rồi lắc mạnh",
+          "th": "ปิดฝาแล้วเขย่าแรง ๆ",
+          "tl": "Isara ang bote at iling nang malakas",
+          "ja": "ふたを閉めて強く振る"
+        },
+        note: {
+          "zh-TW": "大約搖 10 秒，看不到明顯白色沉澱才算均勻。",
+          "en": "Shake for about 10 seconds. It is mixed well when you no longer see obvious white sediment.",
+          "id": "Kocok sekitar 10 detik. Campuran dianggap rata bila tidak tampak endapan putih yang jelas.",
+          "vi": "Lắc khoảng 10 giây. Khi không còn thấy cặn trắng rõ rệt thì mới xem là đã đều.",
+          "th": "เขย่าประมาณ 10 วินาที ถือว่าผสมเข้ากันดีเมื่อไม่เห็นตะกอนสีขาวชัดเจน",
+          "tl": "Iling nang mga 10 segundo. Halu na ito kapag wala nang halatang puting namuo.",
+          "ja": "約10秒振る。白い沈殿がはっきり見えなくなれば均一。"
+        },
+        illustration: "assets/svg/oral-shared/shake-bottle.svg"
+      },
+      {
+        action: {
+          "zh-TW": "每次喝前先搖勻，再量出藥袋上的 mL 數",
+          "en": "Shake before each dose, then measure the mL written on the label",
+          "id": "Kocok sebelum setiap dosis, lalu ukur jumlah mL yang tertulis pada etiket",
+          "vi": "Lắc trước mỗi lần uống rồi đong đúng số mL ghi trên nhãn",
+          "th": "เขย่าก่อนทุกครั้ง แล้วตวงตามจำนวน mL ที่ระบุบนฉลากยา",
+          "tl": "Iling muna bago bawat dosis, saka sukatin ang mL na nasa label",
+          "ja": "毎回飲む前によく振り、薬袋に書かれたmL量を量る"
+        },
+        note: {
+          "zh-TW": "這瓶是 15 mg/mL。搖勻後立即量、立即喝。",
+          "en": "This suspension is 15 mg/mL. Measure it right after shaking and take it right away.",
+          "id": "Suspensi ini adalah 15 mg/mL. Ukur segera setelah dikocok dan segera diminum.",
+          "vi": "Hỗn dịch này là 15 mg/mL. Hãy đong ngay sau khi lắc và uống ngay sau đó.",
+          "th": "ยานี้มีความเข้มข้น 15 mg/mL ให้ตวงทันทีหลังเขย่าและดื่มทันที",
+          "tl": "Ang suspension na ito ay 15 mg/mL. Sukatin agad pagkatapos iling at inumin kaagad.",
+          "ja": "この懸濁液は15 mg/mL。振った直後に量り、すぐ飲む。"
+        },
+        illustration: "assets/svg/oral-shared/measure-cup.svg"
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "配製後保存",
+        "en": "Storage after mixing",
+        "id": "Penyimpanan setelah dibuat",
+        "vi": "Bảo quản sau khi pha",
+        "th": "การเก็บหลังผสม",
+        "tl": "Imbakan matapos ihanda",
+        "ja": "調製後の保管"
+      },
+      text: {
+        "zh-TW": "配製後室溫（≤25°C）保存，5 天內用完。\n超過 5 天就不要再喝。",
+        "en": "After mixing, store at room temperature (≤25°C) and use within 5 days.\nDo not use it after 5 days.",
+        "id": "Setelah dibuat, simpan pada suhu ruang (≤25°C) dan habiskan dalam 5 hari.\nJangan digunakan lagi setelah 5 hari.",
+        "vi": "Sau khi pha, bảo quản ở nhiệt độ phòng (≤25°C) và dùng hết trong 5 ngày.\nKhông dùng sau 5 ngày.",
+        "th": "หลังผสมแล้ว เก็บที่อุณหภูมิห้อง (≤25°C) และใช้ให้หมดภายใน 5 วัน\nห้ามใช้ต่อเมื่อเกิน 5 วัน",
+        "tl": "Pagkatapos ihanda, itago sa room temperature (≤25°C) at ubusin sa loob ng 5 araw.\nHuwag nang gamitin kapag lampas 5 araw na.",
+        "ja": "調製後は室温（≤25°C）で保管し、5日以内に使い切る。\n5日を過ぎたら使用しない。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "這是懸液，每次喝前都要先搖勻。",
+        "en": "This is a suspension, so you must shake it before every dose.",
+        "id": "Ini adalah suspensi, jadi harus dikocok sebelum setiap dosis.",
+        "vi": "Đây là hỗn dịch, nên phải lắc trước mỗi lần uống.",
+        "th": "นี่เป็นยาน้ำแขวนตะกอน จึงต้องเขย่าก่อนทุกครั้ง",
+        "tl": "Suspension ito, kaya kailangang iling bago bawat dosis.",
+        "ja": "懸濁液なので、毎回飲む前によく振る。"
+      },
+      {
+        "zh-TW": "若快到下次時間就跳過，不要一次喝雙倍。",
+        "en": "If it is almost time for the next dose, skip the missed one. Do not take double.",
+        "id": "Bila sudah hampir waktu dosis berikutnya, lewati yang terlupa. Jangan minum dosis ganda.",
+        "vi": "Nếu gần đến liều kế tiếp thì bỏ qua liều đã quên. Không dùng gấp đôi.",
+        "th": "ถ้าใกล้ถึงเวลามื้อถัดไปแล้ว ให้ข้ามมื้อนี้ ห้ามกินซ้ำสองเท่า",
+        "tl": "Kung malapit na ang susunod na dose, laktawan ang nakaligtaan. Huwag magdoble.",
+        "ja": "次の時間が近ければ飲み忘れ分は飛ばし、2回分を一度に飲まない。"
+      },
+      {
+        "zh-TW": "若出現紅疹、持續嘔吐、意識變得怪怪的，或孩子一直叫不醒，立即就醫。",
+        "en": "Seek care right away if there is a rash, repeated vomiting, unusual behavior, or if the child is hard to wake up.",
+        "id": "Segera cari pertolongan bila muncul ruam, muntah berulang, perilaku tidak biasa, atau anak sulit dibangunkan.",
+        "vi": "Đi khám ngay nếu có nổi ban, nôn lặp lại, hành vi lạ hoặc trẻ khó đánh thức.",
+        "th": "ไปพบแพทย์ทันทีหากมีผื่น อาเจียนซ้ำ ๆ พฤติกรรมแปลกไป หรือปลุกเด็กยากผิดปกติ",
+        "tl": "Magpatingin agad kung may pantal, paulit-ulit na pagsusuka, kakaibang kilos, o kung mahirap gisingin ang bata.",
+        "ja": "発疹、繰り返す嘔吐、様子がおかしい、または子どもが起こしにくい時はすぐ受診する。"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/meds/oseltamivir-suspension"
+  },
+
+  // ── Hidrasec ─────────────────────────────────────,
+  {
+    "id": "hidrasec",
+    color: {
+      main: "#185FA5",
+      light: "#E6F1FB",
+      dark: "#042C53",
+      badge: "#CFE4FF",
+      badgeText: "#042C53"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "瀉必寧顆粒",
+      "en": "Hidrasec granules",
+      "id": "Granul Hidrasec",
+      "vi": "Cốm Hidrasec",
+      "th": "เกล็ดยา Hidrasec",
+      "tl": "Hidrasec granules",
+      "ja": "ヒドラセック顆粒"
+    },
+    subtitle: {
+      "zh-TW": "Racecadotril｜急性腹瀉用顆粒",
+      "en": "Racecadotril | Granules for acute diarrhea",
+      "id": "Racecadotril | Granul untuk diare akut",
+      "vi": "Racecadotril | Cốm dùng cho tiêu chảy cấp",
+      "th": "Racecadotril | เกล็ดยาสำหรับท้องเสียเฉียบพลัน",
+      "tl": "Racecadotril | Granules for acute diarrhea",
+      "ja": "ラセカドトリル｜急性下痢用顆粒"
+    },
+    headerBadge: {
+      "zh-TW": "急性腹瀉",
+      "en": "Acute diarrhea",
+      "id": "Diare akut",
+      "vi": "Tiêu chảy cấp",
+      "th": "ท้องเสียเฉียบพลัน",
+      "tl": "Acute diarrhea",
+      "ja": "急性下痢"
+    },
+    usage: {
+      "zh-TW": "依藥袋次數服用，直到連續 2 次正常大便",
+      "en": "Take it as labeled until stools are normal 2 times in a row",
+      "id": "Minum sesuai etiket sampai tinja normal 2 kali berturut-turut",
+      "vi": "Dùng theo nhãn thuốc cho đến khi đi tiêu bình thường liên tiếp 2 lần",
+      "th": "รับประทานตามฉลากยา จนถ่ายปกติติดต่อกัน 2 ครั้ง",
+      "tl": "Inumin ayon sa label hanggang maging normal ang dumi nang 2 beses sunod-sunod",
+      "ja": "薬袋どおりに飲み、正常便が2回続いたら中止"
+    },
+    badge: {
+      "zh-TW": "口服止瀉顆粒",
+      "en": "Oral antidiarrheal",
+      "id": "Obat antidiare oral",
+      "vi": "Thuốc uống chống tiêu chảy",
+      "th": "ยารับประทานแก้ท้องเสีย",
+      "tl": "Oral antidiarrheal",
+      "ja": "内服止瀉顆粒"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道重點",
+        "en": "Know the main point first",
+        "id": "Ketahui poin penting dulu",
+        "vi": "Biết điểm chính trước",
+        "th": "รู้ประเด็นสำคัญก่อน",
+        "tl": "Alamin muna ang pangunahing punto",
+        "ja": "まず大事な点"
+      },
+      text: {
+        "zh-TW": "這是幫腸道少分泌水分的止瀉藥，不是只靠它就會好。腹瀉最重要還是補水。",
+        "en": "This medicine helps your intestines lose less water. It does not replace fluids. Rehydration is still the most important part of diarrhea care.",
+        "id": "Obat ini membantu usus mengeluarkan lebih sedikit air. Obat ini tidak menggantikan cairan. Rehidrasi tetap bagian terpenting saat diare.",
+        "vi": "Thuốc này giúp ruột bớt tiết nước. Nó không thay thế việc bù dịch. Bù nước vẫn là phần quan trọng nhất khi bị tiêu chảy.",
+        "th": "ยานี้ช่วยให้ลำไส้สูญเสียน้ำน้อยลง แต่ไม่ได้ทดแทนการดื่มน้ำ การชดเชยน้ำยังสำคัญที่สุดเมื่อท้องเสีย",
+        "tl": "Tinutulungan ng gamot na ito ang bituka na mas kaunting tubig ang mawala. Hindi nito pinapalitan ang pag-inom ng likido. Ang rehydration pa rin ang pinakamahalaga sa pagtatae.",
+        "ja": "この薬は腸から失われる水分を減らすのを助けるが、水分補給の代わりにはならない。下痢では補水が最も大切。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "撕開藥包",
+          "en": "Open the sachet",
+          "id": "Buka sachet",
+          "vi": "Xé gói thuốc",
+          "th": "ฉีกซองยา",
+          "tl": "Buksan ang sachet",
+          "ja": "袋を開ける"
+        },
+        note: {
+          "zh-TW": "顆粒若受潮結塊，就先不要用。",
+          "en": "Do not use it if the granules are badly clumped from moisture.",
+          "id": "Jangan gunakan bila granul menggumpal berat karena lembap.",
+          "vi": "Đừng dùng nếu hạt cốm vón cục rõ do bị ẩm.",
+          "th": "ถ้าเกล็ดยาจับตัวเป็นก้อนมากเพราะความชื้น ให้ยังไม่ใช้",
+          "tl": "Huwag gamitin kung sobrang nagbukol na ang granules dahil sa basa.",
+          "ja": "湿気で強く固まっていたら使用しない。"
+        },
+        illustration: "assets/svg/oral-shared/food-mix.svg"
+      },
+      {
+        action: {
+          "zh-TW": "拌進少量水或食物後立刻吃",
+          "en": "Mix it into a small amount of water or food and take it right away",
+          "id": "Campurkan ke sedikit air atau makanan lalu segera minum",
+          "vi": "Trộn với ít nước hoặc thức ăn rồi dùng ngay",
+          "th": "ผสมกับน้ำหรืออาหารเล็กน้อยแล้วใช้ทันที",
+          "tl": "Ihalo sa kaunting tubig o pagkain at inumin agad",
+          "ja": "少量の水や食べ物に混ぜてすぐ摂る"
+        },
+        note: {
+          "zh-TW": "可拌果泥、嬰兒食品或少量水；拌好後不要放著。",
+          "en": "You may mix it with fruit puree, baby food, or a small amount of water. Do not let it sit after mixing.",
+          "id": "Boleh dicampur ke puree buah, makanan bayi, atau sedikit air. Jangan didiamkan setelah dicampur.",
+          "vi": "Có thể trộn với trái cây nghiền, thức ăn trẻ em hoặc ít nước. Đừng để lâu sau khi trộn.",
+          "th": "อาจผสมกับผลไม้บด อาหารเด็ก หรือน้ำเล็กน้อยได้ แต่ผสมแล้วอย่าทิ้งไว้",
+          "tl": "Maaaring ihalo sa fruit puree, baby food, o kaunting tubig. Huwag hayaang nakatengga matapos haluin.",
+          "ja": "果物ピューレ、離乳食、少量の水に混ぜてもよい。混ぜたら放置しない。"
+        },
+        illustration: "assets/svg/oral-shared/food-mix.svg"
+      },
+      {
+        action: {
+          "zh-TW": "照藥袋次數服用",
+          "en": "Take it as often as the label tells you",
+          "id": "Minum sesuai jumlah kali pada etiket",
+          "vi": "Dùng đúng số lần ghi trên nhãn thuốc",
+          "th": "รับประทานตามจำนวนครั้งที่ระบุบนฉลากยา",
+          "tl": "Inumin ayon sa bilang ng pag-inom na nasa label",
+          "ja": "薬袋に書かれた回数で服用"
+        },
+        note: {
+          "zh-TW": "大便恢復正常後，連續 2 次正常就停藥。",
+          "en": "Stop after stools are normal 2 times in a row.",
+          "id": "Hentikan setelah tinja normal 2 kali berturut-turut.",
+          "vi": "Ngừng sau khi đi tiêu bình thường liên tiếp 2 lần.",
+          "th": "หยุดยาเมื่อถ่ายปกติติดต่อกัน 2 ครั้ง",
+          "tl": "Itigil kapag naging normal ang dumi nang 2 beses sunod-sunod.",
+          "ja": "正常便が2回続いたら中止する。"
+        },
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      },
+      {
+        action: {
+          "zh-TW": "腹瀉時持續補水",
+          "en": "Keep drinking fluids during diarrhea",
+          "id": "Tetap minum cairan saat diare",
+          "vi": "Tiếp tục bù nước khi bị tiêu chảy",
+          "th": "ดื่มน้ำต่อเนื่องระหว่างท้องเสีย",
+          "tl": "Patuloy na uminom ng likido habang nagtatae",
+          "ja": "下痢の間は補水を続ける"
+        },
+        note: {
+          "zh-TW": "可喝開水或口服補液液。止瀉藥是輔助，補水才是重點。",
+          "en": "Drink water or oral rehydration solution. The diarrhea medicine helps, but replacing fluid is still the priority.",
+          "id": "Minum air putih atau oralit. Obat diare membantu, tetapi mengganti cairan tetap yang utama.",
+          "vi": "Uống nước hoặc dung dịch bù nước đường uống. Thuốc chống tiêu chảy chỉ hỗ trợ, bù dịch vẫn là ưu tiên chính.",
+          "th": "ดื่มน้ำหรือน้ำเกลือแร่ ยาแก้ท้องเสียเป็นเพียงตัวช่วย แต่การชดเชยน้ำยังสำคัญที่สุด",
+          "tl": "Uminom ng tubig o oral rehydration solution. Pantulong lang ang gamot sa pagtatae; ang pinakamahalaga pa rin ay maibalik ang nawalang likido.",
+          "ja": "水や経口補水液を飲む。止瀉薬は補助であり、水分補給が優先。"
+        },
+        illustration: "assets/svg/oral-shared/hydration.svg",
+        highlight: true
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "室溫乾燥處保存，避光。\n放在孩童拿不到的地方。",
+        "en": "Store in a dry place at room temperature and protect it from light.\nKeep it out of reach of children.",
+        "id": "Simpan di tempat kering pada suhu ruang dan lindungi dari cahaya.\nJauhkan dari jangkauan anak-anak.",
+        "vi": "Bảo quản nơi khô ráo ở nhiệt độ phòng và tránh ánh sáng.\nĐể xa tầm tay trẻ em.",
+        "th": "เก็บในที่แห้ง อุณหภูมิห้อง และหลีกเลี่ยงแสง\nเก็บให้พ้นมือเด็ก",
+        "tl": "Itago sa tuyong lugar sa room temperature at ilayo sa liwanag.\nIlayo sa abot ng mga bata.",
+        "ja": "乾燥した室温で光を避けて保管する。\n子どもの手の届かない所に置く。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "這包藥含蔗糖；糖尿病患者先告訴醫師或藥師。",
+        "en": "This granule contains sucrose. Tell your doctor or pharmacist first if you have diabetes.",
+        "id": "Granul ini mengandung sukrosa. Beri tahu dokter atau apoteker dulu bila Anda menderita diabetes.",
+        "vi": "Cốm này có chứa sucrose. Hãy báo bác sĩ hoặc dược sĩ trước nếu bạn bị đái tháo đường.",
+        "th": "ยานี้มีซูโครส หากเป็นเบาหวานให้แจ้งแพทย์หรือเภสัชกรก่อน",
+        "tl": "May sucrose ang granules na ito. Sabihin muna sa doktor o parmasyutiko kung may diabetes ka.",
+        "ja": "この顆粒にはショ糖が含まれる。糖尿病がある場合は先に医師または薬剤師へ伝える。"
+      },
+      {
+        "zh-TW": "腹瀉 48 小時還沒改善，或有發燒、血便、黏液便，停藥就醫。",
+        "en": "Stop the medicine and seek care if diarrhea is not better after 48 hours, or if there is fever, blood in the stool, or mucus in the stool.",
+        "id": "Hentikan obat dan periksa bila diare tidak membaik setelah 48 jam, atau bila ada demam, darah, atau lendir pada tinja.",
+        "vi": "Ngừng thuốc và đi khám nếu tiêu chảy không đỡ sau 48 giờ, hoặc có sốt, máu hay nhầy trong phân.",
+        "th": "หยุดยาและไปพบแพทย์หากท้องเสียไม่ดีขึ้นภายใน 48 ชั่วโมง หรือมีไข้ มีเลือด หรือมีมูกในอุจจาระ",
+        "tl": "Itigil ang gamot at magpatingin kung hindi bumuti ang pagtatae sa loob ng 48 oras, o kung may lagnat, dugo, o uhog sa dumi.",
+        "ja": "48時間たっても改善しない、発熱、血便、粘液便がある時は中止して受診する。"
+      },
+      {
+        "zh-TW": "小於 6 歲或最近剛用過抗生素時，先照醫師指示使用。",
+        "en": "If the child is younger than 6 years old or has recently taken antibiotics, use it only as directed by a doctor.",
+        "id": "Bila anak berusia di bawah 6 tahun atau baru-baru ini memakai antibiotik, gunakan hanya sesuai arahan dokter.",
+        "vi": "Nếu trẻ dưới 6 tuổi hoặc gần đây vừa dùng kháng sinh, chỉ dùng theo chỉ định của bác sĩ.",
+        "th": "หากเด็กอายุน้อยกว่า 6 ปี หรือเพิ่งใช้ยาปฏิชีวนะไม่นาน ให้ใช้ตามแพทย์สั่งเท่านั้น",
+        "tl": "Kung ang bata ay mas bata sa 6 na taon o kamakailan lang uminom ng antibiotic, gamitin lang ito ayon sa bilin ng doktor.",
+        "ja": "6歳未満、または最近抗菌薬を使った場合は、医師の指示に従って使用する。"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/meds/hidrasec"
+  },
+
+  // ── Smecta ─────────────────────────────────────,
+  {
+    "id": "smecta",
+    color: {
+      main: "#185FA5",
+      light: "#E6F1FB",
+      dark: "#042C53",
+      badge: "#CFE4FF",
+      badgeText: "#042C53"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "舒腹達",
+      "en": "Smecta",
+      "id": "Smecta",
+      "vi": "Smecta",
+      "th": "Smecta",
+      "tl": "Smecta",
+      "ja": "スメクタ"
+    },
+    subtitle: {
+      "zh-TW": "Diosmectite 3 g｜口服懸液用粉劑",
+      "en": "Diosmectite 3 g | Powder for oral suspension",
+      "id": "Diosmectite 3 g | Serbuk untuk suspensi oral",
+      "vi": "Diosmectite 3 g | Bột pha hỗn dịch uống",
+      "th": "Diosmectite 3 g | ผงสำหรับเตรียมยาน้ำรับประทาน",
+      "tl": "Diosmectite 3 g | Powder for oral suspension",
+      "ja": "ジオスメクタイト 3 g｜内服懸濁用散剤"
+    },
+    headerBadge: {
+      "zh-TW": "止瀉粉劑",
+      "en": "Oral antidiarrheal powder",
+      "id": "Serbuk antidiare",
+      "vi": "Bột chống tiêu chảy",
+      "th": "ผงแก้ท้องเสีย",
+      "tl": "Pulbos para sa pagtatae",
+      "ja": "止瀉用粉剤"
+    },
+    usage: {
+      "zh-TW": "兩餐之間服；食道炎例外飯後服",
+      "en": "Take it between meals, except after meals if you use it for esophagitis",
+      "id": "Minum di antara waktu makan, kecuali setelah makan bila dipakai untuk esofagitis",
+      "vi": "Uống giữa các bữa ăn, riêng viêm thực quản thì uống sau ăn",
+      "th": "รับประทานระหว่างมื้ออาหาร ยกเว้นถ้าใช้สำหรับหลอดอาหารอักเสบให้รับประทานหลังอาหาร",
+      "tl": "Inumin sa pagitan ng pagkain, maliban kung para sa esophagitis at kailangang pagkatapos kumain",
+      "ja": "通常は食間、食道炎では食後に服用"
+    },
+    badge: {
+      "zh-TW": "口服止瀉粉劑",
+      "en": "Oral antidiarrheal",
+      "id": "Obat antidiare oral",
+      "vi": "Thuốc uống chống tiêu chảy",
+      "th": "ยารับประทานแก้ท้องเสีย",
+      "tl": "Oral antidiarrheal",
+      "ja": "内服止瀉粉剤"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道重點",
+        "en": "Know the main point first",
+        "id": "Ketahui poin penting dulu",
+        "vi": "Biết điểm chính trước",
+        "th": "รู้ประเด็นสำคัญก่อน",
+        "tl": "Alamin muna ang pangunahing punto",
+        "ja": "まず大事な点"
+      },
+      text: {
+        "zh-TW": "這包粉會吸附腸胃裡的刺激物，也可能一起吸走別的藥。所以除了補水，也要記得和其他藥錯開時間。",
+        "en": "This powder can bind irritating material in the gut, but it can also bind other medicines. Besides replacing fluids, remember to separate it from your other medicines.",
+        "id": "Serbuk ini dapat menyerap zat yang mengiritasi usus, tetapi juga bisa menyerap obat lain. Selain tetap minum cukup, ingat untuk memberi jarak dengan obat lain.",
+        "vi": "Bột này có thể hấp phụ chất gây kích thích trong ruột, nhưng cũng có thể hút theo các thuốc khác. Ngoài việc bù nước, hãy nhớ tách thời gian với các thuốc khác.",
+        "th": "ผงยานี้ช่วยดูดจับสิ่งที่ระคายเคืองในลำไส้ แต่ก็อาจดูดจับยาอื่นไปด้วย นอกจากชดเชยน้ำแล้ว ต้องจำไว้ว่าให้เว้นระยะจากยาอื่น",
+        "tl": "Maaaring sumipsip ang pulbos na ito ng mga nakaiirita sa bituka, pero maaari rin nitong sipsipin ang ibang gamot. Bukod sa pag-inom ng sapat na likido, tandaan ding ihiwalay ang oras nito sa ibang gamot.",
+        "ja": "この粉は腸の刺激物を吸着する一方で、他の薬も一緒に吸着することがある。補水に加えて、他の薬と時間をずらすことが大切。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "把 1 包粉倒進杯子",
+          "en": "Pour 1 sachet into a cup",
+          "id": "Tuang 1 sachet ke dalam gelas",
+          "vi": "Đổ 1 gói bột vào cốc",
+          "th": "เทผงยา 1 ซองลงในแก้ว",
+          "tl": "Ibuhos ang 1 sachet sa baso",
+          "ja": "1包をコップに入れる"
+        },
+        note: {
+          "zh-TW": "若粉末已受潮結塊，先不要用。",
+          "en": "Do not use it if the powder is badly clumped from moisture.",
+          "id": "Jangan gunakan bila bubuk menggumpal berat karena lembap.",
+          "vi": "Đừng dùng nếu bột vón cục rõ do bị ẩm.",
+          "th": "หากผงยาจับตัวเป็นก้อนมากเพราะความชื้น ให้ยังไม่ใช้",
+          "tl": "Huwag gamitin kung sobrang nagbukol na ang pulbos dahil sa basa.",
+          "ja": "湿気で強く固まっていたら使用しない。"
+        },
+        illustration: "assets/svg/oral-shared/sachet-cup.svg"
+      },
+      {
+        action: {
+          "zh-TW": "加 50 毫升水或半流質食物拌勻",
+          "en": "Mix it with 50 mL of water or a semi-liquid food",
+          "id": "Campur dengan 50 mL air atau makanan semi-cair",
+          "vi": "Pha với 50 mL nước hoặc thức ăn sệt lỏng",
+          "th": "ผสมกับน้ำ 50 มล. หรืออาหารกึ่งเหลว",
+          "tl": "Ihalo sa 50 mL na tubig o semi-liquid na pagkain",
+          "ja": "50 mLの水または半流動食に混ぜる"
+        },
+        note: {
+          "zh-TW": "可用果泥、菜泥或嬰兒食品；拌好後立刻服用。",
+          "en": "You may mix it with fruit puree, vegetable puree, or baby food. Take it right after mixing.",
+          "id": "Boleh dicampur dengan puree buah, puree sayur, atau makanan bayi. Minum segera setelah dicampur.",
+          "vi": "Có thể trộn với trái cây nghiền, rau nghiền hoặc thức ăn trẻ em. Dùng ngay sau khi pha.",
+          "th": "อาจผสมกับผลไม้บด ผักบด หรืออาหารเด็กได้ และให้รับประทานทันทีหลังผสม",
+          "tl": "Maaaring ihalo sa fruit puree, gulay na dinurog, o baby food. Inumin agad pagkatapos haluin.",
+          "ja": "果物ピューレ、野菜ピューレ、離乳食に混ぜてもよい。混ぜたらすぐ服用する。"
+        },
+        illustration: "assets/svg/oral-shared/sachet-cup.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "依適應症選時間服",
+          "en": "Choose the timing by your reason for use",
+          "id": "Pilih waktu minum sesuai alasan penggunaan",
+          "vi": "Chọn thời điểm uống theo lý do dùng thuốc",
+          "th": "เลือกเวลาใช้ตามเหตุผลที่ใช้ยา",
+          "tl": "Piliin ang oras ayon sa dahilan ng paggamit",
+          "ja": "使う目的に合わせて服用時間を選ぶ"
+        },
+        note: {
+          "zh-TW": "大多數情況在兩餐之間服；若是食道炎，改成飯後服。",
+          "en": "For most uses, take it between meals. If you are using it for esophagitis, take it after meals instead.",
+          "id": "Untuk kebanyakan pemakaian, minum di antara waktu makan. Bila dipakai untuk esofagitis, minum setelah makan.",
+          "vi": "Hầu hết trường hợp dùng giữa các bữa ăn. Nếu dùng cho viêm thực quản, hãy uống sau bữa ăn.",
+          "th": "โดยมากให้รับประทานระหว่างมื้ออาหาร แต่ถ้าใช้สำหรับหลอดอาหารอักเสบ ให้เปลี่ยนเป็นหลังอาหาร",
+          "tl": "Para sa karamihan ng gamit, inumin sa pagitan ng pagkain. Kung para sa esophagitis, inumin ito pagkatapos kumain.",
+          "ja": "通常は食間。食道炎に使う場合は食後に服用する。"
+        },
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      },
+      {
+        action: {
+          "zh-TW": "和其他藥至少隔 2 小時",
+          "en": "Separate it from other medicines by at least 2 hours",
+          "id": "Beri jarak setidaknya 2 jam dari obat lain",
+          "vi": "Cách các thuốc khác ít nhất 2 giờ",
+          "th": "เว้นระยะจากยาอื่นอย่างน้อย 2 ชั่วโมง",
+          "tl": "Ihiwalay ito sa ibang gamot nang hindi bababa sa 2 oras",
+          "ja": "他の薬とは2時間以上あける"
+        },
+        note: {
+          "zh-TW": "這包粉會吸附其他口服藥，太接近吃會讓別的藥比較沒效。",
+          "en": "This powder can bind other oral medicines. If you take them too close together, the other medicine may not work as well.",
+          "id": "Serbuk ini dapat menyerap obat oral lain. Jika diminum terlalu berdekatan, obat lain bisa bekerja kurang baik.",
+          "vi": "Bột này có thể hấp phụ các thuốc uống khác. Nếu uống quá gần nhau, thuốc kia có thể kém hiệu quả hơn.",
+          "th": "ผงยานี้อาจดูดจับยาเม็ดชนิดอื่น หากกินใกล้กันเกินไป ยาอีกตัวอาจออกฤทธิ์ได้ไม่ดี",
+          "tl": "Maaaring sumipsip ang pulbos na ito ng ibang iniinom na gamot. Kapag sabay o malapit masyado ang oras, maaaring humina ang epekto ng ibang gamot.",
+          "ja": "この粉は他の内服薬を吸着することがある。近い時間に飲むと、他の薬の効き目が弱くなることがある。"
+        },
+        illustration: "assets/svg/oral-shared/separate-2h.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "腹瀉時持續補水",
+          "en": "Keep drinking fluids during diarrhea",
+          "id": "Tetap minum cairan saat diare",
+          "vi": "Tiếp tục bù nước khi bị tiêu chảy",
+          "th": "ดื่มน้ำต่อเนื่องระหว่างท้องเสีย",
+          "tl": "Patuloy na uminom ng likido habang nagtatae",
+          "ja": "下痢の間は補水を続ける"
+        },
+        note: {
+          "zh-TW": "這包粉是輔助治療；補水和電解質仍是首要。",
+          "en": "This powder is only a helper. Replacing fluids and electrolytes is still the main treatment.",
+          "id": "Serbuk ini hanya membantu. Mengganti cairan dan elektrolit tetap merupakan penanganan utama.",
+          "vi": "Bột này chỉ là hỗ trợ. Bù nước và điện giải vẫn là điều quan trọng nhất.",
+          "th": "ผงยานี้เป็นเพียงตัวช่วย การชดเชยน้ำและเกลือแร่ยังเป็นสิ่งสำคัญที่สุด",
+          "tl": "Pantulong lang ang pulbos na ito. Ang pagpapalit ng likido at electrolytes pa rin ang pangunahing lunas.",
+          "ja": "この粉は補助であり、水分と電解質の補給が主な治療。"
+        },
+        illustration: "assets/svg/oral-shared/hydration.svg"
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "室溫乾燥處保存，避光。\n放在孩童拿不到的地方。",
+        "en": "Store in a dry place at room temperature and protect it from light.\nKeep it out of reach of children.",
+        "id": "Simpan di tempat kering pada suhu ruang dan lindungi dari cahaya.\nJauhkan dari jangkauan anak-anak.",
+        "vi": "Bảo quản nơi khô ráo ở nhiệt độ phòng và tránh ánh sáng.\nĐể xa tầm tay trẻ em.",
+        "th": "เก็บในที่แห้ง อุณหภูมิห้อง และหลีกเลี่ยงแสง\nเก็บให้พ้นมือเด็ก",
+        "tl": "Itago sa tuyong lugar sa room temperature at ilayo sa liwanag.\nIlayo sa abot ng mga bata.",
+        "ja": "乾燥した室温で光を避けて保管する。\n子どもの手の届かない所に置く。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "和其他藥至少隔 2 小時，不然其他藥可能比較沒效。",
+        "en": "Separate it from other medicines by at least 2 hours, or the other medicine may not work as well.",
+        "id": "Beri jarak setidaknya 2 jam dari obat lain, kalau tidak obat lain bisa bekerja kurang baik.",
+        "vi": "Cách các thuốc khác ít nhất 2 giờ, nếu không thuốc khác có thể kém hiệu quả hơn.",
+        "th": "เว้นระยะจากยาอื่นอย่างน้อย 2 ชั่วโมง มิฉะนั้นยาอื่นอาจออกฤทธิ์ได้ไม่ดี",
+        "tl": "Ihiwalay ito sa ibang gamot nang hindi bababa sa 2 oras, kung hindi ay maaaring humina ang bisa ng ibang gamot.",
+        "ja": "他の薬とは少なくとも2時間あける。そうしないと他の薬が効きにくくなることがある。"
+      },
+      {
+        "zh-TW": "血便、黑便、發燒或 48 小時沒改善時，停藥就醫。",
+        "en": "Stop the medicine and seek care if you have blood in the stool, black stool, fever, or no improvement after 48 hours.",
+        "id": "Hentikan obat dan periksa bila ada darah pada tinja, tinja hitam, demam, atau tidak membaik setelah 48 jam.",
+        "vi": "Ngừng thuốc và đi khám nếu có máu trong phân, phân đen, sốt, hoặc không cải thiện sau 48 giờ.",
+        "th": "หยุดยาและไปพบแพทย์หากมีเลือดในอุจจาระ อุจจาระดำ มีไข้ หรือไม่ดีขึ้นภายใน 48 ชั่วโมง",
+        "tl": "Itigil ang gamot at magpatingin kung may dugo sa dumi, maitim na dumi, lagnat, o hindi bumuti sa loob ng 48 oras.",
+        "ja": "血便、黒色便、発熱、または48時間で改善しない時は中止して受診する。"
+      },
+      {
+        "zh-TW": "有嚴重便秘或腸阻塞病史時，先問醫師或藥師。",
+        "en": "Ask a doctor or pharmacist first if you have a history of severe constipation or bowel blockage.",
+        "id": "Tanyakan dulu kepada dokter atau apoteker bila Anda punya riwayat sembelit berat atau sumbatan usus.",
+        "vi": "Hãy hỏi bác sĩ hoặc dược sĩ trước nếu bạn có tiền sử táo bón nặng hoặc tắc ruột.",
+        "th": "หากเคยมีท้องผูกรุนแรงหรือลำไส้อุดตัน ให้ถามแพทย์หรือเภสัชกรก่อนใช้",
+        "tl": "Magtanong muna sa doktor o parmasyutiko kung may kasaysayan ng matinding pagtitibi o bara sa bituka.",
+        "ja": "重い便秘や腸閉塞の既往がある場合は、先に医師または薬剤師へ相談する。"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/meds/smecta"
+  },
+
+  // ── Kocel / Konsyl ─────────────────────────────────────,
+  {
+    "id": "kocel",
+    color: {
+      main: "#3B6D11",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#C0DD97",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "康賜爾散劑",
+      "en": "Kocel / Konsyl",
+      "id": "Serbuk Kocel / Konsyl",
+      "vi": "Bột Kocel / Konsyl",
+      "th": "ผง Kocel / Konsyl",
+      "tl": "Kocel / Konsyl",
+      "ja": "コーセル散剤"
+    },
+    subtitle: {
+      "zh-TW": "Psyllium 6 g｜膨脹性纖維散劑",
+      "en": "Psyllium 6 g | Bulk-forming fiber powder",
+      "id": "Psyllium 6 g | Serbuk serat pembentuk massa",
+      "vi": "Psyllium 6 g | Bột chất xơ tạo khối",
+      "th": "Psyllium 6 g | ผงไฟเบอร์เพิ่มกาก",
+      "tl": "Psyllium 6 g | Bulk-forming fiber powder",
+      "ja": "サイリウム 6 g｜膨張性食物繊維散剤"
+    },
+    headerBadge: {
+      "zh-TW": "膳食纖維",
+      "en": "Fiber",
+      "id": "Serat",
+      "vi": "Chất xơ",
+      "th": "ไฟเบอร์",
+      "tl": "Fiber",
+      "ja": "食物繊維"
+    },
+    usage: {
+      "zh-TW": "便秘時依醫囑服用，並多喝水",
+      "en": "Take it as directed for constipation and drink plenty of water",
+      "id": "Minum sesuai petunjuk untuk sembelit dan perbanyak air",
+      "vi": "Dùng theo hướng dẫn khi táo bón và uống nhiều nước",
+      "th": "ใช้ตามแพทย์สั่งเมื่อท้องผูก และดื่มน้ำมากขึ้น",
+      "tl": "Inumin ayon sa payo para sa tibi at uminom ng maraming tubig",
+      "ja": "便秘時に指示どおり服用し、水分を十分とる"
+    },
+    badge: {
+      "zh-TW": "口服纖維散劑",
+      "en": "Oral fiber supplement",
+      "id": "Serbuk serat oral",
+      "vi": "Bột chất xơ uống",
+      "th": "ผงไฟเบอร์รับประทาน",
+      "tl": "Iniinom na hibla",
+      "ja": "内服食物繊維散剤"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道重點",
+        "en": "Know the main point first",
+        "id": "Ketahui poin penting dulu",
+        "vi": "Biết điểm chính trước",
+        "th": "รู้ประเด็นสำคัญก่อน",
+        "tl": "Alamin muna ang pangunahing punto",
+        "ja": "まず大事な点"
+      },
+      text: {
+        "zh-TW": "這是吸水後會膨脹的纖維。水不夠時，效果會變差，也比較容易卡喉或不舒服。",
+        "en": "This is a fiber that swells after it absorbs water. If you do not take enough water with it, it works less well and is more likely to feel uncomfortable or get stuck.",
+        "id": "Ini adalah serat yang mengembang setelah menyerap air. Bila airnya kurang, efeknya berkurang dan lebih mudah terasa tidak nyaman atau tersangkut.",
+        "vi": "Đây là chất xơ sẽ nở lên sau khi hút nước. Nếu uống không đủ nước, thuốc sẽ kém hiệu quả hơn và dễ gây khó chịu hoặc mắc nghẹn.",
+        "th": "นี่คือไฟเบอร์ที่พองตัวเมื่อดูดน้ำ หากดื่มน้ำไม่พอ ยาจะได้ผลน้อยลง และอาจติดคอหรือทำให้ไม่สบายได้ง่ายขึ้น",
+        "tl": "Fiber ito na lumolobo kapag sumipsip ng tubig. Kung kulang ang tubig, hindi ito gaanong epektibo at mas madaling makabara o magdulot ng hindi komportableng pakiramdam.",
+        "ja": "水を吸うと膨らむ食物繊維。水分が足りないと効きにくくなり、つかえたり不快感が出やすくなる。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "把 1 包倒進大杯子",
+          "en": "Pour 1 sachet into a large cup",
+          "id": "Tuang 1 sachet ke gelas besar",
+          "vi": "Đổ 1 gói vào cốc lớn",
+          "th": "เท 1 ซองลงในแก้วใบใหญ่",
+          "tl": "Ibuhos ang 1 sachet sa malaking baso",
+          "ja": "1包を大きめのコップに入れる"
+        },
+        note: {
+          "zh-TW": "先準備至少 250 毫升冷水或常溫水。",
+          "en": "Prepare at least 250 mL of cool or room-temperature water first.",
+          "id": "Siapkan dulu setidaknya 250 mL air dingin atau suhu ruang.",
+          "vi": "Chuẩn bị sẵn ít nhất 250 mL nước mát hoặc nước ở nhiệt độ phòng.",
+          "th": "เตรียมน้ำเย็นหรือน้ำอุณหภูมิห้องอย่างน้อย 250 มล. ไว้ก่อน",
+          "tl": "Maghanda muna ng hindi bababa sa 250 mL na malamig o room-temperature na tubig.",
+          "ja": "先に250 mL以上の冷水または常温の水を用意する。"
+        },
+        illustration: "assets/svg/oral-shared/extra-water.svg"
+      },
+      {
+        action: {
+          "zh-TW": "加入冷水或常溫水",
+          "en": "Add cool or room-temperature water",
+          "id": "Tambahkan air dingin atau suhu ruang",
+          "vi": "Thêm nước mát hoặc nước ở nhiệt độ phòng",
+          "th": "เติมน้ำเย็นหรือน้ำอุณหภูมิห้อง",
+          "tl": "Lagyan ng malamig o room-temperature na tubig",
+          "ja": "冷水または常温の水を加える"
+        },
+        note: {
+          "zh-TW": "不要用熱水。熱水會讓粉變得太快太稠，反而不好喝，也比較不安全。",
+          "en": "Do not use hot water. Hot water makes the powder thicken too fast, which makes it harder and less safe to drink.",
+          "id": "Jangan gunakan air panas. Air panas membuat bubuk mengental terlalu cepat sehingga lebih sulit dan kurang aman diminum.",
+          "vi": "Không dùng nước nóng. Nước nóng làm bột đặc lại quá nhanh, vừa khó uống hơn vừa kém an toàn hơn.",
+          "th": "อย่าใช้น้ำร้อน เพราะน้ำร้อนจะทำให้ผงข้นเร็วเกินไป ดื่มยากขึ้นและปลอดภัยน้อยลง",
+          "tl": "Huwag gumamit ng mainit na tubig. Masyado nitong pinapabilis ang paglapot ng pulbos kaya mas mahirap at mas hindi ligtas inumin.",
+          "ja": "熱湯は使わない。粉が早く濃くなりすぎて飲みにくくなり、安全性も下がる。"
+        },
+        illustration: "assets/svg/oral-shared/no-hot-water.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "攪拌 3–5 秒",
+          "en": "Stir for 3-5 seconds",
+          "id": "Aduk selama 3-5 detik",
+          "vi": "Khuấy 3-5 giây",
+          "th": "คน 3-5 วินาที",
+          "tl": "Haluin nang 3-5 segundo",
+          "ja": "3-5秒混ぜる"
+        },
+        note: {
+          "zh-TW": "不要放太久。攪好就準備喝。",
+          "en": "Do not leave it sitting. Once mixed, get ready to drink it.",
+          "id": "Jangan didiamkan terlalu lama. Setelah tercampur, segera siap diminum.",
+          "vi": "Đừng để lâu. Khuấy xong là chuẩn bị uống ngay.",
+          "th": "อย่าปล่อยทิ้งไว้นาน เมื่อผสมแล้วให้เตรียมดื่มทันที",
+          "tl": "Huwag hayaang nakatengga. Kapag nahalo na, ihanda nang inumin agad.",
+          "ja": "長く置かない。混ぜたらすぐ飲む準備をする。"
+        },
+        illustration: "assets/svg/oral-shared/stir-drink.svg"
+      },
+      {
+        action: {
+          "zh-TW": "拌好後立刻喝完",
+          "en": "Drink it right away after mixing",
+          "id": "Segera minum setelah tercampur",
+          "vi": "Uống ngay sau khi khuấy",
+          "th": "ดื่มทันทีหลังผสม",
+          "tl": "Inumin agad pagkatapos haluin",
+          "ja": "混ぜたらすぐ飲む"
+        },
+        note: {
+          "zh-TW": "放久會越來越稠，反而比較難喝。",
+          "en": "If you leave it too long, it gets thicker and harder to drink.",
+          "id": "Jika dibiarkan terlalu lama, campuran akan makin kental dan lebih sulit diminum.",
+          "vi": "Nếu để lâu, hỗn hợp sẽ đặc dần và khó uống hơn.",
+          "th": "หากปล่อยไว้นานจะยิ่งข้นและดื่มยากขึ้น",
+          "tl": "Kapag pinatagal, lalo itong lalapot at mas mahirap inumin.",
+          "ja": "置くほど濃くなり、飲みにくくなる。"
+        },
+        illustration: "assets/svg/oral-shared/stir-drink.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "再多喝 1 大杯水",
+          "en": "Drink one more full glass of water",
+          "id": "Minum lagi 1 gelas penuh air",
+          "vi": "Uống thêm 1 cốc nước đầy",
+          "th": "ดื่มน้ำตามอีก 1 แก้วใหญ่",
+          "tl": "Uminom pa ng isang buong basong tubig",
+          "ja": "さらにコップ1杯の水を飲む"
+        },
+        note: {
+          "zh-TW": "水分夠，纖維才比較能膨脹、比較能幫助排便。",
+          "en": "Enough water helps the fiber swell properly and work better for constipation.",
+          "id": "Air yang cukup membantu serat mengembang dengan baik dan bekerja lebih baik untuk sembelit.",
+          "vi": "Đủ nước giúp chất xơ nở đúng cách và hỗ trợ táo bón tốt hơn.",
+          "th": "น้ำที่เพียงพอจะช่วยให้ไฟเบอร์พองตัวได้ดีและช่วยเรื่องท้องผูกได้ดีกว่า",
+          "tl": "Ang sapat na tubig ang tumutulong para lumobo nang tama ang fiber at gumana nang mas mahusay para sa tibi.",
+          "ja": "十分な水分があると食物繊維がきちんと膨らみ、便秘により効果的に働く。"
+        },
+        illustration: "assets/svg/oral-shared/extra-water.svg"
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "室溫乾燥處保存。\n配製前避免受潮，放在孩童拿不到的地方。",
+        "en": "Store in a dry place at room temperature.\nKeep the powder dry before mixing and out of reach of children.",
+        "id": "Simpan di tempat kering pada suhu ruang.\nJaga bubuk tetap kering sebelum dicampur dan jauhkan dari jangkauan anak-anak.",
+        "vi": "Bảo quản nơi khô ráo ở nhiệt độ phòng.\nGiữ bột khô trước khi pha và để xa tầm tay trẻ em.",
+        "th": "เก็บในที่แห้ง อุณหภูมิห้อง\nอย่าให้ผงยาชื้นก่อนผสม และเก็บให้พ้นมือเด็ก",
+        "tl": "Itago sa tuyong lugar sa room temperature.\nPanatilihing tuyo ang pulbos bago ihalo at ilayo sa abot ng mga bata.",
+        "ja": "乾燥した室温で保管する。\n調製前に湿気を避け、子どもの手の届かない所に置く。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "和其他口服藥至少隔 2 小時。",
+        "en": "Separate it from other oral medicines by at least 2 hours.",
+        "id": "Beri jarak setidaknya 2 jam dari obat oral lain.",
+        "vi": "Cách các thuốc uống khác ít nhất 2 giờ.",
+        "th": "เว้นระยะจากยารับประทานอื่นอย่างน้อย 2 ชั่วโมง",
+        "tl": "Ihiwalay ito sa ibang iniinom na gamot nang hindi bababa sa 2 oras.",
+        "ja": "他の内服薬とは少なくとも2時間あける。"
+      },
+      {
+        "zh-TW": "可能 12 小時到 3 天才見效；連用 1 週沒改善就回診。",
+        "en": "It may take 12 hours to 3 days to work. If there is no improvement after 1 week, go back for review.",
+        "id": "Efeknya bisa baru terasa dalam 12 jam sampai 3 hari. Bila tidak membaik setelah 1 minggu, kontrol kembali.",
+        "vi": "Thuốc có thể mất từ 12 giờ đến 3 ngày mới có tác dụng. Nếu 1 tuần vẫn không cải thiện, hãy tái khám.",
+        "th": "ยาอาจใช้เวลา 12 ชั่วโมงถึง 3 วันจึงเห็นผล หากใช้ต่อเนื่อง 1 สัปดาห์แล้วยังไม่ดีขึ้น ให้กลับไปพบแพทย์",
+        "tl": "Maaaring abutin ng 12 oras hanggang 3 araw bago umepekto. Kung walang pagbuti matapos ang 1 linggo, bumalik para magpatingin.",
+        "ja": "効果が出るまで12時間から3日かかることがある。1週間使っても改善しなければ受診する。"
+      },
+      {
+        "zh-TW": "若吞嚥困難、胸口卡住、腹痛很重、血便或持續腹瀉，停用並就醫。",
+        "en": "Stop using it and seek care if you have trouble swallowing, a stuck feeling in the chest, severe belly pain, blood in the stool, or ongoing diarrhea.",
+        "id": "Hentikan dan periksa bila sulit menelan, terasa tersangkut di dada, sakit perut berat, darah pada tinja, atau diare yang terus berlanjut.",
+        "vi": "Ngừng dùng và đi khám nếu khó nuốt, cảm giác mắc ở ngực, đau bụng nhiều, có máu trong phân hoặc tiêu chảy kéo dài.",
+        "th": "หยุดใช้และไปพบแพทย์หากกลืนลำบาก รู้สึกติดที่หน้าอก ปวดท้องมาก มีเลือดในอุจจาระ หรือท้องเสียต่อเนื่อง",
+        "tl": "Itigil ang paggamit at magpatingin kung hirap lumunok, parang may naipit sa dibdib, matinding pananakit ng tiyan, may dugo sa dumi, o tuloy-tuloy ang pagtatae.",
+        "ja": "飲み込みにくい、胸につかえる感じ、強い腹痛、血便、持続する下痢があれば中止して受診する。"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/meds/kocel"
+  },
+
+  // ── Chalian / Kalimate ─────────────────────────────────────,
+  {
+    "id": "chalian-kalimate",
+    color: {
+      main: "#854F0B",
+      light: "#FAEEDA",
+      dark: "#633806",
+      badge: "#F2D29E",
+      badgeText: "#633806"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "鉀利安粉／加利美粉",
+      "en": "Chalian / Kalimate",
+      "id": "Serbuk Chalian / Kalimate",
+      "vi": "Bột Chalian / Kalimate",
+      "th": "ผง Chalian / Kalimate",
+      "tl": "Chalian / Kalimate",
+      "ja": "カリアン粉／カリメート粉"
+    },
+    subtitle: {
+      "zh-TW": "Calcium polystyrene sulfonate｜高血鉀用口服樹脂",
+      "en": "Calcium polystyrene sulfonate | Oral resin for high potassium",
+      "id": "Calcium polystyrene sulfonate | Resin oral untuk kalium tinggi",
+      "vi": "Calcium polystyrene sulfonate | Nhựa uống dùng khi kali máu cao",
+      "th": "Calcium polystyrene sulfonate | ยารับประทานแบบเรซินสำหรับโพแทสเซียมสูง",
+      "tl": "Calcium polystyrene sulfonate | Oral resin for high potassium",
+      "ja": "カルシウムポリスチレンスルホン酸｜高カリウム血症用内服樹脂"
+    },
+    headerBadge: {
+      "zh-TW": "高血鉀",
+      "en": "High potassium",
+      "id": "Kalium tinggi",
+      "vi": "Tăng kali máu",
+      "th": "โพแทสเซียมสูง",
+      "tl": "High potassium",
+      "ja": "高カリウム"
+    },
+    usage: {
+      "zh-TW": "依醫囑分次服用，並注意排便",
+      "en": "Take it in divided doses as directed and watch your bowel movements",
+      "id": "Minum sesuai petunjuk dalam dosis terbagi dan perhatikan buang air besar",
+      "vi": "Dùng theo chỉ định, chia nhiều lần và theo dõi việc đi tiêu",
+      "th": "รับประทานแบ่งตามแพทย์สั่ง และสังเกตการขับถ่าย",
+      "tl": "Inumin sa hinating dosis ayon sa payo at bantayan ang pagdumi",
+      "ja": "指示どおり分けて服用し、排便を確認する"
+    },
+    badge: {
+      "zh-TW": "口服降鉀樹脂",
+      "en": "Oral potassium binder",
+      "id": "Pengikat kalium oral",
+      "vi": "Thuốc uống gắn kali",
+      "th": "ยารับประทานจับโพแทสเซียม",
+      "tl": "Oral potassium binder",
+      "ja": "内服カリウム結合樹脂"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      title: {
+        "zh-TW": "先知道重點",
+        "en": "Know the main point first",
+        "id": "Ketahui poin penting dulu",
+        "vi": "Biết điểm chính trước",
+        "th": "รู้ประเด็นสำคัญก่อน",
+        "tl": "Alamin muna ang pangunahing punto",
+        "ja": "まず大事な点"
+      },
+      text: {
+        "zh-TW": "這包藥會把多餘的鉀帶出體外，也可能影響其他藥的吸收，所以一定要和其他藥錯開時間。",
+        "en": "This medicine helps remove extra potassium from your body. It can also affect how other medicines are absorbed, so you must separate it from your other medicines.",
+        "id": "Obat ini membantu membuang kelebihan kalium dari tubuh. Obat ini juga bisa memengaruhi penyerapan obat lain, jadi harus diberi jarak dari obat lain.",
+        "vi": "Thuốc này giúp đưa lượng kali dư ra khỏi cơ thể. Thuốc cũng có thể ảnh hưởng hấp thu các thuốc khác, nên phải dùng cách xa các thuốc khác.",
+        "th": "ยานี้ช่วยพาโพแทสเซียมส่วนเกินออกจากร่างกาย แต่ก็อาจรบกวนการดูดซึมของยาอื่นได้ จึงต้องเว้นระยะจากยาอื่น",
+        "tl": "Tinutulungan ng gamot na ito na mailabas ang sobrang potassium sa katawan. Maaari rin nitong maapektuhan ang pag-absorb ng ibang gamot kaya kailangan itong ihiwalay sa ibang gamot.",
+        "ja": "この薬は余分なカリウムを体外へ出すのを助ける一方、他の薬の吸収にも影響することがあるため、服用時間をずらす必要がある。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "先看藥袋要用幾包",
+          "en": "Check how many sachets your label tells you to use",
+          "id": "Periksa berapa sachet yang tertulis pada etiket",
+          "vi": "Xem nhãn thuốc ghi cần dùng mấy gói",
+          "th": "ดูฉลากยาก่อนว่าต้องใช้กี่ซอง",
+          "tl": "Tingnan sa label kung ilang sachet ang dapat gamitin",
+          "ja": "薬袋で何包使うか確認する"
+        },
+        note: {
+          "zh-TW": "包數和次數都照醫囑，不要自己增減。",
+          "en": "Follow the prescribed number of sachets and doses. Do not change it on your own.",
+          "id": "Ikuti jumlah sachet dan frekuensi sesuai resep. Jangan mengubahnya sendiri.",
+          "vi": "Làm theo số gói và số lần dùng theo chỉ định. Không tự ý thay đổi.",
+          "th": "จำนวนซองและจำนวนครั้งให้ยึดตามแพทย์สั่ง ห้ามปรับเอง",
+          "tl": "Sundin ang bilang ng sachet at dalas ayon sa reseta. Huwag itong baguhin nang kusa.",
+          "ja": "包数も回数も処方どおりにし、自己判断で増減しない。"
+        },
+        illustration: "assets/svg/oral-shared/tablets-three.svg"
+      },
+      {
+        action: {
+          "zh-TW": "加 30–50 毫升冷開水拌勻",
+          "en": "Mix it with 30-50 mL of cooled boiled water",
+          "id": "Campur dengan 30-50 mL air matang yang sudah dingin",
+          "vi": "Pha với 30-50 mL nước đun sôi để nguội",
+          "th": "ผสมกับน้ำต้มสุกที่เย็นแล้ว 30-50 มล.",
+          "tl": "Ihalo sa 30-50 mL na pinalamig na pinakuluang tubig",
+          "ja": "30-50 mLの湯冷ましで混ぜる"
+        },
+        note: {
+          "zh-TW": "只能用水，不要用果汁。和果汁一起泡，可能影響藥效。",
+          "en": "Use water only, not juice. Mixing it with juice may affect how the medicine works.",
+          "id": "Gunakan air saja, jangan jus. Mencampurnya dengan jus dapat memengaruhi kerja obat.",
+          "vi": "Chỉ dùng nước, không dùng nước trái cây. Pha với nước trái cây có thể ảnh hưởng đến tác dụng thuốc.",
+          "th": "ใช้แต่น้ำเท่านั้น ห้ามใช้น้ำผลไม้ เพราะอาจทำให้ยาออกฤทธิ์ได้ไม่ดี",
+          "tl": "Tubig lang ang gamitin, huwag juice. Maaaring maapektuhan ang bisa ng gamot kapag hinalo sa juice.",
+          "ja": "水だけを使い、ジュースは使わない。ジュースに混ぜると薬の効き方に影響することがある。"
+        },
+        illustration: "assets/svg/oral-shared/no-juice.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "喝完後再多喝水",
+          "en": "Drink more water after taking it",
+          "id": "Minum lagi segelas air setelahnya",
+          "vi": "Uống thêm nước sau khi dùng",
+          "th": "ดื่มน้ำตามอีกมากพอหลังรับประทาน",
+          "tl": "Uminom pa ng isa pang basong tubig pagkatapos nito",
+          "ja": "飲んだ後にさらに水を飲む"
+        },
+        note: {
+          "zh-TW": "水分夠，比較不容易便秘。",
+          "en": "Enough fluid helps lower the chance of constipation.",
+          "id": "Cairan yang cukup membantu mengurangi risiko sembelit.",
+          "vi": "Đủ nước sẽ giúp giảm nguy cơ táo bón.",
+          "th": "น้ำเพียงพอจะช่วยลดโอกาสท้องผูก",
+          "tl": "Ang sapat na likido ay nakatutulong para mabawasan ang posibilidad ng tibi.",
+          "ja": "十分な水分で便秘の起こりやすさを減らせる。"
+        },
+        illustration: "assets/svg/oral-shared/extra-water.svg"
+      },
+      {
+        action: {
+          "zh-TW": "和其他藥至少隔 2 小時",
+          "en": "Separate it from other medicines by at least 2 hours",
+          "id": "Beri jarak setidaknya 2 jam dari obat lain",
+          "vi": "Cách các thuốc khác ít nhất 2 giờ",
+          "th": "เว้นระยะจากยาอื่นอย่างน้อย 2 ชั่วโมง",
+          "tl": "Ihiwalay ito sa ibang gamot nang hindi bababa sa 2 oras",
+          "ja": "他の薬とは2時間以上あける"
+        },
+        note: {
+          "zh-TW": "尤其是制酸劑、瀉劑和毛地黃類藥物，更要主動告訴醫師或藥師。",
+          "en": "This is especially important with antacids, laxatives, and digoxin-type medicines. Make sure your doctor or pharmacist knows about them.",
+          "id": "Ini sangat penting terutama bila Anda juga memakai antasid, pencahar, atau obat seperti digoxin. Pastikan dokter atau apoteker mengetahuinya.",
+          "vi": "Điều này đặc biệt quan trọng nếu bạn còn dùng thuốc kháng acid, thuốc nhuận tràng hoặc thuốc kiểu digoxin. Hãy chắc chắn bác sĩ hoặc dược sĩ biết điều đó.",
+          "th": "เรื่องนี้สำคัญมากโดยเฉพาะหากคุณใช้ยาลดกรด ยาระบาย หรือยากลุ่ม digoxin อยู่ด้วย ต้องแจ้งแพทย์หรือเภสัชกรให้ทราบ",
+          "tl": "Lalong mahalaga ito kung umiinom ka rin ng antacid, laxative, o gamot tulad ng digoxin. Siguraduhing alam ito ng doktor o parmasyutiko.",
+          "ja": "制酸薬、下剤、ジゴキシン系の薬では特に重要。必ず医師または薬剤師へ伝える。"
+        },
+        illustration: "assets/svg/oral-shared/separate-2h.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "注意排便和肚子脹不脹",
+          "en": "Watch your bowel movements and belly bloating",
+          "id": "Perhatikan BAB dan apakah perut terasa makin kembung",
+          "vi": "Theo dõi việc đi tiêu và cảm giác chướng bụng",
+          "th": "สังเกตการขับถ่ายและอาการท้องอืด",
+          "tl": "Bantayan ang pagdumi at kung lalong lumolobo ang tiyan",
+          "ja": "排便と腹部膨満を確認する"
+        },
+        note: {
+          "zh-TW": "若超過 2 天沒排便，或肚子越來越脹，請告知醫師。",
+          "en": "Tell your doctor if you have not passed stool for more than 2 days or if your belly is getting more swollen.",
+          "id": "Beri tahu dokter bila Anda tidak buang air besar lebih dari 2 hari atau perut makin kembung.",
+          "vi": "Hãy báo bác sĩ nếu bạn không đi tiêu quá 2 ngày hoặc bụng chướng tăng dần.",
+          "th": "แจ้งแพทย์หากไม่ถ่ายเกิน 2 วัน หรือท้องอืดมากขึ้นเรื่อย ๆ",
+          "tl": "Sabihin sa doktor kung hindi ka dumudumi nang mahigit 2 araw o kung palaki nang palaki ang tiyan mo.",
+          "ja": "2日以上排便がない、または腹部の張りが強くなる時は医師へ伝える。"
+        },
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "藥品保存",
+        "en": "Storage",
+        "id": "Penyimpanan",
+        "vi": "Bảo quản",
+        "th": "การเก็บรักษา",
+        "tl": "Imbakan",
+        "ja": "保管方法"
+      },
+      text: {
+        "zh-TW": "25°C 以下乾燥處保存。\n放在孩童拿不到的地方。",
+        "en": "Store below 25°C in a dry place.\nKeep it out of reach of children.",
+        "id": "Simpan di bawah 25°C di tempat kering.\nJauhkan dari jangkauan anak-anak.",
+        "vi": "Bảo quản dưới 25°C ở nơi khô ráo.\nĐể xa tầm tay trẻ em.",
+        "th": "เก็บในที่แห้ง อุณหภูมิต่ำกว่า 25°C\nเก็บให้พ้นมือเด็ก",
+        "tl": "Itago sa tuyong lugar na mas mababa sa 25°C.\nIlayo sa abot ng mga bata.",
+        "ja": "25°C以下の乾燥した場所で保管する。\n子どもの手の届かない所に置く。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "若正在吃 digoxin（毛地黃），一定要主動告訴醫師或藥師。",
+        "en": "If you take digoxin, make sure you tell your doctor or pharmacist.",
+        "id": "Bila Anda memakai digoxin, pastikan memberi tahu dokter atau apoteker.",
+        "vi": "Nếu bạn đang dùng digoxin, hãy chủ động báo bác sĩ hoặc dược sĩ.",
+        "th": "หากกำลังใช้ digoxin อยู่ ต้องแจ้งแพทย์หรือเภสัชกรให้ทราบเสมอ",
+        "tl": "Kung umiinom ka ng digoxin, siguraduhing sabihin ito sa doktor o parmasyutiko.",
+        "ja": "ジゴキシンを服用している場合は、必ず医師または薬剤師へ伝える。"
+      },
+      {
+        "zh-TW": "只能用水，不要和果汁一起泡。",
+        "en": "Use water only. Do not mix it with juice.",
+        "id": "Gunakan air saja. Jangan campur dengan jus.",
+        "vi": "Chỉ dùng nước. Không pha với nước trái cây.",
+        "th": "ใช้น้ำเท่านั้น ห้ามผสมกับน้ำผลไม้",
+        "tl": "Tubig lang ang gamitin. Huwag ihalo sa juice.",
+        "ja": "水だけを使い、ジュースには混ぜない。"
+      },
+      {
+        "zh-TW": "孕婦、哺乳、嚴重便秘或腸阻塞病史，使用前先問醫師。",
+        "en": "Ask your doctor before use if you are pregnant, breastfeeding, have severe constipation, or have a history of bowel blockage.",
+        "id": "Tanyakan dulu kepada dokter sebelum memakai bila sedang hamil, menyusui, sembelit berat, atau pernah mengalami sumbatan usus.",
+        "vi": "Hãy hỏi bác sĩ trước khi dùng nếu bạn đang mang thai, cho con bú, bị táo bón nặng hoặc có tiền sử tắc ruột.",
+        "th": "หากตั้งครรภ์ ให้นมบุตร ท้องผูกรุนแรง หรือเคยมีลำไส้อุดตัน ให้ถามแพทย์ก่อนใช้ยา",
+        "tl": "Magtanong muna sa doktor bago gamitin kung buntis, nagpapasuso, may matinding tibi, o may kasaysayan ng bara sa bituka.",
+        "ja": "妊娠中、授乳中、重い便秘、腸閉塞の既往がある場合は使用前に医師へ相談する。"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/meds/chalian-kalimate"
+  },
   // ── Placeholder: GI Klean Powder for colonoscopy bowel preparation ─────────────────────────────────────,
   {
       "id": "gi-klean-powder",
@@ -21836,7 +23491,7 @@ function inferCategory(m) {
   if (badge.includes("栓") || badge.includes("陰道") || badge.includes("supp") || badge.includes("vaginal")) return "supp";
   if (badge.includes("注射") || badge.includes("injection")) return "inject";
   if (badge.includes("戒菸") || badge.includes("smoking")) return "smoking";
-  if (badge.includes("粉") || badge.includes("powder") || badge.includes("reconstitution")) return "powder";
+  if (badge.includes("粉") || badge.includes("powder") || badge.includes("reconstitution")) return "oral";
   if (badge.includes("口服") || badge.includes("oral")) return "oral";
 
   const main = ((m.color && m.color.main) || "").toLowerCase();
