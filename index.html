@@ -1849,258 +1849,405 @@ const MEDICATIONS = [
           "tl": "Panggamot: 2 langhap bawat dosis, 2 beses sa isang araw, sa loob ng 5 araw.\nPang-iwas: 2 langhap bawat dosis, 1 beses sa isang araw, sa loob ng 10 araw.",
           "ja": "治療：1回2吸入、1日2回、5日間。\n予防：1回2吸入、1日1回、10日間。"
       },
-      badge: {
-          "zh-TW": "Rotadisk DPI｜5 歲以上",
-          "en": "Rotadisk DPI | age 5+",
-          "id": "Rotadisk DPI | usia 5+",
-          "vi": "Rotadisk DPI | từ 5 tuổi",
-          "th": "Rotadisk DPI | อายุ 5 ปีขึ้นไป",
-          "tl": "Rotadisk DPI | edad 5 pataas",
-          "ja": "Rotadisk DPI｜5歳以上"
-      },
-      preStepsInfo: {
-          tone: {
-              bg: "#E6F1FB",
-              border: "#185FA5",
-              text: "#042C53"
-          },
-          title: {
-              "zh-TW": "先看這 3 點",
-              "en": "Read these 3 points first",
-              "id": "Baca 3 poin ini dulu",
-              "vi": "Xem 3 điểm này trước",
-              "th": "อ่าน 3 ข้อนี้ก่อน",
-              "tl": "Basahin muna ang 3 paalalang ito",
-              "ja": "最初にこの3点を確認"
-          },
-          text: {
-              "zh-TW": "本張只說明已裝好藥盤後的用法。\n第一次安裝或更換藥盤，請看裝置設置單張。\n本藥不含類固醇，用後不需漱口。",
-              "en": "This sheet explains how to use the device after the Rotadisk is already loaded.\nFor first-time setup or changing the disk, see the device setup sheet.\nThis medicine does not contain a steroid, so you do not need to rinse your mouth after use.",
-              "id": "Lembar ini menjelaskan cara pakai setelah Rotadisk terpasang.\nUntuk pemasangan pertama atau mengganti disk, lihat lembar penyiapan alat.\nObat ini tidak mengandung steroid, jadi tidak perlu berkumur setelah digunakan.",
-              "vi": "Tờ này chỉ giải thích cách dùng sau khi đĩa thuốc đã được lắp sẵn.\nKhi lắp lần đầu hoặc thay đĩa thuốc, hãy xem tờ hướng dẫn cài đặt thiết bị.\nThuốc này không chứa steroid nên không cần súc miệng sau khi dùng.",
-              "th": "แผ่นนี้อธิบายวิธีใช้หลังจากใส่แผ่นยาเรียบร้อยแล้ว\nหากเป็นการติดตั้งครั้งแรกหรือเปลี่ยนแผ่นยา ให้ดูแผ่นคำแนะนำการตั้งค่าอุปกรณ์\nยานี้ไม่มีสเตียรอยด์ จึงไม่ต้องบ้วนปากหลังใช้",
-              "tl": "Ipinapaliwanag ng sheet na ito ang paggamit pagkatapos maikarga ang Rotadisk.\nPara sa unang pag-set up o pagpapalit ng disk, tingnan ang setup sheet ng device.\nWalang steroid ang gamot na ito kaya hindi kailangang magmumog pagkatapos gamitin.",
-              "ja": "このシートは、Rotadisk を装着した後の使い方だけを説明します。\n初回セットやディスク交換は、装置セットアップ用シートを見てください。\nこの薬にはステロイドが含まれないため、使用後のうがいは不要です。"
-          }
-      },
-      steps: [
+      pages: [
           {
-              action: {
-                  "zh-TW": "移除藍色護蓋",
-                  "en": "Remove the blue cover",
-                  "id": "Lepas penutup biru",
-                  "vi": "Tháo nắp màu xanh",
-                  "th": "ถอดฝาครอบสีน้ำเงิน",
-                  "tl": "Alisin ang asul na takip",
-                  "ja": "青いカバーを外す"
+              pageLabel: {
+                  "zh-TW": "A 面｜第一次安裝/更換藥盤",
+                  "en": "Side A | first setup / change disk",
+                  "id": "Sisi A | pemasangan awal / ganti disk",
+                  "vi": "Mặt A | lắp lần đầu / thay đĩa thuốc",
+                  "th": "ด้าน A | ติดตั้งครั้งแรก / เปลี่ยนแผ่นยา",
+                  "tl": "Side A | unang setup / palit disk",
+                  "ja": "A面｜初回セット / ディスク交換"
               },
-              note: {
-                  "zh-TW": "吸嘴若有阻塞物，先清除。",
-                  "en": "If the mouthpiece is blocked, clear it first.",
-                  "id": "Bila corong tersumbat, bersihkan dulu.",
-                  "vi": "Nếu đầu ngậm bị tắc, hãy làm sạch trước.",
-                  "th": "หากปากสูดมีสิ่งอุดตัน ให้เอาออกก่อน",
-                  "tl": "Kung may bara ang mouthpiece, alisin muna ito.",
-                  "ja": "吸入口が詰まっている場合は、先に取り除く。"
+              badge: {
+                  "zh-TW": "A 面｜裝置設置",
+                  "en": "Side A | device setup",
+                  "id": "Sisi A | set alat",
+                  "vi": "Mặt A | chuẩn bị dụng cụ",
+                  "th": "ด้าน A | ตั้งค่าอุปกรณ์",
+                  "tl": "Side A | setup ng device",
+                  "ja": "A面｜装置セット"
               },
-              illustration: "assets/svg/relenza/step-0.svg"
-          },
-          {
-              action: {
-                  "zh-TW": "掀上蓋至垂直",
-                  "en": "Lift the lid straight up",
-                  "id": "Angkat tutup sampai tegak",
-                  "vi": "Mở nắp lên thẳng đứng",
-                  "th": "ยกฝาขึ้นให้ตั้งตรง",
-                  "tl": "Iangat ang takip nang patayo",
-                  "ja": "ふたを垂直まで持ち上げる"
+              usage: null,
+              preStepsInfo: {
+                  tone: {
+                      bg: "#E6F1FB",
+                      border: "#185FA5",
+                      text: "#042C53"
+                  },
+                  title: {
+                      "zh-TW": "第一次用，或 4 格藥都用完時才做",
+                      "en": "Only do this the first time or when all 4 blisters are used",
+                      "id": "Lakukan hanya saat pertama kali atau setelah 4 blister habis",
+                      "vi": "Chỉ làm khi dùng lần đầu hoặc khi đã dùng hết 4 ô thuốc",
+                      "th": "ทำเฉพาะครั้งแรกหรือเมื่อใช้ครบ 4 ช่องยาแล้ว",
+                      "tl": "Gawin lang ito sa unang gamit o kapag ubos na ang 4 na blister",
+                      "ja": "初回または4ブリスター使い切った時だけ行う"
+                  },
+                  text: {
+                      "zh-TW": "這一面只教你怎麼裝上新藥盤。做完後，平常吸藥請看 B 面。",
+                      "en": "This side only shows how to load a new Rotadisk. After that, use Side B for everyday doses.",
+                      "id": "Sisi ini hanya menjelaskan cara memasang Rotadisk baru. Setelah selesai, lihat Sisi B untuk penggunaan sehari-hari.",
+                      "vi": "Mặt này chỉ hướng dẫn cách lắp đĩa thuốc mới. Sau khi lắp xong, dùng Mặt B cho các lần dùng hằng ngày.",
+                      "th": "หน้านี้สอนเฉพาะวิธีใส่แผ่นยาใหม่ หลังจากนั้นให้ดูด้าน B สำหรับการใช้ทุกครั้ง",
+                      "tl": "Ipinapakita lang ng side na ito kung paano magkarga ng bagong Rotadisk. Pagkatapos nito, tingnan ang Side B para sa pang-araw-araw na gamit.",
+                      "ja": "この面では新しいRotadiskの入れ方だけを説明します。装着後の毎回の使用はB面を見てください。"
+                  }
               },
-              note: {
-                  "zh-TW": "吸入器保持水平。完全打開才可刺破泡殼。",
-                  "en": "Keep the inhaler level. Open it fully so the blister can be pierced.",
-                  "id": "Pegang inhaler tetap rata. Buka penuh agar blister dapat tertusuk.",
-                  "vi": "Giữ dụng cụ nằm ngang. Mở hết cỡ mới có thể chọc thủng ô thuốc.",
-                  "th": "ถืออุปกรณ์ให้ขนานพื้น และเปิดให้สุดจึงจะเจาะช่องยาได้",
-                  "tl": "Panatilihing pantay ang inhaler. Buksan ito nang buo para mabutas ang blister.",
-                  "ja": "吸入器は水平に保つ。完全に開いてからブリスターに穴が開く。"
-              },
-              illustration: "assets/svg/relenza/step-1.svg"
-          },
-          {
-              action: {
-                  "zh-TW": "將上蓋推回原位",
-                  "en": "Push the lid back down",
-                  "id": "Dorong tutup kembali ke posisi semula",
-                  "vi": "Đẩy nắp về vị trí cũ",
-                  "th": "กดฝากลับลงตำแหน่งเดิม",
-                  "tl": "Itulak pabalik ang takip",
-                  "ja": "ふたを元の位置に戻す"
-              },
-              note: {
-                  "zh-TW": "推回後藥物已備妥，可立即吸入。",
-                  "en": "After closing it, the dose is ready to inhale right away.",
-                  "id": "Setelah ditutup kembali, dosis siap segera dihirup.",
-                  "vi": "Sau khi đóng lại, liều thuốc đã sẵn sàng để hít ngay.",
-                  "th": "เมื่อกดกลับลงแล้ว ยาจะพร้อมให้สูดทันที",
-                  "tl": "Pag naibalik na ito, handa na agad ang dosis para langhapin.",
-                  "ja": "戻したら、すぐ吸入できる状態になる。"
-              },
-              illustration: "assets/svg/relenza/step-2.svg"
-          },
-          {
-              action: {
-                  "zh-TW": "嘴巴離開吸嘴，呼氣至底",
-                  "en": "Breathe out fully away from the mouthpiece",
-                  "id": "Buang napas sampai habis menjauh dari corong",
-                  "vi": "Rời đầu ngậm rồi thở ra hết",
-                  "th": "ปากห่างจากปากสูด แล้วหายใจออกให้สุด",
-                  "tl": "Huminga palabas nang buo palayo sa mouthpiece",
-                  "ja": "吸入口から口を離して最後まで息を吐く"
-              },
-              note: {
-                  "zh-TW": "不可對著吸嘴吐氣，避免藥粉受潮。",
-                  "en": "Do not breathe out into the mouthpiece. This keeps the powder dry.",
-                  "id": "Jangan mengembuskan napas ke corong. Ini menjaga serbuk tetap kering.",
-                  "vi": "Không thở vào đầu ngậm để giữ bột thuốc khô.",
-                  "th": "อย่าหายใจออกใส่ปากสูด เพื่อป้องกันผงยาเปียกชื้น",
-                  "tl": "Huwag huminga palabas sa mouthpiece para manatiling tuyo ang pulbos.",
-                  "ja": "吸入口に向かって息を吐かない。薬の粉が湿るのを防ぐ。"
-              },
-              illustration: "assets/svg/relenza/step-3.svg"
-          },
-          {
-              action: {
-                  "zh-TW": "嘴唇緊閉吸嘴，快速深吸 1 口",
-                  "en": "Seal your lips and take 1 fast, deep breath in",
-                  "id": "Rapatkan bibir lalu tarik 1 napas cepat dan dalam",
-                  "vi": "Ngậm kín đầu ngậm rồi hít nhanh, sâu 1 hơi",
-                  "th": "เม้มริมฝีปากให้แนบปากสูด แล้วสูดลึกและเร็ว 1 ครั้ง",
-                  "tl": "Idikit ang labi at huminga papasok nang 1 mabilis at malalim na langhap",
-                  "ja": "吸入口をしっかりくわえ、速く深く1回吸い込む"
-              },
-              note: {
-                  "zh-TW": "用力吸入可聽到藥盤轉動聲。",
-                  "en": "If you inhale strongly, you may hear the disk turning.",
-                  "id": "Bila Anda menghirup dengan kuat, Anda dapat mendengar disk berputar.",
-                  "vi": "Nếu hít đủ mạnh, bạn có thể nghe tiếng đĩa quay.",
-                  "th": "หากสูดแรงพอ คุณอาจได้ยินเสียงแผ่นยาหมุน",
-                  "tl": "Kung malakas ang paglanghap mo, maaari mong marinig ang pag-ikot ng disk.",
-                  "ja": "しっかり吸うと、ディスクが回る音が聞こえることがある。"
-              },
-              illustration: "assets/svg/relenza/step-4.svg"
-          },
-          {
-              action: {
-                  "zh-TW": "移開吸嘴，閉嘴屏氣 5-10 秒",
-                  "en": "Remove the mouthpiece and hold your breath for 5-10 seconds",
-                  "id": "Lepaskan corong lalu tahan napas 5-10 detik",
-                  "vi": "Rời đầu ngậm rồi nín thở 5-10 giây",
-                  "th": "เอาปากออกจากปากสูด แล้วกลั้นหายใจ 5-10 วินาที",
-                  "tl": "Alisin ang mouthpiece at pigilin ang hininga nang 5-10 segundo",
-                  "ja": "吸入口を外し、5-10秒息を止める"
-              },
-              note: {
-                  "zh-TW": "若無法屏 5-10 秒，屏到舒服為止。",
-                  "en": "If 5-10 seconds is difficult, hold as long as comfortable.",
-                  "id": "Jika 5-10 detik terasa sulit, tahan napas selama masih nyaman.",
-                  "vi": "Nếu khó giữ đủ 5-10 giây, hãy nín thở trong mức còn chịu được.",
-                  "th": "หากกลั้นไม่ถึง 5-10 วินาที ให้กลั้นเท่าที่สบาย",
-                  "tl": "Kung hindi kaya ang 5-10 segundo, pigilin hangga't komportable.",
-                  "ja": "5-10秒が難しければ、無理のない範囲で止める。"
-              },
-              highlight: true,
-              illustration: "assets/svg/relenza/step-5.svg"
+              steps: [
+                  {
+                      action: {
+                          "zh-TW": "移除藍色護蓋",
+                          "en": "Remove the blue cover",
+                          "id": "Lepas penutup biru",
+                          "vi": "Tháo nắp màu xanh",
+                          "th": "ถอดฝาครอบสีน้ำเงิน",
+                          "tl": "Alisin ang asul na takip",
+                          "ja": "青いカバーを外す"
+                      },
+                      note: {
+                          "zh-TW": "先看吸嘴內外是否乾淨、沒有異物。",
+                          "en": "Check that the mouthpiece is clean inside and out.",
+                          "id": "Periksa dulu apakah corong bersih bagian dalam dan luarnya.",
+                          "vi": "Trước tiên hãy kiểm tra đầu ngậm sạch cả trong lẫn ngoài.",
+                          "th": "ดูว่าปากสูดสะอาดทั้งด้านในและด้านนอก ไม่มีสิ่งแปลกปลอม",
+                          "tl": "Tingnan muna kung malinis ang mouthpiece sa loob at labas.",
+                          "ja": "吸入口の内側と外側が清潔か確認する。"
+                      },
+                      illustration: "assets/svg/relenza/step-0.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "拉出白色托盤到最外面",
+                          "en": "Pull the white tray out as far as it will go",
+                          "id": "Tarik baki putih sampai batas terluar",
+                          "vi": "Kéo khay trắng ra hết cỡ",
+                          "th": "ดึงถาดสีขาวออกให้สุด",
+                          "tl": "Hilahin palabas ang puting tray hanggang dulo",
+                          "ja": "白いトレイを止まるまで引き出す"
+                      },
+                      note: {
+                          "zh-TW": "拉到停住就好，不要硬扯。",
+                          "en": "Stop when it stops moving. Do not pull hard.",
+                          "id": "Tarik sampai berhenti saja. Jangan dipaksa.",
+                          "vi": "Kéo đến khi dừng lại, không cố giật mạnh.",
+                          "th": "ดึงจนสุดแล้วหยุด ไม่ต้องออกแรงกระชาก",
+                          "tl": "Hilahin hanggang huminto. Huwag pilitin.",
+                          "ja": "止まったらそこで止め、無理に引っ張らない。"
+                      },
+                      illustration: "assets/svg/relenza/step-6.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "捏住兩側卡榫，取下白色托盤",
+                          "en": "Pinch the side clips and lift off the white tray",
+                          "id": "Jepit pengait samping lalu angkat baki putih",
+                          "vi": "Bóp hai chốt bên rồi nhấc khay trắng ra",
+                          "th": "บีบตัวล็อกสองข้าง แล้วยกถาดสีขาวออก",
+                          "tl": "Pisilin ang magkabilang clip at iangat ang puting tray",
+                          "ja": "両側のクリップをつまみ、白いトレイを外す"
+                      },
+                      note: {
+                          "zh-TW": "把新藥盤放到黑色輪盤上：有字的一面朝上，泡殼朝下。",
+                          "en": "Place the new disk on the black wheel with the printed side up and the blisters facing down.",
+                          "id": "Letakkan disk baru di roda hitam dengan sisi bertulisan menghadap ke atas dan blister menghadap ke bawah.",
+                          "vi": "Đặt đĩa thuốc mới lên bánh xe màu đen, mặt có chữ hướng lên trên, ô thuốc hướng xuống dưới.",
+                          "th": "วางแผ่นยาใหม่บนล้อสีดำ โดยให้ด้านที่มีตัวอักษรหงายขึ้น และช่องยาคว่ำลง",
+                          "tl": "Ilagay ang bagong disk sa itim na gulong na nakaharap paitaas ang may nakasulat at nakaharap pababa ang mga blister.",
+                          "ja": "新しいディスクを黒い円盤の上に置く。文字のある面を上、ブリスター面を下にする。"
+                      },
+                      illustration: "assets/svg/relenza/step-6.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "把白色托盤推回原位",
+                          "en": "Push the white tray back in",
+                          "id": "Dorong baki putih kembali ke posisi semula",
+                          "vi": "Đẩy khay trắng về vị trí cũ",
+                          "th": "ดันถาดสีขาวกลับเข้าที่เดิม",
+                          "tl": "Itulak pabalik ang puting tray",
+                          "ja": "白いトレイを元に戻す"
+                      },
+                      note: {
+                          "zh-TW": "如果現在不吸藥，先蓋回藍色護蓋。泡殼要等準備吸入時再刺破。",
+                          "en": "If you are not taking a dose now, replace the blue cover. Do not pierce a blister until you are ready to inhale.",
+                          "id": "Bila belum akan dipakai sekarang, pasang kembali penutup biru. Jangan menusuk blister sampai Anda siap menghirupnya.",
+                          "vi": "Nếu chưa dùng ngay, hãy đậy lại nắp xanh. Chỉ chọc thủng ô thuốc khi sẵn sàng hít thuốc.",
+                          "th": "ถ้ายังไม่ใช้ตอนนี้ ให้ปิดฝาสีน้ำเงินกลับก่อน และเจาะช่องยาเมื่อพร้อมสูดเท่านั้น",
+                          "tl": "Kung hindi mo pa ito gagamitin ngayon, ibalik muna ang asul na takip. Huwag butasin ang blister hangga't hindi ka pa handang lumanghap.",
+                          "ja": "今すぐ使わない場合は青いカバーを戻す。ブリスターは吸入する直前まで開けない。"
+                      },
+                      illustration: "assets/svg/relenza/step-0.svg"
+                  }
+              ],
+              storage: null,
+              warnings: [
+                  {
+                      "zh-TW": "泡殼要等準備吸入時再刺破，不要先刺破後放著。",
+                      "en": "Do not pierce a blister early. Only pierce it when you are ready to inhale.",
+                      "id": "Jangan menusuk blister terlalu awal. Tusuk hanya saat Anda siap menghirup obat.",
+                      "vi": "Không chọc thủng ô thuốc quá sớm. Chỉ chọc khi bạn sẵn sàng hít thuốc.",
+                      "th": "อย่าเจาะช่องยาล่วงหน้า ให้เจาะเมื่อพร้อมสูดเท่านั้น",
+                      "tl": "Huwag butasin ang blister nang maaga. Butasin lamang kapag handa ka nang lumanghap.",
+                      "ja": "ブリスターは前もって開けず、吸入する直前にだけ開ける。"
+                  },
+                  {
+                      "zh-TW": "4 格藥都用完後，再回到 A 面更換新藥盤。",
+                      "en": "When all 4 blisters are used, return to Side A and load a new disk.",
+                      "id": "Setelah 4 blister habis, kembali ke Sisi A untuk memasang disk baru.",
+                      "vi": "Khi dùng hết 4 ô thuốc, quay lại Mặt A để lắp đĩa thuốc mới.",
+                      "th": "เมื่อใช้ครบ 4 ช่องยาแล้ว ให้กลับไปดูด้าน A เพื่อเปลี่ยนแผ่นยาใหม่",
+                      "tl": "Kapag nagamit na ang 4 na blister, bumalik sa Side A para magkarga ng bagong disk.",
+                      "ja": "4つのブリスターを使い切ったら、A面に戻って新しいディスクを入れる。"
+                  }
+              ],
+              qrUrl: "https://youtu.be/Ek9O7SC3YbE?lang=zh-TW"
           },
           {
-              action: {
-                  "zh-TW": "推進下一個泡殼",
-                  "en": "Advance to the next blister",
-                  "id": "Geser ke blister berikutnya",
-                  "vi": "Đẩy sang ô thuốc kế tiếp",
-                  "th": "เลื่อนไปยังช่องยาถัดไป",
-                  "tl": "Isulong sa susunod na blister",
-                  "ja": "次のブリスターへ進める"
+              pageLabel: {
+                  "zh-TW": "B 面｜每次使用",
+                  "en": "Side B | each use",
+                  "id": "Sisi B | setiap penggunaan",
+                  "vi": "Mặt B | mỗi lần dùng",
+                  "th": "ด้าน B | ใช้ทุกครั้ง",
+                  "tl": "Side B | bawat paggamit",
+                  "ja": "B面｜毎回の使用"
               },
-              note: {
-                  "zh-TW": "拉出白色轉盤至底，再推回原位。勿完全取出。",
-                  "en": "Pull the white tray out to the stop, then push it back in. Do not remove it completely.",
-                  "id": "Tarik baki putih sampai batas, lalu dorong kembali masuk. Jangan keluarkan seluruhnya.",
-                  "vi": "Kéo khay trắng ra đến điểm dừng rồi đẩy trở lại. Không rút hẳn ra ngoài.",
-                  "th": "ดึงถาดสีขาวออกจนสุด แล้วดันกลับเข้าไป ห้ามดึงออกทั้งหมด",
-                  "tl": "Hilahin palabas ang puting tray hanggang dulo, saka itulak pabalik. Huwag itong hugutin nang buo.",
-                  "ja": "白いトレイを止まるまで引き出し、元に戻す。完全には抜き取らない。"
+              badge: {
+                  "zh-TW": "B 面｜每次使用",
+                  "en": "Side B | every dose",
+                  "id": "Sisi B | setiap dosis",
+                  "vi": "Mặt B | mỗi liều dùng",
+                  "th": "ด้าน B | ทุกครั้งที่ใช้",
+                  "tl": "Side B | bawat dose",
+                  "ja": "B面｜毎回の使用"
               },
-              illustration: "assets/svg/relenza/step-6.svg"
-          },
-          {
-              action: {
-                  "zh-TW": "重複步驟 2-6，吸入第 2 劑",
-                  "en": "Repeat steps 2-6 for the second inhalation",
-                  "id": "Ulangi langkah 2-6 untuk hisapan ke-2",
-                  "vi": "Lặp lại bước 2-6 để hít liều thứ 2",
-                  "th": "ทำซ้ำขั้นตอน 2-6 เพื่อสูดครั้งที่ 2",
-                  "tl": "Ulitin ang hakbang 2-6 para sa ika-2 langhap",
-                  "ja": "2回目の吸入のために手順2-6を繰り返す"
+              preStepsInfo: {
+                  tone: {
+                      bg: "#E6F1FB",
+                      border: "#185FA5",
+                      text: "#042C53"
+                  },
+                  title: {
+                      "zh-TW": "每次吸藥都看這一面",
+                      "en": "Use this side every time you take a dose",
+                      "id": "Lihat sisi ini setiap kali memakai obat",
+                      "vi": "Mỗi lần dùng thuốc hãy xem mặt này",
+                      "th": "ดูหน้านี้ทุกครั้งที่ใช้ยา",
+                      "tl": "Tingnan ang side na ito sa bawat paggamit",
+                      "ja": "毎回の使用はこの面を見る"
+                  },
+                  text: {
+                      "zh-TW": "本藥不含類固醇，用後不需漱口。治療和預防每次都要吸滿 2 劑。",
+                      "en": "This medicine does not contain a steroid, so you do not need to rinse your mouth after use. For both treatment and prevention, each dose always needs 2 inhalations.",
+                      "id": "Obat ini tidak mengandung steroid, jadi tidak perlu berkumur setelah digunakan. Untuk pengobatan maupun pencegahan, setiap dosis selalu memerlukan 2 hisapan.",
+                      "vi": "Thuốc này không chứa steroid nên không cần súc miệng sau khi dùng. Cả điều trị và dự phòng đều cần đủ 2 nhát hít cho mỗi liều.",
+                      "th": "ยานี้ไม่มีสเตียรอยด์ จึงไม่ต้องบ้วนปากหลังใช้ และไม่ว่าจะใช้เพื่อรักษาหรือป้องกัน ทุกครั้งต้องสูดให้ครบ 2 ครั้ง",
+                      "tl": "Walang steroid ang gamot na ito kaya hindi kailangang magmumog pagkatapos gamitin. Para sa gamutan at pang-iwas, laging 2 langhap ang bawat dose.",
+                      "ja": "この薬にはステロイドが含まれないため、使用後のうがいは不要です。治療でも予防でも、1回ごとに必ず2吸入行います。"
+                  }
               },
-              note: {
-                  "zh-TW": "治療與預防每次都要吸滿 2 劑。",
-                  "en": "For both treatment and prevention, each dose requires 2 inhalations.",
-                  "id": "Untuk pengobatan maupun pencegahan, setiap kali dosis memerlukan 2 hisapan.",
-                  "vi": "Cả điều trị và dự phòng đều cần đủ 2 nhát hít mỗi lần.",
-                  "th": "ทั้งการรักษาและการป้องกันต้องสูดให้ครบ 2 ครั้งต่อ 1 ครั้งใช้ยา",
-                  "tl": "Para sa gamutan at pang-iwas, 2 langhap ang kailangan sa bawat paggamit.",
-                  "ja": "治療でも予防でも、1回ごとに2吸入必要です。"
+              steps: [
+                  {
+                      action: {
+                          "zh-TW": "掀上蓋至垂直",
+                          "en": "Lift the lid straight up",
+                          "id": "Angkat tutup sampai tegak",
+                          "vi": "Mở nắp lên thẳng đứng",
+                          "th": "ยกฝาขึ้นให้ตั้งตรง",
+                          "tl": "Iangat ang takip nang patayo",
+                          "ja": "ふたを垂直まで持ち上げる"
+                      },
+                      note: {
+                          "zh-TW": "吸入器保持水平，一定要完全打開。",
+                          "en": "Keep the device level and open it all the way.",
+                          "id": "Pegang alat tetap rata dan buka sampai penuh.",
+                          "vi": "Giữ dụng cụ nằm ngang và mở hết cỡ.",
+                          "th": "ถืออุปกรณ์ให้ขนานพื้นและเปิดให้สุด",
+                          "tl": "Panatilihing pantay ang device at buksan ito nang buo.",
+                          "ja": "装置を水平に保ち、完全に開く。"
+                      },
+                      illustration: "assets/svg/relenza/step-1.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "將上蓋推回原位，刺破 1 個泡殼",
+                          "en": "Push the lid back down to pierce 1 blister",
+                          "id": "Dorong tutup kembali untuk menusuk 1 blister",
+                          "vi": "Đẩy nắp trở lại để chọc thủng 1 ô thuốc",
+                          "th": "กดฝากลับลงเพื่อเจาะช่องยา 1 ช่อง",
+                          "tl": "Itulak pababa ang takip para butasin ang 1 blister",
+                          "ja": "ふたを戻して1つのブリスターに穴を開ける"
+                      },
+                      note: {
+                          "zh-TW": "推回後藥已備妥，現在就要吸；不要先刺破後放著。",
+                          "en": "The dose is ready as soon as the lid is closed. Inhale now and do not leave a pierced blister unused.",
+                          "id": "Dosis siap segera setelah tutup dikembalikan. Segera hirup dan jangan biarkan blister yang sudah tertusuk dibiarkan begitu saja.",
+                          "vi": "Liều thuốc sẵn sàng ngay khi đóng nắp lại. Hãy hít ngay và không để ô thuốc đã chọc thủng mà chưa dùng.",
+                          "th": "เมื่อกดฝากลับลงแล้ว ยาจะพร้อมทันที ต้องสูดเลย ไม่ควรเจาะทิ้งไว้",
+                          "tl": "Handa na agad ang dose kapag naibalik na ang takip. Langhapin agad at huwag iwang nakabutas lang ang blister.",
+                          "ja": "ふたを戻したらすぐ吸入する。穴を開けたブリスターをそのまま放置しない。"
+                      },
+                      illustration: "assets/svg/relenza/step-2.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "嘴巴離開吸嘴，呼氣至底",
+                          "en": "Breathe out fully away from the mouthpiece",
+                          "id": "Buang napas sampai habis menjauh dari corong",
+                          "vi": "Rời đầu ngậm rồi thở ra hết",
+                          "th": "ปากห่างจากปากสูด แล้วหายใจออกให้สุด",
+                          "tl": "Huminga palabas nang buo palayo sa mouthpiece",
+                          "ja": "吸入口から口を離して最後まで息を吐く"
+                      },
+                      note: {
+                          "zh-TW": "不要對著吸嘴吐氣，避免藥粉受潮。",
+                          "en": "Do not breathe out into the mouthpiece. This keeps the powder dry.",
+                          "id": "Jangan mengembuskan napas ke corong. Ini menjaga serbuk tetap kering.",
+                          "vi": "Không thở vào đầu ngậm để giữ bột thuốc khô.",
+                          "th": "อย่าหายใจออกใส่ปากสูด เพื่อป้องกันผงยาเปียกชื้น",
+                          "tl": "Huwag huminga palabas sa mouthpiece para manatiling tuyo ang pulbos.",
+                          "ja": "吸入口に向かって息を吐かない。薬の粉が湿るのを防ぐ。"
+                      },
+                      illustration: "assets/svg/relenza/step-3.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "嘴唇緊閉吸嘴，快速深吸 1 口",
+                          "en": "Seal your lips and take 1 fast, deep breath in",
+                          "id": "Rapatkan bibir lalu tarik 1 napas cepat dan dalam",
+                          "vi": "Ngậm kín đầu ngậm rồi hít nhanh, sâu 1 hơi",
+                          "th": "เม้มริมฝีปากให้แนบปากสูด แล้วสูดลึกและเร็ว 1 ครั้ง",
+                          "tl": "Idikit ang labi at huminga papasok nang 1 mabilis at malalim na langhap",
+                          "ja": "吸入口をしっかりくわえ、速く深く1回吸い込む"
+                      },
+                      note: {
+                          "zh-TW": "不要咬住吸嘴，也不要用鼻子吸。吸得夠深時，可聽到藥盤轉動聲。",
+                          "en": "Do not bite the mouthpiece or breathe in through your nose. If you inhale deeply enough, you may hear the disk turn.",
+                          "id": "Jangan menggigit corong dan jangan menghirup lewat hidung. Bila tarikan cukup dalam, Anda mungkin mendengar disk berputar.",
+                          "vi": "Không cắn đầu ngậm và không hít bằng mũi. Nếu hít đủ sâu, bạn có thể nghe tiếng đĩa quay.",
+                          "th": "อย่ากัดปากสูด และอย่าสูดเข้าทางจมูก หากสูดได้ลึกพอ อาจได้ยินเสียงแผ่นยาหมุน",
+                          "tl": "Huwag kagatin ang mouthpiece at huwag huminga sa ilong. Kapag sapat ang lalim ng paglanghap, maaari mong marinig ang pag-ikot ng disk.",
+                          "ja": "吸入口を噛まず、鼻から吸わない。十分深く吸うと、ディスクが回る音が聞こえることがある。"
+                      },
+                      illustration: "assets/svg/relenza/step-4.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "移開吸嘴，閉嘴屏氣 5-10 秒",
+                          "en": "Remove the mouthpiece and hold your breath for 5-10 seconds",
+                          "id": "Lepaskan corong lalu tahan napas 5-10 detik",
+                          "vi": "Rời đầu ngậm rồi nín thở 5-10 giây",
+                          "th": "เอาปากออกจากปากสูด แล้วกลั้นหายใจ 5-10 วินาที",
+                          "tl": "Alisin ang mouthpiece at pigilin ang hininga nang 5-10 segundo",
+                          "ja": "吸入口を外し、5-10秒息を止める"
+                      },
+                      note: {
+                          "zh-TW": "若無法屏 5-10 秒，屏到舒服為止。",
+                          "en": "If 5-10 seconds is difficult, hold as long as comfortable.",
+                          "id": "Jika 5-10 detik terasa sulit, tahan napas selama masih nyaman.",
+                          "vi": "Nếu khó giữ đủ 5-10 giây, hãy nín thở trong mức còn chịu được.",
+                          "th": "หากกลั้นไม่ถึง 5-10 วินาที ให้กลั้นเท่าที่สบาย",
+                          "tl": "Kung hindi kaya ang 5-10 segundo, pigilin hangga't komportable.",
+                          "ja": "5-10秒が難しければ、無理のない範囲で止める。"
+                      },
+                      highlight: true,
+                      illustration: "assets/svg/relenza/step-5.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "拉出白色托盤至底，再推回原位",
+                          "en": "Pull the white tray out to the stop, then push it back in",
+                          "id": "Tarik baki putih sampai batas lalu dorong kembali",
+                          "vi": "Kéo khay trắng ra đến điểm dừng rồi đẩy trở lại",
+                          "th": "ดึงถาดสีขาวออกจนสุด แล้วดันกลับเข้าไป",
+                          "tl": "Hilahin palabas ang puting tray hanggang dulo at itulak pabalik",
+                          "ja": "白いトレイを止まるまで引き出し、元に戻す"
+                      },
+                      note: {
+                          "zh-TW": "這樣會轉到下一個泡殼。白色托盤不要完全取出。",
+                          "en": "This advances the next blister. Do not remove the white tray completely.",
+                          "id": "Langkah ini memindahkan ke blister berikutnya. Jangan keluarkan baki putih seluruhnya.",
+                          "vi": "Động tác này sẽ chuyển sang ô thuốc kế tiếp. Không rút hẳn khay trắng ra ngoài.",
+                          "th": "ขั้นตอนนี้จะเลื่อนไปยังช่องยาถัดไป ห้ามดึงถาดสีขาวออกทั้งหมด",
+                          "tl": "Isinusulong nito ang susunod na blister. Huwag hugutin nang buo ang puting tray.",
+                          "ja": "これで次のブリスターに進む。白いトレイを完全に抜き取らない。"
+                      },
+                      illustration: "assets/svg/relenza/step-6.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "重複步驟 1-5，吸入第 2 劑",
+                          "en": "Repeat steps 1-5 for the second inhalation",
+                          "id": "Ulangi langkah 1-5 untuk hisapan ke-2",
+                          "vi": "Lặp lại bước 1-5 để hít liều thứ 2",
+                          "th": "ทำซ้ำขั้นตอน 1-5 เพื่อสูดครั้งที่ 2",
+                          "tl": "Ulitin ang hakbang 1-5 para sa ika-2 langhap",
+                          "ja": "2回目の吸入のために手順1-5を繰り返す"
+                      },
+                      note: {
+                          "zh-TW": "治療和預防每次都要吸滿 2 劑。吸完後擦拭吸嘴，蓋回藍色護蓋。",
+                          "en": "For both treatment and prevention, each dose always needs 2 inhalations. After use, wipe the mouthpiece and replace the blue cover.",
+                          "id": "Untuk pengobatan maupun pencegahan, setiap dosis selalu memerlukan 2 hisapan. Setelah digunakan, lap corong lalu pasang kembali penutup biru.",
+                          "vi": "Cả điều trị và dự phòng đều cần đủ 2 nhát hít cho mỗi liều. Sau khi dùng, lau đầu ngậm rồi đậy lại nắp xanh.",
+                          "th": "ทั้งการรักษาและการป้องกันต้องสูดให้ครบ 2 ครั้งต่อ 1 ครั้งใช้ยา หลังใช้ให้เช็ดปากสูดและปิดฝาสีน้ำเงินกลับ",
+                          "tl": "Para sa gamutan at pang-iwas, laging 2 langhap ang bawat dose. Pagkatapos gamitin, punasan ang mouthpiece at ibalik ang asul na takip.",
+                          "ja": "治療でも予防でも、1回ごとに必ず2吸入行う。使用後は吸入口を拭き、青いカバーを戻す。"
+                      },
+                      illustration: "assets/svg/relenza/step-7.svg"
+                  }
+              ],
+              storage: {
+                  title: {
+                      "zh-TW": "藥品保存",
+                      "en": "Storage",
+                      "id": "Penyimpanan",
+                      "vi": "Bảo quản",
+                      "th": "การเก็บรักษา",
+                      "tl": "Imbakan",
+                      "ja": "保管方法"
+                  },
+                  text: {
+                      "zh-TW": "≤30°C 室溫避光保存。\n藥盤未裝入吸入器前，不可刺破泡殼。\n4 泡殼用完後，更換新旋達碟。",
+                      "en": "Store below 30°C and protect from light.\nDo not pierce any blister before the disk is loaded into the device.\nReplace the Rotadisk after all 4 blisters are used.",
+                      "id": "Simpan di bawah 30°C dan lindungi dari cahaya.\nJangan tusuk blister apa pun sebelum disk dipasang ke alat.\nGanti Rotadisk setelah ke-4 blister habis digunakan.",
+                      "vi": "Bảo quản dưới 30°C và tránh ánh sáng.\nKhông chọc thủng ô thuốc trước khi lắp đĩa vào dụng cụ.\nThay đĩa Rotadisk sau khi dùng hết 4 ô thuốc.",
+                      "th": "เก็บที่อุณหภูมิต่ำกว่า 30°C และหลีกเลี่ยงแสง\nห้ามเจาะช่องยาก่อนใส่แผ่นยาเข้ากับอุปกรณ์\nเมื่อใช้ครบ 4 ช่องยาแล้วให้เปลี่ยนแผ่น Rotadisk ใหม่",
+                      "tl": "Itago sa temperaturang mas mababa sa 30°C at ilayo sa liwanag.\nHuwag butasin ang anumang blister bago ikarga ang disk sa device.\nPalitan ang Rotadisk kapag nagamit na ang lahat ng 4 blister.",
+                      "ja": "30°C以下で保管し、光を避ける。\nディスクを装着する前にブリスターへ穴を開けない。\n4つのブリスターを使い切ったらRotadiskを交換する。"
+                  }
               },
-              illustration: "assets/svg/relenza/step-7.svg"
-          }
-      ],
-      storage: {
-          title: {
-              "zh-TW": "藥品保存",
-              "en": "Storage",
-              "id": "Penyimpanan",
-              "vi": "Bảo quản",
-              "th": "การเก็บรักษา",
-              "tl": "Imbakan",
-              "ja": "保管方法"
-          },
-          text: {
-              "zh-TW": "≤30°C 室溫避光保存。\n藥盤裝上吸入器前，不可刺破泡殼。\n用後擦拭吸嘴，蓋回藍色護蓋。\n4 泡殼用完後更換新旋達碟。",
-              "en": "Store below 30°C and protect from light.\nDo not pierce any blister before the disk is loaded into the device.\nWipe the mouthpiece after use and replace the blue cover.\nReplace the Rotadisk after all 4 blisters are used.",
-              "id": "Simpan di bawah 30°C dan lindungi dari cahaya.\nJangan tusuk blister apa pun sebelum disk dipasang ke alat.\nSetelah digunakan, lap corong lalu pasang kembali penutup biru.\nGanti Rotadisk setelah ke-4 blister habis digunakan.",
-              "vi": "Bảo quản dưới 30°C và tránh ánh sáng.\nKhông chọc thủng ô thuốc trước khi lắp đĩa vào dụng cụ.\nSau khi dùng, lau đầu ngậm rồi đậy lại nắp xanh.\nThay đĩa Rotadisk sau khi dùng hết 4 ô thuốc.",
-              "th": "เก็บที่อุณหภูมิต่ำกว่า 30°C และหลีกเลี่ยงแสง\nห้ามเจาะช่องยาก่อนใส่แผ่นยาเข้ากับอุปกรณ์\nหลังใช้ให้เช็ดปากสูดและปิดฝาครอบสีน้ำเงินกลับ\nเมื่อใช้ครบ 4 ช่องยาแล้วให้เปลี่ยนแผ่น Rotadisk ใหม่",
-              "tl": "Itago sa temperaturang mas mababa sa 30°C at ilayo sa liwanag.\nHuwag butasin ang anumang blister bago ikarga ang disk sa device.\nPagkatapos gamitin, punasan ang mouthpiece at ibalik ang asul na takip.\nPalitan ang Rotadisk kapag nagamit na ang lahat ng 4 blister.",
-              "ja": "30°C以下で保管し、光を避ける。\nディスクを装着する前にブリスターへ穴を開けない。\n使用後は吸入口を拭き、青いカバーを戻す。\n4つのブリスターを使い切ったらRotadiskを交換する。"
-          }
-      },
-      warnings: [
-          {
-              "zh-TW": "對乳蛋白嚴重過敏者禁止使用。",
-              "en": "Do not use if you have a severe milk protein allergy.",
-              "id": "Jangan gunakan bila Anda alergi berat terhadap protein susu.",
-              "vi": "Không dùng nếu bạn dị ứng nặng với protein sữa.",
-              "th": "ห้ามใช้หากแพ้โปรตีนจากนมอย่างรุนแรง",
-              "tl": "Huwag gamitin kung mayroon kang matinding allergy sa milk protein.",
-              "ja": "乳タンパクに重いアレルギーがある場合は使用しない。"
-          },
-          {
-              "zh-TW": "若同時用速效擴張劑，先用擴張劑，再用本藥。",
-              "en": "If you also use a quick-relief bronchodilator, use that inhaler first, then use this medicine.",
-              "id": "Jika Anda juga memakai bronkodilator kerja cepat, gunakan inhaler itu dulu, lalu gunakan obat ini.",
-              "vi": "Nếu bạn cũng dùng thuốc giãn phế quản tác dụng nhanh, hãy dùng thuốc đó trước rồi mới dùng thuốc này.",
-              "th": "หากใช้ยาขยายหลอดลมออกฤทธิ์เร็วร่วมด้วย ให้ใช้ยาขยายหลอดลมก่อน แล้วจึงใช้ยานี้",
-              "tl": "Kung gumagamit ka rin ng mabilisang bronchodilator, iyon muna ang gamitin bago ang gamot na ito.",
-              "ja": "速効性気管支拡張薬も使う場合は、先にそちらを使ってから本薬を使う。"
-          },
-          {
-              "zh-TW": "本藥不含類固醇，用後不需漱口。",
-              "en": "This medicine does not contain a steroid, so you do not need to rinse your mouth after use.",
-              "id": "Obat ini tidak mengandung steroid, jadi tidak perlu berkumur setelah digunakan.",
-              "vi": "Thuốc này không chứa steroid nên không cần súc miệng sau khi dùng.",
-              "th": "ยานี้ไม่มีสเตียรอยด์ จึงไม่ต้องบ้วนปากหลังใช้",
-              "tl": "Walang steroid ang gamot na ito kaya hindi kailangang magmumog pagkatapos gamitin.",
-              "ja": "この薬にはステロイドが含まれないため、使用後のうがいは不要です。"
+              warnings: [
+                  {
+                      "zh-TW": "對乳蛋白嚴重過敏者禁止使用。",
+                      "en": "Do not use if you have a severe milk protein allergy.",
+                      "id": "Jangan gunakan bila Anda alergi berat terhadap protein susu.",
+                      "vi": "Không dùng nếu bạn dị ứng nặng với protein sữa.",
+                      "th": "ห้ามใช้หากแพ้โปรตีนจากนมอย่างรุนแรง",
+                      "tl": "Huwag gamitin kung mayroon kang matinding allergy sa milk protein.",
+                      "ja": "乳タンパクに重いアレルギーがある場合は使用しない。"
+                  },
+                  {
+                      "zh-TW": "若同時有其他吸入藥，通常先用醫師原本交代的速效擴張劑或其他吸入藥，再用本藥。",
+                      "en": "If you also use other inhalers, usually use the quick-relief bronchodilator or other inhaler your doctor instructed first, then use this medicine.",
+                      "id": "Jika Anda juga memakai inhaler lain, biasanya gunakan bronkodilator kerja cepat atau inhaler lain sesuai instruksi dokter terlebih dulu, lalu gunakan obat ini.",
+                      "vi": "Nếu bạn cũng dùng thuốc hít khác, thường hãy dùng thuốc giãn phế quản tác dụng nhanh hoặc thuốc hít khác theo hướng dẫn của bác sĩ trước, rồi mới dùng thuốc này.",
+                      "th": "หากคุณใช้ยาสูดชนิดอื่นร่วมด้วย โดยทั่วไปให้ใช้ยาขยายหลอดลมออกฤทธิ์เร็วหรือยาสูดที่แพทย์สั่งไว้ก่อน แล้วจึงใช้ยานี้",
+                      "tl": "Kung gumagamit ka rin ng ibang inhaler, karaniwang gamitin muna ang mabilisang bronchodilator o ibang inhaler ayon sa bilin ng doktor bago ang gamot na ito.",
+                      "ja": "他の吸入薬も使っている場合は、通常は医師から指示された速効性気管支拡張薬や他の吸入薬を先に使ってから本薬を使う。"
+                  },
+                  {
+                      "zh-TW": "若吸藥後胸悶、喘鳴、喉嚨緊或呼吸更喘，先停用並立刻就醫。",
+                      "en": "If you feel chest tightness, wheezing, throat tightness, or worse breathing after inhaling, stop using it and seek medical care right away.",
+                      "id": "Jika setelah menghirup obat Anda merasa dada sesak, mengi, tenggorokan terasa sempit, atau napas makin berat, hentikan pemakaian dan segera cari pertolongan medis.",
+                      "vi": "Nếu sau khi hít thuốc bạn thấy tức ngực, khò khè, nghẹn cổ họng hoặc khó thở hơn, hãy ngừng dùng và đi khám ngay.",
+                      "th": "หากหลังสูดยาแล้วแน่นหน้าอก มีเสียงหวีด คอแน่น หรือหายใจลำบากมากขึ้น ให้หยุดใช้และไปพบแพทย์ทันที",
+                      "tl": "Kung makaramdam ka ng paninikip ng dibdib, wheezing, paninikip ng lalamunan, o lalong hirap sa paghinga pagkatapos lumanghap, itigil ito at magpatingin agad.",
+                      "ja": "吸入後に胸の締めつけ、喘鳴、のどの締めつけ、または呼吸の悪化があれば中止してすぐ受診する。"
+                  }
+              ],
+              qrUrl: "https://youtu.be/Ek9O7SC3YbE?lang=zh-TW"
           }
       ],
       qrUrl: "https://youtu.be/Ek9O7SC3YbE?lang=zh-TW"
@@ -17465,6 +17612,551 @@ const MEDICATIONS = [
     ],
     qrUrl: "https://pharmacy.example.com/meds/chalian-kalimate"
   },
+  // ── Pediatric oral medication administration techniques ─────────────────────────────────────,
+  {
+    "id": "pediatric-oral-admin",
+    color: {
+      main: "#3B6D11",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#C0DD97",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "兒童口服藥給藥技巧",
+      "en": "Practical tips for giving oral medicine to children",
+      "id": "Tips praktis memberi obat minum pada anak",
+      "vi": "Mẹo thực tế khi cho trẻ uống thuốc",
+      "th": "เทคนิคป้อนยารับประทานให้เด็กแบบใช้ได้จริง",
+      "tl": "Praktikal na paraan ng pagbibigay ng iniinom na gamot sa bata",
+      "ja": "子どもに飲み薬を飲ませる実用的なコツ"
+    },
+    subtitle: {
+      "zh-TW": "",
+      "en": "",
+      "id": "",
+      "vi": "",
+      "th": "",
+      "tl": "",
+      "ja": ""
+    },
+    headerBadge: {
+      "zh-TW": "兒科給藥",
+      "en": "Pediatric dosing",
+      "id": "Pemberian obat anak",
+      "vi": "Cho trẻ dùng thuốc",
+      "th": "การให้ยาเด็ก",
+      "tl": "Pagbibigay-gamot sa bata",
+      "ja": "小児の服薬"
+    },
+    usage: null,
+    badge: {
+      "zh-TW": "口服技巧",
+      "en": "Oral technique",
+      "id": "Teknik obat oral",
+      "vi": "Kỹ thuật dùng thuốc uống",
+      "th": "เทคนิคยารับประทาน",
+      "tl": "Oral technique",
+      "ja": "内服のコツ"
+    },
+    preStepsInfo: {
+      tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" },
+      text: {
+        "zh-TW": "先用對工具，再用孩子吞得下的方式給藥。可混 1 茶匙布丁、果泥、果醬或少量白開水。不要混整瓶奶、整杯果汁或整碗粥，以免孩子吃不完、劑量不足。",
+        "en": "Use the right tool first, then give the medicine in a way your child can swallow. You may mix it with 1 teaspoon of pudding, fruit puree, jam, or a small amount of water. Do not mix it into a whole bottle of milk, a full cup of juice, or a full bowl of porridge, or your child may not finish the full dose.",
+        "id": "Gunakan alat yang tepat terlebih dahulu, lalu berikan obat dengan cara yang bisa ditelan anak. Obat boleh dicampur dengan 1 sendok teh puding, puree buah, selai, atau sedikit air. Jangan campur ke seluruh botol susu, segelas penuh jus, atau semangkuk bubur agar dosis tidak kurang karena tidak habis.",
+        "vi": "Hãy dùng đúng dụng cụ trước, rồi cho thuốc theo cách trẻ nuốt được. Có thể trộn với 1 thìa cà phê pudding, trái cây nghiền, mứt hoặc một ít nước. Không trộn vào cả bình sữa, cả cốc nước trái cây hay cả bát cháo để tránh trẻ dùng không hết và thiếu liều.",
+        "th": "ให้ใช้เครื่องมือที่ถูกต้องก่อน แล้วให้ยาด้วยวิธีที่เด็กกลืนได้ อาจผสมกับพุดดิ้ง ผลไม้บด แยม 1 ช้อนชา หรือผสมน้ำเล็กน้อยได้ ห้ามผสมลงในนมทั้งขวด น้ำผลไม้ทั้งแก้ว หรือโจ๊กทั้งชาม เพราะเด็กอาจกินไม่หมดและได้ยาไม่ครบขนาด",
+        "tl": "Gamitin muna ang tamang gamit, saka ibigay ang gamot sa paraang kayang lunukin ng bata. Maaaring ihalo sa 1 kutsaritang pudding, fruit puree, jam, o kaunting tubig. Huwag ihalo sa buong bote ng gatas, buong baso ng juice, o buong mangkok ng lugaw para hindi mabitin ang dose kapag hindi naubos.",
+        "ja": "まず正しい器具を使い、そのあと子どもが飲み込める方法で飲ませる。プリン、果物ピューレ、ジャムを小さじ1杯、または少量の水に混ぜてよい。ミルク1本全部、ジュース1杯全部、おかゆ1杯全部には混ぜない。飲み切れず用量不足になることがある。"
+      }
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "先洗手，再核對藥袋和孩子",
+          "en": "Wash your hands, then check the label and the child",
+          "id": "Cuci tangan dulu, lalu cocokkan etiket dan anaknya",
+          "vi": "Rửa tay trước, rồi kiểm tra nhãn thuốc và đúng trẻ",
+          "th": "ล้างมือก่อน แล้วตรวจฉลากยาและตัวเด็ก",
+          "tl": "Maghugas muna ng kamay, saka tiyakin ang label at ang bata",
+          "ja": "先に手を洗い、薬袋と子どもを確認する"
+        },
+        note: {
+          "zh-TW": "確認藥名、劑量、時間、次數，和孩子姓名。",
+          "en": "Check the medicine name, dose, timing, frequency, and the child’s name.",
+          "id": "Periksa nama obat, dosis, waktu, frekuensi, dan nama anak.",
+          "vi": "Kiểm tra tên thuốc, liều, thời điểm, số lần và tên của trẻ.",
+          "th": "ตรวจชื่อยา ขนาดยา เวลา จำนวนครั้ง และชื่อเด็ก",
+          "tl": "Tingnan ang pangalan ng gamot, dose, oras, dalas, at pangalan ng bata.",
+          "ja": "薬名、用量、時間、回数、そして子どもの名前を確認する。"
+        },
+        illustration: "assets/svg/oral-pediatric-admin/step-0-check-label.svg"
+      },
+      {
+        action: {
+          "zh-TW": "用口服注射器或量藥杯量對 mL 數",
+          "en": "Measure the exact mL with an oral syringe or medicine cup",
+          "id": "Ukur jumlah mL yang tepat dengan oral syringe atau gelas takar",
+          "vi": "Đong đúng số mL bằng xi lanh uống thuốc hoặc cốc đong",
+          "th": "ตวงให้ได้ mL ที่ถูกต้องด้วยไซริงก์ป้อนยาหรือถ้วยตวงยา",
+          "tl": "Sukatin ang tamang mL gamit ang oral syringe o medicine cup",
+          "ja": "経口シリンジか計量カップで正しい mL を量る"
+        },
+        note: {
+          "zh-TW": "5 mL 以下時，口服注射器通常最準。量藥杯要放平，眼睛和液面同高；不要用家用湯匙。",
+          "en": "For doses under 5 mL, an oral syringe is usually the most accurate. Put the medicine cup on a flat surface and read it with your eyes level with the liquid. Do not use a kitchen spoon.",
+          "id": "Untuk dosis di bawah 5 mL, oral syringe biasanya paling akurat. Letakkan gelas takar di permukaan datar dan lihat sejajar dengan permukaan cairan. Jangan gunakan sendok makan di rumah.",
+          "vi": "Với liều dưới 5 mL, xi lanh uống thuốc thường chính xác nhất. Đặt cốc đong trên mặt phẳng và nhìn ngang với mặt thuốc. Không dùng thìa ăn trong nhà.",
+          "th": "หากยาน้อยกว่า 5 mL ไซริงก์ป้อนยามักแม่นยำที่สุด วางถ้วยตวงบนพื้นราบและอ่านระดับโดยให้สายตาอยู่เสมอกับผิวยา ห้ามใช้ช้อนกินข้าว",
+          "tl": "Kung mas mababa sa 5 mL ang dose, oral syringe ang karaniwang pinakatumpak. Ilagay ang medicine cup sa patag na ibabaw at basahin habang kasing-level ng likido ang mata. Huwag gumamit ng kutsara sa bahay.",
+          "ja": "5 mL 未満は経口シリンジが最も正確なことが多い。計量カップは平らな場所に置き、液面と目の高さをそろえて読む。家庭用スプーンは使わない。"
+        },
+        illustration: "assets/svg/oral-pediatric-admin/step-1-oral-syringe.svg"
+      },
+      {
+        action: {
+          "zh-TW": "不會吞的孩子，從臉頰內側少量慢慢給",
+          "en": "For a child who cannot swallow well, give small amounts slowly inside the cheek",
+          "id": "Untuk anak yang belum bisa menelan baik, berikan sedikit demi sedikit di sisi dalam pipi",
+          "vi": "Với trẻ chưa nuốt tốt, bơm từng ít một vào mặt trong má",
+          "th": "ถ้าเด็กยังกลืนไม่ดี ให้ค่อย ๆ ป้อนทีละน้อยที่กระพุ้งแก้มด้านใน",
+          "tl": "Kung hirap pang lumunok ang bata, ibigay nang dahan-dahan at paisa-isang kaunti sa loob ng pisngi",
+          "ja": "うまく飲み込めない子には、ほおの内側から少量ずつゆっくり入れる"
+        },
+        note: {
+          "zh-TW": "一次給一小口，等孩子吞下再繼續。不要對準喉嚨正中央，比較不容易嗆到。",
+          "en": "Give only a small amount at a time and wait for your child to swallow before giving more. Do not aim at the middle of the throat to reduce choking.",
+          "id": "Berikan sedikit demi sedikit dan tunggu anak menelan sebelum melanjutkan. Jangan arahkan ke tengah tenggorokan agar tidak mudah tersedak.",
+          "vi": "Cho từng ít một và chờ trẻ nuốt rồi mới tiếp tục. Không chĩa thẳng vào giữa họng để giảm nguy cơ sặc.",
+          "th": "ให้ทีละน้อยและรอให้เด็กกลืนก่อนค่อยให้เพิ่ม อย่าเล็งตรงกลางลำคอเพื่อลดการสำลัก",
+          "tl": "Kaunti-kaunti lang at hintaying lumunok ang bata bago dagdagan. Huwag itutok sa gitna ng lalamunan para mas mabawasan ang pagsamid.",
+          "ja": "一度に入れるのは少量にし、飲み込んでから続ける。のどの真ん中に向けないほうが、むせにくい。"
+        },
+        afterBox: {
+          tone: { bg: "#F7F4E8", border: "#B9801F", text: "#4A2E08" },
+          title: {
+            "zh-TW": "讓孩子比較願意配合",
+            "en": "Help your child cooperate",
+            "id": "Agar anak lebih mau bekerja sama",
+            "vi": "Giúp trẻ dễ hợp tác hơn",
+            "th": "ช่วยให้เด็กยอมร่วมมือมากขึ้น",
+            "tl": "Para mas makiisa ang bata",
+            "ja": "子どもが受け入れやすくなる工夫"
+          },
+          text: {
+            "zh-TW": "可讓孩子選擇先吃哪一種、由誰餵、坐哪裡吃。孩子比較願意配合時，通常更不容易吐掉或抗拒。",
+            "en": "Let your child choose small things, such as which medicine to take first, who gives it, or where to sit. When a child feels more in control, there is usually less spitting out or resistance.",
+            "id": "Biarkan anak memilih hal kecil, misalnya obat mana yang diminum lebih dulu, siapa yang memberi, atau duduk di mana. Saat anak merasa lebih siap, biasanya ia tidak mudah menolak atau memuntahkan obat.",
+            "vi": "Có thể để trẻ chọn những việc nhỏ như uống thuốc nào trước, ai cho uống, hay ngồi ở đâu. Khi trẻ hợp tác hơn, trẻ thường ít chống đối hoặc nhổ thuốc hơn.",
+            "th": "ให้เด็กเลือกเรื่องเล็ก ๆ ได้ เช่น จะกินอันไหนก่อน ใครเป็นคนป้อน หรือจะนั่งตรงไหน เมื่อเด็กยอมร่วมมือมากขึ้น ก็มักคายยาหรือต่อต้านน้อยลง",
+            "tl": "Maaaring hayaan ang bata na pumili ng maliliit na bagay, tulad ng alin ang unang iinumin, sino ang magpapainom, o saan uupo. Kapag mas handang makiisa ang bata, mas kaunti ang pagluwa o pagtanggi.",
+            "ja": "どの薬を先に飲むか、だれが飲ませるか、どこに座るかなど、小さなことを子どもに選ばせてもよい。受け入れやすくなると、吐き出したり嫌がったりしにくい。"
+          }
+        },
+        illustration: "assets/svg/oral-pediatric-admin/step-2-inner-cheek.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "需要遮味時，只混一小口食物或飲料",
+          "en": "If you need to hide the taste, mix it with only a small spoonful of food or drink",
+          "id": "Bila perlu menutupi rasa, campur hanya dengan sedikit makanan atau minuman",
+          "vi": "Nếu cần che vị, chỉ trộn với một ít thức ăn hoặc đồ uống",
+          "th": "หากต้องการกลบรส ให้ผสมกับอาหารหรือเครื่องดื่มเพียงเล็กน้อย",
+          "tl": "Kung kailangang tabunan ang lasa, kaunting pagkain o inumin lang ang paghaluin",
+          "ja": "味を隠したい時は、少量の食べ物や飲み物にだけ混ぜる"
+        },
+        note: {
+          "zh-TW": "可混 1 茶匙布丁、果泥、果醬或少量白開水。不要混整瓶奶、整杯果汁或整碗粥；混好後要立刻吃完。",
+          "en": "You may mix it with 1 teaspoon of pudding, fruit puree, jam, or a small amount of water. Do not mix it into a full bottle of milk, a full cup of juice, or a full bowl of porridge. Once mixed, give it right away and make sure it is finished.",
+          "id": "Boleh dicampur dengan 1 sendok teh puding, puree buah, selai, atau sedikit air. Jangan campur ke seluruh botol susu, segelas penuh jus, atau semangkuk bubur. Setelah dicampur, segera berikan sampai habis.",
+          "vi": "Có thể trộn với 1 thìa cà phê pudding, trái cây nghiền, mứt hoặc một ít nước. Không trộn vào cả bình sữa, cả cốc nước trái cây hay cả bát cháo. Sau khi trộn xong phải cho dùng ngay và dùng hết.",
+          "th": "อาจผสมกับพุดดิ้ง ผลไม้บด แยม 1 ช้อนชา หรือผสมน้ำเล็กน้อยได้ ห้ามผสมลงในนมทั้งขวด น้ำผลไม้ทั้งแก้ว หรือโจ๊กทั้งชาม หลังผสมแล้วต้องให้กินทันทีจนหมด",
+          "tl": "Maaaring ihalo sa 1 kutsaritang pudding, fruit puree, jam, o kaunting tubig. Huwag ihalo sa buong bote ng gatas, buong baso ng juice, o buong mangkok ng lugaw. Kapag nahalo na, ibigay agad at ubusin.",
+          "ja": "プリン、果物ピューレ、ジャムを小さじ1杯、または少量の水に混ぜてよい。ミルク1本全部、ジュース1杯全部、おかゆ1杯全部には混ぜない。混ぜたらすぐ飲ませ、残さない。"
+        },
+        illustration: "assets/svg/oral-shared/food-mix.svg"
+      },
+      {
+        action: {
+          "zh-TW": "會吞錠的孩子，先用整顆吞或切小塊",
+          "en": "If the child can swallow tablets, try swallowing whole or in small cut pieces first",
+          "id": "Bila anak sudah bisa menelan tablet, coba telan utuh atau potong kecil terlebih dahulu",
+          "vi": "Nếu trẻ nuốt được viên, hãy thử nuốt trọn viên hoặc cắt miếng nhỏ trước",
+          "th": "ถ้าเด็กกลืนยาเม็ดได้แล้ว ให้ลองกลืนทั้งเม็ดหรือหั่นชิ้นเล็กก่อน",
+          "tl": "Kung kaya nang lumunok ng tableta ang bata, subukang lunukin nang buo o hatiin sa maliliit na piraso muna",
+          "ja": "錠剤を飲み込める子なら、まずは丸のみか小さく切って飲む方法を試す"
+        },
+        note: {
+          "zh-TW": "可把藥放在舌頭中後段，再配水吞下。吞藥時頭微微前傾或往下看，通常比後仰更容易進入食道。若藥師已確認可以剝半或切小塊，可在吃藥前現切現吞；這通常比磨粉更不苦。",
+          "en": "Place the tablet toward the middle-back of the tongue and swallow with water. A slight forward tilt or looking down usually works better than tilting the head back. If the pharmacist has confirmed that it may be split or cut smaller, do it just before the dose and swallow right away. This is often less bitter than crushing.",
+          "id": "Letakkan obat di bagian tengah-belakang lidah lalu telan dengan air. Sedikit menunduk atau memiringkan kepala ke depan biasanya lebih mudah daripada mendongak ke belakang. Bila apoteker sudah memastikan tablet boleh dibelah atau dipotong kecil, lakukan tepat sebelum diminum lalu segera telan. Cara ini sering kali tidak sepahit dihancurkan.",
+          "vi": "Đặt viên thuốc ở giữa về phía sau lưỡi rồi uống với nước. Hơi cúi đầu về trước hoặc nhìn xuống thường dễ nuốt hơn là ngửa đầu ra sau. Nếu dược sĩ đã xác nhận có thể bẻ đôi hoặc cắt nhỏ, hãy làm ngay trước khi uống rồi nuốt ngay. Cách này thường đỡ đắng hơn nghiền bột.",
+          "th": "วางยาไว้บริเวณกลางค่อนไปด้านหลังของลิ้นแล้วดื่มน้ำตาม การก้มศีรษะลงเล็กน้อยหรือมองลงมักกลืนได้ง่ายกว่าการแหงนหน้า หากเภสัชกรยืนยันแล้วว่ายาแบ่งครึ่งหรือหั่นชิ้นเล็กได้ ให้ทำก่อนกินยาแล้วกลืนทันที วิธีนี้มักขมน้อยกว่าการบดเป็นผง",
+          "tl": "Ilagay ang tableta sa gitna hanggang likod ng dila saka lunukin kasabay ng tubig. Ang bahagyang pagyuko o pagtingin pababa ay karaniwang mas madali kaysa pagyuko ng ulo paatras. Kung kinumpirma ng parmasyutiko na puwedeng hatiin o putulin nang mas maliit, gawin ito bago inumin at lunukin agad. Madalas itong mas hindi mapait kaysa durugin.",
+          "ja": "薬を舌の中央より少し奥に置き、水で飲み込む。飲み込む時は、頭を少し前に傾けるか下を見るほうが、後ろへ反らすより飲み込みやすいことが多い。薬剤師が半分や小さく切ってよいと確認した場合は、飲む直前に切ってすぐ飲み込む。粉にするより苦味が少ないことが多い。"
+        },
+        illustration: "assets/svg/oral-shared/swallow-water.svg"
+      },
+      {
+        action: {
+          "zh-TW": "吐出或嘔吐後，先看是不是剛吃下就全吐出",
+          "en": "If the child spits it out or vomits, first check whether it came back out right away",
+          "id": "Bila anak memuntahkan atau muntah, lihat dulu apakah obat keluar hampir semuanya segera setelah diminum",
+          "vi": "Nếu trẻ nhổ ra hoặc nôn, hãy xem trước có phải vừa uống xong đã ra gần hết không",
+          "th": "ถ้าเด็กคายออกหรืออาเจียน ให้ดูก่อนว่ายาออกมาทันทีเกือบทั้งหมดหรือไม่",
+          "tl": "Kung niluwa o isinuka ng bata ang gamot, tingnan muna kung halos agad bang lumabas ang karamihan nito",
+          "ja": "吐き出したり嘔吐したりした時は、まず飲んですぐほとんど出たかどうかを見る"
+        },
+        note: {
+          "zh-TW": "家長先用一般原則：若剛吃下就整口吐出，且看得到大部分藥，可先補 1 次；若已過約 30 分鐘，或不確定吐出多少，就不要補，下一次照原時間。不要自己把下一次的藥提前補掉。",
+          "en": "Use this general rule first: if the child spits out or vomits almost immediately and you can see most of the medicine, you may give 1 replacement dose. If about 30 minutes have passed, or you are not sure how much came out, do not redose; give the next dose at the usual time. Do not move the next dose forward on your own.",
+          "id": "Gunakan aturan umum ini terlebih dahulu: bila anak segera memuntahkan obat dan Anda masih dapat melihat sebagian besar obatnya, Anda boleh memberi 1 dosis pengganti. Jika sudah lewat sekitar 30 menit, atau Anda tidak yakin berapa banyak yang keluar, jangan ulangi; berikan dosis berikutnya pada waktu biasa. Jangan memajukan dosis berikutnya sendiri.",
+          "vi": "Hãy dùng nguyên tắc chung này trước: nếu trẻ vừa uống xong đã nhổ ra hoặc nôn và bạn còn thấy phần lớn thuốc, có thể cho uống bù 1 lần. Nếu đã qua khoảng 30 phút, hoặc bạn không chắc đã ra bao nhiêu thuốc, thì không cho bù; liều kế tiếp dùng đúng giờ cũ. Đừng tự dời liều kế tiếp lên sớm hơn.",
+          "th": "ใช้หลักทั่วไปนี้ก่อน: หากเด็กเพิ่งกินยาแล้วคายออกหรืออาเจียนทันที และยังเห็นยาส่วนใหญ่ออกมา สามารถให้ซ้ำได้ 1 ครั้ง แต่ถ้าผ่านไปประมาณ 30 นาทีแล้ว หรือไม่แน่ใจว่าออกมาเท่าไร ไม่ต้องให้ซ้ำ ให้ยาครั้งถัดไปตามเวลาเดิม ห้ามเลื่อนยามื้อต่อไปมากินแทนเอง",
+          "tl": "Gamitin muna ang pangkalahatang tuntuning ito: kung halos agad na niluwa o isinuka ng bata ang gamot at nakikita pa ang karamihan ng gamot, maaari kang magbigay ng 1 kapalit na dose. Kung lumipas na ang mga 30 minuto, o hindi ka sigurado kung gaano karami ang lumabas, huwag nang ulitin; ibigay ang susunod na dose sa dating oras. Huwag ilapit nang kusa ang susunod na dose.",
+          "ja": "まずはこの一般原則を使う。飲んですぐにほとんどを吐き出し、薬の大部分が出たと分かる時は、1回だけ飲ませ直してよい。約30分以上たっている、またはどれだけ出たか分からない時は、飲ませ直さず次回は元の時間どおりにする。次の服用を自己判断で前倒ししない。"
+        },
+        illustration: "assets/svg/oral-pediatric-admin/step-5-vomit-call.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "抗生素、抗病毒藥通常要吃完整個療程",
+          "en": "Antibiotics and antiviral medicines usually need the full course",
+          "id": "Antibiotik dan obat antivirus biasanya harus diminum sampai seluruh terapi selesai",
+          "vi": "Kháng sinh và thuốc kháng vi-rút thường cần dùng đủ trọn liệu trình",
+          "th": "ยาปฏิชีวนะและยาต้านไวรัสมักต้องกินให้ครบทั้งคอร์ส",
+          "tl": "Ang antibiotics at antivirals ay karaniwang kailangang tapusin ang buong kurso",
+          "ja": "抗菌薬や抗ウイルス薬は、通常最後まで飲み切る必要がある"
+        },
+        note: {
+          "zh-TW": "像中耳炎、鼻竇炎、扁桃腺炎的抗生素，或流感抗病毒藥，通常要照醫囑完成療程。不要因為症狀好一點就自己停掉。",
+          "en": "Antibiotics for ear infections, sinusitis, or tonsillitis, and antivirals for flu, usually need the full prescribed course. Do not stop early just because the child feels better.",
+          "id": "Antibiotik untuk infeksi telinga, sinusitis, atau radang amandel, serta antivirus untuk flu, biasanya harus dihabiskan sesuai resep. Jangan berhenti lebih awal hanya karena anak sudah lebih enak.",
+          "vi": "Kháng sinh dùng cho viêm tai giữa, viêm xoang, viêm amidan và thuốc kháng vi-rút cúm thường cần dùng đủ liệu trình theo chỉ định. Đừng tự ngừng sớm chỉ vì trẻ đỡ hơn.",
+          "th": "ยาปฏิชีวนะสำหรับหูชั้นกลางอักเสบ ไซนัสอักเสบ หรือทอนซิลอักเสบ และยาต้านไวรัสสำหรับไข้หวัดใหญ่ มักต้องกินให้ครบตามแพทย์สั่ง อย่าหยุดเองเพียงเพราะอาการดีขึ้น",
+          "tl": "Ang antibiotics para sa impeksiyon sa tainga, sinusitis, o tonsillitis, at antivirals para sa trangkaso, ay karaniwang kailangang tapusin ayon sa reseta. Huwag itigil nang maaga dahil lang gumaan na ang pakiramdam ng bata.",
+          "ja": "中耳炎・副鼻腔炎・扁桃炎の抗菌薬や、インフルエンザの抗ウイルス薬は、通常処方どおり最後まで続ける必要がある。少し良くなっただけで自己判断で中止しない。"
+        },
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      },
+      {
+        action: {
+          "zh-TW": "用後清洗給藥工具並晾乾",
+          "en": "Wash the dosing tool after use and let it air-dry",
+          "id": "Cuci alat pemberi obat setelah dipakai lalu keringkan dengan angin",
+          "vi": "Rửa dụng cụ cho thuốc sau khi dùng rồi để khô tự nhiên",
+          "th": "ล้างอุปกรณ์ให้ยาหลังใช้แล้วผึ่งให้แห้ง",
+          "tl": "Hugasan ang pangbigay-gamot pagkatapos gamitin at hayaang matuyo sa hangin",
+          "ja": "使用後は投薬器具を洗い、自然乾燥させる"
+        },
+        note: {
+          "zh-TW": "用清水洗淨後晾乾。若刻度看不清、推桿卡住或有裂痕，就換新的。",
+          "en": "Rinse it clean with water and let it air-dry. Replace it if the markings fade, the plunger sticks, or the tool cracks.",
+          "id": "Bilas bersih dengan air lalu keringkan dengan angin. Ganti dengan yang baru bila angka ukur memudar, plunger seret, atau alat retak.",
+          "vi": "Rửa sạch bằng nước rồi để khô tự nhiên. Hãy thay cái mới nếu vạch chia mờ, pittông kẹt hoặc dụng cụ bị nứt.",
+          "th": "ล้างด้วยน้ำสะอาดแล้วผึ่งให้แห้ง ถ้าตัวเลขเลือน ก้านดันฝืด หรืออุปกรณ์มีรอยร้าว ให้เปลี่ยนอันใหม่",
+          "tl": "Banlawan ng tubig at hayaang matuyo sa hangin. Palitan ito kung kupas na ang marka, matigas ang plunger, o may bitak ang gamit.",
+          "ja": "水で洗って自然乾燥させる。目盛りが見えにくい、押し子が固い、ひびがある時は新しい物に替える。"
+        },
+        illustration: "assets/svg/oral-pediatric-admin/step-6-clean-syringe.svg"
+      }
+    ],
+    warnings: [
+      {
+        "zh-TW": "液體藥常依體重計算，回診時請帶最新體重。",
+        "en": "Many liquid medicine doses are based on weight, so bring the child’s latest weight to follow-up visits.",
+        "id": "Banyak dosis obat cair anak dihitung dari berat badan, jadi bawalah berat badan terbaru saat kontrol.",
+        "vi": "Nhiều liều thuốc nước của trẻ tính theo cân nặng, nên hãy mang theo cân nặng mới nhất khi tái khám.",
+        "th": "ยาน้ำของเด็กหลายชนิดคิดตามน้ำหนักตัว จึงควรแจ้งน้ำหนักล่าสุดเมื่อมาติดตามผล",
+        "tl": "Maraming dosis ng likidong gamot ng bata ang nakabatay sa timbang, kaya dalhin ang pinakahuling timbang sa follow-up.",
+        "ja": "小児の液剤の用量は体重で決まることが多いため、受診時は最新の体重を伝える。"
+      },
+      {
+        "zh-TW": "遮味時只混 1 茶匙布丁、果泥、果醬或少量白開水；不要混整瓶奶、整杯果汁或整碗粥。",
+        "en": "To hide the taste, mix it with only 1 teaspoon of pudding, fruit puree, jam, or a small amount of water. Do not mix it into a whole bottle of milk, a full cup of juice, or a full bowl of porridge.",
+        "id": "Untuk menutupi rasa, campur hanya dengan 1 sendok teh puding, puree buah, selai, atau sedikit air. Jangan campur ke seluruh botol susu, segelas penuh jus, atau semangkuk bubur.",
+        "vi": "Khi cần che vị, chỉ trộn với 1 thìa cà phê pudding, trái cây nghiền, mứt hoặc một ít nước. Không trộn vào cả bình sữa, cả cốc nước trái cây hay cả bát cháo.",
+        "th": "หากต้องการกลบรส ให้ผสมเพียงพุดดิ้ง ผลไม้บด แยม 1 ช้อนชา หรือผสมน้ำเล็กน้อย ห้ามผสมลงในนมทั้งขวด น้ำผลไม้ทั้งแก้ว หรือโจ๊กทั้งชาม",
+        "tl": "Para matabunan ang lasa, ihalo lamang sa 1 kutsaritang pudding, fruit puree, jam, o kaunting tubig. Huwag ihalo sa buong bote ng gatas, buong baso ng juice, o buong mangkok ng lugaw.",
+        "ja": "味を隠したい時は、プリン、果物ピューレ、ジャムを小さじ1杯、または少量の水にだけ混ぜる。ミルク1本全部、ジュース1杯全部、おかゆ1杯全部には混ぜない。"
+      },
+      {
+        "zh-TW": "若嗆到、呼吸變差，或不確定吃進多少，立即求助。",
+        "en": "Get help right away if the child chokes, breathes worse, or you are not sure how much medicine went in.",
+        "id": "Segera minta bantuan bila anak tersedak, napas memburuk, atau Anda tidak yakin berapa banyak obat yang masuk.",
+        "vi": "Hãy tìm trợ giúp ngay nếu trẻ bị sặc, thở kém đi hoặc bạn không chắc trẻ đã uống được bao nhiêu thuốc.",
+        "th": "ขอความช่วยเหลือทันทีหากเด็กสำลัก หายใจแย่ลง หรือไม่แน่ใจว่าเด็กได้รับยาไปเท่าไร",
+        "tl": "Humingi agad ng tulong kung nabulunan ang bata, humirap ang paghinga, o hindi ka sigurado kung gaano karami ang gamot na nainom.",
+        "ja": "むせた、呼吸が悪くなった、どれだけ入ったか分からない時は、すぐ助けを求める。"
+      }
+    ],
+    qrUrl: "https://www.healthychildren.org/English/safety-prevention/at-home/medication-safety/Pages/Using-Liquid-Medicines.aspx"
+  },
+
+  // ── Pill crushing risk education ─────────────────────────────────────,
+  {
+    "id": "no-crush-evidence",
+    color: {
+      main: "#3B6D11",
+      light: "#EAF3DE",
+      dark: "#173404",
+      badge: "#C0DD97",
+      badgeText: "#173404"
+    },
+    emergency: false,
+    name: {
+      "zh-TW": "孩子吞不下藥時，怎麼做比較安全",
+      "en": "Safer options when a child cannot swallow a medicine",
+      "id": "Pilihan yang lebih aman saat anak sulit menelan obat",
+      "vi": "Khi trẻ nuốt thuốc khó, làm sao an toàn hơn",
+      "th": "เมื่อเด็กกลืนยาได้ยาก ควรทำอย่างไรให้ปลอดภัยกว่า",
+      "tl": "Mas ligtas na paraan kapag hirap lumunok ng gamot ang bata",
+      "ja": "子どもが薬を飲み込みにくい時の、より安全な対応"
+    },
+    subtitle: {
+      "zh-TW": "Safe Administration When Child Cannot Swallow｜感冒、中耳炎、鼻竇炎、扁桃腺炎常見用藥情境",
+      "en": "Safe administration when a child cannot swallow | Common situations such as colds, ear infections, sinusitis, and tonsillitis",
+      "id": "Pemberian obat yang lebih aman saat anak sulit menelan | Situasi umum seperti pilek, infeksi telinga, sinusitis, dan radang amandel",
+      "vi": "Cách dùng thuốc an toàn hơn khi trẻ khó nuốt | Tình huống thường gặp như cảm lạnh, viêm tai, viêm xoang và viêm amidan",
+      "th": "การให้ยาที่ปลอดภัยกว่าเมื่อเด็กกลืนยาได้ยาก | สถานการณ์ที่พบบ่อย เช่น หวัด หูอักเสบ ไซนัสอักเสบ และทอนซิลอักเสบ",
+      "tl": "Mas ligtas na pagbibigay ng gamot kapag hirap lumunok ang bata | Karaniwang sitwasyon gaya ng sipon, impeksiyon sa tainga, sinusitis, at tonsillitis",
+      "ja": "子どもが薬を飲みにくい時の安全な対応｜かぜ、中耳炎、副鼻腔炎、扁桃炎でよくある場面"
+    },
+    headerBadge: {
+      "zh-TW": "給藥安全",
+      "en": "Medicine safety",
+      "id": "Keamanan pemberian obat",
+      "vi": "An toàn cho uống thuốc",
+      "th": "ความปลอดภัยในการให้ยา",
+      "tl": "Kaligtasan sa pagbibigay ng gamot",
+      "ja": "服薬の安全"
+    },
+    usage: {
+      "zh-TW": "磨粉是最後手段，有更安全的替代方式",
+      "en": "Crushing is the last option. Safer alternatives often exist.",
+      "id": "Menghancurkan obat adalah pilihan terakhir. Sering kali ada cara yang lebih aman.",
+      "vi": "Nghiền thuốc là lựa chọn cuối cùng. Thường có cách an toàn hơn.",
+      "th": "การบดยาเป็นทางเลือกสุดท้าย มักมีวิธีที่ปลอดภัยกว่านี้",
+      "tl": "Huling opsyon lamang ang pagdurog ng gamot. Kadalasan ay may mas ligtas na kapalit.",
+      "ja": "粉砕は最後の手段であり、より安全な代替方法があることが多い。"
+    },
+    badge: {
+      "zh-TW": "口服安全",
+      "en": "Oral safety",
+      "id": "Keamanan obat oral",
+      "vi": "An toàn thuốc uống",
+      "th": "ความปลอดภัยของยารับประทาน",
+      "tl": "Kaligtasan sa gamot na iniinom",
+      "ja": "内服の安全"
+    },
+    steps: [
+      {
+        action: {
+          "zh-TW": "先看藥袋標示的吃法",
+          "en": "Read the label for the intended way to take it",
+          "id": "Lihat dulu cara minum yang tertulis pada etiket",
+          "vi": "Xem trước cách dùng ghi trên nhãn thuốc",
+          "th": "ดูก่อนว่าฉลากระบุวิธีกินยาอย่างไร",
+          "tl": "Basahin muna sa label kung paano ito dapat inumin",
+          "ja": "まず薬袋に書かれた飲み方を確認する"
+        },
+        note: {
+          "zh-TW": "標示「整顆吞」「可剝半」「可加水溶散」各有不同做法；看不懂，打電話問藥師。",
+          "en": "Directions such as ‘swallow whole,’ ‘may be split,’ or ‘disperse in water’ all mean different methods. If you are not sure, call the pharmacist.",
+          "id": "Petunjuk seperti ‘telan utuh’, ‘boleh dibelah’, atau ‘boleh dilarutkan dalam air’ berarti cara pemberiannya berbeda. Jika tidak yakin, telepon apoteker.",
+          "vi": "Các hướng dẫn như ‘nuốt nguyên’, ‘có thể bẻ đôi’ hoặc ‘có thể phân tán trong nước’ là những cách dùng khác nhau. Nếu chưa chắc, hãy gọi dược sĩ.",
+          "th": "คำว่า ‘กลืนทั้งเม็ด’ ‘แบ่งครึ่งได้’ หรือ ‘ละลายในน้ำได้’ หมายถึงวิธีกินคนละแบบ หากไม่แน่ใจให้โทรถามเภสัชกร",
+          "tl": "Magkaiba ang ibig sabihin ng ‘lunukin nang buo,’ ‘puwedeng hatiin,’ at ‘puwedeng tunawin sa tubig.’ Kung hindi sigurado, tawagan ang parmasyutiko.",
+          "ja": "『丸のみ』『半分にできる』『水に分散できる』では方法がそれぞれ異なる。分からない時は薬剤師へ電話で確認する。"
+        },
+        illustration: "assets/svg/oral-crush-risk/step-0-check-symbols.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "藥師已磨好的粉包，開封後立刻吃完",
+          "en": "If the pharmacist already prepared powder packets, use them right after opening",
+          "id": "Jika apoteker sudah menyiapkan puyer, gunakan segera setelah dibuka",
+          "vi": "Nếu dược sĩ đã chia sẵn gói bột, hãy dùng ngay sau khi mở",
+          "th": "หากเภสัชกรแบ่งเป็นผงซองไว้แล้ว ให้ใช้ทันทีหลังเปิด",
+          "tl": "Kung naghanda na ang parmasyutiko ng pulbos na pakete, gamitin agad pagkapagbukas",
+          "ja": "薬剤師がすでに粉包にしている薬は、開封後すぐ使う"
+        },
+        note: {
+          "zh-TW": "可混 1 茶匙（5 mL）布丁、果泥、果醬或少量白開水後立刻吃完。不可混整碗粥或整瓶奶，避免孩子吃不完導致劑量不足。",
+          "en": "You may mix it with 1 teaspoon (5 mL) of pudding, fruit puree, jam, or a small amount of water, then give it right away. Do not mix it into a full bowl of porridge or a full bottle of milk, because the child may not finish it and receive less medicine.",
+          "id": "Boleh dicampur dengan 1 sendok teh (5 mL) puding, puree buah, selai, atau sedikit air lalu segera diberikan. Jangan campur ke semangkuk bubur penuh atau sebotol susu penuh, karena anak mungkin tidak menghabiskannya dan dosisnya jadi kurang.",
+          "vi": "Có thể trộn với 1 thìa cà phê (5 mL) pudding, trái cây nghiền, mứt hoặc một ít nước rồi cho dùng ngay. Đừng trộn vào cả bát cháo hay cả bình sữa vì trẻ có thể không dùng hết và bị thiếu liều.",
+          "th": "อาจผสมกับพุดดิ้ง ผลไม้บด แยม 1 ช้อนชา (5 มล.) หรือผสมน้ำเล็กน้อยแล้วให้กินทันที อย่าผสมลงในโจ๊กทั้งชามหรือนมทั้งขวด เพราะเด็กอาจกินไม่หมดและได้รับยาไม่ครบ",
+          "tl": "Maaaring ihalo sa 1 kutsarita (5 mL) ng pudding, fruit puree, jam, o kaunting tubig at ibigay agad. Huwag ihalo sa buong mangkok ng lugaw o buong bote ng gatas dahil maaaring hindi ito maubos ng bata at mabawasan ang totoong dosis.",
+          "ja": "プリン・果物ピューレ・ジャムを小さじ1杯（5 mL）、または少量の水に混ぜてすぐ飲ませてよい。おかゆ1杯全部やミルク1本全部に混ぜると飲み残して量が足りなくなるため避ける。"
+        },
+        illustration: "assets/svg/oral-shared/food-mix.svg"
+      },
+      {
+        action: {
+          "zh-TW": "磨粉有 2 個缺點：更苦，劑量變少",
+          "en": "Crushing has 2 drawbacks: it tastes more bitter and can lower the delivered dose",
+          "id": "Menghancurkan obat punya 2 kekurangan: lebih pahit dan dosis yang masuk bisa berkurang",
+          "vi": "Nghiền thuốc có 2 bất lợi: đắng hơn và lượng thuốc thực nhận có thể giảm",
+          "th": "การบดยามี 2 ข้อเสีย คือขมขึ้นและขนาดยาที่ได้รับอาจลดลง",
+          "tl": "May 2 kahinaan ang pagdurog ng gamot: mas mapait ito at maaaring bumaba ang totoong dosis na naiinom",
+          "ja": "粉砕には2つの欠点がある。苦味が強くなり、実際の服用量が減りやすい。"
+        },
+        note: {
+          "zh-TW": "磨碎會破壞苦味包衣，孩子更容易拒吃。粉末也會黏在杯壁和湯匙上，讓真正吃進去的劑量減少約 10–15%。",
+          "en": "Crushing breaks the coating that helped hide bitterness, so children are more likely to refuse it. Powder also sticks to cups and spoons, and the amount that actually goes in can drop by about 10–15%.",
+          "id": "Saat dihancurkan, lapisan yang menutupi rasa pahit akan rusak sehingga anak lebih mudah menolak obat. Serbuk juga menempel pada gelas dan sendok, sehingga jumlah yang benar-benar masuk bisa berkurang sekitar 10–15%.",
+          "vi": "Khi nghiền, lớp che vị đắng bị phá vỡ nên trẻ dễ từ chối hơn. Bột cũng bám vào cốc và thìa, khiến lượng thuốc thực sự vào cơ thể có thể giảm khoảng 10–15%.",
+          "th": "เมื่อบดแล้ว ชั้นเคลือบที่ช่วยบังรสขมจะเสียไป เด็กจึงมีโอกาสปฏิเสธยามากขึ้น อีกทั้งผงยาจะติดแก้วและช้อน ทำให้ปริมาณยาที่ได้รับจริงอาจลดลงราว 10–15%",
+          "tl": "Kapag dinurog, nasisira ang coating na tumutulong magtakip ng pait kaya mas madaling tumanggi ang bata. Dumidikit din ang pulbos sa tasa at kutsara kaya maaaring mabawasan nang humigit-kumulang 10–15% ang gamot na totoong naiinom.",
+          "ja": "砕くと苦味を隠していたコーティングが壊れ、子どもが拒みやすくなる。さらに粉はコップやスプーンに付き、実際に入る量が約10〜15%減ることがある。"
+        },
+        illustration: "assets/svg/oral-crush-risk/step-2-dose-loss.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "會吞錠的孩子，先問能否剝半或切小塊",
+          "en": "If the child can swallow tablets, first ask whether the tablet may be split or cut smaller",
+          "id": "Jika anak sudah bisa menelan tablet, tanyakan dulu apakah tablet boleh dibelah atau dipotong kecil",
+          "vi": "Nếu trẻ đã nuốt được viên, hãy hỏi trước xem có thể bẻ đôi hay cắt nhỏ hay không",
+          "th": "หากเด็กกลืนยาเม็ดได้แล้ว ให้ถามก่อนว่ายาเม็ดนั้นแบ่งครึ่งหรือหั่นชิ้นเล็กได้หรือไม่",
+          "tl": "Kung kaya nang lumunok ng tableta ang bata, itanong muna kung puwedeng hatiin o putulin sa maliliit na piraso",
+          "ja": "錠剤を飲み込める子なら、半分や小さいかけらにできるか先に確認する"
+        },
+        note: {
+          "zh-TW": "剝半或切小塊通常比磨粉更不苦，也較不會沾在湯匙或杯壁上；藥師確認可以才做，不可自行判斷。",
+          "en": "Splitting or cutting into smaller pieces is often less bitter than full crushing and less likely to stick to cups or spoons. Do this only after the pharmacist confirms it is allowed.",
+          "id": "Membelah atau memotong menjadi bagian kecil sering kali tidak sepahit menghancurkan penuh dan lebih kecil kemungkinan menempel di gelas atau sendok. Lakukan hanya bila apoteker sudah memastikan boleh.",
+          "vi": "Bẻ đôi hoặc cắt nhỏ thường đỡ đắng hơn nghiền hoàn toàn và ít bám vào cốc hay thìa hơn. Chỉ làm khi dược sĩ đã xác nhận là được.",
+          "th": "การแบ่งครึ่งหรือหั่นเป็นชิ้นเล็กมักจะขมน้อยกว่าการบดเป็นผงทั้งหมด และติดแก้วหรือช้อนน้อยกว่า ให้ทำได้ต่อเมื่อเภสัชกรยืนยันแล้วเท่านั้น",
+          "tl": "Karaniwang hindi kasing pait ang paghahati o pagputol sa maliliit na piraso kumpara sa buong pagdurog, at mas kaunti rin ang didikit sa tasa o kutsara. Gawin lamang ito kung nakumpirma ng parmasyutiko na puwede.",
+          "ja": "半分にしたり小さく切ったりするほうが、粉にするより苦味が少なく、コップやスプーンへの付着も少ないことが多い。薬剤師が可と確認した場合だけ行う。"
+        },
+        illustration: "assets/svg/oral-crush-risk/step-4-alternatives.svg"
+      },
+      {
+        action: {
+          "zh-TW": "標有 ER / XR / SR / CD / EC 的藥：絕不磨碎",
+          "en": "Medicines marked ER / XR / SR / CD / EC: never crush them",
+          "id": "Obat yang bertanda ER / XR / SR / CD / EC: jangan pernah dihancurkan",
+          "vi": "Thuốc có ký hiệu ER / XR / SR / CD / EC: tuyệt đối không nghiền",
+          "th": "ยาที่มีสัญลักษณ์ ER / XR / SR / CD / EC: ห้ามบดเด็ดขาด",
+          "tl": "Mga gamot na may markang ER / XR / SR / CD / EC: huwag na huwag durugin",
+          "ja": "ER / XR / SR / CD / EC と書かれた薬は、絶対に砕かない"
+        },
+        note: {
+          "zh-TW": "這些標示代表緩釋或腸溶。磨碎後，原本要慢慢放出的藥可能幾分鐘內全部釋出，增加嚴重副作用風險。",
+          "en": "These markings usually mean extended release or enteric coating. Crushing can dump the full dose within minutes instead of releasing it slowly, which may cause serious side effects.",
+          "id": "Tanda ini biasanya berarti lepas lambat atau salut enterik. Bila dihancurkan, seluruh dosis bisa keluar dalam beberapa menit, bukan perlahan-lahan, dan risiko efek samping serius akan meningkat.",
+          "vi": "Các ký hiệu này thường nghĩa là giải phóng chậm hoặc bao tan trong ruột. Nếu nghiền, toàn bộ liều có thể giải phóng chỉ trong vài phút thay vì từ từ, làm tăng nguy cơ tác dụng phụ nghiêm trọng.",
+          "th": "สัญลักษณ์เหล่านี้มักหมายถึงยาออกฤทธิ์นานหรือยาเคลือบป้องกันกรด หากบด ยาที่ควรค่อย ๆ ปล่อยอาจออกหมดในไม่กี่นาทีและเพิ่มความเสี่ยงต่อผลข้างเคียงรุนแรง",
+          "tl": "Karaniwang ibig sabihin ng mga markang ito ay extended release o enteric coated. Kapag dinurog, maaaring mailabas ang buong dosis sa loob lamang ng ilang minuto sa halip na dahan-dahan, at tataas ang panganib ng malulubhang side effect.",
+          "ja": "これらの表示は徐放性や腸溶性を意味することが多い。砕くと、本来ゆっくり放出されるはずの薬が数分で全部出てしまい、重い副作用の危険が高くなる。"
+        },
+        illustration: "assets/svg/oral-crush-risk/step-1-no-crush.svg",
+        highlight: true
+      },
+      {
+        action: {
+          "zh-TW": "家裡壓碎藥時，每次只處理 1 次份量",
+          "en": "When crushing at home, prepare only one dose at a time",
+          "id": "Saat menghancurkan obat di rumah, siapkan hanya 1 dosis setiap kali",
+          "vi": "Khi nghiền thuốc tại nhà, chỉ chuẩn bị 1 liều mỗi lần",
+          "th": "เมื่อต้องบดที่บ้าน ให้เตรียมครั้งละ 1 มื้อเท่านั้น",
+          "tl": "Kapag nagdurog sa bahay, isang dosis lang ang ihanda bawat pagkakataon",
+          "ja": "家庭で砕く時は、毎回1回分だけ準備する"
+        },
+        note: {
+          "zh-TW": "可用專用磨粉器、切藥器，或 2 支乾燥湯匙。和院所共用大型器具相比，家裡專用器具較不容易混到前一位小朋友殘留的微量藥粉；用完要先清乾淨，不可把多種藥一起磨。",
+          "en": "Use a dedicated pill crusher, a tablet cutter, or two dry spoons. Compared with large shared equipment, a dedicated home tool is less likely to pick up tiny residue left from the previous child’s medicine. Clean it well after use, and never crush several medicines together.",
+          "id": "Gunakan alat penghancur tablet khusus, pemotong tablet, atau 2 sendok kering. Dibanding alat besar yang dipakai bersama, alat khusus di rumah lebih kecil kemungkinan tercampur sisa serbuk sangat sedikit dari obat anak sebelumnya. Bersihkan baik-baik setelah dipakai, dan jangan pernah menghancurkan beberapa obat sekaligus.",
+          "vi": "Dùng dụng cụ nghiền thuốc riêng, dụng cụ cắt viên hoặc 2 chiếc thìa khô. So với thiết bị lớn dùng chung, dụng cụ riêng ở nhà ít có nguy cơ lẫn lượng rất nhỏ bột thuốc còn sót lại từ thuốc của trẻ trước đó hơn. Sau khi dùng phải vệ sinh sạch và không nghiền nhiều thuốc cùng lúc.",
+          "th": "ใช้เครื่องบดเม็ดยาเฉพาะ เครื่องตัดยา หรือช้อนแห้ง 2 คัน เมื่อเทียบกับอุปกรณ์ขนาดใหญ่ที่ใช้ร่วมกัน เครื่องมือเฉพาะที่บ้านมีโอกาสน้อยกว่าที่จะปนเปื้อนผงยาปริมาณเล็กน้อยที่เหลือจากยาของเด็กคนก่อน ใช้เสร็จต้องล้างให้สะอาด และห้ามบดยาหลายชนิดพร้อมกัน",
+          "tl": "Gumamit ng nakatalagang pandurog ng tableta, tablet cutter, o 2 tuyong kutsara. Kumpara sa malalaking kagamitang pinagsasaluhan, mas maliit ang tsansang mahaluan ang gamit sa bahay ng napakaliit na natirang pulbos mula sa gamot ng naunang bata. Linisin itong mabuti pagkatapos gamitin, at huwag durugin ang maraming gamot nang sabay-sabay.",
+          "ja": "専用の粉砕器、錠剤カッター、または乾いたスプーン2本を使う。共用の大型器具に比べ、家庭用の専用器具のほうが前の子どもの薬の微量な残粉が混ざりにくい。使った後はよく洗い、複数の薬を一緒に砕かない。"
+        },
+        illustration: "assets/svg/oral-crush-risk/step-3-powder-warning.svg"
+      },
+      {
+        action: {
+          "zh-TW": "孩子真的吃不下，聯絡藥師或醫師換劑型",
+          "en": "If the child truly cannot take it, contact the pharmacist or doctor to change the dosage form",
+          "id": "Jika anak benar-benar tidak bisa minum, hubungi apoteker atau dokter untuk mengganti bentuk sediaan",
+          "vi": "Nếu trẻ thật sự không uống được, hãy liên hệ dược sĩ hoặc bác sĩ để đổi dạng thuốc",
+          "th": "หากเด็กกินไม่ได้จริง ๆ ให้ติดต่อเภสัชกรหรือแพทย์เพื่อเปลี่ยนรูปแบบยา",
+          "tl": "Kung talagang hindi ma-inom ng bata, makipag-ugnayan sa parmasyutiko o doktor upang mapalitan ang porma ng gamot",
+          "ja": "本当に飲めない時は、薬剤師や医師に連絡して剤形変更を相談する"
+        },
+        note: {
+          "zh-TW": "抗生素、抗病毒藥的療程需吃完才有效；若孩子拒吃，不要自行停藥。可改成較適合的液劑、可分散劑型或其他安排。",
+          "en": "Antibiotics and antivirals usually work best when the full course is completed. If the child refuses to take it, do not stop it on your own. A more suitable liquid, dispersible form, or another plan may be arranged.",
+          "id": "Antibiotik dan antivirus biasanya paling efektif bila diminum sampai seluruh terapi selesai. Jika anak menolak minum, jangan hentikan sendiri. Mungkin bisa diubah ke bentuk cair, bentuk yang bisa dilarutkan, atau cara lain yang lebih sesuai.",
+          "vi": "Kháng sinh và thuốc kháng vi-rút thường có hiệu quả nhất khi dùng đủ liệu trình. Nếu trẻ từ chối uống, đừng tự ý ngừng thuốc. Có thể đổi sang dạng nước, dạng phân tán hoặc cách dùng khác phù hợp hơn.",
+          "th": "ยาปฏิชีวนะและยาต้านไวรัสมักได้ผลดีที่สุดเมื่อกินครบคอร์ส หากเด็กปฏิเสธยา อย่าหยุดยาเอง อาจเปลี่ยนเป็นยาน้ำ ยาที่ละลายได้ หรือวิธีที่เหมาะกว่าได้",
+          "tl": "Karaniwang pinakamabisa ang antibiotics at antivirals kapag natapos ang buong kurso. Kung tumatanggi ang bata, huwag itong itigil nang kusa. Maaaring palitan ito ng mas angkop na likidong porma, dispersible na anyo, o ibang paraan.",
+          "ja": "抗菌薬や抗ウイルス薬は、最後まで続けてこそ効果が出やすい。子どもが嫌がっても自己判断で中止せず、より適した液剤や分散製剤などへ変更できるか相談する。"
+        },
+        illustration: "assets/svg/oral-shared/finish-course.svg"
+      }
+    ],
+    storage: {
+      title: {
+        "zh-TW": "磨粉包的保存",
+        "en": "How to store crushed packets",
+        "id": "Cara menyimpan puyer",
+        "vi": "Cách bảo quản gói thuốc bột",
+        "th": "การเก็บซองยาผง",
+        "tl": "Paano itago ang mga pulbos na pakete",
+        "ja": "粉包の保管"
+      },
+      text: {
+        "zh-TW": "藥師磨好的粉包：照藥袋標示保存（通常室溫避光）。\n開封後的粉包：立刻吃完，不可留到下次。\n不確定能否冷藏：打電話問藥師，不要自行決定。",
+        "en": "For powder packets prepared by the pharmacist, store them exactly as the label says, usually at room temperature away from light.\nOnce a packet is opened, use it right away and do not save it for the next dose.\nIf you are not sure whether it may be refrigerated, call the pharmacist instead of deciding on your own.",
+        "id": "Untuk puyer yang sudah disiapkan apoteker, simpan tepat seperti yang tertulis pada etiket, biasanya pada suhu ruang dan terlindung dari cahaya.\nSetelah satu bungkus dibuka, segera gunakan dan jangan simpan untuk dosis berikutnya.\nJika tidak yakin boleh atau tidak disimpan di lemari es, telepon apoteker dan jangan memutuskan sendiri.",
+        "vi": "Với gói bột do dược sĩ chuẩn bị sẵn, hãy bảo quản đúng như nhãn thuốc ghi, thường là ở nhiệt độ phòng và tránh ánh sáng.\nKhi đã mở gói, dùng ngay và không để dành cho lần sau.\nNếu không chắc có được để lạnh hay không, hãy gọi dược sĩ thay vì tự quyết định.",
+        "th": "ซองยาผงที่เภสัชกรเตรียมไว้ ให้เก็บตามฉลากยาอย่างเคร่งครัด โดยทั่วไปคืออุณหภูมิห้องและหลีกเลี่ยงแสง\nเมื่อเปิดซองแล้วให้ใช้ทันทีและอย่าเก็บไว้สำหรับครั้งถัดไป\nหากไม่แน่ใจว่าแช่เย็นได้หรือไม่ ให้โทรถามเภสัชกรแทนการตัดสินใจเอง",
+        "tl": "Para sa mga pulbos na pakete na inihanda ng parmasyutiko, itago ang mga ito ayon mismo sa nakasulat sa label, karaniwang sa room temperature at malayo sa liwanag.\nKapag nabuksan na ang isang pakete, gamitin ito agad at huwag itabi para sa susunod na dose.\nKung hindi ka sigurado kung maaari itong iref, tawagan ang parmasyutiko sa halip na magpasya nang mag-isa.",
+        "ja": "薬剤師が粉包にした薬は、薬袋の指示どおりに保管する（通常は室温・遮光）。\n1包を開けたらすぐ使い、次回分として残さない。\n冷蔵してよいか分からない時は、自己判断せず薬剤師へ電話で確認する。"
+      }
+    },
+    warnings: [
+      {
+        "zh-TW": "藥師沒說可以剝半、壓碎或溶水，就不要自行改變吃法。",
+        "en": "If the pharmacist did not say it may be split, crushed, or dissolved in water, do not change the way you give it.",
+        "id": "Jika apoteker tidak mengatakan obat ini boleh dibelah, dihancurkan, atau dilarutkan dalam air, jangan mengubah cara pemberiannya sendiri.",
+        "vi": "Nếu dược sĩ không nói rằng thuốc này có thể bẻ đôi, nghiền hay hòa với nước, đừng tự ý đổi cách cho uống.",
+        "th": "หากเภสัชกรไม่ได้บอกว่ายานี้แบ่งครึ่ง บด หรือผสมน้ำได้ ก็อย่าเปลี่ยนวิธีกินเอง",
+        "tl": "Kung hindi sinabi ng parmasyutiko na puwedeng hatiin, durugin, o tunawin sa tubig ang gamot, huwag baguhin ang paraan ng pagbibigay nito.",
+        "ja": "薬剤師から分割・粉砕・水への分散が可能と説明されていない薬は、飲ませ方を自己判断で変えない。"
+      },
+      {
+        "zh-TW": "磨粉缺點：更苦易拒吃、易沾杯壁，真正吃進去的量可少 10–15%。",
+        "en": "Crushing can make the medicine more bitter and easier to refuse, and some powder sticks to cups or spoons, so the child may receive 10–15% less.",
+        "id": "Kelemahan menghancurkan obat: rasanya lebih pahit sehingga lebih mudah ditolak, dan sebagian serbuk menempel pada gelas atau sendok sehingga dosis yang benar-benar masuk bisa berkurang 10–15%.",
+        "vi": "Nhược điểm của việc nghiền thuốc là thuốc đắng hơn nên trẻ dễ từ chối hơn, và một phần bột bám vào cốc hoặc thìa khiến liều thực sự vào cơ thể có thể giảm 10–15%.",
+        "th": "ข้อเสียของการบดยาคือยาจะขมขึ้น เด็กปฏิเสธได้ง่ายขึ้น และผงยาบางส่วนติดแก้วหรือช้อน ทำให้ปริมาณยาที่ได้รับจริงอาจลดลง 10–15%",
+        "tl": "Kahinaan ng pagdurog ng gamot: mas mapait ito kaya mas madaling tanggihan ng bata, at may pulbos na didikit sa tasa o kutsara kaya maaaring mabawasan ng 10–15% ang totoong dosis.",
+        "ja": "粉砕の欠点は、苦味が強くなって飲みにくくなることと、粉がコップやスプーンに付き、実際の服用量が10〜15%減ることがある点である。"
+      },
+      {
+        "zh-TW": "標有 ER / XR / SR / CD / EC 的藥錠：任何情況都不可磨碎。",
+        "en": "Tablets marked ER / XR / SR / CD / EC must never be crushed under any circumstance.",
+        "id": "Tablet bertanda ER / XR / SR / CD / EC tidak boleh dihancurkan dalam keadaan apa pun.",
+        "vi": "Viên có ký hiệu ER / XR / SR / CD / EC không được nghiền trong bất kỳ tình huống nào.",
+        "th": "ยาเม็ดที่มีเครื่องหมาย ER / XR / SR / CD / EC ห้ามบดไม่ว่ากรณีใด ๆ",
+        "tl": "Ang mga tableta na may markang ER / XR / SR / CD / EC ay hindi dapat durugin sa anumang pagkakataon.",
+        "ja": "ER / XR / SR / CD / EC と表示された錠剤は、いかなる場合も砕かない。"
+      }
+    ],
+    qrUrl: "https://www.ismp.org/recommendations/do-not-crush"
+  },
+
   // ── Placeholder: GI Klean Powder for colonoscopy bowel preparation ─────────────────────────────────────,
   {
       "id": "gi-klean-powder",
