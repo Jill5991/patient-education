@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="20" fill="#fbfbfd"/>
+  <rect x="14" y="14" width="228" height="228" rx="18" fill="none" stroke="#d9e3ef" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="128" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#042C53">1 drop only</text>
+  <g fill="none" stroke="#6f7f92" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="116" cy="134" rx="42" ry="24"/><circle cx="116" cy="134" r="9"/><path d="M170 72 L150 112"/><path d="M150 112 l14 -4 l-4 14 z"/><path d="M146 122 C146 112, 160 112, 160 122 C160 132, 146 132, 146 122z"/></g>
+</svg>

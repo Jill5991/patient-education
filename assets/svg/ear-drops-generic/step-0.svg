@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="20" fill="#fbfbfd"/>
+  <rect x="14" y="14" width="228" height="228" rx="18" fill="none" stroke="#d9e3ef" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="128" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#042C53">Wash hands</text>
+  <g fill="none" stroke="#6f7f92" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M70 170 C70 120, 110 110, 128 140 L138 160 M186 170 C186 120, 146 110, 128 140 L118 160"/><circle cx="98" cy="92" r="9"/><circle cx="128" cy="78" r="9"/><circle cx="158" cy="92" r="9"/><path d="M92 104 C102 120, 116 126, 128 126 C140 126, 154 120, 164 104"/></g>
+</svg>

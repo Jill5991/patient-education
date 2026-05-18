@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="20" fill="#fbfbfd"/>
+  <rect x="14" y="14" width="228" height="228" rx="18" fill="none" stroke="#d9e3ef" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="128" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#042C53">Wipe excess</text>
+  <g fill="none" stroke="#6f7f92" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="70" y="96" width="56" height="40" rx="8"/><path d="M150 86 h34 v68 h-34 z"/><path d="M156 86 v-12 h22 v12"/><path d="M88 106 l18 18 M106 106 l-18 18"/></g>
+</svg>

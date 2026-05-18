@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="20" fill="#fbfbfd"/>
+  <rect x="14" y="14" width="228" height="228" rx="18" fill="none" stroke="#d9e3ef" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="128" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#042C53">Roll eyes</text>
+  <g fill="none" stroke="#6f7f92" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="126" cy="126" r="42" fill="none"/><path d="M126 84 a42 42 0 0 1 34 18"/><path d="M160 102 l-2 14 l-12 -6"/><ellipse cx="126" cy="126" rx="34" ry="18"/><circle cx="126" cy="126" r="8"/></g>
+</svg>

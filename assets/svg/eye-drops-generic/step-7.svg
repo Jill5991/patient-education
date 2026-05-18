@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="20" fill="#fbfbfd"/>
+  <rect x="14" y="14" width="228" height="228" rx="18" fill="none" stroke="#d9e3ef" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="128" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#042C53">Cap and date</text>
+  <g fill="none" stroke="#6f7f92" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="76" y="86" width="46" height="84" rx="10"/><rect x="84" y="72" width="30" height="20" rx="6"/><path d="M152 86 h42 v70 h-42 z"/><path d="M160 104 h26 M160 122 h26 M160 140 h20"/></g>
+</svg>

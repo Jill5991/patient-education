@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="20" fill="#fbfbfd"/>
+  <rect x="14" y="14" width="228" height="228" rx="18" fill="none" stroke="#d9e3ef" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="128" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#042C53">0.5-1 cm ribbon</text>
+  <g fill="none" stroke="#6f7f92" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="110" cy="138" rx="42" ry="22"/><circle cx="110" cy="138" r="9"/><rect x="146" y="84" width="48" height="22" rx="7"/><path d="M146 95 l-16 30"/><path d="M126 126 q20 12 36 0"/></g>
+</svg>

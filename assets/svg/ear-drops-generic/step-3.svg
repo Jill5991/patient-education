@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="20" fill="#fbfbfd"/>
+  <rect x="14" y="14" width="228" height="228" rx="18" fill="none" stroke="#d9e3ef" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="128" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#042C53">Straighten canal</text>
+  <g fill="none" stroke="#6f7f92" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M96 82 q40 4 54 36 q8 20 -2 40 q-10 20 -40 24"/><path d="M188 70 l0 34 l-14 -10"/><path d="M188 182 l0 -34 l-14 10"/><text x="170" y="58" font-size="18">A</text><text x="170" y="198" font-size="18">C</text></g>
+</svg>
