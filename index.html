@@ -553,6 +553,12 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   overflow-wrap: anywhere;
   word-break: normal;
 }
+.sheet[data-med="saline-nasal-rinse-kit"][data-page="1"] .ref-ntg-usage,
+.sheet[data-med="saline-nasal-rinse-kit"][data-page="2"] .ref-ntg-usage {
+  font-size: 14px;
+  line-height: 1.45;
+  margin-top: 4px;
+}
 .ref-ntg-badges {
   width: 148px;
   display: flex;
@@ -866,7 +872,7 @@ const CATEGORY_META = {
   ntg:     { color: "#993C1D", label: { "zh-TW":"急救用藥", "en":"Emergency", "id":"Obat darurat", "vi":"Thuốc cấp cứu", "th":"ยาฉุกเฉิน", "tl":"Pang-emergency", "ja":"救急薬" } },
   topical: { color: "#3B6D11", label: { "zh-TW":"外用藥/貼片", "en":"Topical/Patch", "id":"Obat oles/Patch", "vi":"Thuốc bôi/Patch", "th":"ยาทา/แผ่นแปะ", "tl":"Topical/Patch", "ja":"外用薬/貼付薬" } },
   eye:     { color: "#185FA5", label: { "zh-TW":"眼耳用藥", "en":"Eye/Ear", "id":"Mata/Telinga", "vi":"Mắt/Tai", "th":"ตา/หู", "tl":"Eye/Ear", "ja":"眼・耳" } },
-  supp:    { color: "#534AB7", label: { "zh-TW":"栓劑/陰道", "en":"Supp/Vaginal", "id":"Supositoria/Vaginal", "vi":"Đặt âm đạo/hậu môn", "th":"ยาเหน็บ/ช่องคลอด", "tl":"Supp/Vaginal", "ja":"坐剤/膣用" } },
+  supp:    { color: "#534AB7", label: { "zh-TW":"栓劑/灌腸/陰道", "en":"Rectal/Vaginal", "id":"Rectal/Vaginal", "vi":"Rectal/Vaginal", "th":"Rectal/Vaginal", "tl":"Rectal/Vaginal", "ja":"直腸/膣" } },
   inject:  { color: "#854F0B", label: { "zh-TW":"注射劑", "en":"Injection", "id":"Injeksi", "vi":"Thuốc tiêm", "th":"ยาฉีด", "tl":"Injection", "ja":"注射剤" } },
   smoking: { color: "#27500A", label: { "zh-TW":"戒菸用藥", "en":"Smoking Cessation", "id":"Berhenti Merokok", "vi":"Cai thuốc", "th":"เลิกบุหรี่", "tl":"Smoking Cessation", "ja":"禁煙補助" } },
   powder:  { color: "#0F6E56", label: { "zh-TW":"粉劑/泡製", "en":"Powder/Reconstitution", "id":"Serbuk", "vi":"Thuốc bột", "th":"ยาผง", "tl":"Powder", "ja":"粉末/溶解" } },
@@ -1653,78 +1659,112 @@ const MEDICATIONS = [
       qrUrl: "https://www.youtube.com/watch?v=5GRkMAb8fGc"
   },
 
-  // ── Placeholder: Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL) ─────────────────────────────────────,
+  // ── Glycerin enema ─────────────────────────────────────,
   {
-      "id": "sodium-phosphate-enema",
-      color: {
-          main: "#534AB7",
-          light: "#EEEDFE",
-          dark: "#26215C",
-          badge: "#AFA9EC",
-          badgeText: "#26215C"
-      },
+      id: "glycerin-enema",
+      category: "supp",
+      color: { main: "#534AB7", light: "#EEEDFE", dark: "#26215C", badge: "#AFA9EC", badgeText: "#26215C" },
       emergency: false,
-      name: {
-          "zh-TW": "Fleet Enema（sodium biphosphate/sodium phosphate）",
-          "en": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
-          "id": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
-          "vi": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
-          "th": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
-          "tl": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)",
-          "ja": "Enema (sodium biphosphate 19g + sodium phosphate 7g/118mL)"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "栓劑/陰道用藥",
-          "en": "Suppository/Vaginal",
-          "id": "Supositoria/Vaginal",
-          "vi": "Đặt âm đạo/hậu môn",
-          "th": "ยาเหน็บ/ช่องคลอด",
-          "tl": "Suppository/Vaginal",
-          "ja": "坐剤/膣用薬"
+      name: tx("Glycerin Enema", "Glycerin Enema", "Glycerin Enema", "Glycerin Enema", "Glycerin Enema", "Glycerin Enema", "グリセリン浣腸"),
+      subtitle: tx("Clyster Jensheng｜Glycerin 20 mL｜單次使用", "Clyster Jensheng | Glycerin 20 mL | Single-use bulb", "Clyster Jensheng | Gliserin 20 mL | Bulb sekali pakai", "Clyster Jensheng | Glycerin 20 mL | Bóng thụt dùng một lần", "Clyster Jensheng | กลีเซอริน 20 มล. | ชนิดใช้ครั้งเดียว", "Clyster Jensheng | Glycerin 20 mL | Isahang gamit", "Clyster Jensheng｜グリセリン 20 mL｜1回使い切り"),
+      headerBadge: tx("通常 15–60 分鐘有便意", "Usually works within 15–60 minutes", "Biasanya bekerja dalam 15–60 menit", "Thường có tác dụng trong 15–60 phút", "มักออกฤทธิ์ภายใน 15–60 นาที", "Karaniwang umepekto sa loob ng 15–60 minuto", "通常15〜60分で便意が起こります"),
+      usage: tx("偶發便秘時依藥袋使用；通常單次 1 球", "For occasional constipation, use as directed. Usually use 1 bulb each time.", "Untuk konstipasi sesekali, gunakan sesuai petunjuk. Biasanya 1 bulb setiap kali.", "Dùng khi táo bón thỉnh thoảng theo hướng dẫn. Thường dùng 1 bóng mỗi lần.", "ใช้เมื่อท้องผูกเป็นครั้งคราวตามฉลาก โดยทั่วไปใช้ครั้งละ 1 หลอด", "Para sa paminsang pagtitibi, gamitin ayon sa label. Karaniwang isang bulb bawat gamit.", "便秘時に指示どおり使用し、通常は1回1球を使います"),
+      badge: tx("甘油灌腸劑", "Glycerin enema", "Enema gliserin", "Thuốc thụt glycerin", "ยาสวนกลีเซอริน", "Glycerin enema", "グリセリン浣腸"),
+      preStepsInfo: {
+          title: tx("使用重點", "Key Points", "Poin penting", "Điểm cần nhớ", "จุดสำคัญ", "Mahalagang paalala", "使い方の要点"),
+          text: tx("這是緩解偶發便秘的甘油灌腸。\n通常 15–60 分鐘內會有便意。\n單次使用，用後整球丟棄，不要把剩餘藥液留到下次。", "This glycerin enema is for occasional constipation.\nYou will usually feel the urge to pass stool within 15 to 60 minutes.\nIt is single-use. Throw away the whole bulb after use and do not keep any leftover liquid.", "Ini adalah enema gliserin untuk konstipasi sesekali.\nBiasanya Anda akan merasa ingin buang air besar dalam 15–60 menit.\nProduk ini sekali pakai. Buang seluruh bulb setelah digunakan dan jangan simpan sisa cairannya.", "Đây là thuốc thụt glycerin dùng khi táo bón thỉnh thoảng.\nThường sẽ có cảm giác muốn đi ngoài trong 15–60 phút.\nMỗi bóng chỉ dùng một lần. Dùng xong bỏ cả bóng, không giữ lại phần thuốc còn dư.", "ยาสวนกลีเซอรินนี้ใช้บรรเทาอาการท้องผูกเป็นครั้งคราว\nโดยทั่วไปจะรู้สึกอยากถ่ายภายใน 15–60 นาที\nใช้ได้เพียงครั้งเดียว ใช้แล้วทิ้งทั้งหลอดและห้ามเก็บยาที่เหลือไว้", "Ang glycerin enema na ito ay para sa paminsang pagtitibi.\nKaraniwang makakaramdam ng pagdumi sa loob ng 15–60 minuto.\nIsahang gamit lamang ito. Itapon ang buong bulb pagkatapos gamitin at huwag itabi ang natirang likido.", "これは一時的な便秘を和らげるグリセリン浣腸です。\n通常15〜60分で便意が起こります。\n1回使い切りです。使用後は全体を捨て、残りを次回に回さないでください。")
       },
       steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
+          { action: tx("側躺，下腿伸直，上腿彎曲", "Lie on your side. Keep the lower leg straight and bend the upper leg.", "Berbaring menyamping. Luruskan kaki bawah dan tekuk kaki atas.", "Nằm nghiêng, duỗi chân dưới và co chân trên.", "นอนตะแคง เหยียดขาด้านล่างตรงและงอขาด้านบน", "Humiga nang patagilid. Ituwid ang ibabang binti at ibaluktot ang itaas na binti.", "横向きになり、下の脚を伸ばして上の脚を曲げます"), note: tx("左側或右側都可以。", "Either side is fine.", "Boleh miring ke kiri atau ke kanan.", "Nghiêng bên nào cũng được.", "นอนตะแคงด้านใดก็ได้", "Puwedeng humiga sa kaliwa o kanan.", "左右どちら向きでもかまいません。"), illustration: "assets/svg/enema-shared/step-0.svg" },
+          { action: tx("在前端塗少量凡士林或植物油", "Put a small amount of petroleum jelly or vegetable oil on the tip.", "Oleskan sedikit petroleum jelly atau minyak sayur pada ujungnya.", "Bôi một ít vaseline hoặc dầu thực vật lên đầu ống.", "ทาปิโตรเลียมเจลลีหรือน้ำมันพืชเล็กน้อยที่ปลายหลอด", "Maglagay ng kaunting petroleum jelly o mantika sa dulo.", "先端に少量のワセリンまたは植物油を塗ります"), illustration: "assets/svg/enema-shared/step-1.svg" },
+          { action: tx("輕輕撐開肛門口", "Gently open the anus.", "Buka lubang anus dengan lembut.", "Nhẹ nhàng mở vùng hậu môn.", "ค่อย ๆ แยกบริเวณทวารหนักเบา ๆ", "Dahan-dahang ibuka ang puwit.", "肛門をやさしく開きます"), illustration: "assets/svg/enema-shared/step-2.svg" },
+          { action: tx("將前端緩慢插入肛門內", "Slowly insert the tip into the anus.", "Masukkan ujungnya ke anus secara perlahan.", "Từ từ đưa đầu ống vào hậu môn.", "ค่อย ๆ สอดปลายหลอดเข้าทางทวารหนัก", "Dahan-dahang ipasok ang dulo sa puwit.", "先端をゆっくり肛門に入れます"), note: tx("遇到阻力請立即停止，不要強行插入。", "Stop right away if you feel resistance. Do not force it in.", "Segera berhenti bila terasa ada tahanan. Jangan dipaksa masuk.", "Nếu thấy vướng hoặc cản, hãy dừng ngay. Không cố nhét vào.", "หากรู้สึกติดหรือมีแรงต้าน ให้หยุดทันทีและอย่าฝืนใส่", "Tumigil agad kung may maramdamang pagtutol. Huwag ipilit.", "抵抗を感じたらすぐ止め、無理に入れないでください。"), illustration: "assets/svg/enema-shared/step-2.svg" },
+          { action: tx("均勻擠入球內藥液", "Squeeze the liquid in slowly and evenly.", "Masukkan cairannya dengan menekan bulb perlahan dan merata.", "Bóp bóng từ từ và đều để thuốc vào trong.", "ค่อย ๆ บีบยาช้า ๆ และสม่ำเสมอ", "Dahan-dahang pisilin ang bulb para pumasok ang likido nang pantay.", "薬液をゆっくり均一に絞り入れます"), illustration: "assets/svg/enema-shared/step-3.svg" },
+          { action: tx("保持擠壓，慢慢拔出後丟棄", "Keep squeezing while you slowly remove the tip, then throw it away.", "Tetap tekan bulb saat menarik ujungnya keluar perlahan, lalu buang.", "Tiếp tục bóp bóng khi từ từ rút ra, rồi bỏ đi.", "บีบค้างไว้ขณะค่อย ๆ ดึงปลายหลอดออก แล้วทิ้ง", "Patuloy na pisilin habang dahan-dahang hinuhugot ang dulo, saka itapon.", "押したままゆっくり抜き、そのまま捨てます"), note: tx("拔出前持續擠壓，可減少藥液回流。", "Keeping it squeezed while removing it helps keep the liquid from flowing back out.", "Tetap menekan saat menariknya keluar membantu mengurangi cairan mengalir balik.", "Tiếp tục bóp bóng khi rút ra sẽ giúp giảm chảy ngược thuốc ra ngoài.", "การบีบค้างไว้ขณะดึงออกจะช่วยลดการไหลย้อนของยา", "Ang pagpigil sa pagpisil habang hinihugot ito ay nakatutulong para hindi bumalik ang likido palabas.", "押したまま抜くと、薬液の逆流を減らせます。"), illustration: "assets/svg/enema-shared/step-4.svg" },
+          { action: tx("先側躺 2–5 分鐘，再等便意", "Stay on your side for 2 to 5 minutes, then wait until you feel a strong urge to pass stool.", "Tetap berbaring menyamping selama 2–5 menit, lalu tunggu sampai dorongan buang air besar terasa kuat.", "Tiếp tục nằm nghiêng 2–5 phút, rồi chờ đến khi thật sự buồn đi ngoài.", "นอนตะแคงต่ออีก 2–5 นาที แล้วรอจนรู้สึกอยากถ่ายชัดเจน", "Manatiling nakatagilid nang 2–5 minuto, saka hintayin ang malinaw na pagdumi.", "2〜5分横向きのままで待ち、強い便意が来るのを待ちます"), note: tx("通常 15–60 分鐘會有便意；1 小時仍無效時請停用並就醫。", "You will usually feel the urge within 15 to 60 minutes. Stop using it and get medical advice if nothing happens after 1 hour.", "Biasanya dorongan buang air besar muncul dalam 15–60 menit. Hentikan penggunaan dan cari bantuan medis bila tetap tidak ada efek setelah 1 jam.", "Thường sẽ muốn đi ngoài trong 15–60 phút. Nếu sau 1 giờ vẫn không có tác dụng, hãy ngừng dùng và đi khám.", "โดยทั่วไปจะรู้สึกอยากถ่ายภายใน 15–60 นาที หากครบ 1 ชั่วโมงแล้วยังไม่ออกฤทธิ์ ให้หยุดใช้และไปพบแพทย์", "Karaniwang mararamdaman ang pagdumi sa loob ng 15–60 minuto. Itigil ang paggamit at magpatingin kung wala pa ring epekto pagkalipas ng 1 oras.", "通常15〜60分で便意が起こります。1時間たっても出ない場合は中止して受診してください。"), illustration: "assets/svg/enema-shared/step-5.svg" }
       ],
+      storage: {
+          title: tx("藥品保存", "Storage", "Penyimpanan", "Bảo quản", "การเก็บยา", "Imbakan", "保管方法"),
+          text: tx("陰涼乾燥處保存，避免陽光直射。請放在兒童拿不到的地方。", "Store it in a cool, dry place away from direct sunlight. Keep it out of children's reach.", "Simpan di tempat sejuk dan kering, jauh dari sinar matahari langsung. Jauhkan dari jangkauan anak-anak.", "Bảo quản nơi khô ráo, mát, tránh ánh nắng trực tiếp. Để xa tầm tay trẻ em.", "เก็บในที่แห้งและเย็น หลีกเลี่ยงแสงแดดโดยตรง และเก็บให้พ้นมือเด็ก", "Itago sa malamig at tuyong lugar na hindi direktang naarawan. Ilayo sa maaabot ng mga bata.", "直射日光を避け、涼しく乾燥した場所に保管する。子どもの手の届かない所に置く。")
+      },
       warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
+          tx("若有腹痛、噁心、嘔吐或腸道出血，請勿使用。", "Do not use it if you have abdominal pain, nausea, vomiting, or intestinal bleeding.", "Jangan gunakan bila Anda mengalami sakit perut, mual, muntah, atau perdarahan usus.", "Không dùng nếu bị đau bụng, buồn nôn, nôn hoặc chảy máu đường ruột.", "ห้ามใช้หากมีอาการปวดท้อง คลื่นไส้ อาเจียน หรือมีเลือดออกจากลำไส้", "Huwag gamitin kung may pananakit ng tiyan, pagduduwal, pagsusuka, o pagdurugo sa bituka.", "腹痛、吐き気、嘔吐、腸からの出血がある場合は使わないでください。"),
+          tx("1 天不要超過 1 次；連用超過 1 週仍無效，請就醫。", "Do not use it more than once a day. Get medical advice if it still does not work after 1 week.", "Jangan gunakan lebih dari 1 kali sehari. Periksakan diri bila tetap tidak membaik setelah 1 minggu.", "Không dùng quá 1 lần mỗi ngày. Nếu sau 1 tuần vẫn không cải thiện, hãy đi khám.", "ห้ามใช้เกินวันละ 1 ครั้ง หากใช้ครบ 1 สัปดาห์แล้วยังไม่ดีขึ้น ให้ไปพบแพทย์", "Huwag gamitin nang mahigit isang beses sa isang araw. Magpatingin kung hindi pa rin umepekto matapos ang 1 linggo.", "1日に1回を超えて使わないでください。1週間使っても改善しない場合は受診してください。"),
+          tx("若直腸灼熱、持續疼痛或出血，請停用並就醫。", "Stop using it and get medical help if you have rectal burning, ongoing pain, or bleeding.", "Hentikan penggunaan dan cari bantuan medis bila ada rasa terbakar di anus, nyeri yang menetap, atau perdarahan.", "Ngừng dùng và đi khám nếu có cảm giác rát ở trực tràng, đau kéo dài hoặc chảy máu.", "หยุดใช้และไปพบแพทย์หากมีอาการแสบร้อนที่ทวารหนัก ปวดต่อเนื่อง หรือมีเลือดออก", "Itigil ang paggamit at magpatingin kung may hapdi sa puwit, tuloy-tuloy na pananakit, o pagdurugo.", "直腸の灼熱感、続く痛み、出血があれば使用を中止して受診してください。")
       ],
-      qrUrl: "https://pharmacy.example.com/meds/sodium-phosphate-enema"
+      qrUrl: "https://pharmacy.example.com/meds/glycerin-enema"
+  },
+
+  // ── EVAC Enema ─────────────────────────────────────,
+  {
+      id: "evac-enema",
+      category: "supp",
+      color: { main: "#534AB7", light: "#EEEDFE", dark: "#26215C", badge: "#AFA9EC", badgeText: "#26215C" },
+      emergency: false,
+      name: tx("EVAC Enema", "EVAC Enema", "EVAC Enema", "EVAC Enema", "EVAC Enema", "EVAC Enema", "EVAC浣腸"),
+      subtitle: tx("Disodium phosphate + Monosodium phosphate｜118 mL｜單次使用", "Disodium phosphate + Monosodium phosphate | 118 mL | Single-use bottle", "Disodium phosphate + Monosodium phosphate | 118 mL | Botol sekali pakai", "Disodium phosphate + Monosodium phosphate | 118 mL | Chai dùng một lần", "Disodium phosphate + Monosodium phosphate | 118 มล. | ใช้ครั้งเดียว", "Disodium phosphate + Monosodium phosphate | 118 mL | Isahang bote", "リン酸二ナトリウム＋リン酸一ナトリウム｜118 mL｜1回使い切り"),
+      headerBadge: tx("通常 1–5 分鐘有便意", "Usually works within 1–5 minutes", "Biasanya bekerja dalam 1–5 menit", "Thường có tác dụng trong 1–5 phút", "มักออกฤทธิ์ภายใน 1–5 นาที", "Karaniwang umepekto sa loob ng 1–5 minuto", "通常1〜5分で便意が起こります"),
+      usage: tx("成人與 12 歲以上通常 1 瓶；2–11 歲應使用兒童規格", "Adults and children age 12 and older usually use 1 bottle. Children age 2 to 11 need the child-size product.", "Orang dewasa dan anak usia 12 tahun ke atas biasanya memakai 1 botol. Anak usia 2–11 tahun harus memakai produk ukuran anak.", "Người lớn và trẻ từ 12 tuổi trở lên thường dùng 1 chai. Trẻ 2–11 tuổi phải dùng loại dành cho trẻ em.", "ผู้ใหญ่และเด็กอายุ 12 ปีขึ้นไปโดยทั่วไปใช้ 1 ขวด เด็กอายุ 2–11 ปีต้องใช้ขนาดสำหรับเด็ก", "Ang matatanda at mga batang 12 taong gulang pataas ay karaniwang gumagamit ng 1 bote. Ang mga batang edad 2–11 ay dapat gumamit ng pambatang produkto.", "成人と12歳以上は通常1本使います。2〜11歳は小児用製品を使ってください。"),
+      badge: tx("磷酸鹽灌腸劑", "Phosphate enema", "Enema fosfat", "Thuốc thụt phosphate", "ยาสวนฟอสเฟต", "Phosphate enema", "リン酸塩浣腸"),
+      preStepsInfo: {
+          title: tx("使用重點", "Key Points", "Poin penting", "Điểm cần nhớ", "จุดสำคัญ", "Mahalagang paalala", "使い方の要点"),
+          text: tx("這是磷酸鹽灌腸劑，用於偶發便秘或檢查前清腸。\n通常 1–5 分鐘會有便意。\n24 小時內不要超過 1 瓶。", "This phosphate enema is for occasional constipation or bowel emptying before an exam.\nYou will usually feel the urge to pass stool within 1 to 5 minutes.\nDo not use more than 1 bottle in 24 hours.", "Ini adalah enema fosfat untuk konstipasi sesekali atau pengosongan usus sebelum pemeriksaan.\nBiasanya Anda akan merasa ingin buang air besar dalam 1–5 menit.\nJangan gunakan lebih dari 1 botol dalam 24 jam.", "Đây là thuốc thụt phosphate dùng khi táo bón thỉnh thoảng hoặc để làm sạch ruột trước khi khám.\nThường sẽ có cảm giác muốn đi ngoài trong 1–5 phút.\nKhông dùng quá 1 chai trong 24 giờ.", "ยาสวนฟอสเฟตนี้ใช้เมื่อท้องผูกเป็นครั้งคราว หรือใช้เพื่อระบายลำไส้ก่อนการตรวจ\nโดยทั่วไปจะรู้สึกอยากถ่ายภายใน 1–5 นาที\nห้ามใช้เกิน 1 ขวดภายใน 24 ชั่วโมง", "Ang phosphate enema na ito ay para sa paminsang pagtitibi o paglabas ng dumi bago ang pagsusuri.\nKaraniwang makakaramdam ng pagdumi sa loob ng 1–5 minuto.\nHuwag gumamit nang mahigit 1 bote sa loob ng 24 oras.", "これは一時的な便秘や検査前の排便準備に使うリン酸塩浣腸です。\n通常1〜5分で便意が起こります。\n24時間以内に1本を超えて使わないでください。")
+      },
+      steps: [
+          { action: tx("將瓶蓋旋開並取下導管保護蓋", "Unscrew the cap and remove the cover from the tip.", "Putar tutup botol lalu lepaskan penutup pada ujungnya.", "Vặn mở nắp và tháo nắp bảo vệ ở đầu ống.", "หมุนเปิดฝาและถอดฝาครอบที่ปลายหลอดออก", "I-ikot ang takip at alisin ang takip sa dulo.", "ふたを回して外し、先端のカバーを取ります"), illustration: "assets/svg/enema-shared/step-1.svg" },
+          { action: tx("在導管前端塗少量凡士林", "Put a small amount of petroleum jelly on the tip.", "Oleskan sedikit petroleum jelly pada ujungnya.", "Bôi một ít vaseline lên đầu ống.", "ทาปิโตรเลียมเจลลีเล็กน้อยที่ปลายหลอด", "Maglagay ng kaunting petroleum jelly sa dulo.", "導管の先に少量のワセリンを塗ります"), illustration: "assets/svg/enema-shared/step-1.svg" },
+          { action: tx("側躺，將導管緩慢塞入肛門", "Lie on your side and slowly insert the tube into the anus.", "Berbaring menyamping lalu masukkan ujungnya ke anus secara perlahan.", "Nằm nghiêng rồi từ từ đưa ống vào hậu môn.", "นอนตะแคงแล้วค่อย ๆ สอดปลายหลอดเข้าทางทวารหนัก", "Humiga nang patagilid at dahan-dahang ipasok ang dulo sa puwit.", "横向きになり、導管をゆっくり肛門に入れます"), note: tx("推進到瓶口靠近肛門口即可；遇到阻力請停止。", "Insert it until the bottle neck is near the anus. Stop if you feel resistance.", "Masukkan sampai leher botol mendekati anus. Berhenti bila terasa ada tahanan.", "Đưa vào đến khi phần cổ chai gần sát hậu môn. Nếu thấy cản, hãy dừng lại.", "สอดจนคอขวดอยู่ใกล้ปากทวารหนัก หากรู้สึกมีแรงต้านให้หยุด", "Ipaloob hanggang ang leeg ng bote ay malapit sa puwit. Tumigil kung may maramdamang pagtutol.", "ボトルの付け根が肛門口に近づくまで入れ、抵抗があれば止めてください。"), illustration: "assets/svg/enema-shared/step-2.svg" },
+          { action: tx("從瓶底持續擠壓，將藥液灌入", "Squeeze steadily from the bottom of the bottle to put the liquid in.", "Tekan bagian bawah botol secara mantap untuk memasukkan cairannya.", "Bóp đều từ đáy chai để đưa thuốc vào.", "บีบจากก้นขวดอย่างสม่ำเสมอเพื่อให้น้ำยาไหลเข้าไป", "Pisilín nang tuluy-tuloy mula sa ilalim ng bote para pumasok ang likido.", "ボトルの底から押し続けて薬液を入れます"), illustration: "assets/svg/enema-shared/step-3.svg" },
+          { action: tx("保持擠壓，慢慢拔出後丟棄", "Keep squeezing while you slowly remove the tip, then throw the bottle away.", "Tetap tekan sambil menarik ujungnya keluar perlahan, lalu buang botolnya.", "Tiếp tục bóp khi từ từ rút ra, rồi bỏ chai đi.", "บีบค้างไว้ขณะค่อย ๆ ดึงปลายหลอดออก แล้วทิ้งขวด", "Patuloy na pisilin habang dahan-dahang hinihugot ang dulo, saka itapon ang bote.", "押したままゆっくり抜き、そのまま捨てます"), note: tx("保持擠壓可減少藥液回流。", "Keeping it squeezed while removing it helps keep the liquid from flowing back out.", "Tetap menekan saat menariknya keluar membantu mengurangi cairan mengalir balik.", "Tiếp tục bóp khi rút ra sẽ giúp giảm chảy ngược thuốc ra ngoài.", "การบีบค้างไว้ขณะดึงออกจะช่วยลดการไหลย้อนของยา", "Ang pagpigil sa pagpisil habang hinihugot ito ay nakatutulong para hindi bumalik ang likido palabas.", "押したまま抜くと、薬液の逆流を減らせます。"), illustration: "assets/svg/enema-shared/step-4.svg" },
+          { action: tx("有強烈便意時再起身如廁", "Wait until the urge is strong before getting up to use the toilet.", "Tunggu sampai dorongan buang air besar terasa kuat, baru bangun ke toilet.", "Chờ đến khi thật sự muốn đi ngoài rồi mới đứng dậy đi vệ sinh.", "รอจนรู้สึกอยากถ่ายชัดเจนก่อนค่อยลุกไปเข้าห้องน้ำ", "Hintayin munang lumakas ang pagnanais dumumi bago tumayo para magbanyo.", "強い便意が来てから起き上がってトイレへ行きます"), note: tx("通常 1–5 分鐘就會有便意；起身時請小心防跌。", "You will usually feel the urge within 1 to 5 minutes. Stand up slowly so you do not fall.", "Biasanya dorongan buang air besar muncul dalam 1–5 menit. Bangun perlahan agar tidak terjatuh.", "Thường sẽ muốn đi ngoài trong 1–5 phút. Hãy đứng dậy từ từ để tránh té ngã.", "โดยทั่วไปจะรู้สึกอยากถ่ายภายใน 1–5 นาที ค่อย ๆ ลุกขึ้นเพื่อป้องกันการหกล้ม", "Karaniwang mararamdaman ang pagdumi sa loob ng 1–5 minuto. Dahan-dahang tumayo para hindi matumba.", "通常1〜5分で便意が起こります。転倒しないよう、ゆっくり起き上がってください。"), illustration: "assets/svg/enema-shared/step-5.svg" }
+      ],
+      storage: {
+          title: tx("藥品保存", "Storage", "Penyimpanan", "Bảo quản", "การเก็บยา", "Imbakan", "保管方法"),
+          text: tx("室溫 15–25°C 乾燥處保存。單次使用，用後丟棄。", "Store it in a dry place at 15°C to 25°C. It is single-use and should be discarded after use.", "Simpan di tempat kering pada suhu 15–25°C. Produk ini sekali pakai dan harus dibuang setelah digunakan.", "Bảo quản nơi khô ráo ở 15–25°C. Mỗi chai chỉ dùng một lần và phải bỏ đi sau khi dùng.", "เก็บในที่แห้งที่อุณหภูมิ 15–25°C ใช้ได้เพียงครั้งเดียวและต้องทิ้งหลังใช้", "Itago sa tuyong lugar na may temperaturang 15–25°C. Isahang gamit ito at dapat itapon pagkatapos gamitin.", "15〜25°Cの乾燥した場所で保管する。1回使い切りで、使用後は捨てる。")
+      },
+      warnings: [
+          tx("24 小時內不要超過 1 瓶；連用超過 1 週請就醫。", "Do not use more than 1 bottle in 24 hours. Get medical advice if you still need it after 1 week.", "Jangan gunakan lebih dari 1 botol dalam 24 jam. Bila masih perlu setelah 1 minggu, periksakan diri.", "Không dùng quá 1 chai trong 24 giờ. Nếu sau 1 tuần vẫn còn cần dùng, hãy đi khám.", "ห้ามใช้เกิน 1 ขวดภายใน 24 ชั่วโมง หากยังต้องใช้ต่อหลัง 1 สัปดาห์ ให้ไปพบแพทย์", "Huwag gumamit nang mahigit 1 bote sa loob ng 24 oras. Kung kailangan pa rin matapos ang 1 linggo, magpatingin.", "24時間以内に1本を超えて使わないでください。1週間後も必要なら受診してください。"),
+          tx("腎臟病、心臟病、脫水、55 歲以上或使用利尿劑時，先問醫師或藥師。", "Ask your doctor or pharmacist first if you have kidney disease, heart disease, dehydration, are over age 55, or use diuretics.", "Tanyakan dulu kepada dokter atau apoteker bila Anda punya penyakit ginjal, penyakit jantung, dehidrasi, berusia di atas 55 tahun, atau memakai diuretik.", "Hãy hỏi bác sĩ hoặc dược sĩ trước nếu bạn bị bệnh thận, bệnh tim, mất nước, trên 55 tuổi hoặc đang dùng thuốc lợi tiểu.", "ควรถามแพทย์หรือเภสัชกรก่อน หากเป็นโรคไต โรคหัวใจ ขาดน้ำ อายุเกิน 55 ปี หรือใช้ยาขับปัสสาวะ", "Magtanong muna sa doktor o parmasyutiko kung may sakit sa bato, sakit sa puso, dehydration, lampas 55 taong gulang, o umiinom ng diuretic.", "腎臓病、心臓病、脱水、55歳以上、利尿薬使用中なら先に医師か薬剤師に相談してください。"),
+          tx("腹痛、噁心、嘔吐、直腸出血或 2 歲以下時，請勿使用。", "Do not use it if you have abdominal pain, nausea, vomiting, rectal bleeding, or if the child is under 2 years old.", "Jangan gunakan bila ada sakit perut, mual, muntah, perdarahan dari anus, atau pada anak di bawah 2 tahun.", "Không dùng nếu bị đau bụng, buồn nôn, nôn, chảy máu trực tràng, hoặc cho trẻ dưới 2 tuổi.", "ห้ามใช้หากมีอาการปวดท้อง คลื่นไส้ อาเจียน มีเลือดออกทางทวารหนัก หรือใช้กับเด็กอายุต่ำกว่า 2 ปี", "Huwag gamitin kung may pananakit ng tiyan, pagduduwal, pagsusuka, pagdurugo sa puwit, o kung ang bata ay mas bata sa 2 taong gulang.", "腹痛、吐き気、嘔吐、直腸出血がある場合や、2歳未満には使わないでください。")
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/evac-enema"
+  },
+
+  // ── Colasa enema ─────────────────────────────────────,
+  {
+      id: "colasa-enema",
+      category: "supp",
+      color: { main: "#534AB7", light: "#EEEDFE", dark: "#26215C", badge: "#AFA9EC", badgeText: "#26215C" },
+      emergency: false,
+      name: tx("Colasa Enema", "Colasa Enema", "Colasa Enema", "Colasa Enema", "Colasa Enema", "Colasa Enema", "Colasa浣腸"),
+      subtitle: tx("Mesalazine 2 g/100 mL｜每瓶單次使用", "Mesalazine 2 g/100 mL | Single-use bottle", "Mesalazine 2 g/100 mL | Botol sekali pakai", "Mesalazine 2 g/100 mL | Chai dùng một lần", "Mesalazine 2 g/100 mL | ใช้ครั้งเดียว", "Mesalazine 2 g/100 mL | Isahang bote", "メサラジン 2 g/100 mL｜1回使い切り"),
+      headerBadge: tx("睡前使用，盡量留到隔天早上", "Use at bedtime and try to keep it in overnight", "Gunakan sebelum tidur dan usahakan ditahan sampai pagi", "Dùng trước khi ngủ và cố gắng giữ lại đến sáng hôm sau", "ใช้ก่อนนอนและพยายามกลั้นยาไว้จนถึงเช้า", "Gamitin bago matulog at subukang panatilihin ito hanggang umaga", "就寝前に使用し、できるだけ朝まで保ってください"),
+      usage: tx("通常睡前 1 瓶，按醫囑療程使用", "Usually use 1 bottle at bedtime and follow the full course your doctor prescribed.", "Biasanya gunakan 1 botol sebelum tidur dan ikuti lama pengobatan yang dokter resepkan.", "Thường dùng 1 chai trước khi ngủ và dùng đủ đợt điều trị bác sĩ đã kê.", "โดยทั่วไปใช้ 1 ขวดก่อนนอน และใช้ให้ครบตามระยะเวลาที่แพทย์สั่ง", "Karaniwang 1 bote bago matulog at sundin ang buong gamutang ibinigay ng doktor.", "通常は就寝前に1本使い、医師に指示された期間きちんと続けます。"),
+      badge: tx("Mesalazine 抗炎灌腸劑", "Mesalazine enema", "Enema mesalazine", "Thuốc thụt mesalazine", "ยาสวนเมซาลาซีน", "Mesalazine enema", "メサラジン浣腸"),
+      preStepsInfo: {
+          title: tx("使用重點", "Key Points", "Poin penting", "Điểm cần nhớ", "จุดสำคัญ", "Mahalagang paalala", "使い方の要点"),
+          text: tx("這是治療發炎的灌腸藥。\n最好先排便，再在睡前使用。\n藥液盡量留在腸內過夜，效果通常較好。", "This enema medicine helps treat inflammation.\nIf you can, empty your bowels first and then use it at bedtime.\nIt usually works better if you can keep the liquid in overnight.", "Obat enema ini membantu mengobati peradangan.\nBila memungkinkan, buang air besar dulu lalu gunakan sebelum tidur.\nBiasanya hasilnya lebih baik bila cairannya dapat ditahan semalaman.", "Thuốc thụt này giúp điều trị viêm.\nNếu có thể, hãy đi ngoài trước rồi dùng vào giờ đi ngủ.\nThuốc thường có tác dụng tốt hơn nếu giữ lại được trong ruột qua đêm.", "ยาสวนนี้ช่วยรักษาการอักเสบ\nถ้าเป็นไปได้ ให้ถ่ายอุจจาระก่อน แล้วค่อยใช้ก่อนนอน\nโดยทั่วไปยาจะได้ผลดีกว่าหากพยายามกลั้นยาไว้ข้ามคืน", "Ang enema na ito ay tumutulong gamutin ang pamamaga.\nKung maaari, dumumi muna bago ito gamitin bago matulog.\nKaraniwang mas mabisa ito kung mapananatili ang likido sa loob magdamag.", "これは炎症を抑える浣腸薬です。\nできれば先に排便し、その後就寝前に使ってください。\n薬液をできるだけ朝まで腸内に保つ方が、通常はよく効きます。")
+      },
+      steps: [
+          { action: tx("先排便，再將藥瓶放溫", "Empty your bowels first, then warm the bottle.", "Buang air besar dulu, lalu hangatkan botolnya.", "Đi ngoài trước, rồi làm ấm chai thuốc.", "ถ่ายอุจจาระก่อน แล้วค่อยอุ่นขวดยา", "Dumumi muna, saka painitin nang bahagya ang bote.", "先に排便し、その後ボトルを温めます"), note: tx("若醫囑這樣教，可用溫水浸泡約 10 分鐘，讓藥液接近體溫。", "If this is how you were taught, warm it in lukewarm water for about 10 minutes so the liquid is closer to body temperature.", "Bila memang diarahkan demikian, rendam dalam air hangat suam-suam kuku sekitar 10 menit agar cairannya mendekati suhu tubuh.", "Nếu được hướng dẫn như vậy, có thể ngâm chai trong nước ấm khoảng 10 phút để thuốc gần với nhiệt độ cơ thể.", "หากได้รับคำแนะนำเช่นนี้ สามารถแช่ในน้ำอุ่นประมาณ 10 นาที เพื่อให้น้ำยาใกล้เคียงอุณหภูมิร่างกาย", "Kung ito ang itinuro sa iyo, ibabad sa maligamgam na tubig nang mga 10 minuto para mas malapit sa temperatura ng katawan ang likido.", "このように指導されている場合は、ぬるま湯に約10分つけて体温に近づけます。"), illustration: "assets/svg/enema-shared/step-6.svg" },
+          { action: tx("振搖藥瓶至藥液均勻", "Shake the bottle until the liquid looks evenly mixed.", "Kocok botol sampai cairannya tampak tercampur rata.", "Lắc chai cho đến khi thuốc trông đều trở lại.", "เขย่าขวดจนยาดูผสมสม่ำเสมอ", "Alugin ang bote hanggang magpantay ang hitsura ng likido.", "薬液が均一になるまでボトルを振ります"), note: tx("少量結塊若能搖散可繼續用；若整瓶變深褐色就不要用。", "If small clumps disperse with shaking, you may still use it. Do not use it if the whole bottle has turned dark brown.", "Bila gumpalan kecil hilang saat dikocok, obat masih dapat digunakan. Jangan gunakan bila seluruh cairan berubah cokelat tua.", "Nếu các cục nhỏ tan ra khi lắc thì vẫn có thể dùng. Nếu cả chai chuyển sang nâu sẫm thì không dùng nữa.", "หากก้อนเล็ก ๆ กระจายตัวเมื่อเขย่า ยังสามารถใช้ได้ แต่ถ้าทั้งขวดเปลี่ยนเป็นสีน้ำตาลเข้ม ห้ามใช้", "Kung nawawala ang maliliit na buo-buo kapag inalog, maaari pa ring gamitin. Huwag gamitin kung ang buong bote ay naging matingkad na kayumanggi.", "少量のかたまりが振って散るなら使用できます。全体が濃い褐色なら使わないでください。"), illustration: "assets/svg/enema-shared/step-6.svg" },
+          { action: tx("裝上插管，前端塗少量凡士林", "Attach the applicator and put a small amount of petroleum jelly on the tip.", "Pasang aplikator lalu oleskan sedikit petroleum jelly pada ujungnya.", "Gắn đầu bơm rồi bôi một ít vaseline lên đầu ống.", "ต่อหัวสอดแล้วทาปิโตรเลียมเจลลีเล็กน้อยที่ปลาย", "Ikabit ang applicator at lagyan ng kaunting petroleum jelly ang dulo.", "アプリケーターを付け、先端に少量のワセリンを塗ります"), illustration: "assets/svg/enema-shared/step-1.svg" },
+          { action: tx("側躺，上腿彎曲，下腿伸直", "Lie on your side with the upper leg bent and the lower leg straight.", "Berbaring menyamping, tekuk kaki atas dan luruskan kaki bawah.", "Nằm nghiêng, co chân trên và duỗi chân dưới.", "นอนตะแคง งอขาด้านบนและเหยียดขาด้านล่างตรง", "Humiga nang patagilid, ibaluktot ang itaas na binti at ituwid ang ibaba.", "横向きになり、上の脚を曲げ下の脚を伸ばします"), note: tx("最好睡前使用。", "It is usually best to use it at bedtime.", "Biasanya paling baik digunakan sebelum tidur.", "Thường nên dùng vào giờ đi ngủ.", "โดยทั่วไปควรใช้ก่อนนอน", "Karaniwang pinakamainam gamitin ito bago matulog.", "就寝前の使用が勧められます。"), illustration: "assets/svg/enema-shared/step-0.svg" },
+          { action: tx("將插管緩慢塞入肛門，推進至瓶口", "Slowly insert the applicator until the bottle neck reaches the opening.", "Masukkan aplikator perlahan sampai leher botol dekat dengan anus.", "Từ từ đưa đầu bơm vào cho đến khi phần cổ chai gần sát hậu môn.", "ค่อย ๆ สอดหัวสอดจนคอขวดอยู่ใกล้ปากทวารหนัก", "Dahan-dahang ipasok ang applicator hanggang malapit na sa puwit ang leeg ng bote.", "ボトルの付け根までアプリケーターをゆっくり入れます"), note: tx("遇到阻力請停止，不要強行插入。", "Stop if you feel resistance. Do not force it in.", "Berhenti bila terasa ada tahanan. Jangan dipaksa masuk.", "Nếu thấy cản, hãy dừng lại. Không cố nhét vào.", "หากรู้สึกมีแรงต้าน ให้หยุดและอย่าฝืนใส่", "Tumigil kung may maramdamang pagtutol. Huwag ipilit.", "抵抗を感じたら止め、無理に入れないでください。"), illustration: "assets/svg/enema-shared/step-2.svg" },
+          { action: tx("至少 1 分鐘慢慢擠入全部藥液", "Take at least 1 minute to slowly squeeze in all the liquid.", "Luangkan setidaknya 1 menit untuk memasukkan seluruh cairan secara perlahan.", "Dành ít nhất 1 phút để bóp từ từ hết thuốc vào trong.", "ใช้เวลาอย่างน้อย 1 นาทีในการค่อย ๆ บีบยาเข้าไปทั้งหมด", "Maglaan ng hindi bababa sa 1 minuto para dahan-dahang maipasok ang buong likido.", "少なくとも1分かけて、薬液をゆっくり全部入れます"), note: tx("擠得太快比較容易立刻想排便。", "Putting it in too fast may make you feel like you need to pass stool right away.", "Jika dimasukkan terlalu cepat, Anda lebih mudah langsung merasa ingin buang air besar.", "Nếu bơm quá nhanh, bạn sẽ dễ buồn đi ngoài ngay lập tức hơn.", "ถ้าบีบเร็วเกินไป อาจทำให้รู้สึกอยากถ่ายทันทีได้ง่ายขึ้น", "Kung masyadong mabilis ang pagpasok, mas madaling makaramdam agad ng pagdumi.", "速すぎると、すぐ便意が起こりやすくなります。"), illustration: "assets/svg/enema-shared/step-3.svg", highlight: true },
+          { action: tx("保持擠壓，慢慢拔出後丟棄", "Keep squeezing while you slowly remove the tip, then throw it away.", "Tetap tekan saat menarik ujungnya keluar perlahan, lalu buang.", "Tiếp tục bóp khi từ từ rút ra, rồi bỏ đi.", "บีบค้างไว้ขณะค่อย ๆ ดึงปลายหลอดออก แล้วทิ้ง", "Patuloy na pisilin habang dahan-dahang hinihugot ang dulo, saka itapon.", "押したままゆっくり抜き、そのまま捨てます"), illustration: "assets/svg/enema-shared/step-4.svg" },
+          { action: tx("側躺 5–10 分鐘，盡量留到隔天早上", "Stay on your side for 5 to 10 minutes and try to keep it in until morning.", "Tetap berbaring menyamping selama 5–10 menit dan usahakan ditahan sampai pagi.", "Tiếp tục nằm nghiêng 5–10 phút và cố gắng giữ thuốc lại đến sáng.", "นอนตะแคงต่ออีก 5–10 นาที และพยายามกลั้นยาไว้จนถึงเช้า", "Manatiling nakatagilid nang 5–10 minuto at subukang panatilihin ito hanggang umaga.", "5〜10分横向きのままで、できるだけ翌朝まで保ちます"), note: tx("藥液留在腸內愈久，通常效果愈好。", "The longer the liquid stays in the bowel, the better it usually works.", "Semakin lama cairannya bertahan di usus, biasanya semakin baik hasilnya.", "Thuốc thường có tác dụng tốt hơn nếu giữ lại trong ruột được lâu hơn.", "โดยทั่วไปยาจะได้ผลดีกว่าหากคงอยู่ในลำไส้นานขึ้น", "Karaniwang mas mabisa ito habang mas matagal na nananatili ang likido sa bituka.", "薬液が腸内に長く留まるほど、通常はよく効きます。"), illustration: "assets/svg/enema-shared/step-7.svg", highlight: true }
+      ],
+      storage: {
+          title: tx("藥品保存", "Storage", "Penyimpanan", "Bảo quản", "การเก็บยา", "Imbakan", "保管方法"),
+          text: tx("室溫乾燥避光保存。瓶口朝上直立放置；開蓋後立即使用。", "Store at room temperature in a dry place away from light. Keep the bottle upright with the cap end up, and use it right after opening.", "Simpan pada suhu ruang di tempat kering dan terlindung dari cahaya. Simpan botol tegak dengan tutup di atas, dan gunakan segera setelah dibuka.", "Bảo quản ở nhiệt độ phòng, nơi khô ráo và tránh ánh sáng. Để chai thẳng đứng với đầu nắp hướng lên trên và dùng ngay sau khi mở.", "เก็บที่อุณหภูมิห้อง ในที่แห้งและพ้นแสง เก็บขวดในแนวตั้งโดยให้ด้านฝาอยู่ด้านบน และใช้ทันทีหลังเปิด", "Itago sa temperatura ng kuwarto sa tuyong lugar na hindi naarawan. Panatilihing patayo ang bote na nakataas ang takip at gamitin agad pagkatapos buksan.", "室温で乾燥・遮光保存し、キャップ側を上にして立てて保管する。開封後はすぐ使う。")
+      },
+      warnings: [
+          tx("對 Aspirin 或 salicylate 類成分過敏者，不要使用。", "Do not use it if you are allergic to aspirin or other salicylates.", "Jangan gunakan bila Anda alergi terhadap aspirin atau salisilat lain.", "Không dùng nếu bạn dị ứng với aspirin hoặc các thuốc nhóm salicylate khác.", "ห้ามใช้หากแพ้แอสไพรินหรือยากลุ่มซาลิไซเลต", "Huwag gamitin kung may allergy ka sa aspirin o ibang salicylate.", "アスピリンや他のサリチル酸系成分にアレルギーがある場合は使わないでください。"),
+          tx("只限直腸用，不可吞食。", "For rectal use only. Do not swallow it.", "Hanya untuk pemakaian melalui rektum. Jangan ditelan.", "Chỉ dùng qua đường trực tràng, không được nuốt.", "ใช้ทางทวารหนักเท่านั้น ห้ามกลืน", "Para sa puwit lamang. Huwag lunukin.", "直腸用のみです。飲み込まないでください。"),
+          tx("若腹痛加重、出血，或完全留不住藥液，請回診。", "Get medical advice if abdominal pain gets worse, bleeding starts, or you cannot keep the medicine in at all.", "Cari bantuan medis bila sakit perut makin berat, timbul perdarahan, atau obat sama sekali tidak bisa ditahan.", "Đi khám nếu đau bụng tăng lên, bắt đầu chảy máu, hoặc hoàn toàn không giữ được thuốc.", "ไปพบแพทย์หากปวดท้องมากขึ้น มีเลือดออก หรือกลั้นยาไว้ไม่ได้เลย", "Magpatingin kung lumalala ang pananakit ng tiyan, may pagdurugo, o talagang hindi mapanatili ang gamot sa loob.", "腹痛が強くなる、出血する、薬液をまったく保てない場合は受診してください。")
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/colasa-enema"
   },
 
   // ── Placeholder: Psyllium hydrophilic mucilloid 6g/pack ─────────────────────────────────────,
@@ -3814,75 +3854,297 @@ const MEDICATIONS = [
       qrUrl: "https://pharmacy.example.com/meds/foster-nexthaler"
   },
 
-  // ── Placeholder: Berodual N ─────────────────────────────────────,
+  // ── Berodual N ─────────────────────────────────────,
   {
       "id": "berodual-n",
+      "category": "ntg",
       color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
+          main: "#993C1D",
+          light: "#FAECE7",
+          dark: "#4A1B0C",
+          badge: "#F5C4B3",
+          badgeText: "#4A1B0C"
       },
-      emergency: false,
+      emergency: true,
+      emergencyLabel: {
+          "zh-TW": "⚠ 急救用藥（Reliever）",
+          "en": "⚠ Reliever",
+          "id": "⚠ Obat Pereda Darurat",
+          "vi": "⚠ Thuốc Cắt Cơn Khẩn Cấp",
+          "th": "⚠ ยาบรรเทาอาการฉุกเฉิน",
+          "tl": "⚠ Pang-emergency na Reliever",
+          "ja": "⚠ 救急用薬（リリーバー）"
+      },
       name: {
-          "zh-TW": "Berodual N",
+          "zh-TW": "備喘全",
           "en": "Berodual N",
           "id": "Berodual N",
           "vi": "Berodual N",
           "th": "Berodual N",
           "tl": "Berodual N",
-          "ja": "Berodual N"
+          "ja": "ベロデュアルN"
       },
       subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
+          "zh-TW": "Berodual N｜Ipratropium 20mcg + Fenoterol 50mcg/puff｜共 200 劑",
+          "en": "Berodual N | Ipratropium 20 mcg + Fenoterol 50 mcg/puff | 200 doses",
+          "id": "Berodual N | Ipratropium 20 mcg + Fenoterol 50 mcg/puff | Total 200 dosis",
+          "vi": "Berodual N | Ipratropium 20 mcg + Fenoterol 50 mcg/lần xịt | Tổng 200 liều",
+          "th": "Berodual N | Ipratropium 20 ไมโครกรัม + Fenoterol 50 ไมโครกรัม/พัฟ | รวม 200 พัฟ",
+          "tl": "Berodual N | Ipratropium 20 mcg + Fenoterol 50 mcg/puff | Kabuuang 200 doses",
+          "ja": "Berodual N｜イプラトロピウム 20mcg + フェノテロール 50mcg/1吸入｜全200吸入"
+      },
+      usage: {
+          "zh-TW": "有喘鳴、胸悶或急性呼吸困難時，每次吸 2 劑",
+          "en": "Use 2 puffs each time when you have wheezing, chest tightness, or sudden shortness of breath",
+          "id": "Gunakan 2 semprotan setiap kali saat timbul mengi, dada sesak, atau sesak napas mendadak",
+          "vi": "Khi khò khè, tức ngực hoặc khó thở cấp, xịt 2 nhát mỗi lần",
+          "th": "เมื่อมีเสียงวี้ด แน่นหน้าอก หรือหายใจลำบากเฉียบพลัน ให้พ่นครั้งละ 2 พัฟ",
+          "tl": "Gumamit ng 2 puff bawat gamit kapag may wheezing, paninikip ng dibdib, o biglang hirap huminga",
+          "ja": "喘鳴、胸部圧迫感、または急な呼吸困難がある時に、1回2吸入使用する"
       },
       badge: {
-          "zh-TW": "吸入劑",
-          "en": "Inhaler",
-          "id": "Inhaler",
-          "vi": "Thuốc hít",
-          "th": "ยาสูดพ่น",
-          "tl": "Inhaler",
-          "ja": "吸入薬"
+          "zh-TW": "超過 3 天未使用，先對空噴 1 次",
+          "en": "Not used >3 days: prime 1 spray first",
+          "id": "Tidak dipakai >3 hari: semprot uji 1x dulu",
+          "vi": "Không dùng >3 ngày: xịt thử 1 lần trước",
+          "th": "ไม่ได้ใช้เกิน 3 วัน: พ่นทดสอบ 1 ครั้งก่อน",
+          "tl": "Hindi nagamit >3 araw: 1 test spray muna",
+          "ja": "3日超未使用：先に空打ち1回"
+      },
+      preStepsInfo: {
+          tone: {
+              bg: "#E6F1FB",
+              border: "#185FA5",
+              text: "#042C53"
+          },
+          title: {
+              "zh-TW": "初次使用前 - 對空噴 2 次",
+              "en": "Before first use: prime with 2 sprays",
+              "id": "Sebelum pemakaian pertama - Semprot uji 2 kali",
+              "vi": "Trước lần dùng đầu tiên - Xịt thử 2 lần",
+              "th": "ก่อนใช้ครั้งแรก - พ่นทดสอบ 2 ครั้ง",
+              "tl": "Bago unang gamit - Mag-prime ng 2 spray",
+              "ja": "初回使用前 - 空打ち2回"
+          },
+          text: {
+              "zh-TW": "取下護蓋後朝空中按壓 2 次，看到噴霧再使用。\n若超過 3 天未使用，先對空噴 1 次。\n此藥為溶液型噴霧，通常不需振搖；使用後也不需漱口。",
+              "en": "Remove the cap and spray into the air 2 times before first use, until you see the mist.\nIf it has not been used for more than 3 days, use 1 test spray first.\nThis is a solution spray, so shaking is usually not needed. Mouth rinsing is also not needed after use.",
+              "id": "Lepas tutup lalu semprotkan ke udara 2 kali sebelum pemakaian pertama sampai terlihat kabut obat.\nJika tidak dipakai lebih dari 3 hari, lakukan 1 semprotan uji terlebih dahulu.\nIni adalah semprotan larutan, jadi biasanya tidak perlu dikocok. Anda juga tidak perlu berkumur setelah memakainya.",
+              "vi": "Tháo nắp rồi xịt vào không khí 2 lần trước lần dùng đầu tiên cho đến khi thấy sương thuốc.\nNếu không dùng quá 3 ngày, hãy xịt thử 1 lần trước.\nĐây là thuốc xịt dạng dung dịch nên thường không cần lắc. Sau khi dùng cũng không cần súc miệng.",
+              "th": "ถอดฝาครอบแล้วพ่นขึ้นสู่อากาศ 2 ครั้งก่อนใช้ครั้งแรกจนเห็นละอองยา\nหากไม่ได้ใช้เกิน 3 วัน ให้พ่นทดสอบ 1 ครั้งก่อน\nยานี้เป็นสเปรย์ชนิดสารละลาย จึงมักไม่ต้องเขย่า และไม่จำเป็นต้องบ้วนปากหลังใช้",
+              "tl": "Alisin ang takip at mag-spray sa hangin nang 2 beses bago unang gamitin hanggang makita ang ambon ng gamot.\nKung hindi nagamit nang lampas 3 araw, gumamit muna ng 1 test spray.\nSolution spray ito kaya karaniwang hindi kailangang alugin. Hindi rin kailangang magmumog pagkatapos gamitin.",
+              "ja": "キャップを外し、初回使用前に空中へ2回噴霧してミストが出ることを確認する。\n3日以上使っていない場合は、通常使用前に1回空打ちする。\nこの薬は溶液タイプの噴霧なので通常は振とう不要で、使用後のうがいも不要。"
+          }
       },
       steps: [
           {
               action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
+                  "zh-TW": "取下護蓋",
+                  "en": "Remove the cap",
+                  "id": "Lepas tutup",
+                  "vi": "Tháo nắp",
+                  "th": "ถอดฝาครอบ",
+                  "tl": "Alisin ang takip",
+                  "ja": "キャップを外す"
               },
               note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
+                  "zh-TW": "確認噴嘴內外沒有異物。此藥通常不需振搖。",
+                  "en": "Make sure there are no foreign objects inside or outside the mouthpiece. Shaking is usually not needed.",
+                  "id": "Pastikan tidak ada benda asing di bagian dalam maupun luar corong. Biasanya tidak perlu dikocok.",
+                  "vi": "Bảo đảm không có dị vật ở bên trong hoặc bên ngoài đầu ngậm. Thuốc này thường không cần lắc.",
+                  "th": "ตรวจว่าไม่มีสิ่งแปลกปลอมทั้งด้านในและด้านนอกของปากสูด ยานี้มักไม่ต้องเขย่า",
+                  "tl": "Tiyaking walang anumang bagay sa loob o labas ng mouthpiece. Karaniwang hindi kailangang alugin.",
+                  "ja": "マウスピースの内外に異物がないことを確認。通常は振とう不要。"
+              },
+              illustration: "assets/svg/berodual-n/step-0.png"
+          },
+          {
+              action: {
+                  "zh-TW": "嘴巴離開噴嘴，慢慢呼氣至底",
+                  "en": "Breathe out fully, away from the mouthpiece",
+                  "id": "Buang napas sampai habis dengan mulut menjauh dari corong",
+                  "vi": "Thở ra hết khi miệng rời khỏi đầu ngậm",
+                  "th": "หายใจออกให้สุด โดยให้ปากห่างจากปากสูด",
+                  "tl": "Huminga palabas nang buo habang nakalayo ang bibig sa mouthpiece",
+                  "ja": "マウスピースから口を離して息を最後まで吐く"
+              },
+              note: {
+                  "zh-TW": "不要對著噴嘴吐氣，避免濕氣進入。",
+                  "en": "Do not breathe out into the mouthpiece, so moisture does not enter.",
+                  "id": "Jangan mengembuskan napas ke corong agar kelembapan tidak masuk.",
+                  "vi": "Không thở vào đầu ngậm để tránh hơi ẩm đi vào.",
+                  "th": "ห้ามเป่าลมเข้าในปากสูด เพื่อไม่ให้ความชื้นเข้าไป",
+                  "tl": "Huwag huminga palabas sa mouthpiece para hindi pasukin ng moisture.",
+                  "ja": "マウスピースへ息を吹き込まず、湿気が入らないようにする。"
+              },
+              illustration: "assets/svg/berodual-n/step-1.png"
+          },
+          {
+              action: {
+                  "zh-TW": "嘴唇緊閉噴嘴，緩慢深吸 3-5 秒，同時按壓藥罐 1 次",
+                  "en": "Seal your lips around the mouthpiece, inhale slowly for 3-5 seconds, and press once at the same time",
+                  "id": "Rapatkan bibir pada corong, tarik napas perlahan 3-5 detik, lalu tekan 1 kali pada saat yang sama",
+                  "vi": "Ngậm kín đầu ngậm, hít vào chậm 3-5 giây và ấn 1 lần cùng lúc",
+                  "th": "เม้มริมฝีปากให้แนบปากสูด สูดลมช้า ๆ 3-5 วินาที พร้อมกดกระป๋องยา 1 ครั้ง",
+                  "tl": "Idikit ang labi sa mouthpiece, huminga papasok nang dahan-dahan sa loob ng 3-5 segundo, at pindutin ito nang 1 beses kasabay nito",
+                  "ja": "口唇をマウスピースに密着し、3-5秒かけてゆっくり吸いながら1回押す"
+              },
+              note: {
+                  "zh-TW": "按壓與吸氣要同時進行。每次只按壓一次，不要咬住吸嘴。",
+                  "en": "Pressing and inhaling must happen together. Press only once each time and do not bite the mouthpiece.",
+                  "id": "Menekan dan menarik napas harus dilakukan bersamaan. Setiap kali tekan hanya satu kali dan jangan menggigit corong.",
+                  "vi": "Phải ấn và hít vào cùng lúc. Mỗi lần chỉ ấn 1 lần và không cắn đầu ngậm.",
+                  "th": "ต้องกดและสูดลมเข้าพร้อมกัน แต่ละครั้งกดเพียง 1 ครั้ง และอย่ากัดปากสูด",
+                  "tl": "Dapat magkasabay ang pagpindot at paglanghap. Isang pindot lang bawat pagkakataon at huwag kagatin ang mouthpiece.",
+                  "ja": "押す動作と吸入を同時に行う。1回につき1回だけ押し、マウスピースを噛まない。"
+              },
+              illustration: "assets/svg/berodual-n/step-2.png",
+              highlight: true
+          },
+          {
+              action: {
+                  "zh-TW": "移開噴嘴，閉嘴屏氣幾秒",
+                  "en": "Remove the mouthpiece and hold your breath briefly",
+                  "id": "Lepaskan corong lalu tahan napas beberapa detik",
+                  "vi": "Rút đầu ngậm ra rồi nín thở vài giây",
+                  "th": "นำปากสูดออก แล้วกลั้นหายใจไว้สักครู่",
+                  "tl": "Alisin ang mouthpiece at pigilin ang hininga nang ilang segundo",
+                  "ja": "マウスピースを外し、数秒間息を止める"
+              },
+              note: {
+                  "zh-TW": "若做得到，可到 5-10 秒，讓藥物在肺部沉積。",
+                  "en": "If possible, hold for 5-10 seconds so the medicine can settle in the lungs.",
+                  "id": "Jika mampu, tahan 5-10 detik agar obat dapat mengendap di paru-paru.",
+                  "vi": "Nếu làm được, hãy nín 5-10 giây để thuốc lắng đọng trong phổi.",
+                  "th": "หากทำได้ ให้กลั้นไว้ 5-10 วินาที เพื่อให้ยาตกค้างในปอด",
+                  "tl": "Kung kaya, pigilin nang 5-10 segundo para makadeposito ang gamot sa baga.",
+                  "ja": "可能であれば5-10秒保持し、薬を肺に沈着させる。"
+              },
+              illustration: "assets/svg/berodual-n/step-3.png"
+          },
+          {
+              action: {
+                  "zh-TW": "再吸第 2 劑：重複步驟 ②-④",
+                  "en": "Take the second puff by repeating steps 2-4",
+                  "id": "Ambil semprotan ke-2 dengan mengulangi langkah 2-4",
+                  "vi": "Dùng nhát xịt thứ 2 bằng cách lặp lại bước 2-4",
+                  "th": "พ่นพัฟที่ 2 โดยทำซ้ำขั้นตอน 2-4",
+                  "tl": "Gamitin ang ika-2 puff sa pamamagitan ng pag-ulit ng hakbang 2-4",
+                  "ja": "2吸入目は手順2-4を繰り返す"
+              },
+              note: {
+                  "zh-TW": "急性症狀通常每次吸 2 劑。完成第 1 劑後，再吸第 2 劑。",
+                  "en": "Acute symptoms are usually treated with 2 puffs each time. Finish the first puff, then take the second.",
+                  "id": "Gejala akut biasanya ditangani dengan 2 semprotan setiap kali. Selesaikan semprotan pertama, lalu lanjutkan yang kedua.",
+                  "vi": "Triệu chứng cấp thường dùng 2 nhát xịt mỗi lần. Hít xong nhát đầu rồi dùng nhát thứ hai.",
+                  "th": "อาการเฉียบพลันโดยทั่วไปใช้ครั้งละ 2 พัฟ สูดพัฟแรกให้เสร็จก่อน แล้วจึงพ่นพัฟที่ 2",
+                  "tl": "Karaniwang 2 puff bawat gamit para sa matinding sintomas. Tapusin muna ang unang puff bago gamitin ang ikalawa.",
+                  "ja": "急性症状では通常1回2吸入。1吸入目を終えてから2吸入目を使う。"
+              },
+              illustration: "assets/svg/berodual-n/step-4.png"
+          },
+          {
+              action: {
+                  "zh-TW": "慢慢呼氣，蓋回護蓋",
+                  "en": "Breathe out slowly and replace the cap",
+                  "id": "Hembuskan napas perlahan lalu pasang kembali tutup",
+                  "vi": "Thở ra chậm rồi đậy nắp lại",
+                  "th": "หายใจออกช้า ๆ แล้วปิดฝาครอบกลับ",
+                  "tl": "Huminga palabas nang dahan-dahan at ibalik ang takip",
+                  "ja": "ゆっくり息を吐いてキャップを戻す"
+              },
+              note: {
+                  "zh-TW": "此藥不含類固醇，使用後不需漱口。每週至少用溫水洗噴嘴 1 次，完全風乾再裝回。",
+                  "en": "This medicine does not contain a steroid, so mouth rinsing is not needed after use. Wash the mouthpiece with warm water at least once a week and let it dry fully before putting it back together.",
+                  "id": "Obat ini tidak mengandung steroid, jadi tidak perlu berkumur setelah digunakan. Cuci corong dengan air hangat setidaknya seminggu sekali dan biarkan kering sempurna sebelum dipasang kembali.",
+                  "vi": "Thuốc này không chứa steroid nên không cần súc miệng sau khi dùng. Rửa đầu ngậm bằng nước ấm ít nhất mỗi tuần 1 lần và để khô hoàn toàn trước khi lắp lại.",
+                  "th": "ยานี้ไม่มีสเตียรอยด์ จึงไม่จำเป็นต้องบ้วนปากหลังใช้ ล้างปากสูดด้วยน้ำอุ่นอย่างน้อยสัปดาห์ละ 1 ครั้ง แล้วผึ่งให้แห้งสนิทก่อนประกอบกลับ",
+                  "tl": "Walang steroid ang gamot na ito kaya hindi kailangang magmumog pagkatapos gamitin. Hugasan ang mouthpiece gamit ang maligamgam na tubig kahit isang beses bawat linggo at patuyuin ito nang husto bago ibalik.",
+                  "ja": "この薬はステロイドを含まないため、使用後のうがいは不要。マウスピースは少なくとも週1回ぬるま湯で洗い、完全に乾かしてから戻す。"
+              },
+              illustration: "assets/svg/berodual-n/step-5.png"
+          }
+      ],
+      infoBoxes: [
+          {
+              tone: {
+                  bg: "#EAF3DE",
+                  border: "#3B6D11",
+                  text: "#173404"
+              },
+              title: {
+                  "zh-TW": "如果有配吸藥輔助器（Spacer）",
+                  "en": "If using a spacer",
+                  "id": "Jika menggunakan spacer",
+                  "vi": "Nếu dùng buồng đệm (Spacer)",
+                  "th": "หากใช้สเปเซอร์ (Spacer)",
+                  "tl": "Kung may spacer",
+                  "ja": "吸入補助器（スペーサー）を使う場合"
+              },
+              text: {
+                  "zh-TW": "步驟 ③ 改為：將輔助器接上噴嘴後，嘴唇含住輔助器吸嘴，再按壓 1 次並緩慢深吸。\n每次只按壓一次；完成第 1 劑後，再按第 2 劑。\n輔助器請用溫水加清潔劑清洗，自然風乾。",
+                  "en": "For step 3: connect the spacer, seal your lips around the spacer mouthpiece, then press once and inhale slowly.\nPress only once each time; finish the first puff before taking the second.\nWash the spacer with warm water and detergent, then let it air-dry naturally.",
+                  "id": "Untuk langkah 3: sambungkan spacer, rapatkan bibir pada corong spacer, lalu tekan 1 kali dan tarik napas perlahan.\nSetiap kali tekan hanya sekali; selesaikan semprotan pertama sebelum mengambil semprotan kedua.\nCuci spacer dengan air hangat dan detergen, lalu keringkan secara alami.",
+                  "vi": "Ở bước 3: gắn buồng đệm, ngậm kín đầu ngậm của buồng đệm, rồi ấn 1 lần và hít chậm.\nMỗi lần chỉ ấn 1 lần; hít xong nhát đầu rồi mới dùng nhát thứ hai.\nRửa buồng đệm bằng nước ấm và chất tẩy rửa, rồi để khô tự nhiên.",
+                  "th": "สำหรับขั้นตอน 3: ต่อสเปเซอร์เข้ากับปากสูด เม้มริมฝีปากกับปากดูดของสเปเซอร์ แล้วกด 1 ครั้งพร้อมสูดช้า ๆ\nกดเพียงครั้งละ 1 ครั้ง และต้องพ่นพัฟแรกให้เสร็จก่อนจึงใช้พัฟที่ 2\nล้างสเปเซอร์ด้วยน้ำอุ่นและน้ำยาทำความสะอาด แล้วผึ่งให้แห้งเอง",
+                  "tl": "Para sa hakbang 3: ikabit ang spacer, idikit ang labi sa mouthpiece ng spacer, pagkatapos ay pindutin nang 1 beses at huminga nang dahan-dahan.\nIsang pindot lang bawat pagkakataon; tapusin muna ang unang puff bago gamitin ang pangalawa.\nLinisin ang spacer gamit ang maligamgam na tubig at panlinis, pagkatapos ay patuyuin sa hangin.",
+                  "ja": "手順3：スペーサーを接続し、スペーサーの吸入口を口唇で密着させてから1回押し、ゆっくり吸う。\n1回につき1回だけ押す。1吸入目を終えてから2吸入目を使う。\nスペーサーはぬるま湯と洗剤で洗い、自然乾燥させる。"
+              }
+          },
+          {
+              tone: {
+                  bg: "#F2F2F2",
+                  border: "#7A7A7A",
+                  text: "#3F3F3F"
+              },
+              title: {
+                  "zh-TW": "剩餘劑量管理",
+                  "en": "Dose Tracking",
+                  "id": "Pemantauan Sisa Dosis",
+                  "vi": "Theo Dõi Liều Còn Lại",
+                  "th": "การติดตามจำนวนครั้งที่เหลือ",
+                  "tl": "Pagsubaybay ng Natitirang Dose",
+                  "ja": "残量管理"
+              },
+              text: {
+                  "zh-TW": "此藥沒有計數窗，藥罐看不出還剩多少。\n從開始使用起自行記錄；共 200 劑，用完就換新藥。",
+                  "en": "This inhaler has no dose counter, so you cannot tell how many puffs are left just by looking at the canister.\nStart your own count from the first day of use. Replace it after 200 puffs.",
+                  "id": "Inhaler ini tidak memiliki penghitung dosis, jadi Anda tidak bisa tahu sisa semprotannya hanya dengan melihat kanisternya.\nMulailah mencatat sejak hari pertama penggunaan. Ganti setelah 200 semprotan.",
+                  "vi": "Bình xịt này không có cửa sổ đếm liều, nên bạn không thể biết còn bao nhiêu nhát xịt chỉ bằng cách nhìn bình thuốc.\nHãy tự ghi lại từ ngày đầu tiên dùng thuốc. Đổi bình mới sau 200 nhát xịt.",
+                  "th": "ยาพ่นนี้ไม่มีตัวนับจำนวนพัฟ จึงมองกระป๋องไม่ออกว่าเหลืออีกกี่ครั้ง\nให้จดบันทึกเองตั้งแต่วันแรกที่ใช้ และเปลี่ยนยาใหม่เมื่อครบ 200 พัฟ",
+                  "tl": "Walang dose counter ang inhaler na ito kaya hindi mo malalaman sa canister lang kung ilan ang natitira.\nMagtala mula sa unang araw ng paggamit. Palitan ito pagkatapos ng 200 puffs.",
+                  "ja": "この吸入器には残量カウンターがないため、ボンベを見ただけでは残り回数は分かりません。\n使い始めた日から自分で記録し、200吸入で交換します。"
               }
           }
       ],
       warnings: [
           {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
+              "zh-TW": "急救用藥：有症狀才使用。若常需要用到這支藥，請回診調整控制藥。",
+              "en": "Rescue medicine: use it only when symptoms start. If you need it often, return for review of your controller treatment.",
+              "id": "Obat darurat: gunakan hanya saat gejala mulai muncul. Jika Anda sering membutuhkannya, kembalilah untuk evaluasi obat kontrol.",
+              "vi": "Thuốc cắt cơn: chỉ dùng khi triệu chứng bắt đầu xuất hiện. Nếu bạn phải dùng thường xuyên, hãy tái khám để điều chỉnh thuốc kiểm soát.",
+              "th": "ยาฉุกเฉิน: ใช้เมื่อมีอาการเท่านั้น หากต้องใช้บ่อย ให้กลับไปพบแพทย์เพื่อปรับยาควบคุมอาการ",
+              "tl": "Rescue na gamot ito: gamitin lamang kapag nagsisimula ang sintomas. Kung madalas mo itong kailanganin, magpatingin muli para maayos ang controller treatment.",
+              "ja": "救急用薬なので、症状が出た時だけ使う。頻繁に必要なら、維持治療薬の見直しのため受診する。"
+          },
+          {
+              "zh-TW": "若 2 劑後 5 分鐘仍未改善，可再吸 2 劑；4 劑後仍沒緩解，立即就醫或撥 119。",
+              "en": "If there is still no relief 5 minutes after 2 puffs, you may take 2 more puffs. If you still do not improve after 4 puffs, seek emergency care right away or call 119.",
+              "id": "Jika 5 menit setelah 2 semprotan masih belum membaik, Anda boleh menambah 2 semprotan lagi. Jika setelah 4 semprotan tetap belum lega, segera ke IGD atau hubungi 119.",
+              "vi": "Nếu sau 2 nhát xịt mà 5 phút vẫn chưa đỡ, bạn có thể xịt thêm 2 nhát. Nếu 4 nhát vẫn không cải thiện, hãy đi cấp cứu ngay hoặc gọi 119.",
+              "th": "หากหลังพ่น 2 พัฟแล้วผ่านไป 5 นาทีอาการยังไม่ดีขึ้น สามารถพ่นเพิ่มอีก 2 พัฟได้ หากครบ 4 พัฟแล้วยังไม่ทุเลา ให้ไปฉุกเฉินทันทีหรือโทร 119",
+              "tl": "Kung wala pa ring ginhawa pagkalipas ng 5 minuto matapos ang 2 puff, maaari pang gumamit ng 2 puff. Kung hindi ka pa rin gumaan matapos ang 4 puff, mag-ER agad o tumawag sa 119.",
+              "ja": "2吸入後5分たっても改善しない場合は、さらに2吸入してよい。4吸入しても改善しないなら、直ちに救急受診または119へ連絡する。",
+              "highlight": true
+          },
+          {
+              "zh-TW": "噴霧不要噴到眼睛；若眼痛、視線模糊或看到彩虹光圈，立即就醫。",
+              "en": "Do not spray it into the eyes. If you get eye pain, blurred vision, or rainbow halos, seek medical care right away.",
+              "id": "Jangan semprotkan ke mata. Jika timbul nyeri mata, penglihatan kabur, atau melihat lingkaran cahaya berwarna, segera cari pertolongan medis.",
+              "vi": "Không để thuốc xịt vào mắt. Nếu đau mắt, nhìn mờ hoặc thấy quầng sáng cầu vồng, hãy đi khám ngay.",
+              "th": "อย่าพ่นยาเข้าตา หากปวดตา ตามัว หรือเห็นวงแสงสีรุ้ง ให้รีบไปพบแพทย์ทันที",
+              "tl": "Huwag ipunta ang spray sa mga mata. Kung sumakit ang mata, lumabo ang paningin, o makakita ng rainbow halos, magpatingin agad.",
+              "ja": "噴霧が目に入らないようにする。眼痛、かすみ目、虹のような輪が見える時は、すぐ受診する。"
           }
       ],
       qrUrl: "https://pharmacy.example.com/meds/berodual-n"
@@ -19665,6 +19927,662 @@ const MEDICATIONS = [
           {"zh-TW":"若頭痛、噁心、想吐、特別想睡、抽筋或體重突然增加，立刻就醫。","en":"Get medical help right away if you develop headache, nausea, vomiting, unusual sleepiness, cramps, or sudden weight gain.","id":"Segera cari pertolongan medis bila timbul sakit kepala, mual, muntah, sangat mengantuk, kram, atau berat badan naik mendadak.","vi":"Đi khám ngay nếu bị đau đầu, buồn nôn, nôn, buồn ngủ nhiều, chuột rút hoặc tăng cân đột ngột.","th":"หากมีปวดศีรษะ คลื่นไส้ อาเจียน ง่วงผิดปกติ เป็นตะคริว หรือน้ำหนักขึ้นเร็ว ให้รีบพบแพทย์ทันที","tl":"Magpatingin agad kung sumakit ang ulo, nasusuka, nagsusuka, sobrang inaantok, may pulikat, o biglang tumaba.","ja":"頭痛、吐き気、嘔吐、強い眠気、けいれん、急な体重増加があれば、すぐ受診してください。"}
       ],
       qrUrl: "https://pharmacy.example.com/meds/minirin"
+  },
+
+  // ── Natesto ─────────────────────────────────────,
+  {
+      "id": "natesto",
+      "category": "nasal",
+      color: { main: "#185FA5", light: "#E6F1FB", dark: "#042C53", badge: "#B5D4F4", badgeText: "#042C53" },
+      emergency: false,
+      headerBadge: {
+          "zh-TW": "荷爾蒙補充藥",
+          "en": "Hormone replacement medicine",
+          "id": "Obat pengganti hormon",
+          "vi": "Thuốc bổ sung hormone",
+          "th": "ยาฮอร์โมนทดแทน",
+          "tl": "Gamot para sa hormone replacement",
+          "ja": "ホルモン補充薬"
+      },
+      name: {
+          "zh-TW": "Natesto Nasal Gel",
+          "en": "Natesto Nasal Gel",
+          "id": "Natesto Nasal Gel",
+          "vi": "Natesto Nasal Gel",
+          "th": "Natesto Nasal Gel",
+          "tl": "Natesto Nasal Gel",
+          "ja": "ナテスト 鼻用ジェル"
+      },
+      subtitle: {
+          "zh-TW": "testosterone 5.5 mg/鼻孔/次｜左右各 1 次 = 1 劑",
+          "en": "testosterone 5.5 mg per nostril | 1 pump in each nostril = 1 full dose",
+          "id": "testosterone 5,5 mg per lubang hidung | 1 pompa di tiap lubang hidung = 1 dosis penuh",
+          "vi": "testosterone 5,5 mg mỗi bên mũi | mỗi bên 1 lần bơm = 1 liều đầy đủ",
+          "th": "testosterone 5.5 mg ต่อรูจมูก | รูจมูกละ 1 ครั้ง = 1 ขนาดยาครบ",
+          "tl": "testosterone 5.5 mg bawat butas ng ilong | tig-1 pump bawat butas = 1 buong dose",
+          "ja": "testosterone 5.5 mg/片側鼻腔｜左右に各1回で1回分"
+      },
+      pages: [
+          {
+              pageLabel: {
+                  "zh-TW": "A 面｜首次使用前",
+                  "en": "Side A | before first use",
+                  "id": "Sisi A | sebelum penggunaan pertama",
+                  "vi": "Mặt A | trước lần dùng đầu tiên",
+                  "th": "ด้าน A | ก่อนใช้ครั้งแรก",
+                  "tl": "Side A | bago unang paggamit",
+                  "ja": "A面｜初回使用前"
+              },
+              badge: {
+                  "zh-TW": "A 面｜首次使用前",
+                  "en": "Side A | first use only",
+                  "id": "Sisi A | persiapan pertama",
+                  "vi": "Mặt A | chuẩn bị lần đầu",
+                  "th": "ด้าน A | เตรียมก่อนใช้ครั้งแรก",
+                  "tl": "Side A | unang gamit lang",
+                  "ja": "A面｜初回のみ"
+              },
+              usage: null,
+              preStepsInfo: {
+                  title: {
+                      "zh-TW": "只在第一瓶使用前做 1 次",
+                      "en": "Do this only once before using the first bottle",
+                      "id": "Lakukan hanya sekali sebelum memakai botol pertama",
+                      "vi": "Chỉ làm 1 lần trước khi dùng chai đầu tiên",
+                      "th": "ทำเพียง 1 ครั้งก่อนใช้ขวดแรก",
+                      "tl": "Gawin ito nang isang beses bago gamitin ang unang bote",
+                      "ja": "最初のボトルを使う前に1回だけ行う"
+                  },
+                  text: {
+                      "zh-TW": "這一面只教你怎麼把幫浦排空到能正常出膠。做完後，平常使用請看 B 面。",
+                      "en": "This side shows how to prime the pump so the gel comes out properly. After that, use Side B for every dose.",
+                      "id": "Sisi ini menjelaskan cara menyiapkan pompa agar gel keluar dengan baik. Setelah itu, lihat Sisi B untuk setiap dosis.",
+                      "vi": "Mặt này hướng dẫn cách mồi bơm để gel ra đúng cách. Sau đó, hãy xem Mặt B cho mỗi lần dùng.",
+                      "th": "หน้านี้สอนเฉพาะวิธีไล่อากาศจนเจลออกได้ตามปกติ หลังจากนั้นให้ดูด้าน B ทุกครั้งที่ใช้ยา",
+                      "tl": "Ipinapakita ng bahaging ito kung paano i-prime ang pump para lumabas nang maayos ang gel. Pagkatapos nito, tingnan ang Side B sa bawat paggamit.",
+                      "ja": "この面では、ジェルが正しく出るようポンプを準備する方法を説明します。その後の毎回の使用はB面を見てください。"
+                  }
+              },
+              steps: [
+                  {
+                      action: {
+                          "zh-TW": "把瓶身倒轉，管口朝下對著洗手台",
+                          "en": "Turn the bottle upside down with the tip pointing into the sink",
+                          "id": "Balik botol dengan ujung menghadap ke wastafel",
+                          "vi": "Lật ngược chai, hướng đầu bơm xuống bồn rửa",
+                          "th": "คว่ำขวดให้ปลายหัวจ่ายชี้ลงอ่างล้างมือ",
+                          "tl": "Baligtarin ang bote at itutok ang dulo sa lababo",
+                          "ja": "ボトルを逆さにして、先端を洗面台へ向ける"
+                      },
+                      note: {
+                          "zh-TW": "排空出的凝膠會直接流入水槽。",
+                          "en": "The priming gel will go straight into the sink.",
+                          "id": "Gel untuk priming akan langsung jatuh ke wastafel.",
+                          "vi": "Phần gel mồi sẽ chảy trực tiếp xuống bồn rửa.",
+                          "th": "เจลที่ออกมาระหว่างไล่อากาศจะไหลลงอ่างโดยตรง",
+                          "tl": "Diretsong babagsak sa lababo ang gel na lalabas habang pina-prime.",
+                          "ja": "プライミング時のジェルはそのまま洗面台へ流れます。"
+                      },
+                      illustration: "assets/svg/natesto/step-0.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "按到底再放開，共做 10 次",
+                          "en": "Press all the way down and release, for a total of 10 times",
+                          "id": "Tekan sampai habis lalu lepaskan, total 10 kali",
+                          "vi": "Ấn hết cỡ rồi thả ra, tổng cộng 10 lần",
+                          "th": "กดลงให้สุดแล้วปล่อย รวมทั้งหมด 10 ครั้ง",
+                          "tl": "Pindutin nang sagad saka bitawan, kabuuang 10 beses",
+                          "ja": "最後まで押して離す動作を合計10回行う"
+                      },
+                      note: {
+                          "zh-TW": "這不是浪費藥，而是讓幫浦準備好，之後每次才會出完整劑量。",
+                          "en": "This is not wasted medicine. It prepares the pump so later doses come out fully.",
+                          "id": "Ini bukan membuang obat. Langkah ini menyiapkan pompa agar dosis berikutnya keluar penuh.",
+                          "vi": "Đây không phải lãng phí thuốc. Bước này giúp bơm sẵn sàng để các liều sau ra đủ thuốc.",
+                          "th": "นี่ไม่ใช่การทิ้งยา แต่เป็นการเตรียมปั๊มให้พร้อม เพื่อให้ครั้งต่อไปออกยาครบขนาด",
+                          "tl": "Hindi ito pagsasayang ng gamot. Inihahanda nito ang pump para kumpletong dose ang lumabas sa mga susunod na gamit.",
+                          "ja": "これは薬の無駄ではありません。後の使用で十分な量が出るようポンプを準備するためです。"
+                      },
+                      highlight: true,
+                      illustration: "assets/svg/natesto/step-1.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "若還沒有出膠，先用乾淨乾燥的衛生紙擦拭管口",
+                          "en": "If no gel comes out yet, wipe the tip with a clean, dry tissue",
+                          "id": "Jika gel belum keluar, seka ujungnya dengan tisu bersih dan kering",
+                          "vi": "Nếu vẫn chưa có gel ra, hãy lau đầu bơm bằng khăn giấy sạch và khô",
+                          "th": "หากยังไม่มีเจลออกมา ให้ใช้กระดาษทิชชูสะอาดและแห้งเช็ดปลายหัวจ่าย",
+                          "tl": "Kung wala pang gel na lumalabas, punasan ang dulo gamit ang malinis at tuyong tisyu",
+                          "ja": "まだジェルが出ない場合は、清潔で乾いたティッシュで先端を拭く"
+                      },
+                      note: {
+                          "zh-TW": "再試 1-2 次；若仍無法出膠，請帶回藥局確認。",
+                          "en": "Try 1 or 2 more presses. If gel still does not come out, bring it back to the pharmacy.",
+                          "id": "Coba tekan lagi 1-2 kali. Jika gel masih tidak keluar, bawa kembali ke apotek.",
+                          "vi": "Thử ấn thêm 1-2 lần. Nếu vẫn không có gel, hãy mang lại nhà thuốc.",
+                          "th": "ลองกดเพิ่มอีก 1-2 ครั้ง หากยังไม่มีเจลออกมา ให้นำกลับร้านยา",
+                          "tl": "Subukan pang pindutin nang 1-2 beses. Kung wala pa ring gel, ibalik ito sa botika.",
+                          "ja": "さらに1〜2回試し、それでも出ない場合は薬局へ持参してください。"
+                      },
+                      illustration: "assets/svg/natesto/step-2.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "蓋回護蓋，之後平常使用看 B 面",
+                          "en": "Replace the cap, then use Side B for routine doses",
+                          "id": "Pasang kembali tutupnya, lalu gunakan Sisi B untuk pemakaian biasa",
+                          "vi": "Đậy nắp lại, sau đó dùng Mặt B cho các lần dùng thường ngày",
+                          "th": "ปิดฝากลับ แล้วดูด้าน B สำหรับการใช้ตามปกติ",
+                      "tl": "Ibalik ang takip at gamitin ang Side B para sa regular na paggamit",
+                          "ja": "キャップを戻し、その後の通常使用はB面を見る"
+                      },
+                      note: {
+                          "zh-TW": "首次排空完成後，不需要每次用藥前都再做這一面。",
+                          "en": "After the first setup is done, you do not need to repeat this before every dose.",
+                          "id": "Setelah persiapan pertama selesai, Anda tidak perlu mengulang langkah ini setiap kali memakai obat.",
+                          "vi": "Sau khi mồi lần đầu xong, bạn không cần lặp lại bước này trước mỗi liều.",
+                          "th": "เมื่อเตรียมครั้งแรกเสร็จแล้ว ไม่ต้องทำซ้ำหน้านี้ก่อนใช้ยาทุกครั้ง",
+                      "tl": "Kapag natapos na ang unang setup, hindi na ito inuulit bago ang bawat paggamit.",
+                          "ja": "初回準備が終われば、毎回この手順を繰り返す必要はありません。"
+                      },
+                      illustration: "assets/svg/natesto/step-3.svg"
+                  }
+              ],
+              storage: null,
+              warnings: [
+                  {
+                      "zh-TW": "這一面只在第一瓶使用前做 1 次。",
+                      "en": "Only do this once, before using the first bottle.",
+                      "id": "Sisi ini hanya untuk botol pertama sebelum penggunaan pertama.",
+                      "vi": "Mặt này chỉ dùng 1 lần trước khi dùng chai đầu tiên.",
+                      "th": "หน้านี้ใช้เพียง 1 ครั้งก่อนใช้ขวดแรก",
+                      "tl": "Gawin lang ito nang isang beses bago gamitin ang unang bote.",
+                      "ja": "この手順は最初のボトルを使う前に1回だけ行います。"
+                  },
+                  {
+                      "zh-TW": "手部若沾到凝膠，立即用肥皂和清水洗淨。",
+                      "en": "If gel gets on your hands, wash it off right away with soap and water.",
+                      "id": "Jika gel terkena tangan, segera cuci dengan sabun dan air.",
+                      "vi": "Nếu gel dính vào tay, hãy rửa ngay bằng xà phòng và nước.",
+                      "th": "หากเจลติดมือ ให้ล้างออกทันทีด้วยสบู่และน้ำ",
+                      "tl": "Kung dumikit ang gel sa kamay, hugasan agad ito gamit ang sabon at tubig.",
+                      "ja": "ジェルが手についたら、すぐに石けんと水で洗い流してください。"
+                  }
+              ],
+              qrUrl: "https://pharmacy.example.com/meds/natesto"
+          },
+          {
+              pageLabel: {
+                  "zh-TW": "B 面｜每次使用",
+                  "en": "Side B | each use",
+                  "id": "Sisi B | setiap penggunaan",
+                  "vi": "Mặt B | mỗi lần dùng",
+                  "th": "ด้าน B | ใช้ทุกครั้ง",
+                  "tl": "Side B | bawat paggamit",
+                  "ja": "B面｜毎回の使用"
+              },
+              badge: {
+                  "zh-TW": "B 面｜每次使用",
+                  "en": "Side B | every dose",
+                  "id": "Sisi B | setiap dosis",
+                  "vi": "Mặt B | mỗi liều dùng",
+                  "th": "ด้าน B | ทุกครั้งที่ใช้",
+                  "tl": "Side B | bawat paggamit",
+                  "ja": "B面｜毎回の使用"
+              },
+              usage: {
+                  "zh-TW": "左右鼻孔各 1 次，早、中、晚各 1 劑，約每 6-8 小時使用一次。",
+                  "en": "Use 1 pump in each nostril, 3 times a day: morning, afternoon, and evening, about every 6 to 8 hours.",
+                  "id": "Gunakan 1 pompa di tiap lubang hidung, 3 kali sehari: pagi, siang, dan malam, sekitar tiap 6-8 jam.",
+                  "vi": "Dùng mỗi bên mũi 1 lần bơm, ngày 3 lần: sáng, chiều và tối, cách nhau khoảng 6-8 giờ.",
+                  "th": "พ่นรูจมูกละ 1 ครั้ง วันละ 3 ครั้ง เช้า กลางวัน เย็น ห่างกันประมาณ 6-8 ชั่วโมง",
+                  "tl": "Gumamit ng tig-1 pump sa bawat butas ng ilong, 3 beses sa isang araw: umaga, hapon, at gabi, mga bawat 6-8 oras.",
+                  "ja": "左右の鼻に各1回ずつ、朝・昼・夜の1日3回、約6〜8時間おきに使います。"
+              },
+              preStepsInfo: {
+                  title: {
+                      "zh-TW": "這不是鼻塞藥，請按時間使用",
+                      "en": "This is not a decongestant. Use it on schedule.",
+                      "id": "Ini bukan obat hidung tersumbat. Gunakan sesuai jadwal.",
+                      "vi": "Đây không phải thuốc thông mũi. Hãy dùng đúng giờ.",
+                      "th": "นี่ไม่ใช่ยาลดคัดจมูก ให้ใช้ตามเวลา",
+                      "tl": "Hindi ito gamot sa baradong ilong. Gamitin ito ayon sa oras.",
+                      "ja": "鼻づまり薬ではありません。決まった時間に使ってください。"
+                  },
+                  text: {
+                      "zh-TW": "每次左右各 1 次才算 1 劑。用後 1 小時內不要擤鼻涕，也不要用力吸鼻，讓凝膠留在鼻內慢慢吸收。",
+                      "en": "One full dose means 1 pump in each nostril. For 1 hour after use, do not blow your nose or sniff hard so the gel can stay in place and absorb slowly.",
+                      "id": "Satu dosis penuh berarti 1 pompa di tiap lubang hidung. Selama 1 jam setelah penggunaan, jangan buang ingus atau menarik napas kuat lewat hidung agar gel tetap di tempatnya dan terserap perlahan.",
+                      "vi": "Một liều đầy đủ là mỗi bên mũi 1 lần bơm. Trong 1 giờ sau dùng, đừng xì mũi hoặc hít mạnh để gel ở yên trong mũi và hấp thu từ từ.",
+                      "th": "1 ขนาดยาครบคือพ่นรูจมูกละ 1 ครั้ง หลังใช้ 1 ชั่วโมงอย่าสั่งน้ำมูกหรือสูดแรง เพื่อให้เจลอยู่ในจมูกและค่อย ๆ ดูดซึม",
+                      "tl": "Ang isang buong dose ay tig-1 pump sa bawat butas ng ilong. Sa loob ng 1 oras pagkatapos gamitin, huwag suminga o suminghot nang malakas para manatili ang gel sa loob at dahan-dahang masipsip.",
+                      "ja": "1回分とは左右の鼻に各1回ずつ使うことです。使用後1時間は鼻をかんだり強く吸い込んだりせず、ジェルを鼻の中にとどめてゆっくり吸収させてください。"
+                  }
+              },
+              steps: [
+                  {
+                      action: {
+                          "zh-TW": "先輕輕擤鼻涕，清乾淨兩側鼻腔",
+                          "en": "Gently blow your nose first and clear both nostrils",
+                          "id": "Buang ingus perlahan dulu dan bersihkan kedua lubang hidung",
+                          "vi": "Hãy xì mũi nhẹ trước và làm sạch cả hai bên mũi",
+                          "th": "สั่งน้ำมูกเบา ๆ ก่อน แล้วทำความสะอาดรูจมูกทั้งสองข้าง",
+                          "tl": "Marahang suminga muna at linisin ang magkabilang butas ng ilong",
+                          "ja": "まずやさしく鼻をかみ、左右の鼻の中をきれいにする"
+                      },
+                      note: {
+                          "zh-TW": "鼻內太多分泌物時，凝膠比較不容易沾到鼻黏膜。",
+                          "en": "Too much mucus makes it harder for the gel to coat the inside of the nose.",
+                          "id": "Lendir yang terlalu banyak membuat gel lebih sulit menempel pada bagian dalam hidung.",
+                          "vi": "Nếu nhiều dịch mũi, gel sẽ khó bám lên niêm mạc mũi hơn.",
+                          "th": "ถ้ามีน้ำมูกมาก เจลจะเคลือบเยื่อบุจมูกได้ยากขึ้น",
+                          "tl": "Kung maraming sipon, mas mahirap dumikit ang gel sa loob ng ilong.",
+                          "ja": "鼻水が多いと、ジェルが鼻の粘膜につきにくくなります。"
+                      },
+                      illustration: "assets/svg/natesto/step-4.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "取下護蓋",
+                          "en": "Remove the cap",
+                          "id": "Lepas tutupnya",
+                          "vi": "Tháo nắp",
+                          "th": "ถอดฝาออก",
+                          "tl": "Alisin ang takip",
+                          "ja": "キャップを外す"
+                      },
+                      note: {
+                          "zh-TW": "給藥前先確認管口乾淨、沒有異物。",
+                          "en": "Before use, make sure the tip is clean and not blocked.",
+                          "id": "Sebelum digunakan, pastikan ujungnya bersih dan tidak tersumbat.",
+                          "vi": "Trước khi dùng, hãy chắc rằng đầu bơm sạch và không bị bít.",
+                          "th": "ก่อนใช้ ตรวจว่าปลายหัวจ่ายสะอาดและไม่มีสิ่งอุดตัน",
+                          "tl": "Bago gamitin, siguraduhing malinis at walang bara ang dulo.",
+                          "ja": "使う前に先端が清潔で詰まっていないか確認する。"
+                      },
+                      illustration: "assets/svg/natesto/step-5.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "把幫浦插入左鼻孔，直到手指碰到底部",
+                          "en": "Insert the pump into the left nostril until your finger reaches the base",
+                          "id": "Masukkan pompa ke lubang hidung kiri sampai jari menyentuh bagian dasar",
+                          "vi": "Đưa đầu bơm vào bên mũi trái đến khi ngón tay chạm đáy",
+                          "th": "สอดหัวปั๊มเข้าไปในรูจมูกซ้ายจนปลายนิ้วแตะฐานจมูก",
+                          "tl": "Ipasok ang pump sa kaliwang butas ng ilong hanggang umabot ang daliri sa pinakailalim",
+                          "ja": "左の鼻の穴に入れ、指が根元に触れるまで進める"
+                      },
+                      note: {
+                          "zh-TW": "對著鏡子操作比較容易看清楚位置。",
+                          "en": "Using a mirror can make the position easier to see.",
+                          "id": "Menggunakan cermin dapat membantu melihat posisinya lebih jelas.",
+                          "vi": "Soi gương sẽ giúp bạn nhìn rõ vị trí hơn.",
+                          "th": "ทำหน้ากระจกจะช่วยให้มองตำแหน่งได้ชัดขึ้น",
+                          "tl": "Mas madaling makita ang posisyon kung gagamit ng salamin.",
+                          "ja": "鏡を見ながら行うと位置を確認しやすくなります。"
+                      },
+                      illustration: "assets/svg/natesto/step-6.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "把管口向外傾，貼近鼻孔外側內壁",
+                          "en": "Angle the tip outward so it rests near the outer inner wall of the nostril",
+                          "id": "Miringkan ujungnya ke arah luar hingga menyentuh sisi luar bagian dalam lubang hidung",
+                          "vi": "Hướng đầu bơm ra ngoài để áp vào thành ngoài phía trong lỗ mũi",
+                          "th": "เอียงปลายหัวจ่ายออกด้านนอก ให้แนบผนังด้านนอกภายในรูจมูก",
+                          "tl": "Ihilig palabas ang dulo para dumikit ito sa panlabas na inner wall ng butas ng ilong",
+                          "ja": "先端を外側へ向け、鼻の外側の内壁に当てる"
+                      },
+                      note: {
+                          "zh-TW": "不要朝鼻中隔正中央，這樣比較不刺激，也能讓凝膠留在正確位置。",
+                          "en": "Do not point it toward the middle septum. This is less irritating and helps keep the gel where it should stay.",
+                          "id": "Jangan arahkan ke sekat tengah hidung. Cara ini lebih tidak mengiritasi dan membantu gel tetap di tempat yang benar.",
+                          "vi": "Đừng hướng vào vách ngăn chính giữa mũi. Cách này ít kích thích hơn và giúp gel ở đúng vị trí.",
+                          "th": "อย่าหันเข้าหาผนังกั้นกลางจมูก วิธีนี้จะระคายเคืองน้อยกว่าและช่วยให้เจลอยู่ตำแหน่งที่ถูกต้อง",
+                          "tl": "Huwag itutok sa gitnang septum. Mas kaunting iritasyon ito at mas nakakatulong na manatili sa tamang lugar ang gel.",
+                          "ja": "鼻の中央の仕切りに向けないでください。その方が刺激が少なく、ジェルも正しい位置にとどまりやすくなります。"
+                      },
+                      illustration: "assets/svg/natesto/step-7.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "慢慢按到底，讓左鼻孔完成 1 次",
+                          "en": "Press down slowly all the way to give 1 pump in the left nostril",
+                          "id": "Tekan perlahan sampai habis untuk memberi 1 pompa di lubang hidung kiri",
+                          "vi": "Ấn chậm hết cỡ để bơm 1 lần vào bên mũi trái",
+                          "th": "กดลงช้า ๆ จนสุด เพื่อให้ยาที่รูจมูกซ้าย 1 ครั้ง",
+                          "tl": "Dahan-dahang pindutin nang sagad para maibigay ang 1 pump sa kaliwang butas ng ilong",
+                          "ja": "ゆっくり最後まで押して、左の鼻に1回分を入れる"
+                      },
+                      note: {
+                          "zh-TW": "按到底才算完整 1 次；不要邊按邊用力吸鼻。",
+                          "en": "A full press gives the full amount. Do not sniff hard while pressing.",
+                          "id": "Tekanan penuh memberi jumlah yang lengkap. Jangan menarik napas kuat lewat hidung saat menekan.",
+                          "vi": "Ấn hết cỡ mới ra đủ lượng thuốc. Đừng hít mạnh bằng mũi khi đang ấn.",
+                          "th": "ต้องกดจนสุดจึงจะได้ยาครบขนาด อย่าสูดแรงทางจมูกขณะกด",
+                          "tl": "Ang buong pagpindot ang nagbibigay ng buong dami. Huwag suminghot nang malakas habang pumipindot.",
+                          "ja": "最後まで押して初めて1回分になります。押している間は強く吸い込まないでください。"
+                      },
+                      highlight: true,
+                      illustration: "assets/svg/natesto/step-1.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "取出時沿鼻內壁帶出，別直接拔開",
+                          "en": "When removing it, keep it against the inner wall instead of pulling straight out",
+                          "id": "Saat menarik keluar, geser mengikuti dinding dalam hidung, jangan langsung dicabut lurus",
+                          "vi": "Khi rút ra, hãy kéo dọc theo thành mũi thay vì rút thẳng ra ngay",
+                          "th": "ตอนดึงออก ให้ไล้ตามผนังด้านในจมูก อย่าดึงออกตรง ๆ ทันที",
+                          "tl": "Kapag inaalis, idikit sa inner wall habang inilalabas sa halip na tuwirang bunutin",
+                          "ja": "抜く時は鼻の内壁に沿わせ、まっすぐ引き抜かない"
+                      },
+                      note: {
+                          "zh-TW": "這樣較不會把剛放進去的凝膠一起帶出來。",
+                          "en": "This helps keep the gel inside instead of pulling it back out.",
+                          "id": "Cara ini membantu agar gel tetap di dalam dan tidak ikut tertarik keluar.",
+                          "vi": "Cách này giúp gel ở lại trong mũi thay vì bị kéo ra ngoài.",
+                          "th": "วิธีนี้ช่วยให้เจลอยู่ในจมูก ไม่ถูกดึงออกมาพร้อมกัน",
+                          "tl": "Nakakatulong ito para manatili ang gel sa loob at hindi masamang lumabas.",
+                          "ja": "この方が、入れたばかりのジェルを一緒に外へ引き出しにくくなります。"
+                      },
+                      illustration: "assets/svg/natesto/step-2.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "右鼻孔重複步驟 3-6，左右各 1 次才算 1 劑",
+                          "en": "Repeat steps 3 to 6 in the right nostril. One pump in each side equals 1 full dose",
+                          "id": "Ulangi langkah 3 sampai 6 di lubang hidung kanan. Satu pompa di tiap sisi berarti 1 dosis penuh",
+                          "vi": "Lặp lại bước 3 đến 6 ở bên mũi phải. Mỗi bên 1 lần bơm mới đủ 1 liều",
+                          "th": "ทำซ้ำขั้นตอน 3-6 ที่รูจมูกขวา พ่นครบซ้ายและขวาจึงนับเป็น 1 ขนาดยา",
+                          "tl": "Ulitin ang hakbang 3-6 sa kanang butas ng ilong. Tig-1 pump sa bawat panig ang katumbas ng 1 buong dose",
+                          "ja": "右の鼻でも手順3〜6を繰り返す。左右各1回で1回分になります。"
+                      },
+                      note: {
+                          "zh-TW": "每天要照醫囑完成早、中、晚 3 劑，間隔約 6-8 小時。",
+                          "en": "Use all 3 scheduled doses each day: morning, afternoon, and evening, about 6 to 8 hours apart.",
+                          "id": "Selesaikan 3 dosis terjadwal setiap hari: pagi, siang, dan malam, sekitar 6-8 jam terpisah.",
+                          "vi": "Hãy dùng đủ 3 liều mỗi ngày: sáng, chiều và tối, cách nhau khoảng 6-8 giờ.",
+                          "th": "ต้องใช้ให้ครบวันละ 3 ขนาดยา เช้า กลางวัน เย็น ห่างกันประมาณ 6-8 ชั่วโมง",
+                          "tl": "Kumpletuhin ang 3 nakatakdang dose bawat araw: umaga, hapon, at gabi, na may pagitan na mga 6-8 oras.",
+                          "ja": "毎日、朝・昼・夜の3回を約6〜8時間おきに使ってください。"
+                      },
+                      illustration: "assets/svg/natesto/step-3.svg"
+                  },
+                  {
+                      action: {
+                          "zh-TW": "輕捏鼻翼下方約 10 秒，再蓋回護蓋",
+                          "en": "Gently pinch the lower soft part of the nose for about 10 seconds, then replace the cap",
+                          "id": "Jepit lembut bagian lunak bawah hidung sekitar 10 detik, lalu pasang kembali tutupnya",
+                          "vi": "Bóp nhẹ phần mềm dưới mũi khoảng 10 giây rồi đậy nắp lại",
+                          "th": "บีบปีกจมูกส่วนล่างเบา ๆ ประมาณ 10 วินาที แล้วปิดฝากลับ",
+                          "tl": "Marahang pisilin ang malambot na ibabang bahagi ng ilong nang mga 10 segundo, saka ibalik ang takip",
+                          "ja": "鼻のやわらかい下の部分を約10秒やさしくつまみ、その後キャップを戻す"
+                      },
+                      note: {
+                          "zh-TW": "讓凝膠更均勻留在鼻內。用後 1 小時內不要擤鼻涕或用力吸鼻。",
+                          "en": "This helps the gel stay inside more evenly. For 1 hour after use, do not blow your nose or sniff hard.",
+                          "id": "Langkah ini membantu gel tetap merata di dalam hidung. Selama 1 jam setelah penggunaan, jangan buang ingus atau menarik napas kuat lewat hidung.",
+                          "vi": "Bước này giúp gel ở lại trong mũi đều hơn. Trong 1 giờ sau dùng, đừng xì mũi hoặc hít mạnh.",
+                          "th": "ช่วยให้เจลอยู่ในจมูกอย่างสม่ำเสมอมากขึ้น หลังใช้ 1 ชั่วโมงอย่าสั่งน้ำมูกหรือสูดแรง",
+                          "tl": "Nakakatulong ito para mas pantay na manatili ang gel sa loob. Sa loob ng 1 oras matapos gamitin, huwag suminga o suminghot nang malakas.",
+                          "ja": "ジェルが鼻の中に均等に残りやすくなります。使用後1時間は鼻をかんだり強く吸い込んだりしないでください。"
+                      },
+                      illustration: "assets/svg/natesto/step-0.svg"
+                  }
+              ],
+              storage: {
+                  title: {
+                      "zh-TW": "藥品保存",
+                      "en": "Storage",
+                      "id": "Penyimpanan",
+                      "vi": "Bảo quản",
+                      "th": "การเก็บรักษา",
+                      "tl": "Imbakan",
+                      "ja": "保管方法"
+                  },
+                  text: {
+                      "zh-TW": "室溫保存，避免高溫與日曬。蓋緊護蓋，放在兒童碰不到的地方。",
+                      "en": "Store at room temperature and protect from heat and direct sunlight. Keep the cap on and keep it out of the reach of children.",
+                      "id": "Simpan pada suhu ruang dan jauhkan dari panas serta sinar matahari langsung. Pasang tutupnya rapat dan simpan di tempat yang tidak terjangkau anak-anak.",
+                      "vi": "Bảo quản ở nhiệt độ phòng, tránh nóng và ánh nắng trực tiếp. Đậy kín nắp và để xa tầm tay trẻ em.",
+                      "th": "เก็บที่อุณหภูมิห้อง หลีกเลี่ยงความร้อนและแสงแดด ปิดฝาให้แน่น และเก็บให้พ้นมือเด็ก",
+                      "tl": "Itago sa temperaturang kuwarto at ilayo sa init at direktang sikat ng araw. Panatilihing nakasara ang takip at ilayo sa maaabot ng mga bata.",
+                      "ja": "室温で保管し、高温や直射日光を避けてください。キャップをしっかり閉め、子どもの手の届かない所に保管してください。"
+                  }
+              },
+              warnings: [
+                  {
+                      "zh-TW": "手部若沾到凝膠，立刻用肥皂和清水洗淨；不要讓凝膠碰到他人皮膚。",
+                      "en": "If gel gets on your hands, wash it off right away with soap and water. Do not let the gel touch another person’s skin.",
+                      "id": "Jika gel terkena tangan, segera cuci dengan sabun dan air. Jangan biarkan gel menyentuh kulit orang lain.",
+                      "vi": "Nếu gel dính vào tay, hãy rửa ngay bằng xà phòng và nước. Không để gel chạm vào da người khác.",
+                      "th": "หากเจลติดมือ ให้ล้างออกทันทีด้วยสบู่และน้ำ และอย่าให้เจลสัมผัสผิวหนังของผู้อื่น",
+                      "tl": "Kung dumikit ang gel sa kamay, hugasan agad gamit ang sabon at tubig. Huwag hayaang dumikit ito sa balat ng ibang tao.",
+                      "ja": "ジェルが手についたらすぐ石けんと水で洗い流し、他の人の皮膚に触れさせないでください。"
+                  },
+                  {
+                      "zh-TW": "這是成年男性的睪固酮補充藥，不是鼻塞藥，也不能自行加量或停藥。",
+                      "en": "This is testosterone replacement medicine for adult men. It is not a decongestant, and you should not change the dose or stop it on your own.",
+                      "id": "Ini adalah obat pengganti testosteron untuk pria dewasa. Ini bukan obat hidung tersumbat, dan Anda tidak boleh mengubah dosis atau menghentikannya sendiri.",
+                      "vi": "Đây là thuốc bổ sung testosterone cho nam trưởng thành. Đây không phải thuốc thông mũi và bạn không được tự ý đổi liều hay ngừng thuốc.",
+                      "th": "นี่คือยาทดแทนฮอร์โมนเทสโทสเทอโรนสำหรับผู้ชายผู้ใหญ่ ไม่ใช่ยาลดคัดจมูก และไม่ควรปรับขนาดยาหรือหยุดยาเอง",
+                      "tl": "Ito ay testosterone replacement medicine para sa mga adultong lalaki. Hindi ito gamot sa baradong ilong, at hindi dapat baguhin ang dose o ihinto ito nang mag-isa.",
+                      "ja": "これは成人男性のテストステロン補充薬です。鼻づまり薬ではなく、自己判断で増減量や中止をしないでください。"
+                  },
+                  {
+                      "zh-TW": "若鼻內疼痛、常流鼻血、鼻塞明顯加重，或藥一直流到喉嚨，請回診。",
+                      "en": "Go back for review if you get nasal pain, frequent nosebleeds, much worse congestion, or if the medicine keeps running down your throat.",
+                      "id": "Periksa kembali bila timbul nyeri hidung, mimisan sering, hidung makin tersumbat, atau obat terus mengalir ke tenggorokan.",
+                      "vi": "Hãy tái khám nếu bị đau trong mũi, chảy máu mũi thường xuyên, nghẹt mũi nặng hơn, hoặc thuốc thường xuyên chảy xuống họng.",
+                      "th": "ให้กลับไปพบแพทย์หากมีอาการปวดในจมูก เลือดกำเดาบ่อย คัดจมูกมากขึ้น หรือยามักไหลลงคอ",
+                      "tl": "Magpatingin muli kung may pananakit sa loob ng ilong, madalas na nosebleed, lalong pagbabara ng ilong, o kung laging dumadaloy ang gamot sa lalamunan.",
+                      "ja": "鼻の痛み、鼻血が続く、鼻づまりの悪化、または薬がのどへ流れ続ける時は受診してください。"
+                  }
+              ],
+              qrUrl: "https://pharmacy.example.com/meds/natesto"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/meds/natesto"
+  },
+
+  // ── Saline Nasal Rinse Kit ─────────────────────,
+  {
+      "id": "saline-nasal-rinse-kit",
+      "category": "nasal",
+      color: { main: "#185FA5", light: "#E6F1FB", dark: "#042C53", badge: "#B5D4F4", badgeText: "#042C53" },
+      emergency: false,
+      headerBadge: tx("鼻腔保健操作", "Nasal care instructions", "Panduan perawatan hidung", "Hướng dẫn chăm sóc mũi", "คำแนะนำการดูแลจมูก", "Gabay sa pangangalaga ng ilong", "鼻腔ケア手順"),
+      name: tx("鼻腔沖洗（生理食鹽水）", "Saline nasal rinse kit", "Perlengkapan bilas hidung dengan saline", "Bộ rửa mũi bằng nước muối sinh lý", "ชุดล้างจมูกด้วยน้ำเกลือ", "Kit sa banlaw ng ilong gamit ang saline", "生理食塩水鼻洗浄セット"),
+      subtitle: tx("配製、安全用水、2 歲以下、2 歲以上", "Mixing, safe water, under age 2, and age 2 and up", "Cara mencampur, air yang aman, usia di bawah 2 tahun, dan usia 2 tahun ke atas", "Pha dung dịch, nước an toàn, dưới 2 tuổi và từ 2 tuổi trở lên", "การผสม น้ำที่ปลอดภัย เด็กอายุต่ำกว่า 2 ปี และอายุตั้งแต่ 2 ปีขึ้นไป", "Paghahanda, ligtas na tubig, wala pang 2 taong gulang, at edad 2 pataas", "調製、安全な水、2歳未満、2歳以上"),
+      pages: [
+          {
+              pageLabel: tx("A 面｜配製與適用", "Side A | mixing and when to use", "Sisi A | cara mencampur dan kapan digunakan", "Mặt A | pha dung dịch và khi nào dùng", "ด้าน A | การผสมและเมื่อใดควรใช้", "Side A | paghahanda at kailan gagamitin", "A面｜作り方と適応"),
+              badge: tx("A 面｜配製與適用", "Side A | mixing", "Sisi A | cara mencampur", "Mặt A | pha dung dịch", "ด้าน A | การผสม", "Side A | paghahanda", "A面｜作り方"),
+              subtitle: tx("", "", "", "", "", "", ""),
+              usage: null,
+              preStepsInfo: {
+                  title: tx("先看這一張", "Start on this side", "Mulai dari sisi ini", "Bắt đầu từ mặt này", "เริ่มจากด้านนี้", "Dito muna magsimula", "まずこの面から"),
+                  text: tx("先洗手。這一面教你怎麼配鹽水，也幫你決定下一張該看哪一面。", "Wash your hands first. This side shows how to mix the saline and which next side you should use.", "Cuci tangan dulu. Sisi ini menjelaskan cara mencampur larutan garam dan membantu Anda memilih sisi berikutnya.", "Rửa tay trước. Mặt này hướng dẫn cách pha nước muối và giúp bạn biết nên xem mặt nào tiếp theo.", "ล้างมือก่อน ด้านนี้อธิบายวิธีผสมน้ำเกลือและช่วยบอกว่าควรดูด้านไหนต่อ", "Maghugas muna ng kamay. Ipinapakita sa bahaging ito kung paano ihanda ang saline at kung aling side ang susunod na titingnan.", "まず手を洗います。この面では食塩水の作り方と、次にどの面を見るかを説明します。")
+              },
+              infoBoxes: [
+                  {
+                      title: tx("怎麼選工具", "How to choose a device", "Cara memilih alat", "Chọn dụng cụ thế nào", "เลือกอุปกรณ์อย่างไร", "Paano pumili ng gamit", "道具の選び方"),
+                      text: tx("鼻內乾燥或少量鼻涕：可用市售生理食鹽水噴霧／滴鼻液。2 歲以下：用滴鼻液或噴霧加吸鼻器。2 歲以上若要真正沖出較多鼻涕，較常用洗鼻瓶、洗鼻壺或脈動式洗鼻器。", "For a dry nose or a small amount of mucus, a saline spray or drops may be enough. Under age 2, use drops or spray plus a bulb syringe. Age 2 and up: if you need to wash out more mucus, people more often use a squeeze bottle, neti pot, or pulsed rinse device.", "Bila hidung hanya kering atau lendirnya sedikit, semprotan atau tetes saline sering sudah cukup. Untuk usia di bawah 2 tahun, gunakan tetes atau semprotan ditambah penyedot lendir. Usia 2 tahun ke atas: bila ingin membilas keluar lendir yang lebih banyak, biasanya digunakan botol bilas, neti pot, atau alat bilas berdenyut.", "Nếu mũi chỉ khô hoặc ít dịch, xịt hay nhỏ nước muối thường là đủ. Trẻ dưới 2 tuổi dùng thuốc nhỏ hoặc xịt kèm dụng cụ hút mũi. Từ 2 tuổi trở lên, nếu muốn rửa trôi nhiều dịch hơn, thường dùng chai rửa mũi, bình neti hoặc máy rửa mũi dạng xung.", "ถ้าจมูกแห้งหรือมีน้ำมูกเพียงเล็กน้อย สเปรย์หรือหยดน้ำเกลือมักเพียงพอ เด็กอายุต่ำกว่า 2 ปีให้ใช้ยาหยดหรือสเปรย์ร่วมกับลูกยางดูดน้ำมูก อายุ 2 ปีขึ้นไป หากต้องการล้างเอาน้ำมูกออกมากขึ้น มักใช้ขวดล้างจมูก หม้อเนติ หรือเครื่องล้างจมูกแบบพัลส์", "Kung tuyong ilong lang o kaunting sipon, puwede nang sapat ang saline spray o drops. Sa wala pang 2 taong gulang, gumamit ng drops o spray kasama ng bulb syringe. Sa edad 2 pataas, kung gustong banlawan palabas ang mas maraming sipon, mas karaniwang ginagamit ang squeeze bottle, neti pot, o pulsed rinse device.", "鼻の乾燥や少量の鼻水には、生理食塩水スプレーや点鼻を使います。2歳未満は点鼻やスプレーに吸引器を合わせます。2歳以上で鼻水をしっかり洗い流したい時は、洗浄ボトル、ネティポット、脈動式の洗浄器がよく使われます。")
+                  },
+                  {
+                      title: tx("下一張看哪一面", "Which side to read next", "Lanjut lihat sisi mana", "Tiếp theo xem mặt nào", "ควรดูด้านไหนต่อ", "Aling side ang susunod na babasahin", "次に見る面"),
+                      text: tx("2 歲以下看 B 面；2 歲以上看 C 面。", "Children under 2 should use Side B. Age 2 and up should use Side C.", "Anak di bawah 2 tahun lihat Sisi B. Usia 2 tahun ke atas lihat Sisi C.", "Trẻ dưới 2 tuổi xem Mặt B. Từ 2 tuổi trở lên xem Mặt C.", "เด็กอายุต่ำกว่า 2 ปีดูด้าน B เด็กอายุตั้งแต่ 2 ปีขึ้นไปดูด้าน C", "Kung wala pang 2 taong gulang, gamitin ang Side B. Kung edad 2 pataas, gamitin ang Side C.", "2歳未満はB面、2歳以上はC面を見てください。")
+                  },
+                  {
+                      title: tx("市售可直接買", "What you can buy", "Yang bisa dibeli langsung", "Có thể mua sẵn gì", "ซื้ออะไรได้บ้าง", "Ano ang puwedeng bilhin", "薬局でそのまま買えるもの"),
+                      text: tx("可買蒸餾水、無菌水、生理食鹽水噴霧／滴鼻液、洗鼻鹽包、洗鼻瓶、洗鼻壺或脈動式洗鼻器。2 歲以下優先買無菌生理食鹽水滴鼻液。", "You can buy distilled water, sterile water, saline spray or drops, rinse packets, squeeze bottles, neti pots, or pulsed rinse devices. For children under 2, sterile saline drops are the first choice.", "Anda dapat membeli air suling, air steril, semprotan atau tetes saline, paket garam bilas, botol bilas, neti pot, atau alat bilas berdenyut. Untuk anak di bawah 2 tahun, pilihan pertama adalah tetes saline steril.", "Có thể mua nước cất, nước vô khuẩn, xịt hoặc nhỏ nước muối, gói muối rửa mũi, chai rửa mũi, bình neti hoặc máy rửa mũi dạng xung. Với trẻ dưới 2 tuổi, ưu tiên thuốc nhỏ nước muối vô khuẩn.", "สามารถซื้อน้ำกลั่น น้ำปราศจากเชื้อ สเปรย์หรือยาหยดน้ำเกลือ ซองเกลือล้างจมูก ขวดล้างจมูก หม้อเนติ หรือเครื่องล้างจมูกแบบพัลส์ได้ สำหรับเด็กอายุต่ำกว่า 2 ปี ควรเลือกยาหยดน้ำเกลือปราศจากเชื้อก่อน", "Puwedeng bumili ng distilled water, sterile water, saline spray o drops, rinse packets, squeeze bottle, neti pot, o pulsed rinse device. Para sa mga batang wala pang 2 taong gulang, unang piliin ang sterile saline drops.", "蒸留水、滅菌水、生理食塩水スプレー／点鼻液、洗浄用パック、洗浄ボトル、ネティポット、脈動式洗浄器を買えます。2歳未満では無菌の生理食塩水点鼻が第一選択です。")
+                  }
+              ],
+              steps: [
+                  {
+                      action: tx("先確認現在適不適合做", "Check first if now is a good time to do this", "Periksa dulu apakah sekarang aman untuk dilakukan", "Kiểm tra trước xem lúc này có phù hợp để làm hay không", "ตรวจดูก่อนว่าตอนนี้เหมาะจะทำหรือไม่", "Suriin muna kung ito ang tamang oras para gawin ito", "今日してよい状態か確認する"),
+                      note: tx("正在流鼻血、耳朵疼痛或感染、鼻部手術未滿 6 週、孩子強烈抗拒時，先不要做。嚴重鼻塞或鼻黏膜腫脹本身不是禁忌；可先用生理食鹽水滴鼻或噴霧潤濕，再決定是否進一步沖洗。若鹽水完全流不過去，不要硬擠。", "Do not do this during a nosebleed, ear pain or infection, within 6 weeks after nasal surgery, or when the child is strongly resisting. Severe congestion or swollen nasal lining by itself is not a reason to avoid saline. You may start with saline drops or spray first, then decide whether to rinse. If the saline will not pass through at all, do not force it.", "Jangan lakukan saat sedang mimisan, telinga nyeri atau infeksi, belum 6 minggu setelah operasi hidung, atau saat anak menolak dengan kuat. Hidung tersumbat berat atau mukosa hidung bengkak bukan larangan mutlak. Anda boleh mulai dengan tetes atau semprotan saline dulu, lalu menilai apakah perlu pembilasan. Bila larutan sama sekali tidak bisa lewat, jangan dipaksa.", "Không làm khi đang chảy máu mũi, đau tai hoặc nhiễm trùng tai, chưa đủ 6 tuần sau mổ mũi, hoặc khi trẻ chống cự mạnh. Nghẹt mũi nhiều hay niêm mạc mũi sưng không phải là chống chỉ định tuyệt đối. Có thể bắt đầu bằng thuốc nhỏ hoặc xịt nước muối trước rồi mới quyết định có rửa tiếp hay không. Nếu nước muối hoàn toàn không đi qua được, đừng cố bóp.", "อย่าทำขณะมีเลือดกำเดาไหล ปวดหูหรือหูติดเชื้อ ภายใน 6 สัปดาห์หลังผ่าตัดจมูก หรือเมื่อเด็กต่อต้านอย่างมาก อาการคัดจมูกมากหรือเยื่อบุจมูกบวมไม่ใช่ข้อห้ามเด็ดขาด อาจเริ่มด้วยยาหยดหรือสเปรย์น้ำเกลือก่อน แล้วจึงค่อยดูว่าจะล้างต่อหรือไม่ หากน้ำเกลือไม่ไหลผ่านเลย อย่าฝืนบีบ", "Huwag gawin ito kapag may nosebleed, pananakit o impeksiyon sa tainga, sa loob ng 6 na linggo pagkatapos ng operasyon sa ilong, o kung matindi ang pagtutol ng bata. Ang matinding pagbabara o pamamaga ng lining ng ilong ay hindi awtomatikong bawal. Puwedeng magsimula muna sa saline drops o spray, saka magpasya kung itutuloy ang banlaw. Kung hindi talaga dumaraan ang saline, huwag pilitin.", "鼻血、耳の痛みや感染、鼻の手術から6週間未満、子どもが強く嫌がる時は行わないでください。鼻づまりや鼻粘膜の腫れ自体は禁忌ではありません。まず生理食塩水の点鼻やスプレーでうるおしてから、さらに洗浄するか決めてもかまいません。食塩水がまったく通らない時は無理に押し込まないでください。"),
+                      highlight: true,
+                      illustration: "assets/svg/saline-rinse/step-0.svg"
+                  },
+                  {
+                      action: tx("先準備安全用水", "Prepare safe water first", "Siapkan air yang aman terlebih dahulu", "Chuẩn bị nước an toàn trước", "เตรียมน้ำที่ปลอดภัยก่อน", "Maghanda muna ng ligtas na tubig", "安全な水を用意する"),
+                      note: tx("可直接買蒸餾水或無菌水；也可把自來水滾沸至少 1 分鐘後放涼。市售洗鼻鹽包或洗鼻套組，也一樣要配這些安全用水。", "You can buy distilled water or sterile water, or boil tap water for at least 1 minute and let it cool. Store-bought rinse packets and rinse kits still need one of these safe water options.", "Anda dapat membeli air suling atau air steril, atau merebus air keran sedikitnya 1 menit lalu mendinginkannya. Paket garam bilas dan kit bilas yang dijual di toko tetap harus dicampur dengan air yang aman ini.", "Có thể mua nước cất hoặc nước vô khuẩn, hoặc đun sôi nước máy ít nhất 1 phút rồi để nguội. Gói muối rửa mũi và bộ rửa mũi bán sẵn cũng vẫn phải pha bằng nguồn nước an toàn này.", "สามารถซื้อน้ำกลั่นหรือน้ำปราศจากเชื้อได้ หรือจะต้มน้ำประปาอย่างน้อย 1 นาทีแล้วปล่อยให้เย็นก็ได้ ซองเกลือล้างจมูกและชุดล้างจมูกที่ขายสำเร็จก็ยังต้องใช้น้ำที่ปลอดภัยแบบนี้", "Puwedeng bumili ng distilled o sterile water, o pakuluan ang tubig-gripo nang hindi bababa sa 1 minuto at palamigin ito. Ang mga binibiling rinse packets at rinse kits ay kailangan pa ring haluan ng ganitong ligtas na tubig.", "蒸留水や滅菌水を買うこともできます。水道水を使う時は少なくとも1分間沸騰させてから冷ましてください。市販の洗浄用パックやキットも、こうした安全な水で溶かして使います。"),
+                      highlight: true,
+                      illustration: "assets/svg/saline-rinse/step-1.svg"
+                  },
+                  {
+                      action: tx("放涼到微溫", "Cool it until it is lukewarm", "Biarkan mendingin sampai suam-suam kuku", "Để nguội đến mức hơi ấm", "ปล่อยให้เย็นลงจนแค่อุ่นเล็กน้อย", "Palamigin hanggang maging maligamgam", "ぬるい温度まで冷ます"),
+                      note: tx("約 37°C；太冷或太熱都會刺激鼻腔。", "Aim for about body temperature, around 37°C. If it is too cold or too hot, it can irritate the nose.", "Targetkan suhu mendekati suhu tubuh, sekitar 37°C. Terlalu dingin atau terlalu panas dapat mengiritasi hidung.", "Nhắm tới nhiệt độ gần thân nhiệt, khoảng 37°C. Quá lạnh hoặc quá nóng đều có thể kích thích mũi.", "ควรให้อุณหภูมิใกล้เคียงอุณหภูมิร่างกาย ประมาณ 37°C ถ้าเย็นหรือร้อนเกินไปจะระคายจมูกได้", "Gawing maligamgam, malapit sa temperatura ng katawan, mga 37°C. Kapag masyadong malamig o masyadong mainit, puwede nitong mairita ang ilong.", "体温くらい、約37°Cを目安にします。冷たすぎても熱すぎても鼻が刺激されます。"),
+                      illustration: "assets/svg/saline-rinse/step-2.svg"
+                  },
+                  {
+                      action: tx("加入 3/4 茶匙食鹽", "Add 3/4 teaspoon of salt", "Tambahkan 3/4 sendok teh garam", "Cho 3/4 thìa cà phê muối", "เติมเกลือ 3/4 ช้อนชา", "Magdagdag ng 3/4 kutsaritang asin", "食塩を小さじ3/4入れる"),
+                      note: tx("用一般食鹽即可；不要用低鈉鹽、調味鹽或混合香料鹽。", "Plain table salt is fine. Do not use low-sodium salt, seasoned salt, or salt mixed with spices.", "Garam dapur biasa boleh dipakai. Jangan gunakan garam rendah natrium, garam berbumbu, atau garam campur rempah.", "Có thể dùng muối ăn thông thường. Không dùng muối ít natri, muối nêm sẵn hoặc muối trộn gia vị.", "ใช้เกลือแกงธรรมดาได้ อย่าใช้เกลือลดโซเดียม เกลือปรุงรส หรือเกลือที่ผสมเครื่องเทศ", "Puwede ang karaniwang asin. Huwag gumamit ng low-sodium salt, seasoned salt, o asin na may halong pampalasa.", "普通の食塩でかまいません。減塩塩、味付きの塩、香辛料入りの塩は使わないでください。"),
+                      illustration: "assets/svg/saline-rinse/step-3.svg"
+                  },
+                  {
+                      action: tx("需要時加 1/4 茶匙小蘇打", "If needed, add 1/4 teaspoon of baking soda", "Bila perlu, tambahkan 1/4 sendok teh soda kue", "Nếu cần, thêm 1/4 thìa cà phê baking soda", "ถ้าจำเป็น ให้เติมเบกกิ้งโซดา 1/4 ช้อนชา", "Kung kailangan, magdagdag ng 1/4 kutsaritang baking soda", "必要なら重曹を小さじ1/4加える"),
+                      note: tx("可減少刺痛；沒有也可以。", "This may make the rinse sting less, but it is optional.", "Ini dapat membantu mengurangi rasa perih, tetapi tidak wajib.", "Có thể giúp bớt rát hơn, nhưng không bắt buộc.", "อาจช่วยลดอาการแสบได้ แต่ไม่จำเป็นต้องใส่ก็ได้", "Makakatulong ito para hindi gaanong mahapdi, pero opsyonal lang ito.", "しみる感じを減らせますが、なくてもかまいません。"),
+                      illustration: "assets/svg/saline-rinse/step-4.svg"
+                  },
+                  {
+                      action: tx("標記時間，24 小時內用完", "Mark the time and use it within 24 hours", "Catat waktunya dan habiskan dalam 24 jam", "Ghi lại thời gian và dùng hết trong 24 giờ", "จดเวลาไว้และใช้ให้หมดภายใน 24 ชั่วโมง", "Lagyan ng oras at ubusin sa loob ng 24 oras", "時間を書き、24時間以内に使い切る"),
+                      note: tx("剩下的鹽水要丟掉，不要留到明天。", "Throw away any leftover saline. Do not save it for the next day.", "Buang sisa larutan garam. Jangan disimpan sampai besok.", "Bỏ phần nước muối còn lại. Không để dành sang ngày hôm sau.", "น้ำเกลือที่เหลือต้องทิ้ง อย่าเก็บไว้ใช้ต่อวันพรุ่งนี้", "Itapon ang natirang saline. Huwag itong itabi para sa susunod na araw.", "残った食塩水は捨ててください。翌日まで残して使わないでください。"),
+                      illustration: "assets/svg/saline-rinse/step-5.svg"
+                  }
+              ],
+              storage: {
+                  title: tx("調好的鹽水保存", "How to keep prepared saline", "How to keep prepared saline", "How to keep prepared saline", "How to keep prepared saline", "How to keep prepared saline", "作った食塩水の保管"),
+                  text: tx("室溫密蓋或冷藏都可以；24 小時後丟棄。使用前要回到微溫。", "Keep it covered at room temperature or in the refrigerator. Throw it away after 24 hours, and warm it back to lukewarm before use.", "Simpan tertutup pada suhu ruang atau di lemari es. Buang setelah 24 jam, lalu hangatkan kembali sampai suam-suam kuku sebelum dipakai.", "Đậy kín và để ở nhiệt độ phòng hoặc trong tủ lạnh. Bỏ đi sau 24 giờ, và làm ấm lại đến mức hơi ấm trước khi dùng.", "เก็บโดยปิดฝาไว้ที่อุณหภูมิห้องหรือในตู้เย็นก็ได้ ทิ้งหลัง 24 ชั่วโมง และก่อนใช้ให้ปรับกลับมาเป็นอุณหภูมิอุ่นเล็กน้อย", "Takpan at itabi sa room temperature o sa refrigerator. Itapon pagkalipas ng 24 oras, at painitin muli hanggang maligamgam bago gamitin.", "ふたをして室温または冷蔵で保管できます。24時間後は捨て、使う前にぬるい温度へ戻してください。")
+              },
+              warnings: [
+                  tx("絕對不要用未煮沸的自來水、井水或生水。", "Never use unboiled tap water, well water, or untreated water.", "Jangan pernah memakai air keran yang belum direbus, air sumur, atau air mentah.", "Tuyệt đối không dùng nước máy chưa đun sôi, nước giếng hoặc nước chưa xử lý.", "ห้ามใช้น้ำประปาที่ไม่ต้ม น้ำบ่อ หรือน้ำดิบโดยเด็ดขาด", "Huwag kailanman gumamit ng tubig-gripo na hindi pinakuluan, tubig-balon, o tubig na hindi ligtas inumin.", "煮沸していない水道水、井戸水、生水は絶対に使わないでください。"),
+                  tx("2 歲以下只用滴鼻和吸鼻器，不用沖洗瓶。", "Children under 2 should use drops and a bulb syringe, not a rinse bottle.", "Anak di bawah 2 tahun hanya memakai tetes hidung dan penyedot lendir, bukan botol bilas.", "Trẻ dưới 2 tuổi chỉ dùng thuốc nhỏ và dụng cụ hút mũi, không dùng chai rửa mũi.", "เด็กอายุต่ำกว่า 2 ปีให้ใช้ยาหยดและลูกยางดูดน้ำมูกเท่านั้น ไม่ใช้ขวดล้างจมูก", "Ang mga batang wala pang 2 taong gulang ay drops at bulb syringe lang ang gamitin, hindi rinse bottle.", "2歳未満は滴鼻と吸引器のみを使い、洗浄ボトルは使わないでください。"),
+                  tx("流鼻血、耳痛或術後 6 週內，先不要做。", "Do not do this during a nosebleed, ear pain, or within 6 weeks after nasal surgery.", "Jangan lakukan saat mimisan, telinga sakit, atau dalam 6 minggu setelah operasi hidung.", "Không làm khi đang chảy máu mũi, đau tai, hoặc trong vòng 6 tuần sau phẫu thuật mũi.", "อย่าทำขณะมีเลือดกำเดาไหล ปวดหู หรือภายใน 6 สัปดาห์หลังผ่าตัดจมูก", "Huwag gawin ito kapag may nosebleed, pananakit ng tainga, o sa loob ng 6 na linggo pagkatapos ng operasyon sa ilong.", "鼻血、耳の痛み、手術後6週間以内は行わないでください。")
+              ],
+              qrUrl: "https://pharmacy.example.com/nasal-rinse/recipe?lang=zh-TW"
+          },
+          {
+              pageLabel: tx("B 面｜2 歲以下", "Side B | under age 2", "Sisi B | di bawah 2 tahun", "Mặt B | dưới 2 tuổi", "ด้าน B | ต่ำกว่า 2 ปี", "Side B | wala pang 2 taong gulang", "B面｜2歳未満"),
+              badge: tx("B 面｜2 歲以下", "Side B | under age 2", "Sisi B | di bawah 2 tahun", "Mặt B | dưới 2 tuổi", "ด้าน B | ต่ำกว่า 2 ปี", "Side B | wala pang 2 taong gulang", "B面｜2歳未満"),
+              subtitle: tx("", "", "", "", "", "", ""),
+              usage: tx("鼻塞時可做，每天最多 3–4 次；餵奶前或睡前最常用。", "Use it when the nose is blocked, up to 3 to 4 times a day. It is most often used before feeds or before sleep.", "Gunakan saat hidung tersumbat, paling banyak 3–4 kali sehari. Paling sering dipakai sebelum menyusu atau sebelum tidur.", "Dùng khi nghẹt mũi, tối đa 3–4 lần mỗi ngày. Thường dùng nhất trước khi bú hoặc trước khi ngủ.", "ใช้เมื่อคัดจมูก วันละไม่เกิน 3–4 ครั้ง มักใช้ก่อนกินนมหรือก่อนนอน", "Gamitin kapag barado ang ilong, hanggang 3–4 na beses sa isang araw. Pinakakaraniwan itong gamitin bago dumede o bago matulog.", "鼻づまりの時に使います。1日3〜4回までで、授乳前や就寝前によく使います。"),
+              preStepsInfo: {
+                  title: tx("2 歲以下不用沖洗瓶", "Do not use a rinse bottle under age 2", "Di bawah 2 tahun jangan pakai botol bilas", "Dưới 2 tuổi không dùng chai rửa mũi", "อายุต่ำกว่า 2 ปีไม่ใช้ขวดล้างจมูก", "Huwag gumamit ng rinse bottle sa wala pang 2 taong gulang", "2歳未満は洗浄ボトルを使わない"),
+                  text: tx("這一面只用生理食鹽水滴鼻和吸鼻器，不用洗鼻壺或擠壓瓶。", "For children under 2, use only saline drops or spray plus a bulb syringe. Do not use a neti pot or squeeze bottle.", "Untuk anak di bawah 2 tahun, gunakan tetes atau semprotan saline bersama penyedot lendir. Jangan gunakan neti pot atau botol peras.", "Với trẻ dưới 2 tuổi, chỉ dùng thuốc nhỏ hoặc xịt nước muối kèm dụng cụ hút mũi. Không dùng bình neti hay chai bóp.", "สำหรับเด็กอายุต่ำกว่า 2 ปี ให้ใช้ยาหยดหรือสเปรย์น้ำเกลือร่วมกับลูกยางดูดน้ำมูกเท่านั้น ไม่ใช้หม้อเนติหรือขวดบีบล้างจมูก", "Para sa mga batang wala pang 2 taong gulang, saline drops o spray kasama ng bulb syringe lang ang gamitin. Huwag gumamit ng neti pot o squeeze bottle.", "この面では生理食塩水の点鼻と吸引器だけを使います。洗浄壺や押し出しボトルは使いません。")
+              },
+              storage: null,
+              infoBoxes: [
+                  {
+                      title: tx("還可以這樣幫忙", "Other safe ways to help", "Cara aman lain yang bisa membantu", "Cách an toàn khác có thể hỗ trợ", "วิธีช่วยอื่นที่ปลอดภัย", "Iba pang ligtas na paraan para makatulong", "ほかにできる安全な方法"),
+                      text: tx("也可用無菌生理食鹽水噴霧。重點是先潤濕、再視需要輕吸鼻涕；若只是鼻內乾燥，噴霧或滴鼻就足夠。室內乾燥時可用冷霧加濕器，或讓孩子吸一會兒溫熱水氣。", "A sterile saline spray is also fine. The goal is to moisten first, then suction only if needed. If dryness is the main problem, spray or drops alone are often enough. If the room is dry, a cool-mist humidifier or a short time near warm steam can also help.", "Semprotan saline steril juga boleh dipakai. Tujuannya adalah membasahi dulu, lalu sedot lendir hanya bila perlu. Bila masalah utamanya hanya hidung kering, semprotan atau tetes saja sering sudah cukup. Bila ruangan kering, humidifier kabut dingin atau sebentar menghirup uap hangat juga bisa membantu.", "Có thể dùng thêm xịt nước muối vô khuẩn. Mục tiêu là làm ẩm trước, rồi chỉ hút mũi khi thật cần. Nếu chủ yếu chỉ khô mũi, xịt hoặc nhỏ là đủ. Khi phòng khô, có thể dùng máy tạo ẩm hơi mát hoặc cho trẻ hít hơi ấm trong thời gian ngắn.", "สามารถใช้สเปรย์น้ำเกลือปราศจากเชื้อได้เช่นกัน เป้าหมายคือทำให้ชุ่มก่อน แล้วดูดน้ำมูกเฉพาะเมื่อจำเป็น ถ้าแค่จมูกแห้ง สเปรย์หรือยาหยดก็มักเพียงพอ หากห้องแห้ง เครื่องพ่นไอน้ำเย็นหรือการสูดไอน้ำอุ่นช่วงสั้น ๆ ก็ช่วยได้", "Puwede ring gumamit ng sterile saline spray. Ang mahalaga ay basain muna, saka lang sumipsip ng sipon kung kailangan. Kung panunuyo lang ng ilong ang problema, kadalasang sapat na ang spray o drops. Kung tuyong-tuyo ang hangin sa kuwarto, makakatulong din ang cool-mist humidifier o sandaling paglanghap ng mainit-init na singaw.", "無菌の生理食塩水スプレーを使ってもかまいません。まずうるおし、必要な時だけ吸引するのが基本です。乾燥が主な問題なら、スプレーや点鼻だけで十分なこともあります。室内が乾燥している時は冷たいミストの加湿器や、しばらく温かい蒸気のそばにいることも役立ちます。")
+                  }
+              ],
+              steps: [
+                  {
+                      action: tx("先洗手，準備毛巾和吸鼻器", "Wash your hands and get the towel and bulb syringe ready", "Cuci tangan lalu siapkan handuk dan penyedot lendir", "Rửa tay rồi chuẩn bị khăn và dụng cụ hút mũi", "ล้างมือ แล้วเตรียมผ้าเช็ดกับลูกยางดูดน้ำมูก", "Maghugas ng kamay at ihanda ang tuwalya at bulb syringe", "手を洗い、タオルと吸引器を準備する"),
+                      note: tx("吸鼻器每次用後都要洗淨、晾乾。", "Clean and air-dry the bulb syringe after every use.", "Bersihkan dan kering-anginkan penyedot lendir setiap selesai dipakai.", "Rửa sạch và để khô dụng cụ hút mũi sau mỗi lần dùng.", "ล้างและผึ่งให้แห้งลูกยางดูดน้ำมูกทุกครั้งหลังใช้", "Linisin at patuyuin sa hangin ang bulb syringe pagkatapos ng bawat gamit.", "吸引器は使うたびに洗って乾かしてください。"),
+                      illustration: "assets/svg/saline-rinse/step-6.svg"
+                  },
+                  {
+                      action: tx("先用無菌生理食鹽水滴鼻", "Use sterile saline drops first", "Teteskan saline steril terlebih dahulu", "Nhỏ nước muối vô khuẩn trước", "เริ่มจากหยอดน้ำเกลือปราศจากเชื้อก่อน", "Unahin ang sterile saline drops", "まず無菌の生理食塩水を点鼻する"),
+                      note: tx("藥局買到的 0.9% 滴鼻液最方便；若剛從冰箱拿出，先回溫到微溫。", "Commercial sterile 0.9% saline drops are usually the easiest choice. If they were refrigerated, warm them back to lukewarm first.", "Tetes saline steril 0,9% yang dibeli di apotek biasanya paling praktis. Jika baru dikeluarkan dari lemari es, hangatkan dulu sampai suam-suam kuku.", "Thuốc nhỏ nước muối vô khuẩn 0,9% mua ở nhà thuốc thường là lựa chọn tiện nhất. Nếu vừa lấy từ tủ lạnh ra, hãy làm ấm đến mức hơi ấm trước.", "ยาหยดน้ำเกลือปราศจากเชื้อ 0.9% ที่ซื้อจากร้านขายยามักสะดวกที่สุด ถ้าเพิ่งเอาออกจากตู้เย็น ให้ปรับให้อุ่นเล็กน้อยก่อน", "Kadalasang pinakamadaling gamitin ang nabibiling sterile 0.9% saline drops sa botika. Kung galing ito sa refrigerator, painitin muna hanggang maging maligamgam.", "市販の無菌0.9%生理食塩水が最も使いやすいです。冷蔵していた場合は、ぬるい温度まで戻してください。"),
+                      illustration: "assets/svg/saline-rinse/step-7.svg"
+                  },
+                  {
+                      action: tx("讓孩子仰躺，頭微微後仰", "Lay the child on the back with the head tilted back slightly", "Baringkan anak dan dongakkan kepala sedikit", "Đặt trẻ nằm ngửa và ngửa đầu nhẹ ra sau", "ให้เด็กนอนหงายและเงยศีรษะขึ้นเล็กน้อย", "Ihiga ang bata nang nakatihaya at bahagyang itingala ang ulo", "子どもを仰向けにして、頭を少しだけ後ろへ傾ける"),
+                      note: tx("大人可固定雙手；不要硬壓住頭。", "You may hold the arms gently, but do not force the head down.", "Orang dewasa boleh menahan kedua tangan anak dengan lembut, tetapi jangan menekan kepala dengan kuat.", "Người lớn có thể giữ nhẹ hai tay của trẻ, nhưng không ép chặt đầu trẻ xuống.", "ผู้ใหญ่สามารถช่วยประคองแขนทั้งสองข้างได้ แต่อย่ากดศีรษะเด็กแรง ๆ", "Puwedeng alalayan ng matanda ang dalawang braso ng bata, pero huwag idiin nang pilit ang ulo.", "腕をやさしく支えてもかまいませんが、頭を押さえつけないでください。"),
+                      illustration: "assets/svg/saline-rinse/step-8.svg"
+                  },
+                  {
+                      action: tx("每側鼻孔滴 2 滴", "Place 2 drops into each nostril", "Teteskan 2 tetes ke tiap lubang hidung", "Nhỏ 2 giọt vào mỗi bên mũi", "หยอดข้างละ 2 หยด", "Magpatak ng tig-2 patak sa bawat butas ng ilong", "左右の鼻に2滴ずつ入れる"),
+                      note: tx("滴完等 30 秒，讓鼻涕先軟化。", "Wait 30 seconds after the drops so the mucus can soften first.", "Setelah diteteskan, tunggu 30 detik agar lendir lebih lunak dulu.", "Sau khi nhỏ, chờ 30 giây để dịch mũi mềm ra trước.", "หลังหยอดแล้ว รอ 30 วินาทีเพื่อให้น้ำมูกนิ่มลงก่อน", "Pagkatapos magpatak, maghintay ng 30 segundo para lumambot muna ang sipon.", "点鼻後は30秒待ち、鼻水をやわらかくします。"),
+                      highlight: true,
+                      illustration: "assets/svg/saline-rinse/step-9.svg"
+                  },
+                  {
+                      action: tx("需要時再輕吸鼻涕", "If needed, gently suction the mucus", "Bila perlu, sedot lendir dengan lembut", "Nếu cần, hút mũi nhẹ nhàng", "หากจำเป็นค่อยดูดน้ำมูกเบา ๆ", "Kung kailangan, dahan-dahang sipsipin ang sipon", "必要な時だけやさしく吸い取る"),
+                      note: tx("先壓扁吸鼻器，再放開把鼻涕吸出。", "Squeeze the bulb first, then release it to suction the mucus out.", "Tekan penyedot lendir dulu, lalu lepaskan untuk menyedot lendir keluar.", "Bóp dụng cụ hút trước, rồi thả ra để hút dịch mũi ra ngoài.", "บีบลูกยางก่อน แล้วค่อยปล่อยเพื่อดูดน้ำมูกออก", "Pigain muna ang bulb syringe, saka bitawan para masipsip ang sipon palabas.", "先に吸引器を押しつぶし、離して鼻水を吸い取ります。"),
+                      illustration: "assets/svg/saline-rinse/step-10.svg"
+                  },
+                  {
+                      action: tx("只擦鼻孔外面", "Wipe only the outside of the nostril", "Lap hanya bagian luar lubang hidung", "Chỉ lau bên ngoài lỗ mũi", "เช็ดเฉพาะด้านนอกของรูจมูก", "Punasan lang ang labas ng butas ng ilong", "鼻の外側だけを拭く"),
+                      note: tx("棉棒只碰外面，不要伸進鼻孔裡。", "A cotton swab should touch only the outside, not go inside the nostril.", "Kapas lidi hanya boleh menyentuh bagian luar, jangan dimasukkan ke dalam lubang hidung.", "Tăm bông chỉ chạm ở bên ngoài, không đưa vào trong lỗ mũi.", "สำลีก้านให้แตะเฉพาะด้านนอก อย่าสอดเข้าไปในรูจมูก", "Dapat lang sa labas ang cotton swab; huwag itong ipasok sa loob ng butas ng ilong.", "綿棒は外側だけに使い、鼻の穴の中へ入れないでください。"),
+                      illustration: "assets/svg/saline-rinse/step-11.svg"
+                  }
+              ],
+              warnings: [
+                  tx("2 歲以下不要用擠壓瓶或洗鼻壺。", "Do not use a squeeze bottle or neti pot under age 2.", "Jangan gunakan botol peras atau neti pot pada anak di bawah 2 tahun.", "Không dùng chai bóp hay bình neti cho trẻ dưới 2 tuổi.", "เด็กอายุต่ำกว่า 2 ปีไม่ควรใช้ขวดบีบหรือหม้อเนติ", "Huwag gumamit ng squeeze bottle o neti pot sa mga batang wala pang 2 taong gulang.", "2歳未満では押し出しボトルや洗浄壺を使わないでください。"),
+                  tx("2 歲以下不要用含藥通鼻滴鼻劑或通鼻噴劑。", "Do not use medicated decongestant drops or sprays in children under 2.", "Jangan gunakan obat tetes atau semprotan pelega hidung yang mengandung obat pada anak di bawah 2 tahun.", "Không dùng thuốc nhỏ hay xịt thông mũi có thuốc cho trẻ dưới 2 tuổi.", "เด็กอายุต่ำกว่า 2 ปีไม่ควรใช้ยาหยดหรือสเปรย์ลดคัดจมูกที่มีตัวยา", "Huwag gumamit ng may-lamang gamot na decongestant drops o sprays sa mga batang wala pang 2 taong gulang.", "2歳未満では薬入りの通鼻点鼻剤や通鼻スプレーを使わないでください。"),
+                  tx("若發燒、耳痛、喝奶變少或鼻塞越來越重，請就醫。", "Get medical care if there is fever, ear pain, poorer feeding, or worsening congestion.", "Segera berobat jika muncul demam, telinga sakit, minum susu berkurang, atau hidung tersumbat makin berat.", "Hãy đi khám nếu trẻ sốt, đau tai, bú kém đi hoặc nghẹt mũi ngày càng nặng hơn.", "หากมีไข้ ปวดหู กินนมหรือน้ำได้น้อยลง หรือคัดจมูกแย่ลง ให้ไปพบแพทย์", "Magpatingin kung may lagnat, pananakit ng tainga, mas kaunting pagdede, o lalong lumalalang pagbabara ng ilong.", "発熱、耳の痛み、飲みが悪い、鼻づまりが悪化する時は受診してください。")
+              ],
+              qrUrl: "https://pharmacy.example.com/nasal-rinse/under2?lang=zh-TW"
+          },
+          {
+              pageLabel: tx("C 面｜2 歲以上", "Side C | age 2 and up", "Sisi C | usia 2 tahun ke atas", "Mặt C | từ 2 tuổi trở lên", "ด้าน C | อายุ 2 ปีขึ้นไป", "Side C | edad 2 pataas", "C面｜2歳以上"),
+              badge: tx("C 面｜2 歲以上", "Side C | age 2+", "Sisi C | usia 2+", "Mặt C | từ 2 tuổi trở lên", "ด้าน C | อายุ 2 ปีขึ้นไป", "Side C | edad 2 pataas", "C面｜2歳以上"),
+              subtitle: tx("", "", "", "", "", "", ""),
+              usage: tx("急性鼻塞每日 1–2 次；平常保養每日 1 次即可。", "For bad congestion, rinse 1 to 2 times a day. For regular care, once a day is usually enough.", "Saat hidung tersumbat berat, bilas 1–2 kali sehari. Untuk perawatan rutin, biasanya cukup 1 kali sehari.", "Khi nghẹt mũi nhiều, rửa 1–2 lần mỗi ngày. Khi chăm sóc thường ngày, thường chỉ cần 1 lần mỗi ngày.", "เมื่อคัดจมูกมาก ให้ล้างวันละ 1–2 ครั้ง สำหรับการดูแลตามปกติ วันละ 1 ครั้งก็มักเพียงพอ", "Kapag matinding barado ang ilong, magbanlaw 1–2 beses sa isang araw. Para sa regular na pag-aalaga, kadalasan ay sapat na ang isang beses sa isang araw.", "鼻づまりが強い時は1日1〜2回、普段のケアでは1日1回で十分なことが多いです。"),
+              preStepsInfo: {
+                  title: tx("2–5 歲要大人幫忙", "Children age 2 to 5 need an adult to help", "Usia 2–5 tahun perlu dibantu orang dewasa", "Trẻ 2–5 tuổi cần người lớn hỗ trợ", "เด็กอายุ 2–5 ปีควรมีผู้ใหญ่ช่วย", "Ang edad 2–5 ay kailangang tulungan ng nakatatanda", "2〜5歳は大人が手伝う"),
+                  text: tx("若只是鼻內乾燥，可先用生理食鹽水噴霧。若要真正沖出較多鼻涕，2 歲以上較常用洗鼻瓶、洗鼻壺或脈動式洗鼻器。初學者先用擠壓瓶最容易上手；洗鼻壺水流較溫和，但較需要維持正確的頭部角度。", "If the main problem is dryness, a saline spray may be enough. If you need to wash out more mucus, children age 2 and up more often use a squeeze bottle, neti pot, or pulsed rinse device. A squeeze bottle is usually the easiest place to start. A neti pot has a gentler flow, but it needs steadier head positioning.", "Bila masalah utamanya hanya hidung kering, semprotan saline mungkin sudah cukup. Bila ingin membilas keluar lendir yang lebih banyak, anak usia 2 tahun ke atas lebih sering memakai botol bilas, neti pot, atau alat bilas berdenyut. Botol peras biasanya paling mudah untuk pemula. Neti pot alirannya lebih lembut, tetapi posisi kepala harus lebih stabil.", "Nếu chủ yếu chỉ khô mũi, xịt nước muối có thể đã đủ. Nếu muốn rửa trôi nhiều dịch hơn, trẻ từ 2 tuổi trở lên thường dùng chai bóp, bình neti hoặc máy rửa mũi dạng xung. Chai bóp thường là lựa chọn dễ bắt đầu nhất. Bình neti có dòng chảy nhẹ hơn nhưng cần giữ đầu đúng tư thế hơn.", "ถ้าปัญหาหลักคือจมูกแห้ง สเปรย์น้ำเกลืออาจเพียงพอ หากต้องการล้างเอาน้ำมูกออกมากขึ้น เด็กอายุ 2 ปีขึ้นไปมักใช้ขวดบีบล้างจมูก หม้อเนติ หรือเครื่องล้างจมูกแบบพัลส์ ขวดบีบมักเริ่มใช้ได้ง่ายที่สุด ส่วนหม้อเนติมีน้ำไหลนุ่มกว่าแต่ต้องควบคุมท่าศีรษะให้ถูกต้องมากกว่า", "Kung pagkatuyo lang ng ilong ang pangunahing problema, maaaring sapat na ang saline spray. Kung kailangang banlawan palabas ang mas maraming sipon, ang mga batang edad 2 pataas ay mas madalas na gumagamit ng squeeze bottle, neti pot, o pulsed rinse device. Kadalasang squeeze bottle ang pinakamadaling simulang gamitin. Mas banayad ang agos ng neti pot, pero mas kailangan ang tamang puwesto ng ulo.", "乾燥が主な問題なら、生理食塩水スプレーでも十分なことがあります。鼻水をしっかり洗い流したい時は、2歳以上では洗浄ボトル、ネティポット、脈動式洗浄器がよく使われます。初めてなら押し出しボトルが最も使いやすく、ネティポットは水流がやさしい一方で、頭の角度を正しく保つ必要があります。")
+              },
+              steps: [
+                  {
+                      action: tx("先洗手，確認瓶子已洗淨風乾", "Wash your hands and make sure the bottle is clean and air-dried", "Cuci tangan dan pastikan botol sudah bersih serta kering", "Rửa tay và kiểm tra chai đã sạch, khô", "ล้างมือและตรวจว่าขวดสะอาดและแห้งแล้ว", "Maghugas ng kamay at tiyaking malinis at tuyo ang bote", "手を洗い、ボトルが洗って乾いているか確認する"),
+                      note: tx("潮濕沒乾的瓶子比較容易長細菌。", "A damp bottle is more likely to grow germs.", "Botol yang masih lembap lebih mudah ditumbuhi kuman.", "Chai còn ẩm sẽ dễ có vi khuẩn phát triển hơn.", "ขวดที่ยังชื้นมีโอกาสเกิดเชื้อโรคได้ง่ายกว่า", "Mas madaling pamahayan ng mikrobyo ang bote na basa o hindi pa tuyong-tuyo.", "湿ったままのボトルは細菌が増えやすくなります。"),
+                      illustration: "assets/svg/saline-rinse/step-6.svg"
+                  },
+                  {
+                      action: tx("裝入微溫鹽水", "Fill the bottle with lukewarm saline", "Isi botol dengan larutan garam yang suam-suam kuku", "Cho nước muối hơi ấm vào chai", "เติมน้ำเกลืออุ่นเล็กน้อยลงในขวด", "Punuin ang bote ng maligamgam na saline", "ぬるい食塩水を入れる"),
+                      note: tx("先確認是 A 面教的安全用水。", "Make sure the water was prepared the safe way from Side A.", "Pastikan air yang dipakai sudah disiapkan dengan cara aman seperti pada Sisi A.", "Hãy chắc chắn nước được chuẩn bị đúng cách an toàn như ở Mặt A.", "ตรวจสอบก่อนว่าน้ำที่ใช้เตรียมไว้อย่างปลอดภัยตามด้าน A", "Tiyaking ang tubig ay naihanda sa ligtas na paraan ayon sa Side A.", "A面で説明した安全な水で作っていることを確認してください。"),
+                      illustration: "assets/svg/saline-rinse/step-5.svg"
+                  },
+                  {
+                      action: tx("身體前傾，頭轉向一側約 45°", "Lean forward and turn your head about 45 degrees to one side", "Condongkan badan ke depan lalu putar kepala sekitar 45° ke satu sisi", "Cúi người về trước rồi xoay đầu khoảng 45° sang một bên", "โน้มตัวไปข้างหน้า แล้วหันศีรษะไปด้านหนึ่งประมาณ 45°", "Yumuko nang bahagya at ipihit ang ulo nang mga 45° sa isang side", "前かがみになり、頭を片側へ約45度向ける"),
+                      note: tx("上方鼻孔是入口，下方鼻孔是出口。", "The upper nostril is the entry side and the lower nostril is the exit side.", "Lubang hidung yang di atas menjadi jalan masuk, dan yang di bawah menjadi jalan keluar.", "Lỗ mũi bên trên là đường vào, lỗ bên dưới là đường ra.", "รูจมูกด้านบนเป็นทางเข้า ส่วนรูด้านล่างเป็นทางออก", "Ang butas ng ilong sa itaas ang pasukan at ang nasa ibaba ang labasan.", "上の鼻の穴が入口、下の鼻の穴が出口になります。"),
+                      illustration: "assets/svg/saline-rinse/step-8.svg"
+                  },
+                  {
+                      action: tx("嘴巴微開，用嘴巴呼吸", "Keep your mouth slightly open and breathe through your mouth", "Buka mulut sedikit dan bernapas lewat mulut", "Mở hé miệng và thở bằng miệng", "อ้าปากเล็กน้อยและหายใจทางปาก", "Bahagyang ibuka ang bibig at huminga sa bibig", "口を少し開け、口で呼吸する"),
+                      note: tx("不要憋氣，也不要邊沖邊吸鼻。", "Do not hold your breath and do not sniff while rinsing.", "Jangan menahan napas dan jangan menghirup lewat hidung saat membilas.", "Đừng nín thở và đừng hít bằng mũi trong lúc rửa.", "อย่ากลั้นหายใจ และอย่าสูดจมูกระหว่างล้าง", "Huwag pigilan ang hininga at huwag suminghot habang nagbabanlaw.", "息を止めず、洗っている間に鼻で吸い込まないでください。"),
+                      highlight: true,
+                      illustration: "assets/svg/saline-rinse/step-9.svg"
+                  },
+                  {
+                      action: tx("管口輕貼上方鼻孔，慢慢擠壓", "Rest the tip at the upper nostril and squeeze slowly", "Tempelkan ujung alat pada lubang hidung bagian atas lalu tekan perlahan", "Đặt đầu vòi nhẹ vào lỗ mũi phía trên rồi bóp từ từ", "แตะปลายขวดที่รูจมูกด้านบนแล้วบีบช้า ๆ", "Idikit nang marahan ang dulo sa butas ng ilong sa itaas at pisilin nang dahan-dahan", "上の鼻の穴に軽く当て、ゆっくり押し出す"),
+                      note: tx("不要深插，也不要用力硬擠。若鼻子完全堵住、鹽水過不去，先停下來，不要勉強。", "Do not push the tip in deep and do not force the rinse. If the nose is completely blocked and the saline will not pass through, stop and do not force it.", "Jangan masukkan ujung terlalu dalam dan jangan memaksa aliran bilasan. Jika hidung benar-benar tersumbat dan larutan tidak bisa lewat, hentikan dulu dan jangan dipaksa.", "Không đưa đầu vòi vào quá sâu và đừng bóp ép mạnh. Nếu mũi tắc hoàn toàn và nước muối không đi qua được, hãy dừng lại và đừng cố.", "อย่าสอดปลายเข้าไปลึก และอย่าบีบฝืนแรง ๆ หากจมูกตันสนิทและน้ำเกลือไม่ไหลผ่าน ให้หยุดก่อนและอย่าฝืน", "Huwag ipasok nang malalim ang dulo at huwag piliting idiin ang banlaw. Kung lubusang barado ang ilong at hindi dumaraan ang saline, huminto muna at huwag ipilit.", "先端を深く入れず、無理に押し込まないでください。鼻が完全に詰まって食塩水が通らない時は、いったん中止して無理をしないでください。"),
+                      highlight: true,
+                      illustration: "assets/svg/saline-rinse/step-10.svg"
+                  },
+                  {
+                      action: tx("讓鹽水從另一側流出", "Let the saline flow out from the other side", "Biarkan larutan keluar dari sisi yang lain", "Để nước muối chảy ra bên còn lại", "ปล่อยให้น้ำเกลือไหลออกอีกด้าน", "Hayaan ang saline na lumabas sa kabilang side", "反対側から食塩水を流し出す"),
+                      note: tx("少量從嘴巴流出也正常。若耳朵痛或壓力感明顯，立刻停。", "A small amount coming out of the mouth is normal. Stop right away if you feel clear ear pain or pressure.", "Sedikit cairan keluar ke mulut masih normal. Jika telinga terasa sakit atau tertekan jelas, segera hentikan.", "Một ít nước chảy ra miệng vẫn là bình thường. Nếu đau tai hoặc cảm giác căng tức rõ ở tai, hãy dừng ngay.", "มีน้ำเกลือไหลออกทางปากเล็กน้อยได้ตามปกติ หากปวดหูหรือรู้สึกแน่นหูชัดเจน ให้หยุดทันที", "Normal lang kung may kaunting saline na lumalabas sa bibig. Huminto agad kung may malinaw na pananakit o pressure sa tainga.", "少し口へ流れても正常です。耳の痛みや強い圧迫感があればすぐ中止してください。"),
+                      illustration: "assets/svg/saline-rinse/step-11.svg"
+                  },
+                  {
+                      action: tx("換另一側再做一次", "Repeat the rinse on the other side", "Ulangi lagi di sisi satunya", "Làm lại tương tự ở bên còn lại", "ทำซ้ำอีกครั้งที่อีกข้างหนึ่ง", "Ulitin din ito sa kabilang side", "反対側も同じように行う"),
+                      note: tx("兩側都做完才算 1 次完整沖洗。", "Rinsing both sides counts as one full rinse.", "Membilas kedua sisi dihitung sebagai 1 kali bilas lengkap.", "Rửa xong cả hai bên mới tính là 1 lần rửa hoàn chỉnh.", "ล้างครบทั้งสองข้างจึงนับเป็น 1 ครั้งเต็ม", "Isang buong banlaw lamang ang mabibilang kapag natapos ang magkabilang side.", "左右両方終わって1回の洗浄です。"),
+                      illustration: "assets/svg/saline-rinse/step-8.svg"
+                  },
+                  {
+                      action: tx("輕輕擤鼻，再洗瓶風乾", "Blow gently, then rinse the bottle and air-dry it", "Buang lendir dengan lembut, lalu bilas botol dan keringkan", "Xì mũi nhẹ, rồi rửa chai và để khô", "สั่งน้ำมูกเบา ๆ แล้วล้างขวดและผึ่งให้แห้ง", "Dahan-dahang suminga, saka banlawan ang bote at patuyuin", "やさしく鼻をかみ、ボトルを洗って乾かす"),
+                      note: tx("一次壓住一側，輕輕擤另一側。不要用力擤。", "Close one side and blow the other side gently. Do not blow hard.", "Tutup satu sisi lalu keluarkan lendir dari sisi lainnya dengan lembut. Jangan mengeluarkan terlalu kuat.", "Bịt một bên rồi xì nhẹ bên còn lại. Đừng xì mũi quá mạnh.", "กดปิดทีละข้างแล้วสั่งน้ำมูกอีกข้างเบา ๆ อย่าสั่งแรง", "Takpan ang isang side, saka dahan-dahang ipasinga ang kabila. Huwag humihip nang malakas.", "片側を押さえ、反対側をやさしくかみます。強くかまないでください。"),
+                      illustration: "assets/svg/saline-rinse/step-6.svg"
+                  }
+              ],
+              warnings: [
+                  tx("若耳痛、耳悶或鼻血一直流，立刻停用。", "Stop right away if you get ear pain, ear pressure, or nosebleeding that does not stop.", "Segera hentikan bila muncul telinga sakit, rasa penuh di telinga, atau mimisan yang tidak berhenti.", "Dừng ngay nếu đau tai, ù tức tai hoặc chảy máu mũi không cầm.", "หากปวดหู หูอื้อ หรือเลือดกำเดาไหลไม่หยุด ให้หยุดทันที", "Huminto agad kung may pananakit ng tainga, pagbara sa tainga, o nosebleed na hindi tumitigil.", "耳の痛み、耳の圧迫感、止まらない鼻血があればすぐ中止してください。"),
+                  tx("只用蒸餾水、無菌水，或煮沸放涼的水。", "Use only distilled, sterile, or boiled-and-cooled water.", "Gunakan hanya air suling, air steril, atau air yang sudah direbus lalu didinginkan.", "Chỉ dùng nước cất, nước vô khuẩn, hoặc nước đã đun sôi để nguội.", "ใช้น้ำกลั่น น้ำปราศจากเชื้อ หรือน้ำที่ต้มแล้วปล่อยให้เย็นเท่านั้น", "Distilled water, sterile water, o pinakuluan at pinalamig na tubig lang ang gamitin.", "蒸留水、滅菌水、または煮沸して冷ました水だけを使ってください。"),
+                  tx("沖洗瓶每次用後沖淨；每週用溫水加洗碗精清洗 1 次。", "Rinse the bottle after every use and wash it once a week with warm water and dish soap.", "Bilas botol setiap selesai dipakai; seminggu sekali cuci dengan air hangat dan sabun cuci piring.", "Rửa tráng chai sau mỗi lần dùng; mỗi tuần rửa bằng nước ấm và nước rửa chén một lần.", "ล้างขวดทุกครั้งหลังใช้ และสัปดาห์ละครั้งให้ล้างด้วยน้ำอุ่นผสมน้ำยาล้างจาน", "Banlawan ang bote pagkatapos ng bawat gamit, at minsan sa isang linggo ay hugasan ito gamit ang maligamgam na tubig at dish soap.", "ボトルは毎回すすぎ、週1回はぬるま湯と食器用洗剤で洗ってください。")
+              ],
+              qrUrl: "https://pharmacy.example.com/nasal-rinse/over2?lang=zh-TW"
+          }
+      ],
+      qrUrl: "https://pharmacy.example.com/nasal-rinse/recipe?lang=zh-TW"
   },
 
   // ── Nasonex ─────────────────────────────────────,
