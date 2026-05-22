@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="不要用高糖飲料補水">
+  <rect width="160" height="120" rx="22" fill="#FFF4EA"/>
+  <rect x="36" y="28" width="36" height="66" rx="9" fill="#fff" stroke="#B54C29" stroke-width="4"/>
+  <path d="M45 43h18M45 59h18" stroke="#B54C29" stroke-width="4" stroke-linecap="round"/>
+  <path d="M92 29h25l7 65H85l7-65Z" fill="#fff" stroke="#B54C29" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m32 23 96 74M128 23 32 97" stroke="#D12D2D" stroke-width="9" stroke-linecap="round"/>
+</svg>

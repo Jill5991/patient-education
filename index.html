@@ -17874,6 +17874,285 @@ const MEDICATIONS = [
     ],
     qrUrl: "https://pharmacy.example.com/meds/chalian-kalimate"
   },
+
+  // ── Acute upper/lower GI symptoms care kit ─────────────────────────────────────,
+  {
+    id: "acute-gi-care-kit",
+    category: "oral",
+    color: {
+      main: "#0F6E56",
+      light: "#EAF6F2",
+      dark: "#07382C",
+      badge: "#BDE5D9",
+      badgeText: "#07382C"
+    },
+    emergency: false,
+    headerBadge: tx("急性腸胃照護", "Acute GI care", "Perawatan GI akut", "Chăm sóc tiêu hóa cấp", "ดูแลอาการทางเดินอาหารเฉียบพลัน", "Pangangalaga sa biglaang sintomas ng tiyan", "急な胃腸症状のケア"),
+    name: tx("急性上、下消化道症狀照護", "Acute upper and lower GI symptoms care kit", "Panduan gejala saluran cerna atas dan bawah akut", "Bộ hướng dẫn triệu chứng tiêu hóa trên và dưới cấp", "ชุดคำแนะนำอาการทางเดินอาหารส่วนบนและล่างเฉียบพลัน", "Gabay sa biglaang sintomas ng itaas at ibabang bituka", "急性の上部・下部消化管症状ケア"),
+    subtitle: tx("胃痛、腹痛、嘔吐、腹瀉", "Stomach pain, belly pain, vomiting, diarrhea", "Nyeri ulu hati, sakit perut, muntah, diare", "Đau dạ dày, đau bụng, nôn, tiêu chảy", "ปวดท้องส่วนบน ปวดท้อง อาเจียน ท้องเสีย", "Sakit sikmura, sakit tiyan, pagsusuka, pagtatae", "胃痛・腹痛・嘔吐・下痢"),
+    pages: [
+      {
+        pageLabel: tx("A 面｜先看危險徵象", "Side A | check danger signs first", "Sisi A | cek tanda bahaya dulu", "Mặt A | kiểm tra dấu hiệu nguy hiểm trước", "ด้าน A | เช็กสัญญาณอันตรายก่อน", "Side A | tingnan muna ang danger signs", "A面｜まず危険サイン"),
+        badge: tx("先分流", "Triage first", "Triage dulu", "Phân loại trước", "คัดกรองก่อน", "Triage muna", "まず振り分け"),
+        usage: tx("有任一危險徵象，先就醫，不要先買藥觀察。", "If any danger sign appears, seek care first. Do not just watch at home.", "Jika ada tanda bahaya, periksa dulu. Jangan hanya observasi di rumah.", "Nếu có dấu hiệu nguy hiểm, đi khám trước. Đừng chỉ theo dõi ở nhà.", "หากมีสัญญาณอันตราย ให้ไปพบแพทย์ก่อน อย่าเพียงเฝ้าดูอาการที่บ้าน", "Kung may kahit isang danger sign, magpatingin muna. Huwag basta mag-obserba lang sa bahay.", "危険サインが1つでもあれば、まず受診し、自宅で様子見にしない。"),
+        preStepsInfo: {
+          title: tx("先問 3 件事", "Ask 3 things first", "Tanyakan 3 hal dulu", "Hỏi 3 điều trước", "ถาม 3 เรื่องก่อน", "Magtanong muna ng 3 bagay", "まず3つ確認"),
+          text: tx("有沒有吐血、黑便或血便？痛是不是突然變很劇烈？有沒有一直吐、完全不能放屁或排便？", "Is there vomited blood, black stool, or blood in stool? Did the pain suddenly become severe? Is there repeated vomiting with no gas or stool?", "Ada muntah darah, tinja hitam, atau darah pada tinja? Nyeri mendadak menjadi berat? Muntah terus dan tidak bisa buang angin atau BAB?", "Có nôn ra máu, phân đen hoặc phân có máu không? Đau có đột ngột dữ dội không? Có nôn liên tục và không xì hơi hoặc đi tiêu được không?", "มีอาเจียนเป็นเลือด อุจจาระดำ หรือถ่ายเป็นเลือดไหม ปวดรุนแรงขึ้นทันทีไหม อาเจียนต่อเนื่องและผายลมหรือถ่ายไม่ได้ไหม", "May isinukang dugo, itim na dumi, o dugo sa dumi ba? Bigla bang tumindi ang sakit? Tuloy-tuloy ba ang suka at hindi mautot o makadumi?", "吐血、黒い便、血便はあるか。痛みが突然強くなったか。嘔吐が続き、ガスや便が出ないか。")
+        },
+        steps: [
+          {
+            action: tx("看有沒有吐血或黑便", "Check for vomited blood or black stool", "Cek muntah darah atau tinja hitam", "Kiểm tra nôn máu hoặc phân đen", "เช็กว่ามีอาเจียนเป็นเลือดหรืออุจจาระดำไหม", "Tingnan kung may isinukang dugo o itim na dumi", "吐血や黒い便を確認"),
+            note: tx("吐血、咖啡色嘔吐物、柏油黑便或血便，當天就醫。", "Vomited blood, coffee-ground vomit, tar-like black stool, or bloody stool needs same-day care.", "Muntah darah, muntah seperti ampas kopi, tinja hitam seperti aspal, atau tinja berdarah perlu diperiksa hari itu juga.", "Nôn máu, chất nôn như bã cà phê, phân đen như hắc ín hoặc phân có máu cần đi khám trong ngày.", "อาเจียนเป็นเลือด อาเจียนคล้ายกากกาแฟ อุจจาระดำเหมือนยางมะตอย หรือถ่ายเป็นเลือด ควรพบแพทย์ภายในวันนั้น", "Kung may dugo sa suka, parang kape ang suka, maitim na parang alkitran ang dumi, o may dugo sa dumi, magpatingin sa araw ding iyon.", "吐血、コーヒー残渣様の嘔吐、タール状黒色便、血便はその日のうちに受診。"),
+            illustration: "assets/svg/acute-gi-care/triage.svg",
+            highlight: true
+          },
+          {
+            action: tx("看腹痛是否突然很痛", "Check if belly pain became sudden and severe", "Cek apakah nyeri perut mendadak berat", "Kiểm tra đau bụng có đột ngột dữ dội không", "เช็กว่าปวดท้องรุนแรงขึ้นทันทีไหม", "Tingnan kung biglang tumindi ang sakit ng tiyan", "腹痛が突然強くなったか確認"),
+            note: tx("像開關打開一樣劇痛、冒冷汗或臉色蒼白，直接急診。", "Sudden switch-like severe pain, cold sweat, or pale skin means emergency care.", "Nyeri hebat mendadak, keringat dingin, atau pucat berarti perlu IGD.", "Đau dữ dội đột ngột, vã mồ hôi lạnh hoặc tái nhợt là cần cấp cứu.", "ปวดรุนแรงทันที เหงื่อแตก ตัวซีด ควรไปฉุกเฉิน", "Biglang matinding sakit, malamig na pawis, o pamumutla ay pang-emergency.", "突然の激痛、冷や汗、顔色不良は救急受診。"),
+            illustration: "assets/svg/acute-gi-care/triage.svg",
+            highlight: true
+          },
+          {
+            action: tx("看肚子是否變硬", "Check if the belly is stiff", "Cek apakah perut kaku", "Kiểm tra bụng có cứng không", "เช็กว่าท้องแข็งไหม", "Tingnan kung naninigas ang tiyan", "お腹が硬いか確認"),
+            note: tx("走路、咳嗽或輕碰都痛，可能不是一般腸胃炎。", "Pain with walking, coughing, or light touch may not be simple gastroenteritis.", "Nyeri saat berjalan, batuk, atau disentuh ringan mungkin bukan gastroenteritis biasa.", "Đau khi đi lại, ho hoặc chạm nhẹ có thể không phải viêm dạ dày ruột đơn giản.", "เจ็บเวลาเดิน ไอ หรือแตะเบา ๆ อาจไม่ใช่กระเพาะลำไส้อักเสบธรรมดา", "Sakit kapag naglalakad, umuubo, o bahagyang hinahawakan ay maaaring hindi simpleng gastroenteritis.", "歩く、咳をする、軽く触るだけで痛い時は、単なる胃腸炎ではない可能性。"),
+            illustration: "assets/svg/acute-gi-care/triage.svg"
+          },
+          {
+            action: tx("看能不能排氣排便", "Check for gas and stool", "Cek apakah bisa buang angin dan BAB", "Kiểm tra có xì hơi và đi tiêu được không", "เช็กว่าผายลมหรือถ่ายได้ไหม", "Tingnan kung nakauutot at nakadudumi", "ガスや便が出るか確認"),
+            note: tx("腹脹、一直吐、完全不能放屁或排便，可能是腸阻塞。", "Bloating, repeated vomiting, and no gas or stool may mean bowel blockage.", "Perut kembung, muntah terus, dan tidak bisa buang angin atau BAB bisa berarti sumbatan usus.", "Chướng bụng, nôn liên tục và không xì hơi hoặc đi tiêu được có thể là tắc ruột.", "ท้องอืด อาเจียนต่อเนื่อง และผายลมหรือถ่ายไม่ได้ อาจเป็นลำไส้อุดตัน", "Ang paglobo ng tiyan, tuloy-tuloy na suka, at hindi pag-utot o pagdumi ay maaaring bara sa bituka.", "腹部膨満、嘔吐持続、ガスや便が全く出ない時は腸閉塞の可能性。"),
+            illustration: "assets/svg/acute-gi-care/triage.svg",
+            highlight: true
+          },
+          {
+            action: tx("看痛點有沒有轉移", "Check if the pain moves", "Cek apakah lokasi nyeri berpindah", "Kiểm tra đau có di chuyển không", "เช็กว่าตำแหน่งปวดเปลี่ยนไหม", "Tingnan kung lumilipat ang sakit", "痛む場所が移るか確認"),
+            note: tx("右下腹、右肩胛、背部或骨盆痛，請就醫評估。", "Right lower belly, right shoulder blade, back, or pelvic pain needs medical review.", "Nyeri perut kanan bawah, tulang belikat kanan, punggung, atau panggul perlu diperiksa.", "Đau bụng dưới bên phải, bả vai phải, lưng hoặc vùng chậu cần được khám.", "ปวดท้องขวาล่าง สะบักขวา หลัง หรือเชิงกราน ควรพบแพทย์ประเมิน", "Sakit sa kanang ibabang tiyan, kanang balikat-likod, likod, o balakang ay dapat ipasuri.", "右下腹、右肩甲骨、背中、骨盤部の痛みは受診して評価。"),
+            illustration: "assets/svg/acute-gi-care/triage.svg"
+          },
+          {
+            action: tx("高風險族群更早就醫", "Seek care earlier for high-risk people", "Kelompok berisiko perlu lebih cepat periksa", "Nhóm nguy cơ cao cần đi khám sớm hơn", "กลุ่มเสี่ยงควรพบแพทย์เร็วขึ้น", "Mas maagang magpatingin kung high-risk", "高リスクの人は早めに受診"),
+            note: tx("嬰幼兒、孕婦、老人、免疫低下或心腎病患者，不要拖。", "Infants, pregnant people, older adults, immunocompromised people, and heart or kidney patients should not wait.", "Bayi, ibu hamil, lansia, orang dengan imun lemah, serta pasien jantung atau ginjal jangan menunda.", "Trẻ nhỏ, người mang thai, người cao tuổi, người suy giảm miễn dịch và bệnh tim hoặc thận không nên chờ lâu.", "ทารก หญิงตั้งครรภ์ ผู้สูงอายุ ภูมิคุ้มกันต่ำ หรือมีโรคหัวใจไต ไม่ควรรอ", "Sanggol, buntis, matatanda, mahina ang immune system, at may sakit sa puso o bato ay huwag maghintay.", "乳幼児、妊娠中、高齢者、免疫低下、心臓・腎臓病の人は待たない。"),
+            illustration: "assets/svg/acute-gi-care/triage.svg"
+          }
+        ],
+        storage: {
+          title: tx("可在家觀察的條件", "When home care may be reasonable", "Kapan bisa dirawat di rumah", "Khi nào có thể chăm sóc tại nhà", "เมื่อใดอาจดูแลที่บ้านได้", "Kailan maaaring alagaan sa bahay", "自宅ケアでよい可能性"),
+          text: tx("能喝水、精神可、沒有血便黑便、沒有劇痛或腹部僵硬，才考慮居家照護。若症狀變化，立刻改為就醫。", "Home care is only reasonable if the person can drink, stays alert, has no bloody or black stool, and has no severe pain or belly stiffness. If symptoms change, seek care.", "Perawatan di rumah hanya masuk akal bila masih bisa minum, sadar baik, tidak ada tinja berdarah atau hitam, dan tidak ada nyeri berat atau perut kaku. Bila gejala berubah, periksa.", "Chỉ chăm sóc tại nhà khi còn uống được, tỉnh táo, không có phân máu hoặc phân đen, không đau dữ dội hoặc bụng cứng. Nếu triệu chứng thay đổi, đi khám.", "ดูแลที่บ้านได้เมื่อดื่มได้ รู้สึกตัวดี ไม่มีถ่ายเป็นเลือดหรืออุจจาระดำ และไม่มีปวดรุนแรงหรือท้องแข็ง หากอาการเปลี่ยนให้พบแพทย์", "Maaaring alagaan sa bahay kung nakakainom, alerto, walang dugo o itim na dumi, at walang matinding sakit o paninigas ng tiyan. Kung nagbago ang sintomas, magpatingin.", "飲水でき、意識が保たれ、血便・黒色便がなく、激痛や腹部硬直がない時のみ自宅ケアを検討。症状が変われば受診。")
+        },
+        warnings: [
+          tx("吐血、黑便、血便：當天就醫。", "Vomited blood, black stool, or bloody stool: seek same-day care.", "Muntah darah, tinja hitam, atau tinja berdarah: periksa hari itu juga.", "Nôn máu, phân đen hoặc phân máu: đi khám trong ngày.", "อาเจียนเป็นเลือด อุจจาระดำ หรือถ่ายเป็นเลือด: พบแพทย์ภายในวันนั้น", "May dugo sa suka, itim na dumi, o dugo sa dumi: magpatingin sa araw ding iyon.", "吐血・黒色便・血便は当日受診。"),
+          tx("劇烈腹痛、冒冷汗、肚子硬：急診。", "Severe belly pain, cold sweat, or stiff belly: emergency care.", "Nyeri perut berat, keringat dingin, atau perut kaku: IGD.", "Đau bụng dữ dội, vã mồ hôi lạnh hoặc bụng cứng: cấp cứu.", "ปวดท้องรุนแรง เหงื่อแตก หรือท้องแข็ง: ไปฉุกเฉิน", "Matinding sakit ng tiyan, malamig na pawis, o matigas na tiyan: emergency.", "強い腹痛、冷や汗、硬いお腹は救急。"),
+          tx("腹脹又不能放屁排便：急診。", "Bloating with no gas or stool: emergency care.", "Perut kembung dan tidak bisa buang angin atau BAB: IGD.", "Chướng bụng và không xì hơi hoặc đi tiêu: cấp cứu.", "ท้องอืดร่วมกับผายลมหรือถ่ายไม่ได้: ไปฉุกเฉิน", "Lumolobong tiyan at hindi mautot o makadumi: emergency.", "腹部膨満でガスや便が出ない時は救急。")
+        ],
+        qrUrl: "https://pharmacy.example.com/acute-gi-care/triage"
+      },
+      {
+        pageLabel: tx("B 面｜口服電解質補充液", "Side B | ORS rehydration", "Sisi B | Rehidrasi oralit", "Mặt B | Bù nước ORS", "ด้าน B | ชดเชยน้ำด้วย ORS", "Side B | ORS rehydration", "B面｜ORS補水"),
+        badge: tx("補水最重要", "Fluids first", "Cairan dulu", "Bù nước trước", "น้ำมาก่อน", "Unahin ang fluids", "補水が最優先"),
+        usage: tx("腹瀉或嘔吐時，口服電解質補充液比白開水或運動飲料更適合。", "For diarrhea or vomiting, ORS is better suited than plain water or sports drinks.", "Saat diare atau muntah, oralit lebih tepat daripada air putih atau minuman olahraga.", "Khi tiêu chảy hoặc nôn, ORS phù hợp hơn nước lọc hoặc nước thể thao.", "เมื่อท้องเสียหรืออาเจียน ORS เหมาะกว่าน้ำเปล่าหรือเครื่องดื่มเกลือแร่ทั่วไป", "Sa pagtatae o pagsusuka, mas angkop ang ORS kaysa tubig lang o sports drink.", "下痢や嘔吐では、水やスポーツ飲料よりORSが適している。"),
+        preStepsInfo: {
+          title: tx("選市售口服電解質補充液", "Choose packaged ORS", "Pilih oralit kemasan", "Chọn ORS đóng gói", "เลือก ORS แบบบรรจุซอง", "Pumili ng packaged ORS", "市販のORSを選ぶ"),
+          text: tx("優先選低滲透壓口服電解質補充液。照包裝加水。買不到時，成人輕症才看下一面的臨時自製配方。", "Choose low-osmolarity ORS when possible. Mix it exactly as the package says. If you cannot buy ORS, adults with mild symptoms may use the temporary homemade recipe on the next side.", "Pilih oralit osmolaritas rendah bila ada. Campur sesuai petunjuk kemasan. Jika tidak bisa membeli oralit, orang dewasa dengan gejala ringan boleh memakai resep darurat di sisi berikutnya.", "Ưu tiên ORS áp lực thẩm thấu thấp. Pha đúng hướng dẫn trên gói. Nếu không mua được ORS, người lớn triệu chứng nhẹ có thể xem công thức tạm thời ở mặt sau.", "ควรเลือก ORS สูตร osmolarity ต่ำ ผสมตามฉลาก หากซื้อ ORS ไม่ได้ ผู้ใหญ่ที่อาการไม่รุนแรงอาจใช้สูตรทำเองชั่วคราวในหน้าถัดไป", "Kung maaari, pumili ng low-osmolarity ORS. Ihalo ayon sa pakete. Kung hindi makabili ng ORS, ang adult na banayad ang sintomas ay maaaring gumamit ng pansamantalang recipe sa susunod na side.", "可能なら低浸透圧ORSを選び、袋の指示どおり水で溶かす。ORSが買えない時は、軽症の成人だけ次面の一時的な自作方法を検討する。")
+        },
+        steps: [
+          {
+            action: tx("每 1–2 分鐘喝 5–10 mL", "Drink 5-10 mL every 1-2 minutes", "Minum 5-10 mL tiap 1-2 menit", "Uống 5-10 mL mỗi 1-2 phút", "จิบ 5-10 มล. ทุก 1-2 นาที", "Uminom ng 5-10 mL bawat 1-2 minuto", "1〜2分ごとに5〜10 mL飲む"),
+            note: tx("先用小口喝，能留住再慢慢增加。不要一次灌很多。", "Start with tiny sips. Increase only if it stays down. Do not gulp a lot at once.", "Mulai dengan teguk kecil. Tambah perlahan bila tidak dimuntahkan. Jangan langsung minum banyak.", "Bắt đầu bằng ngụm nhỏ. Tăng dần nếu giữ được. Đừng uống ồ ạt.", "เริ่มจิบทีละน้อย ถ้าไม่อาเจียนค่อยเพิ่ม อย่าดื่มทีเดียวมาก ๆ", "Magsimula sa maliliit na lagok. Dagdagan lang kung hindi nasusuka. Huwag uminom nang marami agad.", "少量から始め、吐かなければ少しずつ増やす。一度に多量に飲まない。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg",
+            highlight: true
+          },
+          {
+            action: tx("吐了先停 5–10 分鐘", "Pause 5-10 minutes after vomiting", "Berhenti 5-10 menit setelah muntah", "Tạm ngưng 5-10 phút sau khi nôn", "หลังอาเจียนให้พัก 5-10 นาที", "Huminto muna ng 5-10 minuto pagkatapos magsuka", "吐いたら5〜10分休む"),
+            note: tx("再從 5 mL 開始。若連小口都留不住，請就醫。", "Then restart with 5 mL. If even tiny sips do not stay down, seek care.", "Lalu mulai lagi dari 5 mL. Jika teguk kecil pun tidak tertahan, periksa.", "Sau đó bắt đầu lại với 5 mL. Nếu ngụm nhỏ cũng không giữ được, đi khám.", "จากนั้นเริ่มใหม่ที่ 5 มล. หากจิบเล็ก ๆ ยังอาเจียน ให้พบแพทย์", "Pagkatapos ay magsimula muli sa 5 mL. Kung kahit maliit na lagok ay hindi manatili, magpatingin.", "その後5 mLから再開。少量でも吐く時は受診。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg"
+          },
+          {
+            action: tx("每次水瀉或嘔吐後補口服電解質補充液", "Give ORS after each watery stool or vomit", "Berikan oralit setelah tiap diare cair atau muntah", "Bù ORS sau mỗi lần tiêu chảy nước hoặc nôn", "ให้ ORS หลังถ่ายเหลวหรืออาเจียนแต่ละครั้ง", "Magbigay ng ORS pagkatapos ng bawat watery stool o suka", "水様便や嘔吐のたびにORSを補う"),
+            note: tx("未滿 10 kg：60–120 mL；10 kg 以上：120–240 mL。成人可慢慢自由喝。", "Under 10 kg: 60-120 mL. 10 kg or more: 120-240 mL. Adults may sip freely.", "Berat di bawah 10 kg: 60-120 mL. 10 kg atau lebih: 120-240 mL. Dewasa boleh minum perlahan sesuai kebutuhan.", "Dưới 10 kg: 60-120 mL. Từ 10 kg trở lên: 120-240 mL. Người lớn có thể uống từng ngụm theo nhu cầu.", "น้ำหนักต่ำกว่า 10 กก.: 60-120 มล. 10 กก. หรือมากกว่า: 120-240 มล. ผู้ใหญ่จิบได้ตามต้องการ", "Mas mababa sa 10 kg: 60-120 mL. 10 kg pataas: 120-240 mL. Ang adult ay maaaring humigop ayon sa kaya.", "10 kg未満は60〜120 mL、10 kg以上は120〜240 mL。成人は少しずつ自由に飲む。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg"
+          },
+          {
+            action: tx("不要用果汁汽水運動飲料", "Do not use juice, soda, or sports drinks", "Jangan gunakan jus, soda, atau minuman olahraga", "Không dùng nước trái cây, nước ngọt có gas hoặc nước thể thao", "ห้ามใช้น้ำผลไม้ น้ำอัดลม หรือเครื่องดื่มกีฬา", "Huwag gumamit ng juice, soda, o sports drinks", "果汁、炭酸、スポーツ飲料は使わない"),
+            note: tx("糖分太高時，可能讓腹瀉更嚴重。運動飲料也不是口服電解質補充液。", "Too much sugar can worsen diarrhea. Sports drinks are not ORS.", "Terlalu banyak gula dapat memperparah diare. Minuman olahraga bukan oralit.", "Quá nhiều đường có thể làm tiêu chảy nặng hơn. Nước thể thao không phải ORS.", "น้ำตาลมากเกินไปอาจทำให้ท้องเสียมากขึ้น เครื่องดื่มกีฬาไม่ใช่ ORS", "Ang sobrang asukal ay maaaring magpalala ng pagtatae. Hindi ORS ang sports drink.", "糖分が多いと下痢が悪化することがある。スポーツ飲料はORSではない。"),
+            illustration: "assets/svg/acute-gi-care/no-sugar-drinks.svg",
+            highlight: true
+          },
+          {
+            action: tx("母乳或配方奶照常", "Keep breast milk or formula as usual", "Tetap beri ASI atau susu formula seperti biasa", "Tiếp tục sữa mẹ hoặc sữa công thức như thường lệ", "ให้นมแม่หรือนมผงตามปกติ", "Ipagpatuloy ang breast milk o formula gaya ng dati", "母乳またはミルクは通常どおり続ける"),
+            note: tx("嬰兒可一邊補口服電解質補充液，一邊繼續喝母乳。配方奶不需刻意稀釋。", "Babies may take ORS and continue breast milk. Formula does not need to be diluted on purpose.", "Bayi boleh mendapat oralit sambil tetap minum ASI. Susu formula tidak perlu sengaja diencerkan.", "Trẻ có thể dùng ORS và tiếp tục bú mẹ. Sữa công thức không cần cố ý pha loãng.", "ทารกสามารถรับ ORS พร้อมกับกินนมแม่ต่อได้ ไม่จำเป็นต้องเจือจางนมผงเป็นพิเศษ", "Puwedeng bigyan ng ORS ang sanggol habang nagpapatuloy ang breast milk. Hindi kailangang sadyang palabnawin ang formula.", "乳児はORSを補いながら母乳を続けてよい。ミルクを意図的に薄める必要はない。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg"
+          },
+          {
+            action: tx("能喝住後慢慢恢復吃飯", "Restart food once fluids stay down", "Mulai makan lagi saat cairan sudah tertahan", "Ăn lại dần khi đã giữ được nước", "เมื่อดื่มแล้วไม่อาเจียน ค่อยเริ่มกินอาหาร", "Magsimulang kumain muli kapag nananatili na ang fluids", "水分が保てたら食事を再開"),
+            note: tx("不要刻意禁食。先吃清淡、平常熟悉的食物。", "Do not fast on purpose. Start with bland, familiar foods.", "Jangan sengaja puasa. Mulai dari makanan ringan yang biasa dimakan.", "Đừng cố nhịn ăn. Bắt đầu bằng thức ăn nhẹ, quen thuộc.", "ไม่จำเป็นต้องอดอาหาร เริ่มจากอาหารอ่อนที่คุ้นเคย", "Huwag sadyang mag-ayuno. Magsimula sa banayad at pamilyar na pagkain.", "無理に絶食しない。まずは食べ慣れた軽い食事から。"),
+            illustration: "assets/svg/oral-shared/food-mix.svg"
+          }
+        ],
+        storage: {
+          title: tx("兒童脫水高風險", "Children at higher dehydration risk", "Anak berisiko lebih tinggi dehidrasi", "Trẻ có nguy cơ mất nước cao hơn", "เด็กที่เสี่ยงขาดน้ำสูง", "Batang mas mataas ang panganib sa dehydration", "脱水リスクが高い子ども"),
+          text: tx("未滿 1 歲，尤其未滿 6 個月；24 小時腹瀉超過 5 次或嘔吐超過 2 次；尿變少、嗜睡、四肢冰冷，請就醫。", "Age under 1 year, especially under 6 months; more than 5 diarrheal stools or more than 2 vomits in 24 hours; less urine, sleepiness, or cold limbs needs care.", "Usia di bawah 1 tahun, terutama di bawah 6 bulan; diare lebih dari 5 kali atau muntah lebih dari 2 kali dalam 24 jam; urin berkurang, mengantuk, atau tangan kaki dingin perlu diperiksa.", "Dưới 1 tuổi, nhất là dưới 6 tháng; tiêu chảy hơn 5 lần hoặc nôn hơn 2 lần trong 24 giờ; tiểu ít, lơ mơ hoặc tay chân lạnh cần đi khám.", "อายุน้อยกว่า 1 ปี โดยเฉพาะต่ำกว่า 6 เดือน ถ่ายเหลวมากกว่า 5 ครั้งหรืออาเจียนมากกว่า 2 ครั้งใน 24 ชม. ปัสสาวะน้อย ซึม หรือมือเท้าเย็นควรพบแพทย์", "Edad wala pang 1 taon, lalo na wala pang 6 buwan; pagtatae nang higit 5 beses o pagsusuka higit 2 beses sa 24 oras; kaunting ihi, antok, o malamig na kamay-paa ay dapat ipasuri.", "1歳未満、特に6か月未満。24時間で下痢5回超または嘔吐2回超。尿が少ない、眠りがち、手足が冷たい時は受診。")
+        },
+        warnings: [
+          tx("連一小口口服電解質補充液都吐：就醫。", "Vomits even tiny ORS sips: seek care.", "Teguk kecil oralit pun muntah: periksa.", "Nôn cả ngụm ORS nhỏ: đi khám.", "จิบ ORS เล็กน้อยก็อาเจียน: พบแพทย์", "Nasusuka kahit kaunting ORS: magpatingin.", "ORS少量でも吐く時は受診。"),
+          tx("尿很少、嗜睡、四肢冷：就醫。", "Very little urine, sleepiness, or cold limbs: seek care.", "Urin sangat sedikit, mengantuk, atau tangan kaki dingin: periksa.", "Tiểu rất ít, lơ mơ hoặc tay chân lạnh: đi khám.", "ปัสสาวะน้อยมาก ซึม หรือมือเท้าเย็น: พบแพทย์", "Napakakaunting ihi, antok, o malamig na kamay-paa: magpatingin.", "尿が非常に少ない、眠りがち、手足が冷たい時は受診。"),
+          tx("不要用運動飲料取代口服電解質補充液。", "Do not replace ORS with sports drinks.", "Jangan ganti oralit dengan minuman olahraga.", "Không thay ORS bằng nước thể thao.", "อย่าใช้เครื่องดื่มกีฬาแทน ORS", "Huwag palitan ang ORS ng sports drink.", "ORSをスポーツ飲料で代用しない。")
+        ],
+        qrUrl: "https://pharmacy.example.com/acute-gi-care/ors"
+      },
+      {
+        pageLabel: tx("C 面｜臨時自製配方", "Side C | temporary homemade recipe", "Sisi C | resep darurat buatan sendiri", "Mặt C | công thức tạm thời tự pha", "ด้าน C | สูตรทำเองชั่วคราว", "Side C | pansamantalang homemade recipe", "C面｜一時的な自作方法"),
+        badge: tx("非首選", "Not first choice", "Bukan pilihan utama", "Không phải lựa chọn đầu tiên", "ไม่ใช่ตัวเลือกแรก", "Hindi unang opsyon", "第一選択ではない"),
+        usage: tx("買不到市售口服電解質補充液時，成人輕症才考慮。", "Use only when packaged ORS is not available and the adult has mild symptoms.", "Gunakan hanya bila oralit kemasan tidak tersedia dan orang dewasa bergejala ringan.", "Chỉ dùng khi không có ORS đóng gói và người lớn có triệu chứng nhẹ.", "ใช้เฉพาะเมื่อไม่มี ORS แบบสำเร็จ และเป็นผู้ใหญ่ที่อาการไม่รุนแรง", "Gamitin lamang kung walang mabibiling packaged ORS at banayad ang sintomas ng adult.", "市販ORSがなく、軽症の成人の場合だけ検討する。"),
+        preStepsInfo: {
+          title: tx("臨時替代用", "Temporary backup only", "Hanya cadangan sementara", "Chỉ dùng tạm thời", "ใช้สำรองชั่วคราวเท่านั้น", "Pansamantalang pamalit lamang", "一時的な代替用"),
+          text: tx("買不到市售口服電解質補充液時，可照固定比例調配；能買到時，仍優先使用市售產品。", "If packaged ORS is not available, mix this fixed recipe. When packaged ORS is available, use it first.", "Jika oralit kemasan tidak tersedia, campur sesuai resep tetap ini. Jika tersedia, tetap utamakan produk kemasan.", "Nếu không có ORS đóng gói, hãy pha theo đúng công thức cố định này. Nếu mua được, vẫn ưu tiên dùng sản phẩm đóng gói.", "หากไม่มี ORS สำเร็จรูป ให้ผสมตามสูตรตายตัวนี้ หากซื้อได้ ให้ใช้ผลิตภัณฑ์สำเร็จรูปก่อน", "Kung walang packaged ORS, ihalo ayon sa fixed recipe na ito. Kung mayroon, unahin pa rin ang packaged product.", "市販ORSがない時は、この決まった比率で作る。買える時は市販品を優先する。")
+        },
+        steps: [
+          {
+            action: tx("先確認可以自製", "Check if homemade solution is suitable", "Pastikan dulu boleh membuat sendiri", "Kiểm tra có phù hợp tự pha không", "เช็กก่อนว่าเหมาะจะทำเองไหม", "Tingnan muna kung puwedeng homemade", "自作してよい状況か確認"),
+            note: tx("只適合成人輕症、能精準量測、且有乾淨飲用水。", "It is only for adults with mild symptoms, exact measuring tools, and clean drinking water.", "Hanya untuk orang dewasa bergejala ringan, alat ukur tepat, dan air minum bersih.", "Chỉ phù hợp cho người lớn triệu chứng nhẹ, có dụng cụ đo chính xác và nước uống sạch.", "เหมาะเฉพาะผู้ใหญ่ที่อาการไม่รุนแรง มีอุปกรณ์ตวงแม่นยำ และมีน้ำสะอาด", "Para lamang ito sa adult na banayad ang sintomas, may eksaktong panukat, at may malinis na tubig.", "軽症の成人で、正確に量れて、清潔な飲み水がある時だけ。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg",
+            highlight: true
+          },
+          {
+            action: tx("量乾淨飲用水 1,000 mL", "Measure 1,000 mL of clean drinking water", "Takar 1.000 mL air minum bersih", "Đong 1.000 mL nước uống sạch", "ตวงน้ำดื่มสะอาด 1,000 มล.", "Sukatin ang 1,000 mL na malinis na tubig", "清潔な飲み水1,000 mLを量る"),
+            note: tx("水源不安全時，先煮沸後放涼。不要用果汁或運動飲料。", "If the water may be unsafe, boil it and let it cool first. Do not use juice or sports drinks.", "Bila air belum aman, rebus lalu dinginkan dulu. Jangan gunakan jus atau minuman olahraga.", "Nếu nguồn nước không an toàn, hãy đun sôi rồi để nguội trước. Không dùng nước trái cây hoặc nước thể thao.", "หากน้ำไม่ปลอดภัย ให้ต้มแล้วปล่อยให้เย็นก่อน ห้ามใช้น้ำผลไม้หรือเครื่องดื่มกีฬา", "Kung hindi tiyak na ligtas ang tubig, pakuluan muna at palamigin. Huwag gumamit ng juice o sports drinks.", "水が安全でない可能性があれば、煮沸して冷ます。果汁やスポーツ飲料は使わない。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg"
+          },
+          {
+            action: tx("加白砂糖 25 g", "Add 25 g of white sugar", "Tambahkan 25 g gula pasir putih", "Thêm 25 g đường trắng", "ใส่น้ำตาลทรายขาว 25 กรัม", "Magdagdag ng 25 g puting asukal", "白砂糖25 gを入れる"),
+            note: tx("沒有電子秤時，用 6 平茶匙。不要用蜂蜜、代糖或黑糖。", "If you have no scale, use 6 level teaspoons. Do not use honey, sweetener, or brown sugar.", "Jika tidak ada timbangan, gunakan 6 sendok teh rata. Jangan gunakan madu, pemanis buatan, atau gula merah.", "Nếu không có cân, dùng 6 thìa cà phê gạt ngang. Không dùng mật ong, chất tạo ngọt hoặc đường nâu.", "ถ้าไม่มีเครื่องชั่ง ใช้ช้อนชาแบบปาดเรียบ 6 ช้อน ห้ามใช้น้ำผึ้ง สารให้ความหวาน หรือ น้ำตาลทรายแดง", "Kung walang timbangan, gumamit ng 6 na level teaspoons. Huwag gumamit ng honey, sweetener, o brown sugar.", "はかりがなければ、すり切り小さじ6杯。はちみつ、代替甘味料、黒糖は使わない。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg"
+          },
+          {
+            action: tx("加一般食鹽 2.5 g", "Add 2.5 g of regular salt", "Tambahkan 2,5 g garam biasa", "Thêm 2,5 g muối ăn thường", "ใส่เกลือแกงทั่วไป 2.5 กรัม", "Magdagdag ng 2.5 g regular na asin", "普通の食塩2.5 gを入れる"),
+            note: tx("沒有電子秤時，用 1/2 平茶匙。不要用低鈉鹽或鉀鹽。", "If you have no scale, use 1/2 level teaspoon. Do not use low-sodium salt or potassium salt.", "Jika tidak ada timbangan, gunakan 1/2 sendok teh rata. Jangan gunakan garam rendah natrium atau garam kalium.", "Nếu không có cân, dùng 1/2 thìa cà phê gạt ngang. Không dùng muối ít natri hoặc muối kali.", "ถ้าไม่มีเครื่องชั่ง ใช้เกลือ 1/2 ช้อนชาแบบปาดเรียบ ห้ามใช้เกลือโซเดียมต่ำหรือเกลือโพแทสเซียม", "Kung walang timbangan, gumamit ng 1/2 level teaspoon. Huwag gumamit ng low-sodium salt o potassium salt.", "はかりがなければ、すり切り小さじ1/2杯。減塩塩やカリウム塩は使わない。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg",
+            highlight: true
+          },
+          {
+            action: tx("攪拌到完全溶解", "Stir until fully dissolved", "Aduk sampai larut seluruhnya", "Khuấy đến khi tan hoàn toàn", "คนจนละลายหมด", "Haluin hanggang matunaw nang buo", "完全に溶けるまで混ぜる"),
+            note: tx("先嚐一小口。味道應像眼淚，不應很鹹或很甜。", "Taste a tiny sip first. It should taste like tears, not very salty or very sweet.", "Cicip sedikit dulu. Rasanya harus seperti air mata, tidak terlalu asin atau terlalu manis.", "Nếm một chút trước. Vị nên giống nước mắt, không quá mặn hoặc quá ngọt.", "ชิมเล็กน้อยก่อน รสควรคล้ายน้ำตา ไม่เค็มจัดหรือหวานจัด", "Tikman muna nang kaunti. Dapat parang luha ang lasa, hindi sobrang alat o tamis.", "少し味見する。涙のような味で、強い塩味や甘味ではない。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg"
+          },
+          {
+            action: tx("少量多次喝，24 小時後丟棄", "Sip small amounts often and discard after 24 hours", "Minum sedikit-sedikit sering, buang setelah 24 jam", "Uống ít một nhiều lần, bỏ sau 24 giờ", "จิบบ่อย ๆ ทีละน้อย และทิ้งหลัง 24 ชั่วโมง", "Uminom nang kaunti-kaunti at madalas, itapon pagkalipas ng 24 oras", "少量をこまめに飲み、24時間後に捨てる"),
+            note: tx("若喝了仍一直吐、尿很少或變嗜睡，停止自製並就醫。", "If vomiting continues, urine is very low, or sleepiness appears, stop homemade solution and seek care.", "Bila tetap muntah, urin sangat sedikit, atau mulai mengantuk berat, hentikan larutan buatan sendiri dan periksa.", "Nếu vẫn nôn, tiểu rất ít hoặc lơ mơ, ngừng dung dịch tự pha và đi khám.", "หากยังอาเจียน ปัสสาวะน้อยมาก หรือซึม ให้หยุดสูตรทำเองและพบแพทย์", "Kung patuloy ang suka, napakakaunti ng ihi, o inaantok nang sobra, itigil ang homemade solution at magpatingin.", "嘔吐が続く、尿が非常に少ない、眠りがちなら自作をやめて受診。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg",
+            highlight: true
+          }
+        ],
+        storage: {
+          title: tx("不建議自製的人", "Who should not use homemade solution", "Yang tidak dianjurkan membuat sendiri", "Ai không nên tự pha", "ใครไม่ควรทำเอง", "Sino ang hindi dapat gumamit ng homemade", "自作を勧めない人"),
+          text: tx("嬰幼兒、老人、孕婦、腎臟病、心衰竭、需限鈉、血糖不穩、明顯脫水、血便、高燒或嚴重腹痛者，請用市售產品或就醫。", "Infants, older adults, pregnant people, kidney disease, heart failure, sodium restriction, unstable blood sugar, clear dehydration, bloody stool, high fever, or severe belly pain should use packaged products or seek care.", "Bayi, lansia, ibu hamil, penyakit ginjal, gagal jantung, pembatasan natrium, gula darah tidak stabil, dehidrasi jelas, tinja berdarah, demam tinggi, atau nyeri perut berat sebaiknya memakai produk kemasan atau periksa.", "Trẻ nhỏ, người cao tuổi, người mang thai, bệnh thận, suy tim, cần hạn chế muối, đường huyết không ổn, mất nước rõ, phân máu, sốt cao hoặc đau bụng dữ dội nên dùng sản phẩm đóng gói hoặc đi khám.", "ทารก ผู้สูงอายุ หญิงตั้งครรภ์ โรคไต หัวใจล้มเหลว ต้องจำกัดโซเดียม น้ำตาลไม่คงที่ ขาดน้ำชัด ถ่ายเป็นเลือด ไข้สูง หรือปวดท้องรุนแรง ควรใช้ผลิตภัณฑ์สำเร็จหรือพบแพทย์", "Sanggol, matatanda, buntis, may sakit sa bato, heart failure, kailangang limitahan ang sodium, hindi stable ang blood sugar, malinaw na dehydration, dugo sa dumi, mataas na lagnat, o matinding sakit ng tiyan ay dapat gumamit ng packaged product o magpatingin.", "乳幼児、高齢者、妊娠中、腎臓病、心不全、減塩が必要、血糖不安定、明らかな脱水、血便、高熱、強い腹痛では市販品を使うか受診。")
+        },
+        warnings: [
+          tx("自製只作臨時替代，不是首選。", "Homemade solution is temporary only, not first choice.", "Larutan buatan sendiri hanya sementara, bukan pilihan utama.", "Dung dịch tự pha chỉ dùng tạm, không phải lựa chọn đầu tiên.", "สูตรทำเองใช้ชั่วคราวเท่านั้น ไม่ใช่ตัวเลือกแรก", "Pansamantala lang ang homemade solution, hindi unang opsyon.", "自作は一時的な代替で、第一選択ではない。"),
+          tx("鹽加太多可能危險，務必刮平量匙。", "Too much salt can be dangerous. Always level the spoon.", "Terlalu banyak garam bisa berbahaya. Sendok harus diratakan.", "Quá nhiều muối có thể nguy hiểm. Luôn gạt ngang thìa.", "เกลือมากเกินไปอาจอันตราย ต้องปาดช้อนให้เรียบ", "Maaaring delikado ang sobrang asin. Laging pantayin ang kutsara.", "塩が多すぎると危険。必ずすり切りで量る。"),
+          tx("持續嘔吐、尿很少、嗜睡：就醫。", "Ongoing vomiting, very little urine, or sleepiness: seek care.", "Muntah terus, urin sangat sedikit, atau mengantuk berat: periksa.", "Nôn liên tục, tiểu rất ít hoặc lơ mơ: đi khám.", "อาเจียนต่อเนื่อง ปัสสาวะน้อยมาก หรือซึม: พบแพทย์", "Tuloy-tuloy na suka, napakakaunting ihi, o antok: magpatingin.", "嘔吐持続、尿が少ない、眠りがちは受診。")
+        ],
+        qrUrl: "https://pharmacy.example.com/acute-gi-care/homemade-ors"
+      },
+      {
+        pageLabel: tx("D 面｜藥物怎麼用", "Side D | using medicines", "Sisi D | memakai obat", "Mặt D | dùng thuốc", "ด้าน D | การใช้ยา", "Side D | paggamit ng gamot", "D面｜薬の使い方"),
+        badge: tx("藥物是輔助", "Medicines help symptoms", "Obat membantu gejala", "Thuốc hỗ trợ triệu chứng", "ยาเป็นตัวช่วยบรรเทาอาการ", "Pantulong sa sintomas ang gamot", "薬は症状を助けるもの"),
+        usage: tx("止吐、解痙或止瀉藥不能取代口服電解質補充液。", "Anti-nausea, antispasm, or antidiarrheal medicine does not replace ORS.", "Obat antimual, antispasme, atau antidiare tidak menggantikan oralit.", "Thuốc chống nôn, chống co thắt hoặc cầm tiêu chảy không thay thế ORS.", "ยาแก้อาเจียน ยาคลายเกร็ง หรือยาแก้ท้องเสีย ไม่แทน ORS", "Hindi kapalit ng ORS ang gamot sa suka, pulikat, o pagtatae.", "吐き気止め、鎮痙薬、止痢薬はORSの代わりにならない。"),
+        steps: [
+          {
+            action: tx("先把水分補回來", "Replace fluids first", "Ganti cairan dulu", "Bù nước trước", "ชดเชยน้ำก่อน", "Ibalik muna ang fluids", "まず水分を補う"),
+            note: tx("止吐或解痙藥的目的，是讓你比較能喝水和進食。", "Nausea or cramp medicines are meant to help you drink and eat.", "Obat mual atau kram bertujuan membantu Anda bisa minum dan makan.", "Thuốc chống nôn hoặc giảm co thắt giúp bạn uống nước và ăn được hơn.", "ยาแก้อาเจียนหรือคลายเกร็งมีไว้เพื่อให้ดื่มน้ำและกินอาหารได้ง่ายขึ้น", "Layunin ng gamot sa suka o pulikat na makatulong kang makainom at makakain.", "吐き気止めや鎮痙薬は、水分や食事を取りやすくするためのもの。"),
+            illustration: "assets/svg/acute-gi-care/ors.svg",
+            highlight: true
+          },
+          {
+            action: tx("成人水瀉可短期止瀉", "Adults with watery diarrhea may use short-term antidiarrheal medicine", "Dewasa dengan diare cair boleh pakai antidiare jangka pendek", "Người lớn tiêu chảy nước có thể dùng thuốc cầm tiêu chảy ngắn ngày", "ผู้ใหญ่ถ่ายเหลวอาจใช้ยาแก้ท้องเสียระยะสั้นได้", "Adult na watery diarrhea ay maaaring gumamit ng panandaliang antidiarrheal", "成人の水様下痢は短期の止痢薬を検討"),
+            note: tx("只限無血便、無發燒、無劇痛。若有危險徵象，不要用。", "Use only if there is no blood, fever, or severe pain. Do not use if danger signs appear.", "Hanya bila tidak ada darah, demam, atau nyeri berat. Jangan gunakan bila ada tanda bahaya.", "Chỉ dùng khi không có máu, sốt hoặc đau dữ dội. Không dùng nếu có dấu hiệu nguy hiểm.", "ใช้เฉพาะเมื่อไม่มีเลือด ไม่มีไข้ ไม่มีปวดรุนแรง หากมีสัญญาณอันตรายห้ามใช้", "Gamitin lamang kung walang dugo, lagnat, o matinding sakit. Huwag gamitin kung may danger signs.", "血便、発熱、激痛がない時だけ。危険サインがあれば使わない。"),
+            illustration: "assets/svg/acute-gi-care/medicine-check.svg"
+          },
+          {
+            action: tx("血便或發燒不要止瀉", "Do not stop diarrhea if there is blood or fever", "Jangan pakai antidiare bila ada darah atau demam", "Không dùng thuốc cầm tiêu chảy khi có máu hoặc sốt", "มีเลือดหรือไข้ ห้ามใช้ยาแก้ท้องเสีย", "Huwag mag-antidiarrheal kung may dugo o lagnat", "血便や発熱では止痢薬を使わない"),
+            note: tx("腸子可能正在排出病菌或毒素，請就醫評估。", "The gut may be clearing germs or toxins. Seek medical review.", "Usus mungkin sedang mengeluarkan kuman atau toksin. Periksakan diri.", "Ruột có thể đang đào thải vi khuẩn hoặc độc tố. Hãy đi khám.", "ลำไส้อาจกำลังกำจัดเชื้อหรือสารพิษ ควรพบแพทย์ประเมิน", "Maaaring inilalabas ng bituka ang mikrobyo o toxin. Magpatingin.", "腸が病原体や毒素を出している可能性があるため受診。"),
+            illustration: "assets/svg/acute-gi-care/medicine-check.svg",
+            highlight: true
+          },
+          {
+            action: tx("不要自行要求抗生素", "Do not ask for antibiotics on your own", "Jangan meminta antibiotik sendiri", "Đừng tự yêu cầu kháng sinh", "อย่าขอยาปฏิชีวนะเอง", "Huwag basta humingi ng antibiotic", "自己判断で抗菌薬を求めない"),
+            note: tx("腹瀉不一定要抗生素。血便也需要醫師判斷病因。", "Diarrhea does not always need antibiotics. Bloody stool also needs a doctor to check the cause.", "Diare tidak selalu perlu antibiotik. Tinja berdarah juga perlu dokter menilai penyebabnya.", "Tiêu chảy không phải lúc nào cũng cần kháng sinh. Phân máu cũng cần bác sĩ tìm nguyên nhân.", "ท้องเสียไม่จำเป็นต้องใช้ยาปฏิชีวนะเสมอ แม้ถ่ายเป็นเลือดก็ต้องให้แพทย์ประเมินสาเหตุ", "Hindi laging kailangan ng antibiotic sa pagtatae. Kahit may dugo sa dumi, kailangang alamin ng doktor ang sanhi.", "下痢に必ず抗菌薬が必要とは限らない。血便も医師が原因を確認する必要がある。"),
+            illustration: "assets/svg/acute-gi-care/medicine-check.svg"
+          },
+          {
+            action: tx("益生菌可當輔助", "Use probiotics only as an add-on", "Gunakan probiotik hanya sebagai tambahan", "Chỉ dùng men vi sinh như hỗ trợ", "ใช้โปรไบโอติกเป็นตัวเสริมเท่านั้น", "Gamitin ang probiotics bilang dagdag lamang", "プロバイオティクスは補助として使う"),
+            note: tx("不保證縮短病程，也不能取代口服電解質補充液。免疫低下者先問醫師。", "They do not guarantee a shorter illness and do not replace ORS. Immunocompromised people should ask a doctor first.", "Tidak menjamin sakit lebih cepat sembuh dan tidak menggantikan oralit. Orang dengan imun lemah perlu tanya dokter dulu.", "Không bảo đảm rút ngắn bệnh và không thay thế ORS. Người suy giảm miễn dịch cần hỏi bác sĩ trước.", "ไม่ได้รับประกันว่าจะหายเร็วขึ้น และไม่แทน ORS ผู้ที่ภูมิคุ้มกันต่ำควรถามแพทย์ก่อน", "Hindi nito garantisadong paiikliin ang sakit at hindi ito kapalit ng ORS. Kung mahina ang immune system, magtanong muna sa doktor.", "病期間を短くする保証はなく、ORSの代わりにならない。免疫低下の人は医師に相談。"),
+            illustration: "assets/svg/acute-gi-care/medicine-check.svg"
+          },
+          {
+            action: tx("胃酸藥前先看危險徵象", "Check danger signs before acid medicine", "Cek tanda bahaya sebelum obat asam lambung", "Kiểm tra dấu hiệu nguy hiểm trước thuốc acid dạ dày", "เช็กสัญญาณอันตรายก่อนใช้ยาลดกรด", "Tingnan ang danger signs bago gamot sa asido", "胃酸薬の前に危険サインを確認"),
+            note: tx("胸痛、吐血黑便、吞嚥困難、體重下降，請就醫。", "Chest pain, vomited blood, black stool, trouble swallowing, or weight loss needs care.", "Nyeri dada, muntah darah, tinja hitam, sulit menelan, atau berat badan turun perlu diperiksa.", "Đau ngực, nôn máu, phân đen, khó nuốt hoặc sụt cân cần đi khám.", "เจ็บหน้าอก อาเจียนเป็นเลือด อุจจาระดำ กลืนลำบาก หรือน้ำหนักลด ควรพบแพทย์", "Pananakit ng dibdib, dugo sa suka, itim na dumi, hirap lumunok, o pagbaba ng timbang ay dapat ipasuri.", "胸痛、吐血、黒色便、嚥下困難、体重減少は受診。"),
+            illustration: "assets/svg/acute-gi-care/triage.svg"
+          }
+        ],
+        storage: {
+          title: tx("幽門螺旋桿菌檢查提醒", "H. pylori test reminder", "Pengingat tes H. pylori", "Nhắc về xét nghiệm H. pylori", "เตือนเรื่องการตรวจ H. pylori", "Paalala sa H. pylori test", "ピロリ菌検査の注意"),
+          text: tx("若要做呼氣或糞便抗原檢查，PPI 胃藥常需先停 2 週。先問醫師或藥師，不要自行停重要藥。", "Before a breath or stool antigen test, PPI acid medicine often needs to be stopped for 2 weeks. Ask your doctor or pharmacist first. Do not stop important medicine on your own.", "Sebelum tes napas atau antigen tinja, obat asam lambung PPI sering perlu dihentikan 2 minggu. Tanya dokter atau apoteker dulu. Jangan menghentikan obat penting sendiri.", "Trước xét nghiệm hơi thở hoặc kháng nguyên phân, thuốc PPI thường cần ngừng 2 tuần. Hỏi bác sĩ hoặc dược sĩ trước. Đừng tự ngừng thuốc quan trọng.", "ก่อนตรวจลมหายใจหรือแอนติเจนในอุจจาระ ยากลุ่ม PPI มักต้องหยุด 2 สัปดาห์ ให้ถามแพทย์หรือเภสัชกรก่อน อย่าหยุดยาสำคัญเอง", "Bago breath test o stool antigen test, madalas kailangang ihinto ang PPI acid medicine nang 2 linggo. Magtanong muna sa doktor o parmasyutiko. Huwag ihinto ang mahalagang gamot nang mag-isa.", "呼気検査や便中抗原検査の前は、PPI胃酸薬を2週間止める必要があることが多い。まず医師・薬剤師に相談し、重要な薬を自己判断で止めない。")
+        },
+        warnings: [
+          tx("血便、發燒、劇痛時不要用強力止瀉。", "Do not use strong antidiarrheals with blood, fever, or severe pain.", "Jangan gunakan antidiare kuat bila ada darah, demam, atau nyeri berat.", "Không dùng thuốc cầm tiêu chảy mạnh khi có máu, sốt hoặc đau dữ dội.", "มีเลือด ไข้ หรือปวดรุนแรง ห้ามใช้ยาแก้ท้องเสียแรง", "Huwag gumamit ng matapang na antidiarrheal kung may dugo, lagnat, o matinding sakit.", "血便、発熱、激痛では強い止痢薬を使わない。"),
+          tx("抗生素需醫師評估，不自行買。", "Antibiotics need medical review. Do not buy them on your own.", "Antibiotik perlu penilaian dokter. Jangan beli sendiri.", "Kháng sinh cần bác sĩ đánh giá. Đừng tự mua.", "ยาปฏิชีวนะต้องให้แพทย์ประเมิน อย่าซื้อเอง", "Kailangang suriin ng doktor ang antibiotic. Huwag bumili nang kusa.", "抗菌薬は医師の評価が必要。自己購入しない。"),
+          tx("止吐止痛後仍要補口服電解質補充液。", "After nausea or pain medicine, keep using ORS.", "Setelah obat mual atau nyeri, tetap gunakan oralit.", "Sau thuốc chống nôn hoặc giảm đau, vẫn tiếp tục ORS.", "หลังยาแก้อาเจียนหรือแก้ปวด ยังต้องใช้ ORS", "Pagkatapos ng gamot sa suka o sakit, ituloy pa rin ang ORS.", "吐き気止めや鎮痛薬の後もORSを続ける。")
+        ],
+        qrUrl: "https://pharmacy.example.com/acute-gi-care/medicines"
+      },
+      {
+        pageLabel: tx("E 面｜清潔與防傳染", "Side E | cleaning and preventing spread", "Sisi E | kebersihan dan cegah penularan", "Mặt E | vệ sinh và tránh lây", "ด้าน E | ทำความสะอาดและป้องกันแพร่เชื้อ", "Side E | paglilinis at iwas-hawa", "E面｜清潔と感染予防"),
+        badge: tx("保護家人", "Protect family", "Lindungi keluarga", "Bảo vệ gia đình", "ปกป้องครอบครัว", "Protektahan ang pamilya", "家族を守る"),
+        usage: tx("清潔可減少傳染。", "Cleaning helps reduce spread.", "Kebersihan membantu mengurangi penularan.", "Vệ sinh giúp giảm lây lan.", "การทำความสะอาดช่วยลดการแพร่เชื้อ", "Nakakatulong ang paglilinis na mabawasan ang hawa.", "清潔対策は感染拡大を減らす。"),
+        steps: [
+          {
+            action: tx("用肥皂洗手 20 秒", "Wash with soap for 20 seconds", "Cuci tangan dengan sabun 20 detik", "Rửa tay với xà phòng 20 giây", "ล้างมือด้วยสบู่ 20 วินาที", "Maghugas gamit ang sabon sa loob ng 20 segundo", "石けんで20秒洗う"),
+            note: tx("如廁後、吃東西前、處理嘔吐物後都要洗。", "Wash after using the toilet, before eating, and after cleaning vomit.", "Cuci setelah ke toilet, sebelum makan, dan setelah membersihkan muntahan.", "Rửa sau khi đi vệ sinh, trước khi ăn và sau khi dọn chất nôn.", "ล้างหลังเข้าห้องน้ำ ก่อนกินอาหาร และหลังทำความสะอาดอาเจียน", "Maghugas pagkatapos gumamit ng banyo, bago kumain, at matapos maglinis ng suka.", "トイレ後、食事前、嘔吐物処理後に洗う。"),
+            illustration: "assets/svg/acute-gi-care/hygiene.svg",
+            highlight: true
+          },
+          {
+            action: tx("不要只靠酒精乾洗手", "Do not rely only on alcohol hand rub", "Jangan hanya mengandalkan hand sanitizer alkohol", "Đừng chỉ dựa vào dung dịch cồn rửa tay", "อย่าพึ่งแอลกอฮอล์ล้างมืออย่างเดียว", "Huwag umasa sa alcohol hand rub lang", "アルコールだけに頼らない"),
+            note: tx("諾羅病毒常見時，肥皂和流動清水更重要。", "When norovirus is common, soap and running water matter more.", "Saat norovirus umum terjadi, sabun dan air mengalir lebih penting.", "Khi norovirus hay gặp, xà phòng và nước chảy quan trọng hơn.", "ช่วงโนโรไวรัสระบาด สบู่และน้ำไหลสำคัญกว่า", "Kapag karaniwan ang norovirus, mas mahalaga ang sabon at umaagos na tubig.", "ノロウイルスが多い時期は、石けんと流水がより重要。"),
+            illustration: "assets/svg/acute-gi-care/hygiene.svg"
+          },
+          {
+            action: tx("戴手套處理嘔吐物", "Wear gloves to clean vomit", "Pakai sarung tangan saat membersihkan muntahan", "Mang găng khi dọn chất nôn", "ใส่ถุงมือเมื่อทำความสะอาดอาเจียน", "Magsuot ng gloves sa paglilinis ng suka", "嘔吐物処理は手袋を着ける"),
+            note: tx("先用紙巾覆蓋吸收，再丟入密封袋。", "Cover and absorb it with paper towels first, then seal it in a bag.", "Tutup dan serap dulu dengan tisu, lalu masukkan ke kantong tertutup.", "Phủ và thấm bằng khăn giấy trước, rồi bỏ vào túi kín.", "ใช้กระดาษทิชชูปิดและซับก่อน แล้วใส่ถุงปิดสนิท", "Takpan at sipsipin muna gamit ang paper towel, saka ilagay sa selyadong bag.", "まずペーパーで覆って吸収し、密封袋へ入れる。"),
+            illustration: "assets/svg/acute-gi-care/hygiene.svg"
+          },
+          {
+            action: tx("用漂白水擦污染處", "Wipe contaminated areas with bleach solution", "Lap area tercemar dengan larutan pemutih", "Lau vùng bẩn bằng dung dịch tẩy", "เช็ดบริเวณปนเปื้อนด้วยน้ำยาฟอกขาวเจือจาง", "Punasan ang kontaminadong lugar gamit ang bleach solution", "汚染部位を漂白剤で拭く"),
+            note: tx("嘔吐物或糞便處用較高濃度；一般環境用較低濃度。", "Use stronger solution for vomit or stool areas. Use weaker solution for routine surfaces.", "Gunakan larutan lebih kuat untuk muntahan atau tinja. Gunakan lebih encer untuk permukaan biasa.", "Dùng dung dịch đậm hơn cho vùng có chất nôn hoặc phân; dùng loãng hơn cho bề mặt thường.", "บริเวณมีอาเจียนหรืออุจจาระใช้ความเข้มข้นสูงกว่า พื้นผิวทั่วไปใช้เจือจางกว่า", "Mas matapang na solution para sa suka o dumi. Mas banayad para sa karaniwang surfaces.", "嘔吐物や便の場所は高濃度、通常の面は低濃度を使う。"),
+            illustration: "assets/svg/acute-gi-care/hygiene.svg",
+            highlight: true
+          },
+          {
+            action: tx("漂白水不可混清潔劑", "Do not mix bleach with cleaners", "Jangan campur pemutih dengan pembersih lain", "Không pha thuốc tẩy với chất tẩy rửa khác", "ห้ามผสมน้ำยาฟอกขาวกับน้ำยาทำความสะอาดอื่น", "Huwag ihalo ang bleach sa ibang panlinis", "漂白剤を洗剤と混ぜない"),
+            note: tx("保持通風。不同濃度產品，請照瓶身稀釋。", "Keep the room ventilated. Dilute according to the bleach label.", "Pastikan ruangan berventilasi. Encerkan sesuai label botol pemutih.", "Giữ phòng thông thoáng. Pha loãng theo nhãn chai thuốc tẩy.", "เปิดให้อากาศถ่ายเท และเจือจางตามฉลากขวด", "Panatilihing maaliwalas ang hangin. I-dilute ayon sa label ng bleach.", "換気し、ボトル表示どおり希釈する。"),
+            illustration: "assets/svg/acute-gi-care/hygiene.svg"
+          },
+          {
+            action: tx("症狀停後再等 48 小時", "Wait 48 hours after symptoms stop", "Tunggu 48 jam setelah gejala berhenti", "Chờ 48 giờ sau khi hết triệu chứng", "รอ 48 ชั่วโมงหลังอาการหยุด", "Maghintay ng 48 oras matapos mawala ang sintomas", "症状が止まってから48時間待つ"),
+            note: tx("再回學校、上班或處理餐飲，比較不會傳給別人。", "Then return to school, work, or food handling to reduce spread.", "Baru kembali ke sekolah, kerja, atau menangani makanan agar tidak mudah menulari orang lain.", "Sau đó mới đi học, đi làm hoặc xử lý thức ăn để giảm lây lan.", "จึงค่อยกลับไปโรงเรียน ทำงาน หรือจับต้องอาหาร เพื่อลดการแพร่เชื้อ", "Saka bumalik sa school, trabaho, o food handling para mabawasan ang hawa.", "その後に登校、出勤、食品取り扱いへ戻ると感染拡大を減らせる。"),
+            illustration: "assets/svg/acute-gi-care/hygiene.svg"
+          }
+        ],
+        storage: {
+          title: tx("漂白水濃度怎麼抓", "Bleach strength guide", "Panduan kekuatan pemutih", "Cách chọn nồng độ thuốc tẩy", "แนวทางความเข้มข้นน้ำยาฟอกขาว", "Gabay sa lakas ng bleach", "漂白剤濃度の目安"),
+          text: tx("常見 5% 家用漂白水：一般環境約 1:50；嘔吐物或糞便污染約 1:10。若產品濃度不同，依瓶身標示調整。", "For common 5% household bleach: about 1:50 for routine surfaces and about 1:10 for vomit or stool contamination. If the product strength differs, follow the label.", "Untuk pemutih rumah tangga 5%: sekitar 1:50 untuk permukaan biasa dan 1:10 untuk muntahan atau tinja. Bila konsentrasi produk berbeda, ikuti label.", "Với thuốc tẩy gia dụng 5%: khoảng 1:50 cho bề mặt thường và 1:10 cho vùng có chất nôn hoặc phân. Nếu nồng độ khác, làm theo nhãn.", "สำหรับน้ำยาฟอกขาว 5% ทั่วไป: พื้นผิวทั่วไปประมาณ 1:50 และบริเวณปนเปื้อนอาเจียนหรืออุจจาระประมาณ 1:10 หากความเข้มข้นต่างกันให้ทำตามฉลาก", "Para sa karaniwang 5% household bleach: mga 1:50 para sa routine surfaces at mga 1:10 para sa suka o dumi. Kung iba ang lakas ng produkto, sundin ang label.", "一般的な5%家庭用漂白剤は、通常面は約1:50、嘔吐物や便の汚染は約1:10。濃度が違う製品は表示に従う。")
+        },
+        warnings: [
+          tx("漂白水不可混酸性清潔劑。", "Do not mix bleach with acidic cleaners.", "Jangan campur pemutih dengan pembersih asam.", "Không pha thuốc tẩy với chất tẩy acid.", "ห้ามผสมน้ำยาฟอกขาวกับน้ำยากรด", "Huwag ihalo ang bleach sa acidic cleaners.", "漂白剤を酸性洗剤と混ぜない。"),
+          tx("清潔時戴手套並保持通風。", "Wear gloves and keep ventilation during cleaning.", "Pakai sarung tangan dan jaga ventilasi saat membersihkan.", "Mang găng và giữ thông thoáng khi vệ sinh.", "สวมถุงมือและเปิดให้อากาศถ่ายเทขณะทำความสะอาด", "Magsuot ng gloves at panatilihing may bentilasyon habang naglilinis.", "清掃時は手袋を着け、換気する。"),
+          tx("症狀停止 48 小時內仍可能傳染。", "Spread can still happen within 48 hours after symptoms stop.", "Penularan masih bisa terjadi dalam 48 jam setelah gejala berhenti.", "Vẫn có thể lây trong 48 giờ sau khi hết triệu chứng.", "ยังอาจแพร่เชื้อได้ภายใน 48 ชั่วโมงหลังอาการหยุด", "Maaari pa ring makahawa sa loob ng 48 oras matapos mawala ang sintomas.", "症状停止後48時間は感染させる可能性がある。")
+        ],
+        qrUrl: "https://pharmacy.example.com/acute-gi-care/hygiene"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/acute-gi-care"
+  },
   // ── Pediatric oral medication administration techniques ─────────────────────────────────────,
   {
     "id": "pediatric-oral-admin",

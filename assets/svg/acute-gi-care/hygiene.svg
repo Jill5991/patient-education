@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="洗手與漂白水消毒">
+  <rect width="160" height="120" rx="22" fill="#EAF6F2"/>
+  <path d="M34 35h38v46H34z" fill="#fff" stroke="#0F6E56" stroke-width="4" rx="8"/>
+  <path d="M42 48h22M42 61h22" stroke="#0F6E56" stroke-width="4" stroke-linecap="round"/>
+  <path d="M94 25h25l5 69H89l5-69Z" fill="#fff" stroke="#0F6E56" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M96 68c8-6 17 6 26 0l-2 26H98l-2-26Z" fill="#8BD0E8"/>
+  <circle cx="64" cy="91" r="7" fill="#8BD0E8"/>
+  <circle cx="80" cy="87" r="5" fill="#8BD0E8"/>
+</svg>

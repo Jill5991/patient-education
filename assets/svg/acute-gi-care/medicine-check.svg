@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="腸胃藥使用判斷">
+  <rect width="160" height="120" rx="22" fill="#EAF6F2"/>
+  <rect x="33" y="31" width="42" height="58" rx="19" fill="#fff" stroke="#0F6E56" stroke-width="4"/>
+  <path d="M42 60h24" stroke="#0F6E56" stroke-width="4"/>
+  <circle cx="104" cy="59" r="29" fill="#D8EFC8" stroke="#3B6D11" stroke-width="4"/>
+  <path d="m90 59 10 10 21-24" fill="none" stroke="#3B6D11" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
