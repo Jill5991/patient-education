@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="clinic and home blood pressure comparison">
+  <rect width="360" height="220" rx="28" fill="#E6F1FB"/>
+  <rect x="28" y="42" width="132" height="128" rx="18" fill="#fff" stroke="#185FA5" stroke-width="6"/>
+  <rect x="200" y="42" width="132" height="128" rx="18" fill="#fff" stroke="#0F6E56" stroke-width="6"/>
+  <circle cx="94" cy="88" r="28" fill="#F6C3AF"/><path d="M58 145c10-36 62-36 72 0" fill="#185FA5"/>
+  <path d="M77 88h34" stroke="#042C53" stroke-width="5" stroke-linecap="round"/><path d="M78 111c12 12 22 12 34 0" stroke="#D45D5D" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <text x="94" y="190" font-size="22" text-anchor="middle" fill="#042C53" font-family="Arial,sans-serif">診間一次</text>
+  <circle cx="266" cy="88" r="28" fill="#F6C3AF"/><path d="M230 145c10-36 62-36 72 0" fill="#0F6E56"/>
+  <path d="M248 92h36" stroke="#04342C" stroke-width="5" stroke-linecap="round"/><path d="M250 110c10 7 22 7 32 0" stroke="#04342C" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <text x="266" y="190" font-size="22" text-anchor="middle" fill="#04342C" font-family="Arial,sans-serif">居家多天</text>
+  <path d="M166 107h28" stroke="#667085" stroke-width="6" stroke-linecap="round"/><path d="M184 95l12 12-12 12" fill="none" stroke="#667085" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

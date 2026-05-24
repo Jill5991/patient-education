@@ -18153,6 +18153,194 @@ const MEDICATIONS = [
     ],
     qrUrl: "https://pharmacy.example.com/acute-gi-care"
   },
+  // ── Home blood pressure monitoring care kit ─────────────────────────────────────,
+  {
+    id: "home-blood-pressure-kit",
+    category: "other",
+    color: {
+      main: "#185FA5",
+      light: "#E6F1FB",
+      dark: "#042C53",
+      badge: "#B5D4F4",
+      badgeText: "#042C53"
+    },
+    emergency: false,
+    headerBadge: tx("居家血壓", "Home BP", "Tekanan darah rumah", "Huyết áp tại nhà", "ความดันที่บ้าน", "Home BP", "家庭血圧"),
+    name: tx("診間血壓不準？用 722 找出真實血壓", "Clinic BP not enough? Use 722 to find your usual BP", "Tekanan darah di klinik belum cukup? Gunakan 722 untuk melihat tekanan darah harian", "Huyết áp đo ở phòng khám chưa đủ? Dùng 722 để biết huyết áp thường ngày", "ค่าความดันที่คลินิกยังไม่พอ? ใช้ 722 ดูค่าความดันประจำวัน", "Hindi sapat ang clinic BP? Gamitin ang 722 para malaman ang karaniwang BP mo", "診察室血圧だけで不十分？722で普段の血圧を見る"),
+    subtitle: tx("分辨白袍效應、隱性高血壓，並把數字量準、記清楚", "Tell white-coat effect from masked hypertension, and measure and record correctly", "Bedakan efek jas putih dari hipertensi tersamar, lalu ukur dan catat dengan benar", "Phân biệt hiệu ứng áo choàng trắng với tăng huyết áp ẩn, rồi đo và ghi đúng", "แยกภาวะเจอหมอแล้วสูงจากความดันสูงแฝง แล้ววัดและจดให้ถูก", "Tukuyin kung white-coat effect o masked hypertension, saka sukatin at itala nang tama", "白衣効果と仮面高血圧を見分け、正しく測って記録する"),
+    pages: [
+      {
+        pageLabel: tx("A 面｜診間數字為什麼不能只看一次", "Side A | why one clinic number is not enough", "Sisi A | mengapa satu angka klinik tidak cukup", "Mặt A | vì sao một số đo phòng khám chưa đủ", "ด้าน A | ทำไมค่าที่คลินิกครั้งเดียวไม่พอ", "Side A | bakit hindi sapat ang isang clinic number", "A面｜診察室の1回値だけでは不十分な理由"),
+        badge: null,
+        usage: tx("單次診間量測，無法反映您每天真實的血壓狀況。", "One clinic reading cannot show your true day-to-day blood pressure.", "Satu hasil di klinik tidak dapat menggambarkan tekanan darah harian yang sebenarnya.", "Một lần đo ở phòng khám không phản ánh đầy đủ huyết áp hằng ngày.", "ค่าที่วัดในคลินิกครั้งเดียวไม่สะท้อนความดันจริงในแต่ละวัน", "Hindi ipinapakita ng isang clinic reading ang tunay na presyon araw-araw.", "診察室で1回測った値だけでは、日常の血圧を表せません。"),
+        preStepsInfo: null,
+        steps: [
+          {
+            action: tx("認識診間血壓的局限：量一次不夠", "Know the limit of clinic BP: one reading is not enough", "Kenali batas tekanan darah klinik: satu kali tidak cukup", "Hiểu giới hạn của huyết áp phòng khám: một lần đo chưa đủ", "รู้ข้อจำกัดของค่าที่คลินิก: วัดครั้งเดียวไม่พอ", "Alamin ang limitasyon ng clinic BP: hindi sapat ang isang reading", "診察室血圧の限界を知る：1回では不十分"),
+            note: tx("候診緊張、剛走進診間、剛說完話，都可能讓數值偏高。", "Anxiety, just walking in, or talking can make the reading higher.", "Cemas, baru berjalan masuk, atau berbicara dapat membuat angka lebih tinggi.", "Lo lắng, vừa đi vào phòng khám hoặc vừa nói chuyện có thể làm số đo cao hơn.", "ความกังวล เพิ่งเดินเข้าห้องตรวจ หรือเพิ่งพูดคุย อาจทำให้ค่าสูงขึ้น", "Ang kaba, bagong lakad papasok, o pakikipag-usap ay maaaring magpataas ng reading.", "緊張、来院直後、会話で値が高く出ることがあります。"),
+            illustration: "assets/svg/hbpm/home-vs-clinic.svg"
+          },
+          {
+            action: tx("白袍效應可使收縮壓虛高 11–28 mmHg", "White-coat effect may raise systolic BP by 11-28 mmHg", "Efek jas putih dapat menaikkan sistolik 11-28 mmHg", "Hiệu ứng áo choàng trắng có thể làm huyết áp tâm thu cao giả 11-28 mmHg", "ภาวะเจอหมอแล้วสูงอาจทำให้ค่าตัวบนสูงเกินจริง 11-28 mmHg", "Maaaring tumaas nang 11-28 mmHg ang systolic BP dahil sa white-coat effect", "白衣効果で収縮期血圧が11〜28 mmHg高く出ることがあります"),
+            note: tx("即使醫師不在場，診間環境本身也可能讓血壓高估。", "Even without the doctor in the room, the clinic setting itself can overestimate BP.", "Walau dokter tidak di ruangan, lingkungan klinik sendiri dapat membuat angka lebih tinggi.", "Ngay cả khi bác sĩ không ở đó, môi trường phòng khám vẫn có thể làm số đo cao giả.", "แม้แพทย์ไม่ได้อยู่ในห้อง สภาพแวดล้อมของคลินิกก็อาจทำให้ค่าสูงเกินจริง", "Kahit wala ang doktor, ang clinic setting mismo ay puwedeng magpataas ng BP.", "医師がいなくても、診察室環境そのものが血圧を高く見せることがあります。"),
+            illustration: "assets/svg/hbpm/home-vs-clinic.svg",
+            highlight: true
+          },
+          {
+            action: tx("認識隱性高血壓：診間正常 ≠ 回家也正常", "Know masked hypertension: normal in clinic does not mean normal at home", "Kenali hipertensi tersamar: normal di klinik belum tentu normal di rumah", "Hiểu tăng huyết áp ẩn: bình thường ở phòng khám không có nghĩa là bình thường ở nhà", "รู้จักความดันสูงแฝง: ค่าปกติที่คลินิกไม่ได้แปลว่าที่บ้านปกติ", "Alamin ang masked hypertension: normal sa clinic ay hindi laging normal sa bahay", "仮面高血圧を知る：診察室で正常でも家庭で正常とは限らない"),
+            note: tx("有些人在診間正常，回家持續偏高，同樣會增加心血管風險。", "Some people are normal in clinic but often high at home; this still raises cardiovascular risk.", "Sebagian orang normal di klinik tetapi sering tinggi di rumah; ini tetap meningkatkan risiko kardiovaskular.", "Một số người bình thường ở phòng khám nhưng thường cao tại nhà; vẫn làm tăng nguy cơ tim mạch.", "บางคนปกติที่คลินิกแต่ที่บ้านสูงต่อเนื่อง ซึ่งยังเพิ่มความเสี่ยงหัวใจและหลอดเลือด", "May iba na normal sa clinic pero madalas mataas sa bahay; tumataas pa rin ang cardiovascular risk.", "診察室では正常でも家庭で高い人がいて、心血管リスクは上がります。"),
+            illustration: "assets/svg/hbpm/home-vs-clinic.svg"
+          },
+          {
+            action: tx("居家血壓更能預測心血管風險", "Home BP better predicts cardiovascular risk", "Tekanan darah rumah lebih baik memprediksi risiko kardiovaskular", "Huyết áp tại nhà dự đoán nguy cơ tim mạch tốt hơn", "ค่าที่บ้านทำนายความเสี่ยงหัวใจและหลอดเลือดได้ดีกว่า", "Mas mahusay na nahuhulaan ng home BP ang panganib sa puso at ugat", "家庭血圧は心血管リスクをよりよく予測します"),
+            note: tx("多天居家平均，比診間單次數值更能反映真實趨勢。", "A multi-day home average shows the real pattern better than one clinic number.", "Rata-rata beberapa hari di rumah lebih mencerminkan pola sebenarnya daripada satu angka di klinik.", "Trung bình nhiều ngày tại nhà phản ánh xu hướng thật tốt hơn một lần đo ở phòng khám.", "ค่าเฉลี่ยหลายวันที่บ้านสะท้อนแนวโน้มจริงได้ดีกว่าค่าที่คลินิกครั้งเดียว", "Mas ipinapakita ng multi-day home average ang tunay na pattern kaysa isang clinic number.", "数日間の家庭平均は、診察室の1回値より本当の傾向を表します。"),
+            illustration: "assets/svg/hbpm/bp-log.svg"
+          },
+          {
+            action: tx("協助醫師精確調整用藥", "Help the doctor adjust medicine more precisely", "Membantu dokter menyesuaikan obat lebih tepat", "Giúp bác sĩ chỉnh thuốc chính xác hơn", "ช่วยให้แพทย์ปรับยาได้แม่นขึ้น", "Tumutulong sa doktor na mas eksaktong i-adjust ang gamot", "医師が薬をより正確に調整する助けになります"),
+            note: tx("早晚趨勢可避免醫師因單次高值而不必要地加藥。", "Morning and evening patterns can help the doctor avoid unnecessary dose increases based on one high reading.", "Pola pagi-malam membantu dokter menghindari penambahan obat yang tidak perlu karena satu angka tinggi.", "Xu hướng sáng-tối giúp bác sĩ tránh tăng thuốc không cần thiết chỉ vì một lần đo cao.", "แนวโน้มเช้าเย็นช่วยให้แพทย์เลี่ยงการเพิ่มยาโดยไม่จำเป็นจากค่าสูงครั้งเดียว", "Ang morning-evening pattern ay tumutulong sa doktor na maiwasan ang hindi kailangang dagdag-gamot dahil sa isang mataas na reading.", "朝晩の傾向により、医師が1回の高値だけで不要に薬を増やすことを避けやすくなります。"),
+            illustration: "assets/svg/hbpm/bp-log.svg"
+          },
+          {
+            action: tx("居家 722 平均 ≥ 130/80 mmHg，即達高血壓診斷門檻", "A 722 home average >=130/80 mmHg meets the hypertension threshold", "Rata-rata 722 di rumah >=130/80 mmHg memenuhi ambang hipertensi", "Trung bình 722 tại nhà >=130/80 mmHg đạt ngưỡng tăng huyết áp", "ค่าเฉลี่ย 722 ที่บ้าน >=130/80 mmHg ถึงเกณฑ์ความดันสูง", "Ang 722 home average na >=130/80 mmHg ay pasok sa hypertension threshold", "家庭722平均が130/80 mmHg以上なら高血圧の基準に達します"),
+            note: tx("請帶 7 天紀錄回診，由醫師或藥師一起判讀。不要只憑單次數字自行加減藥。", "Bring the 7-day log for review. Do not change medicine based on one reading.", "Bawa catatan 7 hari untuk dinilai. Jangan mengubah obat berdasarkan satu angka.", "Mang nhật ký 7 ngày đi khám. Đừng tự đổi thuốc chỉ vì một lần đo.", "นำบันทึก 7 วันไปให้แพทย์หรือเภสัชกรดู อย่าปรับยาเองจากค่าครั้งเดียว", "Dalhin ang 7-day log para masuri. Huwag baguhin ang gamot dahil sa isang reading.", "7日分の記録を持参して確認してもらいます。1回の値だけで薬を自己調整しないでください。"),
+            illustration: "assets/svg/hbpm/calendar-722.svg",
+            highlight: true
+          }
+        ],
+        storage: {
+          title: tx("回診帶這 3 樣", "Bring these 3 things", "Bawa 3 hal ini", "Mang 3 thứ này", "นำ 3 อย่างนี้ไปด้วย", "Dalhin ang 3 bagay na ito", "この3つを持参"),
+          text: tx("7 天血壓紀錄、目前藥袋或藥單、血壓計型號。若機器常出現不規則心跳符號，也請告訴醫師或藥師。", "7-day BP log, current medicine labels/list, and monitor model. Tell your clinician if the irregular heartbeat symbol appears often.", "Catatan 7 hari, label/daftar obat, dan tipe alat. Beri tahu bila simbol detak tidak teratur sering muncul.", "Nhật ký 7 ngày, nhãn/danh sách thuốc và mẫu máy đo. Báo nếu biểu tượng nhịp tim không đều xuất hiện thường xuyên.", "บันทึก 7 วัน ฉลาก/รายการยา และรุ่นเครื่องวัด หากมีสัญลักษณ์หัวใจเต้นไม่สม่ำเสมอบ่อย ให้แจ้งแพทย์หรือเภสัชกร", "7-day BP log, label/listahan ng gamot, at modelo ng monitor. Sabihin kung madalas lumabas ang irregular heartbeat symbol.", "7日分の記録、薬袋または薬リスト、血圧計の型番。不整脈マークがよく出る時も伝えてください。")
+        },
+        warnings: [
+          tx("診間單次數值，不適合單獨用來確診或調藥。", "One clinic reading should not be used alone for diagnosis or dose changes.", "Satu angka klinik tidak boleh menjadi satu-satunya dasar diagnosis atau perubahan obat.", "Không dùng một lần đo ở phòng khám làm căn cứ duy nhất để chẩn đoán hoặc chỉnh thuốc.", "ไม่ควรใช้ค่าที่คลินิกครั้งเดียวเพียงอย่างเดียวเพื่อวินิจฉัยหรือปรับยา", "Hindi dapat gamitin ang isang clinic reading lang para sa diagnosis o dose change.", "診察室の1回値だけで診断や薬の調整をしないでください。"),
+          tx("居家血壓可區分白袍高血壓與隱性高血壓。", "Home BP helps distinguish white-coat and masked hypertension.", "Tekanan darah rumah membantu membedakan jas putih dan hipertensi tersamar.", "Huyết áp tại nhà giúp phân biệt áo choàng trắng và tăng huyết áp ẩn.", "ค่าที่บ้านช่วยแยกภาวะเจอหมอแล้วสูงกับความดันสูงแฝง", "Nakakatulong ang home BP na makilala ang white-coat at masked hypertension.", "家庭血圧は白衣高血圧と仮面高血圧の区別に役立ちます。"),
+          tx("量了請記錄；沒有紀錄，數字很難用。", "Record readings; without a log, the numbers are hard to use.", "Catat hasilnya; tanpa catatan, angka sulit digunakan.", "Hãy ghi lại; không có nhật ký thì số đo khó sử dụng.", "วัดแล้วต้องจด หากไม่มีบันทึก ตัวเลขใช้ประโยชน์ได้ยาก", "Isulat ang readings; mahirap gamitin ang numero kung walang log.", "測ったら記録してください。記録がないと数値を活用しにくいです。")
+        ],
+        qrUrl: "https://pharmacy.example.com/hbpm/importance"
+      },
+      {
+        pageLabel: tx("B 面｜照 722 做出可判讀的血壓紀錄", "Side B | use 722 to make a BP log your doctor can interpret", "Sisi B | gunakan 722 agar catatan tekanan darah dapat dinilai dokter", "Mặt B | dùng 722 để bác sĩ đọc được nhật ký huyết áp", "ด้าน B | ใช้ 722 ทำบันทึกความดันให้แพทย์ประเมินได้", "Side B | gamitin ang 722 para makagawa ng BP log na mababasa ng doktor", "B面｜722で医師が判読できる血圧記録を作る"),
+        badge: null,
+        usage: tx("連 7 天、每日 2 次、每次 2 讀數。", "7 days, 2 times daily, 2 readings each time.", "7 hari, 2 kali sehari, 2 hasil setiap kali.", "7 ngày, mỗi ngày 2 lần, mỗi lần 2 số đo.", "7 วัน วันละ 2 ครั้ง ครั้งละ 2 ค่า", "7 araw, 2 beses araw-araw, 2 readings bawat beses.", "7日間、1日2回、各2回測ります。"),
+        preStepsInfo: null,
+        steps: [
+          {
+            action: tx("連續量 7 天（至少 4 天）", "Measure for 7 days in a row (at least 4 days)", "Ukur 7 hari berturut-turut (minimal 4 hari)", "Đo liên tục 7 ngày (ít nhất 4 ngày)", "วัดต่อเนื่อง 7 วัน (อย่างน้อย 4 วัน)", "Sukatin nang 7 sunod na araw (hindi bababa sa 4 araw)", "7日連続で測る（少なくとも4日）"),
+            note: tx("第 1 天數據不納入平均；第 2–7 天用來計算平均值。", "Do not include day 1; use days 2-7 for the average.", "Hari pertama tidak dihitung; gunakan hari 2-7 untuk rata-rata.", "Không tính ngày 1; dùng ngày 2-7 để tính trung bình.", "ไม่รวมวันแรก ใช้วันที่ 2-7 คำนวณค่าเฉลี่ย", "Huwag isama ang day 1; gamitin ang days 2-7 para sa average.", "1日目は入れず、2〜7日目で平均を出します。"),
+            illustration: "assets/svg/hbpm/calendar-722.svg"
+          },
+          {
+            action: tx("早上：起床 1 小時內量", "Morning: measure within 1 hour after waking", "Pagi: ukur dalam 1 jam setelah bangun", "Buổi sáng: đo trong 1 giờ sau khi thức dậy", "ตอนเช้า: วัดภายใน 1 ชั่วโมงหลังตื่น", "Umaga: sukatin sa loob ng 1 oras pagkagising", "朝：起床後1時間以内に測る"),
+            note: tx("順序不可錯：起床 → 上廁所 → 量血壓 → 吃早餐 → 服藥。", "Keep this order: wake up -> toilet -> measure BP -> breakfast -> medicine.", "Urutan jangan salah: bangun -> toilet -> ukur tekanan darah -> sarapan -> obat.", "Đúng thứ tự: thức dậy -> đi vệ sinh -> đo huyết áp -> ăn sáng -> uống thuốc.", "ลำดับห้ามผิด: ตื่นนอน -> เข้าห้องน้ำ -> วัดความดัน -> อาหารเช้า -> กินยา", "Sundin ang order: gising -> banyo -> sukatin ang BP -> almusal -> gamot.", "順序を守る：起床→トイレ→血圧測定→朝食→服薬。"),
+            illustration: "assets/svg/hbpm/morning-evening.svg",
+            highlight: true
+          },
+          {
+            action: tx("晚上：睡前 1 小時內量", "Evening: measure within 1 hour before sleep", "Malam: ukur dalam 1 jam sebelum tidur", "Buổi tối: đo trong 1 giờ trước khi ngủ", "ตอนกลางคืน: วัดภายใน 1 ชั่วโมงก่อนนอน", "Gabi: sukatin sa loob ng 1 oras bago matulog", "夜：就寝前1時間以内に測る"),
+            note: tx("靜坐休息 5 分鐘後再量；不要在激烈活動後立即測量。", "Sit quietly for 5 minutes first; do not measure right after strenuous activity.", "Duduk tenang 5 menit dulu; jangan ukur segera setelah aktivitas berat.", "Ngồi yên 5 phút trước; không đo ngay sau hoạt động mạnh.", "นั่งพักเงียบ ๆ 5 นาทีก่อน อย่าวัดทันทีหลังทำกิจกรรมหนัก", "Umupo nang tahimik 5 minuto muna; huwag sukatin agad pagkatapos ng matinding activity.", "5分静かに座ってから測る。激しい活動の直後は測らない。"),
+            illustration: "assets/svg/hbpm/morning-evening.svg"
+          },
+          {
+            action: tx("每次量 2 讀數，間隔 ≥ 1 分鐘，取平均", "Take 2 readings each time, at least 1 minute apart, then average", "Ambil 2 hasil setiap kali, jarak minimal 1 menit, lalu rata-rata", "Mỗi lần đo 2 số, cách nhau ít nhất 1 phút, rồi lấy trung bình", "วัดครั้งละ 2 ค่า ห่างกันอย่างน้อย 1 นาที แล้วเฉลี่ย", "Kumuha ng 2 readings bawat beses, may pagitan na >=1 minuto, saka i-average", "毎回2回、1分以上あけて測り、平均する"),
+            note: tx("心房顫動或心跳不規則者：每次量 3 讀數取平均。", "Atrial fibrillation or irregular heartbeat: take 3 readings and average them.", "Fibrilasi atrium atau detak tidak teratur: ambil 3 hasil dan rata-rata.", "Rung nhĩ hoặc nhịp tim không đều: đo 3 lần rồi lấy trung bình.", "หัวใจห้องบนสั่นพลิ้วหรือหัวใจเต้นไม่สม่ำเสมอ: วัด 3 ค่าแล้วเฉลี่ย", "Atrial fibrillation o irregular heartbeat: kumuha ng 3 readings at i-average.", "心房細動や不整脈がある場合は3回測って平均する。"),
+            illustration: "assets/svg/hbpm/calendar-722.svg"
+          },
+          {
+            action: tx("未確診且血壓正常：每 1 年做 1 次", "Not diagnosed and normal BP: do one 722 round once a year", "Belum terdiagnosis dan tekanan darah normal: lakukan setahun sekali", "Chưa chẩn đoán và huyết áp bình thường: làm mỗi năm 1 lần", "ยังไม่วินิจฉัยและความดันปกติ: ทำปีละครั้ง", "Wala pang diagnosis at normal ang BP: gawin isang beses kada taon", "未診断で正常血圧：年1回行う"),
+            note: tx("收縮壓 <120 且舒張壓 <80 mmHg。這是定期健康追蹤，不需要天天量。", "Systolic <120 and diastolic <80 mmHg. This is routine health follow-up; daily measuring is not needed.", "Sistolik <120 dan diastolik <80 mmHg. Ini pemantauan rutin; tidak perlu mengukur setiap hari.", "Tâm thu <120 và tâm trương <80 mmHg. Đây là theo dõi định kỳ; không cần đo mỗi ngày.", "ค่าตัวบน <120 และตัวล่าง <80 mmHg เป็นการติดตามสุขภาพตามรอบ ไม่ต้องวัดทุกวัน", "Systolic <120 at diastolic <80 mmHg. Routine follow-up ito; hindi kailangang araw-araw.", "収縮期<120かつ拡張期<80 mmHg。定期的な健康確認で、毎日測る必要はありません。"),
+            illustration: "assets/svg/hbpm/bp-log.svg"
+          },
+          {
+            action: tx("未確診但血壓偏高：每 6 個月做 1 次", "Not diagnosed but elevated BP: repeat every 6 months", "Belum terdiagnosis tetapi tekanan darah agak tinggi: ulang tiap 6 bulan", "Chưa chẩn đoán nhưng huyết áp hơi cao: lặp lại mỗi 6 tháng", "ยังไม่วินิจฉัยแต่ความดันเริ่มสูง: ทำซ้ำทุก 6 เดือน", "Wala pang diagnosis pero medyo mataas ang BP: ulitin kada 6 buwan", "未診断で高めの血圧：6か月ごとに行う"),
+            note: tx("收縮壓 120–129 且舒張壓 <80 mmHg。還不到高血壓，重點是追蹤趨勢。", "Systolic 120-129 and diastolic <80 mmHg. This is not hypertension yet; the goal is trend follow-up.", "Sistolik 120-129 dan diastolik <80 mmHg. Ini belum hipertensi; tujuannya memantau tren.", "Tâm thu 120-129 và tâm trương <80 mmHg. Chưa phải tăng huyết áp; mục tiêu là theo dõi xu hướng.", "ค่าตัวบน 120-129 และตัวล่าง <80 mmHg ยังไม่ถึงความดันสูง เป้าหมายคือดูแนวโน้ม", "Systolic 120-129 at diastolic <80 mmHg. Hindi pa ito hypertension; trend follow-up ang layunin.", "収縮期120〜129かつ拡張期<80 mmHg。まだ高血圧ではなく、傾向を見ることが目的です。"),
+            illustration: "assets/svg/hbpm/bp-log.svg"
+          },
+          {
+            action: tx("服藥中且控制良好：每 3 個月做 1 次", "Taking medicine and controlled: do one 722 round every 3 months", "Minum obat dan terkontrol baik: lakukan tiap 3 bulan", "Đang dùng thuốc và kiểm soát tốt: làm mỗi 3 tháng", "ใช้ยาอยู่และคุมได้ดี: ทำทุก 3 เดือน", "Umiinom ng gamot at kontrolado: gawin kada 3 buwan", "服薬中で安定：3か月ごとに行う"),
+            note: tx("可在回診或拿慢性處方箋前，挑 1 個完整禮拜做 722，不需要每天量到有壓力。", "Before a visit or chronic prescription refill, choose one full week for 722. You do not need to measure daily if it adds stress.", "Sebelum kontrol atau ambil resep kronis, pilih 1 minggu penuh untuk 722. Tidak perlu mengukur setiap hari sampai stres.", "Trước tái khám hoặc lấy đơn thuốc mạn tính, chọn 1 tuần trọn vẹn để làm 722. Không cần đo hằng ngày đến mức căng thẳng.", "ก่อนนัดหรือรับยาต่อเนื่อง ให้เลือก 1 สัปดาห์เต็มทำ 722 ไม่จำเป็นต้องวัดทุกวันจนเครียด", "Bago follow-up o refill, pumili ng isang buong linggo para sa 722. Hindi kailangang araw-araw kung nakaka-stress.", "受診や慢性処方の前に1週間を選んで722を行います。ストレスになるほど毎日測る必要はありません。"),
+            illustration: "assets/svg/hbpm/bp-log.svg"
+          },
+          {
+            action: tx("服藥中但控制不良：每 1 個月做 1 次", "Taking medicine but uncontrolled: do one 722 round once a month", "Minum obat tetapi belum terkontrol: lakukan tiap 1 bulan", "Đang dùng thuốc nhưng chưa kiểm soát: làm mỗi 1 tháng", "ใช้ยาอยู่แต่ยังคุมไม่ได้: ทำเดือนละครั้ง", "Umiinom ng gamot pero hindi pa kontrolado: gawin isang beses kada buwan", "服薬中でも未管理：月1回行う"),
+            note: tx("若血壓仍常偏高，完整 722 紀錄可幫醫師判斷鹽分、生活習慣或藥效是否需要調整。", "If BP is still often high, a complete 722 log helps the doctor review salt intake, lifestyle, and medicine effect.", "Jika tekanan darah masih sering tinggi, catatan 722 lengkap membantu dokter menilai garam, gaya hidup, dan efek obat.", "Nếu huyết áp vẫn thường cao, nhật ký 722 đầy đủ giúp bác sĩ xem lại muối, lối sống và hiệu quả thuốc.", "หากความดันยังสูงบ่อย บันทึก 722 ครบถ้วนช่วยให้แพทย์ดูเรื่องเกลือ พฤติกรรม และผลยา", "Kung madalas pa ring mataas ang BP, nakakatulong ang kumpletong 722 log sa doktor na suriin ang asin, lifestyle, at epekto ng gamot.", "血圧がまだ高いことが多い場合、完全な722記録は塩分、生活習慣、薬効の確認に役立ちます。"),
+            illustration: "assets/svg/hbpm/bp-log.svg",
+            highlight: true
+          }
+        ],
+        storage: {
+          title: tx("開始或調整藥物後", "After starting or changing medicine", "Setelah mulai atau mengubah obat", "Sau khi bắt đầu hoặc đổi thuốc", "หลังเริ่มหรือปรับยา", "Pagkatapos simulan o baguhin ang gamot", "薬開始・変更後"),
+          text: tx("先等 2 週再做一輪 722。多數降壓藥需要時間接近穩定效果；太早量，數字不能代表藥效。", "Wait 2 weeks, then do one 722 round. Most BP medicines need time to approach a stable effect; measuring too early does not show the medicine effect.", "Tunggu 2 minggu, lalu lakukan satu putaran 722. Sebagian besar obat tekanan darah perlu waktu sampai efeknya mendekati stabil; mengukur terlalu cepat belum mencerminkan efek obat.", "Chờ 2 tuần rồi làm một vòng 722. Phần lớn thuốc cần thời gian để gần ổn định; đo quá sớm không phản ánh hiệu quả thuốc.", "รอ 2 สัปดาห์ แล้วทำ 722 หนึ่งรอบ ยาความดันส่วนใหญ่ต้องใช้เวลาจึงใกล้คงที่ วัดเร็วเกินไปไม่สะท้อนผลยา", "Maghintay ng 2 linggo, saka gawin ang isang 722 round. Karamihan ng BP medicine ay kailangan ng oras para maging halos stable; kung masyadong maaga, hindi nito ipinapakita ang epekto ng gamot.", "2週間待ってから722を1回行います。多くの降圧薬は安定効果に近づくまで時間が必要で、早すぎる測定は薬効を表しません。")
+        },
+        warnings: [
+          tx("早上順序不可錯：先量血壓，才吃早餐、才服藥。", "Morning order matters: measure BP before breakfast and medicine.", "Urutan pagi penting: ukur tekanan darah sebelum sarapan dan obat.", "Thứ tự buổi sáng rất quan trọng: đo huyết áp trước ăn sáng và uống thuốc.", "ลำดับตอนเช้าสำคัญ: วัดความดันก่อนอาหารเช้าและก่อนยา", "Mahalaga ang order sa umaga: sukatin muna ang BP bago almusal at gamot.", "朝は順序が重要：朝食・服薬の前に測る。"),
+          tx("心房顫動或心跳不規則者：每次量 3 讀數。", "Atrial fibrillation or irregular heartbeat: take 3 readings each time.", "Fibrilasi atrium atau detak tidak teratur: ambil 3 hasil setiap kali.", "Rung nhĩ hoặc nhịp tim không đều: mỗi lần đo 3 số.", "หัวใจเต้นไม่สม่ำเสมอ: วัดครั้งละ 3 ค่า", "Atrial fibrillation o irregular heartbeat: 3 readings bawat beses.", "心房細動や不整脈では毎回3回測る。"),
+          tx("已服藥且控制良好：每 3 個月或回診前做 1 次。", "Taking medicine and controlled: do it every 3 months or before visits.", "Minum obat dan terkontrol baik: lakukan tiap 3 bulan atau sebelum kontrol.", "Đang dùng thuốc và kiểm soát tốt: làm mỗi 3 tháng hoặc trước tái khám.", "ใช้ยาอยู่และคุมได้ดี: ทำทุก 3 เดือนหรือก่อนนัด", "Umiinom ng gamot at kontrolado: gawin kada 3 buwan o bago follow-up.", "服薬中で安定：3か月ごと、または受診前に行う。")
+        ],
+        qrUrl: "https://pharmacy.example.com/hbpm/722"
+      },
+      {
+        pageLabel: tx("C 面｜姿勢、袖帶、說話都會讓數字失真", "Side C | posture, cuff, and talking can distort readings", "Sisi C | posisi, manset, dan berbicara dapat membuat hasil meleset", "Mặt C | tư thế, vòng bít và nói chuyện có thể làm sai số đo", "ด้าน C | ท่า ผ้าพันแขน และการพูดทำให้ค่าคลาดเคลื่อน", "Side C | puwesto, cuff, at pagsasalita ay puwedeng magpabago ng reading", "C面｜姿勢・カフ・会話で値がずれる"),
+        badge: null,
+        usage: tx("姿勢錯誤，數字就不準。", "Wrong technique gives inaccurate numbers.", "Teknik yang salah membuat hasil tidak akurat.", "Đo sai kỹ thuật thì số đo không chính xác.", "วัดผิดท่า ค่าจะไม่แม่น", "Kapag mali ang paraan, hindi accurate ang numero.", "測り方が違うと値が不正確になります。"),
+        preStepsInfo: {
+          title: tx("7 個步驟，量出真實血壓", "7 steps for a truer BP reading", "7 langkah untuk hasil yang lebih benar", "7 bước để đo sát thực hơn", "7 ขั้นตอนเพื่อค่าที่ใกล้จริง", "7 hakbang para mas tunay ang BP reading", "正確に測る7ステップ"),
+          text: tx("同一台機器、同一個袖帶、同一個姿勢，比較結果才有意義。", "Use the same monitor, cuff, and posture for a fair comparison.", "Gunakan alat, manset, dan posisi yang sama agar hasil bisa dibandingkan dengan tepat.", "Dùng cùng máy, cùng vòng bít và cùng tư thế để so sánh cho đúng.", "ใช้เครื่องเดิม ผ้าพันแขนเดิม และท่าเดิม จึงเปรียบเทียบค่าได้", "Gamitin ang parehong monitor, cuff, at puwesto para patas ang paghahambing.", "同じ機器、同じカフ、同じ姿勢で測ると比較できます。")
+        },
+        steps: [
+          {
+            action: tx("使用上臂式電子血壓計，每 12 個月校正 1 次", "Use an upper-arm digital monitor; check it every 12 months", "Gunakan alat ukur tekanan darah lengan atas; periksa setiap 12 bulan", "Dùng máy đo huyết áp bắp tay; kiểm tra mỗi 12 tháng", "ใช้เครื่องแบบต้นแขน ตรวจเทียบทุก 12 เดือน", "Gumamit ng upper-arm digital BP monitor; ipa-check kada 12 buwan", "上腕式電子血圧計を使い、12か月ごとに確認"),
+            note: tx("不準確的血壓計無法重新校正時，需更換新機；可請藥師協助確認。", "If an inaccurate monitor cannot be adjusted, replace it. Ask a pharmacist to help check it.", "Jika alat tidak akurat dan tidak bisa disesuaikan lagi, ganti alat. Minta apoteker membantu mengecek.", "Nếu máy không chính xác và không chỉnh lại được, cần thay máy. Có thể nhờ dược sĩ kiểm tra.", "หากเครื่องไม่แม่นและแก้ไม่ได้ ควรเปลี่ยนเครื่อง ขอให้เภสัชกรช่วยตรวจได้", "Kung hindi accurate at hindi na ma-adjust ang monitor, palitan ito. Puwedeng magpatulong sa pharmacist.", "不正確で補正できない場合は交換が必要。薬剤師に確認を依頼できます。"),
+            illustration: "assets/svg/hbpm/cuff.svg"
+          },
+          {
+            action: tx("選用合適的袖帶尺寸", "Choose the correct cuff size", "Pilih ukuran manset yang tepat", "Chọn đúng cỡ vòng bít", "เลือกขนาดผ้าพันแขนให้เหมาะ", "Piliin ang tamang cuff size", "適切なカフサイズを選ぶ"),
+            note: tx("袖帶太小：收縮壓可能虛高達 10 mmHg；袖帶太大：可能低估。", "Too small: systolic BP may be overestimated by up to 10 mmHg. Too large: it may be underestimated.", "Terlalu kecil: tekanan sistolik bisa terbaca sampai 10 mmHg lebih tinggi. Terlalu besar: bisa terbaca lebih rendah.", "Quá nhỏ: huyết áp tâm thu có thể cao giả tới 10 mmHg. Quá lớn: có thể thấp giả.", "เล็กเกินไป: ค่าตัวบนอาจสูงเกินจริงได้ถึง 10 mmHg ใหญ่เกินไป: อาจต่ำเกินจริง", "Masyadong maliit: maaaring tumaas ang systolic BP nang hanggang 10 mmHg. Masyadong malaki: maaaring bumaba ang reading.", "小さすぎると収縮期が最大10 mmHg高く、大きすぎると低く出ることがあります。"),
+            illustration: "assets/svg/hbpm/cuff.svg"
+          },
+          {
+            action: tx("量前 30 分鐘：禁菸、禁劇烈運動、禁咖啡", "30 minutes before: no smoking, hard exercise, or coffee", "30 menit sebelumnya: jangan merokok, olahraga berat, atau minum kopi", "30 phút trước: không hút thuốc, vận động mạnh hoặc uống cà phê", "ก่อนวัด 30 นาที: งดบุหรี่ ออกกำลังหนัก และกาแฟ", "30 minuto bago: huwag manigarilyo, mag-ehersisyo nang mabigat, o uminom ng kape", "測定30分前：喫煙、激しい運動、コーヒーを避ける"),
+            note: tx("量前 30 分鐘吸菸，收縮壓可能偏高約 6 mmHg。", "Smoking within 30 minutes may raise systolic BP by about 6 mmHg.", "Merokok dalam 30 menit dapat menaikkan sistolik sekitar 6 mmHg.", "Hút thuốc trong vòng 30 phút có thể làm huyết áp tâm thu cao hơn khoảng 6 mmHg.", "สูบบุหรี่ภายใน 30 นาทีอาจทำให้ค่าตัวบนสูงขึ้นประมาณ 6 mmHg", "Ang paninigarilyo sa loob ng 30 minuto ay maaaring magpataas ng systolic BP nang mga 6 mmHg.", "30分以内の喫煙で収縮期が約6 mmHg高く出ることがあります。"),
+            illustration: "assets/svg/hbpm/morning-evening.svg"
+          },
+          {
+            action: tx("先上廁所，靜坐休息 5 分鐘", "Use the toilet, then sit quietly for 5 minutes", "Ke toilet dulu, lalu duduk tenang 5 menit", "Đi vệ sinh, rồi ngồi yên 5 phút", "เข้าห้องน้ำก่อน แล้วนั่งพัก 5 นาที", "Magbanyo muna, saka umupo nang tahimik 5 minuto", "トイレ後、5分静かに座る"),
+            note: tx("背靠椅背、雙腳踩地、雙腿不交叉；腿交叉可使血壓偏高 8–10 mmHg。", "Back supported, feet flat, legs uncrossed. Crossed legs may raise BP by 8-10 mmHg.", "Punggung bersandar, kaki menapak, tidak menyilangkan kaki. Kaki silang dapat menaikkan 8-10 mmHg.", "Tựa lưng, đặt chân xuống sàn, không bắt chéo chân. Bắt chéo chân có thể làm cao hơn 8-10 mmHg.", "พิงพนัก เท้าวางพื้น ไม่ไขว่ห้าง การไขว่ห้างอาจทำให้สูงขึ้น 8-10 mmHg", "Nakasandal, nakalapat ang paa, hindi naka-cross. Ang crossed legs ay maaaring magpataas ng 8-10 mmHg.", "背中を支え、足を床につけ、脚を組まない。脚を組むと8〜10 mmHg高く出ることがあります。"),
+            illustration: "assets/svg/hbpm/posture.svg",
+            highlight: true
+          },
+          {
+            action: tx("捲起衣袖，手臂放平，袖帶與心臟同高", "Roll up the sleeve, support the arm, and keep the cuff at heart level", "Gulung lengan baju, topang lengan, manset setinggi jantung", "Xắn tay áo, đỡ cánh tay, vòng bít ngang tim", "พับแขนเสื้อ วางแขนราบ ผ้าพันอยู่ระดับหัวใจ", "Itaas ang manggas, suportahan ang braso, at pantayin sa puso ang cuff", "袖を上げ、腕を支え、カフを心臓の高さにする"),
+            note: tx("手臂無支撐，收縮壓可能偏高 1–7 mmHg；勿套在衣服外。", "Unsupported arm may raise systolic BP by 1-7 mmHg. Do not place the cuff over clothes.", "Lengan tanpa penopang dapat menaikkan sistolik 1-7 mmHg. Jangan pasang di atas pakaian.", "Tay không được đỡ có thể làm tâm thu cao hơn 1-7 mmHg. Không quấn ngoài áo.", "แขนไม่มีที่รองอาจทำให้ค่าตัวบนสูงขึ้น 1-7 mmHg อย่าพันทับเสื้อ", "Ang braso na walang suporta ay maaaring magpataas ng systolic BP nang 1-7 mmHg. Huwag sa ibabaw ng damit.", "腕を支えないと収縮期が1〜7 mmHg高く出ることがあります。衣服の上から巻かないでください。"),
+            illustration: "assets/svg/hbpm/posture.svg",
+            highlight: true
+          },
+          {
+            action: tx("量測過程中保持靜默，不說話", "Stay quiet during measurement", "Tetap diam saat pengukuran", "Giữ yên lặng khi đo", "เงียบระหว่างวัด ไม่พูด", "Manatiling tahimik habang sumusukat", "測定中は静かにして話さない"),
+            note: tx("說話時收縮壓可能偏高約 7 mmHg、舒張壓偏高約 8 mmHg。", "Talking may raise systolic BP by about 7 mmHg and diastolic BP by about 8 mmHg.", "Berbicara dapat menaikkan sistolik sekitar 7 mmHg dan diastolik sekitar 8 mmHg.", "Nói chuyện có thể làm tâm thu cao hơn khoảng 7 mmHg và tâm trương khoảng 8 mmHg.", "การพูดอาจทำให้ค่าตัวบนสูงขึ้นประมาณ 7 mmHg และตัวล่างประมาณ 8 mmHg", "Ang pagsasalita ay maaaring magpataas ng systolic BP nang mga 7 mmHg at diastolic BP nang mga 8 mmHg.", "会話で収縮期が約7 mmHg、拡張期が約8 mmHg高く出ることがあります。"),
+            illustration: "assets/svg/hbpm/bp-log.svg"
+          },
+          {
+            action: tx("量完立即記錄", "Record immediately after measuring", "Catat segera setelah ukur", "Ghi lại ngay sau khi đo", "วัดเสร็จให้จดทันที", "Isulat agad pagkatapos sukatin", "測ったらすぐ記録"),
+            note: tx("記錄收縮壓、舒張壓、心跳、日期、時間；2 讀數取平均後再記錄。", "Record systolic BP, diastolic BP, pulse, date, and time. Average the 2 readings before recording.", "Catat sistolik, diastolik, nadi, tanggal, dan waktu. Rata-ratakan 2 hasil sebelum dicatat.", "Ghi huyết áp tâm thu, tâm trương, mạch, ngày và giờ. Lấy trung bình 2 số đo trước khi ghi.", "จดค่าตัวบน ตัวล่าง ชีพจร วันที่ เวลา โดยเฉลี่ย 2 ค่าก่อนจด", "Isulat ang systolic BP, diastolic BP, pulse, petsa, at oras. I-average muna ang 2 readings.", "上の血圧、下の血圧、脈拍、日付、時刻を記録。2回の平均を記録します。"),
+            illustration: "assets/svg/hbpm/bp-log.svg"
+          }
+        ],
+        infoBoxes: [],
+        storage: {
+          title: tx("行為原則", "Behavior rules", "Prinsip perilaku", "Nguyên tắc thực hiện", "หลักการปฏิบัติ", "Mga tuntunin", "行動の原則"),
+          text: tx("量 1 次偏高不必緊張：單次數值不是診斷依據，7 天平均才是。若姿勢都正確，血壓仍持續偏高，請帶記錄回診。", "Do not panic over one high reading. One reading is not the basis for diagnosis; the 7-day average matters. If technique is correct and BP stays high, bring the log for review.", "Jangan panik karena satu angka tinggi. Satu angka bukan dasar diagnosis; rata-rata 7 hari yang penting. Jika teknik benar tetapi tetap tinggi, bawa catatan.", "Đừng quá lo vì một lần đo cao. Một số đo không dùng để chẩn đoán; trung bình 7 ngày mới quan trọng. Nếu đo đúng mà vẫn cao, mang nhật ký đi khám.", "อย่าตกใจจากค่าสูงครั้งเดียว ค่าเดียวไม่ใช่ฐานวินิจฉัย ค่าเฉลี่ย 7 วันสำคัญกว่า หากท่าถูกแล้วยังสูงต่อเนื่อง ให้นำบันทึกไปพบแพทย์", "Huwag kabahan sa isang mataas na reading. Hindi basehan ng diagnosis ang isang reading; mas mahalaga ang 7-day average. Kung tama ang technique at mataas pa rin, dalhin ang log.", "1回高くても慌てないでください。診断は1回値ではなく7日平均で見ます。正しく測っても高い状態が続くなら記録を持参します。")
+        },
+        warnings: [
+          tx("袖帶套在衣物外 → 可能高估；脫袖再量。", "Cuff over clothes -> may read too high; bare the arm first.", "Manset di atas pakaian -> bisa terbaca terlalu tinggi; buka lengan dulu.", "Quấn ngoài áo -> có thể cao giả; xắn tay áo trước.", "พันทับเสื้อ -> อาจสูงเกินจริง; เปิดต้นแขนก่อน", "Cuff sa ibabaw ng damit -> puwedeng mataas ang reading; ilantad muna ang braso.", "衣服の上から巻く → 高く出ることがある。腕を出して測る。"),
+          tx("量完先聊天再抄數值 → 容易忘記；量完立刻記錄。", "Chat first, record later -> easy to forget; record it right away.", "Mengobrol dulu baru mencatat -> mudah lupa; catat segera setelah mengukur.", "Nói chuyện rồi mới ghi -> dễ quên; hãy ghi ngay sau khi đo.", "คุยก่อนแล้วค่อยจด -> ลืมง่าย; จดทันที", "Makipag-usap muna bago isulat -> madaling makalimot; isulat agad pagkatapos sukatin.", "話してから記録 → 忘れやすい。すぐ記録。"),
+          tx("剛走進房間馬上量 → 還沒休息 5 分鐘；先坐定。", "Measure right after walking in -> you have not rested 5 minutes; sit first.", "Baru masuk langsung ukur -> belum istirahat 5 menit; duduk tenang dulu.", "Vừa vào phòng đã đo -> chưa nghỉ 5 phút; hãy ngồi yên trước.", "เพิ่งเดินเข้ามาแล้ววัดทันที -> ยังไม่ได้พัก 5 นาที; นั่งก่อน", "Sukat agad pagpasok -> hindi ka pa nakakapahinga ng 5 minuto; umupo muna.", "入室直後に測る → 5分休めていない。先に座る。")
+        ],
+        qrUrl: "https://pharmacy.example.com/hbpm/technique"
+      }
+    ],
+    qrUrl: "https://pharmacy.example.com/hbpm"
+  },
   // ── Pediatric oral medication administration techniques ─────────────────────────────────────,
   {
     "id": "pediatric-oral-admin",
