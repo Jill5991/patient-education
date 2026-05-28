@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T00:50:49.907Z",
+  "generatedAt": "2026-05-28T05:16:09.437Z",
   "sourceFile": "index.html",
   "languages": [
     {
@@ -34,7 +34,7 @@
   "totals": {
     "medications": 138,
     "pages": 163,
-    "steps": 941,
+    "steps": 940,
     "warnings": 454,
     "uniqueIllustrationRefs": 332,
     "categories": {
@@ -50663,7 +50663,7 @@
       "emergency": false,
       "emergencyLabel": null,
       "name": {
-        "zh-TW": "Diane-35 黛麗安 / 愛斯麗安",
+        "zh-TW": "Diane-35 黛麗安",
         "en": "Diane-35",
         "id": "Diane-35",
         "vi": "Diane-35",
@@ -50672,40 +50672,40 @@
         "ja": "Diane-35"
       },
       "subtitle": {
-        "zh-TW": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg｜21 錠（全部有效錠）",
-        "en": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 active tablets",
-        "id": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 active tablets",
-        "vi": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 active tablets",
-        "th": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 active tablets",
-        "tl": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 active tablets",
-        "ja": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 active tablets"
+        "zh-TW": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg｜21 顆米黃色糖衣錠",
+        "en": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 pale-yellow sugar-coated tablets",
+        "id": "Cyproterone acetate 2 mg + Ethinyl estradiol 0,035 mg | 21 tablet salut gula berwarna kuning pucat",
+        "vi": "Cyproterone acetate 2 mg + Ethinyl estradiol 0,035 mg | 21 viên bao đường màu vàng nhạt",
+        "th": "Cyproterone acetate 2 มก. + Ethinyl estradiol 0.035 มก. | ยาเม็ดเคลือบน้ำตาลสีเหลืองอ่อน 21 เม็ด",
+        "tl": "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 maputlang dilaw na sugar-coated tablets",
+        "ja": "酢酸シプロテロン2 mg + エチニルエストラジオール0.035 mg｜淡黄色の糖衣錠21錠"
       },
       "headerBadge": {
         "zh-TW": "口服避孕藥",
         "en": "Oral contraceptive",
-        "id": "Oral contraceptive",
-        "vi": "Oral contraceptive",
-        "th": "Oral contraceptive",
-        "tl": "Oral contraceptive",
-        "ja": "Oral contraceptive"
+        "id": "Kontrasepsi oral",
+        "vi": "Thuốc tránh thai uống",
+        "th": "ยาคุมกำเนิดชนิดรับประทาน",
+        "tl": "Birth control pills",
+        "ja": "経口避妊薬"
       },
       "badge": {
         "zh-TW": "抗雄性素型｜醫師評估療程",
         "en": "Anti-androgen type | doctor-reviewed course",
-        "id": "Anti-androgen type | doctor-reviewed course",
-        "vi": "Anti-androgen type | doctor-reviewed course",
-        "th": "Anti-androgen type | doctor-reviewed course",
-        "tl": "Anti-androgen type | doctor-reviewed course",
-        "ja": "Anti-androgen type | doctor-reviewed course"
+        "id": "Tipe anti-androgen | lama terapi dievaluasi dokter",
+        "vi": "Loại kháng androgen | bác sĩ đánh giá thời gian điều trị",
+        "th": "ชนิดต้านแอนโดรเจน | แพทย์ประเมินระยะเวลารักษา",
+        "tl": "Anti-androgen type | doktor ang susuri sa tagal ng gamutan",
+        "ja": "抗アンドロゲン型｜治療期間は医師が評価"
       },
       "usage": {
-        "zh-TW": "治療嚴重痤瘡/多毛症；服藥期間也有避孕效果",
-        "en": "For severe acne or hirsutism; it also prevents pregnancy while used",
-        "id": "For severe acne or hirsutism; it also prevents pregnancy while used",
-        "vi": "For severe acne or hirsutism; it also prevents pregnancy while used",
-        "th": "For severe acne or hirsutism; it also prevents pregnancy while used",
-        "tl": "For severe acne or hirsutism; it also prevents pregnancy while used",
-        "ja": "For severe acne or hirsutism; it also prevents pregnancy while used"
+        "zh-TW": "治療中度至重度痤瘡或多毛症；服藥期間也有避孕效果",
+        "en": "For moderate to severe acne or hirsutism; it also prevents pregnancy while used",
+        "id": "Untuk jerawat sedang hingga berat atau hirsutisme; selama digunakan juga mencegah kehamilan",
+        "vi": "Dùng cho mụn trứng cá mức độ vừa đến nặng hoặc rậm lông; trong thời gian dùng cũng có tác dụng tránh thai",
+        "th": "ใช้รักษาสิวปานกลางถึงรุนแรงหรือภาวะขนดก และระหว่างใช้ยานี้ยังช่วยคุมกำเนิดได้",
+        "tl": "Para sa katamtaman hanggang malubhang acne o hirsutism; habang ginagamit, nakakatulong din itong maiwasan ang pagbubuntis",
+        "ja": "中等度〜重度のにきび、または多毛症の治療薬です。服用中は避妊効果もあります"
       },
       "color": {
         "main": "#A04060",
@@ -50723,48 +50723,48 @@
           "headerBadge": {
             "zh-TW": "口服避孕藥",
             "en": "Oral contraceptive",
-            "id": "Oral contraceptive",
-            "vi": "Oral contraceptive",
-            "th": "Oral contraceptive",
-            "tl": "Oral contraceptive",
-            "ja": "Oral contraceptive"
+            "id": "Kontrasepsi oral",
+            "vi": "Thuốc tránh thai uống",
+            "th": "ยาคุมกำเนิดชนิดรับประทาน",
+            "tl": "Birth control pills",
+            "ja": "経口避妊薬"
           },
           "badge": {
             "zh-TW": "抗雄性素型｜醫師評估療程",
             "en": "Anti-androgen type | doctor-reviewed course",
-            "id": "Anti-androgen type | doctor-reviewed course",
-            "vi": "Anti-androgen type | doctor-reviewed course",
-            "th": "Anti-androgen type | doctor-reviewed course",
-            "tl": "Anti-androgen type | doctor-reviewed course",
-            "ja": "Anti-androgen type | doctor-reviewed course"
+            "id": "Tipe anti-androgen | lama terapi dievaluasi dokter",
+            "vi": "Loại kháng androgen | bác sĩ đánh giá thời gian điều trị",
+            "th": "ชนิดต้านแอนโดรเจน | แพทย์ประเมินระยะเวลารักษา",
+            "tl": "Anti-androgen type | doktor ang susuri sa tagal ng gamutan",
+            "ja": "抗アンドロゲン型｜治療期間は医師が評価"
           },
           "usage": {
-            "zh-TW": "治療嚴重痤瘡/多毛症；服藥期間也有避孕效果",
-            "en": "For severe acne or hirsutism; it also prevents pregnancy while used",
-            "id": "For severe acne or hirsutism; it also prevents pregnancy while used",
-            "vi": "For severe acne or hirsutism; it also prevents pregnancy while used",
-            "th": "For severe acne or hirsutism; it also prevents pregnancy while used",
-            "tl": "For severe acne or hirsutism; it also prevents pregnancy while used",
-            "ja": "For severe acne or hirsutism; it also prevents pregnancy while used"
+            "zh-TW": "治療中度至重度痤瘡或多毛症；服藥期間也有避孕效果",
+            "en": "For moderate to severe acne or hirsutism; it also prevents pregnancy while used",
+            "id": "Untuk jerawat sedang hingga berat atau hirsutisme; selama digunakan juga mencegah kehamilan",
+            "vi": "Dùng cho mụn trứng cá mức độ vừa đến nặng hoặc rậm lông; trong thời gian dùng cũng có tác dụng tránh thai",
+            "th": "ใช้รักษาสิวปานกลางถึงรุนแรงหรือภาวะขนดก และระหว่างใช้ยานี้ยังช่วยคุมกำเนิดได้",
+            "tl": "Para sa katamtaman hanggang malubhang acne o hirsutism; habang ginagamit, nakakatulong din itong maiwasan ang pagbubuntis",
+            "ja": "中等度〜重度のにきび、または多毛症の治療薬です。服用中は避妊効果もあります"
           },
           "preStepsInfo": {
             "title": {
               "zh-TW": "先看包裝",
               "en": "Check the pack first",
-              "id": "Check the pack first",
-              "vi": "Check the pack first",
-              "th": "Check the pack first",
-              "tl": "Check the pack first",
-              "ja": "Check the pack first"
+              "id": "Periksa kemasan terlebih dahulu",
+              "vi": "Kiểm tra vỉ thuốc trước",
+              "th": "ดูกล่อง/แผงยาก่อน",
+              "tl": "Tingnan muna ang pakete",
+              "ja": "まずシートを確認"
             },
             "text": {
-              "zh-TW": "這包都是有效錠。吃完後要停藥 7 天，再開新包。",
-              "en": "All tablets in this pack are active. After finishing the pack, take a 7-day break before starting the next pack.",
-              "id": "All tablets in this pack are active. After finishing the pack, take a 7-day break before starting the next pack.",
-              "vi": "All tablets in this pack are active. After finishing the pack, take a 7-day break before starting the next pack.",
-              "th": "All tablets in this pack are active. After finishing the pack, take a 7-day break before starting the next pack.",
-              "tl": "All tablets in this pack are active. After finishing the pack, take a 7-day break before starting the next pack.",
-              "ja": "All tablets in this pack are active. After finishing the pack, take a 7-day break before starting the next pack."
+              "zh-TW": "這包 21 顆都是含荷爾蒙的有效錠。吃完 21 顆後停藥 7 天，第 8 天開新包。\n這個藥主要用於中重度痤瘡或多毛症，不建議只為避孕而使用。使用期間不要同時吃其他荷爾蒙避孕藥。療程多久，由醫師依皮膚狀況定期評估。",
+              "en": "All 21 tablets in this pack contain hormones. After 21 tablets, take a 7-day break and start a new pack on day 8.\nThis medicine is mainly for moderate to severe acne or hirsutism. It is not recommended solely for contraception. Do not use another hormonal contraceptive at the same time. Your doctor will review how long to continue based on your skin condition.",
+              "id": "Semua 21 tablet dalam kemasan ini mengandung hormon. Setelah 21 tablet habis, berhenti 7 hari dan mulai kemasan baru pada hari ke-8.\nObat ini terutama untuk jerawat sedang hingga berat atau hirsutisme. Tidak dianjurkan hanya untuk kontrasepsi. Jangan gunakan kontrasepsi hormonal lain bersamaan. Dokter akan menilai berapa lama terapi dilanjutkan sesuai kondisi kulit Anda.",
+              "vi": "Cả 21 viên trong vỉ này đều có chứa hormone. Sau khi uống hết 21 viên, nghỉ thuốc 7 ngày và bắt đầu vỉ mới vào ngày thứ 8.\nThuốc này chủ yếu dùng cho mụn trứng cá mức độ vừa đến nặng hoặc rậm lông. Không khuyến cáo dùng chỉ để tránh thai. Không dùng cùng lúc với thuốc tránh thai nội tiết khác. Bác sĩ sẽ định kỳ đánh giá thời gian điều trị theo tình trạng da.",
+              "th": "ยา 21 เม็ดในแผงนี้เป็นเม็ดที่มีฮอร์โมนทั้งหมด เมื่อกินครบ 21 เม็ด ให้หยุดยา 7 วัน และเริ่มแผงใหม่ในวันที่ 8\nยานี้ใช้เป็นหลักสำหรับสิวปานกลางถึงรุนแรงหรือภาวะขนดก ไม่แนะนำให้ใช้เพื่อคุมกำเนิดอย่างเดียว ระหว่างใช้ยาอย่าใช้ยาคุมกำเนิดชนิดฮอร์โมนอื่นร่วมด้วย ระยะเวลาการรักษาให้แพทย์ประเมินตามสภาพผิวเป็นระยะ",
+              "tl": "Lahat ng 21 tableta sa paketeng ito ay may hormone. Pagkatapos ng 21 tableta, magpahinga ng 7 araw at magsimula ng bagong pakete sa ika-8 araw.\nPangunahing ginagamit ang gamot na ito para sa katamtaman hanggang malubhang acne o hirsutism. Hindi ito inirerekomenda kung contraception lang ang layunin. Huwag gumamit ng ibang hormonal contraceptive kasabay nito. Susuriin ng doktor kung gaano katagal ipagpapatuloy batay sa kondisyon ng balat.",
+              "ja": "このシートの21錠はすべてホルモンを含む有効錠です。21錠を飲み終えたら7日間休薬し、8日目に新しいシートを始めます。\nこの薬は主に中等度〜重度のにきび、または多毛症に使う薬です。避妊だけを目的とした使用は推奨されません。服用中は他のホルモン避妊薬を併用しないでください。治療期間は皮膚の状態に応じて医師が定期的に判断します。"
             },
             "html": null,
             "tone": null
@@ -50774,22 +50774,22 @@
               "index": 0,
               "section": null,
               "action": {
-                "zh-TW": "月經第 1～5 天開始吃",
-                "en": "Start on menstrual day 1 to 5",
-                "id": "Start on menstrual day 1 to 5",
-                "vi": "Start on menstrual day 1 to 5",
-                "th": "Start on menstrual day 1 to 5",
-                "tl": "Start on menstrual day 1 to 5",
-                "ja": "Start on menstrual day 1 to 5"
+                "zh-TW": "月經第 1 天開始吃第 1 顆",
+                "en": "Start the first tablet on menstrual day 1",
+                "id": "Mulai tablet pertama pada hari pertama haid",
+                "vi": "Bắt đầu viên đầu tiên vào ngày 1 của kỳ kinh",
+                "th": "เริ่มเม็ดแรกในวันแรกของประจำเดือน",
+                "tl": "Simulan ang unang tableta sa unang araw ng regla",
+                "ja": "月経1日目に1錠目を飲み始める"
               },
               "note": {
-                "zh-TW": "從第 1 顆藥錠開始，搭配白開水整顆吞服。",
-                "en": "Start with the first tablet. Swallow it whole with water.",
-                "id": "Start with the first tablet. Swallow it whole with water.",
-                "vi": "Start with the first tablet. Swallow it whole with water.",
-                "th": "Start with the first tablet. Swallow it whole with water.",
-                "tl": "Start with the first tablet. Swallow it whole with water.",
-                "ja": "Start with the first tablet. Swallow it whole with water."
+                "zh-TW": "搭配白開水整顆吞服。若第 2～5 天才開始，前 7 天加用保險套。",
+                "en": "Swallow it whole with water. If you start on days 2 to 5, use condoms for the first 7 days.",
+                "id": "Telan utuh dengan air putih. Jika baru mulai pada hari ke-2 sampai ke-5, gunakan kondom selama 7 hari pertama.",
+                "vi": "Nuốt nguyên viên với nước lọc. Nếu bắt đầu vào ngày 2–5, dùng bao cao su trong 7 ngày đầu.",
+                "th": "กลืนทั้งเม็ดกับน้ำเปล่า หากเริ่มวันที่ 2–5 ให้ใช้ถุงยางใน 7 วันแรก",
+                "tl": "Lunukin nang buo kasama ng tubig. Kung nagsimula sa araw 2 hanggang 5, gumamit ng condom sa unang 7 araw.",
+                "ja": "水で錠剤をそのまま飲みます。2〜5日目に始める場合、最初の7日間はコンドームを併用してください。"
               },
               "highlight": false,
               "illustration": {
@@ -50804,20 +50804,20 @@
               "action": {
                 "zh-TW": "每天固定時間吃 1 顆",
                 "en": "Take 1 tablet at the same time each day",
-                "id": "Take 1 tablet at the same time each day",
-                "vi": "Take 1 tablet at the same time each day",
-                "th": "Take 1 tablet at the same time each day",
-                "tl": "Take 1 tablet at the same time each day",
-                "ja": "Take 1 tablet at the same time each day"
+                "id": "Minum 1 tablet pada waktu yang sama setiap hari",
+                "vi": "Uống 1 viên vào cùng một giờ mỗi ngày",
+                "th": "กินวันละ 1 เม็ด เวลาเดิมทุกวัน",
+                "tl": "Uminom ng 1 tableta sa parehong oras araw-araw",
+                "ja": "毎日同じ時刻に1錠飲む"
               },
               "note": {
-                "zh-TW": "連續吃 21 天；晚幾小時，當天補吃即可。",
-                "en": "Take it for 21 days. If you are late by a few hours, take it the same day.",
-                "id": "Take it for 21 days. If you are late by a few hours, take it the same day.",
-                "vi": "Take it for 21 days. If you are late by a few hours, take it the same day.",
-                "th": "Take it for 21 days. If you are late by a few hours, take it the same day.",
-                "tl": "Take it for 21 days. If you are late by a few hours, take it the same day.",
-                "ja": "Take it for 21 days. If you are late by a few hours, take it the same day."
+                "zh-TW": "依包裝順序吃，連續吃 21 天。不要跳著吃，也不要自行停藥。",
+                "en": "Follow the pack order for 21 days. Do not skip around or stop on your own.",
+                "id": "Ikuti urutan pada kemasan dan minum selama 21 hari berturut-turut. Jangan melompati urutan dan jangan berhenti sendiri.",
+                "vi": "Uống theo thứ tự trên vỉ trong 21 ngày liên tục. Không uống nhảy viên và không tự ý ngưng thuốc.",
+                "th": "กินตามลำดับบนแผงยา ติดต่อกัน 21 วัน อย่ากินข้ามลำดับ และอย่าหยุดยาเอง",
+                "tl": "Sundin ang pagkakasunod sa pakete sa loob ng 21 araw. Huwag laktawan ang pagkakasunod at huwag ihinto nang sarili.",
+                "ja": "シートの順番どおりに21日間続けて飲みます。順番を飛ばしたり、自己判断で中止したりしないでください。"
               },
               "highlight": false,
               "illustration": {
@@ -50830,22 +50830,22 @@
               "index": 2,
               "section": null,
               "action": {
-                "zh-TW": "吃完 21 顆後停 7 天",
+                "zh-TW": "吃完 21 顆後停藥 7 天",
                 "en": "After 21 tablets, take a 7-day break",
-                "id": "After 21 tablets, take a 7-day break",
-                "vi": "After 21 tablets, take a 7-day break",
-                "th": "After 21 tablets, take a 7-day break",
-                "tl": "After 21 tablets, take a 7-day break",
-                "ja": "After 21 tablets, take a 7-day break"
+                "id": "Setelah 21 tablet habis, berhenti 7 hari",
+                "vi": "Sau khi uống hết 21 viên, nghỉ thuốc 7 ngày",
+                "th": "กินครบ 21 เม็ดแล้ว หยุดยา 7 วัน",
+                "tl": "Pagkatapos ng 21 tableta, magpahinga ng 7 araw",
+                "ja": "21錠を飲み終えたら7日間休薬する"
               },
               "note": {
-                "zh-TW": "停藥期間不吃藥；月經通常在這幾天來。",
-                "en": "Take no tablets during the break. Bleeding usually starts during these days.",
-                "id": "Take no tablets during the break. Bleeding usually starts during these days.",
-                "vi": "Take no tablets during the break. Bleeding usually starts during these days.",
-                "th": "Take no tablets during the break. Bleeding usually starts during these days.",
-                "tl": "Take no tablets during the break. Bleeding usually starts during these days.",
-                "ja": "Take no tablets during the break. Bleeding usually starts during these days."
+                "zh-TW": "停藥期間不吃藥。通常停藥後第 2～3 天會出血。",
+                "en": "Take no tablets during the break. Bleeding usually starts 2 to 3 days after stopping.",
+                "id": "Selama jeda, jangan minum tablet. Perdarahan biasanya mulai 2–3 hari setelah berhenti.",
+                "vi": "Trong thời gian nghỉ, không uống thuốc. Máu thường ra vào ngày 2–3 sau khi ngưng.",
+                "th": "ช่วงหยุดยาไม่ต้องกินยา โดยทั่วไปเลือดจะออกประมาณวันที่ 2–3 หลังหยุดยา",
+                "tl": "Sa panahon ng pahinga, huwag uminom ng tableta. Karaniwang nagsisimula ang pagdurugo 2–3 araw matapos huminto.",
+                "ja": "休薬中は錠剤を飲みません。通常、休薬後2〜3日ごろに出血が始まります。"
               },
               "highlight": false,
               "illustration": {
@@ -50860,20 +50860,20 @@
               "action": {
                 "zh-TW": "第 8 天開新包",
                 "en": "Start a new pack on day 8",
-                "id": "Start a new pack on day 8",
-                "vi": "Start a new pack on day 8",
-                "th": "Start a new pack on day 8",
-                "tl": "Start a new pack on day 8",
-                "ja": "Start a new pack on day 8"
+                "id": "Mulai kemasan baru pada hari ke-8",
+                "vi": "Ngày thứ 8 bắt đầu vỉ mới",
+                "th": "วันที่ 8 เริ่มแผงใหม่",
+                "tl": "Sa ika-8 araw, magsimula ng bagong pakete",
+                "ja": "8日目に新しいシートを始める"
               },
               "note": {
-                "zh-TW": "月經還沒結束，也要開新包。",
-                "en": "Start the new pack even if bleeding has not stopped.",
-                "id": "Start the new pack even if bleeding has not stopped.",
-                "vi": "Start the new pack even if bleeding has not stopped.",
-                "th": "Start the new pack even if bleeding has not stopped.",
-                "tl": "Start the new pack even if bleeding has not stopped.",
-                "ja": "Start the new pack even if bleeding has not stopped."
+                "zh-TW": "即使出血還沒結束，也要照時間開新包。",
+                "en": "Start the new pack on schedule, even if bleeding has not stopped.",
+                "id": "Mulai kemasan baru sesuai jadwal, meskipun perdarahan belum berhenti.",
+                "vi": "Bắt đầu vỉ mới đúng lịch, dù máu vẫn chưa hết.",
+                "th": "เริ่มแผงใหม่ตามกำหนด แม้เลือดยังไม่หยุด",
+                "tl": "Simulan ang bagong pakete ayon sa iskedyul, kahit hindi pa tapos ang pagdurugo.",
+                "ja": "出血が終わっていなくても、予定どおり新しいシートを始めてください。"
               },
               "highlight": false,
               "illustration": {
@@ -50886,24 +50886,24 @@
               "index": 4,
               "section": null,
               "action": {
-                "zh-TW": "漏吃 1 顆有效錠",
-                "en": "If you miss 1 active tablet",
-                "id": "If you miss 1 active tablet",
-                "vi": "If you miss 1 active tablet",
-                "th": "If you miss 1 active tablet",
-                "tl": "If you miss 1 active tablet",
-                "ja": "If you miss 1 active tablet"
+                "zh-TW": "第 1～2 週漏吃時",
+                "en": "If a tablet is missed in weeks 1 to 2",
+                "id": "Jika lupa tablet pada minggu ke-1 sampai ke-2",
+                "vi": "Nếu quên thuốc trong tuần 1–2",
+                "th": "หากลืมยาในสัปดาห์ที่ 1–2",
+                "tl": "Kung may nakalimutang tableta sa linggo 1–2",
+                "ja": "1〜2週目に飲み忘れた場合"
               },
               "note": {
-                "zh-TW": "想起時補吃；不需加用保險套。",
-                "en": "Take it when you remember. Condoms are not needed.",
-                "id": "Take it when you remember. Condoms are not needed.",
-                "vi": "Take it when you remember. Condoms are not needed.",
-                "th": "Take it when you remember. Condoms are not needed.",
-                "tl": "Take it when you remember. Condoms are not needed.",
-                "ja": "Take it when you remember. Condoms are not needed."
+                "zh-TW": "第 1 週：12 小時內想起，立刻補吃；超過 12 小時，補最近漏的 1 顆，接下來 7 天加用保險套。第 2 週：若前 7 天都有正確吃藥，補吃後照常吃；若前 7 天也曾漏吃，或這次漏吃超過 1 顆，接下來 7 天加用保險套。",
+                "en": "Week 1: if remembered within 12 hours, take it right away. If more than 12 hours late, take the most recent missed tablet and use condoms for the next 7 days. Week 2: if the previous 7 days were taken correctly, take the missed tablet and continue as usual. If any tablets were missed in the previous 7 days, or if more than 1 tablet was missed this time, use condoms for the next 7 days.",
+                "id": "Minggu 1: jika ingat dalam 12 jam, segera minum. Jika lewat 12 jam, minum 1 tablet yang paling baru terlupa dan gunakan kondom selama 7 hari berikutnya. Minggu 2: jika 7 hari sebelumnya diminum dengan benar, minum tablet yang terlupa lalu lanjutkan seperti biasa. Jika dalam 7 hari sebelumnya juga ada yang terlupa, atau kali ini lupa lebih dari 1 tablet, gunakan kondom selama 7 hari berikutnya.",
+                "vi": "Tuần 1: nếu nhớ ra trong vòng 12 giờ, uống bù ngay. Nếu trễ hơn 12 giờ, uống viên quên gần nhất và dùng bao cao su trong 7 ngày tiếp theo. Tuần 2: nếu 7 ngày trước đó đều uống đúng, uống bù rồi tiếp tục như thường lệ. Nếu 7 ngày trước đó cũng từng quên, hoặc lần này quên hơn 1 viên, dùng bao cao su trong 7 ngày tiếp theo.",
+                "th": "สัปดาห์ที่ 1: หากนึกได้ภายใน 12 ชั่วโมง ให้กินทันที หากเกิน 12 ชั่วโมง ให้กินเม็ดที่ลืมล่าสุด 1 เม็ด และใช้ถุงยางใน 7 วันถัดไป สัปดาห์ที่ 2: หาก 7 วันก่อนหน้านี้กินถูกต้อง ให้กินเม็ดที่ลืมแล้วกินต่อเหมือนเดิม หาก 7 วันก่อนหน้านี้เคยลืม หรือครั้งนี้ลืมมากกว่า 1 เม็ด ให้ใช้ถุงยางใน 7 วันถัดไป",
+                "tl": "Linggo 1: kung naalala sa loob ng 12 oras, inumin agad. Kung higit sa 12 oras na, inumin ang pinakahuling nakalimutang tableta at gumamit ng condom sa susunod na 7 araw. Linggo 2: kung tama ang pag-inom sa nakaraang 7 araw, inumin ang nakalimutang tableta at ituloy tulad ng dati. Kung may nakalimutan din sa nakaraang 7 araw, o higit sa 1 tableta ang nakalimutan ngayon, gumamit ng condom sa susunod na 7 araw.",
+                "ja": "1週目：12時間以内に気づいたらすぐ飲みます。12時間を超えた場合は、直近で飲み忘れた1錠を飲み、今後7日間はコンドームを併用してください。2週目：直前7日間を正しく飲めていた場合は、飲み忘れ分を飲んで通常どおり続けます。直前7日間にも飲み忘れがあった場合、または今回2錠以上飲み忘れた場合は、今後7日間はコンドームを併用してください。"
               },
-              "highlight": false,
+              "highlight": true,
               "illustration": {
                 "src": "assets/svg/oral-shared/missed-dose.svg",
                 "alt": null
@@ -50914,50 +50914,22 @@
               "index": 5,
               "section": null,
               "action": {
-                "zh-TW": "漏吃 ≥2 顆有效錠",
-                "en": "If you miss 2 or more active tablets",
-                "id": "If you miss 2 or more active tablets",
-                "vi": "If you miss 2 or more active tablets",
-                "th": "If you miss 2 or more active tablets",
-                "tl": "If you miss 2 or more active tablets",
-                "ja": "If you miss 2 or more active tablets"
+                "zh-TW": "第 3 週漏吃時",
+                "en": "If a tablet is missed in week 3",
+                "id": "Jika lupa tablet pada minggu ke-3",
+                "vi": "Nếu quên thuốc trong tuần 3",
+                "th": "หากลืมยาในสัปดาห์ที่ 3",
+                "tl": "Kung may nakalimutang tableta sa linggo 3",
+                "ja": "3週目に飲み忘れた場合"
               },
               "note": {
-                "zh-TW": "只補最近漏的 1 顆；後 7 天加用保險套。",
-                "en": "Take only the most recent missed tablet. Use condoms for the next 7 days.",
-                "id": "Take only the most recent missed tablet. Use condoms for the next 7 days.",
-                "vi": "Take only the most recent missed tablet. Use condoms for the next 7 days.",
-                "th": "Take only the most recent missed tablet. Use condoms for the next 7 days.",
-                "tl": "Take only the most recent missed tablet. Use condoms for the next 7 days.",
-                "ja": "Take only the most recent missed tablet. Use condoms for the next 7 days."
-              },
-              "highlight": true,
-              "illustration": {
-                "src": "assets/svg/oral-shared/missed-dose.svg",
-                "alt": null
-              },
-              "afterBox": null
-            },
-            {
-              "index": 6,
-              "section": null,
-              "action": {
-                "zh-TW": "最後 1 週漏吃 ≥2 顆",
-                "en": "If 2 or more are missed in the last active week",
-                "id": "If 2 or more are missed in the last active week",
-                "vi": "If 2 or more are missed in the last active week",
-                "th": "If 2 or more are missed in the last active week",
-                "tl": "If 2 or more are missed in the last active week",
-                "ja": "If 2 or more are missed in the last active week"
-              },
-              "note": {
-                "zh-TW": "吃完剩餘有效錠後，隔天開新包，跳過停藥 7 天。",
-                "en": "Finish the remaining active tablets, then start a new pack the next day. Skip the 7-day break.",
-                "id": "Finish the remaining active tablets, then start a new pack the next day. Skip the 7-day break.",
-                "vi": "Finish the remaining active tablets, then start a new pack the next day. Skip the 7-day break.",
-                "th": "Finish the remaining active tablets, then start a new pack the next day. Skip the 7-day break.",
-                "tl": "Finish the remaining active tablets, then start a new pack the next day. Skip the 7-day break.",
-                "ja": "Finish the remaining active tablets, then start a new pack the next day. Skip the 7-day break."
+                "zh-TW": "補最近漏的 1 顆後，吃完本包剩下藥錠，隔天直接開新包，不停藥 7 天。",
+                "en": "After taking the most recent missed tablet, finish the rest of this pack. Start a new pack the next day and skip the 7-day break.",
+                "id": "Setelah minum 1 tablet yang paling baru terlupa, habiskan sisa tablet dalam kemasan ini. Mulai kemasan baru keesokan harinya dan jangan jeda 7 hari.",
+                "vi": "Sau khi uống viên quên gần nhất, uống hết phần còn lại của vỉ này. Hôm sau bắt đầu vỉ mới, không nghỉ 7 ngày.",
+                "th": "หลังกินเม็ดที่ลืมล่าสุด 1 เม็ดแล้ว ให้กินยาที่เหลือในแผงนี้จนหมด วันถัดไปเริ่มแผงใหม่ทันที ไม่ต้องหยุดยา 7 วัน",
+                "tl": "Pagkatapos inumin ang pinakahuling nakalimutang tableta, tapusin ang natitirang tableta sa paketeng ito. Magsimula ng bagong pakete kinabukasan at laktawan ang 7-araw na pahinga.",
+                "ja": "直近で飲み忘れた1錠を飲んだ後、このシートの残りを飲み切ります。翌日に新しいシートを始め、7日間の休薬はしません。"
               },
               "highlight": true,
               "illustration": {
@@ -50970,100 +50942,22 @@
           "infoBoxes": [
             {
               "title": {
-                "zh-TW": "危險徵象",
-                "en": "Danger signs",
-                "id": "Danger signs",
-                "vi": "Danger signs",
-                "th": "Danger signs",
-                "tl": "Danger signs",
-                "ja": "Danger signs"
-              },
-              "text": {
-                "zh-TW": "嚴重腹痛、胸痛或喘、異常劇烈頭痛、視力突然模糊、單側小腿腫痛：停藥並立即就醫。",
-                "en": "Severe belly pain, chest pain or shortness of breath, very severe headache, sudden blurry vision, or one swollen painful calf: stop and seek urgent care.",
-                "id": "Severe belly pain, chest pain or shortness of breath, very severe headache, sudden blurry vision, or one swollen painful calf: stop and seek urgent care.",
-                "vi": "Severe belly pain, chest pain or shortness of breath, very severe headache, sudden blurry vision, or one swollen painful calf: stop and seek urgent care.",
-                "th": "Severe belly pain, chest pain or shortness of breath, very severe headache, sudden blurry vision, or one swollen painful calf: stop and seek urgent care.",
-                "tl": "Severe belly pain, chest pain or shortness of breath, very severe headache, sudden blurry vision, or one swollen painful calf: stop and seek urgent care.",
-                "ja": "Severe belly pain, chest pain or shortness of breath, very severe headache, sudden blurry vision, or one swollen painful calf: stop and seek urgent care."
-              },
-              "html": null,
-              "tone": {
-                "bg": "#FAEADA",
-                "border": "#BA7517",
-                "text": "#633806"
-              }
-            },
-            {
-              "title": {
                 "zh-TW": "嘔吐或嚴重腹瀉",
                 "en": "Vomiting or severe diarrhea",
-                "id": "Vomiting or severe diarrhea",
-                "vi": "Vomiting or severe diarrhea",
-                "th": "Vomiting or severe diarrhea",
-                "tl": "Vomiting or severe diarrhea",
-                "ja": "Vomiting or severe diarrhea"
+                "id": "Muntah atau diare berat",
+                "vi": "Nôn hoặc tiêu chảy nặng",
+                "th": "อาเจียนหรือท้องเสียรุนแรง",
+                "tl": "Pagsusuka o matinding pagtatae",
+                "ja": "嘔吐または重い下痢"
               },
               "text": {
-                "zh-TW": "吃有效錠後很快嘔吐，或嚴重腹瀉超過 48 小時，照漏吃有效錠規則處理。",
-                "en": "If you vomit soon after an active tablet, or have severe diarrhea for more than 48 hours, follow the missed-active-tablet rule.",
-                "id": "If you vomit soon after an active tablet, or have severe diarrhea for more than 48 hours, follow the missed-active-tablet rule.",
-                "vi": "If you vomit soon after an active tablet, or have severe diarrhea for more than 48 hours, follow the missed-active-tablet rule.",
-                "th": "If you vomit soon after an active tablet, or have severe diarrhea for more than 48 hours, follow the missed-active-tablet rule.",
-                "tl": "If you vomit soon after an active tablet, or have severe diarrhea for more than 48 hours, follow the missed-active-tablet rule.",
-                "ja": "If you vomit soon after an active tablet, or have severe diarrhea for more than 48 hours, follow the missed-active-tablet rule."
-              },
-              "html": null,
-              "tone": {
-                "bg": "#E6F1FB",
-                "border": "#185FA5",
-                "text": "#042C53"
-              }
-            },
-            {
-              "title": {
-                "zh-TW": "點狀出血",
-                "en": "Spotting",
-                "id": "Spotting",
-                "vi": "Spotting",
-                "th": "Spotting",
-                "tl": "Spotting",
-                "ja": "Spotting"
-              },
-              "text": {
-                "zh-TW": "前 3 個月少量出血常見。不要自行停藥；若出血像月經量或合併嚴重腹痛，請回診。",
-                "en": "Light spotting is common in the first 3 months. Do not stop on your own. If bleeding is like a period or comes with severe belly pain, return to the doctor.",
-                "id": "Light spotting is common in the first 3 months. Do not stop on your own. If bleeding is like a period or comes with severe belly pain, return to the doctor.",
-                "vi": "Light spotting is common in the first 3 months. Do not stop on your own. If bleeding is like a period or comes with severe belly pain, return to the doctor.",
-                "th": "Light spotting is common in the first 3 months. Do not stop on your own. If bleeding is like a period or comes with severe belly pain, return to the doctor.",
-                "tl": "Light spotting is common in the first 3 months. Do not stop on your own. If bleeding is like a period or comes with severe belly pain, return to the doctor.",
-                "ja": "Light spotting is common in the first 3 months. Do not stop on your own. If bleeding is like a period or comes with severe belly pain, return to the doctor."
-              },
-              "html": null,
-              "tone": {
-                "bg": "#FBEAF1",
-                "border": "#A04060",
-                "text": "#4A1025"
-              }
-            },
-            {
-              "title": {
-                "zh-TW": "看診時主動告知",
-                "en": "Tell clinicians at visits",
-                "id": "Tell clinicians at visits",
-                "vi": "Tell clinicians at visits",
-                "th": "Tell clinicians at visits",
-                "tl": "Tell clinicians at visits",
-                "ja": "Tell clinicians at visits"
-              },
-              "text": {
-                "zh-TW": "看婦產科或拿調經藥時，先說正在吃避孕藥。不要自行合併其他荷爾蒙藥。",
-                "en": "At gynecology visits or when receiving period-regulating medicine, say that you take birth control pills. Do not combine other hormone medicines on your own.",
-                "id": "At gynecology visits or when receiving period-regulating medicine, say that you take birth control pills. Do not combine other hormone medicines on your own.",
-                "vi": "At gynecology visits or when receiving period-regulating medicine, say that you take birth control pills. Do not combine other hormone medicines on your own.",
-                "th": "At gynecology visits or when receiving period-regulating medicine, say that you take birth control pills. Do not combine other hormone medicines on your own.",
-                "tl": "At gynecology visits or when receiving period-regulating medicine, say that you take birth control pills. Do not combine other hormone medicines on your own.",
-                "ja": "At gynecology visits or when receiving period-regulating medicine, say that you take birth control pills. Do not combine other hormone medicines on your own."
+                "zh-TW": "吃藥後很快嘔吐，或嚴重腹瀉，可能影響吸收。請照漏吃規則處理；若不確定，請回診或詢問藥師。",
+                "en": "Vomiting soon after a tablet, or severe diarrhea, may reduce absorption. Follow the missed-tablet rules. If unsure, return to the clinic or ask a pharmacist.",
+                "id": "Muntah segera setelah minum tablet, atau diare berat, dapat mengurangi penyerapan. Ikuti aturan tablet terlupa. Jika tidak yakin, periksa kembali atau tanyakan kepada apoteker.",
+                "vi": "Nôn ngay sau khi uống thuốc, hoặc tiêu chảy nặng, có thể làm giảm hấp thu thuốc. Hãy làm theo quy tắc quên thuốc. Nếu không chắc, hãy đi khám lại hoặc hỏi dược sĩ.",
+                "th": "การอาเจียนไม่นานหลังจากกินยา หรือท้องเสียรุนแรง อาจทำให้ยาดูดซึมได้น้อยลง ให้ทำตามกฎเมื่อลืมยา หากไม่แน่ใจ ให้กลับไปพบแพทย์หรือถามเภสัชกร",
+                "tl": "Ang pagsusuka kaagad matapos uminom ng tableta, o matinding pagtatae, ay maaaring makabawas sa pagsipsip ng gamot. Sundin ang tuntunin para sa nakalimutang tableta. Kung hindi sigurado, bumalik sa klinika o magtanong sa pharmacist.",
+                "ja": "服用後すぐの嘔吐、または重い下痢があると、薬の吸収が不十分になることがあります。飲み忘れ時の対応に従ってください。不安な場合は受診するか薬剤師に相談してください。"
               },
               "html": null,
               "tone": {
@@ -51074,48 +50968,22 @@
             },
             {
               "title": {
-                "zh-TW": "換藥或備孕",
-                "en": "Changing pills or planning pregnancy",
-                "id": "Changing pills or planning pregnancy",
-                "vi": "Changing pills or planning pregnancy",
-                "th": "Changing pills or planning pregnancy",
-                "tl": "Changing pills or planning pregnancy",
-                "ja": "Changing pills or planning pregnancy"
+                "zh-TW": "出血變化",
+                "en": "Bleeding changes",
+                "id": "Perubahan perdarahan",
+                "vi": "Thay đổi ra máu",
+                "th": "การเปลี่ยนแปลงของเลือดออก",
+                "tl": "Pagbabago sa pagdurugo",
+                "ja": "出血の変化"
               },
               "text": {
-                "zh-TW": "換另一款避孕藥時，吃完舊包有效錠後，隔天接新包。想懷孕時，停藥後可開始嘗試，不需等 3–6 個月。",
-                "en": "When changing pills, start the new pack the day after the last active tablet in the old pack. If planning pregnancy, you may start trying after stopping; you do not need to wait 3 to 6 months.",
-                "id": "When changing pills, start the new pack the day after the last active tablet in the old pack. If planning pregnancy, you may start trying after stopping; you do not need to wait 3 to 6 months.",
-                "vi": "When changing pills, start the new pack the day after the last active tablet in the old pack. If planning pregnancy, you may start trying after stopping; you do not need to wait 3 to 6 months.",
-                "th": "When changing pills, start the new pack the day after the last active tablet in the old pack. If planning pregnancy, you may start trying after stopping; you do not need to wait 3 to 6 months.",
-                "tl": "When changing pills, start the new pack the day after the last active tablet in the old pack. If planning pregnancy, you may start trying after stopping; you do not need to wait 3 to 6 months.",
-                "ja": "When changing pills, start the new pack the day after the last active tablet in the old pack. If planning pregnancy, you may start trying after stopping; you do not need to wait 3 to 6 months."
-              },
-              "html": null,
-              "tone": {
-                "bg": "#E6F1FB",
-                "border": "#185FA5",
-                "text": "#042C53"
-              }
-            },
-            {
-              "title": {
-                "zh-TW": "Diane-35 重點",
-                "en": "Diane-35 key point",
-                "id": "Diane-35 key point",
-                "vi": "Diane-35 key point",
-                "th": "Diane-35 key point",
-                "tl": "Diane-35 key point",
-                "ja": "Diane-35 key point"
-              },
-              "text": {
-                "zh-TW": "此藥主要用於嚴重痤瘡或多毛症，不建議只為避孕而使用。\n療程多久，由醫師依皮膚狀況評估。",
-                "en": "This medicine is mainly used for severe acne or hirsutism. It is not recommended solely for contraception.\nYour doctor decides how long to use it.",
-                "id": "This medicine is mainly used for severe acne or hirsutism. It is not recommended solely for contraception.\nYour doctor decides how long to use it.",
-                "vi": "This medicine is mainly used for severe acne or hirsutism. It is not recommended solely for contraception.\nYour doctor decides how long to use it.",
-                "th": "This medicine is mainly used for severe acne or hirsutism. It is not recommended solely for contraception.\nYour doctor decides how long to use it.",
-                "tl": "This medicine is mainly used for severe acne or hirsutism. It is not recommended solely for contraception.\nYour doctor decides how long to use it.",
-                "ja": "This medicine is mainly used for severe acne or hirsutism. It is not recommended solely for contraception.\nYour doctor decides how long to use it."
+                "zh-TW": "剛開始服用時，少量點狀出血可能發生。請不要自行停藥。若出血量持續增加或超過一週未停止，或停藥 7 天都沒有出血且曾漏吃藥，請驗孕或回診。",
+                "en": "Light spotting may happen when you first start. Do not stop on your own. If bleeding keeps increasing, lasts longer than 1 week, or you had no bleeding during the 7-day break after missed tablets, take a pregnancy test or return to the doctor.",
+                "id": "Bercak darah ringan dapat terjadi saat baru mulai minum obat. Jangan berhenti sendiri. Jika perdarahan terus bertambah, tidak berhenti lebih dari 1 minggu, atau tidak ada perdarahan selama jeda 7 hari setelah ada tablet yang terlupa, lakukan tes kehamilan atau periksa kembali.",
+                "vi": "Khi mới bắt đầu dùng, có thể ra máu lấm tấm ít. Không tự ý ngưng thuốc. Nếu lượng máu tiếp tục tăng, kéo dài hơn 1 tuần chưa ngừng, hoặc trong 7 ngày nghỉ thuốc không ra máu và trước đó có quên thuốc, hãy thử thai hoặc đi khám lại.",
+                "th": "ช่วงเริ่มกินยา อาจมีเลือดออกกะปริบกะปรอยเล็กน้อย อย่าหยุดยาเอง หากเลือดออกมากขึ้นเรื่อย ๆ หรือไม่หยุดเกิน 1 สัปดาห์ หรือช่วงหยุดยา 7 วันไม่มีเลือดออกและเคยลืมยา ให้ตรวจครรภ์หรือกลับไปพบแพทย์",
+                "tl": "Maaaring magkaroon ng kaunting patak-patak na dugo sa simula ng paggamit. Huwag ihinto nang sarili. Kung patuloy na dumadami ang dugo, hindi humihinto nang higit sa 1 linggo, o walang pagdurugo sa 7-araw na pahinga matapos may nakalimutang tableta, mag-pregnancy test o bumalik sa doktor.",
+                "ja": "飲み始めには少量の不規則な出血が起こることがあります。自己判断で中止しないでください。出血量が増え続ける、1週間を超えて止まらない、または飲み忘れがあり休薬7日間に出血がない場合は、妊娠検査をするか受診してください。"
               },
               "html": null,
               "tone": {
@@ -51125,65 +50993,44 @@
               }
             }
           ],
-          "storage": {
-            "title": {
-              "zh-TW": "藥品保存",
-              "en": "Storage",
-              "id": "Storage",
-              "vi": "Storage",
-              "th": "Storage",
-              "tl": "Storage",
-              "ja": "Storage"
-            },
-            "text": {
-              "zh-TW": "室溫（≤25°C）避光避濕，放回原包裝保存。\n放在孩童拿不到的地方。",
-              "en": "Store at room temperature (≤25°C), away from light and moisture, in the original pack.\nKeep out of reach of children.",
-              "id": "Store at room temperature (≤25°C), away from light and moisture, in the original pack.\nKeep out of reach of children.",
-              "vi": "Store at room temperature (≤25°C), away from light and moisture, in the original pack.\nKeep out of reach of children.",
-              "th": "Store at room temperature (≤25°C), away from light and moisture, in the original pack.\nKeep out of reach of children.",
-              "tl": "Store at room temperature (≤25°C), away from light and moisture, in the original pack.\nKeep out of reach of children.",
-              "ja": "Store at room temperature (≤25°C), away from light and moisture, in the original pack.\nKeep out of reach of children."
-            },
-            "html": null,
-            "tone": null
-          },
+          "storage": null,
           "warnings": [
             {
               "index": 0,
               "text": {
-                "zh-TW": "胸痛、喘、單側小腿腫痛或視力模糊：停藥就醫。",
-                "en": "Chest pain, shortness of breath, one swollen painful calf, or blurry vision: stop and seek care.",
-                "id": "Chest pain, shortness of breath, one swollen painful calf, or blurry vision: stop and seek care.",
-                "vi": "Chest pain, shortness of breath, one swollen painful calf, or blurry vision: stop and seek care.",
-                "th": "Chest pain, shortness of breath, one swollen painful calf, or blurry vision: stop and seek care.",
-                "tl": "Chest pain, shortness of breath, one swollen painful calf, or blurry vision: stop and seek care.",
-                "ja": "Chest pain, shortness of breath, one swollen painful calf, or blurry vision: stop and seek care."
+                "zh-TW": "胸痛、喘、單側小腿腫痛、突然視力模糊或劇烈頭痛：停藥並立即就醫。",
+                "en": "Chest pain, shortness of breath, one swollen painful calf, sudden blurry vision, or a severe headache: stop and seek urgent care.",
+                "id": "Nyeri dada, sesak napas, satu betis bengkak dan nyeri, penglihatan tiba-tiba kabur, atau sakit kepala berat: hentikan obat dan segera cari pertolongan medis.",
+                "vi": "Đau ngực, khó thở, một bên bắp chân sưng đau, đột ngột mờ mắt hoặc đau đầu dữ dội: ngưng thuốc và đi khám cấp cứu ngay.",
+                "th": "เจ็บหน้าอก หายใจลำบาก น่องข้างเดียวบวมเจ็บ ตามัวทันที หรือปวดศีรษะรุนแรง: หยุดยาและไปพบแพทย์ทันที",
+                "tl": "Pananakit ng dibdib, hingal, isang binti na namamaga at masakit, biglang paglabo ng paningin, o matinding sakit ng ulo: ihinto ang gamot at magpatingin agad.",
+                "ja": "胸痛、息切れ、片側のふくらはぎの腫れや痛み、急な視界のぼやけ、または激しい頭痛：服用を中止し、直ちに受診。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "不可同時使用其他荷爾蒙避孕藥。",
-                "en": "Do not use another hormonal contraceptive at the same time.",
-                "id": "Do not use another hormonal contraceptive at the same time.",
-                "vi": "Do not use another hormonal contraceptive at the same time.",
-                "th": "Do not use another hormonal contraceptive at the same time.",
-                "tl": "Do not use another hormonal contraceptive at the same time.",
-                "ja": "Do not use another hormonal contraceptive at the same time."
+                "zh-TW": "肝臟警訊：皮膚或眼白發黃、深色尿、右上腹疼痛、異常疲倦，立刻停藥就醫。",
+                "en": "Liver warning signs: yellow skin or eyes, dark urine, right upper belly pain, or unusual tiredness. Stop and seek care now.",
+                "id": "Tanda bahaya hati: kulit atau bagian putih mata menguning, urine berwarna gelap, nyeri perut kanan atas, atau sangat lelah tidak seperti biasa. Hentikan obat dan segera cari pertolongan medis.",
+                "vi": "Dấu hiệu cảnh báo về gan: da hoặc lòng trắng mắt vàng, nước tiểu sẫm màu, đau vùng bụng trên bên phải, hoặc mệt mỏi bất thường. Ngưng thuốc và đi khám ngay.",
+                "th": "สัญญาณเตือนเกี่ยวกับตับ: ผิวหรือตาขาวเหลือง ปัสสาวะสีเข้ม ปวดท้องด้านขวาบน หรือเหนื่อยผิดปกติ ให้หยุดยาและพบแพทย์ทันที",
+                "tl": "Babala sa atay: paninilaw ng balat o puti ng mata, maitim na ihi, pananakit sa kanang itaas ng tiyan, o kakaibang pagkapagod. Ihinto ang gamot at magpatingin agad.",
+                "ja": "肝臓の警告サイン：皮膚や白目が黄色い、尿が濃い色、右上腹部の痛み、異常な疲れ。服用を中止し、直ちに受診。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "皮膚或眼白發黃、深色尿：停藥就醫。",
-                "en": "Yellow skin or eyes, or dark urine: stop and seek care.",
-                "id": "Yellow skin or eyes, or dark urine: stop and seek care.",
-                "vi": "Yellow skin or eyes, or dark urine: stop and seek care.",
-                "th": "Yellow skin or eyes, or dark urine: stop and seek care.",
-                "tl": "Yellow skin or eyes, or dark urine: stop and seek care.",
-                "ja": "Yellow skin or eyes, or dark urine: stop and seek care."
+                "zh-TW": "Diane-35 不能預防性病；需要時仍要用保險套。",
+                "en": "Diane-35 does not prevent STIs. Use condoms when needed.",
+                "id": "Diane-35 tidak mencegah infeksi menular seksual; gunakan kondom bila perlu.",
+                "vi": "Diane-35 không phòng bệnh lây qua đường tình dục; dùng bao cao su khi cần.",
+                "th": "Diane-35 ไม่ป้องกันโรคติดต่อทางเพศสัมพันธ์ ควรใช้ถุงยางเมื่อจำเป็น",
+                "tl": "Hindi pinipigilan ng Diane-35 ang sexually transmitted infections; gumamit ng condom kung kailangan.",
+                "ja": "Diane-35は性感染症を予防できません。必要な時はコンドームを使ってください。"
               },
               "highlight": false
             }

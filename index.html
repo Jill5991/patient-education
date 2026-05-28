@@ -25375,19 +25375,16 @@ const MEDICATIONS = [
   }),
   createOcpMedication({
     id: "diane35",
-    nameZh: "Diane-35 黛麗安 / 愛斯麗安",
+    nameZh: "Diane-35 黛麗安",
     nameEn: "Diane-35",
-    subtitleZh: "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg｜21 錠（全部有效錠）",
-    subtitleEn: "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 active tablets",
-    usageZh: "治療嚴重痤瘡/多毛症；服藥期間也有避孕效果",
-    usageEn: "For severe acne or hirsutism; it also prevents pregnancy while used",
+    subtitleZh: "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg｜21 顆米黃色糖衣錠",
+    subtitleEn: "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 pale-yellow sugar-coated tablets",
+    usageZh: "治療中度至重度痤瘡或多毛症；服藥期間也有避孕效果",
+    usageEn: "For moderate to severe acne or hirsutism; it also prevents pregnancy while used",
     badgeZh: "抗雄性素型｜醫師評估療程",
     badgeEn: "Anti-androgen type | doctor-reviewed course",
     packType: "21",
-    diane: true,
-    specialInfo: [
-      { titleZh: "Diane-35 重點", titleEn: "Diane-35 key point", textZh: "此藥主要用於嚴重痤瘡或多毛症，不建議只為避孕而使用。\n療程多久，由醫師依皮膚狀況評估。", textEn: "This medicine is mainly used for severe acne or hirsutism. It is not recommended solely for contraception.\nYour doctor decides how long to use it." }
-    ]
+    diane: true
   }),
   createOcpMedication({
     id: "gynera-meliane",
@@ -25476,6 +25473,7 @@ function createOcpMedication(config) {
   const isTriphasic = config.packType === "triphasic";
   const isTwentyOneOnly = config.packType === "21";
   const isAlyssa = config.id === "alyssa";
+  const isDiane = config.id === "diane35";
   const commonColor = { main: "#A04060", light: "#FBEAF1", dark: "#4A1025", badge: "#EBC0CE", badgeText: "#4A1025" };
   const steps = [];
 
@@ -25641,6 +25639,140 @@ function createOcpMedication(config) {
       }
     );
   }
+  if (isDiane) {
+    steps.splice(
+      0,
+      steps.length,
+      {
+        action: ocpFullTx(
+          "月經第 1 天開始吃第 1 顆",
+          "Start the first tablet on menstrual day 1",
+          "Mulai tablet pertama pada hari pertama haid",
+          "Bắt đầu viên đầu tiên vào ngày 1 của kỳ kinh",
+          "เริ่มเม็ดแรกในวันแรกของประจำเดือน",
+          "Simulan ang unang tableta sa unang araw ng regla",
+          "月経1日目に1錠目を飲み始める"
+        ),
+        note: ocpFullTx(
+          "搭配白開水整顆吞服。若第 2～5 天才開始，前 7 天加用保險套。",
+          "Swallow it whole with water. If you start on days 2 to 5, use condoms for the first 7 days.",
+          "Telan utuh dengan air putih. Jika baru mulai pada hari ke-2 sampai ke-5, gunakan kondom selama 7 hari pertama.",
+          "Nuốt nguyên viên với nước lọc. Nếu bắt đầu vào ngày 2–5, dùng bao cao su trong 7 ngày đầu.",
+          "กลืนทั้งเม็ดกับน้ำเปล่า หากเริ่มวันที่ 2–5 ให้ใช้ถุงยางใน 7 วันแรก",
+          "Lunukin nang buo kasama ng tubig. Kung nagsimula sa araw 2 hanggang 5, gumamit ng condom sa unang 7 araw.",
+          "水で錠剤をそのまま飲みます。2〜5日目に始める場合、最初の7日間はコンドームを併用してください。"
+        ),
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      },
+      {
+        action: ocpFullTx(
+          "每天固定時間吃 1 顆",
+          "Take 1 tablet at the same time each day",
+          "Minum 1 tablet pada waktu yang sama setiap hari",
+          "Uống 1 viên vào cùng một giờ mỗi ngày",
+          "กินวันละ 1 เม็ด เวลาเดิมทุกวัน",
+          "Uminom ng 1 tableta sa parehong oras araw-araw",
+          "毎日同じ時刻に1錠飲む"
+        ),
+        note: ocpFullTx(
+          "依包裝順序吃，連續吃 21 天。不要跳著吃，也不要自行停藥。",
+          "Follow the pack order for 21 days. Do not skip around or stop on your own.",
+          "Ikuti urutan pada kemasan dan minum selama 21 hari berturut-turut. Jangan melompati urutan dan jangan berhenti sendiri.",
+          "Uống theo thứ tự trên vỉ trong 21 ngày liên tục. Không uống nhảy viên và không tự ý ngưng thuốc.",
+          "กินตามลำดับบนแผงยา ติดต่อกัน 21 วัน อย่ากินข้ามลำดับ และอย่าหยุดยาเอง",
+          "Sundin ang pagkakasunod sa pakete sa loob ng 21 araw. Huwag laktawan ang pagkakasunod at huwag ihinto nang sarili.",
+          "シートの順番どおりに21日間続けて飲みます。順番を飛ばしたり、自己判断で中止したりしないでください。"
+        ),
+        illustration: "assets/svg/oral-shared/swallow-water.svg"
+      },
+      {
+        action: ocpFullTx(
+          "吃完 21 顆後停藥 7 天",
+          "After 21 tablets, take a 7-day break",
+          "Setelah 21 tablet habis, berhenti 7 hari",
+          "Sau khi uống hết 21 viên, nghỉ thuốc 7 ngày",
+          "กินครบ 21 เม็ดแล้ว หยุดยา 7 วัน",
+          "Pagkatapos ng 21 tableta, magpahinga ng 7 araw",
+          "21錠を飲み終えたら7日間休薬する"
+        ),
+        note: ocpFullTx(
+          "停藥期間不吃藥。通常停藥後第 2～3 天會出血。",
+          "Take no tablets during the break. Bleeding usually starts 2 to 3 days after stopping.",
+          "Selama jeda, jangan minum tablet. Perdarahan biasanya mulai 2–3 hari setelah berhenti.",
+          "Trong thời gian nghỉ, không uống thuốc. Máu thường ra vào ngày 2–3 sau khi ngưng.",
+          "ช่วงหยุดยาไม่ต้องกินยา โดยทั่วไปเลือดจะออกประมาณวันที่ 2–3 หลังหยุดยา",
+          "Sa panahon ng pahinga, huwag uminom ng tableta. Karaniwang nagsisimula ang pagdurugo 2–3 araw matapos huminto.",
+          "休薬中は錠剤を飲みません。通常、休薬後2〜3日ごろに出血が始まります。"
+        ),
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      },
+      {
+        action: ocpFullTx(
+          "第 8 天開新包",
+          "Start a new pack on day 8",
+          "Mulai kemasan baru pada hari ke-8",
+          "Ngày thứ 8 bắt đầu vỉ mới",
+          "วันที่ 8 เริ่มแผงใหม่",
+          "Sa ika-8 araw, magsimula ng bagong pakete",
+          "8日目に新しいシートを始める"
+        ),
+        note: ocpFullTx(
+          "即使出血還沒結束，也要照時間開新包。",
+          "Start the new pack on schedule, even if bleeding has not stopped.",
+          "Mulai kemasan baru sesuai jadwal, meskipun perdarahan belum berhenti.",
+          "Bắt đầu vỉ mới đúng lịch, dù máu vẫn chưa hết.",
+          "เริ่มแผงใหม่ตามกำหนด แม้เลือดยังไม่หยุด",
+          "Simulan ang bagong pakete ayon sa iskedyul, kahit hindi pa tapos ang pagdurugo.",
+          "出血が終わっていなくても、予定どおり新しいシートを始めてください。"
+        ),
+        illustration: "assets/svg/oral-shared/schedule-course.svg"
+      },
+      {
+        action: ocpFullTx(
+          "第 1～2 週漏吃時",
+          "If a tablet is missed in weeks 1 to 2",
+          "Jika lupa tablet pada minggu ke-1 sampai ke-2",
+          "Nếu quên thuốc trong tuần 1–2",
+          "หากลืมยาในสัปดาห์ที่ 1–2",
+          "Kung may nakalimutang tableta sa linggo 1–2",
+          "1〜2週目に飲み忘れた場合"
+        ),
+        note: ocpFullTx(
+          "第 1 週：12 小時內想起，立刻補吃；超過 12 小時，補最近漏的 1 顆，接下來 7 天加用保險套。第 2 週：若前 7 天都有正確吃藥，補吃後照常吃；若前 7 天也曾漏吃，或這次漏吃超過 1 顆，接下來 7 天加用保險套。",
+          "Week 1: if remembered within 12 hours, take it right away. If more than 12 hours late, take the most recent missed tablet and use condoms for the next 7 days. Week 2: if the previous 7 days were taken correctly, take the missed tablet and continue as usual. If any tablets were missed in the previous 7 days, or if more than 1 tablet was missed this time, use condoms for the next 7 days.",
+          "Minggu 1: jika ingat dalam 12 jam, segera minum. Jika lewat 12 jam, minum 1 tablet yang paling baru terlupa dan gunakan kondom selama 7 hari berikutnya. Minggu 2: jika 7 hari sebelumnya diminum dengan benar, minum tablet yang terlupa lalu lanjutkan seperti biasa. Jika dalam 7 hari sebelumnya juga ada yang terlupa, atau kali ini lupa lebih dari 1 tablet, gunakan kondom selama 7 hari berikutnya.",
+          "Tuần 1: nếu nhớ ra trong vòng 12 giờ, uống bù ngay. Nếu trễ hơn 12 giờ, uống viên quên gần nhất và dùng bao cao su trong 7 ngày tiếp theo. Tuần 2: nếu 7 ngày trước đó đều uống đúng, uống bù rồi tiếp tục như thường lệ. Nếu 7 ngày trước đó cũng từng quên, hoặc lần này quên hơn 1 viên, dùng bao cao su trong 7 ngày tiếp theo.",
+          "สัปดาห์ที่ 1: หากนึกได้ภายใน 12 ชั่วโมง ให้กินทันที หากเกิน 12 ชั่วโมง ให้กินเม็ดที่ลืมล่าสุด 1 เม็ด และใช้ถุงยางใน 7 วันถัดไป สัปดาห์ที่ 2: หาก 7 วันก่อนหน้านี้กินถูกต้อง ให้กินเม็ดที่ลืมแล้วกินต่อเหมือนเดิม หาก 7 วันก่อนหน้านี้เคยลืม หรือครั้งนี้ลืมมากกว่า 1 เม็ด ให้ใช้ถุงยางใน 7 วันถัดไป",
+          "Linggo 1: kung naalala sa loob ng 12 oras, inumin agad. Kung higit sa 12 oras na, inumin ang pinakahuling nakalimutang tableta at gumamit ng condom sa susunod na 7 araw. Linggo 2: kung tama ang pag-inom sa nakaraang 7 araw, inumin ang nakalimutang tableta at ituloy tulad ng dati. Kung may nakalimutan din sa nakaraang 7 araw, o higit sa 1 tableta ang nakalimutan ngayon, gumamit ng condom sa susunod na 7 araw.",
+          "1週目：12時間以内に気づいたらすぐ飲みます。12時間を超えた場合は、直近で飲み忘れた1錠を飲み、今後7日間はコンドームを併用してください。2週目：直前7日間を正しく飲めていた場合は、飲み忘れ分を飲んで通常どおり続けます。直前7日間にも飲み忘れがあった場合、または今回2錠以上飲み忘れた場合は、今後7日間はコンドームを併用してください。"
+        ),
+        illustration: "assets/svg/oral-shared/missed-dose.svg",
+        highlight: true
+      },
+      {
+        action: ocpFullTx(
+          "第 3 週漏吃時",
+          "If a tablet is missed in week 3",
+          "Jika lupa tablet pada minggu ke-3",
+          "Nếu quên thuốc trong tuần 3",
+          "หากลืมยาในสัปดาห์ที่ 3",
+          "Kung may nakalimutang tableta sa linggo 3",
+          "3週目に飲み忘れた場合"
+        ),
+        note: ocpFullTx(
+          "補最近漏的 1 顆後，吃完本包剩下藥錠，隔天直接開新包，不停藥 7 天。",
+          "After taking the most recent missed tablet, finish the rest of this pack. Start a new pack the next day and skip the 7-day break.",
+          "Setelah minum 1 tablet yang paling baru terlupa, habiskan sisa tablet dalam kemasan ini. Mulai kemasan baru keesokan harinya dan jangan jeda 7 hari.",
+          "Sau khi uống viên quên gần nhất, uống hết phần còn lại của vỉ này. Hôm sau bắt đầu vỉ mới, không nghỉ 7 ngày.",
+          "หลังกินเม็ดที่ลืมล่าสุด 1 เม็ดแล้ว ให้กินยาที่เหลือในแผงนี้จนหมด วันถัดไปเริ่มแผงใหม่ทันที ไม่ต้องหยุดยา 7 วัน",
+          "Pagkatapos inumin ang pinakahuling nakalimutang tableta, tapusin ang natitirang tableta sa paketeng ito. Magsimula ng bagong pakete kinabukasan at laktawan ang 7-araw na pahinga.",
+          "直近で飲み忘れた1錠を飲んだ後、このシートの残りを飲み切ります。翌日に新しいシートを始め、7日間の休薬はしません。"
+        ),
+        illustration: "assets/svg/oral-shared/missed-dose.svg",
+        highlight: true
+      }
+    );
+  }
 
   const infoBoxes = isAlyssa ? [
     {
@@ -25679,8 +25811,40 @@ function createOcpMedication(config) {
   if (!isAlyssa) infoBoxes.push({ title: ocpTx("換藥或備孕", "Changing pills or planning pregnancy"), text: ocpTx("換另一款避孕藥時，吃完舊包有效錠後，隔天接新包。想懷孕時，停藥後可開始嘗試，不需等 3–6 個月。", "When changing pills, start the new pack the day after the last active tablet in the old pack. If planning pregnancy, you may start trying after stopping; you do not need to wait 3 to 6 months."), tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" } });
   if (config.specialInfo && !isAlyssa) config.specialInfo.forEach((box) => infoBoxes.push({ title: ocpTx(box.titleZh, box.titleEn), text: ocpTx(box.textZh, box.textEn), tone: { bg: "#FBEAF1", border: "#A04060", text: "#4A1025" } }));
   if (config.drospirenone && !isAlyssa) infoBoxes.push({ title: ocpTx("先告知藥師", "Tell the pharmacist first"), text: ocpTx("若長期吃 ACEI/ARB、保鉀利尿劑、鉀補充品或 NSAIDs 止痛藥，請先告知藥師。", "Tell the pharmacist if you regularly use ACE inhibitors, ARBs, potassium-sparing diuretics, potassium supplements, or NSAID pain relievers."), tone: { bg: "#E6F1FB", border: "#185FA5", text: "#042C53" } });
+  if (isDiane) {
+    infoBoxes.splice(
+      0,
+      infoBoxes.length,
+      {
+        title: ocpFullTx("嘔吐或嚴重腹瀉", "Vomiting or severe diarrhea", "Muntah atau diare berat", "Nôn hoặc tiêu chảy nặng", "อาเจียนหรือท้องเสียรุนแรง", "Pagsusuka o matinding pagtatae", "嘔吐または重い下痢"),
+        text: ocpFullTx(
+          "吃藥後很快嘔吐，或嚴重腹瀉，可能影響吸收。請照漏吃規則處理；若不確定，請回診或詢問藥師。",
+          "Vomiting soon after a tablet, or severe diarrhea, may reduce absorption. Follow the missed-tablet rules. If unsure, return to the clinic or ask a pharmacist.",
+          "Muntah segera setelah minum tablet, atau diare berat, dapat mengurangi penyerapan. Ikuti aturan tablet terlupa. Jika tidak yakin, periksa kembali atau tanyakan kepada apoteker.",
+          "Nôn ngay sau khi uống thuốc, hoặc tiêu chảy nặng, có thể làm giảm hấp thu thuốc. Hãy làm theo quy tắc quên thuốc. Nếu không chắc, hãy đi khám lại hoặc hỏi dược sĩ.",
+          "การอาเจียนไม่นานหลังจากกินยา หรือท้องเสียรุนแรง อาจทำให้ยาดูดซึมได้น้อยลง ให้ทำตามกฎเมื่อลืมยา หากไม่แน่ใจ ให้กลับไปพบแพทย์หรือถามเภสัชกร",
+          "Ang pagsusuka kaagad matapos uminom ng tableta, o matinding pagtatae, ay maaaring makabawas sa pagsipsip ng gamot. Sundin ang tuntunin para sa nakalimutang tableta. Kung hindi sigurado, bumalik sa klinika o magtanong sa pharmacist.",
+          "服用後すぐの嘔吐、または重い下痢があると、薬の吸収が不十分になることがあります。飲み忘れ時の対応に従ってください。不安な場合は受診するか薬剤師に相談してください。"
+        ),
+        tone: { bg: "#F2F2F2", border: "#7A7A7A", text: "#3F3F3F" }
+      },
+      {
+        title: ocpFullTx("出血變化", "Bleeding changes", "Perubahan perdarahan", "Thay đổi ra máu", "การเปลี่ยนแปลงของเลือดออก", "Pagbabago sa pagdurugo", "出血の変化"),
+        text: ocpFullTx(
+          "剛開始服用時，少量點狀出血可能發生。請不要自行停藥。若出血量持續增加或超過一週未停止，或停藥 7 天都沒有出血且曾漏吃藥，請驗孕或回診。",
+          "Light spotting may happen when you first start. Do not stop on your own. If bleeding keeps increasing, lasts longer than 1 week, or you had no bleeding during the 7-day break after missed tablets, take a pregnancy test or return to the doctor.",
+          "Bercak darah ringan dapat terjadi saat baru mulai minum obat. Jangan berhenti sendiri. Jika perdarahan terus bertambah, tidak berhenti lebih dari 1 minggu, atau tidak ada perdarahan selama jeda 7 hari setelah ada tablet yang terlupa, lakukan tes kehamilan atau periksa kembali.",
+          "Khi mới bắt đầu dùng, có thể ra máu lấm tấm ít. Không tự ý ngưng thuốc. Nếu lượng máu tiếp tục tăng, kéo dài hơn 1 tuần chưa ngừng, hoặc trong 7 ngày nghỉ thuốc không ra máu và trước đó có quên thuốc, hãy thử thai hoặc đi khám lại.",
+          "ช่วงเริ่มกินยา อาจมีเลือดออกกะปริบกะปรอยเล็กน้อย อย่าหยุดยาเอง หากเลือดออกมากขึ้นเรื่อย ๆ หรือไม่หยุดเกิน 1 สัปดาห์ หรือช่วงหยุดยา 7 วันไม่มีเลือดออกและเคยลืมยา ให้ตรวจครรภ์หรือกลับไปพบแพทย์",
+          "Maaaring magkaroon ng kaunting patak-patak na dugo sa simula ng paggamit. Huwag ihinto nang sarili. Kung patuloy na dumadami ang dugo, hindi humihinto nang higit sa 1 linggo, o walang pagdurugo sa 7-araw na pahinga matapos may nakalimutang tableta, mag-pregnancy test o bumalik sa doktor.",
+          "飲み始めには少量の不規則な出血が起こることがあります。自己判断で中止しないでください。出血量が増え続ける、1週間を超えて止まらない、または飲み忘れがあり休薬7日間に出血がない場合は、妊娠検査をするか受診してください。"
+        ),
+        tone: { bg: "#FBEAF1", border: "#A04060", text: "#4A1025" }
+      }
+    );
+  }
 
-  const storage = isAlyssa ? null : { title: ocpTx("藥品保存", "Storage"), text: ocpTx("室溫（≤25°C）避光避濕，放回原包裝保存。\n放在孩童拿不到的地方。", "Store at room temperature (≤25°C), away from light and moisture, in the original pack.\nKeep out of reach of children.") };
+  const storage = (isAlyssa || isDiane) ? null : { title: ocpTx("藥品保存", "Storage"), text: ocpTx("室溫（≤25°C）避光避濕，放回原包裝保存。\n放在孩童拿不到的地方。", "Store at room temperature (≤25°C), away from light and moisture, in the original pack.\nKeep out of reach of children.") };
   const warnings = [
     ocpTx("胸痛、喘、單側小腿腫痛或視力模糊：停藥就醫。", "Chest pain, shortness of breath, one swollen painful calf, or blurry vision: stop and seek care."),
     ocpTx("避孕藥不預防性病；需要時仍要用保險套。", "Birth control pills do not prevent STIs. Use condoms when needed."),
@@ -25716,15 +25880,40 @@ function createOcpMedication(config) {
     );
   }
   else if (config.diane) {
-    warnings[1] = ocpTx("不可同時使用其他荷爾蒙避孕藥。", "Do not use another hormonal contraceptive at the same time.");
-    warnings[2] = ocpTx("皮膚或眼白發黃、深色尿：停藥就醫。", "Yellow skin or eyes, or dark urine: stop and seek care.");
+    warnings[0] = ocpFullTx(
+      "胸痛、喘、單側小腿腫痛、突然視力模糊或劇烈頭痛：停藥並立即就醫。",
+      "Chest pain, shortness of breath, one swollen painful calf, sudden blurry vision, or a severe headache: stop and seek urgent care.",
+      "Nyeri dada, sesak napas, satu betis bengkak dan nyeri, penglihatan tiba-tiba kabur, atau sakit kepala berat: hentikan obat dan segera cari pertolongan medis.",
+      "Đau ngực, khó thở, một bên bắp chân sưng đau, đột ngột mờ mắt hoặc đau đầu dữ dội: ngưng thuốc và đi khám cấp cứu ngay.",
+      "เจ็บหน้าอก หายใจลำบาก น่องข้างเดียวบวมเจ็บ ตามัวทันที หรือปวดศีรษะรุนแรง: หยุดยาและไปพบแพทย์ทันที",
+      "Pananakit ng dibdib, hingal, isang binti na namamaga at masakit, biglang paglabo ng paningin, o matinding sakit ng ulo: ihinto ang gamot at magpatingin agad.",
+      "胸痛、息切れ、片側のふくらはぎの腫れや痛み、急な視界のぼやけ、または激しい頭痛：服用を中止し、直ちに受診。"
+    );
+    warnings[1] = ocpFullTx(
+      "肝臟警訊：皮膚或眼白發黃、深色尿、右上腹疼痛、異常疲倦，立刻停藥就醫。",
+      "Liver warning signs: yellow skin or eyes, dark urine, right upper belly pain, or unusual tiredness. Stop and seek care now.",
+      "Tanda bahaya hati: kulit atau bagian putih mata menguning, urine berwarna gelap, nyeri perut kanan atas, atau sangat lelah tidak seperti biasa. Hentikan obat dan segera cari pertolongan medis.",
+      "Dấu hiệu cảnh báo về gan: da hoặc lòng trắng mắt vàng, nước tiểu sẫm màu, đau vùng bụng trên bên phải, hoặc mệt mỏi bất thường. Ngưng thuốc và đi khám ngay.",
+      "สัญญาณเตือนเกี่ยวกับตับ: ผิวหรือตาขาวเหลือง ปัสสาวะสีเข้ม ปวดท้องด้านขวาบน หรือเหนื่อยผิดปกติ ให้หยุดยาและพบแพทย์ทันที",
+      "Babala sa atay: paninilaw ng balat o puti ng mata, maitim na ihi, pananakit sa kanang itaas ng tiyan, o kakaibang pagkapagod. Ihinto ang gamot at magpatingin agad.",
+      "肝臓の警告サイン：皮膚や白目が黄色い、尿が濃い色、右上腹部の痛み、異常な疲れ。服用を中止し、直ちに受診。"
+    );
+    warnings[2] = ocpFullTx(
+      "Diane-35 不能預防性病；需要時仍要用保險套。",
+      "Diane-35 does not prevent STIs. Use condoms when needed.",
+      "Diane-35 tidak mencegah infeksi menular seksual; gunakan kondom bila perlu.",
+      "Diane-35 không phòng bệnh lây qua đường tình dục; dùng bao cao su khi cần.",
+      "Diane-35 ไม่ป้องกันโรคติดต่อทางเพศสัมพันธ์ ควรใช้ถุงยางเมื่อจำเป็น",
+      "Hindi pinipigilan ng Diane-35 ang sexually transmitted infections; gumamit ng condom kung kailangan.",
+      "Diane-35は性感染症を予防できません。必要な時はコンドームを使ってください。"
+    );
   } else if (config.highEstrogen) warnings[2] = ocpTx("雌激素劑量較高；抽菸或血壓高者先讓醫師評估。", "This has a higher estrogen dose. Smoking or high blood pressure needs doctor review first.");
   else if (config.lowDoseBleed) warnings[2] = ocpTx("月經量少或不來，按時服藥下通常無害；不放心可驗孕。", "Light or absent bleeding is usually not harmful if pills were taken correctly. Take a pregnancy test if unsure.");
   else if (config.spotting) warnings[2] = ocpTx("前 3 個月可能點狀出血；持續服用後通常改善。", "Spotting may happen in the first 3 months and usually improves with continued use.");
   else if (config.acneOil) warnings[2] = ocpTx("前 3 個月可能輕微出油或粉刺；通常會改善。", "Mild oiliness or acne may happen in the first 3 months and usually improves.");
   else if (isTriphasic) warnings[2] = ocpTx("三色藥錠順序不同；務必依箭頭方向服藥。", "The 3 tablet colors have different doses. Always follow the arrows.");
 
-  const name = isAlyssa ? ocpFullTx("Alyssa 愛莉莎", "Alyssa", "Alyssa", "Alyssa", "Alyssa", "Alyssa", "Alyssa") : ocpTx(config.nameZh, config.nameEn);
+  const name = isAlyssa ? ocpFullTx("Alyssa 愛莉莎", "Alyssa", "Alyssa", "Alyssa", "Alyssa", "Alyssa", "Alyssa") : isDiane ? ocpFullTx("Diane-35 黛麗安", "Diane-35", "Diane-35", "Diane-35", "Diane-35", "Diane-35", "Diane-35") : ocpTx(config.nameZh, config.nameEn);
   const subtitle = isAlyssa ? ocpFullTx(
     config.subtitleZh,
     config.subtitleEn,
@@ -25733,10 +25922,34 @@ function createOcpMedication(config) {
     "Estetrol (E4) 14.2 มก. + Drospirenone 3 มก. | 28 เม็ด (24 เม็ดมีตัวยา + 4 เม็ดไม่มีตัวยา)",
     "Estetrol (E4) 14.2 mg + Drospirenone 3 mg | 28 tableta (24 aktibo + 4 hindi aktibo)",
     "エステトロール（E4）14.2 mg + ドロスピレノン3 mg｜28錠（有効錠24錠 + 無効錠4錠）"
+  ) : isDiane ? ocpFullTx(
+    "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg｜21 顆米黃色糖衣錠",
+    "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 pale-yellow sugar-coated tablets",
+    "Cyproterone acetate 2 mg + Ethinyl estradiol 0,035 mg | 21 tablet salut gula berwarna kuning pucat",
+    "Cyproterone acetate 2 mg + Ethinyl estradiol 0,035 mg | 21 viên bao đường màu vàng nhạt",
+    "Cyproterone acetate 2 มก. + Ethinyl estradiol 0.035 มก. | ยาเม็ดเคลือบน้ำตาลสีเหลืองอ่อน 21 เม็ด",
+    "Cyproterone acetate 2 mg + Ethinyl estradiol 0.035 mg | 21 maputlang dilaw na sugar-coated tablets",
+    "酢酸シプロテロン2 mg + エチニルエストラジオール0.035 mg｜淡黄色の糖衣錠21錠"
   ) : ocpTx(config.subtitleZh, config.subtitleEn);
-  const headerBadge = isAlyssa ? ocpFullTx("口服避孕藥", "Oral contraceptive", "Kontrasepsi oral", "Thuốc tránh thai uống", "ยาคุมกำเนิดชนิดรับประทาน", "Birth control pills", "経口避妊薬") : ocpTx("口服避孕藥", "Oral contraceptive");
-  const usage = isAlyssa ? ocpFullTx("每天固定時間服用", "Take at the same time each day", "Minum pada waktu yang sama setiap hari", "Uống vào cùng một giờ mỗi ngày", "กินเวลาเดิมทุกวัน", "Inumin sa parehong oras araw-araw", "毎日同じ時刻に飲む") : ocpTx(config.usageZh || "每天固定時間服用", config.usageEn || "Take at the same time each day");
-  const badge = isAlyssa ? ocpFullTx("口服避孕藥｜E4 + DRSP｜24+4", "Oral contraceptive | E4 + DRSP | 24+4", "Kontrasepsi oral | E4 + DRSP | 24+4", "Thuốc tránh thai uống | E4 + DRSP | 24+4", "ยาคุมกำเนิดชนิดรับประทาน | E4 + DRSP | 24+4", "Birth control pills | E4 + DRSP | 24+4", "経口避妊薬｜E4 + DRSP｜24+4") : ocpTx(config.badgeZh, config.badgeEn);
+  const headerBadge = (isAlyssa || isDiane) ? ocpFullTx("口服避孕藥", "Oral contraceptive", "Kontrasepsi oral", "Thuốc tránh thai uống", "ยาคุมกำเนิดชนิดรับประทาน", "Birth control pills", "経口避妊薬") : ocpTx("口服避孕藥", "Oral contraceptive");
+  const usage = isAlyssa ? ocpFullTx("每天固定時間服用", "Take at the same time each day", "Minum pada waktu yang sama setiap hari", "Uống vào cùng một giờ mỗi ngày", "กินเวลาเดิมทุกวัน", "Inumin sa parehong oras araw-araw", "毎日同じ時刻に飲む") : isDiane ? ocpFullTx(
+    "治療中度至重度痤瘡或多毛症；服藥期間也有避孕效果",
+    "For moderate to severe acne or hirsutism; it also prevents pregnancy while used",
+    "Untuk jerawat sedang hingga berat atau hirsutisme; selama digunakan juga mencegah kehamilan",
+    "Dùng cho mụn trứng cá mức độ vừa đến nặng hoặc rậm lông; trong thời gian dùng cũng có tác dụng tránh thai",
+    "ใช้รักษาสิวปานกลางถึงรุนแรงหรือภาวะขนดก และระหว่างใช้ยานี้ยังช่วยคุมกำเนิดได้",
+    "Para sa katamtaman hanggang malubhang acne o hirsutism; habang ginagamit, nakakatulong din itong maiwasan ang pagbubuntis",
+    "中等度〜重度のにきび、または多毛症の治療薬です。服用中は避妊効果もあります"
+  ) : ocpTx(config.usageZh || "每天固定時間服用", config.usageEn || "Take at the same time each day");
+  const badge = isAlyssa ? ocpFullTx("口服避孕藥｜E4 + DRSP｜24+4", "Oral contraceptive | E4 + DRSP | 24+4", "Kontrasepsi oral | E4 + DRSP | 24+4", "Thuốc tránh thai uống | E4 + DRSP | 24+4", "ยาคุมกำเนิดชนิดรับประทาน | E4 + DRSP | 24+4", "Birth control pills | E4 + DRSP | 24+4", "経口避妊薬｜E4 + DRSP｜24+4") : isDiane ? ocpFullTx(
+    "抗雄性素型｜醫師評估療程",
+    "Anti-androgen type | doctor-reviewed course",
+    "Tipe anti-androgen | lama terapi dievaluasi dokter",
+    "Loại kháng androgen | bác sĩ đánh giá thời gian điều trị",
+    "ชนิดต้านแอนโดรเจน | แพทย์ประเมินระยะเวลารักษา",
+    "Anti-androgen type | doktor ang susuri sa tagal ng gamutan",
+    "抗アンドロゲン型｜治療期間は医師が評価"
+  ) : ocpTx(config.badgeZh, config.badgeEn);
   const preStepsInfo = isAlyssa ? {
     title: ocpFullTx("先看包裝", "Check the pack first", "Periksa kemasan terlebih dahulu", "Kiểm tra vỉ thuốc trước", "ดูกล่อง/แผงยาก่อน", "Tingnan muna ang pakete", "まずシートを確認"),
     text: ocpFullTx(
@@ -25747,6 +25960,17 @@ function createOcpMedication(config) {
       "เม็ดสีชมพูเป็นเม็ดที่มีตัวยา มีทั้งหมด 24 เม็ด; เม็ดสีขาวเป็นเม็ดไม่มีตัวยา มีทั้งหมด 4 เม็ด ในแต่ละแผงให้กินเม็ดสีชมพูก่อน แล้วจึงกินเม็ดสีขาว หากกินผิดลำดับและกินเม็ดสีขาวไปก่อนแล้ว วันนี้ให้เปลี่ยนมากินเม็ดสีชมพู และใช้ถุงยางอนามัยร่วมด้วยใน 7 วันถัดไป",
       "Ang pink na tableta ay may aktibong sangkap, 24 tableta lahat; ang puting tableta ay walang aktibong sangkap, 4 na tableta lahat. Sa bawat pakete, unahin ang pink na tableta, pagkatapos ang puti. Kung mali ang pagkakasunod at nauna mong nainom ang puti, uminom ng pink na tableta ngayon; gumamit ng condom sa susunod na 7 araw.",
       "ピンクの錠剤は有効錠で24錠、白い錠剤は無効錠で4錠です。各シートはピンク錠を先に飲み、その後に白い錠剤を飲みます。順番を間違えて白い錠剤を先に飲んだ場合は、今日からピンク錠を飲み、今後7日間はコンドームを併用してください。"
+    )
+  } : isDiane ? {
+    title: ocpFullTx("先看包裝", "Check the pack first", "Periksa kemasan terlebih dahulu", "Kiểm tra vỉ thuốc trước", "ดูกล่อง/แผงยาก่อน", "Tingnan muna ang pakete", "まずシートを確認"),
+    text: ocpFullTx(
+      "這包 21 顆都是含荷爾蒙的有效錠。吃完 21 顆後停藥 7 天，第 8 天開新包。\n這個藥主要用於中重度痤瘡或多毛症，不建議只為避孕而使用。使用期間不要同時吃其他荷爾蒙避孕藥。療程多久，由醫師依皮膚狀況定期評估。",
+      "All 21 tablets in this pack contain hormones. After 21 tablets, take a 7-day break and start a new pack on day 8.\nThis medicine is mainly for moderate to severe acne or hirsutism. It is not recommended solely for contraception. Do not use another hormonal contraceptive at the same time. Your doctor will review how long to continue based on your skin condition.",
+      "Semua 21 tablet dalam kemasan ini mengandung hormon. Setelah 21 tablet habis, berhenti 7 hari dan mulai kemasan baru pada hari ke-8.\nObat ini terutama untuk jerawat sedang hingga berat atau hirsutisme. Tidak dianjurkan hanya untuk kontrasepsi. Jangan gunakan kontrasepsi hormonal lain bersamaan. Dokter akan menilai berapa lama terapi dilanjutkan sesuai kondisi kulit Anda.",
+      "Cả 21 viên trong vỉ này đều có chứa hormone. Sau khi uống hết 21 viên, nghỉ thuốc 7 ngày và bắt đầu vỉ mới vào ngày thứ 8.\nThuốc này chủ yếu dùng cho mụn trứng cá mức độ vừa đến nặng hoặc rậm lông. Không khuyến cáo dùng chỉ để tránh thai. Không dùng cùng lúc với thuốc tránh thai nội tiết khác. Bác sĩ sẽ định kỳ đánh giá thời gian điều trị theo tình trạng da.",
+      "ยา 21 เม็ดในแผงนี้เป็นเม็ดที่มีฮอร์โมนทั้งหมด เมื่อกินครบ 21 เม็ด ให้หยุดยา 7 วัน และเริ่มแผงใหม่ในวันที่ 8\nยานี้ใช้เป็นหลักสำหรับสิวปานกลางถึงรุนแรงหรือภาวะขนดก ไม่แนะนำให้ใช้เพื่อคุมกำเนิดอย่างเดียว ระหว่างใช้ยาอย่าใช้ยาคุมกำเนิดชนิดฮอร์โมนอื่นร่วมด้วย ระยะเวลาการรักษาให้แพทย์ประเมินตามสภาพผิวเป็นระยะ",
+      "Lahat ng 21 tableta sa paketeng ito ay may hormone. Pagkatapos ng 21 tableta, magpahinga ng 7 araw at magsimula ng bagong pakete sa ika-8 araw.\nPangunahing ginagamit ang gamot na ito para sa katamtaman hanggang malubhang acne o hirsutism. Hindi ito inirerekomenda kung contraception lang ang layunin. Huwag gumamit ng ibang hormonal contraceptive kasabay nito. Susuriin ng doktor kung gaano katagal ipagpapatuloy batay sa kondisyon ng balat.",
+      "このシートの21錠はすべてホルモンを含む有効錠です。21錠を飲み終えたら7日間休薬し、8日目に新しいシートを始めます。\nこの薬は主に中等度〜重度のにきび、または多毛症に使う薬です。避妊だけを目的とした使用は推奨されません。服用中は他のホルモン避妊薬を併用しないでください。治療期間は皮膚の状態に応じて医師が定期的に判断します。"
     )
   } : {
     title: ocpTx("先看包裝", "Check the pack first"),
