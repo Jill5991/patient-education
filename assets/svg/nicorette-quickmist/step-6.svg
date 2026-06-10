@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" fill="none">
+  <rect width="640" height="420" fill="white"/>
+  <g stroke="#1F1F1F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 322h440"/>
+    <path d="M130 322V112"/>
+    <rect x="162" y="154" width="84" height="168" rx="8" fill="#BFD99A" stroke="#27500A"/>
+    <rect x="288" y="210" width="84" height="112" rx="8" fill="#D8E8BC" stroke="#27500A"/>
+    <rect x="414" y="266" width="84" height="56" rx="8" fill="#EAF3DE" stroke="#27500A"/>
+  </g>
+  <g fill="#173404" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+    <text x="166" y="145">週 1-6</text>
+    <text x="294" y="201">週 7-9</text>
+    <text x="418" y="257">週 10-12</text>
+    <text x="407" y="360">＜ 4 / day</text>
+  </g>
+</svg>

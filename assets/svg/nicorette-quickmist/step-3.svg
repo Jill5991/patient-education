@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" fill="none">
+  <rect width="640" height="420" fill="white"/>
+  <g stroke="#1F1F1F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="210" cy="205" r="90"/>
+    <path d="M150 175l120 60"/>
+    <path d="M270 175l-120 60"/>
+    <path d="M378 125a90 90 0 1 1 0 160"/>
+    <path d="M378 125a90 90 0 0 0 0 160"/>
+    <path d="M414 182c-9 10-14 24-14 39"/>
+    <path d="M452 148c-17 18-26 43-26 69"/>
+  </g>
+  <g fill="#27500A" font-family="Arial, sans-serif" font-size="28" font-weight="700">
+    <text x="167" y="214">勿吞</text>
+    <text x="376" y="215">幾秒</text>
+  </g>
+</svg>

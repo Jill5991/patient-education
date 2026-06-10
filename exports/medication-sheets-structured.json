@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T01:18:17.420Z",
+  "generatedAt": "2026-06-08T15:18:46.292Z",
   "sourceFile": "index.html",
   "languages": [
     {
@@ -32,11 +32,11 @@
     }
   ],
   "totals": {
-    "medications": 139,
-    "pages": 164,
-    "steps": 939,
-    "warnings": 457,
-    "uniqueIllustrationRefs": 332,
+    "medications": 140,
+    "pages": 165,
+    "steps": 946,
+    "warnings": 460,
+    "uniqueIllustrationRefs": 339,
     "categories": {
       "eye": 4,
       "oral": 15,
@@ -44,7 +44,7 @@
       "supp": 9,
       "inhaler": 18,
       "topical": 47,
-      "smoking": 6,
+      "smoking": 7,
       "other": 1,
       "nasal": 9,
       "inject": 13,
@@ -28868,6 +28868,381 @@
                 "th": "ห้ามใช้เกินวันละ 20 เม็ด หากครบ 12 สัปดาห์แล้วยังหยุดไม่ได้ ให้แจ้งแพทย์",
                 "tl": "Huwag hihigit sa 20 lozenge bawat araw. Sabihin sa doktor kung hindi ka pa rin makahinto pagkalipas ng 12 linggo.",
                 "ja": "1日20錠を超えて使わない。12週後もやめられない場合は医師に伝える。"
+              },
+              "highlight": false
+            }
+          ],
+          "qrUrl": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=3805&lang=zh-TW"
+        }
+      ]
+    },
+    {
+      "id": "nicorette-quickmist",
+      "category": "smoking",
+      "categoryLabel": {
+        "zh-TW": "戒菸用藥",
+        "en": "Smoking Cessation",
+        "id": "Berhenti Merokok",
+        "vi": "Cai thuốc",
+        "th": "เลิกบุหรี่",
+        "tl": "Smoking Cessation",
+        "ja": "禁煙補助"
+      },
+      "emergency": false,
+      "emergencyLabel": null,
+      "name": {
+        "zh-TW": "尼古清戒菸噴霧",
+        "en": "Nicorette QuickMist",
+        "id": "Nicorette QuickMist",
+        "vi": "Nicorette QuickMist",
+        "th": "Nicorette QuickMist",
+        "tl": "Nicorette QuickMist",
+        "ja": "ニコレット クイックミスト"
+      },
+      "subtitle": {
+        "zh-TW": "Nicorette QuickMist | Nicotine mouth spray | 1 mg/噴 | 150 噴/瓶",
+        "en": "Nicorette QuickMist | Nicotine mouth spray | 1 mg/spray | 150 sprays/bottle",
+        "id": "Nicorette QuickMist | Semprotan mulut nikotin | 1 mg/semprot | 150 semprot/botol",
+        "vi": "Nicorette QuickMist | Xịt miệng nicotine | 1 mg/lần xịt | 150 lần xịt/chai",
+        "th": "Nicorette QuickMist | สเปรย์พ่นในช่องปากนิโคติน | 1 mg/พ่น | 150 พ่น/ขวด",
+        "tl": "Nicorette QuickMist | Nicotine mouth spray | 1 mg/spray | 150 sprays/bottle",
+        "ja": "Nicorette QuickMist | ニコチン口腔スプレー | 1 mg/噴霧 | 150回/本"
+      },
+      "headerBadge": null,
+      "badge": {
+        "zh-TW": "NRT 口腔噴霧",
+        "en": "NRT Mouth Spray",
+        "id": "Semprotan Mulut NRT",
+        "vi": "Xịt miệng NRT",
+        "th": "สเปรย์พ่นในช่องปาก NRT",
+        "tl": "NRT Mouth Spray",
+        "ja": "NRT 口腔スプレー"
+      },
+      "usage": {
+        "zh-TW": "想抽菸時再噴，不要同時吸菸",
+        "en": "Spray it when a craving starts. Do not smoke while using it.",
+        "id": "Semprot saat keinginan merokok muncul. Jangan merokok pada saat yang sama.",
+        "vi": "Xịt khi lên cơn thèm thuốc. Không hút thuốc cùng lúc.",
+        "th": "พ่นเมื่ออยากสูบบุหรี่ และห้ามสูบพร้อมกัน",
+        "tl": "I-spray kapag may pagnanasa sa sigarilyo. Huwag manigarilyo habang ginagamit ito.",
+        "ja": "吸いたくなった時に噴霧する。同時に喫煙しない。"
+      },
+      "color": {
+        "main": "#27500A",
+        "light": "#EAF3DE",
+        "dark": "#173404",
+        "badge": "#97C459",
+        "badgeText": "#173404"
+      },
+      "qrUrl": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=3805&lang=zh-TW",
+      "pages": [
+        {
+          "pageIndex": 0,
+          "pageKey": "main",
+          "pageLabel": null,
+          "headerBadge": null,
+          "badge": {
+            "zh-TW": "NRT 口腔噴霧",
+            "en": "NRT Mouth Spray",
+            "id": "Semprotan Mulut NRT",
+            "vi": "Xịt miệng NRT",
+            "th": "สเปรย์พ่นในช่องปาก NRT",
+            "tl": "NRT Mouth Spray",
+            "ja": "NRT 口腔スプレー"
+          },
+          "usage": {
+            "zh-TW": "想抽菸時再噴，不要同時吸菸",
+            "en": "Spray it when a craving starts. Do not smoke while using it.",
+            "id": "Semprot saat keinginan merokok muncul. Jangan merokok pada saat yang sama.",
+            "vi": "Xịt khi lên cơn thèm thuốc. Không hút thuốc cùng lúc.",
+            "th": "พ่นเมื่ออยากสูบบุหรี่ และห้ามสูบพร้อมกัน",
+            "tl": "I-spray kapag may pagnanasa sa sigarilyo. Huwag manigarilyo habang ginagamit ito.",
+            "ja": "吸いたくなった時に噴霧する。同時に喫煙しない。"
+          },
+          "preStepsInfo": {
+            "title": {
+              "zh-TW": "先知道 2 件事",
+              "en": "Know these 2 things first",
+              "id": "Ketahui 2 hal ini lebih dulu",
+              "vi": "Biết trước 2 điều này",
+              "th": "รู้ 2 เรื่องนี้ก่อน",
+              "tl": "Alamin muna ang 2 bagay na ito",
+              "ja": "先に2つ確認"
+            },
+            "text": {
+              "zh-TW": "這是尼古丁替代療法，幫你減少想抽菸的感覺。\n使用期間不要同時吸菸，也不要合併其他尼古丁產品。",
+              "en": "This is nicotine replacement therapy that helps reduce cravings.\nDo not smoke or use other nicotine products at the same time.",
+              "id": "Ini adalah terapi pengganti nikotin untuk membantu mengurangi keinginan merokok.\nJangan merokok atau memakai produk nikotin lain pada saat yang sama.",
+              "vi": "Đây là liệu pháp thay thế nicotine giúp giảm cơn thèm thuốc.\nKhông hút thuốc hay dùng thêm sản phẩm nicotine khác cùng lúc.",
+              "th": "นี่คือการทดแทนนิโคตินเพื่อช่วยลดความอยากบุหรี่\nห้ามสูบบุหรี่หรือใช้ผลิตภัณฑ์นิโคตินอื่นพร้อมกัน",
+              "tl": "Nicotine replacement therapy ito para mabawasan ang pagnanasa sa sigarilyo.\nHuwag manigarilyo o gumamit ng ibang nicotine product habang ginagamit ito.",
+              "ja": "ニコチンへの欲求を減らすためのニコチン代替療法です。\n使用中は喫煙したり、他のニコチン製品を併用したりしない。"
+            },
+            "html": null,
+            "tone": {
+              "bg": "#E6F1FB",
+              "border": "#185FA5",
+              "text": "#042C53"
+            }
+          },
+          "steps": [
+            {
+              "index": 0,
+              "section": null,
+              "action": {
+                "zh-TW": "首次使用前先朝空氣噴 3 下",
+                "en": "Before first use, spray 3 times into the air",
+                "id": "Sebelum pemakaian pertama, semprot 3 kali ke udara",
+                "vi": "Trước lần đầu dùng, xịt 3 lần vào không khí",
+                "th": "ก่อนใช้ครั้งแรก พ่นขึ้นสู่อากาศ 3 ครั้ง",
+                "tl": "Bago unang gamitin, mag-spray sa hangin nang 3 beses",
+                "ja": "初回使用前に空中へ3回噴霧する"
+              },
+              "note": {
+                "zh-TW": "勿朝人、兒童或動物噴；超過 2 天未用時，也要重新啟動。",
+                "en": "Do not aim at people, children, or animals. Prime it again if you have not used it for more than 2 days.",
+                "id": "Jangan arahkan ke orang, anak-anak, atau hewan. Lakukan priming lagi bila tidak dipakai lebih dari 2 hari.",
+                "vi": "Không xịt vào người, trẻ em hoặc vật nuôi. Nếu không dùng quá 2 ngày, hãy khởi động lại.",
+                "th": "ห้ามพ่นใส่คน เด็ก หรือสัตว์ และหากไม่ได้ใช้เกิน 2 วัน ต้องพ่นไล่อีกครั้ง",
+                "tl": "Huwag ituon sa tao, bata, o hayop. I-prime muli kung hindi nagamit nang lampas 2 araw.",
+                "ja": "人、子ども、動物へ向けない。2日を超えて使っていない時も再度プライミングする。"
+              },
+              "highlight": true,
+              "illustration": {
+                "src": "assets/svg/nicorette-quickmist/step-0.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 1,
+              "section": null,
+              "action": {
+                "zh-TW": "打開噴嘴鎖扣",
+                "en": "Open the spray lock",
+                "id": "Buka kunci semprot",
+                "vi": "Mở khóa đầu xịt",
+                "th": "เปิดตัวล็อกหัวพ่น",
+                "tl": "Buksan ang lock ng spray",
+                "ja": "スプレーロックを開ける"
+              },
+              "note": {
+                "zh-TW": "向下拉按鈕、向內按壓後向上輕推；用完再照相反方向關回去。",
+                "en": "Pull the button down, press in, then slide it up. Close it again in the opposite direction after use.",
+                "id": "Tarik tombol ke bawah, tekan ke dalam, lalu dorong ke atas. Setelah dipakai, tutup kembali dengan arah sebaliknya.",
+                "vi": "Kéo nút xuống, ấn vào rồi đẩy lên. Sau khi dùng xong, đóng lại theo chiều ngược lại.",
+                "th": "ดึงปุ่มลง กดเข้า แล้วเลื่อนขึ้น หลังใช้เสร็จให้ปิดกลับตามทิศทางตรงข้าม",
+                "tl": "Hilain pababa ang button, idiin paloob, saka itulak paitaas. Isara muli sa kabaligtarang direksiyon pagkatapos gamitin.",
+                "ja": "ボタンを下へ引き、内側へ押してから上へスライドする。使用後は逆の向きで閉じる。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/nicorette-quickmist/step-1.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 2,
+              "section": null,
+              "action": {
+                "zh-TW": "嘴微開，朝口腔兩側或舌下噴 1 下",
+                "en": "With your mouth slightly open, spray 1 time toward the inside of the cheek or under the tongue",
+                "id": "Buka mulut sedikit, semprot 1 kali ke sisi dalam mulut atau bawah lidah",
+                "vi": "Hé miệng nhẹ, xịt 1 lần vào mặt trong má hoặc dưới lưỡi",
+                "th": "อ้าปากเล็กน้อย พ่น 1 ครั้งไปที่กระพุ้งแก้มหรือใต้ลิ้น",
+                "tl": "Bahagyang ibuka ang bibig at mag-spray ng 1 beses sa loob ng pisngi o ilalim ng dila",
+                "ja": "口を少し開け、頬の内側または舌の下へ1回噴霧する"
+              },
+              "note": {
+                "zh-TW": "避免噴到嘴唇，也不要朝喉嚨噴。",
+                "en": "Avoid the lips, and do not spray toward the throat.",
+                "id": "Hindari bibir dan jangan semprot ke arah tenggorokan.",
+                "vi": "Tránh xịt vào môi và không xịt vào họng.",
+                "th": "หลีกเลี่ยงริมฝีปาก และอย่าพ่นเข้าคอ",
+                "tl": "Iwasan ang labi at huwag i-spray papuntang lalamunan.",
+                "ja": "唇を避け、のどへ向けて噴霧しない。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/nicorette-quickmist/step-2.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 3,
+              "section": null,
+              "action": {
+                "zh-TW": "噴後數秒內不要吞口水，也不要吸氣",
+                "en": "For the next few seconds, do not swallow and do not breathe in",
+                "id": "Selama beberapa detik setelah semprot, jangan menelan dan jangan menarik napas",
+                "vi": "Trong vài giây sau khi xịt, đừng nuốt và đừng hít vào",
+                "th": "ในช่วงไม่กี่วินาทีหลังพ่น อย่ากลืนน้ำลายและอย่าสูดหายใจเข้า",
+                "tl": "Sa loob ng ilang segundo pagkatapos mag-spray, huwag lumunok at huwag huminga paloob",
+                "ja": "噴霧後の数秒間は飲み込まず、吸い込まない"
+              },
+              "note": {
+                "zh-TW": "讓藥液在口腔黏膜自然吸收。",
+                "en": "Let the medicine absorb naturally through the lining of the mouth.",
+                "id": "Biarkan obat diserap alami melalui lapisan mulut.",
+                "vi": "Để thuốc hấp thu tự nhiên qua niêm mạc miệng.",
+                "th": "ปล่อยให้ยาดูดซึมผ่านเยื่อบุในช่องปากตามธรรมชาติ",
+                "tl": "Hayaang natural na ma-absorb ang gamot sa lining ng bibig.",
+                "ja": "薬液を口の粘膜から自然に吸収させる。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/nicorette-quickmist/step-3.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 4,
+              "section": null,
+              "action": {
+                "zh-TW": "噴藥前後先不要吃喝",
+                "en": "Do not eat or drink right before or right after spraying",
+                "id": "Jangan makan atau minum tepat sebelum atau sesudah semprot",
+                "vi": "Không ăn uống ngay trước hoặc ngay sau khi xịt",
+                "th": "อย่ากินหรือดื่มทันทีก่อนหรือหลังพ่นยา",
+                "tl": "Huwag kumain o uminom kaagad bago o pagkatapos mag-spray",
+                "ja": "噴霧の直前直後は飲食しない"
+              },
+              "note": {
+                "zh-TW": "包含喝水也先暫停。",
+                "en": "That includes water.",
+                "id": "Termasuk air putih.",
+                "vi": "Bao gồm cả nước lọc.",
+                "th": "รวมถึงน้ำเปล่าด้วย",
+                "tl": "Kasama rito ang tubig.",
+                "ja": "水も含む。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/nicorette-quickmist/step-4.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 5,
+              "section": null,
+              "action": {
+                "zh-TW": "有菸癮時先噴 1 下",
+                "en": "When a craving starts, spray 1 time first",
+                "id": "Saat ingin merokok, semprot 1 kali dulu",
+                "vi": "Khi thèm thuốc, hãy xịt 1 lần trước",
+                "th": "เมื่ออยากสูบบุหรี่ ให้พ่น 1 ครั้งก่อน",
+                "tl": "Kapag may pagnanasa sa sigarilyo, mag-spray muna ng 1 beses",
+                "ja": "吸いたくなったらまず1回噴霧する"
+              },
+              "note": {
+                "zh-TW": "數分鐘後仍想抽，再噴第 2 下。每次最多 2 噴；每小時最多 4 噴；每天最多 64 噴。",
+                "en": "If you still want to smoke after a few minutes, spray a second time. Use no more than 2 sprays at one time, 4 sprays in an hour, or 64 sprays in a day.",
+                "id": "Bila beberapa menit kemudian masih ingin merokok, semprot lagi 1 kali. Maksimal 2 semprotan tiap kali, 4 semprotan per jam, dan 64 semprotan per hari.",
+                "vi": "Nếu vài phút sau vẫn còn thèm, xịt thêm 1 lần nữa. Mỗi lần tối đa 2 nhát, mỗi giờ tối đa 4 nhát và mỗi ngày tối đa 64 nhát.",
+                "th": "หากผ่านไปไม่กี่นาทียังอยากสูบ ให้พ่นเพิ่มอีก 1 ครั้ง แต่ไม่เกินครั้งละ 2 พ่น ชั่วโมงละ 4 พ่น และวันละ 64 พ่น",
+                "tl": "Kung gusto mo pa ring manigarilyo makalipas ang ilang minuto, mag-spray ulit ng isa pa. Huwag hihigit sa 2 spray bawat gamit, 4 spray bawat oras, o 64 spray bawat araw.",
+                "ja": "数分後も吸いたければ2回目を噴霧する。1回で最大2噴霧、1時間で最大4噴霧、1日で最大64噴霧まで。"
+              },
+              "highlight": true,
+              "illustration": {
+                "src": "assets/svg/nicorette-quickmist/step-5.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 6,
+              "section": null,
+              "action": {
+                "zh-TW": "第 1–6 週按需用，第 7 週起慢慢減量",
+                "en": "Use as needed during weeks 1-6, then slowly cut down from week 7",
+                "id": "Gunakan sesuai kebutuhan pada minggu 1-6, lalu kurangi perlahan mulai minggu ke-7",
+                "vi": "Dùng khi cần trong tuần 1-6, rồi giảm dần từ tuần 7",
+                "th": "สัปดาห์ที่ 1-6 ใช้ตามอาการ แล้วค่อย ๆ ลดลงตั้งแต่สัปดาห์ที่ 7",
+                "tl": "Gamitin kung kailangan sa linggo 1-6, saka dahan-dahang bawasan simula linggo 7",
+                "ja": "1〜6週は必要時に使い、7週目から少しずつ減らす"
+              },
+              "note": {
+                "zh-TW": "降到每天 4 噴以下後停用。建議療程 12 週；若超過 6 個月仍需使用，請諮詢醫師或藥師。",
+                "en": "Stop when you are down to fewer than 4 sprays a day. The usual course is 12 weeks. Ask your doctor or pharmacist if you still need it after 6 months.",
+                "id": "Hentikan saat pemakaian sudah kurang dari 4 semprotan per hari. Lama pemakaian biasanya 12 minggu. Tanyakan ke dokter atau apoteker bila setelah 6 bulan masih perlu menggunakannya.",
+                "vi": "Ngừng khi đã giảm xuống dưới 4 nhát mỗi ngày. Liệu trình thường là 12 tuần. Hãy hỏi bác sĩ hoặc dược sĩ nếu sau 6 tháng bạn vẫn còn cần dùng.",
+                "th": "เมื่อเหลือน้อยกว่า 4 พ่นต่อวันแล้วให้หยุด โดยทั่วไปใช้ประมาณ 12 สัปดาห์ หากเกิน 6 เดือนแล้วยังต้องใช้ ให้ปรึกษาแพทย์หรือเภสัชกร",
+                "tl": "Itigil kapag bumaba na sa mas kaunti sa 4 spray bawat araw. Karaniwang 12 linggo ang gamutan. Kumonsulta sa doktor o parmasyutiko kung kailangan mo pa rin ito pagkalipas ng 6 na buwan.",
+                "ja": "1日4噴霧未満まで減らせたら中止する。通常の使用期間は12週。6か月を超えても必要なら医師または薬剤師に相談する。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/nicorette-quickmist/step-6.svg",
+                "alt": null
+              },
+              "afterBox": null
+            }
+          ],
+          "infoBoxes": [],
+          "storage": {
+            "title": {
+              "zh-TW": "藥品保存",
+              "en": "Storage",
+              "id": "Penyimpanan",
+              "vi": "Bảo quản",
+              "th": "การเก็บรักษา",
+              "tl": "Imbakan",
+              "ja": "保管方法"
+            },
+            "text": {
+              "zh-TW": "置室溫（≤25°C），避免陽光直射。\n開封後 6 個月內使用完畢。\n放在兒童及寵物拿不到的地方。",
+              "en": "Store at room temperature (≤25°C) and keep away from direct sunlight.\nUse it within 6 months after opening.\nKeep it out of reach of children and pets.",
+              "id": "Simpan pada suhu ruang (≤25°C) dan jauhkan dari sinar matahari langsung.\nGunakan dalam 6 bulan setelah dibuka.\nJauhkan dari anak-anak dan hewan peliharaan.",
+              "vi": "Bảo quản ở nhiệt độ phòng (≤25°C), tránh ánh nắng trực tiếp.\nDùng hết trong vòng 6 tháng sau khi mở.\nĐể xa trẻ em và vật nuôi.",
+              "th": "เก็บที่อุณหภูมิห้อง (≤25°C) หลีกเลี่ยงแสงแดดโดยตรง\nใช้ให้หมดภายใน 6 เดือนหลังเปิดใช้\nเก็บให้พ้นมือเด็กและสัตว์เลี้ยง",
+              "tl": "Itago sa room temperature (≤25°C) at ilayo sa direktang sikat ng araw.\nGamitin sa loob ng 6 na buwan matapos buksan.\nIlayo sa mga bata at alagang hayop.",
+              "ja": "室温（≤25°C）で保管し、直射日光を避ける。\n開封後6か月以内に使い切る。\n子どもやペットの手の届かないところに保管する。"
+            },
+            "html": null,
+            "tone": null
+          },
+          "warnings": [
+            {
+              "index": 0,
+              "text": {
+                "zh-TW": "使用期間完全停止吸菸；同時吸菸可能造成尼古丁過量。",
+                "en": "Stop smoking completely while using it. Smoking at the same time may cause nicotine overdose.",
+                "id": "Hentikan merokok sepenuhnya saat menggunakannya. Merokok bersamaan dapat menyebabkan kelebihan nikotin.",
+                "vi": "Ngừng hút thuốc hoàn toàn trong thời gian dùng. Vẫn hút thuốc cùng lúc có thể gây quá liều nicotine.",
+                "th": "ระหว่างใช้ต้องหยุดสูบบุหรี่ทั้งหมด เพราะการสูบร่วมกันอาจทำให้นิโคตินเกินขนาด",
+                "tl": "Ganap na tumigil sa paninigarilyo habang ginagamit ito. Ang sabay na paninigarilyo ay maaaring magdulot ng sobrang nicotine.",
+                "ja": "使用中は完全に禁煙する。同時に喫煙するとニコチン過量の原因になることがある。"
+              },
+              "highlight": false
+            },
+            {
+              "index": 1,
+              "text": {
+                "zh-TW": "18 歲以下、從未吸菸者、對尼古丁過敏者禁用。",
+                "en": "Do not use it if you are under 18, have never smoked, or are allergic to nicotine.",
+                "id": "Jangan gunakan bila berusia di bawah 18 tahun, belum pernah merokok, atau alergi terhadap nikotin.",
+                "vi": "Không dùng nếu dưới 18 tuổi, chưa từng hút thuốc hoặc dị ứng với nicotine.",
+                "th": "ห้ามใช้ในผู้ที่อายุต่ำกว่า 18 ปี ไม่เคยสูบบุหรี่ หรือแพ้นิโคติน",
+                "tl": "Huwag gamitin kung wala ka pang 18 taong gulang, hindi ka pa kailanman nanigarilyo, o alerdyi ka sa nicotine.",
+                "ja": "18歳未満、喫煙歴がない人、ニコチンにアレルギーがある人は使わない。"
+              },
+              "highlight": false
+            },
+            {
+              "index": 2,
+              "text": {
+                "zh-TW": "懷孕或哺乳中先問醫師；若在哺乳中，建議哺乳後立刻使用，下次哺乳前至少間隔 2 小時。",
+                "en": "Ask your doctor before use if you are pregnant or breastfeeding. If you are breastfeeding, use it right after feeding and wait at least 2 hours before the next feed.",
+                "id": "Tanyakan ke dokter sebelum memakai bila sedang hamil atau menyusui. Bila menyusui, gunakan segera setelah menyusui dan beri jeda setidaknya 2 jam sebelum menyusui lagi.",
+                "vi": "Hãy hỏi bác sĩ trước khi dùng nếu đang mang thai hoặc cho con bú. Nếu đang cho con bú, dùng ngay sau khi cho bú và chờ ít nhất 2 giờ trước lần bú tiếp theo.",
+                "th": "หากตั้งครรภ์หรือให้นมบุตร ให้ปรึกษาแพทย์ก่อนใช้ และหากให้นมอยู่ ควรใช้ทันทีหลังให้นม แล้วเว้นอย่างน้อย 2 ชั่วโมงก่อนให้นมครั้งถัดไป",
+                "tl": "Magtanong muna sa doktor kung buntis o nagpapasuso. Kung nagpapasuso, gamitin ito kaagad pagkatapos magpasuso at maghintay nang hindi bababa sa 2 oras bago ang susunod na pagpapasuso.",
+                "ja": "妊娠中または授乳中は使用前に医師へ相談する。授乳中は授乳直後に使い、次の授乳までは少なくとも2時間あける。"
               },
               "highlight": false
             }
