@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T15:18:46.292Z",
+  "generatedAt": "2026-06-18T00:44:17.280Z",
   "sourceFile": "index.html",
   "languages": [
     {
@@ -30301,13 +30301,13 @@
         "ja": "内服抗ウイルス薬"
       },
       "usage": {
-        "zh-TW": "依藥袋標示的毫升數服用",
-        "en": "Take the number of mL written on the label",
-        "id": "Minum sesuai jumlah mL yang tertulis pada etiket",
-        "vi": "Uống đúng số mL ghi trên nhãn thuốc",
-        "th": "รับประทานตามจำนวนมิลลิลิตรที่ระบุบนฉลากยา",
-        "tl": "Inumin ang dami ng mL na nakasulat sa label",
-        "ja": "薬袋に書かれたmL量を服用"
+        "zh-TW": "依藥袋標示的毫升數服用；兒童常見是 2 / 3 / 4 mL",
+        "en": "Take the number of mL written on the label. Common pediatric doses are 2, 3, or 4 mL.",
+        "id": "Minum sesuai jumlah mL yang tertulis pada etiket. Dosis anak yang sering dipakai adalah 2, 3, atau 4 mL.",
+        "vi": "Uống đúng số mL ghi trên nhãn thuốc. Liều trẻ em thường gặp là 2, 3 hoặc 4 mL.",
+        "th": "รับประทานตามจำนวนมิลลิลิตรที่ระบุบนฉลากยา โดยในเด็กมักพบขนาด 2 / 3 / 4 mL",
+        "tl": "Inumin ang dami ng mL na nakasulat sa label. Karaniwang dose sa bata ay 2, 3, o 4 mL.",
+        "ja": "薬袋に書かれたmL量を服用する。小児でよくある量は2・3・4 mL。"
       },
       "color": {
         "main": "#0F6E56",
@@ -30341,13 +30341,13 @@
             "ja": "内服抗ウイルス薬"
           },
           "usage": {
-            "zh-TW": "依藥袋標示的毫升數服用",
-            "en": "Take the number of mL written on the label",
-            "id": "Minum sesuai jumlah mL yang tertulis pada etiket",
-            "vi": "Uống đúng số mL ghi trên nhãn thuốc",
-            "th": "รับประทานตามจำนวนมิลลิลิตรที่ระบุบนฉลากยา",
-            "tl": "Inumin ang dami ng mL na nakasulat sa label",
-            "ja": "薬袋に書かれたmL量を服用"
+            "zh-TW": "依藥袋標示的毫升數服用；兒童常見是 2 / 3 / 4 mL",
+            "en": "Take the number of mL written on the label. Common pediatric doses are 2, 3, or 4 mL.",
+            "id": "Minum sesuai jumlah mL yang tertulis pada etiket. Dosis anak yang sering dipakai adalah 2, 3, atau 4 mL.",
+            "vi": "Uống đúng số mL ghi trên nhãn thuốc. Liều trẻ em thường gặp là 2, 3 hoặc 4 mL.",
+            "th": "รับประทานตามจำนวนมิลลิลิตรที่ระบุบนฉลากยา โดยในเด็กมักพบขนาด 2 / 3 / 4 mL",
+            "tl": "Inumin ang dami ng mL na nakasulat sa label. Karaniwang dose sa bata ay 2, 3, o 4 mL.",
+            "ja": "薬袋に書かれたmL量を服用する。小児でよくある量は2・3・4 mL。"
           },
           "preStepsInfo": {
             "title": {
@@ -30389,13 +30389,13 @@
                 "ja": "薬袋に書かれた数のカプセルを開ける"
               },
               "note": {
-                "zh-TW": "顆數和加水量都照藥袋；丟掉膠囊外殼。",
-                "en": "Follow the label for both the number of capsules and the water amount. Throw away the empty capsule shells.",
-                "id": "Ikuti etiket untuk jumlah kapsul dan jumlah air. Buang kulit kapsul yang kosong.",
-                "vi": "Làm theo nhãn thuốc về số viên nang và lượng nước. Bỏ vỏ nang sau khi đổ hết thuốc bột.",
-                "th": "ให้ยึดตามฉลากยาทั้งจำนวนแคปซูลและปริมาณน้ำ แล้วทิ้งเปลือกแคปซูล",
-                "tl": "Sundin ang label para sa bilang ng kapsula at dami ng tubig. Itapon ang walang lamang kapsula.",
-                "ja": "カプセル数も加える水量も薬袋に従う。空のカプセル殻は捨てる。"
+                "zh-TW": "兒童常見是 4 / 6 / 8 顆；成人或 >40 kg 常見是 10 顆。倒完藥粉後丟掉膠囊外殼。",
+                "en": "Children often use 4, 6, or 8 capsules. Adults or children over 40 kg often use 10 capsules. Throw away the empty capsule shells after emptying them.",
+                "id": "Pada anak, jumlah yang sering dipakai adalah 4, 6, atau 8 kapsul. Pada dewasa atau anak di atas 40 kg, sering dipakai 10 kapsul. Buang kulit kapsul yang kosong setelah bubuk dikeluarkan.",
+                "vi": "Trẻ em thường dùng 4, 6 hoặc 8 viên nang. Người lớn hoặc trẻ trên 40 kg thường dùng 10 viên nang. Sau khi đổ hết thuốc bột, bỏ vỏ nang đi.",
+                "th": "ในเด็กมักใช้ 4 / 6 / 8 แคปซูล ส่วนผู้ใหญ่หรือเด็กที่มากกว่า 40 กก. มักใช้ 10 แคปซูล เทผงยาออกแล้วทิ้งเปลือกแคปซูล",
+                "tl": "Sa bata, karaniwang 4, 6, o 8 kapsula ang gamit. Sa adulto o batang lampas 40 kg, karaniwang 10 kapsula. Itapon ang walang lamang kapsula pagkatapos maibuhos ang pulbos.",
+                "ja": "小児では4・6・8個が多く、大人または40 kg超では10個が多い。薬粉を出したら空のカプセル殻は捨てる。"
               },
               "highlight": false,
               "illustration": {
@@ -30445,13 +30445,13 @@
                 "ja": "指定されたmLの冷ました湯冷ましを加える"
               },
               "note": {
-                "zh-TW": "常見是 20 / 30 / 40 / 50 mL；只用冷開水，不要自己猜。",
-                "en": "Common amounts are 20, 30, 40, or 50 mL. Use only cooled boiled water and do not guess the amount.",
-                "id": "Jumlah yang umum adalah 20, 30, 40, atau 50 mL. Gunakan hanya air matang dingin dan jangan menebak-nebak jumlahnya.",
-                "vi": "Các mức thường gặp là 20, 30, 40 hoặc 50 mL. Chỉ dùng nước đun sôi để nguội và đừng tự đoán lượng nước.",
-                "th": "ปริมาณที่พบบ่อยคือ 20, 30, 40 หรือ 50 มล. ใช้น้ำต้มสุกที่เย็นแล้วเท่านั้น และอย่ากะปริมาณเอง",
-                "tl": "Karaniwang 20, 30, 40, o 50 mL ang dami. Pinalamig na pinakuluang tubig lang ang gamitin at huwag manghula ng dami.",
-                "ja": "20・30・40・50 mLがよくある量。必ず湯冷ましを使い、量を自己判断で変えない。"
+                "zh-TW": "兒童常見是 20 / 30 / 40 mL，對應每次 2 / 3 / 4 mL；成人常見是 50 mL。只用冷開水，不要自己猜。",
+                "en": "In children, common amounts are 20, 30, and 40 mL, which match 2, 3, and 4 mL per dose. In adults, 50 mL is common. Use only cooled boiled water and do not guess the amount.",
+                "id": "Pada anak, jumlah yang sering dipakai adalah 20, 30, dan 40 mL, yang sesuai dengan 2, 3, dan 4 mL per dosis. Pada dewasa, 50 mL sering dipakai. Gunakan hanya air matang dingin dan jangan menebak-nebak jumlahnya.",
+                "vi": "Ở trẻ em, các mức thường gặp là 20, 30 và 40 mL, tương ứng mỗi lần 2, 3 và 4 mL. Ở người lớn, 50 mL là mức thường gặp. Chỉ dùng nước đun sôi để nguội và đừng tự đoán lượng nước.",
+                "th": "ในเด็กปริมาณที่พบบ่อยคือ 20 / 30 / 40 mL ซึ่งตรงกับครั้งละ 2 / 3 / 4 mL ส่วนผู้ใหญ่มักใช้ 50 mL ใช้น้ำต้มสุกที่เย็นแล้วเท่านั้น และอย่ากะปริมาณเอง",
+                "tl": "Sa bata, karaniwang 20, 30, at 40 mL ang dami, na katumbas ng 2, 3, at 4 mL bawat dose. Sa adulto, karaniwang 50 mL. Pinalamig na pinakuluang tubig lang ang gamitin at huwag manghula ng dami.",
+                "ja": "小児では20・30・40 mLが多く、それぞれ1回2・3・4 mLに対応する。大人では50 mLが多い。必ず湯冷ましを使い、量を自己判断で変えない。"
               },
               "highlight": true,
               "illustration": {
@@ -30520,22 +30520,22 @@
           "infoBoxes": [
             {
               "title": {
-                "zh-TW": "15 mg/mL 換算",
-                "en": "15 mg/mL quick guide",
-                "id": "Panduan singkat 15 mg/mL",
-                "vi": "Ghi nhớ nhanh 15 mg/mL",
-                "th": "สรุป 15 mg/mL",
-                "tl": "15 mg/mL quick guide",
-                "ja": "15 mg/mL の早見表"
+                "zh-TW": "依照體重決定劑量",
+                "en": "Dose by body weight",
+                "id": "Dosis berdasarkan berat badan",
+                "vi": "Liều theo cân nặng",
+                "th": "ขนาดยาตามน้ำหนักตัว",
+                "tl": "Dose ayon sa timbang",
+                "ja": "体重ごとの用量"
               },
               "text": {
-                "zh-TW": "2 mL = 30 mg；3 mL = 45 mg；4 mL = 60 mg；5 mL = 75 mg。\n若藥袋寫的是 mL，直接照 mL 量，不用自己換算。",
-                "en": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg.\nIf your label gives the dose in mL, just measure that mL amount. You do not need to calculate it yourself.",
-                "id": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg.\nBila etiket Anda menulis dosis dalam mL, cukup ukur sesuai mL tersebut. Anda tidak perlu menghitung sendiri.",
-                "vi": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg.\nNếu nhãn thuốc ghi bằng mL, chỉ cần đong đúng số mL đó, không cần tự tính lại.",
-                "th": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg\nหากฉลากยาระบุเป็น mL ให้ตวงตาม mL ที่เขียนไว้ได้เลย ไม่ต้องคำนวณเอง",
-                "tl": "2 mL = 30 mg; 3 mL = 45 mg; 4 mL = 60 mg; 5 mL = 75 mg.\nKung mL ang nakasulat sa label, sukatin lang ang daming iyon. Hindi mo kailangang ikaw pa ang magkalkula.",
-                "ja": "2 mL = 30 mg、3 mL = 45 mg、4 mL = 60 mg、5 mL = 75 mg。\n薬袋にmLで書かれていれば、そのmL量を量ればよく、自分で計算しなくてよい。"
+                "zh-TW": "<15 kg：4 顆 75 mg 膠囊，加 20 mL 水；每次喝 2 mL。\n\n15–23 kg：6 顆，加 30 mL 水；每次喝 3 mL。\n\n23–40 kg：8 顆，加 40 mL 水；每次喝 4 mL。\n\n>40 kg 或 ≥13 歲：10 顆，加 50 mL 水；每次喝 5 mL。",
+                "en": "<15 kg: Open 4 capsules of 75 mg, add 20 mL water, and give 2 mL each time.\n\n15-23 kg: Open 6 capsules, add 30 mL water, and give 3 mL each time.\n\n23-40 kg: Open 8 capsules, add 40 mL water, and give 4 mL each time.\n\n>40 kg or age 13 years and older: Open 10 capsules, add 50 mL water, and give 5 mL each time.",
+                "id": "<15 kg: Buka 4 kapsul 75 mg, tambahkan 20 mL air, lalu berikan 2 mL setiap kali minum.\n\n15-23 kg: Buka 6 kapsul, tambahkan 30 mL air, lalu berikan 3 mL setiap kali minum.\n\n23-40 kg: Buka 8 kapsul, tambahkan 40 mL air, lalu berikan 4 mL setiap kali minum.\n\n>40 kg atau usia 13 tahun ke atas: Buka 10 kapsul, tambahkan 50 mL air, lalu berikan 5 mL setiap kali minum.",
+                "vi": "<15 kg: Mở 4 viên nang 75 mg, thêm 20 mL nước, rồi cho uống 2 mL mỗi lần.\n\n15-23 kg: Mở 6 viên nang, thêm 30 mL nước, rồi cho uống 3 mL mỗi lần.\n\n23-40 kg: Mở 8 viên nang, thêm 40 mL nước, rồi cho uống 4 mL mỗi lần.\n\n>40 kg hoặc từ 13 tuổi trở lên: Mở 10 viên nang, thêm 50 mL nước, rồi cho uống 5 mL mỗi lần.",
+                "th": "<15 กก.: เปิด 4 แคปซูลขนาด 75 mg เติมน้ำ 20 mL แล้วให้ครั้งละ 2 mL\n\n15-23 กก.: เปิด 6 แคปซูล เติมน้ำ 30 mL แล้วให้ครั้งละ 3 mL\n\n23-40 กก.: เปิด 8 แคปซูล เติมน้ำ 40 mL แล้วให้ครั้งละ 4 mL\n\n>40 กก. หรืออายุ 13 ปีขึ้นไป: เปิด 10 แคปซูล เติมน้ำ 50 mL แล้วให้ครั้งละ 5 mL",
+                "tl": "<15 kg: Buksan ang 4 na kapsulang 75 mg, lagyan ng 20 mL na tubig, at painumin ng 2 mL bawat dose.\n\n15-23 kg: Buksan ang 6 na kapsula, lagyan ng 30 mL na tubig, at painumin ng 3 mL bawat dose.\n\n23-40 kg: Buksan ang 8 na kapsula, lagyan ng 40 mL na tubig, at painumin ng 4 mL bawat dose.\n\n>40 kg o edad 13 pataas: Buksan ang 10 kapsula, lagyan ng 50 mL na tubig, at painumin ng 5 mL bawat dose.",
+                "ja": "<15 kg：75 mgカプセルを4個開け、20 mLの水を加え、1回2 mL飲ませる。\n\n15-23 kg：6個開け、30 mLの水を加え、1回3 mL飲ませる。\n\n23-40 kg：8個開け、40 mLの水を加え、1回4 mL飲ませる。\n\n>40 kgまたは13歳以上：10個開け、50 mLの水を加え、1回5 mL飲ませる。"
               },
               "html": null,
               "tone": null
