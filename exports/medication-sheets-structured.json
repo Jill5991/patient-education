@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T00:44:17.280Z",
+  "generatedAt": "2026-06-18T01:16:44.284Z",
   "sourceFile": "index.html",
   "languages": [
     {
@@ -30349,32 +30349,7 @@
             "tl": "Inumin ang dami ng mL na nakasulat sa label. Karaniwang dose sa bata ay 2, 3, o 4 mL.",
             "ja": "薬袋に書かれたmL量を服用する。小児でよくある量は2・3・4 mL。"
           },
-          "preStepsInfo": {
-            "title": {
-              "zh-TW": "這張適用誰",
-              "en": "Who this sheet is for",
-              "id": "Lembar ini untuk siapa",
-              "vi": "Tờ này dành cho ai",
-              "th": "แผ่นนี้ใช้กับใคร",
-              "tl": "Para kanino ang gabay na ito",
-              "ja": "この用紙が当てはまる人"
-            },
-            "text": {
-              "zh-TW": "這張適用需要把膠囊泡成 15 mg/mL 懸液的照護者。若藥局已先幫你泡好，從「每次服前先搖勻」開始做即可。",
-              "en": "This sheet is for caregivers who need to turn capsules into a 15 mg/mL suspension. If the pharmacy already prepared it for you, start from “Shake before each dose.”",
-              "id": "Lembar ini untuk pendamping yang perlu membuat kapsul menjadi suspensi 15 mg/mL. Jika apotek sudah menyiapkannya, mulai dari langkah “Kocok sebelum setiap dosis.”",
-              "vi": "Tờ này dành cho người chăm sóc cần pha viên nang thành hỗn dịch 15 mg/mL. Nếu nhà thuốc đã pha sẵn, hãy bắt đầu từ bước “Lắc trước mỗi lần uống.”",
-              "th": "แผ่นนี้ใช้สำหรับผู้ดูแลที่ต้องเตรียมแคปซูลให้เป็นยาน้ำ 15 mg/mL หากร้านยาผสมให้แล้ว ให้เริ่มจากขั้น “เขย่าก่อนทุกครั้ง”",
-              "tl": "Ang gabay na ito ay para sa tagapag-alaga na kailangang gawing 15 mg/mL suspension ang kapsula. Kung naihanda na ito ng botika, magsimula sa “Iling muna bago bawat dosis.”",
-              "ja": "この用紙はカプセルを15 mg/mLの懸濁液に調製する介護者向け。薬局ですでに調製済みなら「毎回よく振る」から始めればよい。"
-            },
-            "html": null,
-            "tone": {
-              "bg": "#E6F1FB",
-              "border": "#185FA5",
-              "text": "#042C53"
-            }
-          },
+          "preStepsInfo": null,
           "steps": [
             {
               "index": 0,
@@ -30445,13 +30420,13 @@
                 "ja": "指定されたmLの冷ました湯冷ましを加える"
               },
               "note": {
-                "zh-TW": "兒童常見是 20 / 30 / 40 mL，對應每次 2 / 3 / 4 mL；成人常見是 50 mL。只用冷開水，不要自己猜。",
-                "en": "In children, common amounts are 20, 30, and 40 mL, which match 2, 3, and 4 mL per dose. In adults, 50 mL is common. Use only cooled boiled water and do not guess the amount.",
-                "id": "Pada anak, jumlah yang sering dipakai adalah 20, 30, dan 40 mL, yang sesuai dengan 2, 3, dan 4 mL per dosis. Pada dewasa, 50 mL sering dipakai. Gunakan hanya air matang dingin dan jangan menebak-nebak jumlahnya.",
-                "vi": "Ở trẻ em, các mức thường gặp là 20, 30 và 40 mL, tương ứng mỗi lần 2, 3 và 4 mL. Ở người lớn, 50 mL là mức thường gặp. Chỉ dùng nước đun sôi để nguội và đừng tự đoán lượng nước.",
-                "th": "ในเด็กปริมาณที่พบบ่อยคือ 20 / 30 / 40 mL ซึ่งตรงกับครั้งละ 2 / 3 / 4 mL ส่วนผู้ใหญ่มักใช้ 50 mL ใช้น้ำต้มสุกที่เย็นแล้วเท่านั้น และอย่ากะปริมาณเอง",
-                "tl": "Sa bata, karaniwang 20, 30, at 40 mL ang dami, na katumbas ng 2, 3, at 4 mL bawat dose. Sa adulto, karaniwang 50 mL. Pinalamig na pinakuluang tubig lang ang gamitin at huwag manghula ng dami.",
-                "ja": "小児では20・30・40 mLが多く、それぞれ1回2・3・4 mLに対応する。大人では50 mLが多い。必ず湯冷ましを使い、量を自己判断で変えない。"
+                "zh-TW": "□ <15 kg：4 顆 75 mg 膠囊，加 20 mL 水；每次喝 2 mL。\n□ 15–23 kg：6 顆，加 30 mL 水；每次喝 3 mL。\n□ 23–40 kg：8 顆，加 40 mL 水；每次喝 4 mL。\n□ >40 kg 或 ≥13 歲：10 顆，加 50 mL 水；每次喝 5 mL。",
+                "en": "□ <15 kg: Open 4 capsules of 75 mg, add 20 mL water, and give 2 mL each time.\n□ 15-23 kg: Open 6 capsules, add 30 mL water, and give 3 mL each time.\n□ 23-40 kg: Open 8 capsules, add 40 mL water, and give 4 mL each time.\n□ >40 kg or age 13 years and older: Open 10 capsules, add 50 mL water, and give 5 mL each time.",
+                "id": "□ <15 kg: Buka 4 kapsul 75 mg, tambahkan 20 mL air, lalu berikan 2 mL setiap kali minum.\n□ 15-23 kg: Buka 6 kapsul, tambahkan 30 mL air, lalu berikan 3 mL setiap kali minum.\n□ 23-40 kg: Buka 8 kapsul, tambahkan 40 mL air, lalu berikan 4 mL setiap kali minum.\n□ >40 kg atau usia 13 tahun ke atas: Buka 10 kapsul, tambahkan 50 mL air, lalu berikan 5 mL setiap kali minum.",
+                "vi": "□ <15 kg: Mở 4 viên nang 75 mg, thêm 20 mL nước, rồi cho uống 2 mL mỗi lần.\n□ 15-23 kg: Mở 6 viên nang, thêm 30 mL nước, rồi cho uống 3 mL mỗi lần.\n□ 23-40 kg: Mở 8 viên nang, thêm 40 mL nước, rồi cho uống 4 mL mỗi lần.\n□ >40 kg hoặc từ 13 tuổi trở lên: Mở 10 viên nang, thêm 50 mL nước, rồi cho uống 5 mL mỗi lần.",
+                "th": "□ <15 กก.: เปิด 4 แคปซูลขนาด 75 mg เติมน้ำ 20 mL แล้วให้ครั้งละ 2 mL\n□ 15-23 กก.: เปิด 6 แคปซูล เติมน้ำ 30 mL แล้วให้ครั้งละ 3 mL\n□ 23-40 กก.: เปิด 8 แคปซูล เติมน้ำ 40 mL แล้วให้ครั้งละ 4 mL\n□ >40 กก. หรืออายุ 13 ปีขึ้นไป: เปิด 10 แคปซูล เติมน้ำ 50 mL แล้วให้ครั้งละ 5 mL",
+                "tl": "□ <15 kg: Buksan ang 4 na kapsulang 75 mg, lagyan ng 20 mL na tubig, at painumin ng 2 mL bawat dose.\n□ 15-23 kg: Buksan ang 6 na kapsula, lagyan ng 30 mL na tubig, at painumin ng 3 mL bawat dose.\n□ 23-40 kg: Buksan ang 8 na kapsula, lagyan ng 40 mL na tubig, at painumin ng 4 mL bawat dose.\n□ >40 kg o edad 13 pataas: Buksan ang 10 kapsula, lagyan ng 50 mL na tubig, at painumin ng 5 mL bawat dose.",
+                "ja": "□ <15 kg：75 mgカプセルを4個開け、20 mLの水を加え、1回2 mL飲ませる。\n□ 15-23 kg：6個開け、30 mLの水を加え、1回3 mL飲ませる。\n□ 23-40 kg：8個開け、40 mLの水を加え、1回4 mL飲ませる。\n□ >40 kgまたは13歳以上：10個開け、50 mLの水を加え、1回5 mL飲ませる。"
               },
               "highlight": true,
               "illustration": {
@@ -30517,30 +30492,7 @@
               "afterBox": null
             }
           ],
-          "infoBoxes": [
-            {
-              "title": {
-                "zh-TW": "依照體重決定劑量",
-                "en": "Dose by body weight",
-                "id": "Dosis berdasarkan berat badan",
-                "vi": "Liều theo cân nặng",
-                "th": "ขนาดยาตามน้ำหนักตัว",
-                "tl": "Dose ayon sa timbang",
-                "ja": "体重ごとの用量"
-              },
-              "text": {
-                "zh-TW": "<15 kg：4 顆 75 mg 膠囊，加 20 mL 水；每次喝 2 mL。\n\n15–23 kg：6 顆，加 30 mL 水；每次喝 3 mL。\n\n23–40 kg：8 顆，加 40 mL 水；每次喝 4 mL。\n\n>40 kg 或 ≥13 歲：10 顆，加 50 mL 水；每次喝 5 mL。",
-                "en": "<15 kg: Open 4 capsules of 75 mg, add 20 mL water, and give 2 mL each time.\n\n15-23 kg: Open 6 capsules, add 30 mL water, and give 3 mL each time.\n\n23-40 kg: Open 8 capsules, add 40 mL water, and give 4 mL each time.\n\n>40 kg or age 13 years and older: Open 10 capsules, add 50 mL water, and give 5 mL each time.",
-                "id": "<15 kg: Buka 4 kapsul 75 mg, tambahkan 20 mL air, lalu berikan 2 mL setiap kali minum.\n\n15-23 kg: Buka 6 kapsul, tambahkan 30 mL air, lalu berikan 3 mL setiap kali minum.\n\n23-40 kg: Buka 8 kapsul, tambahkan 40 mL air, lalu berikan 4 mL setiap kali minum.\n\n>40 kg atau usia 13 tahun ke atas: Buka 10 kapsul, tambahkan 50 mL air, lalu berikan 5 mL setiap kali minum.",
-                "vi": "<15 kg: Mở 4 viên nang 75 mg, thêm 20 mL nước, rồi cho uống 2 mL mỗi lần.\n\n15-23 kg: Mở 6 viên nang, thêm 30 mL nước, rồi cho uống 3 mL mỗi lần.\n\n23-40 kg: Mở 8 viên nang, thêm 40 mL nước, rồi cho uống 4 mL mỗi lần.\n\n>40 kg hoặc từ 13 tuổi trở lên: Mở 10 viên nang, thêm 50 mL nước, rồi cho uống 5 mL mỗi lần.",
-                "th": "<15 กก.: เปิด 4 แคปซูลขนาด 75 mg เติมน้ำ 20 mL แล้วให้ครั้งละ 2 mL\n\n15-23 กก.: เปิด 6 แคปซูล เติมน้ำ 30 mL แล้วให้ครั้งละ 3 mL\n\n23-40 กก.: เปิด 8 แคปซูล เติมน้ำ 40 mL แล้วให้ครั้งละ 4 mL\n\n>40 กก. หรืออายุ 13 ปีขึ้นไป: เปิด 10 แคปซูล เติมน้ำ 50 mL แล้วให้ครั้งละ 5 mL",
-                "tl": "<15 kg: Buksan ang 4 na kapsulang 75 mg, lagyan ng 20 mL na tubig, at painumin ng 2 mL bawat dose.\n\n15-23 kg: Buksan ang 6 na kapsula, lagyan ng 30 mL na tubig, at painumin ng 3 mL bawat dose.\n\n23-40 kg: Buksan ang 8 na kapsula, lagyan ng 40 mL na tubig, at painumin ng 4 mL bawat dose.\n\n>40 kg o edad 13 pataas: Buksan ang 10 kapsula, lagyan ng 50 mL na tubig, at painumin ng 5 mL bawat dose.",
-                "ja": "<15 kg：75 mgカプセルを4個開け、20 mLの水を加え、1回2 mL飲ませる。\n\n15-23 kg：6個開け、30 mLの水を加え、1回3 mL飲ませる。\n\n23-40 kg：8個開け、40 mLの水を加え、1回4 mL飲ませる。\n\n>40 kgまたは13歳以上：10個開け、50 mLの水を加え、1回5 mL飲ませる。"
-              },
-              "html": null,
-              "tone": null
-            }
-          ],
+          "infoBoxes": [],
           "storage": {
             "title": {
               "zh-TW": "配製後保存",
@@ -30567,7 +30519,7 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "這是懸液，每次喝前都要先搖勻。",
+                "zh-TW": "這是懸浮液，每次喝前都要先搖勻。",
                 "en": "This is a suspension, so you must shake it before every dose.",
                 "id": "Ini adalah suspensi, jadi harus dikocok sebelum setiap dosis.",
                 "vi": "Đây là hỗn dịch, nên phải lắc trước mỗi lần uống.",
@@ -30593,13 +30545,13 @@
             {
               "index": 2,
               "text": {
-                "zh-TW": "若出現紅疹、持續嘔吐、意識變得怪怪的，或孩子一直叫不醒，立即就醫。",
-                "en": "Seek care right away if there is a rash, repeated vomiting, unusual behavior, or if the child is hard to wake up.",
-                "id": "Segera cari pertolongan bila muncul ruam, muntah berulang, perilaku tidak biasa, atau anak sulit dibangunkan.",
-                "vi": "Đi khám ngay nếu có nổi ban, nôn lặp lại, hành vi lạ hoặc trẻ khó đánh thức.",
-                "th": "ไปพบแพทย์ทันทีหากมีผื่น อาเจียนซ้ำ ๆ พฤติกรรมแปลกไป หรือปลุกเด็กยากผิดปกติ",
-                "tl": "Magpatingin agad kung may pantal, paulit-ulit na pagsusuka, kakaibang kilos, o kung mahirap gisingin ang bata.",
-                "ja": "発疹、繰り返す嘔吐、様子がおかしい、または子どもが起こしにくい時はすぐ受診する。"
+                "zh-TW": "若出現紅疹、持續嘔吐或意識異常變化，立即就醫。",
+                "en": "Seek care right away if there is a rash, repeated vomiting, or unusual changes in alertness or behavior.",
+                "id": "Segera cari pertolongan bila muncul ruam, muntah berulang, atau perubahan kesadaran atau perilaku yang tidak biasa.",
+                "vi": "Đi khám ngay nếu có nổi ban, nôn lặp lại hoặc thay đổi bất thường về ý thức hay hành vi.",
+                "th": "ไปพบแพทย์ทันทีหากมีผื่น อาเจียนซ้ำ ๆ หรือมีความผิดปกติของสติหรือพฤติกรรม",
+                "tl": "Magpatingin agad kung may pantal, paulit-ulit na pagsusuka, o may kakaibang pagbabago sa malay o kilos.",
+                "ja": "発疹、繰り返す嘔吐、意識や行動の異常な変化があればすぐ受診する。"
               },
               "highlight": false
             }
