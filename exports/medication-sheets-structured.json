@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T05:58:36.779Z",
+  "generatedAt": "2026-08-21T07:35:06.403Z",
   "sourceFile": "index.html",
   "languages": [
     {
@@ -32,10 +32,10 @@
     }
   ],
   "totals": {
-    "medications": 140,
-    "pages": 165,
-    "steps": 946,
-    "warnings": 460,
+    "medications": 139,
+    "pages": 164,
+    "steps": 945,
+    "warnings": 455,
     "uniqueIllustrationRefs": 339,
     "categories": {
       "eye": 4,
@@ -43,7 +43,7 @@
       "ntg": 3,
       "supp": 9,
       "inhaler": 18,
-      "topical": 47,
+      "topical": 46,
       "smoking": 7,
       "other": 1,
       "nasal": 9,
@@ -281,13 +281,13 @@
             {
               "index": 1,
               "text": {
-                "zh-TW": "開封後超過 1 個月，請丟棄並更換新藥",
-                "en": "Discard and replace if opened more than 1 month ago",
-                "id": "Buang dan ganti jika sudah dibuka lebih dari 1 bulan",
-                "vi": "Bỏ đi và thay thế nếu đã mở hơn 1 tháng",
-                "th": "ทิ้งและเปลี่ยนใหม่หากเปิดใช้มาเกิน 1 เดือน",
-                "tl": "Itapon at palitan kung nakabukas na nang higit sa 1 buwan",
-                "ja": "開封後1ヶ月を超えたら廃棄して新しいものに交換する"
+                "zh-TW": "請記下開封日；開封後的可用期限以藥袋、外盒或仿單標示為準。",
+                "en": "Write down the opening date. Follow the discard date on the label, carton, or leaflet after opening.",
+                "id": "Catat tanggal dibuka. Ikuti batas penggunaan setelah dibuka pada etiket, kemasan, atau leaflet.",
+                "vi": "Ghi ngày mở thuốc. Sau khi mở, hãy dùng theo thời hạn ghi trên nhãn, hộp hoặc tờ hướng dẫn.",
+                "th": "จดวันที่เปิดใช้ และหลังเปิดแล้วให้ใช้ตามระยะเวลาที่ระบุบนฉลาก กล่อง หรือเอกสารกำกับยา",
+                "tl": "Isulat ang petsa ng pagbukas. Sundin ang petsa ng pagtatapon pagkatapos buksan na nakasaad sa label, kahon, o leaflet.",
+                "ja": "開封日を記録し、開封後の使用期限は薬袋・外箱・添付文書の表示に従ってください。"
               },
               "highlight": false
             }
@@ -1917,26 +1917,26 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "24 小時內不要超過 1 瓶；連用超過 1 週請就醫。",
-                "en": "Do not use more than 1 bottle in 24 hours. Get medical advice if you still need it after 1 week.",
-                "id": "Jangan gunakan lebih dari 1 botol dalam 24 jam. Bila masih perlu setelah 1 minggu, periksakan diri.",
-                "vi": "Không dùng quá 1 chai trong 24 giờ. Nếu sau 1 tuần vẫn còn cần dùng, hãy đi khám.",
-                "th": "ห้ามใช้เกิน 1 ขวดภายใน 24 ชั่วโมง หากยังต้องใช้ต่อหลัง 1 สัปดาห์ ให้ไปพบแพทย์",
-                "tl": "Huwag gumamit nang mahigit 1 bote sa loob ng 24 oras. Kung kailangan pa rin matapos ang 1 linggo, magpatingin.",
-                "ja": "24時間以内に1本を超えて使わないでください。1週間後も必要なら受診してください。"
+                "zh-TW": "24 小時內不要超過 1 瓶，也不要連用超過 3 天。30 分鐘仍沒有排便，請就醫。",
+                "en": "Do not use more than 1 bottle in 24 hours or for more than 3 days. Seek medical help if there is still no bowel movement after 30 minutes.",
+                "id": "Jangan gunakan lebih dari 1 botol dalam 24 jam atau lebih dari 3 hari. Cari bantuan medis bila belum buang air besar setelah 30 menit.",
+                "vi": "Không dùng quá 1 chai trong 24 giờ hoặc quá 3 ngày. Đi khám nếu sau 30 phút vẫn chưa đi tiêu.",
+                "th": "ห้ามใช้เกิน 1 ขวดใน 24 ชั่วโมง หรือเกิน 3 วัน หากผ่าน 30 นาทีแล้วยังไม่ถ่าย ให้พบแพทย์",
+                "tl": "Huwag gumamit ng higit sa 1 bote sa loob ng 24 oras o nang lampas 3 araw. Magpatingin kung wala pa ring pagdumi pagkatapos ng 30 minuto.",
+                "ja": "24時間以内に1本を超えて使用せず、3日を超えて連用しないでください。30分たっても排便がない場合は受診してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "腎臟病、心臟病、脫水、55 歲以上或使用利尿劑時，先問醫師或藥師。",
-                "en": "Ask your doctor or pharmacist first if you have kidney disease, heart disease, dehydration, are over age 55, or use diuretics.",
-                "id": "Tanyakan dulu kepada dokter atau apoteker bila Anda punya penyakit ginjal, penyakit jantung, dehidrasi, berusia di atas 55 tahun, atau memakai diuretik.",
-                "vi": "Hãy hỏi bác sĩ hoặc dược sĩ trước nếu bạn bị bệnh thận, bệnh tim, mất nước, trên 55 tuổi hoặc đang dùng thuốc lợi tiểu.",
-                "th": "ควรถามแพทย์หรือเภสัชกรก่อน หากเป็นโรคไต โรคหัวใจ ขาดน้ำ อายุเกิน 55 ปี หรือใช้ยาขับปัสสาวะ",
-                "tl": "Magtanong muna sa doktor o parmasyutiko kung may sakit sa bato, sakit sa puso, dehydration, lampas 55 taong gulang, o umiinom ng diuretic.",
-                "ja": "腎臓病、心臓病、脱水、55歳以上、利尿薬使用中なら先に医師か薬剤師に相談してください。"
+                "zh-TW": "腎臟病、心臟病、脫水或 55 歲以上者，使用前先依醫師或藥師指示。",
+                "en": "If you have kidney disease, heart disease, dehydration, or are 55 or older, ask your doctor or pharmacist before use.",
+                "id": "Bila Anda punya penyakit ginjal, penyakit jantung, dehidrasi, atau berusia 55 tahun ke atas, tanyakan dokter atau apoteker sebelum memakai.",
+                "vi": "Nếu có bệnh thận, bệnh tim, mất nước hoặc từ 55 tuổi trở lên, hỏi bác sĩ hoặc dược sĩ trước khi dùng.",
+                "th": "หากมีโรคไต โรคหัวใจ ภาวะขาดน้ำ หรืออายุ 55 ปีขึ้นไป ให้ปรึกษาแพทย์หรือเภสัชกรก่อนใช้",
+                "tl": "Kung may sakit sa bato, sakit sa puso, dehydration, o edad 55 pataas, kumonsulta muna sa doktor o parmasyutiko bago gamitin.",
+                "ja": "腎臓病、心臓病、脱水がある方、または55歳以上の方は、使用前に医師または薬剤師に相談してください。"
               },
               "highlight": false
             },
@@ -2160,13 +2160,13 @@
               "index": 3,
               "section": null,
               "action": {
-                "zh-TW": "側躺，上腿彎曲，下腿伸直",
-                "en": "Lie on your side with the upper leg bent and the lower leg straight.",
-                "id": "Berbaring menyamping, tekuk kaki atas dan luruskan kaki bawah.",
-                "vi": "Nằm nghiêng, co chân trên và duỗi chân dưới.",
-                "th": "นอนตะแคง งอขาด้านบนและเหยียดขาด้านล่างตรง",
-                "tl": "Humiga nang patagilid, ibaluktot ang itaas na binti at ituwid ang ibaba.",
-                "ja": "横向きになり、上の脚を曲げ下の脚を伸ばします"
+                "zh-TW": "左側躺，上腿彎曲，下腿伸直",
+                "en": "Lie on your left side, with your upper leg bent and lower leg straight",
+                "id": "Berbaring miring ke kiri, kaki atas ditekuk dan kaki bawah lurus",
+                "vi": "Nằm nghiêng bên trái, chân trên co lại và chân dưới duỗi thẳng",
+                "th": "นอนตะแคงซ้าย งอขาด้านบนและเหยียดขาด้านล่าง",
+                "tl": "Humiga sa kaliwang tagiliran, nakabaluktot ang itaas na binti at nakaunat ang ibabang binti.",
+                "ja": "左側を下にして横になり、上の脚を曲げ、下の脚を伸ばします。"
               },
               "note": {
                 "zh-TW": "最好睡前使用。",
@@ -2264,13 +2264,13 @@
               "index": 7,
               "section": null,
               "action": {
-                "zh-TW": "側躺 5–10 分鐘，盡量留到隔天早上",
-                "en": "Stay on your side for 5 to 10 minutes and try to keep it in until morning.",
-                "id": "Tetap berbaring menyamping selama 5–10 menit dan usahakan ditahan sampai pagi.",
-                "vi": "Tiếp tục nằm nghiêng 5–10 phút và cố gắng giữ thuốc lại đến sáng.",
-                "th": "นอนตะแคงต่ออีก 5–10 นาที และพยายามกลั้นยาไว้จนถึงเช้า",
-                "tl": "Manatiling nakatagilid nang 5–10 minuto at subukang panatilihin ito hanggang umaga.",
-                "ja": "5〜10分横向きのままで、できるだけ翌朝まで保ちます"
+                "zh-TW": "至少側躺 30 分鐘，盡量留到隔天早上",
+                "en": "Stay lying down for at least 30 minutes; try to retain it until the next morning",
+                "id": "Tetap berbaring setidaknya 30 menit; usahakan menahannya sampai pagi berikutnya",
+                "vi": "Nằm yên ít nhất 30 phút; cố giữ thuốc đến sáng hôm sau",
+                "th": "นอนต่ออย่างน้อย 30 นาที และพยายามกลั้นยาไว้จนถึงเช้าวันถัดไป",
+                "tl": "Manatiling nakahiga nang hindi bababa sa 30 minuto; subukang panatilihin ito hanggang kinaumagahan.",
+                "ja": "少なくとも30分は横になり、できるだけ翌朝まで保持してください。"
               },
               "note": {
                 "zh-TW": "藥液留在腸內愈久，通常效果愈好。",
@@ -12642,39 +12642,26 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "不要擦進眼睛、嘴巴或其他黏膜。",
-                "en": "Do not apply it to the eyes, mouth, or other mucous membranes.",
-                "id": "Jangan oleskan ke mata, mulut, atau selaput lendir lain.",
-                "vi": "Không bôi vào mắt, miệng hoặc niêm mạc khác.",
-                "th": "ห้ามทาเข้าตา ปาก หรือเยื่อบุ",
-                "tl": "Huwag ipahid sa mata, bibig, o ibang mucous membrane.",
-                "ja": "目・口・その他の粘膜には塗らない。"
+                "zh-TW": "只限這次感染與醫囑療程使用；不要留著日後自行擦，也不要和別人共用。",
+                "en": "Use it only for this infection and for the prescribed course. Do not save it to use on your own later or share it with anyone.",
+                "id": "Gunakan hanya untuk infeksi ini dan selama jangka waktu yang diresepkan. Jangan simpan untuk dipakai sendiri nanti atau dibagikan kepada orang lain.",
+                "vi": "Chỉ dùng cho đợt nhiễm trùng này và đúng thời gian đã kê. Không để dành tự dùng sau này hoặc dùng chung với người khác.",
+                "th": "ใช้เฉพาะการติดเชื้อครั้งนี้และตามระยะเวลาที่สั่ง ห้ามเก็บไว้ใช้เองภายหลังหรือใช้ร่วมกับผู้อื่น",
+                "tl": "Gamitin lamang para sa impeksiyong ito at sa itinakdang tagal. Huwag itabi para gamitin nang kusa sa susunod o ipahiram sa iba.",
+                "ja": "今回の感染と処方された期間に限って使用してください。後で自己判断で使うために残したり、他の人と共有したりしないでください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "7 天沒有改善、變紅變腫或流膿時，請回診。",
-                "en": "See your doctor if it is not better in 7 days, or if redness, swelling, or pus gets worse.",
-                "id": "Periksa kembali jika tidak membaik dalam 7 hari, atau bila merah, bengkak, atau nanah memburuk.",
-                "vi": "Tái khám nếu sau 7 ngày không đỡ, hoặc nếu đỏ, sưng hay mủ tăng lên.",
-                "th": "ถ้า 7 วันแล้วยังไม่ดีขึ้น หรือแดง บวม มีหนองมากขึ้น ให้กลับไปพบแพทย์",
-                "tl": "Magpatingin muli kung hindi bumuti sa loob ng 7 araw, o kung lalong namula, namaga, o nagka-nana.",
-                "ja": "7日で改善しない、赤み・腫れ・膿が悪化する場合は受診する。"
-              },
-              "highlight": false
-            },
-            {
-              "index": 2,
-              "text": {
-                "zh-TW": "不要長期反覆自行使用，以免增加抗藥性。",
-                "en": "Do not keep reusing it on your own for a long time, because this can increase antibiotic resistance.",
-                "id": "Jangan memakai berulang kali sendiri dalam jangka panjang karena dapat meningkatkan resistansi antibiotik.",
-                "vi": "Không tự ý dùng lặp lại kéo dài vì có thể làm tăng kháng thuốc.",
-                "th": "อย่าใช้ซ้ำเองเป็นเวลานาน เพราะอาจเพิ่มการดื้อยา",
-                "tl": "Huwag gamitin nang paulit-ulit at matagal nang walang payo dahil maaaring magdulot ito ng resistance sa antibiotic.",
-                "ja": "自己判断で長く繰り返し使うと、耐性菌が増えるおそれがあります。"
+                "zh-TW": "紅腫、疼痛、流膿擴大，或依藥袋用完仍未改善，請回診；不要自行延長療程。",
+                "en": "Seek review if redness, pain, or pus spreads, or if there is no improvement after the course on your label. Do not extend treatment on your own.",
+                "id": "Periksa bila kemerahan, nyeri, atau nanah meluas, atau tidak membaik setelah terapi pada etiket selesai. Jangan memperpanjang pengobatan sendiri.",
+                "vi": "Tái khám nếu đỏ, đau hoặc mủ lan rộng, hoặc không cải thiện sau khi dùng hết liệu trình trên nhãn. Không tự kéo dài điều trị.",
+                "th": "กลับไปพบแพทย์หากรอยแดง ปวด หรือหนองลาม หรือใช้ครบตามฉลากแล้วยังไม่ดีขึ้น ห้ามยืดระยะเวลารักษาเอง",
+                "tl": "Magpatingin muli kung lumalawak ang pamumula, sakit, o nana, o walang ginhawa matapos ang kursong nasa label. Huwag pahabain ang gamutan nang kusa.",
+                "ja": "赤み、痛み、膿が広がる、または薬袋どおりに使い切っても改善しない場合は受診してください。自己判断で治療期間を延ばさないでください。"
               },
               "highlight": false
             }
@@ -13817,13 +13804,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "覺得刺、癢、熱時就開始擦，不要等水泡很大才用。\n越早開始，效果通常越好。\n這是個人藥品，不要跟別人共用。",
-              "en": "Start as soon as the area tingles, itches, or feels hot. Do not wait until the blister gets bigger.\nEarlier use usually works better.\nThis medicine is for your own use only.",
-              "id": "Start as soon as the area tingles, itches, or feels hot. Do not wait until the blister gets bigger.\nEarlier use usually works better.\nThis medicine is for your own use only.",
-              "vi": "Start as soon as the area tingles, itches, or feels hot. Do not wait until the blister gets bigger.\nEarlier use usually works better.\nThis medicine is for your own use only.",
-              "th": "Start as soon as the area tingles, itches, or feels hot. Do not wait until the blister gets bigger.\nEarlier use usually works better.\nThis medicine is for your own use only.",
-              "tl": "Start as soon as the area tingles, itches, or feels hot. Do not wait until the blister gets bigger.\nEarlier use usually works better.\nThis medicine is for your own use only.",
-              "ja": "ヒリヒリ、かゆみ、熱っぽさを感じたらすぐ使います。水ぶくれが大きくなるまで待たないでください。\n早く始めるほど効きやすくなります。\nこの薬は本人専用です。"
+              "zh-TW": "嘴唇開始刺、癢、熱或泛紅時就開始擦，通常越早越好。\n這是個人藥品；避免共用毛巾、口紅、餐具，也不要用手碰完患處再摸眼睛。",
+              "en": "Start when tingling, itching, warmth, or redness begins on the lip; earlier is usually better.\nThis is personal medicine. Do not share towels, lipstick, or eating utensils, and do not touch your eyes after touching the sore.",
+              "id": "Mulailah saat bibir mulai kesemutan, gatal, terasa panas, atau merah; biasanya semakin dini semakin baik.\nIni obat pribadi. Jangan berbagi handuk, lipstik, atau alat makan, dan jangan menyentuh mata setelah menyentuh luka.",
+              "vi": "Bắt đầu bôi khi môi mới châm chích, ngứa, nóng hoặc đỏ; thường bôi càng sớm càng tốt.\nĐây là thuốc dùng riêng. Không dùng chung khăn, son môi, dụng cụ ăn uống và không chạm mắt sau khi chạm vào tổn thương.",
+              "th": "เริ่มทาเมื่อริมฝีปากเริ่มรู้สึกยิบ ๆ คัน ร้อน หรือแดง โดยทั่วไปยิ่งเริ่มเร็วจะยิ่งดี\nยานี้เป็นยาส่วนตัว ห้ามใช้ผ้าเช็ดตัว ลิปสติก หรือภาชนะร่วมกัน และอย่าแตะตาหลังจับบริเวณแผล",
+              "tl": "Simulang ipahid kapag nangangati, nangingilig, umiinit, o namumula ang labi; mas maaga ay karaniwang mas mabuti.\nPersonal na gamot ito. Huwag magbahagi ng tuwalya, lipstick, o kubyertos, at huwag hawakan ang mata matapos hawakan ang sugat.",
+              "ja": "唇にピリピリ感、かゆみ、熱感、赤みが出たら、できるだけ早く塗り始めてください。\nこれは個人用の薬です。タオル、口紅、食器を共有せず、患部に触れた後は目を触らないでください。"
             },
             "html": null,
             "tone": null
@@ -15009,39 +14996,39 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "不要自己大面積、長時間使用。",
-                "en": "Do not use it over large areas or for a long time on your own.",
-                "id": "Do not use it over large areas or for a long time on your own.",
-                "vi": "Do not use it over large areas or for a long time on your own.",
-                "th": "Do not use it over large areas or for a long time on your own.",
-                "tl": "Do not use it over large areas or for a long time on your own.",
-                "ja": "広範囲や長期に自己判断で使わない。"
+                "zh-TW": "只擦銀屑病患處，不要自行大面積、長時間或密封包紮使用。",
+                "en": "Apply only to psoriasis areas. Do not use it over large areas, for long periods, or under an airtight dressing unless instructed.",
+                "id": "Oleskan hanya pada area psoriasis. Jangan gunakan pada area luas, jangka panjang, atau di bawah balutan kedap tanpa petunjuk.",
+                "vi": "Chỉ bôi lên vùng vảy nến. Không tự bôi diện rộng, kéo dài hoặc băng kín nếu không được hướng dẫn.",
+                "th": "ทาเฉพาะบริเวณสะเก็ดเงิน ห้ามทาบริเวณกว้าง ใช้นาน หรือปิดทับแน่นเองหากไม่ได้รับคำสั่ง",
+                "tl": "Ipahid lamang sa mga bahaging may psoriasis. Huwag gamitin sa malawak na bahagi, nang matagal, o sa ilalim ng mahigpit na benda maliban kung itinagubilin.",
+                "ja": "乾癬の患部だけに使ってください。指示がない限り、広範囲、長期間、密封包帯の下で使わないでください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "若不小心擦到臉或正常皮膚，請用清水洗掉。",
-                "en": "If it gets onto the face or normal skin by mistake, wash it off with water.",
-                "id": "If it gets onto the face or normal skin by mistake, wash it off with water.",
-                "vi": "If it gets onto the face or normal skin by mistake, wash it off with water.",
-                "th": "If it gets onto the face or normal skin by mistake, wash it off with water.",
-                "tl": "If it gets onto the face or normal skin by mistake, wash it off with water.",
-                "ja": "顔や正常な皮膚についたら水で洗い流してください。"
+                "zh-TW": "不可擦在臉部；不慎碰到臉或眼睛，立刻用清水洗掉。",
+                "en": "Do not apply it to the face. If it gets on your face or in your eyes, rinse it off with water right away.",
+                "id": "Jangan oleskan pada wajah. Jika mengenai wajah atau mata, segera bilas dengan air.",
+                "vi": "Không bôi lên mặt. Nếu dính vào mặt hoặc mắt, rửa ngay bằng nước.",
+                "th": "ห้ามทาที่ใบหน้า หากโดนใบหน้าหรือดวงตา ให้ล้างออกด้วยน้ำทันที",
+                "tl": "Huwag ipahid sa mukha. Kung mapunta sa mukha o mata, banlawan agad ng tubig.",
+                "ja": "顔には塗らないでください。顔や目に付いた場合は、すぐに水で洗い流してください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "若需要驗血或醫師說要追蹤血鈣，請按時回診。",
-                "en": "If your doctor asks for blood tests or calcium checks, come back on time.",
-                "id": "If your doctor asks for blood tests or calcium checks, come back on time.",
-                "vi": "If your doctor asks for blood tests or calcium checks, come back on time.",
-                "th": "If your doctor asks for blood tests or calcium checks, come back on time.",
-                "tl": "If your doctor asks for blood tests or calcium checks, come back on time.",
-                "ja": "採血やカルシウム確認が必要と言われたら、予定どおり受診してください。"
+                "zh-TW": "使用量超過會讓血鈣升高；若醫師安排抽血或追蹤，請按時回診。",
+                "en": "Using too much can raise your blood calcium level. Keep any blood-test or follow-up appointments your doctor arranged.",
+                "id": "Pemakaian berlebihan dapat meningkatkan kalsium darah. Datanglah ke pemeriksaan darah atau kontrol yang dijadwalkan dokter.",
+                "vi": "Dùng quá nhiều có thể làm tăng canxi máu. Hãy đi xét nghiệm hoặc tái khám đúng lịch bác sĩ đã hẹn.",
+                "th": "การใช้มากเกินไปอาจทำให้แคลเซียมในเลือดสูงขึ้น ให้ไปตรวจเลือดหรือติดตามตามนัดของแพทย์",
+                "tl": "Ang sobrang paggamit ay maaaring magpataas ng calcium sa dugo. Dumalo sa blood test o follow-up na itinakda ng doktor.",
+                "ja": "使いすぎると血中カルシウムが上がることがあります。医師から採血や経過観察を指示された場合は、予定どおり受診してください。"
               },
               "highlight": false
             }
@@ -15160,13 +15147,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這也是治銀屑病的外用藥。\n有時可用在臉部或皮膚皺摺，但一定要照醫師指示。\n還是只要薄薄一層，不要厚塗。",
-              "en": "This is another topical medicine for psoriasis.\nIt may sometimes be used on the face or skin folds, but only if your doctor told you to.\nA thin layer is still enough.",
-              "id": "This is another topical medicine for psoriasis.\nIt may sometimes be used on the face or skin folds, but only if your doctor told you to.\nA thin layer is still enough.",
-              "vi": "This is another topical medicine for psoriasis.\nIt may sometimes be used on the face or skin folds, but only if your doctor told you to.\nA thin layer is still enough.",
-              "th": "This is another topical medicine for psoriasis.\nIt may sometimes be used on the face or skin folds, but only if your doctor told you to.\nA thin layer is still enough.",
-              "tl": "This is another topical medicine for psoriasis.\nIt may sometimes be used on the face or skin folds, but only if your doctor told you to.\nA thin layer is still enough.",
-              "ja": "これも乾癬の外用薬です。\n顔や皮膚のしわ部分に使うこともありますが、必ず医師の指示に従ってください。\nやはり薄く塗れば十分です。"
+              "zh-TW": "這是治銀屑病的維生素 D 類似物藥膏。只擦患處，不要厚塗或密封包紮。\n臉部僅在醫師明確交代時使用，避開眼睛、嘴唇與黏膜。",
+              "en": "This is a vitamin-D-analogue ointment for psoriasis. Apply only to affected skin; do not use a thick layer or an airtight dressing.\nUse it on the face only when your doctor specifically told you to, and keep it away from the eyes, lips, and mucous membranes.",
+              "id": "Ini adalah salep analog vitamin D untuk psoriasis. Oleskan hanya pada kulit yang terkena; jangan gunakan tebal atau di bawah balutan kedap.\nGunakan pada wajah hanya bila dokter secara khusus memerintahkannya, dan jauhkan dari mata, bibir, serta selaput lendir.",
+              "vi": "Đây là thuốc mỡ tương tự vitamin D điều trị vảy nến. Chỉ bôi lên vùng tổn thương; không bôi dày hoặc băng kín.\nChỉ dùng trên mặt khi bác sĩ dặn rõ và tránh mắt, môi, niêm mạc.",
+              "th": "นี่คือยาทากลุ่มอนุพันธ์วิตามินดีสำหรับสะเก็ดเงิน ทาเฉพาะผิวที่เป็น ห้ามทาหนา หรือปิดทับแน่น\nใช้บนใบหน้าเฉพาะเมื่อแพทย์สั่งชัดเจน และหลีกเลี่ยงดวงตา ริมฝีปาก และเยื่อบุ",
+              "tl": "Ito ay vitamin D analogue ointment para sa psoriasis. Ipahid lamang sa apektadong balat; huwag magpahid nang makapal o takpan nang mahigpit.\nGamitin lamang sa mukha kung malinaw na iniutos ng doktor, at ilayo sa mata, labi, at mucosa.",
+              "ja": "これは乾癬用のビタミンD類似体の軟膏です。患部だけに塗り、厚塗りや密封包帯はしないでください。\n顔には医師から明確な指示がある場合だけ使い、目、唇、粘膜を避けてください。"
             },
             "html": null,
             "tone": null
@@ -15359,39 +15346,26 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "不要自己大面積、長時間使用。",
-                "en": "Do not use it over large areas or for a long time on your own.",
-                "id": "Do not use it over large areas or for a long time on your own.",
-                "vi": "Do not use it over large areas or for a long time on your own.",
-                "th": "Do not use it over large areas or for a long time on your own.",
-                "tl": "Do not use it over large areas or for a long time on your own.",
-                "ja": "広範囲や長期に自己判断で使わない。"
+                "zh-TW": "腎臟病、肝臟病、血鈣過高或正在接受鈣代謝治療者不可自行使用，務必先告知醫師。",
+                "en": "If you have kidney disease, liver disease, high blood calcium, or treatment that affects calcium balance, do not use it unless your doctor has confirmed it is suitable.",
+                "id": "Jika Anda memiliki penyakit ginjal, penyakit hati, kalsium darah tinggi, atau sedang menjalani terapi yang memengaruhi keseimbangan kalsium, jangan gunakan tanpa konfirmasi dokter.",
+                "vi": "Nếu có bệnh thận, bệnh gan, tăng canxi máu hoặc đang điều trị ảnh hưởng chuyển hóa canxi, không dùng khi chưa được bác sĩ xác nhận.",
+                "th": "หากมีโรคไต โรคตับ แคลเซียมในเลือดสูง หรือกำลังรักษาที่มีผลต่อสมดุลแคลเซียม ห้ามใช้หากแพทย์ยังไม่ยืนยันว่าเหมาะสม",
+                "tl": "Kung may sakit sa bato o atay, mataas na calcium sa dugo, o gamutang nakaaapekto sa calcium balance, huwag gamitin maliban kung kinumpirma ng doktor na angkop ito.",
+                "ja": "腎臓病、肝臓病、高カルシウム血症、カルシウム代謝に影響する治療中の方は、医師が適切と確認するまで使わないでください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "若不小心擦到眼睛或嘴裡，立刻用清水沖洗。",
-                "en": "If it gets into the eyes or mouth, rinse right away with water.",
-                "id": "If it gets into the eyes or mouth, rinse right away with water.",
-                "vi": "If it gets into the eyes or mouth, rinse right away with water.",
-                "th": "If it gets into the eyes or mouth, rinse right away with water.",
-                "tl": "If it gets into the eyes or mouth, rinse right away with water.",
-                "ja": "目や口に入ったら、すぐ水で洗い流してください。"
-              },
-              "highlight": false
-            },
-            {
-              "index": 2,
-              "text": {
-                "zh-TW": "若紅得更厲害、刺得很明顯，先停用並回診。",
-                "en": "Stop and ask for review if the skin becomes much redder or more irritated.",
-                "id": "Stop and ask for review if the skin becomes much redder or more irritated.",
-                "vi": "Stop and ask for review if the skin becomes much redder or more irritated.",
-                "th": "Stop and ask for review if the skin becomes much redder or more irritated.",
-                "tl": "Stop and ask for review if the skin becomes much redder or more irritated.",
-                "ja": "赤みや刺激が強くなったら中止して受診してください。"
+                "zh-TW": "嚴重刺痛、紅腫、脫皮或過敏時，先停用並回診。",
+                "en": "Stop and seek review if you develop severe burning, redness, swelling, peeling, or an allergic reaction.",
+                "id": "Hentikan dan periksa bila terjadi rasa terbakar berat, kemerahan, bengkak, pengelupasan, atau reaksi alergi.",
+                "vi": "Ngừng thuốc và tái khám nếu rát nhiều, đỏ, sưng, bong tróc nặng hoặc có phản ứng dị ứng.",
+                "th": "หยุดใช้และกลับไปพบแพทย์หากแสบมาก แดง บวม ลอกมาก หรือมีอาการแพ้",
+                "tl": "Itigil at magpatingin kung may matinding hapdi, pamumula, pamamaga, pagbabalat, o allergic reaction.",
+                "ja": "強い刺激感、赤み、腫れ、皮むけ、アレルギー反応が出た場合は中止して受診してください。"
               },
               "highlight": false
             }
@@ -15690,39 +15664,26 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "避開眼睛、鼻孔、嘴唇和破皮處。",
-                "en": "Keep it away from the eyes, nostrils, lips, and broken skin.",
-                "id": "Keep it away from the eyes, nostrils, lips, and broken skin.",
-                "vi": "Keep it away from the eyes, nostrils, lips, and broken skin.",
-                "th": "Keep it away from the eyes, nostrils, lips, and broken skin.",
-                "tl": "Keep it away from the eyes, nostrils, lips, and broken skin.",
-                "ja": "目、鼻の穴、唇、傷のある部位を避ける。"
+                "zh-TW": "避開眼睛、鼻孔、嘴唇、口腔與破皮處；不慎碰到時以清水沖洗。",
+                "en": "Keep it away from the eyes, nostrils, lips, mouth, and broken skin. Rinse with water if contact occurs.",
+                "id": "Jauhkan dari mata, lubang hidung, bibir, mulut, dan kulit terluka. Bilas dengan air bila terkena.",
+                "vi": "Tránh mắt, lỗ mũi, môi, miệng và vùng da trầy. Rửa bằng nước nếu dính vào.",
+                "th": "หลีกเลี่ยงดวงตา รูจมูก ริมฝีปาก ปาก และผิวแตก หากสัมผัสให้ล้างด้วยน้ำ",
+                "tl": "Iwasan ang mata, butas ng ilong, labi, bibig, at sugat sa balat. Banlawan ng tubig kung madikitan.",
+                "ja": "目、鼻の穴、唇、口、傷のある皮膚を避け、付着した場合は水で洗い流してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "不要跟另一種外用 erythromycin 一起自己混用。",
-                "en": "Do not mix it with another topical erythromycin product on your own.",
-                "id": "Do not mix it with another topical erythromycin product on your own.",
-                "vi": "Do not mix it with another topical erythromycin product on your own.",
-                "th": "Do not mix it with another topical erythromycin product on your own.",
-                "tl": "Do not mix it with another topical erythromycin product on your own.",
-                "ja": "外用エリスロマイシン製品を自己判断で併用しない。"
-              },
-              "highlight": false
-            },
-            {
-              "index": 2,
-              "text": {
-                "zh-TW": "若出現嚴重腹痛、腹瀉或血便，請停藥並回診。",
-                "en": "Stop and seek review if you develop severe stomach pain, diarrhea, or bloody stools.",
-                "id": "Stop and seek review if you develop severe stomach pain, diarrhea, or bloody stools.",
-                "vi": "Stop and seek review if you develop severe stomach pain, diarrhea, or bloody stools.",
-                "th": "Stop and seek review if you develop severe stomach pain, diarrhea, or bloody stools.",
-                "tl": "Stop and seek review if you develop severe stomach pain, diarrhea, or bloody stools.",
-                "ja": "強い腹痛、下痢、血便があれば中止して受診してください。"
+                "zh-TW": "若出現嚴重腹痛、水樣腹瀉或血便，先停用並立即回診。",
+                "en": "Stop and seek medical advice right away for severe stomach pain, watery diarrhea, or bloody stools.",
+                "id": "Hentikan dan segera cari pertolongan medis bila muncul sakit perut berat, diare berair, atau tinja berdarah.",
+                "vi": "Ngừng thuốc và đi khám ngay nếu đau bụng dữ dội, tiêu chảy nước hoặc phân có máu.",
+                "th": "หยุดใช้และไปพบแพทย์ทันทีหากปวดท้องรุนแรง ท้องเสียเป็นน้ำ หรือถ่ายมีเลือด",
+                "tl": "Itigil at magpatingin agad kung may matinding sakit ng tiyan, matubig na pagtatae, o madugong dumi.",
+                "ja": "強い腹痛、水様性下痢、血便があれば中止して直ちに受診してください。"
               },
               "highlight": false
             }
@@ -15841,13 +15802,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "黴菌最怕乾燥，所以洗完一定要弄乾。\n藥不只擦在紅疹上，也要帶到旁邊一小圈。\n症狀好了，也要再多擦 2 週。",
-              "en": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "id": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "vi": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "th": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "tl": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "ja": "真菌は湿気を好むので、洗った後はよく乾かします。\n赤いところだけでなく、その周りにも少し広げます。\nよくなっても2週間は続けます。"
+              "zh-TW": "只限皮膚外用，不適用頭皮或指甲。\n洗後完全擦乾；藥要薄擦到患處和周圍皮膚。\n症狀改善後，仍依藥袋完成療程。",
+              "en": "For skin use only; do not use it on the scalp or nails.\nWash and dry the area completely, then apply a thin layer to the affected skin and a small area around it.\nKeep using it for the full course on your medication label, even when it looks better.",
+              "id": "Hanya untuk kulit; jangan gunakan pada kulit kepala atau kuku.\nCuci dan keringkan area sampai benar-benar kering, lalu oleskan tipis pada kulit yang terkena dan sedikit di sekitarnya.\nTetap gunakan sampai seluruh lama terapi pada etiket obat selesai, walaupun sudah tampak membaik.",
+              "vi": "Chỉ dùng ngoài da; không dùng cho da đầu hoặc móng.\nRửa sạch rồi lau thật khô, sau đó bôi một lớp mỏng lên vùng tổn thương và vùng da xung quanh.\nDù đã đỡ, vẫn dùng đủ liệu trình ghi trên nhãn thuốc.",
+              "th": "ใช้กับผิวหนังเท่านั้น ห้ามใช้กับหนังศีรษะหรือเล็บ\nล้างแล้วเช็ดให้แห้งสนิท จากนั้นทาบาง ๆ บริเวณที่เป็นและผิวรอบ ๆ\nแม้อาการดีขึ้นแล้ว ให้ใช้ต่อจนครบระยะที่ระบุบนฉลากยา",
+              "tl": "Para sa balat lamang; huwag gamitin sa anit o mga kuko.\nHugasan at patuyuing mabuti ang bahagi, saka pahiran nang manipis ang apektadong balat at kaunting paligid nito.\nKahit bumuti na, tapusin ang haba ng gamutan na nasa etiketa ng gamot.",
+              "ja": "皮膚のみに使用し、頭皮や爪には使用しません。\n洗って完全に乾かしてから、患部と周囲の皮膚に薄く塗ります。\n良く見えても、薬袋に記載された期間は使い切ってください。"
             },
             "html": null,
             "tone": null
@@ -16013,39 +15974,39 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "避開眼睛和黏膜。",
-                "en": "Keep it away from the eyes and mucous membranes.",
-                "id": "Keep it away from the eyes and mucous membranes.",
-                "vi": "Keep it away from the eyes and mucous membranes.",
-                "th": "Keep it away from the eyes and mucous membranes.",
-                "tl": "Keep it away from the eyes and mucous membranes.",
-                "ja": "目や粘膜を避ける。"
+                "zh-TW": "避開眼睛、口腔和其他黏膜；若誤觸，立刻用清水沖洗。",
+                "en": "Keep it away from the eyes, mouth, and other mucous membranes. Rinse with clean water right away if it gets there.",
+                "id": "Jauhkan dari mata, mulut, dan selaput lendir lain. Bila terkena, segera bilas dengan air bersih.",
+                "vi": "Tránh mắt, miệng và các niêm mạc khác. Nếu dính vào, rửa ngay bằng nước sạch.",
+                "th": "หลีกเลี่ยงดวงตา ปาก และเยื่อบุอื่น ๆ หากสัมผัส ให้ล้างด้วยน้ำสะอาดทันที",
+                "tl": "Iwasan ang mata, bibig, at iba pang mucosa. Banlawan agad ng malinis na tubig kung madikitan.",
+                "ja": "目、口、その他の粘膜を避け、付着したらすぐにきれいな水で洗い流してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "患處要保持乾燥、透氣。",
-                "en": "Keep the area dry and well ventilated.",
-                "id": "Keep the area dry and well ventilated.",
-                "vi": "Keep the area dry and well ventilated.",
-                "th": "Keep the area dry and well ventilated.",
-                "tl": "Keep the area dry and well ventilated.",
-                "ja": "患部は乾燥と通気を保つ。"
+                "zh-TW": "毛巾、襪子和鞋子不要共用；患處保持乾燥、透氣。",
+                "en": "Do not share towels, socks, or shoes. Keep the affected area dry and well ventilated.",
+                "id": "Jangan berbagi handuk, kaus kaki, atau sepatu. Jaga area yang terkena tetap kering dan berventilasi baik.",
+                "vi": "Không dùng chung khăn, vớ hoặc giày. Giữ vùng tổn thương khô và thông thoáng.",
+                "th": "ห้ามใช้ผ้าเช็ดตัว ถุงเท้า หรือรองเท้าร่วมกัน และให้บริเวณที่เป็นแห้งและระบายอากาศได้ดี",
+                "tl": "Huwag magbahagi ng tuwalya, medyas, o sapatos. Panatilihing tuyo at maaliwalas ang apektadong bahagi.",
+                "ja": "タオル、靴下、靴は共用せず、患部を乾燥・通気のよい状態に保ってください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "4 週還是沒改善，請回診。",
-                "en": "Go back for review if it is not better after 4 weeks.",
-                "id": "Go back for review if it is not better after 4 weeks.",
-                "vi": "Go back for review if it is not better after 4 weeks.",
-                "th": "Go back for review if it is not better after 4 weeks.",
-                "tl": "Go back for review if it is not better after 4 weeks.",
-                "ja": "4週間で改善しなければ受診してください。"
+                "zh-TW": "2 週仍未改善或變嚴重，請回診。",
+                "en": "Seek medical advice if it is not improving after 2 weeks or is getting worse.",
+                "id": "Periksakan diri bila tidak membaik setelah 2 minggu atau makin parah.",
+                "vi": "Đi khám nếu sau 2 tuần không cải thiện hoặc nặng hơn.",
+                "th": "หากไม่ดีขึ้นภายใน 2 สัปดาห์หรือแย่ลง ให้พบแพทย์",
+                "tl": "Magpatingin kung hindi bumuti sa loob ng 2 linggo o kung lumalala.",
+                "ja": "2週間たっても改善しない、または悪化する場合は受診してください。"
               },
               "highlight": false
             }
@@ -16487,13 +16448,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "黴菌最怕乾燥，所以洗完一定要弄乾。\n藥不只擦在紅疹上，也要帶到旁邊一小圈。\n症狀好了，也要再多擦 2 週。",
-              "en": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "id": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "vi": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "th": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "tl": "Fungus grows better in moisture, so dry the area well first.\nDo not apply only to the rash. Cover a small rim around it too.\nKeep using it for 2 more weeks after the skin looks better.",
-              "ja": "真菌は湿気を好むので、洗った後はよく乾かします。\n赤いところだけでなく、その周りにも少し広げます。\nよくなっても2週間は続けます。"
+              "zh-TW": "只限皮膚外用，不適用頭皮或指甲。\n洗後完全擦乾；藥要薄擦到患處和周圍皮膚。\n症狀改善後，仍依藥袋完成療程。",
+              "en": "For skin use only; do not use it on the scalp or nails.\nWash and dry the area completely, then apply a thin layer to the affected skin and a small area around it.\nKeep using it for the full course on your medication label, even when it looks better.",
+              "id": "Hanya untuk kulit; jangan gunakan pada kulit kepala atau kuku.\nCuci dan keringkan area sampai benar-benar kering, lalu oleskan tipis pada kulit yang terkena dan sedikit di sekitarnya.\nTetap gunakan sampai seluruh lama terapi pada etiket obat selesai, walaupun sudah tampak membaik.",
+              "vi": "Chỉ dùng ngoài da; không dùng cho da đầu hoặc móng.\nRửa sạch rồi lau thật khô, sau đó bôi một lớp mỏng lên vùng tổn thương và vùng da xung quanh.\nDù đã đỡ, vẫn dùng đủ liệu trình ghi trên nhãn thuốc.",
+              "th": "ใช้กับผิวหนังเท่านั้น ห้ามใช้กับหนังศีรษะหรือเล็บ\nล้างแล้วเช็ดให้แห้งสนิท จากนั้นทาบาง ๆ บริเวณที่เป็นและผิวรอบ ๆ\nแม้อาการดีขึ้นแล้ว ให้ใช้ต่อจนครบระยะที่ระบุบนฉลากยา",
+              "tl": "Para sa balat lamang; huwag gamitin sa anit o mga kuko.\nHugasan at patuyuing mabuti ang bahagi, saka pahiran nang manipis ang apektadong balat at kaunting paligid nito.\nKahit bumuti na, tapusin ang haba ng gamutan na nasa etiketa ng gamot.",
+              "ja": "皮膚のみに使用し、頭皮や爪には使用しません。\n洗って完全に乾かしてから、患部と周囲の皮膚に薄く塗ります。\n良く見えても、薬袋に記載された期間は使い切ってください。"
             },
             "html": null,
             "tone": null
@@ -16659,39 +16620,39 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "避開眼睛和黏膜。",
-                "en": "Keep it away from the eyes and mucous membranes.",
-                "id": "Keep it away from the eyes and mucous membranes.",
-                "vi": "Keep it away from the eyes and mucous membranes.",
-                "th": "Keep it away from the eyes and mucous membranes.",
-                "tl": "Keep it away from the eyes and mucous membranes.",
-                "ja": "目や粘膜を避ける。"
+                "zh-TW": "避開眼睛、口腔和其他黏膜；若誤觸，立刻用清水沖洗。",
+                "en": "Keep it away from the eyes, mouth, and other mucous membranes. Rinse with clean water right away if it gets there.",
+                "id": "Jauhkan dari mata, mulut, dan selaput lendir lain. Bila terkena, segera bilas dengan air bersih.",
+                "vi": "Tránh mắt, miệng và các niêm mạc khác. Nếu dính vào, rửa ngay bằng nước sạch.",
+                "th": "หลีกเลี่ยงดวงตา ปาก และเยื่อบุอื่น ๆ หากสัมผัส ให้ล้างด้วยน้ำสะอาดทันที",
+                "tl": "Iwasan ang mata, bibig, at iba pang mucosa. Banlawan agad ng malinis na tubig kung madikitan.",
+                "ja": "目、口、その他の粘膜を避け、付着したらすぐにきれいな水で洗い流してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "患處要保持乾燥、透氣。",
-                "en": "Keep the area dry and well ventilated.",
-                "id": "Keep the area dry and well ventilated.",
-                "vi": "Keep the area dry and well ventilated.",
-                "th": "Keep the area dry and well ventilated.",
-                "tl": "Keep the area dry and well ventilated.",
-                "ja": "患部は乾燥と通気を保つ。"
+                "zh-TW": "毛巾、襪子和鞋子不要共用；患處保持乾燥、透氣。",
+                "en": "Do not share towels, socks, or shoes. Keep the affected area dry and well ventilated.",
+                "id": "Jangan berbagi handuk, kaus kaki, atau sepatu. Jaga area yang terkena tetap kering dan berventilasi baik.",
+                "vi": "Không dùng chung khăn, vớ hoặc giày. Giữ vùng tổn thương khô và thông thoáng.",
+                "th": "ห้ามใช้ผ้าเช็ดตัว ถุงเท้า หรือรองเท้าร่วมกัน และให้บริเวณที่เป็นแห้งและระบายอากาศได้ดี",
+                "tl": "Huwag magbahagi ng tuwalya, medyas, o sapatos. Panatilihing tuyo at maaliwalas ang apektadong bahagi.",
+                "ja": "タオル、靴下、靴は共用せず、患部を乾燥・通気のよい状態に保ってください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "4 週還是沒改善，請回診。",
-                "en": "Go back for review if it is not better after 4 weeks.",
-                "id": "Go back for review if it is not better after 4 weeks.",
-                "vi": "Go back for review if it is not better after 4 weeks.",
-                "th": "Go back for review if it is not better after 4 weeks.",
-                "tl": "Go back for review if it is not better after 4 weeks.",
-                "ja": "4週間で改善しなければ受診してください。"
+                "zh-TW": "2 週仍未改善或變嚴重，請回診。",
+                "en": "Seek medical advice if it is not improving after 2 weeks or is getting worse.",
+                "id": "Periksakan diri bila tidak membaik setelah 2 minggu atau makin parah.",
+                "vi": "Đi khám nếu sau 2 tuần không cải thiện hoặc nặng hơn.",
+                "th": "หากไม่ดีขึ้นภายใน 2 สัปดาห์หรือแย่ลง ให้พบแพทย์",
+                "tl": "Magpatingin kung hindi bumuti sa loob ng 2 linggo o kung lumalala.",
+                "ja": "2週間たっても改善しない、または悪化する場合は受診してください。"
               },
               "highlight": false
             }
@@ -16810,13 +16771,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這張單只給光線性角化病用。\n睡前擦，隔天早上一定要洗掉。\n紅、癢、脫皮常是藥正在起作用，不一定表示過敏。",
-              "en": "This sheet is for actinic keratosis only.\nApply it at bedtime and always wash it off the next morning.\nRedness, itching, and peeling are common signs that the medicine is working and do not always mean allergy.",
-              "id": "This sheet is for actinic keratosis only.\nApply it at bedtime and always wash it off the next morning.\nRedness, itching, and peeling are common signs that the medicine is working and do not always mean allergy.",
-              "vi": "This sheet is for actinic keratosis only.\nApply it at bedtime and always wash it off the next morning.\nRedness, itching, and peeling are common signs that the medicine is working and do not always mean allergy.",
-              "th": "This sheet is for actinic keratosis only.\nApply it at bedtime and always wash it off the next morning.\nRedness, itching, and peeling are common signs that the medicine is working and do not always mean allergy.",
-              "tl": "This sheet is for actinic keratosis only.\nApply it at bedtime and always wash it off the next morning.\nRedness, itching, and peeling are common signs that the medicine is working and do not always mean allergy.",
-              "ja": "この用紙は光線角化症用です。\n寝る前に塗り、翌朝は必ず洗い流します。\n赤み、かゆみ、皮むけは薬が効いている時によくみられ、必ずしもアレルギーではありません。"
+              "zh-TW": "這張只適用於光化性角化病。睡前薄擦，隔天早上洗掉。\n紅、癢、脫皮可在治療初期出現；反應太強時先停用並回診。",
+              "en": "This sheet is only for actinic keratosis. Apply a thin layer at bedtime and wash it off the next morning.\nRedness, itching, and peeling can occur early in treatment. Stop and seek review if the reaction is too strong.",
+              "id": "Lembar ini hanya untuk keratosis aktinik. Oleskan tipis sebelum tidur dan cuci keesokan paginya.\nKemerahan, gatal, dan pengelupasan dapat terjadi pada awal pengobatan. Hentikan dan periksa bila reaksinya terlalu berat.",
+              "vi": "Tờ này chỉ dùng cho dày sừng quang hóa. Bôi mỏng trước khi ngủ và rửa đi vào sáng hôm sau.\nĐỏ, ngứa và bong tróc có thể xảy ra khi mới điều trị. Ngừng thuốc và tái khám nếu phản ứng quá mạnh.",
+              "th": "เอกสารนี้ใช้สำหรับรอยโรคผิวหนังจากแสงแดดเท่านั้น ทาบาง ๆ ก่อนนอนและล้างออกในเช้าวันถัดไป\nช่วงเริ่มรักษาอาจมีผิวแดง คัน หรือลอกได้ หากปฏิกิริยารุนแรงเกินไป ให้หยุดใช้และกลับไปพบแพทย์",
+              "tl": "Para lamang ang sheet na ito sa actinic keratosis. Magpahid nang manipis bago matulog at hugasan kinabukasan.\nMaaaring mamula, mangati, o magbalat sa simula ng gamutan. Itigil at magpatingin kung masyadong malubha ang reaksyon.",
+              "ja": "このシートは日光角化症にのみ使います。就寝前に薄く塗り、翌朝に洗い流してください。\n治療初期には赤み、かゆみ、皮むけが起こることがあります。反応が強すぎる場合は中止して受診してください。"
             },
             "html": null,
             "tone": null
@@ -16982,39 +16943,26 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "治療部位要避開太陽和 UV 燈。",
-                "en": "Keep the treated skin away from strong sun and UV lamps.",
-                "id": "Keep the treated skin away from strong sun and UV lamps.",
-                "vi": "Keep the treated skin away from strong sun and UV lamps.",
-                "th": "Keep the treated skin away from strong sun and UV lamps.",
-                "tl": "Keep the treated skin away from strong sun and UV lamps.",
-                "ja": "治療部位を強い日差しやUVから避ける。"
+                "zh-TW": "治療部位要避開日曬、日光浴機與 UV 燈；外出以衣物遮住患處。",
+                "en": "Keep the treated area away from sunlight, tanning beds, and UV lamps. Cover it with clothing outdoors.",
+                "id": "Hindari sinar matahari, tanning bed, dan lampu UV pada area yang diobati. Tutupi dengan pakaian saat di luar.",
+                "vi": "Tránh nắng, máy tắm nắng và đèn UV ở vùng đang điều trị. Che vùng này bằng quần áo khi ra ngoài.",
+                "th": "หลีกเลี่ยงแดด เตียงอาบแดด และแสง UV บริเวณที่รักษา ใช้เสื้อผ้าปกปิดเมื่อออกนอกบ้าน",
+                "tl": "Iwasan ang araw, tanning bed, at UV lamp sa ginagamot na bahagi. Takpan ito ng damit kapag nasa labas.",
+                "ja": "治療部位は日光、日焼けマシン、UVランプを避け、外出時は衣類で覆ってください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "若反應太強、疼痛明顯或流膿，先停用並回診。",
-                "en": "Stop and ask for review if the reaction becomes too strong, very painful, or starts to ooze pus.",
-                "id": "Stop and ask for review if the reaction becomes too strong, very painful, or starts to ooze pus.",
-                "vi": "Stop and ask for review if the reaction becomes too strong, very painful, or starts to ooze pus.",
-                "th": "Stop and ask for review if the reaction becomes too strong, very painful, or starts to ooze pus.",
-                "tl": "Stop and ask for review if the reaction becomes too strong, very painful, or starts to ooze pus.",
-                "ja": "反応が強すぎる、強い痛み、膿が出る時は中止して受診してください。"
-              },
-              "highlight": false
-            },
-            {
-              "index": 2,
-              "text": {
-                "zh-TW": "不要拿這張單的排程去套用在尖銳濕疣。",
-                "en": "Do not use this schedule for genital warts.",
-                "id": "Do not use this schedule for genital warts.",
-                "vi": "Do not use this schedule for genital warts.",
-                "th": "Do not use this schedule for genital warts.",
-                "tl": "Do not use this schedule for genital warts.",
-                "ja": "この用法を尖圭コンジローマに流用しないでください。"
+                "zh-TW": "若疼痛明顯、嚴重腫脹、流膿或皮膚破損範圍擴大，先停用並回診。",
+                "en": "Stop and seek review if there is marked pain, severe swelling, pus, or worsening skin breakdown.",
+                "id": "Hentikan dan periksa bila ada nyeri berat, bengkak berat, nanah, atau kerusakan kulit yang makin luas.",
+                "vi": "Ngừng thuốc và tái khám nếu đau rõ, sưng nhiều, có mủ hoặc vùng da tổn thương lan rộng.",
+                "th": "หยุดใช้และกลับไปพบแพทย์หากปวดมาก บวมมาก มีหนอง หรือผิวหนังแตกเป็นบริเวณกว้างขึ้น",
+                "tl": "Itigil at magpatingin kung matindi ang sakit, malubha ang pamamaga, may nana, o lumalawak ang sugat sa balat.",
+                "ja": "強い痛み、ひどい腫れ、膿、皮膚のただれが広がる場合は中止して受診してください。"
               },
               "highlight": false
             }
@@ -17133,13 +17081,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這張單只給尖銳濕疣用。\n睡前擦，6 到 10 小時後洗掉。\n和光線性角化病的排程不同，不要混用。",
-              "en": "This sheet is for genital warts only.\nApply it at bedtime and wash it off after 6 to 10 hours.\nIts schedule is different from actinic keratosis, so do not mix them up.",
-              "id": "This sheet is for genital warts only.\nApply it at bedtime and wash it off after 6 to 10 hours.\nIts schedule is different from actinic keratosis, so do not mix them up.",
-              "vi": "This sheet is for genital warts only.\nApply it at bedtime and wash it off after 6 to 10 hours.\nIts schedule is different from actinic keratosis, so do not mix them up.",
-              "th": "This sheet is for genital warts only.\nApply it at bedtime and wash it off after 6 to 10 hours.\nIts schedule is different from actinic keratosis, so do not mix them up.",
-              "tl": "This sheet is for genital warts only.\nApply it at bedtime and wash it off after 6 to 10 hours.\nIts schedule is different from actinic keratosis, so do not mix them up.",
-              "ja": "この用紙は尖圭コンジローマ用です。\n寝る前に塗り、6〜10時間後に洗い流します。\n光線角化症とはスケジュールが違うので混同しないでください。"
+              "zh-TW": "這張只適用於外生殖器／肛門周圍疣。每週固定 3 晚，最長 16 週；睡前擦，6–10 小時後洗掉。\n不要把光化性角化病的用法套到這張。",
+              "en": "This sheet is only for external genital or perianal warts. Use it on 3 fixed nights each week for up to 16 weeks; apply at bedtime and wash off after 6 to 10 hours.\nDo not use the actinic-keratosis schedule for this condition.",
+              "id": "Lembar ini hanya untuk kutil kelamin luar atau sekitar anus. Gunakan pada 3 malam tetap tiap minggu, paling lama 16 minggu; oleskan sebelum tidur dan cuci setelah 6–10 jam.\nJangan gunakan jadwal untuk keratosis aktinik pada kondisi ini.",
+              "vi": "Tờ này chỉ dùng cho mụn cóc sinh dục ngoài hoặc quanh hậu môn. Dùng vào 3 tối cố định mỗi tuần, tối đa 16 tuần; bôi trước khi ngủ và rửa sau 6–10 giờ.\nKhông dùng lịch điều trị dày sừng quang hóa cho tình trạng này.",
+              "th": "เอกสารนี้ใช้สำหรับหูดที่อวัยวะเพศภายนอกหรือรอบทวารหนักเท่านั้น ใช้คืนละ 3 คืนที่กำหนดในแต่ละสัปดาห์ นานไม่เกิน 16 สัปดาห์; ทาก่อนนอนและล้างออกหลัง 6–10 ชั่วโมง\nห้ามใช้ตารางของรอยโรคผิวหนังจากแสงแดดกับภาวะนี้",
+              "tl": "Para lamang ang sheet na ito sa kulugo sa panlabas na ari o paligid ng puwit. Gamitin sa 3 takdang gabi bawat linggo nang hanggang 16 na linggo; magpahid bago matulog at hugasan pagkalipas ng 6–10 oras.\nHuwag gamitin ang iskedyul para sa actinic keratosis sa kondisyong ito.",
+              "ja": "このシートは外陰部または肛門周囲のいぼにのみ使います。週3回、決めた夜に最長16週間使用し、就寝前に塗って6〜10時間後に洗い流してください。\n日光角化症の使用スケジュールをこの病気に使わないでください。"
             },
             "html": null,
             "tone": null
@@ -17305,39 +17253,26 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "藥還在皮膚上時，先不要性接觸。",
-                "en": "Do not have sexual contact while the cream is still on the skin.",
-                "id": "Do not have sexual contact while the cream is still on the skin.",
-                "vi": "Do not have sexual contact while the cream is still on the skin.",
-                "th": "Do not have sexual contact while the cream is still on the skin.",
-                "tl": "Do not have sexual contact while the cream is still on the skin.",
-                "ja": "クリームが皮膚に残っている間は性的接触を避ける。"
+                "zh-TW": "藥還在皮膚上時不要有性接觸；這個藥可能使保險套、陰道隔膜變脆或破損。",
+                "en": "Do not have sexual contact while the medicine is on the skin. It may weaken or damage condoms and diaphragms.",
+                "id": "Jangan melakukan kontak seksual saat obat masih di kulit. Obat ini dapat melemahkan atau merusak kondom dan diafragma.",
+                "vi": "Không quan hệ tình dục khi thuốc còn trên da. Thuốc có thể làm yếu hoặc hỏng bao cao su và màng ngăn âm đạo.",
+                "th": "อย่ามีเพศสัมพันธ์ขณะที่ยายังอยู่บนผิว ยาอาจทำให้ถุงยางอนามัยและแผ่นกั้นช่องคลอดอ่อนแอหรือเสียหาย",
+                "tl": "Huwag makipagtalik habang nasa balat pa ang gamot. Maaari nitong pahinain o sirain ang condom at diaphragm.",
+                "ja": "薬が皮膚に残っている間は性行為をしないでください。コンドームやペッサリーを弱くしたり傷めたりすることがあります。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "它可能影響保險套或子宮帽的效果。",
-                "en": "It may weaken condoms or diaphragms.",
-                "id": "It may weaken condoms or diaphragms.",
-                "vi": "It may weaken condoms or diaphragms.",
-                "th": "It may weaken condoms or diaphragms.",
-                "tl": "It may weaken condoms or diaphragms.",
-                "ja": "コンドームやペッサリーを弱くすることがあります。"
-              },
-              "highlight": false
-            },
-            {
-              "index": 2,
-              "text": {
-                "zh-TW": "若疼痛很強、紅腫很厲害或流膿，先停用並回診。",
-                "en": "Stop and ask for review if the pain, redness, swelling, or pus becomes severe.",
-                "id": "Stop and ask for review if the pain, redness, swelling, or pus becomes severe.",
-                "vi": "Stop and ask for review if the pain, redness, swelling, or pus becomes severe.",
-                "th": "Stop and ask for review if the pain, redness, swelling, or pus becomes severe.",
-                "tl": "Stop and ask for review if the pain, redness, swelling, or pus becomes severe.",
-                "ja": "痛み、赤み、腫れ、膿が強い時は中止して受診してください。"
+                "zh-TW": "疼痛很強、紅腫很厲害、流膿或破皮擴大時，先停用並回診。",
+                "en": "Stop and seek review if there is severe pain, marked redness or swelling, pus, or worsening skin breakdown.",
+                "id": "Hentikan dan periksa bila ada nyeri berat, kemerahan atau bengkak berat, nanah, atau kerusakan kulit yang makin luas.",
+                "vi": "Ngừng thuốc và tái khám nếu đau nhiều, đỏ hoặc sưng nhiều, có mủ hoặc da tổn thương lan rộng.",
+                "th": "หยุดใช้และกลับไปพบแพทย์หากปวดมาก แดงหรือบวมมาก มีหนอง หรือผิวหนังแตกเป็นบริเวณกว้างขึ้น",
+                "tl": "Itigil at magpatingin kung matindi ang sakit, matindi ang pamumula o pamamaga, may nana, o lumalawak ang sugat sa balat.",
+                "ja": "強い痛み、ひどい赤みや腫れ、膿、皮膚のただれが広がる場合は中止して受診してください。"
               },
               "highlight": false
             }
@@ -17456,13 +17391,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "重點是洗頭皮，不是洗髮絲。\n泡泡要停留 3 到 5 分鐘再沖掉。\n治療期通常每週 2 次，兩次要隔至少 3 天。",
-              "en": "The main target is the scalp, not the hair itself.\nLeave the lather on for 3 to 5 minutes before rinsing.\nTreatment is usually twice a week, with at least 3 days between uses.",
-              "id": "The main target is the scalp, not the hair itself.\nLeave the lather on for 3 to 5 minutes before rinsing.\nTreatment is usually twice a week, with at least 3 days between uses.",
-              "vi": "The main target is the scalp, not the hair itself.\nLeave the lather on for 3 to 5 minutes before rinsing.\nTreatment is usually twice a week, with at least 3 days between uses.",
-              "th": "The main target is the scalp, not the hair itself.\nLeave the lather on for 3 to 5 minutes before rinsing.\nTreatment is usually twice a week, with at least 3 days between uses.",
-              "tl": "The main target is the scalp, not the hair itself.\nLeave the lather on for 3 to 5 minutes before rinsing.\nTreatment is usually twice a week, with at least 3 days between uses.",
-              "ja": "大事なのは髪ではなく頭皮を洗うことです。\n泡は3〜5分おいてから流します。\n治療期は通常週2回で、少なくとも3日あけます。"
+              "zh-TW": "重點是洗頭皮，不是只洗髮絲。\n起泡後停留 3–5 分鐘再沖掉。\n治療期與預防復發的頻率不同，依藥袋或醫囑使用。",
+              "en": "The main target is the scalp, not just the hair.\nLeave the lather on for 3 to 5 minutes before rinsing.\nThe treatment schedule differs from the schedule used to prevent a flare-up; follow your medication label or clinician's directions.",
+              "id": "Target utamanya adalah kulit kepala, bukan hanya rambut.\nBiarkan busa selama 3–5 menit sebelum dibilas.\nJadwal pengobatan berbeda dengan jadwal pencegahan kambuh; ikuti etiket obat atau petunjuk tenaga kesehatan.",
+              "vi": "Mục tiêu chính là da đầu, không chỉ là tóc.\nĐể bọt lưu lại 3–5 phút rồi mới xả.\nLịch điều trị khác với lịch phòng tái phát; hãy theo nhãn thuốc hoặc chỉ dẫn của bác sĩ.",
+              "th": "จุดสำคัญคือหนังศีรษะ ไม่ใช่แค่เส้นผม\nทิ้งฟองไว้ 3–5 นาทีก่อนล้างออก\nความถี่ช่วงรักษาและช่วงป้องกันกำเริบไม่เหมือนกัน ให้ใช้ตามฉลากยาหรือคำสั่งแพทย์",
+              "tl": "Ang pangunahing target ay ang anit, hindi lamang ang buhok.\nIwan ang bula nang 3–5 minuto bago banlawan.\nMagkaiba ang iskedyul ng paggamot at pagpigil sa pagbabalik; sundin ang etiketa ng gamot o tagubilin ng clinician.",
+              "ja": "大切なのは髪だけでなく頭皮を洗うことです。\n泡を3〜5分置いてから洗い流します。\n治療期と再発予防期では頻度が異なるため、薬袋または医療者の指示に従ってください。"
             },
             "html": null,
             "tone": null
@@ -17620,39 +17555,39 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "避開眼睛。若跑進眼睛，立刻沖水。",
-                "en": "Keep it out of the eyes. Rinse right away if it gets in.",
-                "id": "Keep it out of the eyes. Rinse right away if it gets in.",
-                "vi": "Keep it out of the eyes. Rinse right away if it gets in.",
-                "th": "Keep it out of the eyes. Rinse right away if it gets in.",
-                "tl": "Keep it out of the eyes. Rinse right away if it gets in.",
-                "ja": "目に入れない。入ったらすぐ洗い流す。"
+                "zh-TW": "避開眼睛、口腔；若跑進去，立刻用清水沖洗。",
+                "en": "Keep it away from the eyes and mouth. Rinse with clean water right away if it gets there.",
+                "id": "Jauhkan dari mata dan mulut. Bila terkena, segera bilas dengan air bersih.",
+                "vi": "Tránh mắt và miệng. Nếu dính vào, rửa ngay bằng nước sạch.",
+                "th": "หลีกเลี่ยงดวงตาและปาก หากสัมผัสให้ล้างด้วยน้ำสะอาดทันที",
+                "tl": "Iwasan ang mata at bibig. Banlawan agad ng malinis na tubig kung madikitan.",
+                "ja": "目や口に入らないようにし、入ったらすぐにきれいな水で洗い流してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "如果要染髮，前後至少隔 3 天。",
-                "en": "If you are dyeing your hair, leave at least 3 days between the shampoo and the dye.",
-                "id": "If you are dyeing your hair, leave at least 3 days between the shampoo and the dye.",
-                "vi": "If you are dyeing your hair, leave at least 3 days between the shampoo and the dye.",
-                "th": "If you are dyeing your hair, leave at least 3 days between the shampoo and the dye.",
-                "tl": "If you are dyeing your hair, leave at least 3 days between the shampoo and the dye.",
-                "ja": "染毛するなら前後3日以上あける。"
+                "zh-TW": "頭皮刺激、灼熱、紅腫明顯時，先停用並回診。",
+                "en": "Stop and seek medical advice if scalp irritation, burning, redness, or swelling becomes marked.",
+                "id": "Hentikan dan periksakan diri bila iritasi, rasa terbakar, kemerahan, atau bengkak pada kulit kepala menjadi berat.",
+                "vi": "Ngừng thuốc và đi khám nếu kích ứng, nóng rát, đỏ hoặc sưng da đầu rõ rệt.",
+                "th": "หยุดใช้และพบแพทย์หากหนังศีรษะระคายเคือง แสบร้อน แดง หรือบวมมาก",
+                "tl": "Itigil at magpatingin kung malubha ang iritasyon, paghapdi, pamumula, o pamamaga ng anit.",
+                "ja": "頭皮の刺激、灼熱感、赤み、腫れが強い場合は中止して受診してください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "頭皮有明顯傷口、很痛或化膿時，先問醫師。",
-                "en": "Ask your doctor first if the scalp has open wounds, severe pain, or pus.",
-                "id": "Ask your doctor first if the scalp has open wounds, severe pain, or pus.",
-                "vi": "Ask your doctor first if the scalp has open wounds, severe pain, or pus.",
-                "th": "Ask your doctor first if the scalp has open wounds, severe pain, or pus.",
-                "tl": "Ask your doctor first if the scalp has open wounds, severe pain, or pus.",
-                "ja": "頭皮に傷、強い痛み、膿がある時は先に医師へ相談する。"
+                "zh-TW": "治療後 4 週仍未改善或持續惡化，請回診。",
+                "en": "Seek medical advice if there is no improvement after 4 weeks or symptoms keep getting worse.",
+                "id": "Periksakan diri bila setelah 4 minggu tidak membaik atau gejala terus memburuk.",
+                "vi": "Đi khám nếu sau 4 tuần không cải thiện hoặc triệu chứng tiếp tục nặng hơn.",
+                "th": "หาก 4 สัปดาห์แล้วไม่ดีขึ้นหรืออาการแย่ลงต่อเนื่อง ให้พบแพทย์",
+                "tl": "Magpatingin kung walang pagbuti matapos ang 4 na linggo o patuloy na lumalala ang mga sintomas.",
+                "ja": "4週間たっても改善しない、または悪化が続く場合は受診してください。"
               },
               "highlight": false
             }
@@ -18223,13 +18158,13 @@
                 "ja": "日中は日差しから守る"
               },
               "note": {
-                "zh-TW": "白天請用 SPF 30 以上防曬，並盡量避開長時間日曬。",
-                "en": "Use SPF 30 or higher in the daytime and avoid long sun exposure.",
-                "id": "Use SPF 30 or higher in the daytime and avoid long sun exposure.",
-                "vi": "Use SPF 30 or higher in the daytime and avoid long sun exposure.",
-                "th": "Use SPF 30 or higher in the daytime and avoid long sun exposure.",
-                "tl": "Use SPF 30 or higher in the daytime and avoid long sun exposure.",
-                "ja": "日中はSPF30以上を使い、長い日光曝露を避ける。"
+                "zh-TW": "避開日光浴、日光浴機與 UV 光療；外出以衣物遮住患處，防曬方式依醫囑。",
+                "en": "Avoid sunbathing, tanning beds, and UV phototherapy. Cover the treated area with clothing outdoors and follow your doctor’s advice on sunscreen.",
+                "id": "Hindari berjemur, tanning bed, dan fototerapi UV. Tutupi area yang diobati dengan pakaian saat di luar dan ikuti petunjuk dokter tentang tabir surya.",
+                "vi": "Tránh tắm nắng, máy tắm nắng và quang trị liệu UV. Che vùng bôi thuốc bằng quần áo khi ra ngoài và dùng chống nắng theo hướng dẫn bác sĩ.",
+                "th": "หลีกเลี่ยงการอาบแดด เตียงอาบแดด และการรักษาด้วยแสง UV ปกปิดบริเวณที่ทายาด้วยเสื้อผ้าเมื่อออกนอกบ้าน และใช้กันแดดตามคำแนะนำแพทย์",
+                "tl": "Iwasan ang sunbathing, tanning bed, at UV phototherapy. Takpan ng damit ang ginagamot na bahagi kapag nasa labas at sundin ang payo ng doktor tungkol sa sunscreen.",
+                "ja": "日光浴、日焼けマシン、UV光線療法は避けてください。外出時は患部を衣類で覆い、日焼け止めは医師の指示に従ってください。"
               },
               "highlight": false,
               "illustration": {
@@ -18266,39 +18201,26 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "不要用保鮮膜、尿布或繃帶把藥悶住，除非醫師交代。",
-                "en": "Do not seal the area with plastic wrap, nappies, or bandages unless your doctor told you to.",
-                "id": "Do not seal the area with plastic wrap, nappies, or bandages unless your doctor told you to.",
-                "vi": "Do not seal the area with plastic wrap, nappies, or bandages unless your doctor told you to.",
-                "th": "Do not seal the area with plastic wrap, nappies, or bandages unless your doctor told you to.",
-                "tl": "Do not seal the area with plastic wrap, nappies, or bandages unless your doctor told you to.",
-                "ja": "医師の指示がない限り、ラップや包帯で密閉しない。"
+                "zh-TW": "感染中的皮膚先不要擦；若有流膿、結痂擴大、疼痛加劇、發燒或群聚水泡，先回診。",
+                "en": "Do not apply it to infected skin. Seek review first for pus, spreading crusts, worsening pain, fever, or clusters of blisters.",
+                "id": "Jangan oleskan pada kulit yang terinfeksi. Periksa dulu bila ada nanah, keropeng yang meluas, nyeri memburuk, demam, atau lepuhan berkelompok.",
+                "vi": "Không bôi lên da đang nhiễm trùng. Tái khám trước nếu có mủ, vảy đóng lan rộng, đau tăng, sốt hoặc chùm mụn nước.",
+                "th": "ห้ามทาบนผิวที่ติดเชื้อ หากมีหนอง สะเก็ดลาม ปวดมากขึ้น ไข้ หรือมีตุ่มน้ำเป็นกลุ่ม ให้กลับไปพบแพทย์ก่อน",
+                "tl": "Huwag ipahid sa balat na may impeksiyon. Magpatingin muna kung may nana, lumalawak na langib, lumalalang sakit, lagnat, o kumpol-kumpol na paltos.",
+                "ja": "感染している皮膚には塗らないでください。膿、広がるかさぶた、痛みの悪化、発熱、集まった水ぶくれがある場合は先に受診してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "皮膚感染時，先處理感染再用。",
-                "en": "Treat skin infection first before using this medicine.",
-                "id": "Treat skin infection first before using this medicine.",
-                "vi": "Treat skin infection first before using this medicine.",
-                "th": "Treat skin infection first before using this medicine.",
-                "tl": "Treat skin infection first before using this medicine.",
-                "ja": "皮膚感染がある時は先に感染治療をする。"
-              },
-              "highlight": false
-            },
-            {
-              "index": 2,
-              "text": {
-                "zh-TW": "若持續發燒、腫脹變嚴重或很痛，請回診。",
-                "en": "Go back for review if fever, swelling, or pain becomes more severe.",
-                "id": "Go back for review if fever, swelling, or pain becomes more severe.",
-                "vi": "Go back for review if fever, swelling, or pain becomes more severe.",
-                "th": "Go back for review if fever, swelling, or pain becomes more severe.",
-                "tl": "Go back for review if fever, swelling, or pain becomes more severe.",
-                "ja": "発熱、腫れ、痛みが強くなる時は受診してください。"
+                "zh-TW": "不要用保鮮膜、緊密繃帶或尿布把塗藥處悶住，除非醫師交代。",
+                "en": "Do not cover treated skin with plastic wrap, tight bandages, or a diaper unless your doctor told you to.",
+                "id": "Jangan menutup area yang diobati dengan plastik, perban ketat, atau popok kecuali dokter menginstruksikannya.",
+                "vi": "Không bọc kín vùng bôi thuốc bằng màng bọc, băng chặt hoặc tã trừ khi bác sĩ dặn.",
+                "th": "ห้ามปิดบริเวณที่ทายาด้วยพลาสติก ผ้าพันแผลแน่น หรือผ้าอ้อม เว้นแต่แพทย์สั่ง",
+                "tl": "Huwag takpan ang ginagamot na balat ng plastic wrap, mahigpit na benda, o diaper maliban kung iniutos ng doktor.",
+                "ja": "医師の指示がない限り、塗った部位をラップ、きつい包帯、おむつで覆わないでください。"
               },
               "highlight": false
             }
@@ -18748,13 +18670,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這張是乳膏劑型。\n洗完腳後一定要完全弄乾，尤其趾縫。\n症狀好了，也要再多擦 2 週。",
-              "en": "This sheet is for the cream form.\nAlways dry the feet completely after washing, especially between the toes.\nKeep using it for 2 more weeks after the skin looks better.",
-              "id": "This sheet is for the cream form.\nAlways dry the feet completely after washing, especially between the toes.\nKeep using it for 2 more weeks after the skin looks better.",
-              "vi": "This sheet is for the cream form.\nAlways dry the feet completely after washing, especially between the toes.\nKeep using it for 2 more weeks after the skin looks better.",
-              "th": "This sheet is for the cream form.\nAlways dry the feet completely after washing, especially between the toes.\nKeep using it for 2 more weeks after the skin looks better.",
-              "tl": "This sheet is for the cream form.\nAlways dry the feet completely after washing, especially between the toes.\nKeep using it for 2 more weeks after the skin looks better.",
-              "ja": "これはクリーム剤用の説明です。\n足を洗った後は、特に指の間まで完全に乾かします。\nよくなっても2週間は続けます。"
+              "zh-TW": "用在足癬時，先洗腳並完全擦乾，尤其趾縫。\n乳膏薄擦皮膚；粉劑才可少量撒在趾縫或鞋內。\n症狀改善後，仍依藥袋完成療程。",
+              "en": "For athlete's foot, wash and dry the feet completely first, especially between the toes.\nApply cream thinly to the skin; only powder may be lightly dusted between the toes or inside shoes.\nKeep using it for the full course on your medication label, even when it looks better.",
+              "id": "Untuk kutu air, cuci dan keringkan kaki sepenuhnya, terutama sela jari.\nKrim dioles tipis pada kulit; hanya sediaan bubuk yang boleh ditaburkan sedikit di sela jari atau dalam sepatu.\nTetap gunakan sampai seluruh lama terapi pada etiket obat selesai, walaupun sudah tampak membaik.",
+              "vi": "Khi điều trị nấm chân, rửa chân rồi lau thật khô, nhất là kẽ ngón.\nKem chỉ bôi mỏng lên da; chỉ dạng bột mới có thể rắc ít ở kẽ ngón hoặc trong giày.\nDù đã đỡ, vẫn dùng đủ liệu trình ghi trên nhãn thuốc.",
+              "th": "สำหรับเชื้อราที่เท้า ให้ล้างและเช็ดเท้าให้แห้งสนิท โดยเฉพาะซอกนิ้วเท้า\nครีมทาบาง ๆ บนผิวหนัง; เฉพาะยาผงเท่านั้นที่โรยเล็กน้อยที่ซอกนิ้วหรือในรองเท้าได้\nแม้อาการดีขึ้นแล้ว ให้ใช้ต่อจนครบระยะที่ระบุบนฉลากยา",
+              "tl": "Para sa athlete's foot, hugasan at patuyuing mabuti ang paa, lalo na sa pagitan ng mga daliri.\nAng cream ay pahiran nang manipis sa balat; pulbos lamang ang maaaring bahagyang iwisik sa pagitan ng mga daliri o sa loob ng sapatos.\nKahit bumuti na, tapusin ang haba ng gamutan na nasa etiketa ng gamot.",
+              "ja": "足白癬には、まず足を洗って特に足指の間まで完全に乾かします。\nクリームは皮膚に薄く塗り、粉末剤のみ足指の間や靴の中に少量ふりかけられます。\n良く見えても、薬袋に記載された期間は使い切ってください。"
             },
             "html": null,
             "tone": null
@@ -18920,39 +18842,39 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "毛巾、襪子、鞋子不要跟別人共用。",
-                "en": "Do not share towels, socks, or shoes.",
-                "id": "Do not share towels, socks, or shoes.",
-                "vi": "Do not share towels, socks, or shoes.",
-                "th": "Do not share towels, socks, or shoes.",
-                "tl": "Do not share towels, socks, or shoes.",
-                "ja": "タオル、靴下、靴を共用しない。"
+                "zh-TW": "避開眼睛、口腔和其他黏膜；若誤觸，立刻用清水沖洗。",
+                "en": "Keep it away from the eyes, mouth, and other mucous membranes. Rinse with clean water right away if it gets there.",
+                "id": "Jauhkan dari mata, mulut, dan selaput lendir lain. Bila terkena, segera bilas dengan air bersih.",
+                "vi": "Tránh mắt, miệng và các niêm mạc khác. Nếu dính vào, rửa ngay bằng nước sạch.",
+                "th": "หลีกเลี่ยงดวงตา ปาก และเยื่อบุอื่น ๆ หากสัมผัส ให้ล้างด้วยน้ำสะอาดทันที",
+                "tl": "Iwasan ang mata, bibig, at iba pang mucosa. Banlawan agad ng malinis na tubig kung madikitan.",
+                "ja": "目、口、その他の粘膜を避け、付着したらすぐにきれいな水で洗い流してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "每天換乾淨棉襪，鞋子要透氣。",
-                "en": "Change to clean cotton socks every day and use breathable shoes.",
-                "id": "Change to clean cotton socks every day and use breathable shoes.",
-                "vi": "Change to clean cotton socks every day and use breathable shoes.",
-                "th": "Change to clean cotton socks every day and use breathable shoes.",
-                "tl": "Change to clean cotton socks every day and use breathable shoes.",
-                "ja": "毎日清潔な綿の靴下に替え、通気のよい靴を使う。"
+                "zh-TW": "毛巾、襪子和鞋子不要共用；每天換乾淨襪子，讓鞋子乾透。",
+                "en": "Do not share towels, socks, or shoes. Change into clean socks daily and let shoes dry completely.",
+                "id": "Jangan berbagi handuk, kaus kaki, atau sepatu. Ganti kaus kaki bersih setiap hari dan biarkan sepatu benar-benar kering.",
+                "vi": "Không dùng chung khăn, vớ hoặc giày. Thay vớ sạch mỗi ngày và để giày khô hoàn toàn.",
+                "th": "ห้ามใช้ผ้าเช็ดตัว ถุงเท้า หรือรองเท้าร่วมกัน เปลี่ยนถุงเท้าสะอาดทุกวันและปล่อยให้รองเท้าแห้งสนิท",
+                "tl": "Huwag magbahagi ng tuwalya, medyas, o sapatos. Magpalit ng malinis na medyas araw-araw at patuyuing mabuti ang sapatos.",
+                "ja": "タオル、靴下、靴は共用せず、毎日清潔な靴下に替え、靴を完全に乾かしてください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "4 週還是沒改善，請回診。",
-                "en": "Go back for review if it is not better after 4 weeks.",
-                "id": "Go back for review if it is not better after 4 weeks.",
-                "vi": "Go back for review if it is not better after 4 weeks.",
-                "th": "Go back for review if it is not better after 4 weeks.",
-                "tl": "Go back for review if it is not better after 4 weeks.",
-                "ja": "4週間で改善しなければ受診してください。"
+                "zh-TW": "2–4 週仍未改善、反覆復發，或出現腫脹、流膿、發燒時，請回診。",
+                "en": "Seek medical advice if there is no improvement after 2 to 4 weeks, it keeps coming back, or there is swelling, pus, or fever.",
+                "id": "Periksakan diri bila tidak membaik setelah 2–4 minggu, sering kambuh, atau ada bengkak, nanah, atau demam.",
+                "vi": "Đi khám nếu sau 2–4 tuần không cải thiện, tái phát nhiều lần, hoặc có sưng, mủ hay sốt.",
+                "th": "หากไม่ดีขึ้นภายใน 2–4 สัปดาห์ เป็นซ้ำบ่อย หรือมีบวม หนอง หรือไข้ ให้พบแพทย์",
+                "tl": "Magpatingin kung hindi bumuti sa loob ng 2–4 na linggo, paulit-ulit na bumabalik, o may pamamaga, nana, o lagnat.",
+                "ja": "2〜4週間たっても改善しない、繰り返す、または腫れ、膿、発熱がある場合は受診してください。"
               },
               "highlight": false
             }
@@ -19071,13 +18993,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這張是粉末劑型。\n粉可以撒在趾縫和鞋內，幫忙保持乾燥。\n使用時不要把粉吸進鼻子或嘴巴。",
-              "en": "This sheet is for the powder form.\nThe powder can be used between the toes and inside shoes to help keep things dry.\nDo not breathe the powder into your nose or mouth.",
-              "id": "This sheet is for the powder form.\nThe powder can be used between the toes and inside shoes to help keep things dry.\nDo not breathe the powder into your nose or mouth.",
-              "vi": "This sheet is for the powder form.\nThe powder can be used between the toes and inside shoes to help keep things dry.\nDo not breathe the powder into your nose or mouth.",
-              "th": "This sheet is for the powder form.\nThe powder can be used between the toes and inside shoes to help keep things dry.\nDo not breathe the powder into your nose or mouth.",
-              "tl": "This sheet is for the powder form.\nThe powder can be used between the toes and inside shoes to help keep things dry.\nDo not breathe the powder into your nose or mouth.",
-              "ja": "これは粉末剤用の説明です。\n粉は足指の間や靴の中に使えて、乾燥を助けます。\n粉を鼻や口に吸い込まないでください。"
+              "zh-TW": "用在足癬時，先洗腳並完全擦乾，尤其趾縫。\n乳膏薄擦皮膚；粉劑才可少量撒在趾縫或鞋內。\n症狀改善後，仍依藥袋完成療程。",
+              "en": "For athlete's foot, wash and dry the feet completely first, especially between the toes.\nApply cream thinly to the skin; only powder may be lightly dusted between the toes or inside shoes.\nKeep using it for the full course on your medication label, even when it looks better.",
+              "id": "Untuk kutu air, cuci dan keringkan kaki sepenuhnya, terutama sela jari.\nKrim dioles tipis pada kulit; hanya sediaan bubuk yang boleh ditaburkan sedikit di sela jari atau dalam sepatu.\nTetap gunakan sampai seluruh lama terapi pada etiket obat selesai, walaupun sudah tampak membaik.",
+              "vi": "Khi điều trị nấm chân, rửa chân rồi lau thật khô, nhất là kẽ ngón.\nKem chỉ bôi mỏng lên da; chỉ dạng bột mới có thể rắc ít ở kẽ ngón hoặc trong giày.\nDù đã đỡ, vẫn dùng đủ liệu trình ghi trên nhãn thuốc.",
+              "th": "สำหรับเชื้อราที่เท้า ให้ล้างและเช็ดเท้าให้แห้งสนิท โดยเฉพาะซอกนิ้วเท้า\nครีมทาบาง ๆ บนผิวหนัง; เฉพาะยาผงเท่านั้นที่โรยเล็กน้อยที่ซอกนิ้วหรือในรองเท้าได้\nแม้อาการดีขึ้นแล้ว ให้ใช้ต่อจนครบระยะที่ระบุบนฉลากยา",
+              "tl": "Para sa athlete's foot, hugasan at patuyuing mabuti ang paa, lalo na sa pagitan ng mga daliri.\nAng cream ay pahiran nang manipis sa balat; pulbos lamang ang maaaring bahagyang iwisik sa pagitan ng mga daliri o sa loob ng sapatos.\nKahit bumuti na, tapusin ang haba ng gamutan na nasa etiketa ng gamot.",
+              "ja": "足白癬には、まず足を洗って特に足指の間まで完全に乾かします。\nクリームは皮膚に薄く塗り、粉末剤のみ足指の間や靴の中に少量ふりかけられます。\n良く見えても、薬袋に記載された期間は使い切ってください。"
             },
             "html": null,
             "tone": null
@@ -19243,163 +19165,44 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "使用時不要把粉吸進鼻子或嘴巴。",
-                "en": "Do not breathe the powder into your nose or mouth.",
-                "id": "Do not breathe the powder into your nose or mouth.",
-                "vi": "Do not breathe the powder into your nose or mouth.",
-                "th": "Do not breathe the powder into your nose or mouth.",
-                "tl": "Do not breathe the powder into your nose or mouth.",
-                "ja": "粉を鼻や口に吸い込まない。"
+                "zh-TW": "粉劑不要吸進鼻子或嘴巴。",
+                "en": "Do not breathe powder into your nose or mouth.",
+                "id": "Jangan menghirup bubuk ke hidung atau mulut.",
+                "vi": "Không hít bột vào mũi hoặc miệng.",
+                "th": "อย่าสูดผงยาเข้าทางจมูกหรือปาก",
+                "tl": "Huwag malanghap ang pulbos sa ilong o bibig.",
+                "ja": "粉末を鼻や口から吸い込まないでください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "毛巾、襪子、鞋子不要跟別人共用。",
-                "en": "Do not share towels, socks, or shoes.",
-                "id": "Do not share towels, socks, or shoes.",
-                "vi": "Do not share towels, socks, or shoes.",
-                "th": "Do not share towels, socks, or shoes.",
-                "tl": "Do not share towels, socks, or shoes.",
-                "ja": "タオル、靴下、靴を共用しない。"
+                "zh-TW": "毛巾、襪子和鞋子不要共用；每天換乾淨襪子，讓鞋子乾透。",
+                "en": "Do not share towels, socks, or shoes. Change into clean socks daily and let shoes dry completely.",
+                "id": "Jangan berbagi handuk, kaus kaki, atau sepatu. Ganti kaus kaki bersih setiap hari dan biarkan sepatu benar-benar kering.",
+                "vi": "Không dùng chung khăn, vớ hoặc giày. Thay vớ sạch mỗi ngày và để giày khô hoàn toàn.",
+                "th": "ห้ามใช้ผ้าเช็ดตัว ถุงเท้า หรือรองเท้าร่วมกัน เปลี่ยนถุงเท้าสะอาดทุกวันและปล่อยให้รองเท้าแห้งสนิท",
+                "tl": "Huwag magbahagi ng tuwalya, medyas, o sapatos. Magpalit ng malinis na medyas araw-araw at patuyuing mabuti ang sapatos.",
+                "ja": "タオル、靴下、靴は共用せず、毎日清潔な靴下に替え、靴を完全に乾かしてください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "4 週還是沒改善，請回診。",
-                "en": "Go back for review if it is not better after 4 weeks.",
-                "id": "Go back for review if it is not better after 4 weeks.",
-                "vi": "Go back for review if it is not better after 4 weeks.",
-                "th": "Go back for review if it is not better after 4 weeks.",
-                "tl": "Go back for review if it is not better after 4 weeks.",
-                "ja": "4週間で改善しなければ受診してください。"
+                "zh-TW": "2–4 週仍未改善、反覆復發，或出現腫脹、流膿、發燒時，請回診。",
+                "en": "Seek medical advice if there is no improvement after 2 to 4 weeks, it keeps coming back, or there is swelling, pus, or fever.",
+                "id": "Periksakan diri bila tidak membaik setelah 2–4 minggu, sering kambuh, atau ada bengkak, nanah, atau demam.",
+                "vi": "Đi khám nếu sau 2–4 tuần không cải thiện, tái phát nhiều lần, hoặc có sưng, mủ hay sốt.",
+                "th": "หากไม่ดีขึ้นภายใน 2–4 สัปดาห์ เป็นซ้ำบ่อย หรือมีบวม หนอง หรือไข้ ให้พบแพทย์",
+                "tl": "Magpatingin kung hindi bumuti sa loob ng 2–4 na linggo, paulit-ulit na bumabalik, o may pamamaga, nana, o lagnat.",
+                "ja": "2〜4週間たっても改善しない、繰り返す、または腫れ、膿、発熱がある場合は受診してください。"
               },
               "highlight": false
             }
           ],
           "qrUrl": "https://pharmacy.example.com/meds/undecenoate-powder"
-        }
-      ]
-    },
-    {
-      "id": "antifungal-gel-cream",
-      "category": "topical",
-      "categoryLabel": {
-        "zh-TW": "外用藥/貼片",
-        "en": "Topical/Patch",
-        "id": "Obat oles/Patch",
-        "vi": "Thuốc bôi/Patch",
-        "th": "ยาทา/แผ่นแปะ",
-        "tl": "Topical/Patch",
-        "ja": "外用薬/貼付薬"
-      },
-      "emergency": false,
-      "emergencyLabel": null,
-      "name": {
-        "zh-TW": "Antifungal gel/cream",
-        "en": "Antifungal gel/cream",
-        "id": "Antifungal gel/cream",
-        "vi": "Antifungal gel/cream",
-        "th": "Antifungal gel/cream",
-        "tl": "Antifungal gel/cream",
-        "ja": "Antifungal gel/cream"
-      },
-      "subtitle": {
-        "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-        "en": "Pending update: pharmacist will add full instructions",
-        "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-        "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-        "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-        "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-        "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      "headerBadge": null,
-      "badge": {
-        "zh-TW": "外用藥",
-        "en": "Topical",
-        "id": "Obat oles",
-        "vi": "Thuốc bôi",
-        "th": "ยาทาภายนอก",
-        "tl": "Topical",
-        "ja": "外用薬"
-      },
-      "usage": null,
-      "color": {
-        "main": "#3B6D11",
-        "light": "#EAF3DE",
-        "dark": "#173404",
-        "badge": "#C0DD97",
-        "badgeText": "#173404"
-      },
-      "qrUrl": "https://pharmacy.example.com/meds/antifungal-gel-cream",
-      "pages": [
-        {
-          "pageIndex": 0,
-          "pageKey": "main",
-          "pageLabel": null,
-          "headerBadge": null,
-          "badge": {
-            "zh-TW": "外用藥",
-            "en": "Topical",
-            "id": "Obat oles",
-            "vi": "Thuốc bôi",
-            "th": "ยาทาภายนอก",
-            "tl": "Topical",
-            "ja": "外用薬"
-          },
-          "usage": null,
-          "preStepsInfo": null,
-          "steps": [
-            {
-              "index": 0,
-              "section": null,
-              "action": {
-                "zh-TW": "內容待填寫",
-                "en": "Content pending",
-                "id": "Konten menunggu pengisian",
-                "vi": "Nội dung chờ cập nhật",
-                "th": "เนื้อหายังไม่กรอก",
-                "tl": "Naghihintay ng nilalaman",
-                "ja": "内容は未入力です"
-              },
-              "note": {
-                "zh-TW": "請依院內最新版衛教內容補上步驟",
-                "en": "Please fill this step using the latest in-house guidance",
-                "id": "Isi langkah ini sesuai panduan terbaru internal",
-                "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                "ja": "院内の最新版手順に沿って入力してください"
-              },
-              "highlight": false,
-              "illustration": {
-                "src": "",
-                "alt": null
-              },
-              "afterBox": null
-            }
-          ],
-          "infoBoxes": [],
-          "storage": null,
-          "warnings": [
-            {
-              "index": 0,
-              "text": {
-                "zh-TW": "注意事項待填寫",
-                "en": "Warning content pending",
-                "id": "Peringatan menunggu pengisian",
-                "vi": "Nội dung cảnh báo chờ cập nhật",
-                "th": "คำเตือนยังไม่กรอก",
-                "tl": "Naghihintay ng babala",
-                "ja": "注意事項は未入力です"
-              },
-              "highlight": false
-            }
-          ],
-          "qrUrl": "https://pharmacy.example.com/meds/antifungal-gel-cream"
         }
       ]
     },
@@ -20528,13 +20331,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這張同時包含疥瘡和頭蝨兩種用法。\n請依藥師告知看對應步驟。\n每次使用前都要先充分搖勻。",
-              "en": "This sheet covers two uses: scabies and head lice.\nFollow the steps for the one your pharmacist told you about.\nShake the bottle well before every use.",
-              "id": "Lembar ini mencakup dua penggunaan: skabies dan kutu kepala.\nIkuti langkah yang sesuai dengan penjelasan apoteker.\nKocok botol sampai rata sebelum setiap penggunaan.",
-              "vi": "Tờ này gồm 2 cách dùng: trị ghẻ và trị chấy đầu.\nHãy làm theo đúng phần mà dược sĩ đã dặn.\nLắc kỹ chai trước mỗi lần dùng.",
-              "th": "แผ่นนี้มี 2 วิธีใช้ คือรักษาหิดและรักษาเหาศีรษะ\nให้ดูขั้นตอนตามที่เภสัชกรบอก\nต้องเขย่าขวดให้เข้ากันดีก่อนใช้ทุกครั้ง",
-              "tl": "May dalawang gamit ang gabay na ito: para sa galis at para sa kuto sa ulo.\nSundin ang tamang hakbang ayon sa sinabi ng parmasyutiko.\nAlugin nang mabuti ang bote bago bawat gamit.",
-              "ja": "この用紙には疥癬用と頭ジラミ用の2つの使い方が載っています。\n薬剤師に言われた方の手順を見てください。\n毎回使用前によく振ってください。"
+              "zh-TW": "這張同時包含疥瘡和頭蝨兩種用法；兩者的塗抹範圍、停留時間與是否重複使用不同。\n只看藥師交代的那一組步驟，並以這瓶藥的外盒、仿單或藥袋為準。\n每次使用前先充分搖勻。",
+              "en": "This sheet covers both scabies and head lice. The area to treat, how long to leave it on, and whether to repeat treatment are different.\nUse only the set of steps your pharmacist gave you, and follow this bottle's label, leaflet, or medication bag.\nShake well before each use.",
+              "id": "Lembar ini mencakup skabies dan kutu kepala. Area pemakaian, lama obat dibiarkan, dan perlu tidaknya diulang berbeda.\nGunakan hanya langkah yang diberikan apoteker dan ikuti label, brosur, atau kantong obat dari botol ini.\nKocok sampai rata sebelum setiap penggunaan.",
+              "vi": "Tờ này gồm cách dùng cho ghẻ và chấy đầu. Vùng bôi, thời gian lưu thuốc và việc có cần dùng lặp lại hay không là khác nhau.\nChỉ dùng đúng nhóm bước mà dược sĩ đã dặn và làm theo nhãn, tờ hướng dẫn hoặc túi thuốc của chai này.\nLắc kỹ trước mỗi lần dùng.",
+              "th": "แผ่นนี้มีวิธีใช้สำหรับหิดและเหาศีรษะ ซึ่งบริเวณที่ทา ระยะเวลาที่ทิ้งยาไว้ และการต้องใช้ซ้ำแตกต่างกัน\nให้ใช้เฉพาะชุดขั้นตอนที่เภสัชกรบอก และยึดฉลาก เอกสารกำกับยา หรือถุงยาของขวดนี้\nเขย่าให้เข้ากันดีก่อนใช้ทุกครั้ง",
+              "tl": "May gabay ito para sa galis at kuto sa ulo. Magkaiba ang bahaging lalagyan, tagal na iiwan ang gamot, at kung kailangang ulitin ang paggamot.\nSundin lamang ang mga hakbang na ibinigay ng parmasyutiko at ang etiketa, leaflet, o supot ng gamot ng boteng ito.\nAlugin nang mabuti bago bawat paggamit.",
+              "ja": "この用紙には疥癬用と頭ジラミ用があります。塗る範囲、放置時間、再使用の有無は異なります。\n薬剤師から説明された方の手順だけを見て、このボトルのラベル、添付文書、薬袋に従ってください。\n毎回使用前によく振ってください。"
             },
             "html": null,
             "tone": null
@@ -20617,13 +20420,13 @@
                 "ja": "疥癬の治療なら：首から下の全身に均一に塗る"
               },
               "note": {
-                "zh-TW": "建議保留 24 小時後再用溫水洗淨。",
-                "en": "Leave it on for 24 hours, then wash it off with warm water.",
-                "id": "Biarkan selama 24 jam lalu bilas dengan air hangat.",
-                "vi": "Để thuốc trên da 24 giờ rồi rửa sạch bằng nước ấm.",
-                "th": "ทิ้งไว้ 24 ชั่วโมงแล้วล้างออกด้วยน้ำอุ่น",
-                "tl": "Iwan ito nang 24 oras saka hugasan gamit ang maligamgam na tubig.",
-                "ja": "24時間そのままにしてからぬるま湯で洗い流します。"
+                "zh-TW": "塗る範囲・停留時間・洗い流し方は、この瓶の仿單或藥袋為準。",
+                "en": "Follow this bottle's leaflet or medication label for the area to cover, how long to leave it on, and how to wash it off.",
+                "id": "Ikuti brosur atau etiket obat botol ini untuk area yang dioles, lama obat dibiarkan, dan cara membilasnya.",
+                "vi": "Làm theo tờ hướng dẫn hoặc nhãn thuốc của chai này về vùng bôi, thời gian lưu thuốc và cách rửa sạch.",
+                "th": "ให้ยึดเอกสารกำกับยาหรือฉลากยาของขวดนี้สำหรับบริเวณที่ทา ระยะเวลาที่ทิ้งยาไว้ และวิธีล้างออก",
+                "tl": "Sundin ang leaflet o etiketa ng boteng ito para sa bahaging lalagyan, tagal na iiwan ang gamot, at paraan ng paghuhugas.",
+                "ja": "塗る範囲、放置時間、洗い流し方は、このボトルの添付文書または薬袋に従ってください。"
               },
               "highlight": true,
               "illustration": {
@@ -20653,13 +20456,13 @@
                 "ja": "頭ジラミの治療なら：頭皮と髪に3〜4分なじませる"
               },
               "note": {
-                "zh-TW": "24 小時後用洗髮精洗淨，再用細齒梳梳除蝨卵。",
-                "en": "Wash it out with shampoo after 24 hours, then use a fine-tooth comb to remove nits.",
-                "id": "Cuci dengan sampo setelah 24 jam, lalu gunakan sisir serit untuk mengangkat telur kutu.",
-                "vi": "Sau 24 giờ, gội sạch bằng dầu gội rồi dùng lược dày chải bỏ trứng chấy.",
-                "th": "ครบ 24 ชั่วโมงแล้วสระออกด้วยแชมพู จากนั้นใช้หวีซี่ถี่หวีเอาไข่เหาออก",
-                "tl": "Pagkalipas ng 24 oras, hugasan ng shampoo at saka suklayin ng suyod para alisin ang lisa.",
-                "ja": "24時間後にシャンプーで洗い流し、細かい櫛で卵を取り除きます。"
+                "zh-TW": "塗抹範圍、停留時間與洗淨方式，依這瓶藥的仿單或藥袋。洗淨後以細齒梳梳除蝨與蝨卵。",
+                "en": "Follow this bottle's leaflet or medication label for the area to treat, leave-on time, and rinsing method. After rinsing, use a fine-tooth comb to remove lice and nits.",
+                "id": "Ikuti brosur atau etiket botol ini untuk area pemakaian, lama obat dibiarkan, dan cara membilasnya. Setelah dibilas, gunakan sisir serit untuk mengangkat kutu dan telurnya.",
+                "vi": "Làm theo tờ hướng dẫn hoặc nhãn thuốc của chai này về vùng bôi, thời gian lưu thuốc và cách rửa sạch. Sau khi rửa, dùng lược dày để chải bỏ chấy và trứng chấy.",
+                "th": "ให้ยึดเอกสารกำกับยาหรือฉลากยาของขวดนี้สำหรับบริเวณที่ทา ระยะเวลาที่ทิ้งยาไว้ และวิธีล้างออก หลังล้างแล้วใช้หวีซี่ถี่กำจัดเหาและไข่เหา",
+                "tl": "Sundin ang leaflet o etiketa ng boteng ito para sa bahaging lalagyan, tagal na iiwan ang gamot, at paraan ng paghuhugas. Pagkatapos banlawan, gumamit ng suyod para alisin ang kuto at lisa.",
+                "ja": "塗る範囲、放置時間、洗い流し方は、このボトルの添付文書または薬袋に従ってください。洗い流した後、細かい櫛でシラミと卵を取り除きます。"
               },
               "highlight": false,
               "illustration": {
@@ -20760,39 +20563,39 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "避免接觸眼睛、口腔、鼻腔、陰道等黏膜；若碰到要立刻沖水。",
-                "en": "Keep it away from the eyes, mouth, nose, vagina, and other mucous membranes. Rinse with water right away if contact happens.",
-                "id": "Hindari mata, mulut, hidung, vagina, dan selaput lendir lain. Bila terkena, segera bilas dengan air.",
-                "vi": "Tránh mắt, miệng, mũi, âm đạo và các niêm mạc khác. Nếu dính vào, phải rửa ngay bằng nước.",
-                "th": "หลีกเลี่ยงดวงตา ปาก จมูก ช่องคลอด และเยื่อบุอื่น ๆ หากสัมผัสให้รีบล้างน้ำทันที",
-                "tl": "Iwasan ang mata, bibig, ilong, puwerta, at iba pang mucosa. Banlawan agad ng tubig kung madikitan.",
-                "ja": "目・口・鼻・腟などの粘膜を避けてください。付いたらすぐに水で洗い流します。"
+                "zh-TW": "避免接觸眼睛、口腔、鼻腔、陰道等黏膜；若碰到，立刻用清水沖洗。",
+                "en": "Keep it away from the eyes, mouth, nose, vagina, and other mucous membranes. Rinse with clean water right away if contact occurs.",
+                "id": "Hindari mata, mulut, hidung, vagina, dan selaput lendir lain. Bila terkena, segera bilas dengan air bersih.",
+                "vi": "Tránh mắt, miệng, mũi, âm đạo và các niêm mạc khác. Nếu dính vào, rửa ngay bằng nước sạch.",
+                "th": "หลีกเลี่ยงดวงตา ปาก จมูก ช่องคลอด และเยื่อบุอื่น ๆ หากสัมผัสให้ล้างด้วยน้ำสะอาดทันที",
+                "tl": "Iwasan ang mata, bibig, ilong, puwerta, at iba pang mucosa. Banlawan agad ng malinis na tubig kung madikitan.",
+                "ja": "目、口、鼻、腟などの粘膜を避け、付着したらすぐにきれいな水で洗い流してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "塗藥後讓患部保持透氣，不要密封包紮。",
-                "en": "After applying it, keep the area open to air and do not seal it with a tight dressing.",
-                "id": "Setelah dioleskan, biarkan area tetap terbuka dan jangan dibalut rapat.",
-                "vi": "Sau khi bôi, để vùng da được thoáng và không băng kín.",
-                "th": "หลังทาแล้วให้บริเวณนั้นระบายอากาศได้ ไม่ต้องปิดแน่น",
-                "tl": "Pagkatapos magpahid, panatilihing makahinga ang bahagi at huwag takpan nang mahigpit.",
-                "ja": "塗った後は患部を蒸らさず、密封して覆わないでください。"
+                "zh-TW": "不可把疥瘡用法套到頭蝨，也不可把頭蝨用法套到疥瘡；不要同時混用其他除蝨／抗疥藥。",
+                "en": "Do not use scabies directions for head lice or head-lice directions for scabies. Do not combine it with other lice or scabies treatments unless a clinician tells you to.",
+                "id": "Jangan memakai aturan skabies untuk kutu kepala atau sebaliknya. Jangan digabung dengan obat kutu atau skabies lain kecuali atas arahan tenaga kesehatan.",
+                "vi": "Không dùng cách trị ghẻ cho chấy đầu hoặc ngược lại. Không dùng cùng thuốc trị chấy hoặc ghẻ khác trừ khi có chỉ dẫn của nhân viên y tế.",
+                "th": "ห้ามใช้วิธีรักษาหิดกับเหาศีรษะหรือใช้วิธีรักษาเหาศีรษะกับหิด และห้ามใช้ร่วมกับยากำจัดเหาหรือยารักษาหิดชนิดอื่นหากไม่ได้รับคำสั่งจากแพทย์",
+                "tl": "Huwag gamitin ang paraan para sa galis sa kuto sa ulo, o ang paraan para sa kuto sa ulo sa galis. Huwag isabay sa ibang gamot para sa kuto o galis maliban kung sinabi ng clinician.",
+                "ja": "疥癬用を頭ジラミ用に、頭ジラミ用を疥癬用に流用しないでください。医療者の指示がない限り、他のシラミ・疥癬治療薬と併用しないでください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "兒童、孕婦或哺乳中使用前，先問醫師或藥師。",
-                "en": "Ask your doctor or pharmacist before use in children, pregnancy, or breastfeeding.",
-                "id": "Tanyakan kepada dokter atau apoteker sebelum digunakan pada anak, saat hamil, atau menyusui.",
-                "vi": "Hãy hỏi bác sĩ hoặc dược sĩ trước khi dùng cho trẻ em, khi mang thai hoặc cho con bú.",
-                "th": "ก่อนใช้ในเด็ก ระหว่างตั้งครรภ์ หรือให้นมบุตร ให้ถามแพทย์หรือเภสัชกรก่อน",
-                "tl": "Magtanong muna sa doktor o parmasyutiko bago gamitin sa bata, habang buntis, o nagpapasuso.",
-                "ja": "小児、妊娠中、授乳中に使う前は、医師または薬剤師に相談してください。"
+                "zh-TW": "懷孕、哺乳、幼兒或皮膚嚴重破損者，使用前先問醫師或藥師。",
+                "en": "If you are pregnant, breastfeeding, treating a young child, or have severely damaged skin, ask a doctor or pharmacist before use.",
+                "id": "Jika hamil, menyusui, akan digunakan pada anak kecil, atau kulit rusak berat, tanyakan kepada dokter atau apoteker sebelum memakai.",
+                "vi": "Nếu đang mang thai, cho con bú, dùng cho trẻ nhỏ hoặc da tổn thương nặng, hãy hỏi bác sĩ hoặc dược sĩ trước khi dùng.",
+                "th": "หากตั้งครรภ์ ให้นมบุตร ใช้กับเด็กเล็ก หรือมีผิวหนังเสียหายมาก ให้ถามแพทย์หรือเภสัชกรก่อนใช้",
+                "tl": "Kung buntis, nagpapasuso, gagamit sa batang maliit, o malubha ang sira ng balat, magtanong muna sa doktor o parmasyutiko bago gamitin.",
+                "ja": "妊娠中・授乳中、乳幼児に使用する場合、または皮膚の損傷がひどい場合は、使用前に医師または薬剤師へ相談してください。"
               },
               "highlight": false
             }
@@ -20911,13 +20714,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這是第一線抗疥蟲乳膏。\n大多數人用 1 次即可。\n若 7–14 天後仍有新病灶，再依醫師指示補擦 1 次。",
-              "en": "This is a first-line cream for scabies.\nOne treatment is enough for most people.\nIf new lesions still appear after 7 to 14 days, apply it once more only if your doctor tells you to.",
-              "id": "Ini adalah krim lini pertama untuk skabies.\nSatu kali pengobatan cukup bagi kebanyakan orang.\nJika masih muncul lesi baru setelah 7 sampai 14 hari, oleskan sekali lagi hanya bila dokter menyuruh demikian.",
-              "vi": "Đây là kem điều trị ghẻ hàng đầu.\nMột lần điều trị là đủ cho đa số người bệnh.\nNếu sau 7 đến 14 ngày vẫn còn tổn thương mới, chỉ bôi thêm 1 lần khi bác sĩ dặn.",
-              "th": "นี่คือครีมรักษาหิดอันดับแรก\nคนส่วนใหญ่ใช้เพียง 1 ครั้งก็พอ\nหากยังมีผื่นใหม่หลัง 7–14 วัน ให้ทาซ้ำอีก 1 ครั้งเฉพาะเมื่อแพทย์สั่ง",
-              "tl": "Ito ang karaniwang unang pinipiling krema para sa galis.\nSapat na ang isang gamutan para sa karamihan.\nKung may mga bagong sugat pa rin pagkalipas ng 7 hanggang 14 na araw, magpahid muli nang isang beses kung ipinayo ng doktor.",
-              "ja": "これは第一選択の疥癬クリームです。\n多くの人は1回で十分です。\n7〜14日後も新しい病変がある場合は、医師の指示があるときだけ1回追加してください。"
+              "zh-TW": "這是第一線抗疥蟲乳膏，多數人用 1 次即可。\n治療後仍可能癢 2–4 週，不能因為還癢就自行補擦；14 天後仍見活蟲或出現新的典型疥瘡病灶，請回診評估。",
+              "en": "This is a first-choice scabies cream; one application is enough for most people.\nItching can continue for 2 to 4 weeks after treatment. Do not reapply it just because you still itch. If live mites are still seen after 14 days or new typical scabies lesions appear, seek review.",
+              "id": "Ini adalah krim skabies pilihan pertama; bagi kebanyakan orang, cukup 1 kali pemakaian.\nGatal dapat berlanjut 2–4 minggu setelah terapi. Jangan mengoleskan lagi hanya karena masih gatal. Bila setelah 14 hari masih terlihat tungau hidup atau muncul lesi skabies khas yang baru, periksakan kembali.",
+              "vi": "Đây là kem điều trị ghẻ hàng đầu; đa số chỉ cần bôi 1 lần.\nNgứa có thể kéo dài 2–4 tuần sau điều trị. Không tự bôi lại chỉ vì vẫn ngứa. Nếu sau 14 ngày vẫn thấy cái ghẻ còn sống hoặc xuất hiện tổn thương ghẻ điển hình mới, hãy tái khám.",
+              "th": "นี่คือครีมรักษาหิดทางเลือกแรก คนส่วนใหญ่ใช้เพียง 1 ครั้งก็เพียงพอ\nอาการคันอาจอยู่นาน 2–4 สัปดาห์หลังรักษา ห้ามทาซ้ำเพียงเพราะยังคัน หากผ่านไป 14 วันแล้วยังเห็นตัวหิดมีชีวิต หรือมีผื่นหิดลักษณะเดิมเกิดใหม่ ให้กลับไปพบแพทย์",
+              "tl": "Ito ang unang pinipiling cream para sa galis; isang beses lang ay sapat na para sa karamihan.\nMaaaring magpatuloy ang pangangati nang 2–4 na linggo matapos gamutin. Huwag magpahid muli dahil lamang nangangati pa. Kung may nakikitang buhay na garapata makalipas ang 14 na araw o may bagong karaniwang sugat ng galis, magpatingin muli.",
+              "ja": "これは第一選択の疥癬治療クリームで、多くの人は1回の使用で十分です。\n治療後も2〜4週間かゆみが続くことがあります。かゆみだけを理由に自己判断で塗り直さないでください。14日後も生きたダニが確認できる、または典型的な新しい疥癬病変が出た場合は受診してください。"
             },
             "html": null,
             "tone": null
@@ -21076,13 +20879,13 @@
                 "ja": "同居家族も同時に治療する"
               },
               "note": {
-                "zh-TW": "治療後仍可能癢 2–4 週；若 7–14 天後仍有新病灶，再回診。",
-                "en": "Itching can still last 2 to 4 weeks after treatment. If new lesions appear after 7 to 14 days, go back for review.",
-                "id": "Rasa gatal masih bisa berlangsung 2 sampai 4 minggu setelah terapi. Jika muncul lesi baru setelah 7 sampai 14 hari, kembali kontrol.",
-                "vi": "Ngứa vẫn có thể kéo dài 2 đến 4 tuần sau điều trị. Nếu sau 7 đến 14 ngày vẫn có tổn thương mới, hãy tái khám.",
-                "th": "หลังรักษาแล้วอาจยังคันต่อได้ 2–4 สัปดาห์ หากยังมีผื่นใหม่หลัง 7–14 วันให้กลับไปพบแพทย์",
-                "tl": "Maaaring manatili ang pangangati sa loob ng 2 hanggang 4 na linggo matapos gamutin. Kung may bagong sugat pagkalipas ng 7 hanggang 14 na araw, magpatingin muli.",
-                "ja": "治療後も2〜4週間かゆみが続くことがあります。7〜14日後も新しい病変が出る場合は再受診してください。"
+                "zh-TW": "治療後仍可能癢 2–4 週。14 天後仍見活蟲，或出現新的典型疥瘡病灶時，再回診評估。",
+                "en": "Itching may continue for 2 to 4 weeks after treatment. Seek review only if live mites are still seen after 14 days or new typical lesions appear.",
+                "id": "Gatal dapat berlanjut 2–4 minggu setelah terapi. Periksa kembali bila setelah 14 hari masih terlihat tungau hidup atau muncul lesi khas baru.",
+                "vi": "Ngứa có thể kéo dài 2–4 tuần sau điều trị. Tái khám nếu sau 14 ngày vẫn thấy cái ghẻ còn sống hoặc xuất hiện tổn thương điển hình mới.",
+                "th": "อาการคันอาจอยู่นาน 2–4 สัปดาห์หลังรักษา กลับไปพบแพทย์หากผ่านไป 14 วันแล้วยังเห็นตัวหิดมีชีวิต หรือมีผื่นลักษณะเดิมเกิดใหม่",
+                "tl": "Maaaring magpatuloy ang pangangati nang 2–4 na linggo matapos gamutin. Magpatingin muli kung may buhay na garapata pa makalipas ang 14 na araw o may bagong karaniwang sugat.",
+                "ja": "治療後もかゆみが2〜4週間続くことがあります。14日後も生きたダニが見える、または典型的な新しい病変が出た場合は受診してください。"
               },
               "highlight": false,
               "illustration": {
@@ -21297,13 +21100,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這不是第一線用藥。\n只有其他較安全藥物不能用或沒效時才使用。\n一次療程只能擦 1 次，不可自己補擦。",
-              "en": "This is not a first-line medicine.\nUse it only when safer medicines cannot be used or did not work.\nFor one episode, use it only once and do not reapply on your own.",
-              "id": "Ini bukan obat lini pertama.\nGunakan hanya bila obat yang lebih aman tidak bisa dipakai atau tidak berhasil.\nUntuk satu episode, pakai hanya 1 kali dan jangan mengoles ulang sendiri.",
-              "vi": "Đây không phải thuốc hàng đầu.\nChỉ dùng khi thuốc an toàn hơn không dùng được hoặc không hiệu quả.\nMỗi đợt chỉ dùng 1 lần và không tự bôi lại.",
-              "th": "นี่ไม่ใช่ยาลำดับแรก\nใช้เฉพาะเมื่อยาที่ปลอดภัยกว่านี้ใช้ไม่ได้หรือไม่ได้ผล\nในการรักษา 1 ครั้ง ให้ใช้เพียงครั้งเดียวและห้ามทาซ้ำเอง",
-              "tl": "Hindi ito karaniwang unang pinipiling gamot.\nGamitin lamang kapag hindi maaaring gamitin ang mas ligtas na gamot o hindi ito umepekto.\nPara sa isang episode, isang gamit lang at huwag magpahid muli nang kusa.",
-              "ja": "これは第一選択の薬ではありません。\nより安全な薬が使えない場合、または効かなかった場合にのみ使います。\n1回の発症につき1回だけ使用し、自己判断で塗り直さないでください。"
+              "zh-TW": "這不是第一線用藥，只有其他較安全藥物不能用或沒效時才使用。\n同一波疥瘡只能用 1 次；即使仍癢，也不可自行補擦。",
+              "en": "This is not a first-choice treatment. Use it only when safer medicines cannot be used or did not work.\nUse it only once for the same scabies episode. Do not reapply it on your own, even if you still itch.",
+              "id": "Ini bukan pengobatan pilihan pertama. Gunakan hanya bila obat yang lebih aman tidak bisa dipakai atau tidak berhasil.\nUntuk episode skabies yang sama, gunakan hanya 1 kali. Jangan mengoleskan lagi sendiri meskipun masih gatal.",
+              "vi": "Đây không phải là lựa chọn điều trị đầu tiên. Chỉ dùng khi thuốc an toàn hơn không dùng được hoặc không hiệu quả.\nMỗi đợt ghẻ chỉ dùng 1 lần. Không tự bôi lại, dù vẫn còn ngứa.",
+              "th": "นี่ไม่ใช่ยาทางเลือกแรก ใช้เฉพาะเมื่อยาที่ปลอดภัยกว่านี้ใช้ไม่ได้หรือไม่ได้ผล\nสำหรับหิดครั้งเดียวกัน ให้ใช้เพียง 1 ครั้ง แม้ยังคันก็ห้ามทาซ้ำเอง",
+              "tl": "Hindi ito unang pinipiling paggamot. Gamitin lamang kapag hindi maaaring gamitin ang mas ligtas na gamot o hindi ito umepekto.\nIsang beses lang gamitin para sa parehong episode ng galis. Huwag magpahid muli nang kusa kahit nangangati pa.",
+              "ja": "これは第一選択の治療ではなく、より安全な薬が使えない場合または効かなかった場合にのみ使用します。\n同じ疥癬の治療では1回だけ使い、かゆみが残っても自己判断で塗り直さないでください。"
             },
             "html": null,
             "tone": null
@@ -21322,13 +21125,13 @@
                 "ja": "入浴後は少なくとも1時間待ち、皮膚が十分に冷えて乾いてから使う"
               },
               "note": {
-                "zh-TW": "皮膚溫熱或潮濕會增加藥物吸收和副作用風險。",
-                "en": "Warm or wet skin can increase absorption and side effects.",
-                "id": "Kulit yang hangat atau basah dapat meningkatkan penyerapan dan efek samping.",
-                "vi": "Da còn nóng hoặc ướt có thể làm tăng hấp thu thuốc và tăng tác dụng phụ.",
-                "th": "ผิวที่ยังอุ่นหรือเปียกอาจทำให้ดูดซึมยาและเกิดผลข้างเคียงมากขึ้น",
-                "tl": "Ang mainit o basang balat ay maaaring magpataas ng pagsipsip at masamang epekto ng gamot.",
-                "ja": "皮膚が温かい、または湿っていると薬の吸収と副作用の危険が高まります。"
+                "zh-TW": "皮膚溫熱或潮濕會增加吸收與副作用。擦前，皮膚不要有乳液、藥膏或油類產品。",
+                "en": "Warm or wet skin increases absorption and side effects. Before applying it, do not have lotion, cream, or oil products on your skin.",
+                "id": "Kulit yang hangat atau basah meningkatkan penyerapan dan efek samping. Sebelum mengoleskan, jangan gunakan losion, krim, atau produk berminyak pada kulit.",
+                "vi": "Da còn nóng hoặc ướt làm tăng hấp thu và tác dụng phụ. Trước khi bôi, không để da có kem dưỡng, kem bôi hoặc sản phẩm chứa dầu.",
+                "th": "ผิวที่ยังอุ่นหรือเปียกจะเพิ่มการดูดซึมและผลข้างเคียง ก่อนทา อย่าให้มีโลชั่น ครีม หรือผลิตภัณฑ์ที่มีน้ำมันอยู่บนผิว",
+                "tl": "Ang mainit o basang balat ay nagpapataas ng pagsipsip at mga side effect. Bago magpahid, huwag magkaroon ng lotion, krema, o produktong may langis sa balat.",
+                "ja": "皮膚が温かい、または湿っていると、吸収と副作用の危険が高まります。塗る前に、皮膚にローション、クリーム、油性製品が残っていないことを確認してください。"
               },
               "highlight": false,
               "illustration": {
@@ -21477,39 +21280,52 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "孕婦、哺乳中、曾有癲癇、皮膚破損或兒童使用前，先告知醫師。",
-                "en": "Tell your doctor before use if you are pregnant, breastfeeding, have ever had seizures, have broken skin, or if this is for a child.",
-                "id": "Beri tahu dokter sebelum memakai jika Anda hamil, menyusui, pernah kejang, kulit terluka, atau obat ini akan dipakai anak.",
-                "vi": "Hãy báo bác sĩ trước khi dùng nếu bạn mang thai, cho con bú, từng co giật, có vùng da bị trầy, hoặc thuốc này dùng cho trẻ em.",
-                "th": "ก่อนใช้ให้แจ้งแพทย์หากตั้งครรภ์ ให้นมบุตร เคยชัก ผิวหนังมีแผล หรือจะใช้กับเด็ก",
-                "tl": "Sabihin muna sa doktor bago gamitin kung buntis, nagpapasuso, nagkaroon na ng seizure, may sugat ang balat, o kung para ito sa bata.",
-                "ja": "妊娠中・授乳中・けいれんの既往がある・皮膚が傷ついている・小児に使う場合は、使用前に医師へ伝えてください。"
+                "zh-TW": "同一波疥瘡只能用 1 次。持續發癢不代表藥沒效，絕對不可自行再擦。",
+                "en": "Use it only once for the same scabies episode. Ongoing itching does not mean the medicine failed. Never apply it again on your own.",
+                "id": "Gunakan hanya 1 kali untuk episode skabies yang sama. Rasa gatal yang menetap bukan berarti obatnya gagal. Jangan pernah mengoleskan lagi sendiri.",
+                "vi": "Chỉ dùng 1 lần cho cùng một đợt ghẻ. Ngứa kéo dài không có nghĩa là thuốc không hiệu quả. Tuyệt đối không tự bôi lại.",
+                "th": "ใช้เพียง 1 ครั้งสำหรับหิดครั้งเดียวกัน อาการคันที่ยังมีอยู่ไม่ได้แปลว่ายาไม่ได้ผล ห้ามทาซ้ำเองเด็ดขาด",
+                "tl": "Isang beses lang gamitin para sa parehong episode ng galis. Hindi nangangahulugang hindi umepekto ang gamot kung nangangati pa. Huwag kailanman magpahid muli nang kusa.",
+                "ja": "同じ疥癬には1回だけ使用します。かゆみが続いても薬が効かなかったとは限りません。絶対に自己判断で塗り直さないでください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "不要碰到眼睛、嘴巴或黏膜；若誤食要立刻就醫。",
-                "en": "Keep it away from the eyes, mouth, and mucous membranes. Get medical help right away if it is swallowed.",
-                "id": "Hindari mata, mulut, dan selaput lendir. Segera cari pertolongan medis bila tertelan.",
-                "vi": "Tránh mắt, miệng và niêm mạc. Nếu nuốt phải, hãy đi khám ngay.",
-                "th": "หลีกเลี่ยงดวงตา ปาก และเยื่อบุ หากเผลอกลืนให้ไปพบแพทย์ทันที",
-                "tl": "Iwasan ang mata, bibig, at mucosa. Magpatingin agad kung nalunok ito.",
-                "ja": "目・口・粘膜を避けてください。誤って飲み込んだ場合はすぐ受診してください。"
+                "zh-TW": "若出現抽搐、意識異常或昏倒，立刻叫救護車。",
+                "en": "If a seizure, confusion, or fainting occurs, call emergency services right away.",
+                "id": "Jika terjadi kejang, perubahan kesadaran, atau pingsan, segera hubungi layanan gawat darurat.",
+                "vi": "Nếu bị co giật, thay đổi ý thức hoặc ngất, hãy gọi cấp cứu ngay.",
+                "th": "หากมีอาการชัก สับสน หรือเป็นลม ให้โทรฉุกเฉินทันที",
+                "tl": "Kung magkaroon ng kombulsyon, pagkalito, o himatayin, tumawag agad sa emergency services.",
+                "ja": "けいれん、意識の異常、失神があれば、直ちに救急要請してください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "這不是第一線藥物，也不要自行重複使用。",
-                "en": "This is not a first-line medicine, and you should not repeat it on your own.",
-                "id": "Ini bukan obat lini pertama, dan jangan mengulang pemakaiannya sendiri.",
-                "vi": "Đây không phải thuốc hàng đầu và cũng không được tự ý dùng lặp lại.",
-                "th": "ยานี้ไม่ใช่ยาลำดับแรก และห้ามใช้ซ้ำเอง",
-                "tl": "Hindi ito karaniwang unang pinipiling gamot at huwag itong ulitin nang kusa.",
-                "ja": "これは第一選択の薬ではなく、自己判断で繰り返し使ってはいけません。"
+                "zh-TW": "早產兒、未控制的癲癇患者不可使用；若體重低於 50 公斤、年幼、年長，或有異位性皮膚炎、乾癬、破皮，使用前必須由醫師確認。",
+                "en": "Do not use it in premature infants or people with uncontrolled seizures. If you weigh under 50 kg, are very young or older, or have atopic dermatitis, psoriasis, or broken skin, a doctor must confirm that it is suitable before use.",
+                "id": "Jangan gunakan pada bayi prematur atau orang dengan kejang yang tidak terkontrol. Jika berat badan Anda kurang dari 50 kg, sangat muda atau lanjut usia, atau memiliki dermatitis atopik, psoriasis, atau kulit terluka, dokter harus memastikan kesesuaiannya sebelum digunakan.",
+                "vi": "Không dùng cho trẻ sinh non hoặc người bị động kinh chưa kiểm soát. Nếu cân nặng dưới 50 kg, còn nhỏ, lớn tuổi, hoặc có viêm da cơ địa, vảy nến hay da trầy xước, bác sĩ phải xác nhận phù hợp trước khi dùng.",
+                "th": "ห้ามใช้ในทารกคลอดก่อนกำหนดหรือผู้ที่ควบคุมอาการชักไม่ได้ หากน้ำหนักต่ำกว่า 50 กก. เป็นเด็กเล็กหรือผู้สูงอายุ หรือมีผื่นภูมิแพ้ผิวหนัง สะเก็ดเงิน หรือผิวแตก ต้องให้แพทย์ยืนยันก่อนใช้",
+                "tl": "Huwag gamitin sa premature na sanggol o sa taong hindi kontrolado ang kombulsyon. Kung wala pang 50 kg ang timbang, bata pa, matanda, o may atopic dermatitis, psoriasis, o sugat sa balat, kailangang kumpirmahin muna ng doktor na angkop ito bago gamitin.",
+                "ja": "早産児やコントロール不良のてんかんがある人には使えません。体重50kg未満、幼児、高齢者、アトピー性皮膚炎、乾癬、皮膚の傷がある場合は、使用前に必ず医師が適切か確認してください。"
+              },
+              "highlight": false
+            },
+            {
+              "index": 3,
+              "text": {
+                "zh-TW": "不可入口、不可擦在臉部、眼睛、嘴巴或黏膜；不慎碰到時，立刻以大量清水沖洗。",
+                "en": "Do not swallow it or apply it to the face, eyes, mouth, or mucous membranes. If contact occurs, rinse right away with plenty of water.",
+                "id": "Jangan ditelan atau dioleskan pada wajah, mata, mulut, atau selaput lendir. Jika terkena, segera bilas dengan banyak air.",
+                "vi": "Không được nuốt hoặc bôi lên mặt, mắt, miệng hay niêm mạc. Nếu dính vào, rửa ngay bằng thật nhiều nước.",
+                "th": "ห้ามรับประทานหรือทาที่ใบหน้า ดวงตา ปาก หรือเยื่อบุ หากสัมผัส ให้ล้างด้วยน้ำสะอาดปริมาณมากทันที",
+                "tl": "Huwag lunukin o ipahid sa mukha, mata, bibig, o mucosa. Kung madikitan, banlawan agad ng maraming tubig.",
+                "ja": "口に入れたり、顔、目、口、粘膜に塗ったりしないでください。付着した場合は、すぐに大量の水で洗い流してください。"
               },
               "highlight": false
             }
@@ -23661,13 +23477,13 @@
               "ja": "使い方の要点"
             },
             "text": {
-              "zh-TW": "這是外用抗黴菌液，通常用於體癬、股癬、汗斑。除了紅疹本身，也要帶到外圍一小圈。若 4 週還沒有明顯改善，要回診確認是不是其他皮膚問題。",
-              "en": "This is a topical antifungal solution usually used for body ringworm, jock itch, and tinea versicolor. Do not apply it only to the rash itself. Cover a small rim around it too. If there is still no clear improvement after 4 weeks, go back to confirm the diagnosis.",
-              "id": "Ini adalah larutan antijamur untuk pemakaian luar, biasanya digunakan untuk kurap tubuh, kurap selangkangan, dan panu. Jangan oleskan hanya di ruamnya saja. Oleskan juga sedikit di tepi sekitarnya. Jika setelah 4 minggu belum jelas membaik, periksakan kembali untuk memastikan diagnosisnya.",
-              "vi": "Đây là dung dịch kháng nấm dùng ngoài da, thường dùng cho hắc lào thân mình, nấm bẹn và lang ben. Không bôi chỉ lên nốt đỏ mà hãy bôi lan ra một vòng nhỏ xung quanh. Nếu sau 4 tuần vẫn chưa cải thiện rõ, cần đi khám lại để xác nhận chẩn đoán.",
-              "th": "นี่คือยาน้ำต้านเชื้อราสำหรับใช้ภายนอก มักใช้กับกลากที่ลำตัว กลากที่ขาหนีบ และเกลื้อน อย่าทาเฉพาะตรงผื่น ให้ทาเลยออกมารอบ ๆ อีกเล็กน้อย หากใช้ครบ 4 สัปดาห์แล้วยังไม่ดีขึ้นชัดเจน ควรกลับไปพบแพทย์เพื่อตรวจยืนยันอีกครั้ง",
-              "tl": "Ito ay antifungal na solution para sa panlabas na gamit, karaniwang ginagamit para sa buni sa katawan, hadhad, at an-an. Huwag lang sa pantal mismo ipahid; lagyan din ng kaunting palibot. Kung wala pa ring malinaw na ginhawa makalipas ang 4 na linggo, magpatingin muli para makumpirma ang diagnosis.",
-              "ja": "これは外用抗真菌液で、通常は体部白癬、股部白癬、汗斑に使います。発疹そのものだけでなく、周囲にも少し広げて塗ってください。4週間たってもはっきり改善しない場合は、別の皮膚病でないか受診して確認してください。"
+              "zh-TW": "這是皮膚外用抗黴菌液，依藥袋用在指定的患處與周圍皮膚。\n避免用於眼睛與黏膜；腳底或趾縫的足癬未必適合這個劑型。\n若越擦越刺、越癢、越紅，或 4 週仍未明顯改善，請回診。",
+              "en": "This is an antifungal solution for skin use. Apply it to the prescribed affected area and the surrounding skin as directed on your medication label.\nKeep it away from the eyes and mucous membranes. This form may not suit athlete's foot on the sole or between the toes.\nSeek medical advice if burning, itching, or redness worsens, or if there is no clear improvement after 4 weeks.",
+              "id": "Ini adalah larutan antijamur untuk kulit. Gunakan pada area yang diresepkan dan kulit di sekitarnya sesuai etiket obat.\nHindari mata dan selaput lendir. Bentuk sediaan ini mungkin tidak cocok untuk kutu air di telapak atau sela jari.\nPeriksakan diri bila rasa perih, gatal, atau kemerahan makin berat, atau setelah 4 minggu belum jelas membaik.",
+              "vi": "Đây là dung dịch chống nấm dùng ngoài da. Bôi lên vùng tổn thương được kê đơn và vùng da xung quanh theo nhãn thuốc.\nTránh mắt và niêm mạc. Dạng thuốc này có thể không phù hợp với nấm chân ở lòng bàn chân hoặc kẽ ngón.\nĐi khám nếu rát, ngứa hoặc đỏ nặng hơn, hoặc sau 4 tuần vẫn chưa cải thiện rõ.",
+              "th": "นี่เป็นยาน้ำต้านเชื้อราสำหรับใช้ภายนอก ทาบริเวณที่แพทย์สั่งและผิวรอบ ๆ ตามฉลากยา\nหลีกเลี่ยงดวงตาและเยื่อบุ และยารูปแบบนี้อาจไม่เหมาะกับเชื้อราที่ฝ่าเท้าหรือซอกนิ้ว\nหากแสบ คัน หรือแดงมากขึ้น หรือใช้ครบ 4 สัปดาห์แล้วยังไม่ดีขึ้นชัดเจน ให้พบแพทย์",
+              "tl": "Ito ay antifungal solution para sa balat. Ilagay sa iniresetang apektadong bahagi at balat sa paligid ayon sa etiketa ng gamot.\nIwasan ang mata at mucosa. Maaaring hindi angkop ang anyong ito para sa athlete's foot sa talampakan o pagitan ng mga daliri.\nMagpatingin kung lumalala ang paghapdi, pangangati, o pamumula, o kung walang malinaw na pagbuti matapos ang 4 na linggo.",
+              "ja": "これは皮膚用の抗真菌液です。薬袋に従って指定された患部と周囲の皮膚に使用してください。\n目や粘膜を避け、足裏や足指の間の水虫にはこの剤形が適さない場合があります。\n刺激、かゆみ、赤みが悪化する、または4週間たっても明らかな改善がない場合は受診してください。"
             },
             "html": null,
             "tone": null
@@ -23996,13 +23812,13 @@
           "preStepsInfo": {
             "title": null,
             "text": {
-              "zh-TW": "貼新片前，先撕下舊片。不要貼在剛洗熱水澡、剛熱敷或正在發燒發熱的皮膚上。",
-              "en": "Remove the old patch before applying a new one. Do not put the new patch on skin that is hot from a bath, a heating pad, or a fever.",
-              "id": "Lepaskan patch lama sebelum menempelkan yang baru. Jangan tempel pada kulit yang masih panas setelah mandi air panas, kompres hangat, atau saat sedang demam.",
-              "vi": "Gỡ miếng dán cũ trước khi dán miếng mới. Không dán lên da đang nóng sau khi tắm nước nóng, chườm nóng hoặc khi đang sốt.",
-              "th": "เอาแผ่นเก่าออกก่อนติดแผ่นใหม่ อย่าติดบนผิวที่ยังร้อนจากการอาบน้ำร้อน การประคบร้อน หรือขณะมีไข้",
-              "tl": "Alisin muna ang lumang patch bago ikabit ang bago. Huwag idikit sa balat na mainit pa mula sa paligong mainit, hot pack, o lagnat.",
-              "ja": "新しい貼付剤を貼る前に、必ず古いものをはがしてください。入浴直後、温熱パッド使用後、発熱中など皮膚が熱いときには貼らないでください。"
+              "zh-TW": "貼新片前，先撕下舊片。使用期間，貼片和周圍皮膚都要遠離熱敷墊、電熱毯、三溫暖、熱水澡、熱水池與日光曝曬；發燒時請立即告知醫師或藥師。",
+              "en": "Remove the old patch before applying a new one. While wearing it, keep the patch and nearby skin away from heating pads, electric blankets, saunas, hot baths, hot tubs, and direct sun. Tell your doctor or pharmacist right away if you develop a fever.",
+              "id": "Lepaskan patch lama sebelum memasang yang baru. Saat memakainya, jauhkan patch dan kulit di sekitarnya dari bantalan penghangat, selimut listrik, sauna, mandi air panas, hot tub, dan sinar matahari langsung. Segera beri tahu dokter atau apoteker jika Anda demam.",
+              "vi": "Gỡ miếng dán cũ trước khi dán miếng mới. Khi đang dùng, tránh để miếng dán và vùng da xung quanh tiếp xúc với đệm sưởi, chăn điện, phòng xông hơi, tắm nước nóng, bồn nước nóng hoặc nắng trực tiếp. Báo ngay cho bác sĩ hoặc dược sĩ nếu bạn bị sốt.",
+              "th": "ลอกแผ่นเก่าออกก่อนติดแผ่นใหม่ ระหว่างใช้ ให้แผ่นแปะและผิวรอบ ๆ อยู่ห่างจากแผ่นประคบร้อน ผ้าห่มไฟฟ้า ซาวน่า การอาบน้ำร้อน อ่างน้ำร้อน และแสงแดดโดยตรง หากมีไข้ ให้แจ้งแพทย์หรือเภสัชกรทันที",
+              "tl": "Alisin muna ang lumang patch bago ikabit ang bago. Habang suot ito, ilayo ang patch at balat sa paligid nito sa hot pack, electric blanket, sauna, mainit na paligo, hot tub, at direktang araw. Sabihin agad sa doktor o parmasyutiko kung nilalagnat ka.",
+              "ja": "新しい貼付剤を貼る前に、古い貼付剤をはがしてください。使用中は、貼付部位と周囲の皮膚を温熱パッド、電気毛布、サウナ、熱い入浴、ジャグジー、直射日光から避けてください。発熱したら、すぐに医師または薬剤師へ連絡してください。"
             },
             "html": null,
             "tone": {
@@ -24025,13 +23841,13 @@
                 "ja": "古い貼付剤をはがす"
               },
               "note": {
-                "zh-TW": "對折後包好丟棄，遠離兒童和寵物。",
-                "en": "Fold it in half and throw it away safely. Keep it away from children and pets.",
-                "id": "Lipat dua patch bekas lalu buang dengan aman. Jauhkan dari anak-anak dan hewan peliharaan.",
-                "vi": "Gấp đôi miếng dán đã dùng rồi bỏ đi an toàn. Để xa trẻ em và thú nuôi.",
-                "th": "พับครึ่งแล้วทิ้งอย่างปลอดภัย และเก็บให้พ้นมือเด็กกับสัตว์เลี้ยง",
-                "tl": "Tiklupin sa kalahati at itapon nang ligtas. Ilayo sa mga bata at alagang hayop.",
-                "ja": "半分に折って安全に捨て、子どもやペットに触れさせないでください。"
+                "zh-TW": "黏膠面向內對折，立刻依藥師指示安全丟棄；用過的貼片仍有藥，務必遠離兒童、寵物與其他人。",
+                "en": "Fold it in half with the sticky sides together and dispose of it safely as your pharmacist instructed. Used patches still contain medicine; keep them away from children, pets, and other people.",
+                "id": "Lipat dua dengan sisi lengket saling menempel, lalu buang dengan aman sesuai petunjuk apoteker. Patch bekas masih mengandung obat; jauhkan dari anak-anak, hewan peliharaan, dan orang lain.",
+                "vi": "Gập đôi để hai mặt dính dán vào nhau, rồi thải bỏ an toàn theo hướng dẫn của dược sĩ. Miếng dán đã dùng vẫn còn thuốc; để xa trẻ em, thú nuôi và người khác.",
+                "th": "พับครึ่งให้ด้านกาวติดกัน แล้วทิ้งอย่างปลอดภัยตามคำแนะนำของเภสัชกร แผ่นที่ใช้แล้วก็ยังมียาอยู่ จึงต้องเก็บให้พ้นเด็ก สัตว์เลี้ยง และผู้อื่น",
+                "tl": "Tiklupin upang magdikit ang malagkit na mga bahagi, at itapon nang ligtas ayon sa tagubilin ng parmasyutiko. May gamot pa rin ang nagamit na patch; ilayo ito sa mga bata, alagang hayop, at iba pang tao.",
+                "ja": "粘着面どうしを内側にして半分に折り、薬剤師の指示どおり安全に処分してください。使用済みでも薬が残っているため、子ども、ペット、他の人に絶対に触れさせないでください。"
               },
               "highlight": false,
               "illustration": {
@@ -24236,39 +24052,52 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "只能一次貼 1 片，不可裁切。",
-                "en": "Wear only 1 patch at a time. Do not cut it.",
-                "id": "Gunakan hanya 1 patch setiap kali. Jangan digunting.",
-                "vi": "Mỗi lần chỉ dán 1 miếng. Không được cắt miếng dán.",
-                "th": "ใช้ครั้งละ 1 แผ่นเท่านั้น ห้ามตัดแผ่นแปะ",
-                "tl": "Isang patch lang bawat gamit. Huwag itong putulin.",
-                "ja": "1回に1枚だけ貼り、切って使わないでください。"
+                "zh-TW": "呼吸變慢、變淺、異常想睡、叫不醒或昏倒：立刻叫救護車。",
+                "en": "Slow or shallow breathing, unusual sleepiness, inability to wake up, or fainting: call emergency services right away.",
+                "id": "Napas lambat atau dangkal, sangat mengantuk, tidak dapat dibangunkan, atau pingsan: segera hubungi layanan gawat darurat.",
+                "vi": "Thở chậm hoặc nông, buồn ngủ bất thường, không đánh thức được hoặc ngất: gọi cấp cứu ngay.",
+                "th": "หายใจช้าหรือตื้น ง่วงผิดปกติ ปลุกไม่ตื่น หรือเป็นลม: โทรฉุกเฉินทันที",
+                "tl": "Mabagal o mababaw na paghinga, hindi pangkaraniwang antok, hindi magising, o himatayin: tumawag agad sa emergency services.",
+                "ja": "呼吸が遅い・浅い、異常な眠気、呼びかけても起きない、失神があれば、直ちに救急要請してください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "發燒、熱敷、電熱毯、熱水澡會讓藥跑太快。",
-                "en": "Fever, heating pads, electric blankets, or hot baths can make the medicine release too fast.",
-                "id": "Demam, kompres panas, selimut listrik, atau mandi air panas dapat membuat obat keluar terlalu cepat.",
-                "vi": "Sốt, chườm nóng, chăn điện hoặc tắm nước nóng có thể làm thuốc giải phóng quá nhanh.",
-                "th": "ไข้ การประคบร้อน ผ้าห่มไฟฟ้า หรือการอาบน้ำร้อน อาจทำให้ยาถูกปล่อยออกมาเร็วเกินไป",
-                "tl": "Ang lagnat, heating pad, electric blanket, o mainit na paligo ay maaaring magpalabas ng gamot nang sobrang bilis.",
-                "ja": "発熱、温熱パッド、電気毛布、熱い入浴は薬が出すぎる原因になります。"
+                "zh-TW": "貼片意外黏到別人，尤其是兒童：立刻取下，用清水洗接觸處，並立即就醫。",
+                "en": "If a patch sticks to someone else, especially a child: remove it at once, wash the contact area with water, and get emergency medical help right away.",
+                "id": "Jika patch menempel pada orang lain, terutama anak-anak: lepaskan segera, cuci area yang terkena dengan air, dan segera cari pertolongan medis darurat.",
+                "vi": "Nếu miếng dán dính vào người khác, đặc biệt là trẻ em: gỡ ra ngay, rửa vùng tiếp xúc bằng nước và đi cấp cứu ngay.",
+                "th": "หากแผ่นแปะติดตัวผู้อื่น โดยเฉพาะเด็ก: ลอกออกทันที ล้างบริเวณที่สัมผัสด้วยน้ำ และไปฉุกเฉินทันที",
+                "tl": "Kung dumikit ang patch sa ibang tao, lalo na sa bata: alisin agad, hugasan ng tubig ang nadikitan, at magpatingin agad sa emergency.",
+                "ja": "貼付剤が他の人、特に子どもに誤って貼り付いた場合は、すぐにはがし、接触部を水で洗い、直ちに救急受診してください。"
               },
               "highlight": false
             },
             {
               "index": 2,
               "text": {
-                "zh-TW": "很想睡、叫不醒或呼吸變慢，立刻撕下並就醫。",
-                "en": "If you become very sleepy, hard to wake, or breathe slowly, remove the patch and get medical help right away.",
-                "id": "Jika Anda sangat mengantuk, sulit dibangunkan, atau napas melambat, lepas patch dan segera cari pertolongan medis.",
-                "vi": "Nếu bạn buồn ngủ nhiều, khó đánh thức hoặc thở chậm, hãy gỡ miếng dán và đi khám ngay.",
-                "th": "ถ้าง่วงมาก ปลุกไม่ค่อยตื่น หรือหายใจช้าลง ให้ลอกแผ่นแปะออกและรีบไปพบแพทย์ทันที",
-                "tl": "Kung sobrang antok, mahirap gisingin, o mabagal ang paghinga, alisin ang patch at magpatingin agad.",
-                "ja": "強い眠気、起こしても起きにくい、呼吸が遅いときは、すぐにはがして受診してください。"
+                "zh-TW": "不可裁切、不可同時貼超過醫囑的數量，也不可因疼痛加劇自行加貼。",
+                "en": "Do not cut the patch, use more patches than prescribed, or add an extra patch on your own when pain worsens.",
+                "id": "Jangan memotong patch, memakai lebih banyak patch daripada yang diresepkan, atau menambah patch sendiri saat nyeri memburuk.",
+                "vi": "Không cắt miếng dán, không dùng nhiều miếng hơn đơn đã kê, và không tự dán thêm khi đau tăng.",
+                "th": "ห้ามตัดแผ่นแปะ ห้ามใช้เกินจำนวนที่แพทย์สั่ง และห้ามติดเพิ่มเองเมื่อปวดมากขึ้น",
+                "tl": "Huwag putulin ang patch, gumamit ng mas marami kaysa sa inireseta, o magdagdag nang kusa kapag sumasakit nang higit.",
+                "ja": "貼付剤を切ったり、処方された枚数を超えて使ったり、痛みが強くなったからと自己判断で追加したりしないでください。"
+              },
+              "highlight": false
+            },
+            {
+              "index": 3,
+              "text": {
+                "zh-TW": "酒精、安眠藥、鎮靜藥或其他會讓人想睡的藥，可能讓呼吸更危險；所有併用藥先告知醫師或藥師。",
+                "en": "Alcohol, sleeping pills, sedatives, and other medicines that cause drowsiness can make breathing dangerously slow. Tell your doctor or pharmacist about every medicine you use.",
+                "id": "Alkohol, obat tidur, obat penenang, dan obat lain yang menyebabkan kantuk dapat membuat napas menjadi sangat lambat. Beri tahu dokter atau apoteker tentang semua obat yang Anda gunakan.",
+                "vi": "Rượu, thuốc ngủ, thuốc an thần và các thuốc khác gây buồn ngủ có thể làm nhịp thở chậm đến mức nguy hiểm. Hãy báo bác sĩ hoặc dược sĩ về mọi thuốc bạn đang dùng.",
+                "th": "แอลกอฮอล์ ยานอนหลับ ยากล่อมประสาท หรือยาอื่นที่ทำให้ง่วง อาจทำให้หายใจช้าจนอันตรายได้ แจ้งแพทย์หรือเภสัชกรเกี่ยวกับยาทุกชนิดที่ใช้",
+                "tl": "Ang alak, gamot pampatulog, sedative, at ibang gamot na nakakaantok ay maaaring magpabagal ng paghinga nang mapanganib. Sabihin sa doktor o parmasyutiko ang lahat ng gamot na ginagamit mo.",
+                "ja": "アルコール、睡眠薬、鎮静薬、眠気を起こす他の薬は、呼吸を危険なほど遅くすることがあります。使用中の薬をすべて医師または薬剤師へ伝えてください。"
               },
               "highlight": false
             }
@@ -35576,22 +35405,22 @@
               "index": 1,
               "section": null,
               "action": {
-                "zh-TW": "取下隱形眼鏡",
-                "en": "Remove your contact lenses",
-                "id": "Lepaskan lensa kontak",
-                "vi": "Tháo kính áp tròng",
-                "th": "ถอดคอนแทคเลนส์ออก",
-                "tl": "Alisin ang contact lens",
-                "ja": "コンタクトレンズを外す"
+                "zh-TW": "若藥袋或仿單要求，先取下隱形眼鏡",
+                "en": "Remove contact lenses first if the label or leaflet tells you to do so",
+                "id": "Lepaskan lensa kontak lebih dulu bila etiket atau leaflet mengharuskannya",
+                "vi": "Tháo kính áp tròng trước nếu nhãn hoặc tờ hướng dẫn yêu cầu",
+                "th": "หากฉลากหรือเอกสารกำกับยาระบุ ให้ถอดคอนแทคเลนส์ก่อน",
+                "tl": "Alisin muna ang contact lens kung ito ay nakasaad sa label o leaflet.",
+                "ja": "薬袋や添付文書に指示がある場合は、先にコンタクトレンズを外します。"
               },
               "note": {
-                "zh-TW": "點藥後至少等 15 分鐘再戴回去。",
-                "en": "Wait at least 15 minutes after the drops before putting them back in.",
-                "id": "Tunggu setidaknya 15 menit setelah meneteskan obat sebelum memakainya kembali.",
-                "vi": "Hãy đợi ít nhất 15 phút sau khi nhỏ thuốc rồi mới đeo lại.",
-                "th": "หลังหยอดยาแล้วให้รออย่างน้อย 15 นาทีจึงใส่กลับ",
-                "tl": "Maghintay ng hindi bababa sa 15 minuto bago isuot muli.",
-                "ja": "点眼後は少なくとも15分待ってから着け直す。"
+                "zh-TW": "是否能立刻戴回、需等多久，依藥袋或仿單標示。",
+                "en": "Whether you can put lenses back in and when to do so depends on the label or leaflet.",
+                "id": "Kapan lensa boleh dipakai kembali bergantung pada etiket atau leaflet.",
+                "vi": "Có được đeo lại kính ngay hay phải chờ bao lâu tùy theo nhãn hoặc tờ hướng dẫn.",
+                "th": "จะใส่กลับได้ทันทีหรือควรรอนานเท่าไร ให้ดูตามฉลากหรือเอกสารกำกับยา",
+                "tl": "Kung maaari bang isuot muli agad at kung gaano katagal maghihintay ay depende sa label o leaflet.",
+                "ja": "すぐに再装用できるか、どのくらい待つかは薬袋や添付文書に従ってください。"
               },
               "highlight": false,
               "illustration": {
@@ -36562,26 +36391,26 @@
             {
               "index": 0,
               "text": {
-                "zh-TW": "有鼓膜穿孔或中耳炎病史者，用藥前務必告知醫師。",
-                "en": "Tell the doctor before use if you have a history of a perforated eardrum or middle-ear infection.",
-                "id": "Beri tahu dokter sebelum pemakaian bila Anda pernah mengalami gendang telinga berlubang atau infeksi telinga tengah.",
-                "vi": "Hãy báo cho bác sĩ trước khi dùng nếu bạn từng bị thủng màng nhĩ hoặc viêm tai giữa.",
-                "th": "แจ้งแพทย์ก่อนใช้หากเคยมีประวัติแก้วหูทะลุหรือหูชั้นกลางอักเสบ",
-                "tl": "Sabihin muna sa doktor bago gamitin kung may kasaysayan ka ng butas sa eardrum o middle-ear infection.",
-                "ja": "鼓膜穿孔や中耳炎の既往がある時は、使用前に必ず医師へ伝える。"
+                "zh-TW": "若有鼓膜穿孔、耳管、耳部手術史，或不確定能否使用，先依醫師或藥師指示。",
+                "en": "If you have a perforated eardrum, ear tubes, past ear surgery, or are unsure, follow your doctor’s or pharmacist’s advice first.",
+                "id": "Jika Anda punya gendang telinga berlubang, tabung telinga, riwayat operasi telinga, atau ragu, ikuti arahan dokter atau apoteker terlebih dahulu.",
+                "vi": "Nếu thủng màng nhĩ, có ống tai, từng phẫu thuật tai hoặc không chắc có dùng được không, hãy hỏi bác sĩ hoặc dược sĩ trước.",
+                "th": "หากแก้วหูทะลุ มีท่อระบายในหู เคยผ่าตัดหู หรือไม่แน่ใจว่าใช้ได้หรือไม่ ให้ทำตามคำแนะนำแพทย์หรือเภสัชกรก่อน",
+                "tl": "Kung may butas ang eardrum, may ear tube, may dating operasyon sa tainga, o hindi sigurado, sundin muna ang payo ng doktor o parmasyutiko.",
+                "ja": "鼓膜穿孔、耳管留置、耳の手術歴がある方、または使用できるか不明な方は、先に医師または薬剤師の指示に従ってください。"
               },
               "highlight": false
             },
             {
               "index": 1,
               "text": {
-                "zh-TW": "症狀未改善時，勿連續使用超過 10 天。",
-                "en": "Do not keep using it for more than 10 days if symptoms are not improving.",
-                "id": "Jangan terus memakai lebih dari 10 hari bila gejala tidak membaik.",
-                "vi": "Đừng dùng liên tục quá 10 ngày nếu triệu chứng không cải thiện.",
-                "th": "หากอาการไม่ดีขึ้น อย่าใช้ต่อเนื่องเกิน 10 วัน",
-                "tl": "Huwag itong ipagpatuloy nang lampas 10 araw kung hindi gumagaling ang sintomas.",
-                "ja": "症状が改善しない時は10日を超えて続けて使わない。"
+                "zh-TW": "症狀沒有改善、變得更痛或出現發燒，請回診；療程長度依藥袋或醫囑。",
+                "en": "If symptoms do not improve, become more painful, or fever develops, seek review. Follow the course length on the label or prescription.",
+                "id": "Jika gejala tidak membaik, makin nyeri, atau muncul demam, periksa kembali. Ikuti lama pemakaian pada etiket atau resep.",
+                "vi": "Nếu không cải thiện, đau hơn hoặc sốt, hãy tái khám. Dùng theo thời gian ghi trên nhãn hoặc đơn thuốc.",
+                "th": "หากอาการไม่ดีขึ้น ปวดมากขึ้น หรือมีไข้ ให้กลับไปพบแพทย์ ระยะเวลาใช้ให้ดูตามฉลากหรือคำสั่งแพทย์",
+                "tl": "Kung hindi bumuti ang sintomas, mas sumakit, o nagka-singaw, magpatingin muli. Sundin ang haba ng gamutan sa label o reseta.",
+                "ja": "症状が改善しない、痛みが強くなる、発熱した場合は再受診してください。使用期間は薬袋または処方指示に従ってください。"
               },
               "highlight": false
             },

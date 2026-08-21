@@ -28605,6 +28605,420 @@ function applySecondGenOcpTranslations() {
 }
 applySecondGenOcpTranslations();
 
+function applyBatch4SafetyAudit() {
+  const set = (value, zh, en, id, vi, th, tl, ja) => Object.assign(value, tx(zh, en, id, vi, th, tl, ja));
+  const med = (id) => MEDICATIONS.find((m) => m.id === id);
+
+  ["eyedrops", "eye-drops-special", "eye-ointment"].forEach((id) => {
+    const m = med(id);
+    const opened = (m.warnings || []).find((w) => (w["zh-TW"] || "").includes("開封後"));
+    if (opened) set(opened,
+      "請記下開封日；開封後的可用期限以藥袋、外盒或仿單標示為準。",
+      "Write down the opening date. Follow the discard date on the label, carton, or leaflet after opening.",
+      "Catat tanggal dibuka. Ikuti batas penggunaan setelah dibuka pada etiket, kemasan, atau leaflet.",
+      "Ghi ngày mở thuốc. Sau khi mở, hãy dùng theo thời hạn ghi trên nhãn, hộp hoặc tờ hướng dẫn.",
+      "จดวันที่เปิดใช้ และหลังเปิดแล้วให้ใช้ตามระยะเวลาที่ระบุบนฉลาก กล่อง หรือเอกสารกำกับยา",
+      "Isulat ang petsa ng pagbukas. Sundin ang petsa ng pagtatapon pagkatapos buksan na nakasaad sa label, kahon, o leaflet.",
+      "開封日を記録し、開封後の使用期限は薬袋・外箱・添付文書の表示に従ってください。"
+    );
+  });
+
+  const eye = med("eye-drops-special");
+  set(eye.steps[1].action,
+    "若藥袋或仿單要求，先取下隱形眼鏡",
+    "Remove contact lenses first if the label or leaflet tells you to do so",
+    "Lepaskan lensa kontak lebih dulu bila etiket atau leaflet mengharuskannya",
+    "Tháo kính áp tròng trước nếu nhãn hoặc tờ hướng dẫn yêu cầu",
+    "หากฉลากหรือเอกสารกำกับยาระบุ ให้ถอดคอนแทคเลนส์ก่อน",
+    "Alisin muna ang contact lens kung ito ay nakasaad sa label o leaflet.",
+    "薬袋や添付文書に指示がある場合は、先にコンタクトレンズを外します。"
+  );
+  set(eye.steps[1].note,
+    "是否能立刻戴回、需等多久，依藥袋或仿單標示。",
+    "Whether you can put lenses back in and when to do so depends on the label or leaflet.",
+    "Kapan lensa boleh dipakai kembali bergantung pada etiket atau leaflet.",
+    "Có được đeo lại kính ngay hay phải chờ bao lâu tùy theo nhãn hoặc tờ hướng dẫn.",
+    "จะใส่กลับได้ทันทีหรือควรรอนานเท่าไร ให้ดูตามฉลากหรือเอกสารกำกับยา",
+    "Kung maaari bang isuot muli agad at kung gaano katagal maghihintay ay depende sa label o leaflet.",
+    "すぐに再装用できるか、どのくらい待つかは薬袋や添付文書に従ってください。"
+  );
+
+  const ear = med("ear-drops-special");
+  const earWarning = ear.warnings.find((w) => (w["zh-TW"] || "").includes("鼓膜穿孔"));
+  set(earWarning,
+    "若有鼓膜穿孔、耳管、耳部手術史，或不確定能否使用，先依醫師或藥師指示。",
+    "If you have a perforated eardrum, ear tubes, past ear surgery, or are unsure, follow your doctor’s or pharmacist’s advice first.",
+    "Jika Anda punya gendang telinga berlubang, tabung telinga, riwayat operasi telinga, atau ragu, ikuti arahan dokter atau apoteker terlebih dahulu.",
+    "Nếu thủng màng nhĩ, có ống tai, từng phẫu thuật tai hoặc không chắc có dùng được không, hãy hỏi bác sĩ hoặc dược sĩ trước.",
+    "หากแก้วหูทะลุ มีท่อระบายในหู เคยผ่าตัดหู หรือไม่แน่ใจว่าใช้ได้หรือไม่ ให้ทำตามคำแนะนำแพทย์หรือเภสัชกรก่อน",
+    "Kung may butas ang eardrum, may ear tube, may dating operasyon sa tainga, o hindi sigurado, sundin muna ang payo ng doktor o parmasyutiko.",
+    "鼓膜穿孔、耳管留置、耳の手術歴がある方、または使用できるか不明な方は、先に医師または薬剤師の指示に従ってください。"
+  );
+  const duration = ear.warnings.find((w) => (w["zh-TW"] || "").includes("10 天"));
+  set(duration,
+    "症狀沒有改善、變得更痛或出現發燒，請回診；療程長度依藥袋或醫囑。",
+    "If symptoms do not improve, become more painful, or fever develops, seek review. Follow the course length on the label or prescription.",
+    "Jika gejala tidak membaik, makin nyeri, atau muncul demam, periksa kembali. Ikuti lama pemakaian pada etiket atau resep.",
+    "Nếu không cải thiện, đau hơn hoặc sốt, hãy tái khám. Dùng theo thời gian ghi trên nhãn hoặc đơn thuốc.",
+    "หากอาการไม่ดีขึ้น ปวดมากขึ้น หรือมีไข้ ให้กลับไปพบแพทย์ ระยะเวลาใช้ให้ดูตามฉลากหรือคำสั่งแพทย์",
+    "Kung hindi bumuti ang sintomas, mas sumakit, o nagka-singaw, magpatingin muli. Sundin ang haba ng gamutan sa label o reseta.",
+    "症状が改善しない、痛みが強くなる、発熱した場合は再受診してください。使用期間は薬袋または処方指示に従ってください。"
+  );
+
+  const evac = med("evac-enema");
+  const evacDuration = evac.warnings.find((w) => (w["zh-TW"] || "").includes("連用超過"));
+  set(evacDuration,
+    "24 小時內不要超過 1 瓶，也不要連用超過 3 天。30 分鐘仍沒有排便，請就醫。",
+    "Do not use more than 1 bottle in 24 hours or for more than 3 days. Seek medical help if there is still no bowel movement after 30 minutes.",
+    "Jangan gunakan lebih dari 1 botol dalam 24 jam atau lebih dari 3 hari. Cari bantuan medis bila belum buang air besar setelah 30 menit.",
+    "Không dùng quá 1 chai trong 24 giờ hoặc quá 3 ngày. Đi khám nếu sau 30 phút vẫn chưa đi tiêu.",
+    "ห้ามใช้เกิน 1 ขวดใน 24 ชั่วโมง หรือเกิน 3 วัน หากผ่าน 30 นาทีแล้วยังไม่ถ่าย ให้พบแพทย์",
+    "Huwag gumamit ng higit sa 1 bote sa loob ng 24 oras o nang lampas 3 araw. Magpatingin kung wala pa ring pagdumi pagkatapos ng 30 minuto.",
+    "24時間以内に1本を超えて使用せず、3日を超えて連用しないでください。30分たっても排便がない場合は受診してください。"
+  );
+  const evacRisk = evac.warnings.find((w) => (w["zh-TW"] || "").includes("腎臟病"));
+  set(evacRisk,
+    "腎臟病、心臟病、脫水或 55 歲以上者，使用前先依醫師或藥師指示。",
+    "If you have kidney disease, heart disease, dehydration, or are 55 or older, ask your doctor or pharmacist before use.",
+    "Bila Anda punya penyakit ginjal, penyakit jantung, dehidrasi, atau berusia 55 tahun ke atas, tanyakan dokter atau apoteker sebelum memakai.",
+    "Nếu có bệnh thận, bệnh tim, mất nước hoặc từ 55 tuổi trở lên, hỏi bác sĩ hoặc dược sĩ trước khi dùng.",
+    "หากมีโรคไต โรคหัวใจ ภาวะขาดน้ำ หรืออายุ 55 ปีขึ้นไป ให้ปรึกษาแพทย์หรือเภสัชกรก่อนใช้",
+    "Kung may sakit sa bato, sakit sa puso, dehydration, o edad 55 pataas, kumonsulta muna sa doktor o parmasyutiko bago gamitin.",
+    "腎臓病、心臓病、脱水がある方、または55歳以上の方は、使用前に医師または薬剤師に相談してください。"
+  );
+
+  const colasa = med("colasa-enema");
+  set(colasa.steps[3].action,
+    "左側躺，上腿彎曲，下腿伸直",
+    "Lie on your left side, with your upper leg bent and lower leg straight",
+    "Berbaring miring ke kiri, kaki atas ditekuk dan kaki bawah lurus",
+    "Nằm nghiêng bên trái, chân trên co lại và chân dưới duỗi thẳng",
+    "นอนตะแคงซ้าย งอขาด้านบนและเหยียดขาด้านล่าง",
+    "Humiga sa kaliwang tagiliran, nakabaluktot ang itaas na binti at nakaunat ang ibabang binti.",
+    "左側を下にして横になり、上の脚を曲げ、下の脚を伸ばします。"
+  );
+  set(colasa.steps[7].action,
+    "至少側躺 30 分鐘，盡量留到隔天早上",
+    "Stay lying down for at least 30 minutes; try to retain it until the next morning",
+    "Tetap berbaring setidaknya 30 menit; usahakan menahannya sampai pagi berikutnya",
+    "Nằm yên ít nhất 30 phút; cố giữ thuốc đến sáng hôm sau",
+    "นอนต่ออย่างน้อย 30 นาที และพยายามกลั้นยาไว้จนถึงเช้าวันถัดไป",
+    "Manatiling nakahiga nang hindi bababa sa 30 minuto; subukang panatilihin ito hanggang kinaumagahan.",
+    "少なくとも30分は横になり、できるだけ翌朝まで保持してください。"
+  );
+}
+applyBatch4SafetyAudit();
+
+function applyBatch5TopicalHighRiskAudit() {
+  const get = (id) => MEDICATIONS.find((medication) => medication.id === id);
+
+  const fentanyl = get("fentanyl-patch");
+  if (fentanyl) {
+    fentanyl.preStepsInfo.text = tx(
+      "貼新片前，先撕下舊片。使用期間，貼片和周圍皮膚都要遠離熱敷墊、電熱毯、三溫暖、熱水澡、熱水池與日光曝曬；發燒時請立即告知醫師或藥師。",
+      "Remove the old patch before applying a new one. While wearing it, keep the patch and nearby skin away from heating pads, electric blankets, saunas, hot baths, hot tubs, and direct sun. Tell your doctor or pharmacist right away if you develop a fever.",
+      "Lepaskan patch lama sebelum memasang yang baru. Saat memakainya, jauhkan patch dan kulit di sekitarnya dari bantalan penghangat, selimut listrik, sauna, mandi air panas, hot tub, dan sinar matahari langsung. Segera beri tahu dokter atau apoteker jika Anda demam.",
+      "Gỡ miếng dán cũ trước khi dán miếng mới. Khi đang dùng, tránh để miếng dán và vùng da xung quanh tiếp xúc với đệm sưởi, chăn điện, phòng xông hơi, tắm nước nóng, bồn nước nóng hoặc nắng trực tiếp. Báo ngay cho bác sĩ hoặc dược sĩ nếu bạn bị sốt.",
+      "ลอกแผ่นเก่าออกก่อนติดแผ่นใหม่ ระหว่างใช้ ให้แผ่นแปะและผิวรอบ ๆ อยู่ห่างจากแผ่นประคบร้อน ผ้าห่มไฟฟ้า ซาวน่า การอาบน้ำร้อน อ่างน้ำร้อน และแสงแดดโดยตรง หากมีไข้ ให้แจ้งแพทย์หรือเภสัชกรทันที",
+      "Alisin muna ang lumang patch bago ikabit ang bago. Habang suot ito, ilayo ang patch at balat sa paligid nito sa hot pack, electric blanket, sauna, mainit na paligo, hot tub, at direktang araw. Sabihin agad sa doktor o parmasyutiko kung nilalagnat ka.",
+      "新しい貼付剤を貼る前に、古い貼付剤をはがしてください。使用中は、貼付部位と周囲の皮膚を温熱パッド、電気毛布、サウナ、熱い入浴、ジャグジー、直射日光から避けてください。発熱したら、すぐに医師または薬剤師へ連絡してください。"
+    );
+    fentanyl.steps[0].note = tx(
+      "黏膠面向內對折，立刻依藥師指示安全丟棄；用過的貼片仍有藥，務必遠離兒童、寵物與其他人。",
+      "Fold it in half with the sticky sides together and dispose of it safely as your pharmacist instructed. Used patches still contain medicine; keep them away from children, pets, and other people.",
+      "Lipat dua dengan sisi lengket saling menempel, lalu buang dengan aman sesuai petunjuk apoteker. Patch bekas masih mengandung obat; jauhkan dari anak-anak, hewan peliharaan, dan orang lain.",
+      "Gập đôi để hai mặt dính dán vào nhau, rồi thải bỏ an toàn theo hướng dẫn của dược sĩ. Miếng dán đã dùng vẫn còn thuốc; để xa trẻ em, thú nuôi và người khác.",
+      "พับครึ่งให้ด้านกาวติดกัน แล้วทิ้งอย่างปลอดภัยตามคำแนะนำของเภสัชกร แผ่นที่ใช้แล้วก็ยังมียาอยู่ จึงต้องเก็บให้พ้นเด็ก สัตว์เลี้ยง และผู้อื่น",
+      "Tiklupin upang magdikit ang malagkit na mga bahagi, at itapon nang ligtas ayon sa tagubilin ng parmasyutiko. May gamot pa rin ang nagamit na patch; ilayo ito sa mga bata, alagang hayop, at iba pang tao.",
+      "粘着面どうしを内側にして半分に折り、薬剤師の指示どおり安全に処分してください。使用済みでも薬が残っているため、子ども、ペット、他の人に絶対に触れさせないでください。"
+    );
+    fentanyl.warnings = [
+      tx("呼吸變慢、變淺、異常想睡、叫不醒或昏倒：立刻叫救護車。", "Slow or shallow breathing, unusual sleepiness, inability to wake up, or fainting: call emergency services right away.", "Napas lambat atau dangkal, sangat mengantuk, tidak dapat dibangunkan, atau pingsan: segera hubungi layanan gawat darurat.", "Thở chậm hoặc nông, buồn ngủ bất thường, không đánh thức được hoặc ngất: gọi cấp cứu ngay.", "หายใจช้าหรือตื้น ง่วงผิดปกติ ปลุกไม่ตื่น หรือเป็นลม: โทรฉุกเฉินทันที", "Mabagal o mababaw na paghinga, hindi pangkaraniwang antok, hindi magising, o himatayin: tumawag agad sa emergency services.", "呼吸が遅い・浅い、異常な眠気、呼びかけても起きない、失神があれば、直ちに救急要請してください。"),
+      tx("貼片意外黏到別人，尤其是兒童：立刻取下，用清水洗接觸處，並立即就醫。", "If a patch sticks to someone else, especially a child: remove it at once, wash the contact area with water, and get emergency medical help right away.", "Jika patch menempel pada orang lain, terutama anak-anak: lepaskan segera, cuci area yang terkena dengan air, dan segera cari pertolongan medis darurat.", "Nếu miếng dán dính vào người khác, đặc biệt là trẻ em: gỡ ra ngay, rửa vùng tiếp xúc bằng nước và đi cấp cứu ngay.", "หากแผ่นแปะติดตัวผู้อื่น โดยเฉพาะเด็ก: ลอกออกทันที ล้างบริเวณที่สัมผัสด้วยน้ำ และไปฉุกเฉินทันที", "Kung dumikit ang patch sa ibang tao, lalo na sa bata: alisin agad, hugasan ng tubig ang nadikitan, at magpatingin agad sa emergency.", "貼付剤が他の人、特に子どもに誤って貼り付いた場合は、すぐにはがし、接触部を水で洗い、直ちに救急受診してください。"),
+      tx("不可裁切、不可同時貼超過醫囑的數量，也不可因疼痛加劇自行加貼。", "Do not cut the patch, use more patches than prescribed, or add an extra patch on your own when pain worsens.", "Jangan memotong patch, memakai lebih banyak patch daripada yang diresepkan, atau menambah patch sendiri saat nyeri memburuk.", "Không cắt miếng dán, không dùng nhiều miếng hơn đơn đã kê, và không tự dán thêm khi đau tăng.", "ห้ามตัดแผ่นแปะ ห้ามใช้เกินจำนวนที่แพทย์สั่ง และห้ามติดเพิ่มเองเมื่อปวดมากขึ้น", "Huwag putulin ang patch, gumamit ng mas marami kaysa sa inireseta, o magdagdag nang kusa kapag sumasakit nang higit.", "貼付剤を切ったり、処方された枚数を超えて使ったり、痛みが強くなったからと自己判断で追加したりしないでください。"),
+      tx("酒精、安眠藥、鎮靜藥或其他會讓人想睡的藥，可能讓呼吸更危險；所有併用藥先告知醫師或藥師。", "Alcohol, sleeping pills, sedatives, and other medicines that cause drowsiness can make breathing dangerously slow. Tell your doctor or pharmacist about every medicine you use.", "Alkohol, obat tidur, obat penenang, dan obat lain yang menyebabkan kantuk dapat membuat napas menjadi sangat lambat. Beri tahu dokter atau apoteker tentang semua obat yang Anda gunakan.", "Rượu, thuốc ngủ, thuốc an thần và các thuốc khác gây buồn ngủ có thể làm nhịp thở chậm đến mức nguy hiểm. Hãy báo bác sĩ hoặc dược sĩ về mọi thuốc bạn đang dùng.", "แอลกอฮอล์ ยานอนหลับ ยากล่อมประสาท หรือยาอื่นที่ทำให้ง่วง อาจทำให้หายใจช้าจนอันตรายได้ แจ้งแพทย์หรือเภสัชกรเกี่ยวกับยาทุกชนิดที่ใช้", "Ang alak, gamot pampatulog, sedative, at ibang gamot na nakakaantok ay maaaring magpabagal ng paghinga nang mapanganib. Sabihin sa doktor o parmasyutiko ang lahat ng gamot na ginagamit mo.", "アルコール、睡眠薬、鎮静薬、眠気を起こす他の薬は、呼吸を危険なほど遅くすることがあります。使用中の薬をすべて医師または薬剤師へ伝えてください。")
+    ];
+  }
+
+  const lindane = get("lindane-scabi");
+  if (lindane) {
+    lindane.preStepsInfo.text = tx(
+      "這不是第一線用藥，只有其他較安全藥物不能用或沒效時才使用。\n同一波疥瘡只能用 1 次；即使仍癢，也不可自行補擦。",
+      "This is not a first-choice treatment. Use it only when safer medicines cannot be used or did not work.\nUse it only once for the same scabies episode. Do not reapply it on your own, even if you still itch.",
+      "Ini bukan pengobatan pilihan pertama. Gunakan hanya bila obat yang lebih aman tidak bisa dipakai atau tidak berhasil.\nUntuk episode skabies yang sama, gunakan hanya 1 kali. Jangan mengoleskan lagi sendiri meskipun masih gatal.",
+      "Đây không phải là lựa chọn điều trị đầu tiên. Chỉ dùng khi thuốc an toàn hơn không dùng được hoặc không hiệu quả.\nMỗi đợt ghẻ chỉ dùng 1 lần. Không tự bôi lại, dù vẫn còn ngứa.",
+      "นี่ไม่ใช่ยาทางเลือกแรก ใช้เฉพาะเมื่อยาที่ปลอดภัยกว่านี้ใช้ไม่ได้หรือไม่ได้ผล\nสำหรับหิดครั้งเดียวกัน ให้ใช้เพียง 1 ครั้ง แม้ยังคันก็ห้ามทาซ้ำเอง",
+      "Hindi ito unang pinipiling paggamot. Gamitin lamang kapag hindi maaaring gamitin ang mas ligtas na gamot o hindi ito umepekto.\nIsang beses lang gamitin para sa parehong episode ng galis. Huwag magpahid muli nang kusa kahit nangangati pa.",
+      "これは第一選択の治療ではなく、より安全な薬が使えない場合または効かなかった場合にのみ使用します。\n同じ疥癬の治療では1回だけ使い、かゆみが残っても自己判断で塗り直さないでください。"
+    );
+    lindane.steps[0].note = tx(
+      "皮膚溫熱或潮濕會增加吸收與副作用。擦前，皮膚不要有乳液、藥膏或油類產品。",
+      "Warm or wet skin increases absorption and side effects. Before applying it, do not have lotion, cream, or oil products on your skin.",
+      "Kulit yang hangat atau basah meningkatkan penyerapan dan efek samping. Sebelum mengoleskan, jangan gunakan losion, krim, atau produk berminyak pada kulit.",
+      "Da còn nóng hoặc ướt làm tăng hấp thu và tác dụng phụ. Trước khi bôi, không để da có kem dưỡng, kem bôi hoặc sản phẩm chứa dầu.",
+      "ผิวที่ยังอุ่นหรือเปียกจะเพิ่มการดูดซึมและผลข้างเคียง ก่อนทา อย่าให้มีโลชั่น ครีม หรือผลิตภัณฑ์ที่มีน้ำมันอยู่บนผิว",
+      "Ang mainit o basang balat ay nagpapataas ng pagsipsip at mga side effect. Bago magpahid, huwag magkaroon ng lotion, krema, o produktong may langis sa balat.",
+      "皮膚が温かい、または湿っていると、吸収と副作用の危険が高まります。塗る前に、皮膚にローション、クリーム、油性製品が残っていないことを確認してください。"
+    );
+    lindane.warnings = [
+      tx("同一波疥瘡只能用 1 次。持續發癢不代表藥沒效，絕對不可自行再擦。", "Use it only once for the same scabies episode. Ongoing itching does not mean the medicine failed. Never apply it again on your own.", "Gunakan hanya 1 kali untuk episode skabies yang sama. Rasa gatal yang menetap bukan berarti obatnya gagal. Jangan pernah mengoleskan lagi sendiri.", "Chỉ dùng 1 lần cho cùng một đợt ghẻ. Ngứa kéo dài không có nghĩa là thuốc không hiệu quả. Tuyệt đối không tự bôi lại.", "ใช้เพียง 1 ครั้งสำหรับหิดครั้งเดียวกัน อาการคันที่ยังมีอยู่ไม่ได้แปลว่ายาไม่ได้ผล ห้ามทาซ้ำเองเด็ดขาด", "Isang beses lang gamitin para sa parehong episode ng galis. Hindi nangangahulugang hindi umepekto ang gamot kung nangangati pa. Huwag kailanman magpahid muli nang kusa.", "同じ疥癬には1回だけ使用します。かゆみが続いても薬が効かなかったとは限りません。絶対に自己判断で塗り直さないでください。"),
+      tx("若出現抽搐、意識異常或昏倒，立刻叫救護車。", "If a seizure, confusion, or fainting occurs, call emergency services right away.", "Jika terjadi kejang, perubahan kesadaran, atau pingsan, segera hubungi layanan gawat darurat.", "Nếu bị co giật, thay đổi ý thức hoặc ngất, hãy gọi cấp cứu ngay.", "หากมีอาการชัก สับสน หรือเป็นลม ให้โทรฉุกเฉินทันที", "Kung magkaroon ng kombulsyon, pagkalito, o himatayin, tumawag agad sa emergency services.", "けいれん、意識の異常、失神があれば、直ちに救急要請してください。"),
+      tx("早產兒、未控制的癲癇患者不可使用；若體重低於 50 公斤、年幼、年長，或有異位性皮膚炎、乾癬、破皮，使用前必須由醫師確認。", "Do not use it in premature infants or people with uncontrolled seizures. If you weigh under 50 kg, are very young or older, or have atopic dermatitis, psoriasis, or broken skin, a doctor must confirm that it is suitable before use.", "Jangan gunakan pada bayi prematur atau orang dengan kejang yang tidak terkontrol. Jika berat badan Anda kurang dari 50 kg, sangat muda atau lanjut usia, atau memiliki dermatitis atopik, psoriasis, atau kulit terluka, dokter harus memastikan kesesuaiannya sebelum digunakan.", "Không dùng cho trẻ sinh non hoặc người bị động kinh chưa kiểm soát. Nếu cân nặng dưới 50 kg, còn nhỏ, lớn tuổi, hoặc có viêm da cơ địa, vảy nến hay da trầy xước, bác sĩ phải xác nhận phù hợp trước khi dùng.", "ห้ามใช้ในทารกคลอดก่อนกำหนดหรือผู้ที่ควบคุมอาการชักไม่ได้ หากน้ำหนักต่ำกว่า 50 กก. เป็นเด็กเล็กหรือผู้สูงอายุ หรือมีผื่นภูมิแพ้ผิวหนัง สะเก็ดเงิน หรือผิวแตก ต้องให้แพทย์ยืนยันก่อนใช้", "Huwag gamitin sa premature na sanggol o sa taong hindi kontrolado ang kombulsyon. Kung wala pang 50 kg ang timbang, bata pa, matanda, o may atopic dermatitis, psoriasis, o sugat sa balat, kailangang kumpirmahin muna ng doktor na angkop ito bago gamitin.", "早産児やコントロール不良のてんかんがある人には使えません。体重50kg未満、幼児、高齢者、アトピー性皮膚炎、乾癬、皮膚の傷がある場合は、使用前に必ず医師が適切か確認してください。"),
+      tx("不可入口、不可擦在臉部、眼睛、嘴巴或黏膜；不慎碰到時，立刻以大量清水沖洗。", "Do not swallow it or apply it to the face, eyes, mouth, or mucous membranes. If contact occurs, rinse right away with plenty of water.", "Jangan ditelan atau dioleskan pada wajah, mata, mulut, atau selaput lendir. Jika terkena, segera bilas dengan banyak air.", "Không được nuốt hoặc bôi lên mặt, mắt, miệng hay niêm mạc. Nếu dính vào, rửa ngay bằng thật nhiều nước.", "ห้ามรับประทานหรือทาที่ใบหน้า ดวงตา ปาก หรือเยื่อบุ หากสัมผัส ให้ล้างด้วยน้ำสะอาดปริมาณมากทันที", "Huwag lunukin o ipahid sa mukha, mata, bibig, o mucosa. Kung madikitan, banlawan agad ng maraming tubig.", "口に入れたり、顔、目、口、粘膜に塗ったりしないでください。付着した場合は、すぐに大量の水で洗い流してください。")
+    ];
+  }
+}
+applyBatch5TopicalHighRiskAudit();
+
+function applyBatch5TopicalHighRiskPart2() {
+  const get = (id) => MEDICATIONS.find((medication) => medication.id === id);
+  const set = (target, zh, en, id, vi, th, tl, ja) => Object.assign(target, tx(zh, en, id, vi, th, tl, ja));
+
+  const ak = get("imiquimod-ak");
+  if (ak) {
+    set(ak.preStepsInfo.text,
+      "這張只適用於光化性角化病。睡前薄擦，隔天早上洗掉。\n紅、癢、脫皮可在治療初期出現；反應太強時先停用並回診。",
+      "This sheet is only for actinic keratosis. Apply a thin layer at bedtime and wash it off the next morning.\nRedness, itching, and peeling can occur early in treatment. Stop and seek review if the reaction is too strong.",
+      "Lembar ini hanya untuk keratosis aktinik. Oleskan tipis sebelum tidur dan cuci keesokan paginya.\nKemerahan, gatal, dan pengelupasan dapat terjadi pada awal pengobatan. Hentikan dan periksa bila reaksinya terlalu berat.",
+      "Tờ này chỉ dùng cho dày sừng quang hóa. Bôi mỏng trước khi ngủ và rửa đi vào sáng hôm sau.\nĐỏ, ngứa và bong tróc có thể xảy ra khi mới điều trị. Ngừng thuốc và tái khám nếu phản ứng quá mạnh.",
+      "เอกสารนี้ใช้สำหรับรอยโรคผิวหนังจากแสงแดดเท่านั้น ทาบาง ๆ ก่อนนอนและล้างออกในเช้าวันถัดไป\nช่วงเริ่มรักษาอาจมีผิวแดง คัน หรือลอกได้ หากปฏิกิริยารุนแรงเกินไป ให้หยุดใช้และกลับไปพบแพทย์",
+      "Para lamang ang sheet na ito sa actinic keratosis. Magpahid nang manipis bago matulog at hugasan kinabukasan.\nMaaaring mamula, mangati, o magbalat sa simula ng gamutan. Itigil at magpatingin kung masyadong malubha ang reaksyon.",
+      "このシートは日光角化症にのみ使います。就寝前に薄く塗り、翌朝に洗い流してください。\n治療初期には赤み、かゆみ、皮むけが起こることがあります。反応が強すぎる場合は中止して受診してください。"
+    );
+    ak.warnings = [
+      tx("治療部位要避開日曬、日光浴機與 UV 燈；外出以衣物遮住患處。", "Keep the treated area away from sunlight, tanning beds, and UV lamps. Cover it with clothing outdoors.", "Hindari sinar matahari, tanning bed, dan lampu UV pada area yang diobati. Tutupi dengan pakaian saat di luar.", "Tránh nắng, máy tắm nắng và đèn UV ở vùng đang điều trị. Che vùng này bằng quần áo khi ra ngoài.", "หลีกเลี่ยงแดด เตียงอาบแดด และแสง UV บริเวณที่รักษา ใช้เสื้อผ้าปกปิดเมื่อออกนอกบ้าน", "Iwasan ang araw, tanning bed, at UV lamp sa ginagamot na bahagi. Takpan ito ng damit kapag nasa labas.", "治療部位は日光、日焼けマシン、UVランプを避け、外出時は衣類で覆ってください。"),
+      tx("若疼痛明顯、嚴重腫脹、流膿或皮膚破損範圍擴大，先停用並回診。", "Stop and seek review if there is marked pain, severe swelling, pus, or worsening skin breakdown.", "Hentikan dan periksa bila ada nyeri berat, bengkak berat, nanah, atau kerusakan kulit yang makin luas.", "Ngừng thuốc và tái khám nếu đau rõ, sưng nhiều, có mủ hoặc vùng da tổn thương lan rộng.", "หยุดใช้และกลับไปพบแพทย์หากปวดมาก บวมมาก มีหนอง หรือผิวหนังแตกเป็นบริเวณกว้างขึ้น", "Itigil at magpatingin kung matindi ang sakit, malubha ang pamamaga, may nana, o lumalawak ang sugat sa balat.", "強い痛み、ひどい腫れ、膿、皮膚のただれが広がる場合は中止して受診してください。")
+    ];
+  }
+
+  const warts = get("imiquimod-warts");
+  if (warts) {
+    set(warts.preStepsInfo.text,
+      "這張只適用於外生殖器／肛門周圍疣。每週固定 3 晚，最長 16 週；睡前擦，6–10 小時後洗掉。\n不要把光化性角化病的用法套到這張。",
+      "This sheet is only for external genital or perianal warts. Use it on 3 fixed nights each week for up to 16 weeks; apply at bedtime and wash off after 6 to 10 hours.\nDo not use the actinic-keratosis schedule for this condition.",
+      "Lembar ini hanya untuk kutil kelamin luar atau sekitar anus. Gunakan pada 3 malam tetap tiap minggu, paling lama 16 minggu; oleskan sebelum tidur dan cuci setelah 6–10 jam.\nJangan gunakan jadwal untuk keratosis aktinik pada kondisi ini.",
+      "Tờ này chỉ dùng cho mụn cóc sinh dục ngoài hoặc quanh hậu môn. Dùng vào 3 tối cố định mỗi tuần, tối đa 16 tuần; bôi trước khi ngủ và rửa sau 6–10 giờ.\nKhông dùng lịch điều trị dày sừng quang hóa cho tình trạng này.",
+      "เอกสารนี้ใช้สำหรับหูดที่อวัยวะเพศภายนอกหรือรอบทวารหนักเท่านั้น ใช้คืนละ 3 คืนที่กำหนดในแต่ละสัปดาห์ นานไม่เกิน 16 สัปดาห์; ทาก่อนนอนและล้างออกหลัง 6–10 ชั่วโมง\nห้ามใช้ตารางของรอยโรคผิวหนังจากแสงแดดกับภาวะนี้",
+      "Para lamang ang sheet na ito sa kulugo sa panlabas na ari o paligid ng puwit. Gamitin sa 3 takdang gabi bawat linggo nang hanggang 16 na linggo; magpahid bago matulog at hugasan pagkalipas ng 6–10 oras.\nHuwag gamitin ang iskedyul para sa actinic keratosis sa kondisyong ito.",
+      "このシートは外陰部または肛門周囲のいぼにのみ使います。週3回、決めた夜に最長16週間使用し、就寝前に塗って6〜10時間後に洗い流してください。\n日光角化症の使用スケジュールをこの病気に使わないでください。"
+    );
+    warts.warnings = [
+      tx("藥還在皮膚上時不要有性接觸；這個藥可能使保險套、陰道隔膜變脆或破損。", "Do not have sexual contact while the medicine is on the skin. It may weaken or damage condoms and diaphragms.", "Jangan melakukan kontak seksual saat obat masih di kulit. Obat ini dapat melemahkan atau merusak kondom dan diafragma.", "Không quan hệ tình dục khi thuốc còn trên da. Thuốc có thể làm yếu hoặc hỏng bao cao su và màng ngăn âm đạo.", "อย่ามีเพศสัมพันธ์ขณะที่ยายังอยู่บนผิว ยาอาจทำให้ถุงยางอนามัยและแผ่นกั้นช่องคลอดอ่อนแอหรือเสียหาย", "Huwag makipagtalik habang nasa balat pa ang gamot. Maaari nitong pahinain o sirain ang condom at diaphragm.", "薬が皮膚に残っている間は性行為をしないでください。コンドームやペッサリーを弱くしたり傷めたりすることがあります。"),
+      tx("疼痛很強、紅腫很厲害、流膿或破皮擴大時，先停用並回診。", "Stop and seek review if there is severe pain, marked redness or swelling, pus, or worsening skin breakdown.", "Hentikan dan periksa bila ada nyeri berat, kemerahan atau bengkak berat, nanah, atau kerusakan kulit yang makin luas.", "Ngừng thuốc và tái khám nếu đau nhiều, đỏ hoặc sưng nhiều, có mủ hoặc da tổn thương lan rộng.", "หยุดใช้และกลับไปพบแพทย์หากปวดมาก แดงหรือบวมมาก มีหนอง หรือผิวหนังแตกเป็นบริเวณกว้างขึ้น", "Itigil at magpatingin kung matindi ang sakit, matindi ang pamumula o pamamaga, may nana, o lumalawak ang sugat sa balat.", "強い痛み、ひどい赤みや腫れ、膿、皮膚のただれが広がる場合は中止して受診してください。")
+    ];
+  }
+
+  const calcipotriol = get("calcipotriol-ointment");
+  if (calcipotriol) {
+    calcipotriol.warnings = [
+      tx("只擦銀屑病患處，不要自行大面積、長時間或密封包紮使用。", "Apply only to psoriasis areas. Do not use it over large areas, for long periods, or under an airtight dressing unless instructed.", "Oleskan hanya pada area psoriasis. Jangan gunakan pada area luas, jangka panjang, atau di bawah balutan kedap tanpa petunjuk.", "Chỉ bôi lên vùng vảy nến. Không tự bôi diện rộng, kéo dài hoặc băng kín nếu không được hướng dẫn.", "ทาเฉพาะบริเวณสะเก็ดเงิน ห้ามทาบริเวณกว้าง ใช้นาน หรือปิดทับแน่นเองหากไม่ได้รับคำสั่ง", "Ipahid lamang sa mga bahaging may psoriasis. Huwag gamitin sa malawak na bahagi, nang matagal, o sa ilalim ng mahigpit na benda maliban kung itinagubilin.", "乾癬の患部だけに使ってください。指示がない限り、広範囲、長期間、密封包帯の下で使わないでください。"),
+      tx("不可擦在臉部；不慎碰到臉或眼睛，立刻用清水洗掉。", "Do not apply it to the face. If it gets on your face or in your eyes, rinse it off with water right away.", "Jangan oleskan pada wajah. Jika mengenai wajah atau mata, segera bilas dengan air.", "Không bôi lên mặt. Nếu dính vào mặt hoặc mắt, rửa ngay bằng nước.", "ห้ามทาที่ใบหน้า หากโดนใบหน้าหรือดวงตา ให้ล้างออกด้วยน้ำทันที", "Huwag ipahid sa mukha. Kung mapunta sa mukha o mata, banlawan agad ng tubig.", "顔には塗らないでください。顔や目に付いた場合は、すぐに水で洗い流してください。"),
+      tx("使用量超過會讓血鈣升高；若醫師安排抽血或追蹤，請按時回診。", "Using too much can raise your blood calcium level. Keep any blood-test or follow-up appointments your doctor arranged.", "Pemakaian berlebihan dapat meningkatkan kalsium darah. Datanglah ke pemeriksaan darah atau kontrol yang dijadwalkan dokter.", "Dùng quá nhiều có thể làm tăng canxi máu. Hãy đi xét nghiệm hoặc tái khám đúng lịch bác sĩ đã hẹn.", "การใช้มากเกินไปอาจทำให้แคลเซียมในเลือดสูงขึ้น ให้ไปตรวจเลือดหรือติดตามตามนัดของแพทย์", "Ang sobrang paggamit ay maaaring magpataas ng calcium sa dugo. Dumalo sa blood test o follow-up na itinakda ng doktor.", "使いすぎると血中カルシウムが上がることがあります。医師から採血や経過観察を指示された場合は、予定どおり受診してください。")
+    ];
+  }
+}
+applyBatch5TopicalHighRiskPart2();
+
+function applyBatch5TopicalHighRiskPart3() {
+  const get = (id) => MEDICATIONS.find((medication) => medication.id === id);
+  const set = (target, zh, en, id, vi, th, tl, ja) => Object.assign(target, tx(zh, en, id, vi, th, tl, ja));
+  const calcitriol = get("calcitriol-ointment");
+  if (calcitriol) {
+    set(calcitriol.preStepsInfo.text,
+      "這是治銀屑病的維生素 D 類似物藥膏。只擦患處，不要厚塗或密封包紮。\n臉部僅在醫師明確交代時使用，避開眼睛、嘴唇與黏膜。",
+      "This is a vitamin-D-analogue ointment for psoriasis. Apply only to affected skin; do not use a thick layer or an airtight dressing.\nUse it on the face only when your doctor specifically told you to, and keep it away from the eyes, lips, and mucous membranes.",
+      "Ini adalah salep analog vitamin D untuk psoriasis. Oleskan hanya pada kulit yang terkena; jangan gunakan tebal atau di bawah balutan kedap.\nGunakan pada wajah hanya bila dokter secara khusus memerintahkannya, dan jauhkan dari mata, bibir, serta selaput lendir.",
+      "Đây là thuốc mỡ tương tự vitamin D điều trị vảy nến. Chỉ bôi lên vùng tổn thương; không bôi dày hoặc băng kín.\nChỉ dùng trên mặt khi bác sĩ dặn rõ và tránh mắt, môi, niêm mạc.",
+      "นี่คือยาทากลุ่มอนุพันธ์วิตามินดีสำหรับสะเก็ดเงิน ทาเฉพาะผิวที่เป็น ห้ามทาหนา หรือปิดทับแน่น\nใช้บนใบหน้าเฉพาะเมื่อแพทย์สั่งชัดเจน และหลีกเลี่ยงดวงตา ริมฝีปาก และเยื่อบุ",
+      "Ito ay vitamin D analogue ointment para sa psoriasis. Ipahid lamang sa apektadong balat; huwag magpahid nang makapal o takpan nang mahigpit.\nGamitin lamang sa mukha kung malinaw na iniutos ng doktor, at ilayo sa mata, labi, at mucosa.",
+      "これは乾癬用のビタミンD類似体の軟膏です。患部だけに塗り、厚塗りや密封包帯はしないでください。\n顔には医師から明確な指示がある場合だけ使い、目、唇、粘膜を避けてください。"
+    );
+    calcitriol.warnings = [
+      tx("腎臟病、肝臟病、血鈣過高或正在接受鈣代謝治療者不可自行使用，務必先告知醫師。", "If you have kidney disease, liver disease, high blood calcium, or treatment that affects calcium balance, do not use it unless your doctor has confirmed it is suitable.", "Jika Anda memiliki penyakit ginjal, penyakit hati, kalsium darah tinggi, atau sedang menjalani terapi yang memengaruhi keseimbangan kalsium, jangan gunakan tanpa konfirmasi dokter.", "Nếu có bệnh thận, bệnh gan, tăng canxi máu hoặc đang điều trị ảnh hưởng chuyển hóa canxi, không dùng khi chưa được bác sĩ xác nhận.", "หากมีโรคไต โรคตับ แคลเซียมในเลือดสูง หรือกำลังรักษาที่มีผลต่อสมดุลแคลเซียม ห้ามใช้หากแพทย์ยังไม่ยืนยันว่าเหมาะสม", "Kung may sakit sa bato o atay, mataas na calcium sa dugo, o gamutang nakaaapekto sa calcium balance, huwag gamitin maliban kung kinumpirma ng doktor na angkop ito.", "腎臓病、肝臓病、高カルシウム血症、カルシウム代謝に影響する治療中の方は、医師が適切と確認するまで使わないでください。"),
+      tx("嚴重刺痛、紅腫、脫皮或過敏時，先停用並回診。", "Stop and seek review if you develop severe burning, redness, swelling, peeling, or an allergic reaction.", "Hentikan dan periksa bila terjadi rasa terbakar berat, kemerahan, bengkak, pengelupasan, atau reaksi alergi.", "Ngừng thuốc và tái khám nếu rát nhiều, đỏ, sưng, bong tróc nặng hoặc có phản ứng dị ứng.", "หยุดใช้และกลับไปพบแพทย์หากแสบมาก แดง บวม ลอกมาก หรือมีอาการแพ้", "Itigil at magpatingin kung may matinding hapdi, pamumula, pamamaga, pagbabalat, o allergic reaction.", "強い刺激感、赤み、腫れ、皮むけ、アレルギー反応が出た場合は中止して受診してください。")
+    ];
+  }
+
+  const tacrolimus = get("tacrolimus-ointment");
+  if (tacrolimus) {
+    set(tacrolimus.steps[4].note,
+      "避開日光浴、日光浴機與 UV 光療；外出以衣物遮住患處，防曬方式依醫囑。",
+      "Avoid sunbathing, tanning beds, and UV phototherapy. Cover the treated area with clothing outdoors and follow your doctor’s advice on sunscreen.",
+      "Hindari berjemur, tanning bed, dan fototerapi UV. Tutupi area yang diobati dengan pakaian saat di luar dan ikuti petunjuk dokter tentang tabir surya.",
+      "Tránh tắm nắng, máy tắm nắng và quang trị liệu UV. Che vùng bôi thuốc bằng quần áo khi ra ngoài và dùng chống nắng theo hướng dẫn bác sĩ.",
+      "หลีกเลี่ยงการอาบแดด เตียงอาบแดด และการรักษาด้วยแสง UV ปกปิดบริเวณที่ทายาด้วยเสื้อผ้าเมื่อออกนอกบ้าน และใช้กันแดดตามคำแนะนำแพทย์",
+      "Iwasan ang sunbathing, tanning bed, at UV phototherapy. Takpan ng damit ang ginagamot na bahagi kapag nasa labas at sundin ang payo ng doktor tungkol sa sunscreen.",
+      "日光浴、日焼けマシン、UV光線療法は避けてください。外出時は患部を衣類で覆い、日焼け止めは医師の指示に従ってください。"
+    );
+    tacrolimus.warnings = [
+      tx("感染中的皮膚先不要擦；若有流膿、結痂擴大、疼痛加劇、發燒或群聚水泡，先回診。", "Do not apply it to infected skin. Seek review first for pus, spreading crusts, worsening pain, fever, or clusters of blisters.", "Jangan oleskan pada kulit yang terinfeksi. Periksa dulu bila ada nanah, keropeng yang meluas, nyeri memburuk, demam, atau lepuhan berkelompok.", "Không bôi lên da đang nhiễm trùng. Tái khám trước nếu có mủ, vảy đóng lan rộng, đau tăng, sốt hoặc chùm mụn nước.", "ห้ามทาบนผิวที่ติดเชื้อ หากมีหนอง สะเก็ดลาม ปวดมากขึ้น ไข้ หรือมีตุ่มน้ำเป็นกลุ่ม ให้กลับไปพบแพทย์ก่อน",
+      "Huwag ipahid sa balat na may impeksiyon. Magpatingin muna kung may nana, lumalawak na langib, lumalalang sakit, lagnat, o kumpol-kumpol na paltos.",
+      "感染している皮膚には塗らないでください。膿、広がるかさぶた、痛みの悪化、発熱、集まった水ぶくれがある場合は先に受診してください。"),
+      tx("不要用保鮮膜、緊密繃帶或尿布把塗藥處悶住，除非醫師交代。", "Do not cover treated skin with plastic wrap, tight bandages, or a diaper unless your doctor told you to.", "Jangan menutup area yang diobati dengan plastik, perban ketat, atau popok kecuali dokter menginstruksikannya.", "Không bọc kín vùng bôi thuốc bằng màng bọc, băng chặt hoặc tã trừ khi bác sĩ dặn.", "ห้ามปิดบริเวณที่ทายาด้วยพลาสติก ผ้าพันแผลแน่น หรือผ้าอ้อม เว้นแต่แพทย์สั่ง", "Huwag takpan ang ginagamot na balat ng plastic wrap, mahigpit na benda, o diaper maliban kung iniutos ng doktor.", "医師の指示がない限り、塗った部位をラップ、きつい包帯、おむつで覆わないでください。")
+    ];
+  }
+}
+applyBatch5TopicalHighRiskPart3();
+
+function applyBatch5TopicalAntiInfectivePart1() {
+  const get = (id) => MEDICATIONS.find((medication) => medication.id === id);
+  const set = (target, zh, en, id, vi, th, tl, ja) => Object.assign(target, tx(zh, en, id, vi, th, tl, ja));
+  const fusidic = get("fusidic-acid-cream");
+  if (fusidic) {
+    fusidic.warnings = [
+      tx("只限這次感染與醫囑療程使用；不要留著日後自行擦，也不要和別人共用。", "Use it only for this infection and for the prescribed course. Do not save it to use on your own later or share it with anyone.", "Gunakan hanya untuk infeksi ini dan selama jangka waktu yang diresepkan. Jangan simpan untuk dipakai sendiri nanti atau dibagikan kepada orang lain.", "Chỉ dùng cho đợt nhiễm trùng này và đúng thời gian đã kê. Không để dành tự dùng sau này hoặc dùng chung với người khác.", "ใช้เฉพาะการติดเชื้อครั้งนี้และตามระยะเวลาที่สั่ง ห้ามเก็บไว้ใช้เองภายหลังหรือใช้ร่วมกับผู้อื่น", "Gamitin lamang para sa impeksiyong ito at sa itinakdang tagal. Huwag itabi para gamitin nang kusa sa susunod o ipahiram sa iba.", "今回の感染と処方された期間に限って使用してください。後で自己判断で使うために残したり、他の人と共有したりしないでください。"),
+      tx("紅腫、疼痛、流膿擴大，或依藥袋用完仍未改善，請回診；不要自行延長療程。", "Seek review if redness, pain, or pus spreads, or if there is no improvement after the course on your label. Do not extend treatment on your own.", "Periksa bila kemerahan, nyeri, atau nanah meluas, atau tidak membaik setelah terapi pada etiket selesai. Jangan memperpanjang pengobatan sendiri.", "Tái khám nếu đỏ, đau hoặc mủ lan rộng, hoặc không cải thiện sau khi dùng hết liệu trình trên nhãn. Không tự kéo dài điều trị.", "กลับไปพบแพทย์หากรอยแดง ปวด หรือหนองลาม หรือใช้ครบตามฉลากแล้วยังไม่ดีขึ้น ห้ามยืดระยะเวลารักษาเอง", "Magpatingin muli kung lumalawak ang pamumula, sakit, o nana, o walang ginhawa matapos ang kursong nasa label. Huwag pahabain ang gamutan nang kusa.", "赤み、痛み、膿が広がる、または薬袋どおりに使い切っても改善しない場合は受診してください。自己判断で治療期間を延ばさないでください。")
+    ];
+  }
+  const acyclovir = get("acyclovir-cream");
+  if (acyclovir) {
+    set(acyclovir.preStepsInfo.text,
+      "嘴唇開始刺、癢、熱或泛紅時就開始擦，通常越早越好。\n這是個人藥品；避免共用毛巾、口紅、餐具，也不要用手碰完患處再摸眼睛。",
+      "Start when tingling, itching, warmth, or redness begins on the lip; earlier is usually better.\nThis is personal medicine. Do not share towels, lipstick, or eating utensils, and do not touch your eyes after touching the sore.",
+      "Mulailah saat bibir mulai kesemutan, gatal, terasa panas, atau merah; biasanya semakin dini semakin baik.\nIni obat pribadi. Jangan berbagi handuk, lipstik, atau alat makan, dan jangan menyentuh mata setelah menyentuh luka.",
+      "Bắt đầu bôi khi môi mới châm chích, ngứa, nóng hoặc đỏ; thường bôi càng sớm càng tốt.\nĐây là thuốc dùng riêng. Không dùng chung khăn, son môi, dụng cụ ăn uống và không chạm mắt sau khi chạm vào tổn thương.",
+      "เริ่มทาเมื่อริมฝีปากเริ่มรู้สึกยิบ ๆ คัน ร้อน หรือแดง โดยทั่วไปยิ่งเริ่มเร็วจะยิ่งดี\nยานี้เป็นยาส่วนตัว ห้ามใช้ผ้าเช็ดตัว ลิปสติก หรือภาชนะร่วมกัน และอย่าแตะตาหลังจับบริเวณแผล",
+      "Simulang ipahid kapag nangangati, nangingilig, umiinit, o namumula ang labi; mas maaga ay karaniwang mas mabuti.\nPersonal na gamot ito. Huwag magbahagi ng tuwalya, lipstick, o kubyertos, at huwag hawakan ang mata matapos hawakan ang sugat.",
+      "唇にピリピリ感、かゆみ、熱感、赤みが出たら、できるだけ早く塗り始めてください。\nこれは個人用の薬です。タオル、口紅、食器を共有せず、患部に触れた後は目を触らないでください。"
+    );
+  }
+  const clindamycin = get("clindamycin-topical");
+  if (clindamycin) {
+    clindamycin.warnings = [
+      tx("避開眼睛、鼻孔、嘴唇、口腔與破皮處；不慎碰到時以清水沖洗。", "Keep it away from the eyes, nostrils, lips, mouth, and broken skin. Rinse with water if contact occurs.", "Jauhkan dari mata, lubang hidung, bibir, mulut, dan kulit terluka. Bilas dengan air bila terkena.", "Tránh mắt, lỗ mũi, môi, miệng và vùng da trầy. Rửa bằng nước nếu dính vào.", "หลีกเลี่ยงดวงตา รูจมูก ริมฝีปาก ปาก และผิวแตก หากสัมผัสให้ล้างด้วยน้ำ", "Iwasan ang mata, butas ng ilong, labi, bibig, at sugat sa balat. Banlawan ng tubig kung madikitan.", "目、鼻の穴、唇、口、傷のある皮膚を避け、付着した場合は水で洗い流してください。"),
+      tx("若出現嚴重腹痛、水樣腹瀉或血便，先停用並立即回診。", "Stop and seek medical advice right away for severe stomach pain, watery diarrhea, or bloody stools.", "Hentikan dan segera cari pertolongan medis bila muncul sakit perut berat, diare berair, atau tinja berdarah.", "Ngừng thuốc và đi khám ngay nếu đau bụng dữ dội, tiêu chảy nước hoặc phân có máu.", "หยุดใช้และไปพบแพทย์ทันทีหากปวดท้องรุนแรง ท้องเสียเป็นน้ำ หรือถ่ายมีเลือด", "Itigil at magpatingin agad kung may matinding sakit ng tiyan, matubig na pagtatae, o madugong dumi.", "強い腹痛、水様性下痢、血便があれば中止して直ちに受診してください。")
+    ];
+  }
+}
+applyBatch5TopicalAntiInfectivePart1();
+
+function applyBatch5TopicalAntiInfectivePart2() {
+  const permethrin = MEDICATIONS.find((medication) => medication.id === "permethrin-5");
+  if (!permethrin) return;
+  permethrin.preStepsInfo.text = tx(
+    "這是第一線抗疥蟲乳膏，多數人用 1 次即可。\n治療後仍可能癢 2–4 週，不能因為還癢就自行補擦；14 天後仍見活蟲或出現新的典型疥瘡病灶，請回診評估。",
+    "This is a first-choice scabies cream; one application is enough for most people.\nItching can continue for 2 to 4 weeks after treatment. Do not reapply it just because you still itch. If live mites are still seen after 14 days or new typical scabies lesions appear, seek review.",
+    "Ini adalah krim skabies pilihan pertama; bagi kebanyakan orang, cukup 1 kali pemakaian.\nGatal dapat berlanjut 2–4 minggu setelah terapi. Jangan mengoleskan lagi hanya karena masih gatal. Bila setelah 14 hari masih terlihat tungau hidup atau muncul lesi skabies khas yang baru, periksakan kembali.",
+    "Đây là kem điều trị ghẻ hàng đầu; đa số chỉ cần bôi 1 lần.\nNgứa có thể kéo dài 2–4 tuần sau điều trị. Không tự bôi lại chỉ vì vẫn ngứa. Nếu sau 14 ngày vẫn thấy cái ghẻ còn sống hoặc xuất hiện tổn thương ghẻ điển hình mới, hãy tái khám.",
+    "นี่คือครีมรักษาหิดทางเลือกแรก คนส่วนใหญ่ใช้เพียง 1 ครั้งก็เพียงพอ\nอาการคันอาจอยู่นาน 2–4 สัปดาห์หลังรักษา ห้ามทาซ้ำเพียงเพราะยังคัน หากผ่านไป 14 วันแล้วยังเห็นตัวหิดมีชีวิต หรือมีผื่นหิดลักษณะเดิมเกิดใหม่ ให้กลับไปพบแพทย์",
+    "Ito ang unang pinipiling cream para sa galis; isang beses lang ay sapat na para sa karamihan.\nMaaaring magpatuloy ang pangangati nang 2–4 na linggo matapos gamutin. Huwag magpahid muli dahil lamang nangangati pa. Kung may nakikitang buhay na garapata makalipas ang 14 na araw o may bagong karaniwang sugat ng galis, magpatingin muli.",
+    "これは第一選択の疥癬治療クリームで、多くの人は1回の使用で十分です。\n治療後も2〜4週間かゆみが続くことがあります。かゆみだけを理由に自己判断で塗り直さないでください。14日後も生きたダニが確認できる、または典型的な新しい疥癬病変が出た場合は受診してください。"
+  );
+  permethrin.steps[5].note = tx(
+    "治療後仍可能癢 2–4 週。14 天後仍見活蟲，或出現新的典型疥瘡病灶時，再回診評估。",
+    "Itching may continue for 2 to 4 weeks after treatment. Seek review only if live mites are still seen after 14 days or new typical lesions appear.",
+    "Gatal dapat berlanjut 2–4 minggu setelah terapi. Periksa kembali bila setelah 14 hari masih terlihat tungau hidup atau muncul lesi khas baru.",
+    "Ngứa có thể kéo dài 2–4 tuần sau điều trị. Tái khám nếu sau 14 ngày vẫn thấy cái ghẻ còn sống hoặc xuất hiện tổn thương điển hình mới.",
+    "อาการคันอาจอยู่นาน 2–4 สัปดาห์หลังรักษา กลับไปพบแพทย์หากผ่านไป 14 วันแล้วยังเห็นตัวหิดมีชีวิต หรือมีผื่นลักษณะเดิมเกิดใหม่",
+    "Maaaring magpatuloy ang pangangati nang 2–4 na linggo matapos gamutin. Magpatingin muli kung may buhay na garapata pa makalipas ang 14 na araw o may bagong karaniwang sugat.",
+    "治療後もかゆみが2〜4週間続くことがあります。14日後も生きたダニが見える、または典型的な新しい病変が出た場合は受診してください。"
+  );
+}
+applyBatch5TopicalAntiInfectivePart2();
+
+function applyBatch5TopicalAntifungalAndBenzylAudit() {
+  const get = (id) => MEDICATIONS.find((medication) => medication.id === id);
+  const antifungalTemplateIndex = MEDICATIONS.findIndex((medication) => medication.id === "antifungal-gel-cream");
+  // This record has no ingredient or safe directions. Never expose an empty generic sheet to patients.
+  if (antifungalTemplateIndex >= 0) MEDICATIONS.splice(antifungalTemplateIndex, 1);
+
+  const skinAntifungal = (id, reviewText) => {
+    const medication = get(id);
+    if (!medication) return;
+    medication.preStepsInfo.text = tx(
+      "只限皮膚外用，不適用頭皮或指甲。\n洗後完全擦乾；藥要薄擦到患處和周圍皮膚。\n症狀改善後，仍依藥袋完成療程。",
+      "For skin use only; do not use it on the scalp or nails.\nWash and dry the area completely, then apply a thin layer to the affected skin and a small area around it.\nKeep using it for the full course on your medication label, even when it looks better.",
+      "Hanya untuk kulit; jangan gunakan pada kulit kepala atau kuku.\nCuci dan keringkan area sampai benar-benar kering, lalu oleskan tipis pada kulit yang terkena dan sedikit di sekitarnya.\nTetap gunakan sampai seluruh lama terapi pada etiket obat selesai, walaupun sudah tampak membaik.",
+      "Chỉ dùng ngoài da; không dùng cho da đầu hoặc móng.\nRửa sạch rồi lau thật khô, sau đó bôi một lớp mỏng lên vùng tổn thương và vùng da xung quanh.\nDù đã đỡ, vẫn dùng đủ liệu trình ghi trên nhãn thuốc.",
+      "ใช้กับผิวหนังเท่านั้น ห้ามใช้กับหนังศีรษะหรือเล็บ\nล้างแล้วเช็ดให้แห้งสนิท จากนั้นทาบาง ๆ บริเวณที่เป็นและผิวรอบ ๆ\nแม้อาการดีขึ้นแล้ว ให้ใช้ต่อจนครบระยะที่ระบุบนฉลากยา",
+      "Para sa balat lamang; huwag gamitin sa anit o mga kuko.\nHugasan at patuyuing mabuti ang bahagi, saka pahiran nang manipis ang apektadong balat at kaunting paligid nito.\nKahit bumuti na, tapusin ang haba ng gamutan na nasa etiketa ng gamot.",
+      "皮膚のみに使用し、頭皮や爪には使用しません。\n洗って完全に乾かしてから、患部と周囲の皮膚に薄く塗ります。\n良く見えても、薬袋に記載された期間は使い切ってください。"
+    );
+    medication.warnings = [
+      tx("避開眼睛、口腔和其他黏膜；若誤觸，立刻用清水沖洗。", "Keep it away from the eyes, mouth, and other mucous membranes. Rinse with clean water right away if it gets there.", "Jauhkan dari mata, mulut, dan selaput lendir lain. Bila terkena, segera bilas dengan air bersih.", "Tránh mắt, miệng và các niêm mạc khác. Nếu dính vào, rửa ngay bằng nước sạch.", "หลีกเลี่ยงดวงตา ปาก และเยื่อบุอื่น ๆ หากสัมผัส ให้ล้างด้วยน้ำสะอาดทันที", "Iwasan ang mata, bibig, at iba pang mucosa. Banlawan agad ng malinis na tubig kung madikitan.", "目、口、その他の粘膜を避け、付着したらすぐにきれいな水で洗い流してください。"),
+      tx("毛巾、襪子和鞋子不要共用；患處保持乾燥、透氣。", "Do not share towels, socks, or shoes. Keep the affected area dry and well ventilated.", "Jangan berbagi handuk, kaus kaki, atau sepatu. Jaga area yang terkena tetap kering dan berventilasi baik.", "Không dùng chung khăn, vớ hoặc giày. Giữ vùng tổn thương khô và thông thoáng.", "ห้ามใช้ผ้าเช็ดตัว ถุงเท้า หรือรองเท้าร่วมกัน และให้บริเวณที่เป็นแห้งและระบายอากาศได้ดี", "Huwag magbahagi ng tuwalya, medyas, o sapatos. Panatilihing tuyo at maaliwalas ang apektadong bahagi.", "タオル、靴下、靴は共用せず、患部を乾燥・通気のよい状態に保ってください。"),
+      tx(reviewText, reviewText === "2 週仍未改善或變嚴重，請回診。" ? "Seek medical advice if it is not improving after 2 weeks or is getting worse." : "Seek medical advice if it is not improving after 4 weeks or is getting worse.", reviewText === "2 週仍未改善或變嚴重，請回診。" ? "Periksakan diri bila tidak membaik setelah 2 minggu atau makin parah." : "Periksakan diri bila tidak membaik setelah 4 minggu atau makin parah.", reviewText === "2 週仍未改善或變嚴重，請回診。" ? "Đi khám nếu sau 2 tuần không cải thiện hoặc nặng hơn." : "Đi khám nếu sau 4 tuần không cải thiện hoặc nặng hơn.", reviewText === "2 週仍未改善或變嚴重，請回診。" ? "หากไม่ดีขึ้นภายใน 2 สัปดาห์หรือแย่ลง ให้พบแพทย์" : "หากไม่ดีขึ้นภายใน 4 สัปดาห์หรือแย่ลง ให้พบแพทย์", reviewText === "2 週仍未改善或變嚴重，請回診。" ? "Magpatingin kung hindi bumuti sa loob ng 2 linggo o kung lumalala." : "Magpatingin kung hindi bumuti sa loob ng 4 na linggo o kung lumalala.", reviewText === "2 週仍未改善或變嚴重，請回診。" ? "2週間たっても改善しない、または悪化する場合は受診してください。" : "4週間たっても改善しない、または悪化する場合は受診してください。")
+    ];
+  };
+
+  skinAntifungal("clotrimazole-topical-cream", "2 週仍未改善或變嚴重，請回診。");
+  skinAntifungal("econazole-cream", "2 週仍未改善或變嚴重，請回診。");
+
+  ["undecenoate-cream", "undecenoate-powder"].forEach((id) => {
+    const medication = get(id);
+    if (!medication) return;
+    medication.preStepsInfo.text = tx(
+      "用在足癬時，先洗腳並完全擦乾，尤其趾縫。\n乳膏薄擦皮膚；粉劑才可少量撒在趾縫或鞋內。\n症狀改善後，仍依藥袋完成療程。",
+      "For athlete's foot, wash and dry the feet completely first, especially between the toes.\nApply cream thinly to the skin; only powder may be lightly dusted between the toes or inside shoes.\nKeep using it for the full course on your medication label, even when it looks better.",
+      "Untuk kutu air, cuci dan keringkan kaki sepenuhnya, terutama sela jari.\nKrim dioles tipis pada kulit; hanya sediaan bubuk yang boleh ditaburkan sedikit di sela jari atau dalam sepatu.\nTetap gunakan sampai seluruh lama terapi pada etiket obat selesai, walaupun sudah tampak membaik.",
+      "Khi điều trị nấm chân, rửa chân rồi lau thật khô, nhất là kẽ ngón.\nKem chỉ bôi mỏng lên da; chỉ dạng bột mới có thể rắc ít ở kẽ ngón hoặc trong giày.\nDù đã đỡ, vẫn dùng đủ liệu trình ghi trên nhãn thuốc.",
+      "สำหรับเชื้อราที่เท้า ให้ล้างและเช็ดเท้าให้แห้งสนิท โดยเฉพาะซอกนิ้วเท้า\nครีมทาบาง ๆ บนผิวหนัง; เฉพาะยาผงเท่านั้นที่โรยเล็กน้อยที่ซอกนิ้วหรือในรองเท้าได้\nแม้อาการดีขึ้นแล้ว ให้ใช้ต่อจนครบระยะที่ระบุบนฉลากยา",
+      "Para sa athlete's foot, hugasan at patuyuing mabuti ang paa, lalo na sa pagitan ng mga daliri.\nAng cream ay pahiran nang manipis sa balat; pulbos lamang ang maaaring bahagyang iwisik sa pagitan ng mga daliri o sa loob ng sapatos.\nKahit bumuti na, tapusin ang haba ng gamutan na nasa etiketa ng gamot.",
+      "足白癬には、まず足を洗って特に足指の間まで完全に乾かします。\nクリームは皮膚に薄く塗り、粉末剤のみ足指の間や靴の中に少量ふりかけられます。\n良く見えても、薬袋に記載された期間は使い切ってください。"
+    );
+    const firstWarning = id === "undecenoate-powder"
+      ? tx("粉劑不要吸進鼻子或嘴巴。", "Do not breathe powder into your nose or mouth.", "Jangan menghirup bubuk ke hidung atau mulut.", "Không hít bột vào mũi hoặc miệng.", "อย่าสูดผงยาเข้าทางจมูกหรือปาก", "Huwag malanghap ang pulbos sa ilong o bibig.", "粉末を鼻や口から吸い込まないでください。")
+      : tx("避開眼睛、口腔和其他黏膜；若誤觸，立刻用清水沖洗。", "Keep it away from the eyes, mouth, and other mucous membranes. Rinse with clean water right away if it gets there.", "Jauhkan dari mata, mulut, dan selaput lendir lain. Bila terkena, segera bilas dengan air bersih.", "Tránh mắt, miệng và các niêm mạc khác. Nếu dính vào, rửa ngay bằng nước sạch.", "หลีกเลี่ยงดวงตา ปาก และเยื่อบุอื่น ๆ หากสัมผัส ให้ล้างด้วยน้ำสะอาดทันที", "Iwasan ang mata, bibig, at iba pang mucosa. Banlawan agad ng malinis na tubig kung madikitan.", "目、口、その他の粘膜を避け、付着したらすぐにきれいな水で洗い流してください。");
+    medication.warnings = [
+      firstWarning,
+      tx("毛巾、襪子和鞋子不要共用；每天換乾淨襪子，讓鞋子乾透。", "Do not share towels, socks, or shoes. Change into clean socks daily and let shoes dry completely.", "Jangan berbagi handuk, kaus kaki, atau sepatu. Ganti kaus kaki bersih setiap hari dan biarkan sepatu benar-benar kering.", "Không dùng chung khăn, vớ hoặc giày. Thay vớ sạch mỗi ngày và để giày khô hoàn toàn.", "ห้ามใช้ผ้าเช็ดตัว ถุงเท้า หรือรองเท้าร่วมกัน เปลี่ยนถุงเท้าสะอาดทุกวันและปล่อยให้รองเท้าแห้งสนิท", "Huwag magbahagi ng tuwalya, medyas, o sapatos. Magpalit ng malinis na medyas araw-araw at patuyuing mabuti ang sapatos.", "タオル、靴下、靴は共用せず、毎日清潔な靴下に替え、靴を完全に乾かしてください。"),
+      tx("2–4 週仍未改善、反覆復發，或出現腫脹、流膿、發燒時，請回診。", "Seek medical advice if there is no improvement after 2 to 4 weeks, it keeps coming back, or there is swelling, pus, or fever.", "Periksakan diri bila tidak membaik setelah 2–4 minggu, sering kambuh, atau ada bengkak, nanah, atau demam.", "Đi khám nếu sau 2–4 tuần không cải thiện, tái phát nhiều lần, hoặc có sưng, mủ hay sốt.", "หากไม่ดีขึ้นภายใน 2–4 สัปดาห์ เป็นซ้ำบ่อย หรือมีบวม หนอง หรือไข้ ให้พบแพทย์", "Magpatingin kung hindi bumuti sa loob ng 2–4 na linggo, paulit-ulit na bumabalik, o may pamamaga, nana, o lagnat.", "2〜4週間たっても改善しない、繰り返す、または腫れ、膿、発熱がある場合は受診してください。")
+    ];
+  });
+
+  const keto = get("ketoconazole-shampoo");
+  if (keto) {
+    keto.preStepsInfo.text = tx(
+      "重點是洗頭皮，不是只洗髮絲。\n起泡後停留 3–5 分鐘再沖掉。\n治療期與預防復發的頻率不同，依藥袋或醫囑使用。",
+      "The main target is the scalp, not just the hair.\nLeave the lather on for 3 to 5 minutes before rinsing.\nThe treatment schedule differs from the schedule used to prevent a flare-up; follow your medication label or clinician's directions.",
+      "Target utamanya adalah kulit kepala, bukan hanya rambut.\nBiarkan busa selama 3–5 menit sebelum dibilas.\nJadwal pengobatan berbeda dengan jadwal pencegahan kambuh; ikuti etiket obat atau petunjuk tenaga kesehatan.",
+      "Mục tiêu chính là da đầu, không chỉ là tóc.\nĐể bọt lưu lại 3–5 phút rồi mới xả.\nLịch điều trị khác với lịch phòng tái phát; hãy theo nhãn thuốc hoặc chỉ dẫn của bác sĩ.",
+      "จุดสำคัญคือหนังศีรษะ ไม่ใช่แค่เส้นผม\nทิ้งฟองไว้ 3–5 นาทีก่อนล้างออก\nความถี่ช่วงรักษาและช่วงป้องกันกำเริบไม่เหมือนกัน ให้ใช้ตามฉลากยาหรือคำสั่งแพทย์",
+      "Ang pangunahing target ay ang anit, hindi lamang ang buhok.\nIwan ang bula nang 3–5 minuto bago banlawan.\nMagkaiba ang iskedyul ng paggamot at pagpigil sa pagbabalik; sundin ang etiketa ng gamot o tagubilin ng clinician.",
+      "大切なのは髪だけでなく頭皮を洗うことです。\n泡を3〜5分置いてから洗い流します。\n治療期と再発予防期では頻度が異なるため、薬袋または医療者の指示に従ってください。"
+    );
+    keto.warnings = [
+      tx("避開眼睛、口腔；若跑進去，立刻用清水沖洗。", "Keep it away from the eyes and mouth. Rinse with clean water right away if it gets there.", "Jauhkan dari mata dan mulut. Bila terkena, segera bilas dengan air bersih.", "Tránh mắt và miệng. Nếu dính vào, rửa ngay bằng nước sạch.", "หลีกเลี่ยงดวงตาและปาก หากสัมผัสให้ล้างด้วยน้ำสะอาดทันที", "Iwasan ang mata at bibig. Banlawan agad ng malinis na tubig kung madikitan.", "目や口に入らないようにし、入ったらすぐにきれいな水で洗い流してください。"),
+      tx("頭皮刺激、灼熱、紅腫明顯時，先停用並回診。", "Stop and seek medical advice if scalp irritation, burning, redness, or swelling becomes marked.", "Hentikan dan periksakan diri bila iritasi, rasa terbakar, kemerahan, atau bengkak pada kulit kepala menjadi berat.", "Ngừng thuốc và đi khám nếu kích ứng, nóng rát, đỏ hoặc sưng da đầu rõ rệt.", "หยุดใช้และพบแพทย์หากหนังศีรษะระคายเคือง แสบร้อน แดง หรือบวมมาก", "Itigil at magpatingin kung malubha ang iritasyon, paghapdi, pamumula, o pamamaga ng anit.", "頭皮の刺激、灼熱感、赤み、腫れが強い場合は中止して受診してください。"),
+      tx("治療後 4 週仍未改善或持續惡化，請回診。", "Seek medical advice if there is no improvement after 4 weeks or symptoms keep getting worse.", "Periksakan diri bila setelah 4 minggu tidak membaik atau gejala terus memburuk.", "Đi khám nếu sau 4 tuần không cải thiện hoặc triệu chứng tiếp tục nặng hơn.", "หาก 4 สัปดาห์แล้วไม่ดีขึ้นหรืออาการแย่ลงต่อเนื่อง ให้พบแพทย์", "Magpatingin kung walang pagbuti matapos ang 4 na linggo o patuloy na lumalala ang mga sintomas.", "4週間たっても改善しない、または悪化が続く場合は受診してください。")
+    ];
+  }
+
+  const exelderm = get("exelderm-solution");
+  if (exelderm) {
+    exelderm.preStepsInfo.text = tx(
+      "這是皮膚外用抗黴菌液，依藥袋用在指定的患處與周圍皮膚。\n避免用於眼睛與黏膜；腳底或趾縫的足癬未必適合這個劑型。\n若越擦越刺、越癢、越紅，或 4 週仍未明顯改善，請回診。",
+      "This is an antifungal solution for skin use. Apply it to the prescribed affected area and the surrounding skin as directed on your medication label.\nKeep it away from the eyes and mucous membranes. This form may not suit athlete's foot on the sole or between the toes.\nSeek medical advice if burning, itching, or redness worsens, or if there is no clear improvement after 4 weeks.",
+      "Ini adalah larutan antijamur untuk kulit. Gunakan pada area yang diresepkan dan kulit di sekitarnya sesuai etiket obat.\nHindari mata dan selaput lendir. Bentuk sediaan ini mungkin tidak cocok untuk kutu air di telapak atau sela jari.\nPeriksakan diri bila rasa perih, gatal, atau kemerahan makin berat, atau setelah 4 minggu belum jelas membaik.",
+      "Đây là dung dịch chống nấm dùng ngoài da. Bôi lên vùng tổn thương được kê đơn và vùng da xung quanh theo nhãn thuốc.\nTránh mắt và niêm mạc. Dạng thuốc này có thể không phù hợp với nấm chân ở lòng bàn chân hoặc kẽ ngón.\nĐi khám nếu rát, ngứa hoặc đỏ nặng hơn, hoặc sau 4 tuần vẫn chưa cải thiện rõ.",
+      "นี่เป็นยาน้ำต้านเชื้อราสำหรับใช้ภายนอก ทาบริเวณที่แพทย์สั่งและผิวรอบ ๆ ตามฉลากยา\nหลีกเลี่ยงดวงตาและเยื่อบุ และยารูปแบบนี้อาจไม่เหมาะกับเชื้อราที่ฝ่าเท้าหรือซอกนิ้ว\nหากแสบ คัน หรือแดงมากขึ้น หรือใช้ครบ 4 สัปดาห์แล้วยังไม่ดีขึ้นชัดเจน ให้พบแพทย์",
+      "Ito ay antifungal solution para sa balat. Ilagay sa iniresetang apektadong bahagi at balat sa paligid ayon sa etiketa ng gamot.\nIwasan ang mata at mucosa. Maaaring hindi angkop ang anyong ito para sa athlete's foot sa talampakan o pagitan ng mga daliri.\nMagpatingin kung lumalala ang paghapdi, pangangati, o pamumula, o kung walang malinaw na pagbuti matapos ang 4 na linggo.",
+      "これは皮膚用の抗真菌液です。薬袋に従って指定された患部と周囲の皮膚に使用してください。\n目や粘膜を避け、足裏や足指の間の水虫にはこの剤形が適さない場合があります。\n刺激、かゆみ、赤みが悪化する、または4週間たっても明らかな改善がない場合は受診してください。"
+    );
+  }
+
+  const benzyl = get("benzyl-benzoate-25-lotion");
+  if (benzyl) {
+    benzyl.preStepsInfo.text = tx(
+      "這張同時包含疥瘡和頭蝨兩種用法；兩者的塗抹範圍、停留時間與是否重複使用不同。\n只看藥師交代的那一組步驟，並以這瓶藥的外盒、仿單或藥袋為準。\n每次使用前先充分搖勻。",
+      "This sheet covers both scabies and head lice. The area to treat, how long to leave it on, and whether to repeat treatment are different.\nUse only the set of steps your pharmacist gave you, and follow this bottle's label, leaflet, or medication bag.\nShake well before each use.",
+      "Lembar ini mencakup skabies dan kutu kepala. Area pemakaian, lama obat dibiarkan, dan perlu tidaknya diulang berbeda.\nGunakan hanya langkah yang diberikan apoteker dan ikuti label, brosur, atau kantong obat dari botol ini.\nKocok sampai rata sebelum setiap penggunaan.",
+      "Tờ này gồm cách dùng cho ghẻ và chấy đầu. Vùng bôi, thời gian lưu thuốc và việc có cần dùng lặp lại hay không là khác nhau.\nChỉ dùng đúng nhóm bước mà dược sĩ đã dặn và làm theo nhãn, tờ hướng dẫn hoặc túi thuốc của chai này.\nLắc kỹ trước mỗi lần dùng.",
+      "แผ่นนี้มีวิธีใช้สำหรับหิดและเหาศีรษะ ซึ่งบริเวณที่ทา ระยะเวลาที่ทิ้งยาไว้ และการต้องใช้ซ้ำแตกต่างกัน\nให้ใช้เฉพาะชุดขั้นตอนที่เภสัชกรบอก และยึดฉลาก เอกสารกำกับยา หรือถุงยาของขวดนี้\nเขย่าให้เข้ากันดีก่อนใช้ทุกครั้ง",
+      "May gabay ito para sa galis at kuto sa ulo. Magkaiba ang bahaging lalagyan, tagal na iiwan ang gamot, at kung kailangang ulitin ang paggamot.\nSundin lamang ang mga hakbang na ibinigay ng parmasyutiko at ang etiketa, leaflet, o supot ng gamot ng boteng ito.\nAlugin nang mabuti bago bawat paggamit.",
+      "この用紙には疥癬用と頭ジラミ用があります。塗る範囲、放置時間、再使用の有無は異なります。\n薬剤師から説明された方の手順だけを見て、このボトルのラベル、添付文書、薬袋に従ってください。\n毎回使用前によく振ってください。"
+    );
+    benzyl.steps[2].note = tx("塗る範囲・停留時間・洗い流し方は、この瓶の仿單或藥袋為準。", "Follow this bottle's leaflet or medication label for the area to cover, how long to leave it on, and how to wash it off.", "Ikuti brosur atau etiket obat botol ini untuk area yang dioles, lama obat dibiarkan, dan cara membilasnya.", "Làm theo tờ hướng dẫn hoặc nhãn thuốc của chai này về vùng bôi, thời gian lưu thuốc và cách rửa sạch.", "ให้ยึดเอกสารกำกับยาหรือฉลากยาของขวดนี้สำหรับบริเวณที่ทา ระยะเวลาที่ทิ้งยาไว้ และวิธีล้างออก", "Sundin ang leaflet o etiketa ng boteng ito para sa bahaging lalagyan, tagal na iiwan ang gamot, at paraan ng paghuhugas.", "塗る範囲、放置時間、洗い流し方は、このボトルの添付文書または薬袋に従ってください。" );
+    benzyl.steps[3].note = tx("塗抹範圍、停留時間與洗淨方式，依這瓶藥的仿單或藥袋。洗淨後以細齒梳梳除蝨與蝨卵。", "Follow this bottle's leaflet or medication label for the area to treat, leave-on time, and rinsing method. After rinsing, use a fine-tooth comb to remove lice and nits.", "Ikuti brosur atau etiket botol ini untuk area pemakaian, lama obat dibiarkan, dan cara membilasnya. Setelah dibilas, gunakan sisir serit untuk mengangkat kutu dan telurnya.", "Làm theo tờ hướng dẫn hoặc nhãn thuốc của chai này về vùng bôi, thời gian lưu thuốc và cách rửa sạch. Sau khi rửa, dùng lược dày để chải bỏ chấy và trứng chấy.", "ให้ยึดเอกสารกำกับยาหรือฉลากยาของขวดนี้สำหรับบริเวณที่ทา ระยะเวลาที่ทิ้งยาไว้ และวิธีล้างออก หลังล้างแล้วใช้หวีซี่ถี่กำจัดเหาและไข่เหา", "Sundin ang leaflet o etiketa ng boteng ito para sa bahaging lalagyan, tagal na iiwan ang gamot, at paraan ng paghuhugas. Pagkatapos banlawan, gumamit ng suyod para alisin ang kuto at lisa.", "塗る範囲、放置時間、洗い流し方は、このボトルの添付文書または薬袋に従ってください。洗い流した後、細かい櫛でシラミと卵を取り除きます。" );
+    benzyl.warnings = [
+      tx("避免接觸眼睛、口腔、鼻腔、陰道等黏膜；若碰到，立刻用清水沖洗。", "Keep it away from the eyes, mouth, nose, vagina, and other mucous membranes. Rinse with clean water right away if contact occurs.", "Hindari mata, mulut, hidung, vagina, dan selaput lendir lain. Bila terkena, segera bilas dengan air bersih.", "Tránh mắt, miệng, mũi, âm đạo và các niêm mạc khác. Nếu dính vào, rửa ngay bằng nước sạch.", "หลีกเลี่ยงดวงตา ปาก จมูก ช่องคลอด และเยื่อบุอื่น ๆ หากสัมผัสให้ล้างด้วยน้ำสะอาดทันที", "Iwasan ang mata, bibig, ilong, puwerta, at iba pang mucosa. Banlawan agad ng malinis na tubig kung madikitan.", "目、口、鼻、腟などの粘膜を避け、付着したらすぐにきれいな水で洗い流してください。"),
+      tx("不可把疥瘡用法套到頭蝨，也不可把頭蝨用法套到疥瘡；不要同時混用其他除蝨／抗疥藥。", "Do not use scabies directions for head lice or head-lice directions for scabies. Do not combine it with other lice or scabies treatments unless a clinician tells you to.", "Jangan memakai aturan skabies untuk kutu kepala atau sebaliknya. Jangan digabung dengan obat kutu atau skabies lain kecuali atas arahan tenaga kesehatan.", "Không dùng cách trị ghẻ cho chấy đầu hoặc ngược lại. Không dùng cùng thuốc trị chấy hoặc ghẻ khác trừ khi có chỉ dẫn của nhân viên y tế.", "ห้ามใช้วิธีรักษาหิดกับเหาศีรษะหรือใช้วิธีรักษาเหาศีรษะกับหิด และห้ามใช้ร่วมกับยากำจัดเหาหรือยารักษาหิดชนิดอื่นหากไม่ได้รับคำสั่งจากแพทย์", "Huwag gamitin ang paraan para sa galis sa kuto sa ulo, o ang paraan para sa kuto sa ulo sa galis. Huwag isabay sa ibang gamot para sa kuto o galis maliban kung sinabi ng clinician.", "疥癬用を頭ジラミ用に、頭ジラミ用を疥癬用に流用しないでください。医療者の指示がない限り、他のシラミ・疥癬治療薬と併用しないでください。"),
+      tx("懷孕、哺乳、幼兒或皮膚嚴重破損者，使用前先問醫師或藥師。", "If you are pregnant, breastfeeding, treating a young child, or have severely damaged skin, ask a doctor or pharmacist before use.", "Jika hamil, menyusui, akan digunakan pada anak kecil, atau kulit rusak berat, tanyakan kepada dokter atau apoteker sebelum memakai.", "Nếu đang mang thai, cho con bú, dùng cho trẻ nhỏ hoặc da tổn thương nặng, hãy hỏi bác sĩ hoặc dược sĩ trước khi dùng.", "หากตั้งครรภ์ ให้นมบุตร ใช้กับเด็กเล็ก หรือมีผิวหนังเสียหายมาก ให้ถามแพทย์หรือเภสัชกรก่อนใช้", "Kung buntis, nagpapasuso, gagamit sa batang maliit, o malubha ang sira ng balat, magtanong muna sa doktor o parmasyutiko bago gamitin.", "妊娠中・授乳中、乳幼児に使用する場合、または皮膚の損傷がひどい場合は、使用前に医師または薬剤師へ相談してください。")
+    ];
+  }
+}
+applyBatch5TopicalAntifungalAndBenzylAudit();
+
 // ============================================================
 // STATE
 // ============================================================
