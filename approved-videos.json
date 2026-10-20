@@ -1,0 +1,41 @@
+{
+  "trelegy-ellipta": {
+    "zh-TW": {
+      "youtubeId": "5umm54673c0",
+      "title": "肺樂喜易利達衛教影片",
+      "channel": "臺北市立聯合醫院藥劑部"
+    },
+    "en": {
+      "youtubeId": "dsT2FQKDJZY",
+      "title": "Ellipta Inhaler",
+      "channel": "COPD Foundation",
+      "notice": "This video uses a general Ellipta trainer. For Trelegy, take one long, steady, deep breath and hold it for about 3–4 seconds, or as long as comfortable, as shown on your instruction sheet."
+    },
+    "id": {
+      "youtubeId": "u93hm__a0TU",
+      "title": "Tutorial Pemakaian Inhaler Ellipta",
+      "channel": "Mohamad Fahmi Alatas - Dokter Paru"
+    },
+    "vi": {
+      "youtubeId": "uQRY_CTLVQM",
+      "title": "Hướng dẫn sử dụng Trelegy Ellipta",
+      "channel": "Khoa Dược - BV Thanh Nhàn"
+    },
+    "th": {
+      "youtubeId": "qhAkGtcrAcQ",
+      "title": "วิธีใช้ยาสูดพ่น Trelegy Ellipta",
+      "channel": "โรงพยาบาลนครพิงค์"
+    },
+    "tl": {
+      "youtubeId": "S8aM6LUMGOM",
+      "title": "COPD Inhaler Techniques Video Filipino Ellipta",
+      "channel": "Health Literacy & Chronic Disease Management",
+      "notice": "Ang video ay gumagamit ng Breo Ellipta na may asul na takip. Pareho ang paraan ng paggamit ng Ellipta, ngunit iba ang kulay ng takip at ang tagal matapos buksan. Para sa Trelegy, sundin ang iyong papel na gabay: gamitin sa loob ng 1 buwan matapos buksan ang foil tray."
+    },
+    "ja": {
+      "youtubeId": "Xy3YkM8w9eE",
+      "title": "テリルジー（Trelegy）吸入方法",
+      "channel": "やまぐち呼吸器内科皮膚科クリニック"
+    }
+  }
+}

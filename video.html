@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用藥指導影片</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans", sans-serif; }
+    body { margin: 0; background: #f5f7f5; color: #17342c; }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 40px; }
+    h1 { font-size: clamp(1.5rem, 5vw, 2rem); margin: 0 0 8px; }
+    p { line-height: 1.6; }
+    .card { background: white; border: 1px solid #d6e5dd; border-radius: 14px; padding: 20px; box-shadow: 0 2px 12px #153b2610; }
+    .video { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #16342c; border-radius: 8px; overflow: hidden; }
+    iframe { position: absolute; width: 100%; height: 100%; border: 0; }
+    .source { color: #4b6358; margin: 12px 0 4px; }
+    .notice { background: #fff4da; border-left: 4px solid #a26300; padding: 10px 14px; margin-top: 18px; }
+    a { color: #096849; }
+    .link { display: inline-block; margin-top: 12px; font-weight: 650; }
+    .back { display: block; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="heading">用藥指導影片</h1>
+    <p id="intro"></p>
+    <div class="card" id="content" hidden>
+      <div class="video" id="video"></div>
+      <p class="source" id="source"></p>
+      <a class="link" id="youtube" target="_blank" rel="noopener noreferrer"></a>
+      <p class="notice" id="notice" hidden></p>
+    </div>
+    <p id="error" role="alert" hidden></p>
+    <a class="back" id="back" href="index.html"></a>
+  </main>
+  <script>
+    const labels = {
+      "zh-TW": { heading: "用藥指導影片", intro: "Trelegy Ellipta 吸入器使用示範", open: "在 YouTube 觀看", back: "返回用藥指導單張", error: "找不到已核准的影片。請向藥師確認。" },
+      en: { heading: "Medication instruction video", intro: "Trelegy Ellipta inhaler demonstration", open: "Watch on YouTube", back: "Return to instruction sheet", error: "No approved video was found. Please ask your pharmacist." },
+      id: { heading: "Video petunjuk penggunaan obat", intro: "Cara menggunakan inhaler Trelegy Ellipta", open: "Tonton di YouTube", back: "Kembali ke lembar petunjuk", error: "Video yang disetujui tidak ditemukan. Silakan tanya apoteker Anda." },
+      vi: { heading: "Video hướng dẫn dùng thuốc", intro: "Cách dùng ống hít Trelegy Ellipta", open: "Xem trên YouTube", back: "Quay lại tờ hướng dẫn", error: "Không tìm thấy video đã được duyệt. Vui lòng hỏi dược sĩ." },
+      th: { heading: "วิดีโอแนะนำการใช้ยา", intro: "วิธีใช้ยาสูด Trelegy Ellipta", open: "ดูบน YouTube", back: "กลับไปยังเอกสารแนะนำ", error: "ไม่พบวิดีโอที่อนุมัติ โปรดสอบถามเภสัชกร" },
+      tl: { heading: "Video sa paggamit ng gamot", intro: "Paano gamitin ang Trelegy Ellipta inhaler", open: "Panoorin sa YouTube", back: "Bumalik sa gabay sa gamot", error: "Walang nahanap na aprubadong video. Magtanong sa parmasyutiko." },
+      ja: { heading: "お薬の使い方動画", intro: "テリルジー エリプタの吸入方法", open: "YouTubeで見る", back: "服薬指導シートに戻る", error: "承認済みの動画が見つかりません。薬剤師にご確認ください。" }
+    };
+    const params = new URLSearchParams(location.search);
+    const med = params.get("med");
+    const lang = params.get("lang");
+    const ui = labels[lang] || labels["zh-TW"];
+    document.documentElement.lang = labels[lang] ? lang : "zh-TW";
+    document.title = ui.heading;
+    document.getElementById("heading").textContent = ui.heading;
+    document.getElementById("intro").textContent = ui.intro;
+    document.getElementById("back").textContent = ui.back;
+    document.getElementById("back").href = `index.html?med=${encodeURIComponent(med || "trelegy-ellipta")}&lang=${encodeURIComponent(lang || "zh-TW")}`;
+
+    async function showApprovedVideo() {
+      try {
+        const response = await fetch("approved-videos.json");
+        if (!response.ok) throw new Error("Video registry unavailable");
+        const registry = await response.json();
+        const entry = registry[med]?.[lang];
+        if (!entry || !/^[A-Za-z0-9_-]{11}$/.test(entry.youtubeId)) throw new Error("No approved video");
+        const youtube = `https://www.youtube.com/watch?v=${entry.youtubeId}`;
+        const frame = document.createElement("iframe");
+        frame.src = `https://www.youtube-nocookie.com/embed/${entry.youtubeId}`;
+        frame.title = entry.title;
+        frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        frame.allowFullscreen = true;
+        document.getElementById("video").append(frame);
+        document.getElementById("source").textContent = `${entry.title} — ${entry.channel}`;
+        const link = document.getElementById("youtube");
+        link.href = youtube;
+        link.textContent = ui.open;
+        if (entry.notice) {
+          const notice = document.getElementById("notice");
+          notice.textContent = entry.notice;
+          notice.hidden = false;
+        }
+        document.getElementById("content").hidden = false;
+      } catch (error) {
+        const message = document.getElementById("error");
+        message.textContent = ui.error;
+        message.hidden = false;
+      }
+    }
+    showApprovedVideo();
+  </script>
+</body>
+</html>
