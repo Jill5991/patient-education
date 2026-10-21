@@ -34,6 +34,16 @@ const expectedPages = {
   "flixotide-evohaler-50": { main: 6 }
 };
 
+test("Anoro Ellipta uses the correct Traditional Chinese dosage form", () => {
+  const anoro = medications.find(item => item.id === "anoro-ellipta");
+  assert.equal(anoro.name["zh-TW"], "安肺樂 易利達乾粉吸入劑");
+  for (const filename of ["medication-sheets-structured.json", "gemini-illustration-briefs.jsonl"]) {
+    const content = fs.readFileSync(path.join(root, "exports", filename), "utf8");
+    assert.ok(content.includes("安肺樂 易利達乾粉吸入劑"), filename);
+    assert.ok(!content.includes("安肺樂 易利達乾粉吸入器劑"), filename);
+  }
+});
+
 test("day-01 sheets reference all 78 images in the correct page and step order", () => {
   let total = 0;
   for (const [id, pages] of Object.entries(expectedPages)) {
