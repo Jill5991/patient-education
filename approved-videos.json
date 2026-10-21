@@ -37,5 +37,351 @@
       "title": "テリルジー（Trelegy）吸入方法",
       "channel": "やまぐち呼吸器内科皮膚科クリニック"
     }
+  },
+  "anoro-ellipta": {
+    "zh-TW": {
+      "youtubeId": "JDhhYsRsNw8",
+      "title": "ANORO ELLIPTA 安肺樂易利達乾粉吸入劑 用藥指導影片",
+      "channel": "國立陽明交通大學附設醫院"
+    },
+    "en": {
+      "youtubeId": "o1pPnbuiag8",
+      "title": "How to Use Ellipta Inhaler",
+      "channel": "Mercy Health"
+    },
+    "id": {
+      "youtubeId": "u93hm__a0TU",
+      "title": "Tutorial Pemakaian Inhaler Ellipta",
+      "channel": "Mohamad Fahmi Alatas - Dokter Paru",
+      "notice": "Video ini memakai inhaler Ellipta lain dan membahas berkumur untuk obat yang mengandung steroid. Anoro tidak mengandung steroid; ikuti nama obat dan petunjuk pada lembar Anoro."
+    },
+    "vi": {
+      "youtubeId": "uQRY_CTLVQM",
+      "title": "Hướng dẫn sử dụng ống hít Ellipta | Khoa Dược - BV Thanh Nhàn",
+      "channel": "Khoa Dược - Bệnh viện Thanh Nhàn",
+      "notice": "Video dùng Trelegy Ellipta và có nhắc súc miệng vì thuốc đó chứa steroid. Anoro không chứa steroid; hãy làm theo tờ hướng dẫn Anoro."
+    },
+    "th": {
+      "youtubeId": "DDP8-qIrVqU",
+      "title": "วิธีใช้ยาสูดพ่น Anoro Ellipta",
+      "channel": "โรงพยาบาลนครพิงค์ (Nakornping Hospital)"
+    },
+    "tl": {
+      "youtubeId": "S8aM6LUMGOM",
+      "title": "COPD Inhaler Techniques Video Filipino Ellipta",
+      "channel": "Health Literacy & Chronic Disease Management",
+      "notice": "Breo Ellipta ang ipinapakita at may paalala sa pagmumog para sa gamot na may steroid. Walang steroid ang Anoro; sundin ang gabay ng Anoro."
+    },
+    "ja": {
+      "youtubeId": "hu7qTtrVJ6Q",
+      "title": "「レルベア」「アニュイティ」「テリルジー」「アノーロ」「エンクラッセ」の使い方（エリプタ編）",
+      "channel": "和歌山駅前つじもと内科・呼吸器内科アレルギー科"
+    }
+  },
+  "spiriva-respimat": {
+    "zh-TW": {
+      "youtubeId": "u0lzHOQAnb8",
+      "title": "Spiriva Respimat 適喘樂舒沛噴吸入劑 用藥指導影片",
+      "channel": "國立陽明交通大學附設醫院"
+    },
+    "en": {
+      "youtubeId": "WlJ8hxHmaRk",
+      "title": "How to use a Respimat inhaler",
+      "channel": "Asthma + Lung UK"
+    },
+    "id": {
+      "youtubeId": "nb4ApFOqtrw",
+      "title": "Cara Menggunakan Respimat (Spiriva dan Spiolto Respimat)",
+      "channel": "Farmasi RS Paru Respira Yogyakarta"
+    },
+    "vi": {
+      "youtubeId": "msKmImydoqw",
+      "title": "HƯỚNG DẪN SỬ DỤNG DỤNG CỤ HÍT SỐ 1: RESPIMAT",
+      "channel": "Bệnh viện Phạm Ngọc Thạch"
+    },
+    "th": {
+      "youtubeId": "g2qoJY3UnN4",
+      "title": "สาธิตวิธีใช้ยาสูด Respimat",
+      "channel": "รพ.เจริญกรุงประชารักษ์ (Charoenkrung Pracharak Hospital)"
+    },
+    "tl": {
+      "youtubeId": "2G8ner1M7Yo",
+      "title": "Wastong Paggamit ng Soft Mist Inhaler",
+      "channel": "Breathe Freely Network (Philippine College of Chest Physicians)",
+      "notice": "Hindi ipinapakita sa video ang unang pagpasok ng cartridge. Sundin ang unang pahina ng gabay o magpatulong sa parmasyutiko."
+    },
+    "ja": {
+      "youtubeId": "u0w6cV27cdA",
+      "title": "スピオルトレスピマットの吸入方法",
+      "channel": "やまぐち呼吸器内科皮膚科クリニック",
+      "notice": "この動画は同じレスピマット器具を使うスピオルトの例です。薬の名前と用量はスピリーバの指導シートに従ってください。"
+    }
+  },
+  "spiolto-respimat": {
+    "zh-TW": {
+      "youtubeId": "geBZoKhsFxs",
+      "title": "舒沛噴 Respimat 吸入劑的使用方式與注意事項 (適倍樂舒沛噴Spiolto Respimat)",
+      "channel": "新北市立聯合醫院藥劑科"
+    },
+    "en": {
+      "youtubeId": "WlJ8hxHmaRk",
+      "title": "How to use a Respimat inhaler",
+      "channel": "Asthma + Lung UK"
+    },
+    "id": {
+      "youtubeId": "nb4ApFOqtrw",
+      "title": "Cara Menggunakan Respimat (Spiriva dan Spiolto Respimat)",
+      "channel": "Farmasi RS Paru Respira Yogyakarta"
+    },
+    "vi": {
+      "youtubeId": "msKmImydoqw",
+      "title": "HƯỚNG DẪN SỬ DỤNG DỤNG CỤ HÍT SỐ 1: RESPIMAT",
+      "channel": "Bệnh viện Phạm Ngọc Thạch"
+    },
+    "th": {
+      "youtubeId": "g2qoJY3UnN4",
+      "title": "สาธิตวิธีใช้ยาสูด Respimat",
+      "channel": "รพ.เจริญกรุงประชารักษ์ (Charoenkrung Pracharak Hospital)"
+    },
+    "tl": {
+      "youtubeId": "2G8ner1M7Yo",
+      "title": "Wastong Paggamit ng Soft Mist Inhaler",
+      "channel": "Breathe Freely Network (Philippine College of Chest Physicians)",
+      "notice": "Hindi ipinapakita sa video ang unang pagpasok ng cartridge. Sundin ang unang pahina ng gabay o magpatulong sa parmasyutiko."
+    },
+    "ja": {
+      "youtubeId": "u0w6cV27cdA",
+      "title": "スピオルトレスピマットの吸入方法",
+      "channel": "やまぐち呼吸器内科皮膚科クリニック"
+    }
+  },
+  "onbrez-breezhaler": {
+    "zh-TW": {
+      "youtubeId": "Z8PHBnOU0H0",
+      "title": "34 Ultibro Breezhaler昂帝博吸入膠囊_用藥指導影音短片",
+      "channel": "PharmacyTPECH（臺北市立聯合醫院藥劑部）",
+      "notice": "影片示範的是 Ultibro，使用同型 Breezhaler。藥名、膠囊與劑量請依 Onbrez 單張，勿混用。"
+    },
+    "en": {
+      "youtubeId": "1Nn69RCI094",
+      "title": "How to use a Breezhaler inhaler",
+      "channel": "Asthma + Lung UK"
+    },
+    "id": {
+      "youtubeId": "yGmvh2heY3Q",
+      "title": "CARA MENGGUNAKAN BREEZHALER (ONBREZ)",
+      "channel": "FARMASI RSUP PERSAHABATAN"
+    },
+    "vi": {
+      "youtubeId": "otPOmwBtnMM",
+      "title": "Hướng dẫn sử dụng Ultibro Breehazler | Khoa Dược - BV Thanh Nhàn",
+      "channel": "Khoa Dược - Bệnh viện Thanh Nhàn",
+      "notice": "Video minh họa Ultibro dùng cùng loại Breezhaler và có nhắc súc miệng. Hãy dùng đúng thuốc và làm theo tờ hướng dẫn Onbrez."
+    },
+    "th": {
+      "youtubeId": "Sd8-MrzPRaE",
+      "title": "วิธีการใช้ยาสูดพ่นชนิด Breezhaler",
+      "channel": "โรงพยาบาลนครพิงค์ (Nakornping Hospital)"
+    },
+    "tl": {
+      "youtubeId": "3ixE-O3FjP8",
+      "title": "COPD Inhaler Techniques Video Filipino Breezhaler",
+      "channel": "Health Literacy & Chronic Disease Management"
+    },
+    "ja": {
+      "youtubeId": "12Rr-bKR7CI",
+      "title": "ウルティブロ（Ultibro)、オンブレス(Onbrez)、シーブリ（ Seebri）の使い方（ブリーズヘラーBreezhaler)",
+      "channel": "やまぐち呼吸器内科皮膚科クリニック"
+    }
+  },
+  "ultibro-breezhaler": {
+    "zh-TW": {
+      "youtubeId": "Z8PHBnOU0H0",
+      "title": "34 Ultibro Breezhaler昂帝博吸入膠囊_用藥指導影音短片",
+      "channel": "PharmacyTPECH（臺北市立聯合醫院藥劑部）"
+    },
+    "en": {
+      "youtubeId": "1Nn69RCI094",
+      "title": "How to use a Breezhaler inhaler",
+      "channel": "Asthma + Lung UK"
+    },
+    "id": {
+      "youtubeId": "yGmvh2heY3Q",
+      "title": "CARA MENGGUNAKAN BREEZHALER (ONBREZ)",
+      "channel": "FARMASI RSUP PERSAHABATAN",
+      "notice": "Video memperagakan Onbrez dengan alat Breezhaler yang sama. Ikuti nama obat, kapsul, dan dosis pada lembar Ultibro; jangan tertukar."
+    },
+    "vi": {
+      "youtubeId": "otPOmwBtnMM",
+      "title": "Hướng dẫn sử dụng Ultibro Breehazler | Khoa Dược - BV Thanh Nhàn",
+      "channel": "Khoa Dược - Bệnh viện Thanh Nhàn"
+    },
+    "th": {
+      "youtubeId": "Sd8-MrzPRaE",
+      "title": "วิธีการใช้ยาสูดพ่นชนิด Breezhaler",
+      "channel": "โรงพยาบาลนครพิงค์ (Nakornping Hospital)"
+    },
+    "tl": {
+      "youtubeId": "3ixE-O3FjP8",
+      "title": "COPD Inhaler Techniques Video Filipino Breezhaler",
+      "channel": "Health Literacy & Chronic Disease Management"
+    },
+    "ja": {
+      "youtubeId": "12Rr-bKR7CI",
+      "title": "ウルティブロ（Ultibro)、オンブレス(Onbrez)、シーブリ（ Seebri）の使い方（ブリーズヘラーBreezhaler)",
+      "channel": "やまぐち呼吸器内科皮膚科クリニック"
+    }
+  },
+  "seebri-inhalation-powder": {
+    "zh-TW": {
+      "youtubeId": "Z8PHBnOU0H0",
+      "title": "34 Ultibro Breezhaler昂帝博吸入膠囊_用藥指導影音短片",
+      "channel": "PharmacyTPECH（臺北市立聯合醫院藥劑部）",
+      "notice": "影片示範的是 Ultibro，使用同型 Breezhaler。藥名、膠囊與劑量請依 Seebri 單張，勿混用。"
+    },
+    "en": {
+      "youtubeId": "1Nn69RCI094",
+      "title": "How to use a Breezhaler inhaler",
+      "channel": "Asthma + Lung UK"
+    },
+    "id": {
+      "youtubeId": "yGmvh2heY3Q",
+      "title": "CARA MENGGUNAKAN BREEZHALER (ONBREZ)",
+      "channel": "FARMASI RSUP PERSAHABATAN",
+      "notice": "Video memperagakan Onbrez dengan alat Breezhaler yang sama. Ikuti nama obat, kapsul, dan dosis pada lembar Seebri; jangan tertukar."
+    },
+    "vi": {
+      "youtubeId": "otPOmwBtnMM",
+      "title": "Hướng dẫn sử dụng Ultibro Breehazler | Khoa Dược - BV Thanh Nhàn",
+      "channel": "Khoa Dược - Bệnh viện Thanh Nhàn",
+      "notice": "Video minh họa Ultibro dùng cùng loại Breezhaler và có nhắc súc miệng. Hãy dùng đúng thuốc và làm theo tờ hướng dẫn Seebri."
+    },
+    "th": {
+      "youtubeId": "Sd8-MrzPRaE",
+      "title": "วิธีการใช้ยาสูดพ่นชนิด Breezhaler",
+      "channel": "โรงพยาบาลนครพิงค์ (Nakornping Hospital)"
+    },
+    "tl": {
+      "youtubeId": "3ixE-O3FjP8",
+      "title": "COPD Inhaler Techniques Video Filipino Breezhaler",
+      "channel": "Health Literacy & Chronic Disease Management"
+    },
+    "ja": {
+      "youtubeId": "12Rr-bKR7CI",
+      "title": "ウルティブロ（Ultibro)、オンブレス(Onbrez)、シーブリ（ Seebri）の使い方（ブリーズヘラーBreezhaler)",
+      "channel": "やまぐち呼吸器内科皮膚科クリニック"
+    }
+  },
+  "relenza": {
+    "zh-TW": {
+      "youtubeId": "pshiOXkf8kM",
+      "title": "瑞樂沙吸入劑(Relenza Rotadisks)使用教學",
+      "channel": "藥劑部為恭醫院"
+    },
+    "en": {
+      "youtubeId": "wTA4zOfqeg0",
+      "title": "Administration Technique for Zanamivir Relenza Diskhaler",
+      "channel": "outpatient counseling"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "jNMrSFGcn-I",
+      "title": "【インフルエンザ吸入薬】タミフル・イナビル・リレンザの使用方法と異常行動対策【ジェイズ/J'z Channel】",
+      "channel": "ジェイズ / J'z Medical Channel",
+      "startSeconds": 542
+    }
+  },
+  "duasma-hfa-200": {
+    "zh-TW": {
+      "youtubeId": "tVXiPW6Qn0c",
+      "title": "19.Duasma 帝舒滿定量噴霧劑(不含輔助器)用藥指導影音",
+      "channel": "PharmacyTPECH（臺北市立聯合醫院藥劑部）"
+    },
+    "en": {
+      "youtubeId": "2i9_DelNqs4",
+      "title": "How to Use a Metered-Dose Inhaler without a Valved Holding Chamber",
+      "channel": "American Lung Association",
+      "notice": "The video suggests a 1-minute wait before a second puff; this sheet says about 30 seconds. Follow your pharmacist's instructions for your prescribed dose."
+    },
+    "id": {
+      "youtubeId": "bwnxJuxQDGA",
+      "title": "Cara Penggunaan Inhaler",
+      "channel": "apt. Rizki Ardiansyah",
+      "notice": "Video menyarankan jeda 1 menit sebelum semprotan kedua; lembar ini menyebut sekitar 30 detik. Ikuti petunjuk apoteker Anda."
+    },
+    "vi": {
+      "youtubeId": "qPCKEYC8ULc",
+      "title": "Hướng dẫn sử dụng bình xịt định liều (MDI) | Bệnh viện Tim Hà Nội",
+      "channel": "Bệnh Viện Tim Hà Nội (Hanoi Heart Hospital)"
+    },
+    "th": {
+      "youtubeId": "6jxrupDmhKY",
+      "title": "How to Use | วิธีการใช้ยาสูดพ่น \"Evohaler\" สำหรับผู้ป่วยโรคหอบ หืด",
+      "channel": "SIKARIN HOSPITAL"
+    },
+    "tl": {
+      "youtubeId": "0fO5Q5lTmog",
+      "title": "Wastong Paggamit ng Metered Dose Inhaler",
+      "channel": "Breathe Freely Network (Philippine College of Chest Physicians)",
+      "notice": "Nagsisimula sa 1:49 ang bahaging walang spacer. Sundin ang gabay kung direkta mong gagamitin ang inhaler.",
+      "startSeconds": 109
+    },
+    "ja": {
+      "youtubeId": "IFtUPgQgrDo",
+      "title": "成人編吸入動画 エアゾール製剤【手順編】",
+      "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
+    }
+  },
+  "flixotide-evohaler-50": {
+    "zh-TW": {
+      "youtubeId": "Fvl923i9dHo",
+      "title": "37 Flixotide Evohaler輔舒酮優氟吸入劑_用藥指導影音短片",
+      "channel": "PharmacyTPECH（臺北市立聯合醫院藥劑部）"
+    },
+    "en": {
+      "youtubeId": "2i9_DelNqs4",
+      "title": "How to Use a Metered-Dose Inhaler without a Valved Holding Chamber",
+      "channel": "American Lung Association",
+      "notice": "The video suggests a 1-minute wait before a second puff; this sheet says about 30 seconds. Follow your pharmacist's instructions for your prescribed dose."
+    },
+    "id": {
+      "youtubeId": "bwnxJuxQDGA",
+      "title": "Cara Penggunaan Inhaler",
+      "channel": "apt. Rizki Ardiansyah",
+      "notice": "Video menyarankan jeda 1 menit sebelum semprotan kedua; lembar ini menyebut sekitar 30 detik. Ikuti petunjuk apoteker Anda."
+    },
+    "vi": {
+      "youtubeId": "qPCKEYC8ULc",
+      "title": "Hướng dẫn sử dụng bình xịt định liều (MDI) | Bệnh viện Tim Hà Nội",
+      "channel": "Bệnh Viện Tim Hà Nội (Hanoi Heart Hospital)"
+    },
+    "th": {
+      "youtubeId": "6jxrupDmhKY",
+      "title": "How to Use | วิธีการใช้ยาสูดพ่น \"Evohaler\" สำหรับผู้ป่วยโรคหอบ หืด",
+      "channel": "SIKARIN HOSPITAL"
+    },
+    "tl": {
+      "youtubeId": "0fO5Q5lTmog",
+      "title": "Wastong Paggamit ng Metered Dose Inhaler",
+      "channel": "Breathe Freely Network (Philippine College of Chest Physicians)",
+      "notice": "Nagsisimula sa 1:49 ang bahaging walang spacer. Sundin ang gabay kung direkta mong gagamitin ang inhaler.",
+      "startSeconds": 109
+    },
+    "ja": {
+      "youtubeId": "IFtUPgQgrDo",
+      "title": "成人編吸入動画 エアゾール製剤【手順編】",
+      "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
+    }
   }
 }

@@ -35,13 +35,13 @@
   </main>
   <script>
     const labels = {
-      "zh-TW": { heading: "用藥指導影片", intro: "Trelegy Ellipta 吸入器使用示範", open: "在 YouTube 觀看", back: "返回用藥指導單張", error: "找不到已核准的影片。請向藥師確認。" },
-      en: { heading: "Medication instruction video", intro: "Trelegy Ellipta inhaler demonstration", open: "Watch on YouTube", back: "Return to instruction sheet", error: "No approved video was found. Please ask your pharmacist." },
-      id: { heading: "Video petunjuk penggunaan obat", intro: "Cara menggunakan inhaler Trelegy Ellipta", open: "Tonton di YouTube", back: "Kembali ke lembar petunjuk", error: "Video yang disetujui tidak ditemukan. Silakan tanya apoteker Anda." },
-      vi: { heading: "Video hướng dẫn dùng thuốc", intro: "Cách dùng ống hít Trelegy Ellipta", open: "Xem trên YouTube", back: "Quay lại tờ hướng dẫn", error: "Không tìm thấy video đã được duyệt. Vui lòng hỏi dược sĩ." },
-      th: { heading: "วิดีโอแนะนำการใช้ยา", intro: "วิธีใช้ยาสูด Trelegy Ellipta", open: "ดูบน YouTube", back: "กลับไปยังเอกสารแนะนำ", error: "ไม่พบวิดีโอที่อนุมัติ โปรดสอบถามเภสัชกร" },
-      tl: { heading: "Video sa paggamit ng gamot", intro: "Paano gamitin ang Trelegy Ellipta inhaler", open: "Panoorin sa YouTube", back: "Bumalik sa gabay sa gamot", error: "Walang nahanap na aprubadong video. Magtanong sa parmasyutiko." },
-      ja: { heading: "お薬の使い方動画", intro: "テリルジー エリプタの吸入方法", open: "YouTubeで見る", back: "服薬指導シートに戻る", error: "承認済みの動画が見つかりません。薬剤師にご確認ください。" }
+      "zh-TW": { heading: "用藥指導影片", intro: "請搭配用藥指導單張觀看操作示範。", open: "在 YouTube 觀看", back: "返回用藥指導單張", noVideo: "目前沒有適合這種語言與裝置的衛教影片；請參照單張並洽詢藥師。", error: "找不到影片資料。請向藥師確認。" },
+      en: { heading: "Medication instruction video", intro: "Use this demonstration together with your instruction sheet.", open: "Watch on YouTube", back: "Return to instruction sheet", noVideo: "No suitable video is available for this language and device. Please use the sheet and ask your pharmacist.", error: "Video details could not be loaded. Please ask your pharmacist." },
+      id: { heading: "Video petunjuk penggunaan obat", intro: "Gunakan video ini bersama lembar petunjuk obat Anda.", open: "Tonton di YouTube", back: "Kembali ke lembar petunjuk", noVideo: "Belum ada video yang sesuai untuk bahasa dan alat ini. Ikuti lembar petunjuk dan tanyakan kepada apoteker.", error: "Informasi video tidak dapat dimuat. Silakan tanya apoteker Anda." },
+      vi: { heading: "Video hướng dẫn dùng thuốc", intro: "Xem video cùng với tờ hướng dẫn dùng thuốc.", open: "Xem trên YouTube", back: "Quay lại tờ hướng dẫn", noVideo: "Chưa có video phù hợp với ngôn ngữ và dụng cụ này. Hãy dùng tờ hướng dẫn và hỏi dược sĩ.", error: "Không tải được thông tin video. Vui lòng hỏi dược sĩ." },
+      th: { heading: "วิดีโอแนะนำการใช้ยา", intro: "ดูวิดีโอควบคู่กับเอกสารแนะนำการใช้ยา", open: "ดูบน YouTube", back: "กลับไปยังเอกสารแนะนำ", noVideo: "ยังไม่มีวิดีโอที่เหมาะกับภาษาและอุปกรณ์นี้ โปรดอ่านเอกสารและสอบถามเภสัชกร", error: "โหลดข้อมูลวิดีโอไม่ได้ โปรดสอบถามเภสัชกร" },
+      tl: { heading: "Video sa paggamit ng gamot", intro: "Gamitin ang video kasama ng gabay sa gamot.", open: "Panoorin sa YouTube", back: "Bumalik sa gabay sa gamot", noVideo: "Wala pang angkop na video para sa wikang ito at sa aparatong ito. Sundin ang gabay at magtanong sa parmasyutiko.", error: "Hindi ma-load ang impormasyon ng video. Magtanong sa parmasyutiko." },
+      ja: { heading: "お薬の使い方動画", intro: "服薬指導シートと合わせて動画をご覧ください。", open: "YouTubeで見る", back: "服薬指導シートに戻る", noVideo: "この言語と器具に適した動画はまだありません。シートをご覧になり、薬剤師にご相談ください。", error: "動画情報を読み込めませんでした。薬剤師にご確認ください。" }
     };
     const params = new URLSearchParams(location.search);
     const med = params.get("med");
@@ -60,10 +60,17 @@
         if (!response.ok) throw new Error("Video registry unavailable");
         const registry = await response.json();
         const entry = registry[med]?.[lang];
+        if (entry?.status === "no_suitable_video") {
+          const message = document.getElementById("error");
+          message.textContent = ui.noVideo;
+          message.hidden = false;
+          return;
+        }
         if (!entry || !/^[A-Za-z0-9_-]{11}$/.test(entry.youtubeId)) throw new Error("No approved video");
-        const youtube = `https://www.youtube.com/watch?v=${entry.youtubeId}`;
+        const start = Number.isSafeInteger(entry.startSeconds) && entry.startSeconds > 0 ? entry.startSeconds : 0;
+        const youtube = `https://www.youtube.com/watch?v=${entry.youtubeId}${start ? `&t=${start}s` : ""}`;
         const frame = document.createElement("iframe");
-        frame.src = `https://www.youtube-nocookie.com/embed/${entry.youtubeId}`;
+        frame.src = `https://www.youtube-nocookie.com/embed/${entry.youtubeId}${start ? `?start=${start}` : ""}`;
         frame.title = entry.title;
         frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
         frame.allowFullscreen = true;

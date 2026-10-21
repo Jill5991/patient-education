@@ -28559,6 +28559,155 @@ MEDICATIONS.forEach((med) => {
   ];
 });
 
+// Device instructions checked against the manufacturers' patient leaflets.
+const DAY01_INHALER_TEXT_CORRECTIONS = [
+  {
+    "med": "anoro-ellipta",
+    "page": "main",
+    "index": 4,
+    "source": "GSK ANORO ELLIPTA Instructions for Use",
+    "action": {
+      "zh-TW": "屏氣至少 3-4 秒",
+      "en": "Hold your breath for at least 3-4 seconds",
+      "id": "Tahan napas setidaknya 3-4 detik",
+      "vi": "Nín thở ít nhất 3-4 giây",
+      "th": "กลั้นหายใจอย่างน้อย 3-4 วินาที",
+      "tl": "Pigilan ang hininga nang hindi bababa sa 3-4 segundo",
+      "ja": "少なくとも3-4秒息を止める"
+    },
+    "note": {
+      "zh-TW": "移開吸入器後閉氣至少 3-4 秒。若可以，在舒服的前提下再久一點。",
+      "en": "After removing the inhaler, hold your breath for at least 3-4 seconds. If you can, hold a little longer as long as comfortable.",
+      "id": "Setelah menjauhkan inhaler, tahan napas setidaknya 3-4 detik. Jika bisa, tahan sedikit lebih lama selama masih nyaman.",
+      "vi": "Sau khi rời dụng cụ hít ra, nín thở ít nhất 3-4 giây. Nếu có thể, hãy nín lâu hơn một chút trong giới hạn dễ chịu.",
+      "th": "หลังนำอุปกรณ์ออกจากปากแล้ว ให้กลั้นหายใจอย่างน้อย 3-4 วินาที หากทำได้ ให้กลั้นได้นานขึ้นอีกเล็กน้อยเท่าที่สบาย",
+      "tl": "Pagkaalis ng inhaler, pigilin ang hininga nang hindi bababa sa 3-4 segundo. Kung kaya, pigilin pa nang kaunti basta komportable.",
+      "ja": "吸入器を口から離した後、少なくとも3-4秒息を止めます。できる場合は、無理のない範囲でもう少し長く止めてください。"
+    }
+  },
+  {
+    "med": "relenza",
+    "page": "page-2",
+    "index": 4,
+    "source": "Relenza Diskhaler patient leaflet",
+    "action": {
+      "zh-TW": "移開吸嘴，閉嘴屏氣幾秒鐘",
+      "en": "Remove the mouthpiece and hold your breath for a few seconds",
+      "id": "Lepaskan corong lalu tahan napas beberapa detik",
+      "vi": "Rời đầu ngậm rồi nín thở vài giây",
+      "th": "นำปากออกจากปากสูด แล้วกลั้นหายใจสักครู่",
+      "tl": "Alisin ang mouthpiece at pigilin ang hininga nang ilang segundo",
+      "ja": "吸入口を外し、数秒間息を止める"
+    },
+    "note": {
+      "zh-TW": "在舒服的前提下，閉氣幾秒鐘後再恢復正常呼吸。",
+      "en": "Hold your breath only as long as comfortable, then breathe normally.",
+      "id": "Tahan napas selama masih nyaman, lalu bernapas seperti biasa.",
+      "vi": "Nín thở trong mức thoải mái rồi thở bình thường.",
+      "th": "กลั้นหายใจเท่าที่สบาย แล้วหายใจตามปกติ",
+      "tl": "Pigilin ang hininga hangga't komportable, saka huminga nang normal.",
+      "ja": "無理のない範囲で息を止めてから、普通に呼吸します。"
+    }
+  },
+  {
+    "meds": [
+      "onbrez-breezhaler",
+      "ultibro-breezhaler",
+      "seebri-inhalation-powder"
+    ],
+    "page": "main",
+    "index": 5,
+    "source": "Novartis Breezhaler Instructions for Use",
+    "action": {
+      "zh-TW": "含住吸嘴，快速深吸一口氣",
+      "en": "Seal your lips around the mouthpiece and breathe in quickly and deeply",
+      "id": "Rapatkan bibir pada corong, lalu tarik napas cepat dan dalam",
+      "vi": "Ngậm kín đầu ngậm, rồi hít vào nhanh và sâu",
+      "th": "เม้มริมฝีปากกับปากสูด แล้วสูดลมเข้าเร็วและลึก",
+      "tl": "Idikit ang labi sa mouthpiece, saka huminga nang mabilis at malalim",
+      "ja": "吸入口をしっかりくわえ、すばやく深く吸い込む"
+    },
+    "note": {
+      "zh-TW": "吸藥時不要再按兩側按鈕。聽到「呼嚕」旋轉聲，表示膠囊正在轉動。",
+      "en": "Do not press the side buttons while inhaling. A whirring sound means the capsule is spinning.",
+      "id": "Jangan menekan tombol samping saat menghirup. Bunyi berputar menandakan kapsul sedang berputar.",
+      "vi": "Không bấm các nút bên hông khi hít vào. Tiếng quay rè rè cho biết viên nang đang quay.",
+      "th": "ขณะสูดห้ามกดปุ่มด้านข้าง เสียงแคปซูลหมุนแสดงว่าแคปซูลกำลังหมุน",
+      "tl": "Huwag pindutin ang mga side button habang humihinga papasok. Ibig sabihin ng umiikot na tunog ay umiikot ang kapsula.",
+      "ja": "吸入中に両側のボタンを押さないでください。回転音が聞こえれば、カプセルが回っています。"
+    }
+  },
+  {
+    "meds": [
+      "onbrez-breezhaler",
+      "ultibro-breezhaler",
+      "seebri-inhalation-powder"
+    ],
+    "page": "main",
+    "index": 6,
+    "source": "Novartis Breezhaler Instructions for Use",
+    "action": {
+      "zh-TW": "移開吸入器，閉氣最多 5 秒",
+      "en": "Remove the inhaler and hold your breath for up to 5 seconds",
+      "id": "Lepaskan inhaler dan tahan napas sampai maksimal 5 detik",
+      "vi": "Rời dụng cụ hít ra và nín thở tối đa 5 giây",
+      "th": "นำอุปกรณ์ออกจากปาก แล้วกลั้นหายใจไม่เกิน 5 วินาที",
+      "tl": "Alisin ang inhaler at pigilin ang hininga nang hanggang 5 segundo",
+      "ja": "吸入器を口から離し、最大5秒間息を止める"
+    },
+    "note": {
+      "zh-TW": "做不到 5 秒時，閉氣到舒服為止，再恢復正常呼吸。",
+      "en": "If 5 seconds is difficult, hold your breath only as long as comfortable, then breathe normally.",
+      "id": "Jika 5 detik sulit, tahan napas selama masih nyaman, lalu bernapas seperti biasa.",
+      "vi": "Nếu khó giữ được 5 giây, chỉ nín thở trong mức thoải mái rồi thở bình thường.",
+      "th": "หากกลั้นไม่ถึง 5 วินาที ให้กลั้นเท่าที่สบาย แล้วหายใจตามปกติ",
+      "tl": "Kung mahirap ang 5 segundo, pigilin lamang ang hininga hangga't komportable, saka huminga nang normal.",
+      "ja": "5秒が難しければ、無理のない範囲で息を止めてから普通に呼吸します。"
+    }
+  }
+];
+DAY01_INHALER_TEXT_CORRECTIONS.forEach(({ med, meds, page, index, action, note }) => {
+  (meds || [med]).forEach(id => {
+    const item = MEDICATIONS.find(candidate => candidate.id === id);
+    const target = page === "main" ? item : item?.pages?.[Number(page.slice(5)) - 1];
+    if (!target?.steps?.[index]) return;
+    target.steps[index].action = action;
+    target.steps[index].note = note;
+  });
+});
+// Reviewed day-01 inhaler illustrations. Keep page and step indexes aligned with
+// the medication data so all seven language versions share the same drawing.
+const DAY01_INHALER_IMAGE_COUNTS = {
+  "anoro-ellipta": { main: 7 },
+  "spiriva-respimat": { "page-1": 6, "page-2": 6 },
+  "spiolto-respimat": { "page-1": 6, "page-2": 6 },
+  "onbrez-breezhaler": { main: 8 },
+  "ultibro-breezhaler": { main: 8 },
+  "seebri-inhalation-powder": { main: 8 },
+  relenza: { "page-1": 4, "page-2": 7 },
+  "duasma-hfa-200": { main: 6 },
+  "flixotide-evohaler-50": { main: 6 }
+};
+
+Object.entries(DAY01_INHALER_IMAGE_COUNTS).forEach(([id, pages]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med) return;
+  const videoPage = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+  med.qrUrl = videoPage;
+  Object.entries(pages).forEach(([pageKey, count]) => {
+    const page = pageKey === "main" ? med : med.pages?.[Number(pageKey.slice(5)) - 1];
+    if (!page || page.steps?.length !== count) {
+      console.error(`Day-01 image count mismatch: ${id}/${pageKey}`);
+      return;
+    }
+    page.qrUrl = videoPage;
+    page.steps.forEach((step, index) => {
+      const name = `step-${String(index).padStart(2, "0")}.png`;
+      step.illustration = `assets/img/${id}/${pageKey === "main" ? "" : `${pageKey}/`}${name}`;
+    });
+  });
+});
+
 // ============================================================
 // STATE
 // ============================================================
