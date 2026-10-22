@@ -383,5 +383,114 @@
       "title": "成人編吸入動画 エアゾール製剤【手順編】",
       "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
     }
+  },
+  "premarin-vaginal-cream": {
+    "zh-TW": {
+      "youtubeId": "RFuyIqpLg2s",
+      "title": "Premarin Vaginal Cream普力馬林陰道乳膏使用方法教學影片",
+      "channel": "輔大醫院藥劑部"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "vaginal-suppositories": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "jdhzGaGL93M",
+      "title": "How to use Vaginal Suppository",
+      "channel": "CareFirst Specialty Pharmacy"
+    },
+    "id": {
+      "youtubeId": "qxSmrOcncyU",
+      "title": "Edukasi Cara Penggunaan Vaginal Suppositoria",
+      "channel": "RS JIH"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "2viVwz_USn0",
+      "title": "วิธีการใช้ยาเหน็บช่องคลอด (Vaginal Suppository)",
+      "channel": "Pharmaceutical Division BMA"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "esvatin-vaginal-tablets": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "albothyl-vaginal-suppository": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "jdhzGaGL93M",
+      "title": "How to use Vaginal Suppository",
+      "channel": "CareFirst Specialty Pharmacy",
+      "notice": "This video shows general vaginal suppository technique. Follow your Albothyl instruction sheet for medicine-specific directions."
+    },
+    "id": {
+      "youtubeId": "qxSmrOcncyU",
+      "title": "Edukasi Cara Penggunaan Vaginal Suppositoria",
+      "channel": "RS JIH",
+      "notice": "Video ini menunjukkan cara umum menggunakan supositoria vagina. Ikuti lembar petunjuk Albothyl untuk petunjuk khusus obat ini."
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "2viVwz_USn0",
+      "title": "วิธีการใช้ยาเหน็บช่องคลอด (Vaginal Suppository)",
+      "channel": "Pharmaceutical Division BMA",
+      "notice": "วิดีโอนี้แสดงวิธีใช้ยาเหน็บช่องคลอดทั่วไป โปรดทำตามเอกสารแนะนำยา Albothyl สำหรับคำแนะนำเฉพาะยา"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
   }
 }
