@@ -492,5 +492,135 @@
     "ja": {
       "status": "no_suitable_video"
     }
+  },
+  "glycerin-enema": {
+    "zh-TW": {
+      "youtubeId": "BmJM-md94ag",
+      "title": "便秘的時候到是底怎麼灌腸的？ QUESTION & ANSWER SESSION BY DOCTORS",
+      "channel": "健康多1點 HEALTH PLUS",
+      "notice": "影片說明灌腸的一般做法；請以本單張的 20 mL 甘油浣腸球、用量與等待時間為準。"
+    },
+    "en": {
+      "youtubeId": "j-6ybQpytP8",
+      "title": "How To Give A Suppository Or Enema",
+      "channel": "CareChannel",
+      "notice": "This video includes suppositories and other enema devices. Follow your sheet for the 20 mL glycerin bulb and its timing."
+    },
+    "id": {
+      "youtubeId": "WDvWqU6-cK0",
+      "title": "Edukasi Cara Penggunaan Enema",
+      "channel": "RS JIH",
+      "notice": "Video ini juga menunjukkan jenis enema lain. Ikuti lembar petunjuk untuk bulb gliserin 20 mL dan waktu menunggunya."
+    },
+    "vi": {
+      "youtubeId": "zhafS_BhHkA",
+      "title": "Sử Dụng Thuốc Thụt Hậu Môn Cải Thiện Táo Bón Cho Người Lớn Đúng Cách",
+      "channel": "Tuấn Thầy Thuốc"
+    },
+    "th": {
+      "youtubeId": "nBgFRDndJkI",
+      "title": "วิธีการใช้ยาเหน็บทวารและยาสวนทวาร",
+      "channel": "Pharmacy Mettapracharak Wat Rhaikhing",
+      "notice": "วิดีโอนี้ครอบคลุมยาสวนทวารหลายชนิด โปรดทำตามเอกสารสำหรับยาสวนกลีเซอรินแบบลูกยาง 20 มล."
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "dskPyxyJrf8",
+      "title": "イチジク浣腸の使い方 イチジク製薬株式会社",
+      "channel": "ichijikuseiyaku"
+    }
+  },
+  "evac-enema": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "4qhEivVnc3k",
+      "title": "Vital Nursing Skill Demonstration: Fleet/Soap Enemas and Suppository Administration",
+      "channel": "SimpleNursing",
+      "notice": "This nursing video covers several enema types. Watch the Fleet bottle demonstration only. EVAC contains sodium phosphates; follow your sheet for its dose, precautions, and 1–5 minute onset."
+    },
+    "id": {
+      "youtubeId": "WDvWqU6-cK0",
+      "title": "Edukasi Cara Penggunaan Enema",
+      "channel": "RS JIH",
+      "notice": "Video ini mencakup beberapa jenis enema. Ikuti lembar EVAC untuk dosis, peringatan, dan waktu kerja 1–5 menit."
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "nBgFRDndJkI",
+      "title": "วิธีการใช้ยาเหน็บทวารและยาสวนทวาร",
+      "channel": "Pharmacy Mettapracharak Wat Rhaikhing",
+      "notice": "วิดีโอนี้แสดงวิธีใช้ยาสวนทวารทั่วไป โปรดทำตามเอกสาร EVAC สำหรับขนาดยา ข้อควรระวัง และเวลาออกฤทธิ์ 1–5 นาที"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "colasa-enema": {
+    "zh-TW": {
+      "youtubeId": "O9hAXMpD_0k",
+      "title": "浣腸劑衛教影片",
+      "channel": "We Care IBD"
+    },
+    "en": {
+      "youtubeId": "R1Y7NJjNxlQ",
+      "title": "Pentasa enema video (english)",
+      "channel": "Prateek Ahuja",
+      "notice": "This video shows a different mesalazine enema product. The bottle and timing may differ. Follow your Colasa instruction sheet and pharmacist's directions."
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "oKEwYgj3xmk",
+      "title": "【潰瘍性大腸炎】ペンタサ注腸、メサラジンの解説",
+      "channel": "いなかの薬剤師",
+      "notice": "動画は別製品のメサラジン注腸剤です。容器と注入時間は本シートおよび薬剤師の指示に従ってください。"
+    }
+  },
+  "high-xylmol": {
+    "zh-TW": {
+      "youtubeId": "_D6Z0a65Al4",
+      "title": "痔瘡軟膏用藥指導-(1)藥品使用",
+      "channel": "Ph Tzuch 大林慈濟醫院藥學部"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "lacmRtYdtqs",
+      "title": "痔の軟膏の正しい使い方・肛門外科医が徹底解説！",
+      "channel": "カワナイ【川崎駅前大腸と胃の消化器内視鏡・肛門外科クリニック】",
+      "notice": "動画は一般的な痔の軟膏です。付属アプリケーターの形状と使用回数は本シートに従ってください。"
+    }
   }
 }

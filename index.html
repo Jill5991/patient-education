@@ -28736,10 +28736,33 @@ Object.entries(DAY01_INHALER_IMAGE_COUNTS).forEach(([id, pages]) => {
   "premarin-vaginal-cream",
   "vaginal-suppositories",
   "esvatin-vaginal-tablets",
-  "albothyl-vaginal-suppository"
+  "albothyl-vaginal-suppository",
+  "glycerin-enema",
+  "evac-enema",
+  "colasa-enema",
+  "high-xylmol"
 ].forEach(id => {
   const med = MEDICATIONS.find(item => item.id === id);
   if (med) med.qrUrl = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+});
+
+// Day-03 rectal medication illustrations. Each step uses the same image in
+// every language, while the QR route keeps the selected language.
+const DAY03_RECTAL_IMAGE_COUNTS = {
+  "glycerin-enema": 7,
+  "evac-enema": 6,
+  "colasa-enema": 8,
+  "high-xylmol": 6
+};
+Object.entries(DAY03_RECTAL_IMAGE_COUNTS).forEach(([id, count]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.steps?.length !== count) {
+    console.error(`Day-03 image count mismatch: ${id}`);
+    return;
+  }
+  med.steps.forEach((step, index) => {
+    step.illustration = `assets/img/${id}/step-${String(index).padStart(2, "0")}.png`;
+  });
 });
 
 // ============================================================
