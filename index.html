@@ -28765,6 +28765,66 @@ Object.entries(DAY03_RECTAL_IMAGE_COUNTS).forEach(([id, count]) => {
   });
 });
 
+// Day-04 oral medication videos include four sheets awaiting pharmacist text.
+[
+  "psyllium-hydrophilic-mucilloid",
+  "painkyl-buccal-film",
+  "gi-klean-powder",
+  "bowklean-powder",
+  "paxlovid",
+  "molnupiravir",
+  "actein-effervescent",
+  "oseltamivir-suspension",
+  "hidrasec",
+  "smecta"
+].forEach(id => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (med) med.qrUrl = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+});
+
+const DAY04_ORAL_IMAGE_COUNTS = {
+  paxlovid: 5,
+  molnupiravir: 5,
+  "actein-effervescent": 4,
+  "oseltamivir-suspension": 5,
+  hidrasec: 4,
+  smecta: 5
+};
+Object.entries(DAY04_ORAL_IMAGE_COUNTS).forEach(([id, count]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.steps?.length !== count) {
+    console.error(`Day-04 image count mismatch: ${id}`);
+    return;
+  }
+  med.steps.forEach((step, index) => {
+    step.illustration = `assets/img/${id}/step-${String(index).padStart(2, "0")}.png`;
+  });
+});
+
+// Hospital instructions differ on cool versus lukewarm water for Actein.
+// State the common 60–100 mL amount without requiring one temperature.
+const actein = MEDICATIONS.find(item => item.id === "actein-effervescent");
+if (actein?.steps?.[1]) {
+  actein.steps[1].action = tx(
+    "加入 60–100 毫升飲用水",
+    "Add 60–100 mL of drinking water",
+    "Tambahkan 60–100 mL air minum",
+    "Thêm 60–100 mL nước uống",
+    "เติมน้ำดื่ม 60–100 มล.",
+    "Magdagdag ng 60–100 mL na malinis na tubig",
+    "飲用水を60～100 mL加える"
+  );
+  actein.steps[1].note = tx(
+    "不要用熱水；等發泡錠完全溶解後再喝。",
+    "Do not use hot water. Drink only after the tablet fully dissolves.",
+    "Jangan gunakan air panas. Minum setelah tablet larut sepenuhnya.",
+    "Không dùng nước nóng. Chỉ uống sau khi viên tan hoàn toàn.",
+    "อย่าใช้น้ำร้อน ดื่มเมื่อเม็ดยาละลายหมดแล้ว",
+    "Huwag gumamit ng mainit na tubig. Inumin kapag lubusang natunaw ang tableta.",
+    "熱湯は使わず、錠剤が完全に溶けてから飲む。"
+  );
+}
+
 // ============================================================
 // STATE
 // ============================================================

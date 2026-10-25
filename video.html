@@ -43,6 +43,15 @@
       tl: { heading: "Video sa paggamit ng gamot", intro: "Gamitin ang video kasama ng gabay sa gamot.", open: "Panoorin sa YouTube", back: "Bumalik sa gabay sa gamot", noVideo: "Wala pang angkop na video para sa wikang ito at sa aparatong ito. Sundin ang gabay at magtanong sa parmasyutiko.", error: "Hindi ma-load ang impormasyon ng video. Magtanong sa parmasyutiko." },
       ja: { heading: "お薬の使い方動画", intro: "服薬指導シートと合わせて動画をご覧ください。", open: "YouTubeで見る", back: "服薬指導シートに戻る", noVideo: "この言語と器具に適した動画はまだありません。シートをご覧になり、薬剤師にご相談ください。", error: "動画情報を読み込めませんでした。薬剤師にご確認ください。" }
     };
+    const clinicalReviewMessages = {
+      "zh-TW": "這份單張的正式用藥步驟仍待藥師補正，目前沒有可提供的衛教影片。請向藥師確認使用方法。",
+      en: "This sheet's medication instructions are awaiting pharmacist review. No video is available yet. Ask your pharmacist how to use this medicine.",
+      id: "Petunjuk obat pada lembar ini masih menunggu peninjauan apoteker. Video belum tersedia. Tanyakan cara penggunaan obat kepada apoteker.",
+      vi: "Hướng dẫn dùng thuốc trên tờ này đang chờ dược sĩ kiểm tra. Chưa có video. Hãy hỏi dược sĩ cách dùng thuốc.",
+      th: "คำแนะนำในเอกสารนี้อยู่ระหว่างการตรวจสอบโดยเภสัชกร ยังไม่มีวิดีโอ โปรดสอบถามเภสัชกรก่อนใช้ยา",
+      tl: "Hinihintay pa ng gabay na ito ang pagsusuri ng parmasyutiko. Wala pang video. Itanong sa parmasyutiko kung paano gamitin ang gamot.",
+      ja: "このシートの服薬手順は薬剤師の確認待ちです。動画はまだありません。使い方は薬剤師に確認してください。"
+    };
     const params = new URLSearchParams(location.search);
     const med = params.get("med");
     const lang = params.get("lang");
@@ -60,6 +69,12 @@
         if (!response.ok) throw new Error("Video registry unavailable");
         const registry = await response.json();
         const entry = registry[med]?.[lang];
+        if (entry?.status === "clinical_review") {
+          const message = document.getElementById("error");
+          message.textContent = clinicalReviewMessages[lang] || clinicalReviewMessages["zh-TW"];
+          message.hidden = false;
+          return;
+        }
         if (entry?.status === "no_suitable_video") {
           const message = document.getElementById("error");
           message.textContent = ui.noVideo;

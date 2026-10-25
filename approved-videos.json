@@ -622,5 +622,270 @@
       "channel": "カワナイ【川崎駅前大腸と胃の消化器内視鏡・肛門外科クリニック】",
       "notice": "動画は一般的な痔の軟膏です。付属アプリケーターの形状と使用回数は本シートに従ってください。"
     }
+  },
+  "psyllium-hydrophilic-mucilloid": {
+    "zh-TW": {
+      "status": "clinical_review"
+    },
+    "en": {
+      "status": "clinical_review"
+    },
+    "id": {
+      "status": "clinical_review"
+    },
+    "vi": {
+      "status": "clinical_review"
+    },
+    "th": {
+      "status": "clinical_review"
+    },
+    "tl": {
+      "status": "clinical_review"
+    },
+    "ja": {
+      "status": "clinical_review"
+    }
+  },
+  "painkyl-buccal-film": {
+    "zh-TW": {
+      "status": "clinical_review"
+    },
+    "en": {
+      "status": "clinical_review"
+    },
+    "id": {
+      "status": "clinical_review"
+    },
+    "vi": {
+      "status": "clinical_review"
+    },
+    "th": {
+      "status": "clinical_review"
+    },
+    "tl": {
+      "status": "clinical_review"
+    },
+    "ja": {
+      "status": "clinical_review"
+    }
+  },
+  "gi-klean-powder": {
+    "zh-TW": {
+      "status": "clinical_review"
+    },
+    "en": {
+      "status": "clinical_review"
+    },
+    "id": {
+      "status": "clinical_review"
+    },
+    "vi": {
+      "status": "clinical_review"
+    },
+    "th": {
+      "status": "clinical_review"
+    },
+    "tl": {
+      "status": "clinical_review"
+    },
+    "ja": {
+      "status": "clinical_review"
+    }
+  },
+  "bowklean-powder": {
+    "zh-TW": {
+      "status": "clinical_review"
+    },
+    "en": {
+      "status": "clinical_review"
+    },
+    "id": {
+      "status": "clinical_review"
+    },
+    "vi": {
+      "status": "clinical_review"
+    },
+    "th": {
+      "status": "clinical_review"
+    },
+    "tl": {
+      "status": "clinical_review"
+    },
+    "ja": {
+      "status": "clinical_review"
+    }
+  },
+  "paxlovid": {
+    "zh-TW": {
+      "youtubeId": "a4c_J_YHqxc",
+      "title": "paxlovid使用方式 #shorts #paxlovid #用藥衛教 #藥師開講",
+      "channel": "新北市立聯合醫院藥劑科│藥師開講",
+      "notice": "影片示範一般劑量。腎功能調整時每次錠數可能不同，請以藥袋及實際泡殼為準。"
+    },
+    "en": {
+      "youtubeId": "Zw7sfj99Ni4",
+      "title": "Paxlovid Patient Counseling",
+      "channel": "Drug Information Specialist",
+      "notice": "The video shows a standard dose. Kidney-adjusted packs contain different numbers of tablets; follow your own blister pack and prescription."
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "molnupiravir": {
+    "zh-TW": {
+      "youtubeId": "PH3fIuL2DJw",
+      "title": "如何服用新冠口服抗病毒藥物 – 莫納皮拉韋 (Molnupiravir)? How to take oral anti-COVID-19 drug Molnupiravir?",
+      "channel": "Hospital Authority醫院管理局"
+    },
+    "en": {
+      "youtubeId": "f6BJzWTuTeI",
+      "title": "Lagevrio (molnupiravir)- COVID19",
+      "channel": "Pharmacy Talk USA"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "XnEph7kW4qw",
+      "title": "薬剤師が教えるコロナの薬の注意点",
+      "channel": "薬剤師ナカショウ",
+      "notice": "本シートの1回4カプセル、約12時間ごと、5日間の指示に従ってください。"
+    }
+  },
+  "actein-effervescent": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "ckbdXIq6D0Y",
+      "title": "Why You Should Never Swallow Effervescent Tablets Whole 💧",
+      "channel": "World Of EduPharma",
+      "notice": "This video explains effervescent tablets in general. Follow your Actein sheet for the water amount and prescribed dose."
+    },
+    "id": {
+      "youtubeId": "NyuutvPnOzc",
+      "title": "Cara penggunaan Tablet Effervescent",
+      "channel": "sri nopitasari",
+      "notice": "Video ini menjelaskan tablet effervescent secara umum. Ikuti lembar Actein untuk jumlah air dan dosis."
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "D8Ys0JHH-Dc",
+      "title": "เริ่มมีเสมหะ ใช้แนค ลอง เม็ดฟู่ละลายเสมหะอย่างมีประสิทธิภาพ",
+      "channel": "MCH Thailand",
+      "notice": "วิดีโอนี้ใช้ยา acetylcysteine อีกยี่ห้อ โปรดทำตามเอกสาร Actein สำหรับปริมาณน้ำและขนาดยา"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "oseltamivir-suspension": {
+    "zh-TW": {
+      "youtubeId": "xCcz-b8XmYc",
+      "title": "小兒克流感藥粉泡製法",
+      "channel": "台東馬偕藥局",
+      "notice": "配製時膠囊顆數、加水量及每次服用毫升數，務必以您的藥袋指示為準。"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "hidrasec": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "lB1jLOIkIWc",
+      "title": "HIDRASEC: How to Use It & 3 Common Side Effects",
+      "channel": "Pharmacist Assistant",
+      "notice": "Hidrasec comes in different forms and strengths. Follow your granule sachet and instruction sheet for the dose and mixing method."
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "youtubeId": "OYhfaKWWNVk",
+      "title": "Công Dụng và Liều Dùng Thuốc HIDRASEC ( Racecadotril )",
+      "channel": "Việt Pharmacist"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "smecta": {
+    "zh-TW": {
+      "youtubeId": "6uNI-0vRTcE",
+      "title": "【雙和藥你會】舒腹達 口服懸液用粉劑 ( Smecta )｜止瀉藥粉｜",
+      "channel": "衛生福利部雙和醫院藥劑部"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "youtubeId": "JimpKshVIs4",
+      "title": "Cách sử dụng thuốc Diosmectit | Thuốc điều trị tiêu chảy cấp diosmectit | Y Dược TV",
+      "channel": "Y Dược TV (Học Bán Thuốc Tây)",
+      "notice": "Video nói về hoạt chất diosmectit. Hãy làm theo tờ hướng dẫn Smecta của bạn về lượng nước, thời điểm uống và khoảng cách với thuốc khác."
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
   }
 }
