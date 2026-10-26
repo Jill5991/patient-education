@@ -887,5 +887,255 @@
     "ja": {
       "status": "no_suitable_video"
     }
+  },
+  "wound-ointment": {
+    "zh-TW": {
+      "status": "clinical_review"
+    },
+    "en": {
+      "status": "clinical_review"
+    },
+    "id": {
+      "status": "clinical_review"
+    },
+    "vi": {
+      "status": "clinical_review"
+    },
+    "th": {
+      "status": "clinical_review"
+    },
+    "tl": {
+      "status": "clinical_review"
+    },
+    "ja": {
+      "status": "clinical_review"
+    }
+  },
+  "chlorpheniramine-lidocaine-menthol-camphor-ointment": {
+    "zh-TW": {
+      "status": "clinical_review"
+    },
+    "en": {
+      "status": "clinical_review"
+    },
+    "id": {
+      "status": "clinical_review"
+    },
+    "vi": {
+      "status": "clinical_review"
+    },
+    "th": {
+      "status": "clinical_review"
+    },
+    "tl": {
+      "status": "clinical_review"
+    },
+    "ja": {
+      "status": "clinical_review"
+    }
+  },
+  "zno-diphenhydramine-dibucaine-camphor-benzalkonium-silicone-oil": {
+    "zh-TW": {
+      "status": "clinical_review"
+    },
+    "en": {
+      "status": "clinical_review"
+    },
+    "id": {
+      "status": "clinical_review"
+    },
+    "vi": {
+      "status": "clinical_review"
+    },
+    "th": {
+      "status": "clinical_review"
+    },
+    "tl": {
+      "status": "clinical_review"
+    },
+    "ja": {
+      "status": "clinical_review"
+    }
+  },
+  "permethrin-5": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "oppiCXdDZGk",
+      "title": "Scabies Treatment: How to Apply Permethrin & Stop Reinfection (Doctor’s Top Tips)",
+      "channel": "TheTravellingDoc - Dr Ann"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "adapalene-0-1-gel": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "YHby8CB7OA8",
+      "title": "How to Apply Adapalene Gel and Retinol",
+      "channel": "Dr. Daniel Sugai"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "benzoyl-peroxide-5": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "fyN3H1ZekTY",
+      "title": "You’re Using Benzoyl Peroxide WRONG ❌",
+      "channel": "Dr. Usama Syed"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "benovate-solution": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "Glj7f9HYk94",
+      "title": "Betnovate Scalp Application",
+      "channel": "Garvan Lynch",
+      "notice": "The video shows Betnovate scalp application. Use your own prescribed Benovate bottle and follow this sheet for dose and frequency."
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "amorolfine-nail-lacquer": {
+    "zh-TW": {
+      "youtubeId": "1Z3m8qx6X0E",
+      "title": "樂指利 產品使用介紹",
+      "channel": "樂指利Loceryl"
+    },
+    "en": {
+      "youtubeId": "wuCnxQzn3qM",
+      "title": "6 easy steps on how to use AMOROLFINE (OFLOMIL)",
+      "channel": "GPI - Creative Marketing"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "fusidic-acid-cream": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "RTbNvdgQW0E",
+      "title": "fucidin cream uses | fucidin cream review | Fucidin cream how to use | fusidic acid cream",
+      "channel": "Ask Your Pharmacist Anjum"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "minoxidil-topical": {
+    "zh-TW": {
+      "youtubeId": "S5D-E2J3Zeg",
+      "title": "生髮水怎麼擦 才正確？落建生髮慕斯、生髮液、Minoxidil 直接示範給你看",
+      "channel": "【植髮專家】蔡宗樺醫師",
+      "notice": "影片同時展示生髮液和慕斯；這份單張是生髮液，請依單張量取每次 1 mL，不要照慕斯劑量使用。"
+    },
+    "en": {
+      "youtubeId": "vyLGFrjEw_8",
+      "title": "Using Minoxidil for Thinning Hair",
+      "channel": "NYU Langone Health"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
   }
 }
