@@ -1137,5 +1137,129 @@
     "ja": {
       "status": "no_suitable_video"
     }
+  },
+  "eyedrops": {
+    "zh-TW": {
+      "youtubeId": "56iH898dyBY",
+      "title": "【雙和藥你會】眼用製劑使用教學(Eye drop & Eye Ointment)｜眼藥水｜眼藥膏｜",
+      "channel": "衛生福利部雙和醫院藥劑部"
+    },
+    "en": {
+      "youtubeId": "dlOgAUHqBBc",
+      "title": "How to self-administer eye drops",
+      "channel": "King's College Hospital NHS Foundation Trust"
+    },
+    "id": {
+      "youtubeId": "aaDHKQDWGI8",
+      "title": "CARA PAKAI OBAT TETES MATA",
+      "channel": "RSUP Dr. Sardjito Yogyakarta"
+    },
+    "vi": {
+      "youtubeId": "qg8LQreqQlI",
+      "title": "Hướng dẫn sử dụng thuốc nhỏ mắt đúng cách",
+      "channel": "Bệnh viện Mắt Trung ương"
+    },
+    "th": {
+      "youtubeId": "TmlyLLbSiuQ",
+      "title": "การใช้ยาหยอดตาอย่างถูกวิธี",
+      "channel": "Siriraj Pr"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "X7WiPZzYfW8",
+      "title": "上手な目薬のさし方とは？目薬の使用期限は？【眼科医解説】",
+      "channel": "ちか眼科チャンネル"
+    }
+  },
+  "eye-drops-special": {
+    "zh-TW": {
+      "youtubeId": "56iH898dyBY",
+      "title": "【雙和藥你會】眼用製劑使用教學(Eye drop & Eye Ointment)｜眼藥水｜眼藥膏｜",
+      "channel": "衛生福利部雙和醫院藥劑部"
+    },
+    "en": {
+      "youtubeId": "dlOgAUHqBBc",
+      "title": "How to self-administer eye drops",
+      "channel": "King's College Hospital NHS Foundation Trust"
+    },
+    "id": {
+      "youtubeId": "aaDHKQDWGI8",
+      "title": "CARA PAKAI OBAT TETES MATA",
+      "channel": "RSUP Dr. Sardjito Yogyakarta"
+    },
+    "vi": {
+      "youtubeId": "qg8LQreqQlI",
+      "title": "Hướng dẫn sử dụng thuốc nhỏ mắt đúng cách",
+      "channel": "Bệnh viện Mắt Trung ương"
+    },
+    "th": {
+      "youtubeId": "TmlyLLbSiuQ",
+      "title": "การใช้ยาหยอดตาอย่างถูกวิธี",
+      "channel": "Siriraj Pr"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "X7WiPZzYfW8",
+      "title": "上手な目薬のさし方とは？目薬の使用期限は？【眼科医解説】",
+      "channel": "ちか眼科チャンネル"
+    }
+  },
+  "eye-ointment": {
+    "zh-TW": {
+      "youtubeId": "56iH898dyBY",
+      "title": "【雙和藥你會】眼用製劑使用教學(Eye drop & Eye Ointment)｜眼藥水｜眼藥膏｜",
+      "channel": "衛生福利部雙和醫院藥劑部"
+    },
+    "en": {
+      "youtubeId": "Qbo_u8Z8cck",
+      "title": "How To Apply Eye Ointment (Easy!)",
+      "channel": "Fraser Eye Care Center"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "ear-drops-special": {
+    "zh-TW": {
+      "youtubeId": "XxV5wcjXqLg",
+      "title": "耳滴劑使用方法",
+      "channel": "中國醫藥大學附設醫院多媒體雲端教育平台"
+    },
+    "en": {
+      "youtubeId": "b2yAbzxWjAs",
+      "title": "How to use ear drops | @DrEzgiOzcan NHS #shorts",
+      "channel": "NHS"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
   }
 }
