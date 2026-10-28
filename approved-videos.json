@@ -1261,5 +1261,305 @@
     "ja": {
       "status": "no_suitable_video"
     }
+  },
+  "foster-mdi": {
+    "zh-TW": {
+      "youtubeId": "PzIGFClfDy8",
+      "title": "肺舒坦定量吸入劑 (Foster)正確使用方法示範",
+      "channel": "台北慈濟醫院藥學部"
+    },
+    "en": {
+      "youtubeId": "MVbXUdV5mHU",
+      "title": "How to use a pMDI inhaler",
+      "channel": "Asthma + Lung UK",
+      "notice": "This video shows a general metered-dose inhaler and may include shaking. This medicine is a solution inhaler: follow the sheet, which does not require shaking."
+    },
+    "id": {
+      "youtubeId": "bwnxJuxQDGA",
+      "title": "Cara Penggunaan Inhaler #shorts #inhalers #how #howto #qna",
+      "channel": "apt. Rizki Ardiansyah",
+      "notice": "Video ini menunjukkan inhaler dosis terukur umum dan mungkin menyarankan pengocokan. Obat ini adalah inhaler larutan; ikuti lembar petunjuk, yang tidak memerlukan pengocokan."
+    },
+    "vi": {
+      "youtubeId": "qPCKEYC8ULc",
+      "title": "Hướng dẫn sử dụng bình xịt định liều (MDI)",
+      "channel": "Bệnh Viện Tim Hà Nội",
+      "notice": "Video minh họa bình xịt định liều thông thường và có thể hướng dẫn lắc bình. Thuốc này là dạng dung dịch; làm theo tờ hướng dẫn, không cần lắc."
+    },
+    "th": {
+      "youtubeId": "6jxrupDmhKY",
+      "title": "How to Use | วิธีการใช้ยาสูดพ่น \"Evohaler\" สำหรับผู้ป่วยโรคหอบ หืด [27/06/2018]",
+      "channel": "SIKARIN HOSPITAL (โรงพยาบาลศิครินทร์)",
+      "notice": "วิดีโอนี้สาธิตยาพ่นแบบกดทั่วไปและอาจมีขั้นตอนเขย่า ยานี้เป็นชนิดสารละลาย ให้ทำตามแผ่นคำแนะนำซึ่งไม่ต้องเขย่า"
+    },
+    "tl": {
+      "youtubeId": "0fO5Q5lTmog",
+      "title": "How to use a Metered Dose Inhaler (MDI) - Filipino",
+      "channel": "Breathe Freely Network / Philippine College of Chest Physicians",
+      "notice": "Ipinapakita ng video ang karaniwang metered-dose inhaler at maaaring may hakbang na pag-alog. Solusyon ang gamot na ito; sundin ang polyeto na hindi nangangailangan ng pag-alog."
+    },
+    "ja": {
+      "youtubeId": "IFtUPgQgrDo",
+      "title": "成人編吸入動画 エアゾール製剤（pMDI）／吸入方法【手順編】",
+      "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
+    }
+  },
+  "foster-nexthaler": {
+    "zh-TW": {
+      "youtubeId": "eEk3FRNe1Yk",
+      "title": "45.Foster nexthaler 肺舒坦耐舒樂乾粉吸入劑",
+      "channel": "PharmacyTPECH 臺北市立聯合醫院藥劑部"
+    },
+    "en": {
+      "youtubeId": "z85IYGGzcxM",
+      "title": "How to use a NEXThaler inhaler",
+      "channel": "Asthma + Lung UK"
+    },
+    "id": {
+      "youtubeId": "TBPT8qSZ9FY",
+      "title": "Pakai NEXThaler Cara Lanjut Atasi Sesak!",
+      "channel": "Rumah Sakit Santo Borromeus Official"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "seretide-50": {
+    "zh-TW": {
+      "youtubeId": "vyIxvvMu8mM",
+      "title": "Seretide Evohaler 使肺泰優氟吸入劑 用藥指導影片",
+      "channel": "國立陽明交通大學附設醫院"
+    },
+    "en": {
+      "youtubeId": "2i9_DelNqs4",
+      "title": "How to Use a Metered-Dose Inhaler without a Valved Holding Chamber (Spacer)",
+      "channel": "American Lung Association"
+    },
+    "id": {
+      "youtubeId": "bwnxJuxQDGA",
+      "title": "Cara Menggunakan Inhaler MDI (Metered Dose Inhaler)",
+      "channel": "apt. Rizki Ardiansyah"
+    },
+    "vi": {
+      "youtubeId": "qPCKEYC8ULc",
+      "title": "Hướng dẫn sử dụng bình xịt định liều (MDI)",
+      "channel": "Bệnh Viện Tim Hà Nội"
+    },
+    "th": {
+      "youtubeId": "6jxrupDmhKY",
+      "title": "How to Use | วิธีการใช้ยาสูดพ่น \"Evohaler\" สำหรับผู้ป่วยโรคหอบ หืด [27/06/2018]",
+      "channel": "SIKARIN HOSPITAL (โรงพยาบาลศิครินทร์)"
+    },
+    "tl": {
+      "youtubeId": "0fO5Q5lTmog",
+      "title": "How to use a Metered Dose Inhaler (MDI) - Filipino",
+      "channel": "Breathe Freely Network / Philippine College of Chest Physicians"
+    },
+    "ja": {
+      "youtubeId": "IFtUPgQgrDo",
+      "title": "成人編吸入動画 エアゾール製剤（pMDI）／吸入方法【手順編】",
+      "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
+    }
+  },
+  "seretide-250": {
+    "zh-TW": {
+      "youtubeId": "vyIxvvMu8mM",
+      "title": "Seretide Evohaler 使肺泰優氟吸入劑 用藥指導影片",
+      "channel": "國立陽明交通大學附設醫院"
+    },
+    "en": {
+      "youtubeId": "2i9_DelNqs4",
+      "title": "How to Use a Metered-Dose Inhaler without a Valved Holding Chamber (Spacer)",
+      "channel": "American Lung Association"
+    },
+    "id": {
+      "youtubeId": "bwnxJuxQDGA",
+      "title": "Cara Menggunakan Inhaler MDI (Metered Dose Inhaler)",
+      "channel": "apt. Rizki Ardiansyah"
+    },
+    "vi": {
+      "youtubeId": "qPCKEYC8ULc",
+      "title": "Hướng dẫn sử dụng bình xịt định liều (MDI)",
+      "channel": "Bệnh Viện Tim Hà Nội"
+    },
+    "th": {
+      "youtubeId": "6jxrupDmhKY",
+      "title": "How to Use | วิธีการใช้ยาสูดพ่น \"Evohaler\" สำหรับผู้ป่วยโรคหอบ หืด [27/06/2018]",
+      "channel": "SIKARIN HOSPITAL (โรงพยาบาลศิครินทร์)"
+    },
+    "tl": {
+      "youtubeId": "0fO5Q5lTmog",
+      "title": "How to use a Metered Dose Inhaler (MDI) - Filipino",
+      "channel": "Breathe Freely Network / Philippine College of Chest Physicians"
+    },
+    "ja": {
+      "youtubeId": "IFtUPgQgrDo",
+      "title": "成人編吸入動画 エアゾール製剤（pMDI）／吸入方法【手順編】",
+      "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
+    }
+  },
+  "trimbow": {
+    "zh-TW": {
+      "youtubeId": "2Rz4-xQHDvY",
+      "title": "【衛教影片】定量噴霧吸入劑的使用方式與注意事項 (Trimbow 喘寶)",
+      "channel": "新北市立聯合醫院藥劑科"
+    },
+    "en": {
+      "youtubeId": "XS3FOkItZVE",
+      "title": "喘寶定量吸入劑Trimbow使用技巧(英文版)_11204",
+      "channel": "Pharmacy Cgh (國泰綜合醫院藥劑科)",
+      "notice": "This video may show a spacer and shaking. For the direct-use solution inhaler on this sheet, follow the sheet's steps; use a spacer only if your clinician instructs you to."
+    },
+    "id": {
+      "youtubeId": "bwnxJuxQDGA",
+      "title": "Cara Menggunakan Inhaler MDI (Metered Dose Inhaler)",
+      "channel": "apt. Rizki Ardiansyah",
+      "notice": "Video ini menunjukkan inhaler dosis terukur umum dan mungkin menyarankan pengocokan. Obat ini adalah inhaler larutan; ikuti lembar petunjuk, yang tidak memerlukan pengocokan."
+    },
+    "vi": {
+      "youtubeId": "qPCKEYC8ULc",
+      "title": "Hướng dẫn sử dụng bình xịt định liều (MDI)",
+      "channel": "Bệnh Viện Tim Hà Nội",
+      "notice": "Video minh họa bình xịt định liều thông thường và có thể hướng dẫn lắc bình. Thuốc này là dạng dung dịch; làm theo tờ hướng dẫn, không cần lắc."
+    },
+    "th": {
+      "youtubeId": "6jxrupDmhKY",
+      "title": "How to Use | วิธีการใช้ยาสูดพ่น \"Evohaler\" สำหรับผู้ป่วยโรคหอบ หืด [27/06/2018]",
+      "channel": "SIKARIN HOSPITAL (โรงพยาบาลศิครินทร์)",
+      "notice": "วิดีโอนี้สาธิตยาพ่นแบบกดทั่วไปและอาจมีขั้นตอนเขย่า ยานี้เป็นชนิดสารละลาย ให้ทำตามแผ่นคำแนะนำซึ่งไม่ต้องเขย่า"
+    },
+    "tl": {
+      "youtubeId": "0fO5Q5lTmog",
+      "title": "How to use a Metered Dose Inhaler (MDI) - Filipino",
+      "channel": "Breathe Freely Network / Philippine College of Chest Physicians",
+      "notice": "Ipinapakita ng video ang karaniwang metered-dose inhaler at maaaring may hakbang na pag-alog. Solusyon ang gamot na ito; sundin ang polyeto na hindi nangangailangan ng pag-alog."
+    },
+    "ja": {
+      "youtubeId": "IFtUPgQgrDo",
+      "title": "成人編吸入動画 エアゾール製剤（pMDI）／吸入方法【手順編】",
+      "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
+    }
+  },
+  "relvar-ellipta": {
+    "zh-TW": {
+      "youtubeId": "4ScJKvoGDoQ",
+      "title": "潤娃易利達乾粉吸入劑使用衛教 Relvar Ellipta",
+      "channel": "羅東博愛醫院藥劑科"
+    },
+    "en": {
+      "youtubeId": "dsT2FQKDJZY",
+      "title": "Ellipta® Inhaler",
+      "channel": "COPD Foundation"
+    },
+    "id": {
+      "youtubeId": "u93hm__a0TU",
+      "title": "Cara Menggunakan Inhaler Ellipta",
+      "channel": "Mohamad Fahmi Alatas - Dokter Paru"
+    },
+    "vi": {
+      "youtubeId": "uQRY_CTLVQM",
+      "title": "Hướng dẫn sử dụng Trelegy ellipta điều trị Hen phế quản và Bệnh phổi tắc nghẽn mạn tính (COPD)",
+      "channel": "Khoa Dược - BV Thanh Nhàn",
+      "notice": "Video minh họa Trelegy Ellipta, là thuốc khác nhưng dùng cùng kiểu dụng cụ Ellipta. Hãy dùng Relvar đúng theo liều và hướng dẫn trên tờ này."
+    },
+    "th": {
+      "youtubeId": "ejODFKDs1sg",
+      "title": "สาธิตวิธีใช้ยาสูด Ellipta",
+      "channel": "รพ.เจริญกรุงประชารักษ์ สํานักการแพทย์"
+    },
+    "tl": {
+      "youtubeId": "S8aM6LUMGOM",
+      "title": "COPD Inhaler Techniques Video Filipino Ellipta",
+      "channel": "Health Literacy & Chronic Disease Management"
+    },
+    "ja": {
+      "youtubeId": "cvjDsc2jSmk",
+      "title": "レルベア／テリルジーの吸い方【静岡市　呼吸器内科　アレルギー科　草ヶ谷医院】",
+      "channel": "ドクターくさがやの呼吸器アレルギーnaviチャンネル"
+    }
+  },
+  "symbicort-turbuhaler": {
+    "zh-TW": {
+      "youtubeId": "_3kq6DMdqvU",
+      "title": "Symbicort Turbuhaler 吸必擴督保吸入器 用藥指導影片",
+      "channel": "國立陽明交通大學附設醫院"
+    },
+    "en": {
+      "youtubeId": "C9UOnS0n23o",
+      "title": "How to use a Turbohaler inhaler",
+      "channel": "Asthma + Lung UK"
+    },
+    "id": {
+      "youtubeId": "3z7tw2tNgDw",
+      "title": "Cara Menggunakan Turbuhaler (Symbicort Turbuhaler)",
+      "channel": "Farmasi RS Paru Respira Yogyakarta"
+    },
+    "vi": {
+      "youtubeId": "0AIZ-r1Le84",
+      "title": "Hướng dẫn sử dụng Turbuhaler | UMC | Bệnh viện Đại học Y Dược TPHCM",
+      "channel": "Giảng đường trực tuyến UMC (Bệnh viện Đại học Y Dược TP.HCM)"
+    },
+    "th": {
+      "youtubeId": "qM2Co6Pta60",
+      "title": "วิธีใช้ Turbuhaler ที่ถูกต้อง | สอนใช้ยาสูดพ่นชนิดผงแห้ง (รพ.มหาชัย)",
+      "channel": "Mahachai Hospital (โรงพยาบาลมหาชัย)"
+    },
+    "tl": {
+      "youtubeId": "RaOc5lbqgug",
+      "title": "COPD Inhaler Techniques Video Filipino Turbuhaler",
+      "channel": "Health Literacy & Chronic Disease Management"
+    },
+    "ja": {
+      "youtubeId": "nLBaR9ouMOA",
+      "title": "成人編吸入動画　タービュヘイラー（シムビコート、オーキシス）／吸入方法【手順編】",
+      "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
+    }
+  },
+  "symbicort-rapihaler": {
+    "zh-TW": {
+      "youtubeId": "1hTsS_cMY9k",
+      "title": "【雙和藥你會】吸必擴氣化噴霧劑(Symbicort Rapihaler)",
+      "channel": "衛生福利部雙和醫院藥劑部"
+    },
+    "en": {
+      "youtubeId": "s2ZmA-88RdM",
+      "title": "Inhaler Device Technique: Rapihaler",
+      "channel": "Lung Foundation Australia"
+    },
+    "id": {
+      "youtubeId": "TSPzqchuSnU",
+      "title": "Edukasi cara pemakaian obat inhaler diskus, inhaler rapihaler dan inhaler resprimat",
+      "channel": "Humas Rsud Klungkung",
+      "notice": "Video ini menunjukkan beberapa jenis inhaler. Perhatikan bagian Rapihaler dan ikuti petunjuk Symbicort pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "Bc5PRe-pEBQ",
+      "title": "💪💪💪HƯỚNG DẪN SỬ DỤNG DỤNG CỤ HÍT SỐ 8 - SYMBICORT RAPIHALER💪💪💪",
+      "channel": "Bệnh viện Phạm Ngọc Thạch"
+    },
+    "th": {
+      "youtubeId": "hTCJZ9ME0-A",
+      "title": "สาธิตวิธีใช้ยาสูด Rapihaler",
+      "channel": "รพ.เจริญกรุงประชารักษ์ สํานักการแพทย์"
+    },
+    "tl": {
+      "youtubeId": "0fO5Q5lTmog",
+      "title": "How to use a Metered Dose Inhaler (MDI) - Filipino",
+      "channel": "Breathe Freely Network / Philippine College of Chest Physicians"
+    },
+    "ja": {
+      "youtubeId": "IFtUPgQgrDo",
+      "title": "成人編吸入動画 エアゾール製剤（pMDI）／吸入方法【手順編】",
+      "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
+    }
   }
 }

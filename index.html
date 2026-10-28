@@ -28891,6 +28891,30 @@ if (earDrops?.steps?.[4]) {
   );
 }
 
+// Day-07 inhaler illustrations are shared by all seven sheet languages.
+// Each QR code opens the approved video for the language selected on the sheet.
+const DAY07_INHALER_IMAGE_COUNTS = {
+  "foster-mdi": 6,
+  "foster-nexthaler": 7,
+  "seretide-50": 6,
+  "seretide-250": 6,
+  trimbow: 6,
+  "relvar-ellipta": 7,
+  "symbicort-turbuhaler": 7,
+  "symbicort-rapihaler": 6
+};
+Object.entries(DAY07_INHALER_IMAGE_COUNTS).forEach(([id, count]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.steps?.length !== count) {
+    console.error(`Day-07 image count mismatch: ${id}`);
+    return;
+  }
+  med.qrUrl = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+  med.steps.forEach((step, index) => {
+    step.illustration = `assets/img/${id}/step-${String(index).padStart(2, "0")}.png`;
+  });
+});
+
 // ============================================================
 // STATE
 // ============================================================
