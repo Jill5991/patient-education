@@ -1561,5 +1561,178 @@
       "title": "成人編吸入動画 エアゾール製剤（pMDI）／吸入方法【手順編】",
       "channel": "環境再生保全機構公式動画チャンネル (ERCA)"
     }
+  },
+  "kocel": {
+    "zh-TW": {
+      "youtubeId": "bhLp6MzzQQE",
+      "title": "洋車前子 Psyllium 是什麼？ 洋車前子３大健康好處 3類人慎吃洋車前子 | 營養師媽媽Priscilla (粵語中英文字幕EngSub)",
+      "channel": "營養師媽媽Priscilla",
+      "notice": "影片以粵語講解，請開啟中文字幕。康賜爾每包的沖泡水量與喝水步驟請以本單張為準。"
+    },
+    "en": {
+      "youtubeId": "FaC7qr_AmHk",
+      "title": "How to Take Psyllium Husks",
+      "channel": "Swanson Vitamins"
+    },
+    "id": {
+      "youtubeId": "nQqg1jvNGBg",
+      "title": "Psyllium husk tinggi serat kaya manfaat",
+      "channel": "Arekha"
+    },
+    "vi": {
+      "youtubeId": "DoBTWcjRZQo",
+      "title": "Vỏ hạt mã đề Psyllium (Ovata) điều trị hiệu quả táo bón và hội chứng ruột kích thích IBS",
+      "channel": "Tam Le"
+    },
+    "th": {
+      "youtubeId": "rY9ZFtGBtP4",
+      "title": "Psyllium husk ข้อดีและข้อเสีย #ไม่ได้วิเศษอย่างที่โฆษณา",
+      "channel": "Doctor Tany"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "GfMJRooH4d0",
+      "title": "オオバコダイエットとは #オオバコ #サイリウム #オオバコレシピ #食物繊維",
+      "channel": "井藤漢方製薬 公式チャンネル",
+      "notice": "動画は一般的なサイリウム製品の説明です。康賜爾の1包あたりの水量と飲み方は、このシートに従ってください。"
+    }
+  },
+  "chalian-kalimate": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "EtMEeSOjKUo",
+      "title": "【一般の方向け】カリメート散/ポリスチレンスルホン酸カルシウムについての解説【約３分で分かる】【みんなのお薬時間】【聞き流し】",
+      "channel": "いなかの薬剤師"
+    }
+  },
+  "acute-gi-care-kit": {
+    "zh-TW": {
+      "youtubeId": "kSL6twqJpRQ",
+      "title": "腸胃炎自救術！正確居家處理SOP，4種危急情況速就醫︱李宜霖 胃腸肝膽科醫師【早安健康X健康大頭條】",
+      "channel": "早安健康"
+    },
+    "en": {
+      "youtubeId": "xEPqpS-0P-E",
+      "title": "How To Treat Stomach Viruses in Kids 🤢 | Dr. Yoshi’s Tips for Fast, Safe Recovery",
+      "channel": "Doctor Yoshi"
+    },
+    "id": {
+      "youtubeId": "BjmXBHIgWuQ",
+      "title": "Step by Step Menangani Anak Muntah dan Diare - dr. Radhian Amandito, Sp. A",
+      "channel": "RS Pondok Indah"
+    },
+    "vi": {
+      "youtubeId": "TQ2QetxEuHk",
+      "title": "Hướng dẫn pha và uống Oresol đúng cách | Dược sỹ BVĐK Gia Lâm x Nhóm Sinh viên CĐ Y tế HN",
+      "channel": "Khoa Dược BVGL"
+    },
+    "th": {
+      "youtubeId": "6PkTcs0c4Hc",
+      "title": "(คลิป) รู้จักผงเกลือแร่ ORS สำหรับผู้มีอาการท้องเสียและใช้อย่างไร ฟังคำตอบจากเภสัชกร",
+      "channel": "ทุกเรื่องมีเหตุผล"
+    },
+    "tl": {
+      "youtubeId": "cVrLQtLq14I",
+      "title": "ORS | Oral Rehydration Solution #shorts #dehydration #diarrhea #lbm #pagtatae #filipino #tagalog",
+      "channel": "Pedia Doc Mike",
+      "notice": "Ang video ay nakatuon sa paghahanda ng pansamantalang inuming asukal at asin. Sundin ang eksaktong sukat at iba pang babala sa lahat ng pahina ng gabay."
+    },
+    "ja": {
+      "youtubeId": "5Ih36ShClqU",
+      "title": "【胃腸炎の水分補給】白湯やお茶で十分？経口補水液が必要？悪化を防ぐ3つの危険度チェックと飲み方",
+      "channel": "【上鶴間内科クリニック】「続けられなきゃ意味がない」"
+    }
+  },
+  "pediatric-oral-admin": {
+    "zh-TW": {
+      "youtubeId": "tH7-XRk8FIc",
+      "title": "【藥師說藥】 兒童餵藥技巧全攻略 (兒童用藥安全系列-1)",
+      "channel": "景康藥學基金會"
+    },
+    "en": {
+      "youtubeId": "Q0ewm7bgtTA",
+      "title": "How to Give Your Child Liquid Medicines / Comment donner des médicaments liquides à votre enfant",
+      "channel": "AboutKidsHealth - The Hospital for Sick Children"
+    },
+    "id": {
+      "youtubeId": "0fUhuKkVuIM",
+      "title": "Pemberian obat syrup/drop tepat dosis !!!",
+      "channel": "Sinar Perawat"
+    },
+    "vi": {
+      "youtubeId": "B8dAeCJBrok",
+      "title": "Có nên cho BÉ sử dụng SIRO HO? Hướng dẫn uống SIRO HO giúp con NHANH KHỎI | DS Trương Minh Đạt",
+      "channel": "Trương Minh Đạt - Trung tâm sức khỏe Cenica",
+      "notice": "Video nói về siro ho cho trẻ. Đây không phải hướng dẫn cho mọi loại thuốc uống; hãy theo tên thuốc và liều trên nhãn, dùng dụng cụ đo phù hợp và hỏi dược sĩ khi chưa rõ."
+    },
+    "th": {
+      "youtubeId": "C3UrjN2EfsU",
+      "title": "การป้อนยาเด็ก ด้วยไซริ้งค์ อย่างถูกต้อง #เภสัชบิว #BiwPharZy",
+      "channel": "เภสัชบิว BiwPharZy"
+    },
+    "tl": {
+      "youtubeId": "D5s4IFR_V9s",
+      "title": "10 TECHNIQUES PARA MAKAINOM NG GAMOT SI BABY (0-3 years old) by Dr. Pedia Mom",
+      "channel": "Dr. Pedia Mom"
+    },
+    "ja": {
+      "youtubeId": "y9NCg0NiIjc",
+      "title": "ゆざわ子育て応援チャンネル～子どものシロップ薬の飲ませ方編～",
+      "channel": "秋田県湯沢市"
+    }
+  },
+  "no-crush-evidence": {
+    "zh-TW": {
+      "youtubeId": "xGQMHVkznsQ",
+      "title": "【藥丸磨粉剝半】藥品磨成藥粉或剝成一半有危險 治病變害命 藥師揭秘 不能隨意磨成藥粉或剝成一半的原因｜大天使TV",
+      "channel": "大天使 Peggie"
+    },
+    "en": {
+      "youtubeId": "1O-_4lQjKEI",
+      "title": "Is It OK to Crush Pills?",
+      "channel": "Patient Safety Authority"
+    },
+    "id": {
+      "youtubeId": "HtkHYNX9rAs",
+      "title": "Bahaya Obat Digerus / Dipatahkan | Tips Minum Obat yang Benar",
+      "channel": "SB30Health"
+    },
+    "vi": {
+      "youtubeId": "jrHDgqDQWys",
+      "title": "Dược sĩ lưu ý các dạng thuốc viên không được nhai, nghiền, bẻ - Ds.Hằng Eduphar",
+      "channel": "Dược Sĩ Hằng Eduphar- Official"
+    },
+    "th": {
+      "youtubeId": "1rrq6Pyr1_U",
+      "title": "ยาบางตัว ห้ามแบ่ง บด เคี้ยว เพราะการออกฤทธิ์อาจเปลี่ยนไป #เภสัชอ้อมใส่ใจผู้สูงอายุ #ผู้สูงอายุ #ยา",
+      "channel": "เภสัชอ้อมใส่ใจผู้สูงอายุ"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "wKdClyLi7WU",
+      "title": "錠剤を噛む・カプセルを壊すと、効果は変わる？",
+      "channel": "マッスル論文チャンネル"
+    }
   }
 }
