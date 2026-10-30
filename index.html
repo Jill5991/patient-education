@@ -28952,6 +28952,26 @@ Object.entries(DAY08_ORAL_IMAGE_COUNTS).forEach(([id, pages]) => {
   });
 });
 
+// Day-09 topical medication sheets share reviewed illustrations across all
+// seven languages. Each QR code opens the selected language's video page.
+const DAY09_TOPICAL_IDS = [
+  "topical-steroids", "vimax-foaming-solution", "acyclovir-cream",
+  "azelaic-acid", "brimonidine-gel", "calcipotriol-ointment",
+  "calcitriol-ointment", "clindamycin-topical",
+  "clotrimazole-topical-cream", "doxepin-cream"
+];
+DAY09_TOPICAL_IDS.forEach(id => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.steps?.length !== 5) {
+    console.error(`Day-09 medication or step count mismatch: ${id}`);
+    return;
+  }
+  med.qrUrl = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+  med.steps.forEach((step, index) => {
+    step.illustration = `assets/img/${id}/step-${String(index).padStart(2, "0")}.png`;
+  });
+});
+
 // ============================================================
 // STATE
 // ============================================================
