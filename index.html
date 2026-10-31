@@ -28972,6 +28972,32 @@ DAY09_TOPICAL_IDS.forEach(id => {
   });
 });
 
+// Day-10 topical sheets use the reviewed batch illustrations. Silver
+// sulfadiazine has six steps; the other nine sheets have five each.
+const DAY10_TOPICAL_IMAGE_COUNTS = {
+  "silver-sulfadiazine-cream": 6,
+  "undecenoate-powder": 5,
+  "undecenoate-cream": 5,
+  "tretinoin-gel": 5,
+  "tacrolimus-ointment": 5,
+  "metronidazole-topical": 5,
+  "ketoconazole-shampoo": 5,
+  "imiquimod-warts": 5,
+  "imiquimod-ak": 5,
+  "econazole-cream": 5
+};
+Object.entries(DAY10_TOPICAL_IMAGE_COUNTS).forEach(([id, count]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.steps?.length !== count) {
+    console.error(`Day-10 medication or step count mismatch: ${id}`);
+    return;
+  }
+  med.qrUrl = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+  med.steps.forEach((step, index) => {
+    step.illustration = `assets/img/${id}/step-${String(index).padStart(2, "0")}.png`;
+  });
+});
+
 // ============================================================
 // STATE
 // ============================================================
