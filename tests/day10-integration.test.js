@@ -46,8 +46,9 @@ test("day-10 ten sheets reference 51 valid illustrations in step order", () => {
       assert.equal(med.steps[i].illustration, expected);
       const image = fs.readFileSync(path.join(root, expected));
       assert.equal(image.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", expected);
-      assert.equal(image.readUInt32BE(16), 1200, expected);
-      assert.equal(image.readUInt32BE(20), 896, expected);
+      const redrawn = id === "silver-sulfadiazine-cream" && i >= 2 && i <= 4;
+      assert.equal(image.readUInt32BE(16), redrawn ? 1448 : 1200, expected);
+      assert.equal(image.readUInt32BE(20), redrawn ? 1086 : 896, expected);
       total++;
     }
   }
