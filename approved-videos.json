@@ -2741,5 +2741,439 @@
       "channel": "メンズNs【分かりやすい医学解説チャンネル】",
       "notice": "動画には硝酸イソソルビドの貼付剤も登場します。この用紙はブプレノルフィンの7日間貼付剤です。ノルスパンテープの説明部分を確認し、交換時期はこの用紙に従ってください。"
     }
+  },
+  "alyssa": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 24+4 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 24+4; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 24+4; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 24+4 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 24+4 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 24+4 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "diane35": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 21 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 21; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "youtubeId": "bJRRszBMEJQ",
+      "title": "Cara Minum Pil KB DIANE,Habis PiL 21 apkh  berhenti /lanjut pil yg br/nunggu haid? #pilkb #diane",
+      "channel": "Bidan Keluarga Official",
+      "notice": "Video umum. Kemasan Anda 21; ikuti urutan dan petunjuk bila lupa pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 21; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 21 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 21 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 21 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "gynera-meliane": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 21 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 21; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "youtubeId": "bJRRszBMEJQ",
+      "title": "Cara Minum Pil KB DIANE,Habis PiL 21 apkh  berhenti /lanjut pil yg br/nunggu haid? #pilkb #diane",
+      "channel": "Bidan Keluarga Official",
+      "notice": "Video umum. Kemasan Anda 21; ikuti urutan dan petunjuk bila lupa pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 21; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 21 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 21 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 21 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "loestrin": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 24+4 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 24+4; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 24+4; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 24+4 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 24+4 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 24+4 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "marvelon-21": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 21 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 21; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "youtubeId": "bJRRszBMEJQ",
+      "title": "Cara Minum Pil KB DIANE,Habis PiL 21 apkh  berhenti /lanjut pil yg br/nunggu haid? #pilkb #diane",
+      "channel": "Bidan Keluarga Official",
+      "notice": "Video umum. Kemasan Anda 21; ikuti urutan dan petunjuk bila lupa pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 21; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 21 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 21 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 21 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "marvelon-28": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 21+7 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 21+7; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "youtubeId": "to-apPsgNsw",
+      "title": "Tips cara minum Pil KB yang benar - Medikacare",
+      "channel": "Medikacare",
+      "notice": "Video umum. Kemasan Anda 21+7; ikuti urutan dan petunjuk bila lupa pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 21+7; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 21+7 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 21+7 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 21+7 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "mercilon-21": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 21 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 21; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "youtubeId": "bJRRszBMEJQ",
+      "title": "Cara Minum Pil KB DIANE,Habis PiL 21 apkh  berhenti /lanjut pil yg br/nunggu haid? #pilkb #diane",
+      "channel": "Bidan Keluarga Official",
+      "notice": "Video umum. Kemasan Anda 21; ikuti urutan dan petunjuk bila lupa pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 21; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 21 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 21 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 21 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "mercilon-28": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 21+7 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 21+7; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "youtubeId": "to-apPsgNsw",
+      "title": "Tips cara minum Pil KB yang benar - Medikacare",
+      "channel": "Medikacare",
+      "notice": "Video umum. Kemasan Anda 21+7; ikuti urutan dan petunjuk bila lupa pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 21+7; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 21+7 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 21+7 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 21+7 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "winstop-28": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 21+7 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 21+7; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "youtubeId": "to-apPsgNsw",
+      "title": "Tips cara minum Pil KB yang benar - Medikacare",
+      "channel": "Medikacare",
+      "notice": "Video umum. Kemasan Anda 21+7; ikuti urutan dan petunjuk bila lupa pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 21+7; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 21+7 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 21+7 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 21+7 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
+  },
+  "winstop-30": {
+    "zh-TW": {
+      "youtubeId": "9jWwYoxqdVk",
+      "title": "21顆還是28顆?事後避孕藥到底該吃幾顆？｜ 母親節特別企劃｜蕭詠嫻醫師-女人的好朋友",
+      "channel": "蕭詠嫻醫師 — 女人的好朋友",
+      "notice": "影片標題誤寫「事後」；內容討論事前避孕藥。本單張為 21+7 包裝，請依單張的服藥及漏服步驟。"
+    },
+    "en": {
+      "youtubeId": "NfE9jgsi_Lw",
+      "title": "Understanding how to Manage a Missed Combined Oral Contraceptive Pill 💊",
+      "channel": "OBG by Dr Raina",
+      "notice": "General combined-pill video. Your pack is 21+7; follow this sheet for tablet order and missed pills."
+    },
+    "id": {
+      "youtubeId": "to-apPsgNsw",
+      "title": "Tips cara minum Pil KB yang benar - Medikacare",
+      "channel": "Medikacare",
+      "notice": "Video umum. Kemasan Anda 21+7; ikuti urutan dan petunjuk bila lupa pada lembar ini."
+    },
+    "vi": {
+      "youtubeId": "ZOnJLZOZrUE",
+      "title": "Cuối cùng bạn đã có thể BIẾT CÁCH UỐNG THUỐC TRÁNH THAI HÀNG NGÀY 28 viên | Bác Sĩ Hạnh",
+      "channel": "Bác Sĩ Hạnh Official",
+      "notice": "Video hướng dẫn chung. Vỉ thuốc của bạn là loại 21+7; hãy theo thứ tự và cách xử trí quên thuốc trong tờ này."
+    },
+    "th": {
+      "youtubeId": "SkgDBmw4NF4",
+      "title": "3 ขั้นตอนกินยาเม็ดคุมกำเนิดชนิดฮอร์โมนรวมอย่างไรให้ได้ผล | พบหมอมหิดล",
+      "channel": "Mahidol Channel มหิดล แชนแนล",
+      "notice": "วิดีโอเป็นคำแนะนำทั่วไป แผงยาของคุณเป็นแบบ 21+7 ให้ทำตามลำดับและวิธีแก้เมื่อลืมยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "QQu30cSRKjs",
+      "title": "Paano ang Pag-inom ng Contraceptive Pills?  vlog 240",
+      "channel": "Dr Carol Taruc",
+      "notice": "Pangkalahatang video ito. 21+7 ang pack mo; sundin ang ayos at gabay sa nakalimutang tableta rito."
+    },
+    "ja": {
+      "youtubeId": "lPX5ZFiHfmw",
+      "title": "【低用量ピルについて】種類・選び方・副作用・飲み方について",
+      "channel": "吉祥寺まいにちクリニック",
+      "notice": "一般的な動画です。この用紙は 21+7 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
+    }
   }
 }
