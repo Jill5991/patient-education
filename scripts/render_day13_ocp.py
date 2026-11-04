@@ -127,7 +127,7 @@ def draw_step(draw, step, active, inactive):
             badge(draw, 925, 690, f"{active}+{inactive}")
     elif step == 3:
         if is21:
-            days(draw, 95, 320, 7, crossed=True)
+            days(draw, 95, 320, 7)
             arrow(draw, 560, 425, 680, 425)
             pack(draw, 715, 250, active, 0, .87)
             badge(draw, 900, 650, 8)
