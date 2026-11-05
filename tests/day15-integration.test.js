@@ -85,6 +85,6 @@ test("day-15 needle attachment and rotation directions match Taiwan guidance in 
     assert.match(med.pages[1].steps[1].note["zh-TW"], /約 7 天後換下一區塊/);
     assert.match(med.pages[1].steps[2].note["zh-TW"], /前外側上 1\/3/);
     assert.match(med.pages[1].steps[3].action["zh-TW"], /約隔 1 指寬/);
-    assert.match(med.pages[1].steps[3].note["zh-TW"], /手指寬度，不是長度/);
+    assert.match(med.pages[1].steps[3].note["zh-TW"], /1\.5–2 公分/);
   }
 });

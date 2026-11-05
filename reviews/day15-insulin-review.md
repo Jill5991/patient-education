@@ -42,3 +42,7 @@ Google Drive 各藥資料夾有較晚產生的新版 `records.json` 與 PNG，�
 4. 部位範圍：B 面的全身總覽與上臂／大腿局部圖同步縮小著色區，避免把整條大腿或上臂都誤畫成可注射範圍。
 
 這些圖是比例化教學示意，針頭與筆身的實際外觀仍須以當下使用的產品仿單為準。
+
+## 間隔圖簡化（後續修正）
+
+依使用者要求，B 面「相鄰兩針間隔」圖移除所有手及手指，只保留兩個注射點、雙向箭頭與跨語言的 `≈ 1.5–2 cm` 標示。七語說明同步寫明成人一指寬約 1.5–2 公分，並提醒每次換點。這是近似值，不是固定的人體尺寸。距離建議另參照 [FIT Canada 注射部位輪替建議](https://fit4diabetes.com/wp-content/uploads/2024/02/FIT_Recommendations_2020-ENGLISH.pdf)及 [Diabetes Québec 注射衛教](https://www.diabete.qc.ca/en/diabetes/diabetes-management/insulin/all-about-injections/)；兩者均將一指寬表達為約 1–2 公分。
