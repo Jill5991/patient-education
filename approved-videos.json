@@ -3348,5 +3348,225 @@
       "channel": "吉祥寺まいにちクリニック",
       "notice": "一般的な動画です。この用紙は 24+4 型です。錠剤の順番と飲み忘れ時の対応は用紙に従ってください。"
     }
+  },
+  "novorapid": {
+    "zh-TW": {
+      "youtubeId": "69nMfT70Asg",
+      "title": "【衛教】胰島素筆型注射器正確操作流程 國語版",
+      "channel": "大林慈濟醫院-健康OK棒",
+      "notice": "影片示範一般胰島素筆；請以本單張的藥品名稱、混勻方式、排氣單位及按住秒數為準。注射前核對手上的筆與標籤。"
+    },
+    "en": {
+      "youtubeId": "_fCqEIn7ccA",
+      "title": "How to Use an Insulin Pen - Mayo Clinic Patient Education",
+      "channel": "Mayo Clinic",
+      "notice": "This shows a general insulin pen. Follow this sheet for your pen's name, mixing, priming dose, and hold time; check the label before injecting."
+    },
+    "id": {
+      "youtubeId": "9batH1Ek8-k",
+      "title": "Cara Suntik Insulin dengan Menggunakan Insulin Pen",
+      "channel": "Alomedika",
+      "notice": "Video ini menunjukkan pena insulin umum. Ikuti lembar ini untuk nama obat, pencampuran, dosis uji aliran, dan waktu menahan tombol; periksa label sebelum menyuntik."
+    },
+    "vi": {
+      "youtubeId": "u5PhTN2VT14",
+      "title": "Hướng dẫn sử dụng bút tiêm Insulin điều trị tiểu đường",
+      "channel": "Bệnh viện ĐKQT Vinmec",
+      "notice": "Video minh họa bút insulin thông thường. Hãy theo tờ hướng dẫn này về tên thuốc, cách trộn, liều kiểm tra và thời gian giữ nút; kiểm tra nhãn trước khi tiêm."
+    },
+    "th": {
+      "youtubeId": "W_fRodT5VT4",
+      "title": "How to Use | วิธีการใช้ยาอินซูลิน (แบบปากกา) สำหรับผู้ป่วยเบาหวาน",
+      "channel": "SIKARIN HOSPITAL",
+      "notice": "วิดีโอนี้สาธิตปากกาอินซูลินทั่วไป ให้ยึดชื่อยา วิธีผสม ขนาดทดสอบ และเวลาการกดค้างตามเอกสารนี้ และตรวจฉลากก่อนฉีด"
+    },
+    "tl": {
+      "youtubeId": "FHVHjCGfWts",
+      "title": "Injecting Insulin with a Pen (TAGALOG version) | PCEDM",
+      "channel": "PCEDM - Philippine Endocrinologists",
+      "notice": "Pangkalahatang insulin pen ang nasa video. Sundin ang gabay na ito para sa pangalan ng gamot, paghahalo, flow-check dose, at tagal ng pagpindot; tingnan ang label bago magturok."
+    },
+    "ja": {
+      "youtubeId": "PgKAsIhuNoY",
+      "title": "インスリン⾃⼰注射の指導 ／ 監修 杏林大学",
+      "channel": "看護roo!(カンゴルー)公式",
+      "notice": "動画は一般的なインスリンペンの実演です。薬の名前、混和、空打ちの単位、押し続ける秒数はこのシートに従い、注射前にラベルを確認してください。"
+    }
+  },
+  "apidra": {
+    "zh-TW": {
+      "youtubeId": "69nMfT70Asg",
+      "title": "【衛教】胰島素筆型注射器正確操作流程 國語版",
+      "channel": "大林慈濟醫院-健康OK棒",
+      "notice": "影片示範一般胰島素筆；請以本單張的藥品名稱、混勻方式、排氣單位及按住秒數為準。注射前核對手上的筆與標籤。"
+    },
+    "en": {
+      "youtubeId": "_fCqEIn7ccA",
+      "title": "How to Use an Insulin Pen - Mayo Clinic Patient Education",
+      "channel": "Mayo Clinic",
+      "notice": "This shows a general insulin pen. Follow this sheet for your pen's name, mixing, priming dose, and hold time; check the label before injecting."
+    },
+    "id": {
+      "youtubeId": "9batH1Ek8-k",
+      "title": "Cara Suntik Insulin dengan Menggunakan Insulin Pen",
+      "channel": "Alomedika",
+      "notice": "Video ini menunjukkan pena insulin umum. Ikuti lembar ini untuk nama obat, pencampuran, dosis uji aliran, dan waktu menahan tombol; periksa label sebelum menyuntik."
+    },
+    "vi": {
+      "youtubeId": "u5PhTN2VT14",
+      "title": "Hướng dẫn sử dụng bút tiêm Insulin điều trị tiểu đường",
+      "channel": "Bệnh viện ĐKQT Vinmec",
+      "notice": "Video minh họa bút insulin thông thường. Hãy theo tờ hướng dẫn này về tên thuốc, cách trộn, liều kiểm tra và thời gian giữ nút; kiểm tra nhãn trước khi tiêm."
+    },
+    "th": {
+      "youtubeId": "W_fRodT5VT4",
+      "title": "How to Use | วิธีการใช้ยาอินซูลิน (แบบปากกา) สำหรับผู้ป่วยเบาหวาน",
+      "channel": "SIKARIN HOSPITAL",
+      "notice": "วิดีโอนี้สาธิตปากกาอินซูลินทั่วไป ให้ยึดชื่อยา วิธีผสม ขนาดทดสอบ และเวลาการกดค้างตามเอกสารนี้ และตรวจฉลากก่อนฉีด"
+    },
+    "tl": {
+      "youtubeId": "FHVHjCGfWts",
+      "title": "Injecting Insulin with a Pen (TAGALOG version) | PCEDM",
+      "channel": "PCEDM - Philippine Endocrinologists",
+      "notice": "Pangkalahatang insulin pen ang nasa video. Sundin ang gabay na ito para sa pangalan ng gamot, paghahalo, flow-check dose, at tagal ng pagpindot; tingnan ang label bago magturok."
+    },
+    "ja": {
+      "youtubeId": "PgKAsIhuNoY",
+      "title": "インスリン⾃⼰注射の指導 ／ 監修 杏林大学",
+      "channel": "看護roo!(カンゴルー)公式",
+      "notice": "動画は一般的なインスリンペンの実演です。薬の名前、混和、空打ちの単位、押し続ける秒数はこのシートに従い、注射前にラベルを確認してください。"
+    }
+  },
+  "novomix-30": {
+    "zh-TW": {
+      "youtubeId": "69nMfT70Asg",
+      "title": "【衛教】胰島素筆型注射器正確操作流程 國語版",
+      "channel": "大林慈濟醫院-健康OK棒",
+      "notice": "影片示範一般胰島素筆；請以本單張的藥品名稱、混勻方式、排氣單位及按住秒數為準。注射前核對手上的筆與標籤。"
+    },
+    "en": {
+      "youtubeId": "_fCqEIn7ccA",
+      "title": "How to Use an Insulin Pen - Mayo Clinic Patient Education",
+      "channel": "Mayo Clinic",
+      "notice": "This shows a general insulin pen. Follow this sheet for your pen's name, mixing, priming dose, and hold time; check the label before injecting."
+    },
+    "id": {
+      "youtubeId": "9batH1Ek8-k",
+      "title": "Cara Suntik Insulin dengan Menggunakan Insulin Pen",
+      "channel": "Alomedika",
+      "notice": "Video ini menunjukkan pena insulin umum. Ikuti lembar ini untuk nama obat, pencampuran, dosis uji aliran, dan waktu menahan tombol; periksa label sebelum menyuntik."
+    },
+    "vi": {
+      "youtubeId": "u5PhTN2VT14",
+      "title": "Hướng dẫn sử dụng bút tiêm Insulin điều trị tiểu đường",
+      "channel": "Bệnh viện ĐKQT Vinmec",
+      "notice": "Video minh họa bút insulin thông thường. Hãy theo tờ hướng dẫn này về tên thuốc, cách trộn, liều kiểm tra và thời gian giữ nút; kiểm tra nhãn trước khi tiêm."
+    },
+    "th": {
+      "youtubeId": "W_fRodT5VT4",
+      "title": "How to Use | วิธีการใช้ยาอินซูลิน (แบบปากกา) สำหรับผู้ป่วยเบาหวาน",
+      "channel": "SIKARIN HOSPITAL",
+      "notice": "วิดีโอนี้สาธิตปากกาอินซูลินทั่วไป ให้ยึดชื่อยา วิธีผสม ขนาดทดสอบ และเวลาการกดค้างตามเอกสารนี้ และตรวจฉลากก่อนฉีด"
+    },
+    "tl": {
+      "youtubeId": "FHVHjCGfWts",
+      "title": "Injecting Insulin with a Pen (TAGALOG version) | PCEDM",
+      "channel": "PCEDM - Philippine Endocrinologists",
+      "notice": "Pangkalahatang insulin pen ang nasa video. Sundin ang gabay na ito para sa pangalan ng gamot, paghahalo, flow-check dose, at tagal ng pagpindot; tingnan ang label bago magturok."
+    },
+    "ja": {
+      "youtubeId": "PgKAsIhuNoY",
+      "title": "インスリン⾃⼰注射の指導 ／ 監修 杏林大学",
+      "channel": "看護roo!(カンゴルー)公式",
+      "notice": "動画は一般的なインスリンペンの実演です。薬の名前、混和、空打ちの単位、押し続ける秒数はこのシートに従い、注射前にラベルを確認してください。"
+    }
+  },
+  "humalog-mix50": {
+    "zh-TW": {
+      "youtubeId": "69nMfT70Asg",
+      "title": "【衛教】胰島素筆型注射器正確操作流程 國語版",
+      "channel": "大林慈濟醫院-健康OK棒",
+      "notice": "影片示範一般胰島素筆；請以本單張的藥品名稱、混勻方式、排氣單位及按住秒數為準。注射前核對手上的筆與標籤。"
+    },
+    "en": {
+      "youtubeId": "_fCqEIn7ccA",
+      "title": "How to Use an Insulin Pen - Mayo Clinic Patient Education",
+      "channel": "Mayo Clinic",
+      "notice": "This shows a general insulin pen. Follow this sheet for your pen's name, mixing, priming dose, and hold time; check the label before injecting."
+    },
+    "id": {
+      "youtubeId": "9batH1Ek8-k",
+      "title": "Cara Suntik Insulin dengan Menggunakan Insulin Pen",
+      "channel": "Alomedika",
+      "notice": "Video ini menunjukkan pena insulin umum. Ikuti lembar ini untuk nama obat, pencampuran, dosis uji aliran, dan waktu menahan tombol; periksa label sebelum menyuntik."
+    },
+    "vi": {
+      "youtubeId": "u5PhTN2VT14",
+      "title": "Hướng dẫn sử dụng bút tiêm Insulin điều trị tiểu đường",
+      "channel": "Bệnh viện ĐKQT Vinmec",
+      "notice": "Video minh họa bút insulin thông thường. Hãy theo tờ hướng dẫn này về tên thuốc, cách trộn, liều kiểm tra và thời gian giữ nút; kiểm tra nhãn trước khi tiêm."
+    },
+    "th": {
+      "youtubeId": "W_fRodT5VT4",
+      "title": "How to Use | วิธีการใช้ยาอินซูลิน (แบบปากกา) สำหรับผู้ป่วยเบาหวาน",
+      "channel": "SIKARIN HOSPITAL",
+      "notice": "วิดีโอนี้สาธิตปากกาอินซูลินทั่วไป ให้ยึดชื่อยา วิธีผสม ขนาดทดสอบ และเวลาการกดค้างตามเอกสารนี้ และตรวจฉลากก่อนฉีด"
+    },
+    "tl": {
+      "youtubeId": "FHVHjCGfWts",
+      "title": "Injecting Insulin with a Pen (TAGALOG version) | PCEDM",
+      "channel": "PCEDM - Philippine Endocrinologists",
+      "notice": "Pangkalahatang insulin pen ang nasa video. Sundin ang gabay na ito para sa pangalan ng gamot, paghahalo, flow-check dose, at tagal ng pagpindot; tingnan ang label bago magturok."
+    },
+    "ja": {
+      "youtubeId": "PgKAsIhuNoY",
+      "title": "インスリン⾃⼰注射の指導 ／ 監修 杏林大学",
+      "channel": "看護roo!(カンゴルー)公式",
+      "notice": "動画は一般的なインスリンペンの実演です。薬の名前、混和、空打ちの単位、押し続ける秒数はこのシートに従い、注射前にラベルを確認してください。"
+    }
+  },
+  "ryzodeg": {
+    "zh-TW": {
+      "youtubeId": "69nMfT70Asg",
+      "title": "【衛教】胰島素筆型注射器正確操作流程 國語版",
+      "channel": "大林慈濟醫院-健康OK棒",
+      "notice": "影片示範一般胰島素筆；請以本單張的藥品名稱、混勻方式、排氣單位及按住秒數為準。注射前核對手上的筆與標籤。"
+    },
+    "en": {
+      "youtubeId": "_fCqEIn7ccA",
+      "title": "How to Use an Insulin Pen - Mayo Clinic Patient Education",
+      "channel": "Mayo Clinic",
+      "notice": "This shows a general insulin pen. Follow this sheet for your pen's name, mixing, priming dose, and hold time; check the label before injecting."
+    },
+    "id": {
+      "youtubeId": "9batH1Ek8-k",
+      "title": "Cara Suntik Insulin dengan Menggunakan Insulin Pen",
+      "channel": "Alomedika",
+      "notice": "Video ini menunjukkan pena insulin umum. Ikuti lembar ini untuk nama obat, pencampuran, dosis uji aliran, dan waktu menahan tombol; periksa label sebelum menyuntik."
+    },
+    "vi": {
+      "youtubeId": "u5PhTN2VT14",
+      "title": "Hướng dẫn sử dụng bút tiêm Insulin điều trị tiểu đường",
+      "channel": "Bệnh viện ĐKQT Vinmec",
+      "notice": "Video minh họa bút insulin thông thường. Hãy theo tờ hướng dẫn này về tên thuốc, cách trộn, liều kiểm tra và thời gian giữ nút; kiểm tra nhãn trước khi tiêm."
+    },
+    "th": {
+      "youtubeId": "W_fRodT5VT4",
+      "title": "How to Use | วิธีการใช้ยาอินซูลิน (แบบปากกา) สำหรับผู้ป่วยเบาหวาน",
+      "channel": "SIKARIN HOSPITAL",
+      "notice": "วิดีโอนี้สาธิตปากกาอินซูลินทั่วไป ให้ยึดชื่อยา วิธีผสม ขนาดทดสอบ และเวลาการกดค้างตามเอกสารนี้ และตรวจฉลากก่อนฉีด"
+    },
+    "tl": {
+      "youtubeId": "FHVHjCGfWts",
+      "title": "Injecting Insulin with a Pen (TAGALOG version) | PCEDM",
+      "channel": "PCEDM - Philippine Endocrinologists",
+      "notice": "Pangkalahatang insulin pen ang nasa video. Sundin ang gabay na ito para sa pangalan ng gamot, paghahalo, flow-check dose, at tagal ng pagpindot; tingnan ang label bago magturok."
+    },
+    "ja": {
+      "youtubeId": "PgKAsIhuNoY",
+      "title": "インスリン⾃⼰注射の指導 ／ 監修 杏林大学",
+      "channel": "看護roo!(カンゴルー)公式",
+      "notice": "動画は一般的なインスリンペンの実演です。薬の名前、混和、空打ちの単位、押し続ける秒数はこのシートに従い、注射前にラベルを確認してください。"
+    }
   }
 }

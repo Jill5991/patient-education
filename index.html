@@ -22807,13 +22807,13 @@ const MEDICATIONS = [
           },
           {
               "action": {
-                  "zh-TW": "排氣測試：轉 1 或 2 單位",
-                  "en": "Prime the pen: dial 1 or 2 units",
-                  "id": "Priming pena: putar 1 atau 2 unit",
-                  "vi": "Đuổi khí: vặn 1 hoặc 2 đơn vị",
-                  "th": "ไล่อากาศ: หมุน 1 หรือ 2 หน่วย",
-                  "tl": "Prime the pen: i-set sa 1 o 2 unit",
-                  "ja": "空打ち：1または2単位に合わせる"
+                  "zh-TW": "排氣測試：轉 2 單位",
+                  "en": "Prime the pen: dial 2 units",
+                  "id": "Priming pena: putar 2 unit",
+                  "vi": "Đuổi khí: vặn 2 đơn vị",
+                  "th": "ไล่อากาศ: หมุน 2 หน่วย",
+                  "tl": "Prime the pen: i-set sa 2 unit",
+                  "ja": "空打ち：2単位に合わせる"
               },
               "note": {
                   "zh-TW": "每次注射前都要做排氣測試。針尖朝上，手指輕彈藥水匣幾下，讓氣泡浮到頂端。看到藥滴再注射。若沒有藥滴，可重做最多 4 次。若仍沒有藥滴，請更換針頭並重做排氣測試，確認注射筆與針頭運作正常。",
@@ -29631,6 +29631,24 @@ function generateQR(url) {
 // START
 // ============================================================
 window.addEventListener("DOMContentLoaded", init);
+
+// ── Day-15 insulin pen illustrations ──
+const DAY15_INSULIN_IMAGES = {
+  "novorapid": 7, "apidra": 7, "novomix-30": 8,
+  "humalog-mix50": 8, "ryzodeg": 8
+};
+Object.entries(DAY15_INSULIN_IMAGES).forEach(([id, count]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.steps?.length !== count) throw new Error(`Day-15 step mismatch: ${id}`);
+  med.steps.forEach((step, i) => {
+    const art = `assets/svg/day15-insulin/${id}/step-${String(i).padStart(2, "0")}.svg`;
+    step.illustration = art;
+    if (med.pages?.[0]?.steps?.[i]) med.pages[0].steps[i].illustration = art;
+  });
+  const videoPage = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+  med.qrUrl = videoPage;
+  med.pages?.forEach(page => { page.qrUrl = videoPage; });
+});
 </script>
 </body>
 </html>
