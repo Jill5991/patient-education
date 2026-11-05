@@ -29641,9 +29641,13 @@ Object.entries(DAY15_INSULIN_IMAGES).forEach(([id, count]) => {
   const med = MEDICATIONS.find(item => item.id === id);
   if (!med || med.steps?.length !== count) throw new Error(`Day-15 step mismatch: ${id}`);
   med.steps.forEach((step, i) => {
-    const art = `assets/svg/day15-insulin/${id}/step-${String(i).padStart(2, "0")}.svg`;
+    const art = `assets/img/day15-insulin/${id}/step-${String(i).padStart(2, "0")}.png`;
     step.illustration = art;
     if (med.pages?.[0]?.steps?.[i]) med.pages[0].steps[i].illustration = art;
+  });
+  if (med.pages?.[1]?.steps?.length !== 6) throw new Error(`Day-15 rotation step mismatch: ${id}`);
+  med.pages[1].steps.forEach((step, i) => {
+    step.illustration = `assets/img/day15-insulin/rotation/step-${String(i).padStart(2, "0")}.png`;
   });
   const videoPage = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
   med.qrUrl = videoPage;

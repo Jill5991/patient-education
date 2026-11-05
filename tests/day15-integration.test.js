@@ -27,12 +27,13 @@ test("day-15 five insulin pens use reviewed art in all 38 steps", () => {
     const med = byId[id];
     assert.equal(med.steps.length, count);
     for (let i = 0; i < count; i++) {
-      const expected = `assets/svg/day15-insulin/${id}/step-${String(i).padStart(2, "0")}.svg`;
+      const expected = `assets/img/day15-insulin/${id}/step-${String(i).padStart(2, "0")}.png`;
       assert.equal(med.steps[i].illustration, expected);
       assert.equal(med.pages[0].steps[i].illustration, expected);
-      const svg = fs.readFileSync(path.join(root, expected), "utf8");
-      assert.match(svg, /<svg[^>]+viewBox="0 0 1200 900"/);
-      assert.match(svg, /<title>[^<]+<\/title>/);
+      const png = fs.readFileSync(path.join(root, expected));
+      assert.equal(png.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
+      assert.ok(png.readUInt32BE(16) >= 800);
+      assert.ok(png.readUInt32BE(20) >= 800);
       total++;
     }
   }
@@ -41,16 +42,14 @@ test("day-15 five insulin pens use reviewed art in all 38 steps", () => {
 
 test("day-15 side B keeps correct anatomical rotation diagrams", () => {
   for (const id of Object.keys(counts)) {
-    const page = context.testData.buildInjectionRotationPage(byId[id]);
+    const page = byId[id].pages[1];
     assert.equal(page.steps.length, 6);
-    for (const step of page.steps) {
-      assert.ok(step.illustration.startsWith("assets/img/novorapid-b/"));
-      assert.ok(fs.existsSync(path.join(root, step.illustration)));
+    for (let i = 0; i < 6; i++) {
+      const expected = `assets/img/day15-insulin/rotation/step-${String(i).padStart(2, "0")}.png`;
+      assert.equal(page.steps[i].illustration, expected);
+      const png = fs.readFileSync(path.join(root, expected));
+      assert.equal(png.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
     }
-    assert.match(page.steps[2].illustration, /arm_thigh_regions/);
-    assert.match(page.steps[3].illustration, /one_finger_spacing/);
-    assert.match(page.steps[4].illustration, /inspect_skin/);
-    assert.match(page.steps[5].illustration, /palpate_skin/);
   }
 });
 
