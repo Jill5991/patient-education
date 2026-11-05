@@ -68,3 +68,23 @@ test("day-15 QR routes preserve all seven languages and general-video notice", (
     }
   }
 });
+
+test("day-15 needle attachment and rotation directions match Taiwan guidance in seven languages", () => {
+  for (const [id, count] of Object.entries(counts)) {
+    const med = byId[id];
+    const needleIndex = count === 7 ? 1 : 2;
+    for (const lang of languages) {
+      assert.ok(med.steps[needleIndex].note[lang].length > 20);
+      assert.equal(med.steps[needleIndex].note[lang], med.pages[0].steps[needleIndex].note[lang]);
+      for (const i of [1, 2, 3]) {
+        assert.ok(med.pages[1].steps[i].note[lang].length > 15);
+      }
+      assert.ok(med.pages[1].steps[3].action[lang].length > 8);
+    }
+    assert.match(med.steps[needleIndex].note["zh-TW"], /對正藥匣端，旋轉裝緊/);
+    assert.match(med.pages[1].steps[1].note["zh-TW"], /約 7 天後換下一區塊/);
+    assert.match(med.pages[1].steps[2].note["zh-TW"], /前外側上 1\/3/);
+    assert.match(med.pages[1].steps[3].action["zh-TW"], /約隔 1 指寬/);
+    assert.match(med.pages[1].steps[3].note["zh-TW"], /手指寬度，不是長度/);
+  }
+});

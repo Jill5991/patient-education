@@ -29645,10 +29645,58 @@ Object.entries(DAY15_INSULIN_IMAGES).forEach(([id, count]) => {
     step.illustration = art;
     if (med.pages?.[0]?.steps?.[i]) med.pages[0].steps[i].illustration = art;
   });
+  const needleIndex = count === 7 ? 1 : 2;
+  const needleNote = tx(
+    "針頭連外蓋沿筆身直線對正藥匣端，旋轉裝緊；裝針前勿按按鈕。再取下內針蓋，保留外針蓋。",
+    "Align the capped needle straight with the cartridge end and screw it on. Do not press the button before attaching it. Remove the inner cap; keep the outer cap.",
+    "Sejajarkan jarum yang masih bertutup lurus dengan ujung kartrid, lalu putar hingga terpasang. Jangan tekan tombol sebelum memasang jarum. Lepas tutup dalam; simpan tutup luar.",
+    "Đặt kim còn nắp thẳng trục với đầu ống thuốc rồi vặn chặt. Không ấn nút trước khi gắn kim. Tháo nắp kim trong; giữ lại nắp ngoài.",
+    "จัดเข็มที่ยังมีปลอกให้ตรงกับปลายหลอดยาแล้วหมุนให้แน่น อย่ากดปุ่มก่อนติดเข็ม ถอดปลอกชั้นในและเก็บปลอกชั้นนอกไว้",
+    "Itapat nang tuwid ang karayom na may takip sa dulo ng cartridge at ikutin hanggang mahigpit. Huwag pindutin ang button bago ikabit. Alisin ang panloob na takip; itabi ang panlabas.",
+    "外側キャップを付けた針をカートリッジ先端にまっすぐ合わせ、回して固定する。装着前にボタンを押さない。内側キャップを外し、外側は残す。"
+  );
+  med.steps[needleIndex].note = needleNote;
+  med.pages[0].steps[needleIndex].note = needleNote;
   if (med.pages?.[1]?.steps?.length !== 6) throw new Error(`Day-15 rotation step mismatch: ${id}`);
   med.pages[1].steps.forEach((step, i) => {
     step.illustration = `assets/img/day15-insulin/rotation/step-${String(i).padStart(2, "0")}.png`;
   });
+  med.pages[1].steps[1].note = tx(
+    "選同一小區塊，由靠近肚臍處向外逐點施打；約 7 天後換下一區塊。",
+    "Use one small area. Move from near the navel outward, one spot at a time; switch to another area after about 7 days.",
+    "Gunakan satu area kecil. Pindah titik dari dekat pusar ke arah luar; pindah ke area lain setelah sekitar 7 hari.",
+    "Dùng một vùng nhỏ. Đổi từng điểm từ gần rốn ra ngoài; đổi sang vùng khác sau khoảng 7 ngày.",
+    "ใช้บริเวณย่อยเดียว ไล่จุดฉีดจากใกล้สะดือออกด้านนอก แล้วเปลี่ยนบริเวณย่อยหลังประมาณ 7 วัน",
+    "Gumamit ng isang maliit na bahagi. Ilipat ang turok mula malapit sa pusod palabas, tig-isang puwesto; lumipat ng bahagi pagkalipas ng mga 7 araw.",
+    "同じ小区域内で、へその近くから外側へ1か所ずつ移動する。約7日後に別の小区域へ移る。"
+  );
+  med.pages[1].steps[2].note = tx(
+    "上臂後外側中段通常需他人協助；大腿打前外側上 1/3。避開手肘、大腿內側、鼠蹊部及膝蓋。",
+    "The middle back-outer upper arm usually needs help. Use the upper third of the front-outer thigh. Avoid the elbow, inner thigh, groin, and knee.",
+    "Lengan atas bagian belakang-luar tengah biasanya perlu bantuan. Suntik di sepertiga atas paha depan-luar. Hindari siku, paha dalam, selangkangan, dan lutut.",
+    "Vùng giữa phía sau-ngoài cánh tay trên thường cần người hỗ trợ. Tiêm ở một phần ba trên của mặt trước-ngoài đùi. Tránh khuỷu tay, mặt trong đùi, bẹn và đầu gối.",
+    "ต้นแขนด้านหลังนอกช่วงกลางมักต้องมีผู้ช่วย ฉีดที่ต้นขาด้านหน้าออกนอกช่วงหนึ่งในสามส่วนบน หลีกเลี่ยงข้อศอก ต้นขาด้านใน ขาหนีบ และเข่า",
+    "Karaniwang kailangan ng tulong sa gitnang likod-panlabas na itaas na braso. Sa hita, gamitin ang itaas na ikatlong bahagi ng harap-panlabas. Iwasan ang siko, panloob na hita, singit, at tuhod.",
+    "上腕の後外側中央は通常介助が必要。大腿は前外側の上3分の1を使い、肘・内もも・鼠径部・膝を避ける。"
+  );
+  med.pages[1].steps[3].action = tx(
+    "相鄰兩針約隔 1 指寬",
+    "Keep adjacent injections about one finger-width apart",
+    "Beri jarak sekitar satu lebar jari antara dua suntikan berdekatan",
+    "Hai điểm tiêm liền nhau cách nhau khoảng một bề rộng ngón tay",
+    "จุดฉีดที่ติดกันห่างกันประมาณความกว้าง 1 นิ้วมือ",
+    "Paglayuin nang halos isang lapad ng daliri ang magkatabing turok",
+    "隣り合う注射点は指1本の幅ほど離す"
+  );
+  med.pages[1].steps[3].note = tx(
+    "量的是手指寬度，不是長度。每次換點，不重複同一點。",
+    "Measure finger width, not finger length. Move to a new spot each time.",
+    "Ukur lebar jari, bukan panjangnya. Ganti titik setiap kali.",
+    "Đo bề rộng ngón tay, không phải chiều dài. Mỗi lần đổi sang điểm mới.",
+    "วัดความกว้างของนิ้ว ไม่ใช่ความยาว เปลี่ยนจุดฉีดทุกครั้ง",
+    "Lapad ng daliri ang sukat, hindi haba. Lumipat ng puwesto sa bawat turok.",
+    "測るのは指の幅で、長さではない。毎回新しい点に打つ。"
+  );
   const videoPage = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
   med.qrUrl = videoPage;
   med.pages?.forEach(page => { page.qrUrl = videoPage; });
