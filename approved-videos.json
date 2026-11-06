@@ -3568,5 +3568,203 @@
       "channel": "看護roo!(カンゴルー)公式",
       "notice": "動画は一般的なインスリンペンの実演です。薬の名前、混和、空打ちの単位、押し続ける秒数はこのシートに従い、注射前にラベルを確認してください。"
     }
+  },
+  "levemir": {
+    "zh-TW": {
+      "youtubeId": "gWCZ6e3ppKQ",
+      "title": "【雙和藥你會】胰島素筆針使用教學(Insulin -Novomix / Novorapid / Humalog / Toujeo / Tressiba / Soliqua / Victoza )",
+      "channel": "衛生福利部雙和醫院藥劑部",
+      "notice": "影片示範一般胰島素筆；本藥的排氣單位、劑量、按壓停留時間及筆身外觀，請以本單張與實際仿單為準。注射點約隔一指寬（1.5–2 公分）。"
+    },
+    "en": {
+      "youtubeId": "_fCqEIn7ccA",
+      "title": "How to Use an Insulin Pen - Mayo Clinic Patient Education",
+      "channel": "Mayo Clinic",
+      "notice": "This video shows a general insulin pen. Follow this sheet and your pen's instructions for the priming dose, dose setting, hold time, and pen appearance. Space injection spots about one finger width (1.5–2 cm) apart."
+    },
+    "id": {
+      "youtubeId": "9batH1Ek8-k",
+      "title": "Cara Suntik Insulin dengan Menggunakan Insulin Pen",
+      "channel": "Alomedika",
+      "notice": "Video ini menunjukkan pena insulin umum. Ikuti lembar ini dan petunjuk pena Anda untuk dosis uji aliran, dosis suntik, lama menahan tombol, dan bentuk pena. Jarak titik suntik sekitar satu lebar jari (1,5–2 cm)."
+    },
+    "vi": {
+      "youtubeId": "u5PhTN2VT14",
+      "title": "Hướng dẫn sử dụng bút tiêm Insulin điều trị tiểu đường",
+      "channel": "Bệnh viện ĐKQT Vinmec",
+      "notice": "Video minh họa bút insulin thông thường. Hãy theo tờ này và hướng dẫn của bút về liều kiểm tra, liều tiêm, thời gian giữ nút và hình dạng bút. Hai điểm tiêm cách nhau khoảng một bề rộng ngón tay (1,5–2 cm)."
+    },
+    "th": {
+      "youtubeId": "5M1HeVGgmBw",
+      "title": "วิธีการฉีดอินซูลินโดยใช้ปากกาชนิดสำเร็จ (Toujeo, Tresiba, Ryzodeg, Victoza)",
+      "channel": "HealthLiteracy MNRH",
+      "notice": "วิดีโอนี้สาธิตปากกาอินซูลินทั่วไป ให้ยึดขนาดทดสอบ ขนาดยา เวลากดค้าง และรูปลักษณ์ปากกาตามเอกสารนี้และคู่มือยา เว้นจุดฉีดประมาณความกว้างหนึ่งนิ้วมือ (1.5–2 ซม.)"
+    },
+    "tl": {
+      "youtubeId": "FHVHjCGfWts",
+      "title": "Injecting Insulin with a Pen (TAGALOG version) | PCEDM",
+      "channel": "PCEDM - Philippine Endocrinologists",
+      "notice": "Pangkalahatang insulin pen ang nasa video. Sundin ang gabay na ito at tagubilin ng pen para sa flow-check dose, dosis, tagal ng pagpindot, at itsura ng pen. Paglayuin ang turok nang isang lapad ng daliri (1.5–2 cm)."
+    },
+    "ja": {
+      "youtubeId": "PgKAsIhuNoY",
+      "title": "インスリン⾃⼰注射の指導 ／ 監修 杏林大学",
+      "channel": "看護roo!(カンゴルー)公式",
+      "notice": "動画は一般的なインスリンペンの実演です。空打ちの単位、投与量、押し続ける秒数、ペンの外観はこのシートと製品の説明書に従ってください。注射点は指1本分（約1.5～2 cm）離します。"
+    }
+  },
+  "toujeo": {
+    "zh-TW": {
+      "youtubeId": "gWCZ6e3ppKQ",
+      "title": "【雙和藥你會】胰島素筆針使用教學(Insulin -Novomix / Novorapid / Humalog / Toujeo / Tressiba / Soliqua / Victoza )",
+      "channel": "衛生福利部雙和醫院藥劑部",
+      "notice": "影片示範一般胰島素筆；本藥的排氣單位、劑量、按壓停留時間及筆身外觀，請以本單張與實際仿單為準。注射點約隔一指寬（1.5–2 公分）。"
+    },
+    "en": {
+      "youtubeId": "_fCqEIn7ccA",
+      "title": "How to Use an Insulin Pen - Mayo Clinic Patient Education",
+      "channel": "Mayo Clinic",
+      "notice": "This video shows a general insulin pen. Follow this sheet and your pen's instructions for the priming dose, dose setting, hold time, and pen appearance. Space injection spots about one finger width (1.5–2 cm) apart."
+    },
+    "id": {
+      "youtubeId": "9batH1Ek8-k",
+      "title": "Cara Suntik Insulin dengan Menggunakan Insulin Pen",
+      "channel": "Alomedika",
+      "notice": "Video ini menunjukkan pena insulin umum. Ikuti lembar ini dan petunjuk pena Anda untuk dosis uji aliran, dosis suntik, lama menahan tombol, dan bentuk pena. Jarak titik suntik sekitar satu lebar jari (1,5–2 cm)."
+    },
+    "vi": {
+      "youtubeId": "u5PhTN2VT14",
+      "title": "Hướng dẫn sử dụng bút tiêm Insulin điều trị tiểu đường",
+      "channel": "Bệnh viện ĐKQT Vinmec",
+      "notice": "Video minh họa bút insulin thông thường. Hãy theo tờ này và hướng dẫn của bút về liều kiểm tra, liều tiêm, thời gian giữ nút và hình dạng bút. Hai điểm tiêm cách nhau khoảng một bề rộng ngón tay (1,5–2 cm)."
+    },
+    "th": {
+      "youtubeId": "5M1HeVGgmBw",
+      "title": "วิธีการฉีดอินซูลินโดยใช้ปากกาชนิดสำเร็จ (Toujeo, Tresiba, Ryzodeg, Victoza)",
+      "channel": "HealthLiteracy MNRH",
+      "notice": "วิดีโอนี้สาธิตปากกาอินซูลินทั่วไป ให้ยึดขนาดทดสอบ ขนาดยา เวลากดค้าง และรูปลักษณ์ปากกาตามเอกสารนี้และคู่มือยา เว้นจุดฉีดประมาณความกว้างหนึ่งนิ้วมือ (1.5–2 ซม.)"
+    },
+    "tl": {
+      "youtubeId": "FHVHjCGfWts",
+      "title": "Injecting Insulin with a Pen (TAGALOG version) | PCEDM",
+      "channel": "PCEDM - Philippine Endocrinologists",
+      "notice": "Pangkalahatang insulin pen ang nasa video. Sundin ang gabay na ito at tagubilin ng pen para sa flow-check dose, dosis, tagal ng pagpindot, at itsura ng pen. Paglayuin ang turok nang isang lapad ng daliri (1.5–2 cm)."
+    },
+    "ja": {
+      "youtubeId": "PgKAsIhuNoY",
+      "title": "インスリン⾃⼰注射の指導 ／ 監修 杏林大学",
+      "channel": "看護roo!(カンゴルー)公式",
+      "notice": "動画は一般的なインスリンペンの実演です。空打ちの単位、投与量、押し続ける秒数、ペンの外観はこのシートと製品の説明書に従ってください。注射点は指1本分（約1.5～2 cm）離します。"
+    }
+  },
+  "tresiba": {
+    "zh-TW": {
+      "youtubeId": "gWCZ6e3ppKQ",
+      "title": "【雙和藥你會】胰島素筆針使用教學(Insulin -Novomix / Novorapid / Humalog / Toujeo / Tressiba / Soliqua / Victoza )",
+      "channel": "衛生福利部雙和醫院藥劑部",
+      "notice": "影片示範一般胰島素筆；本藥的排氣單位、劑量、按壓停留時間及筆身外觀，請以本單張與實際仿單為準。注射點約隔一指寬（1.5–2 公分）。"
+    },
+    "en": {
+      "youtubeId": "_fCqEIn7ccA",
+      "title": "How to Use an Insulin Pen - Mayo Clinic Patient Education",
+      "channel": "Mayo Clinic",
+      "notice": "This video shows a general insulin pen. Follow this sheet and your pen's instructions for the priming dose, dose setting, hold time, and pen appearance. Space injection spots about one finger width (1.5–2 cm) apart."
+    },
+    "id": {
+      "youtubeId": "9batH1Ek8-k",
+      "title": "Cara Suntik Insulin dengan Menggunakan Insulin Pen",
+      "channel": "Alomedika",
+      "notice": "Video ini menunjukkan pena insulin umum. Ikuti lembar ini dan petunjuk pena Anda untuk dosis uji aliran, dosis suntik, lama menahan tombol, dan bentuk pena. Jarak titik suntik sekitar satu lebar jari (1,5–2 cm)."
+    },
+    "vi": {
+      "youtubeId": "u5PhTN2VT14",
+      "title": "Hướng dẫn sử dụng bút tiêm Insulin điều trị tiểu đường",
+      "channel": "Bệnh viện ĐKQT Vinmec",
+      "notice": "Video minh họa bút insulin thông thường. Hãy theo tờ này và hướng dẫn của bút về liều kiểm tra, liều tiêm, thời gian giữ nút và hình dạng bút. Hai điểm tiêm cách nhau khoảng một bề rộng ngón tay (1,5–2 cm)."
+    },
+    "th": {
+      "youtubeId": "5M1HeVGgmBw",
+      "title": "วิธีการฉีดอินซูลินโดยใช้ปากกาชนิดสำเร็จ (Toujeo, Tresiba, Ryzodeg, Victoza)",
+      "channel": "HealthLiteracy MNRH",
+      "notice": "วิดีโอนี้สาธิตปากกาอินซูลินทั่วไป ให้ยึดขนาดทดสอบ ขนาดยา เวลากดค้าง และรูปลักษณ์ปากกาตามเอกสารนี้และคู่มือยา เว้นจุดฉีดประมาณความกว้างหนึ่งนิ้วมือ (1.5–2 ซม.)"
+    },
+    "tl": {
+      "youtubeId": "FHVHjCGfWts",
+      "title": "Injecting Insulin with a Pen (TAGALOG version) | PCEDM",
+      "channel": "PCEDM - Philippine Endocrinologists",
+      "notice": "Pangkalahatang insulin pen ang nasa video. Sundin ang gabay na ito at tagubilin ng pen para sa flow-check dose, dosis, tagal ng pagpindot, at itsura ng pen. Paglayuin ang turok nang isang lapad ng daliri (1.5–2 cm)."
+    },
+    "ja": {
+      "youtubeId": "PgKAsIhuNoY",
+      "title": "インスリン⾃⼰注射の指導 ／ 監修 杏林大学",
+      "channel": "看護roo!(カンゴルー)公式",
+      "notice": "動画は一般的なインスリンペンの実演です。空打ちの単位、投与量、押し続ける秒数、ペンの外観はこのシートと製品の説明書に従ってください。注射点は指1本分（約1.5～2 cm）離します。"
+    }
+  },
+  "victoza": {
+    "zh-TW": {
+      "youtubeId": "FKPctKWKMD8",
+      "title": "【藥劑部-衛教影音】胰妥善注射筆(Victoza)",
+      "channel": "新光醫院"
+    },
+    "en": {
+      "youtubeId": "le1O-Om7Wq8",
+      "title": "How to use Victoza",
+      "channel": "Endocrine and Psychiatry Center"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "youtubeId": "ixDQXhebSVU",
+      "title": "Hướng dẫn sử dụng bút tiêm Victoza",
+      "channel": "anh thu"
+    },
+    "th": {
+      "youtubeId": "WAKS1A5FYNI",
+      "title": "วิธีการฉีด victoza",
+      "channel": "หน่วยพยาบาลด้านป้องกันโรคและส่งเสริมสุขภาพ"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "MNQ5m--gUMQ",
+      "title": "糖尿病内科医【実演】GLP1注射ビクトーザの正しい打ち方",
+      "channel": "やさしい内科医 | 山村そう"
+    }
+  },
+  "trulicity": {
+    "zh-TW": {
+      "youtubeId": "jFwvAaWW6mc",
+      "title": "如何正確操作筆型易週糖Trulicity注射器技術",
+      "channel": "童綜合醫院TTMHH"
+    },
+    "en": {
+      "youtubeId": "g_P1MUOSurQ",
+      "title": "How to Use a Trulicity Pen | AAMG",
+      "channel": "AAMG Doctors"
+    },
+    "id": {
+      "youtubeId": "ekFglnyXyoo",
+      "title": "Cara Penggunaan TRULICITY",
+      "channel": "Dr. Wirawan Hambali, Sp.PD, FINASIM"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "_dapKPU2TeM",
+      "title": "วิธีการใช้ปากกาฉีดยา Trulicity (Dulaglutide)",
+      "channel": "Nonthavej Hospital"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "37SGkgFlKhU",
+      "title": "糖尿病内科医【実演】GLP1注射トルリシティの正しい打ち方",
+      "channel": "やさしい内科医 | 山村そう"
+    }
   }
 }

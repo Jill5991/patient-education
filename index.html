@@ -29701,6 +29701,52 @@ Object.entries(DAY15_INSULIN_IMAGES).forEach(([id, count]) => {
   med.qrUrl = videoPage;
   med.pages?.forEach(page => { page.qrUrl = videoPage; });
 });
+
+// Day 16: reviewed pen and site illustrations. Page B uses the corrected,
+// hand-free spacing and small-area rotation diagrams from the prior review.
+const DAY16_INJECTION_IMAGES = {
+  levemir: [7, 6], toujeo: [8, 6], tresiba: [8, 6],
+  victoza: [8, 4], trulicity: [8, 4]
+};
+Object.entries(DAY16_INJECTION_IMAGES).forEach(([id, counts]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.pages?.length !== 2 ||
+      med.pages.some((page, index) => page.steps?.length !== counts[index])) {
+    throw new Error(`Day-16 step mismatch: ${id}`);
+  }
+  med.pages.forEach((page, pageIndex) => {
+    page.steps.forEach((step, i) => {
+      const art = `assets/img/day16-injections/${id}/page-${pageIndex + 1}/step-${String(i).padStart(2, "0")}.png`;
+      step.illustration = art;
+      if (pageIndex === 0) med.steps[i].illustration = art;
+    });
+  });
+  if (id !== "trulicity") {
+    const needleNote = MEDICATIONS.find(item => item.id === "novorapid").steps[1].note;
+    med.steps[1].note = needleNote;
+    med.pages[0].steps[1].note = needleNote;
+  }
+  if (counts[1] === 6) {
+    const reviewedRotation = MEDICATIONS.find(item => item.id === "novorapid").pages[1].steps;
+    for (const i of [1, 2, 3]) {
+      med.pages[1].steps[i].note = reviewedRotation[i].note;
+    }
+    med.pages[1].steps[3].action = reviewedRotation[3].action;
+  } else {
+    med.pages[1].steps[1].note = tx(
+      "成人 1 指寬約 1.5–2 公分。每次換點，不重複同一點。",
+      "One adult finger width is about 1.5–2 cm. Use a different spot each time.",
+      "Lebar 1 jari orang dewasa sekitar 1,5–2 cm. Ganti titik setiap kali.",
+      "Bề rộng 1 ngón tay người lớn khoảng 1,5–2 cm. Mỗi lần đổi sang điểm mới.",
+      "ความกว้าง 1 นิ้วมือผู้ใหญ่ประมาณ 1.5–2 ซม. เปลี่ยนจุดฉีดทุกครั้ง",
+      "Ang lapad ng 1 daliri ng nasa hustong gulang ay mga 1.5–2 cm. Lumipat ng puwesto sa bawat turok.",
+      "成人の指1本分の幅は約1.5～2 cm。毎回新しい点に打つ。"
+    );
+  }
+  const videoPage = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+  med.qrUrl = videoPage;
+  med.pages.forEach(page => { page.qrUrl = videoPage; });
+});
 </script>
 </body>
 </html>
