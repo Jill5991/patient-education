@@ -20,7 +20,7 @@ Open the deployed HTTPS URL on iPad Safari and switch language/category directly
 2. Sync the updated content back into `MEDICATIONS` in `index.html`
 3. Commit and push
 
-For reviewed illustration batches, keep the PNGs in `assets/img/<medication-id>/` (use `page-1/` and `page-2/` for two-page sheets). The `index.html` image count map connects each step to its PNG. Keep reviewed video choices in `approved-videos.json`; `video.html` reads this registry so printed language-specific QR codes keep the same destination if a YouTube video changes. Use `{"status":"no_suitable_video"}` when no appropriate video exists for a language. Run `node --test tests/*.test.js` before publishing.
+For reviewed illustration batches, keep the PNGs in `assets/img/<medication-id>/` (use `page-1/` and `page-2/` for two-page sheets). The `index.html` image count map connects each step to its PNG. After adding or changing PNGs, run `python3 scripts/build-webp.py` (requires `cwebp`) and commit the matching WebP files. The page loads the smaller WebP artwork, while PNGs remain as the original and browser fallback. Keep reviewed video choices in `approved-videos.json`; `video.html` reads this registry so printed language-specific QR codes keep the same destination if a YouTube video changes. Use `{"status":"no_suitable_video"}` when no appropriate video exists for a language. Run `node --test tests/*.test.js` before publishing.
 
 ## GitHub Pages deployment
 
