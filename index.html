@@ -29766,6 +29766,65 @@ Object.entries(DAY16_INJECTION_IMAGES).forEach(([id, counts]) => {
   med.qrUrl = videoPage;
   med.pages.forEach(page => { page.qrUrl = videoPage; });
 });
+
+// Day 17: reviewed multi-dose injection pens. Reuse the previously corrected,
+// hand-free spacing and small-area rotation art where Gemini's draft was unclear.
+const DAY17_INJECTION_IMAGES = {
+  ozempic: [8, 4], mounjaro: [8, 4], soliqua: [8, 6]
+};
+Object.entries(DAY17_INJECTION_IMAGES).forEach(([id, counts]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.pages?.length !== 2 ||
+      med.pages.some((page, index) => page.steps?.length !== counts[index])) {
+    throw new Error(`Day-17 step mismatch: ${id}`);
+  }
+  med.pages.forEach((page, pageIndex) => page.steps.forEach((step, i) => {
+    const art = `assets/img/day17-injections/${id}/page-${pageIndex + 1}/step-${String(i).padStart(2, "0")}.png`;
+    step.illustration = art;
+    if (pageIndex === 0) med.steps[i].illustration = art;
+  }));
+  const needleGuidance = MEDICATIONS.find(item => item.id === "novorapid").steps[1].note;
+  const originalNeedleNote = med.pages[0].steps[1].note;
+  const correctedNeedleNote = Object.fromEntries(Object.keys(needleGuidance).map(lang =>
+    [lang, `${originalNeedleNote?.[lang] || ""} ${needleGuidance[lang]}`.trim()]));
+  med.pages[0].steps[1].note = correctedNeedleNote;
+  med.steps[1].note = correctedNeedleNote;
+  const reviewedRotation = MEDICATIONS.find(item => item.id === "novorapid").pages[1].steps;
+  if (id === "soliqua") {
+    for (const i of [1, 2, 3]) med.pages[1].steps[i].note = reviewedRotation[i].note;
+    med.pages[1].steps[3].action = reviewedRotation[3].action;
+  } else {
+    const spacing = MEDICATIONS.find(item => item.id === "victoza").pages[1].steps[1];
+    med.pages[1].steps[1].note = spacing.note;
+  }
+  const videoPage = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+  med.qrUrl = videoPage;
+  med.pages.forEach(page => { page.qrUrl = videoPage; });
+});
+
+// Day 18: nasal preparations and age-specific saline instructions.
+const DAY18_NASAL_IMAGES = {
+  avamys: [7], azetin: [6], besonin: [6], minirin: [5],
+  natesto: [4, 8], "saline-nasal-rinse-kit": [6, 6, 8],
+  nasonex: [6], sindecon: [6], trisonin: [6]
+};
+Object.entries(DAY18_NASAL_IMAGES).forEach(([id, counts]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med) throw new Error(`Day-18 medication missing: ${id}`);
+  const pages = med.pages || [{ steps: med.steps }];
+  if (pages.length !== counts.length ||
+      pages.some((page, index) => page.steps?.length !== counts[index])) {
+    throw new Error(`Day-18 step mismatch: ${id}`);
+  }
+  pages.forEach((page, pageIndex) => page.steps.forEach((step, i) => {
+    const pageKey = med.pages ? `page-${pageIndex + 1}` : "main";
+    const art = `assets/img/day18-nasal/${id}/${pageKey}/step-${String(i).padStart(2, "0")}.png`;
+    step.illustration = art;
+  }));
+  const videoPage = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+  med.qrUrl = videoPage;
+  med.pages?.forEach(page => { page.qrUrl = videoPage; });
+});
 </script>
 </body>
 </html>

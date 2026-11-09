@@ -3766,5 +3766,382 @@
       "title": "糖尿病内科医【実演】GLP1注射トルリシティの正しい打ち方",
       "channel": "やさしい内科医 | 山村そう"
     }
+  },
+  "ozempic": {
+    "zh-TW": {
+      "youtubeId": "4GZidH9OmUA",
+      "title": "Ozempic胰妥讚注射劑衛教影片",
+      "channel": "Pharmacy KMHK"
+    },
+    "en": {
+      "youtubeId": "IJgRd_0sWik",
+      "title": "How to use and inject an Ozempic pen",
+      "channel": "Northwell Health"
+    },
+    "id": {
+      "youtubeId": "A1Y2gcQFmmg",
+      "title": "Gunakan Ozempic dengan Tepat!",
+      "channel": "Alomedika"
+    },
+    "vi": {
+      "youtubeId": "sDUbk3oIAAA",
+      "title": "HƯỚNG DẪN SỬ DỤNG BÚT TIÊM OZEMPIC VÀ NHỮNG LƯU Ý QUAN TRỌNG KHI SỬ DỤNG THUỐC",
+      "channel": "Bệnh viện Mỹ Đức"
+    },
+    "th": {
+      "youtubeId": "D4U1aZ7nrGE",
+      "title": "วิธีการใช้ปากกาฉีดยา OZEMPIC",
+      "channel": "Nonthavej Hospital"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "u7bieJ4caOA",
+      "title": "実演【オゼンピック】GLP1注射の使い方・糖尿病内科医が解説",
+      "channel": "やさしい内科医 | 山村そうの血糖値実験室【糖尿病予防】"
+    }
+  },
+  "mounjaro": {
+    "zh-TW": {
+      "youtubeId": "2hCXSP7dZ3I",
+      "title": "猛健樂mounjaro 皮下注射衛教影片",
+      "channel": "愛群醫療"
+    },
+    "en": {
+      "youtubeId": "ekXfT5MnIQg",
+      "title": "How To Use Mounjaro Kwikpen: A Simple Injection Tutorial",
+      "channel": "Juniper"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "c4Yd_KFNjw4",
+      "title": "คำแนะนำวิธีการใช้ยามอนจาโร ควิกเพ็น Mounjaro KwikPen (Official Guide)",
+      "channel": "คริสตัล คลินิก ความงาม"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "soliqua": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "PpLRpBbLfjE",
+      "title": "How to use Soliqua (Dr. Explains and demonstrates)",
+      "channel": "SugarMD"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "avamys": {
+    "zh-TW": {
+      "youtubeId": "ac6e-O2uS8E",
+      "title": "Avamys 艾敏釋鼻用噴液懸浮劑操作衛教影片",
+      "channel": "TMUH北醫正確用藥頻道"
+    },
+    "en": {
+      "youtubeId": "wEdelQ8UCdo",
+      "title": "How to use Avamys  Nasal spray (English version)",
+      "channel": "Pharmacy Siriroj",
+      "notice": "The video uses a slightly different preparation order. Follow this sheet for your Avamys bottle: shake vigorously with the cap on for about 10 seconds, then remove the cap."
+    },
+    "id": {
+      "youtubeId": "0WKJDr0Cz9M",
+      "title": "CARA PENGGUNAAN AVAMYS",
+      "channel": "Farmasi Siloam Mampang"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "sLOvgGZOS4M",
+      "title": "การใช้ยาพ่น AVAMYS nasal spray",
+      "channel": "กลุ่มงานเภสัชกรรม โรงพยาบาลบ้านหมี่"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "osArrKjRE78",
+      "title": "誰でもわかる！花粉症、正しいアラミスト点鼻液の使い方【公式 やまぐち呼吸器内科・皮膚科クリニック】",
+      "channel": "やまぐち呼吸器内科皮膚科クリニック"
+    }
+  },
+  "azetin": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "youtubeId": "Xwd3ZjzNoFA",
+      "title": "How to use Astepro Allergy Nasal Spray",
+      "channel": "Astepro® Allergy",
+      "notice": "The video uses Astepro, an azelastine spray with a different bottle. Follow this sheet for Azetin; this clear solution does not need shaking."
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "besonin": {
+    "zh-TW": {
+      "youtubeId": "4ZBwu9mPvZU",
+      "title": "39 Besonin Aqua Nasal Spray碧適清鼻噴劑_用藥指導影音短片",
+      "channel": "PharmacyTPECH"
+    },
+    "en": {
+      "youtubeId": "8LGFAjQG-4A",
+      "title": "What is Rhinocort Nasal Spray (budesonide)?",
+      "channel": "Garvan Lynch",
+      "notice": "The video discusses a budesonide spray. Follow this sheet for the Besonin bottle, including its green safety clip."
+    },
+    "id": {
+      "youtubeId": "5F7B4QI9Znc",
+      "title": "PIO - Cara Penggunaan Semprot Hidung dengan Benar",
+      "channel": "apt. Rizki Ardiansyah"
+    },
+    "vi": {
+      "youtubeId": "kipGRaYkCWA",
+      "title": "HƯỚNG DẪN XỊT MŨI ĐÚNG CÁCH CHO NGƯỜI VIÊM XOANG, DỊ ỨNG",
+      "channel": "Bệnh viện Sante"
+    },
+    "th": {
+      "youtubeId": "dgoOHV5AfQM",
+      "title": "วิธีใช้ ยาพ่นจมูก Nasal Spray เพื่อบรรเทาอาการคัดจมูก",
+      "channel": "Nasol Spray นาซอล ยาพ่นจมูก"
+    },
+    "tl": {
+      "youtubeId": "EZhtk-LGkuI",
+      "title": "Wastong Paggamit ng Intranasal Spray",
+      "channel": "Breathe Freely Network"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "minirin": {
+    "zh-TW": {
+      "youtubeId": "BPUk11oZrIY",
+      "title": "成大醫院藥劑部_迷你寧鼻腔噴霧劑衛教影片",
+      "channel": "成大醫院 NCKUH",
+      "notice": "影片中的頭部姿勢與本單張不同；請依本單張及醫護人員對迷你寧瓶身和吸管的指示操作。"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "natesto": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "saline-nasal-rinse-kit": {
+    "zh-TW": {
+      "youtubeId": "bwyvqs57Ayc",
+      "title": "【洗鼻教學】洗鼻總是嗆到？「無痛洗鼻法」大公開｜張醫師診後十分鐘 / 第3集",
+      "channel": "張耕閤耳鼻喉專科",
+      "notice": "影片示範成人擠壓瓶洗鼻；幼兒滴鼻與吸鼻球請依單張 B 面操作。配水只能用蒸餾水、無菌水或煮沸後放涼的水。"
+    },
+    "en": {
+      "youtubeId": "dpPAfbPjjc0",
+      "title": "Saline Nasal Rinse How To",
+      "channel": "UC San Diego Health",
+      "notice": "This video demonstrates adult bottle rinsing. For a young child, follow page B of the sheet. Use only distilled, sterile, or boiled then cooled water."
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "youtubeId": "KyGMjDfHaPU",
+      "title": "Hướng dẫn rửa mũi xoang cho bệnh nhân bị viêm mũi xoang",
+      "channel": "Bình rửa mũi Biển Xanh"
+    },
+    "th": {
+      "youtubeId": "lYg-nWiMq4w",
+      "title": "วิธีล้างจมูกที่ถูกต้องโดยเภไอซ์ - เภสัชกรร้านยากรุงเทพ",
+      "channel": "ร้านยากรุงเทพ"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "zsMWIosrp9w",
+      "title": "サイナス・リンス使い方説明【痛くない鼻うがい】",
+      "channel": "ニールメッドチャンネル"
+    }
+  },
+  "nasonex": {
+    "zh-TW": {
+      "youtubeId": "wkuwR_XGijU",
+      "title": "Nasonex內舒拿水溶性鼻用噴液劑用藥指導影音短片",
+      "channel": "PharmacyTPECH"
+    },
+    "en": {
+      "youtubeId": "yL3XhLVXXsA",
+      "title": "Nasonex Allergy How to spray guide",
+      "channel": "Nasonex Allergy Australia"
+    },
+    "id": {
+      "youtubeId": "C4iGGyODDsU",
+      "title": "CARA PENGGUNAAN NASONEX",
+      "channel": "Farmasi Siloam Mampang"
+    },
+    "vi": {
+      "youtubeId": "kipGRaYkCWA",
+      "title": "HƯỚNG DẪN XỊT MŨI ĐÚNG CÁCH CHO NGƯỜI VIÊM XOANG, DỊ ỨNG",
+      "channel": "Bệnh viện Sante",
+      "notice": "Video dùng chai xịt tương tự. Hãy theo tờ hướng dẫn này và tờ thuốc về nắp, vòng an toàn và số lần bơm mồi."
+    },
+    "th": {
+      "youtubeId": "LbcaU3Qrj8g",
+      "title": "วิธีการใช้ยาพ่นจมูก (Nasal spray)",
+      "channel": "Pharmacy Siriroj"
+    },
+    "tl": {
+      "youtubeId": "EZhtk-LGkuI",
+      "title": "Wastong Paggamit ng Intranasal Spray",
+      "channel": "Breathe Freely Network"
+    },
+    "ja": {
+      "youtubeId": "O68BKKi677c",
+      "title": "アレルギー性鼻炎の治療法とナゾネックスの使い方",
+      "channel": "笑顔の薬局 薬剤師ゆきさん"
+    }
+  },
+  "sindecon": {
+    "zh-TW": {
+      "status": "no_suitable_video"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "youtubeId": "4JZD20Zls-U",
+      "title": "CARA PENGGUNAAN ILIADIN NASAL SPRAY",
+      "channel": "Farmasi Siloam Mampang",
+      "notice": "Video memakai botol semprot sejenis. Ikuti lembar ini dan petunjuk produk untuk tutup, klip pengaman, dan priming."
+    },
+    "vi": {
+      "youtubeId": "14Jw6V3Mua4",
+      "title": "Hướng dẫn sử dụng thuốc trị nghẹt mũi #shorts",
+      "channel": "Ngân Pharmacist"
+    },
+    "th": {
+      "youtubeId": "dgoOHV5AfQM",
+      "title": "วิธีใช้ ยาพ่นจมูก Nasal Spray เพื่อบรรเทาอาการคัดจมูก",
+      "channel": "Nasol Spray นาซอล ยาพ่นจมูก",
+      "notice": "วิดีโอใช้ขวดพ่นชนิดคล้ายกัน ให้ยึดใบคำแนะนำนี้และเอกสารกำกับยาเรื่องฝา ตัวล็อก และการพ่นไล่ลม"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "trisonin": {
+    "zh-TW": {
+      "youtubeId": "YKKQ3hffRpQ",
+      "title": "如何正確使用鼻噴劑",
+      "channel": "全能家庭醫學科診所",
+      "notice": "影片未清楚示範 Trisonin 瓶頸安全扣環；請依本單張圖示取下扣環再使用。"
+    },
+    "en": {
+      "youtubeId": "e7nCoZ7pZFA",
+      "title": "How to use Nasacort® Allergy 24HR nasal spray",
+      "channel": "Nasacort Allergy 24HR",
+      "notice": "The video uses a similar spray bottle. Follow this sheet and your product leaflet for the cap, safety clip, and priming count."
+    },
+    "id": {
+      "youtubeId": "QJB3CT6d1Ws",
+      "title": "Cara Menggunakan Obat Intranasal",
+      "channel": "Alomedika",
+      "notice": "Video memakai botol semprot sejenis. Ikuti lembar ini dan petunjuk produk untuk tutup, klip pengaman, dan priming."
+    },
+    "vi": {
+      "youtubeId": "kipGRaYkCWA",
+      "title": "HƯỚNG DẪN XỊT MŨI ĐÚNG CÁCH CHO NGƯỜI VIÊM XOANG, DỊ ỨNG",
+      "channel": "Bệnh viện Sante",
+      "notice": "Video dùng chai xịt tương tự. Hãy theo tờ hướng dẫn này và tờ thuốc về nắp, vòng an toàn và số lần bơm mồi."
+    },
+    "th": {
+      "youtubeId": "-57ASe_CfrE",
+      "title": "วิธีใช้ยาพ่นจมูกสเตียรอยด์ที่ถูกต้อง - เภสัชกรร้านยากรุงเทพ",
+      "channel": "ร้านยากรุงเทพ"
+    },
+    "tl": {
+      "youtubeId": "EZhtk-LGkuI",
+      "title": "Wastong Paggamit ng Intranasal Spray",
+      "channel": "Breathe Freely Network"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
   }
 }
