@@ -29127,11 +29127,14 @@ function escapeHtml(value) {
 }
 
 function renderIllustrationImage(src, alt, first) {
-  const safeSrc = escapeHtml(src);
+  // The revised nasal illustrations reuse their original filenames. Change the
+  // URL so browsers do not keep showing an older, medically misleading image.
+  const revision = src.startsWith("assets/img/day18-nasal/") ? "?v=20261109-3" : "";
+  const safeSrc = escapeHtml(src + revision);
   const safeAlt = escapeHtml(alt);
   const img = `<img src="${safeSrc}" alt="${safeAlt}" loading="eager" decoding="async"${first ? ' fetchpriority="high"' : ""}>`;
   if (!/\.png$/i.test(src)) return img;
-  const webp = escapeHtml(src.replace(/\.png$/i, ".webp"));
+  const webp = escapeHtml(src.replace(/\.png$/i, ".webp") + revision);
   return `<picture><source srcset="${webp}" type="image/webp">${img}</picture>`;
 }
 

@@ -50,3 +50,9 @@ test("PNG sheets select WebP and request visible images immediately", () => {
   assert.match(markup, /fetchpriority="high"/);
   assert.doesNotMatch(html, /loading="lazy"/);
 });
+
+test("revised nasal art uses a fresh URL for both WebP and PNG", () => {
+  const markup = vm.runInContext('renderIllustrationImage("assets/img/day18-nasal/avamys/main/step-03.png", "朝同側耳朵", false)', context);
+  assert.match(markup, /step-03\.webp\?v=20261109-3/);
+  assert.match(markup, /step-03\.png\?v=20261109-3/);
+});
