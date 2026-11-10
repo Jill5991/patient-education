@@ -4143,5 +4143,218 @@
     "ja": {
       "status": "no_suitable_video"
     }
+  },
+  "nicorette-freshmint-gum": {
+    "zh-TW": {
+      "youtubeId": "DQxS3r1O75s",
+      "title": "克菸咀嚼錠使用方法",
+      "channel": "quit smoking",
+      "notice": "影片示範同成分的克菸咀嚼錠；咀嚼次數與劑量請依本單張及您領到的產品仿單。"
+    },
+    "en": {
+      "youtubeId": "rEyf7GN0m4w",
+      "title": "Nicotine Gum Is Not Chewed Like Regular Gum",
+      "channel": "Woodstock Family"
+    },
+    "id": {
+      "youtubeId": "w-8yP69h7Js",
+      "title": "Bagaimana sih cara pakai Nicorette®️ Gum? Simak video berikut ini!",
+      "channel": "Nicorette ID"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "hOZFoRbyQsw",
+      "title": "ตัวช่วยเลิกบุหรี่แบบหมากฝรั่งทดแทนนิโคติน",
+      "channel": "Nicorette Thailand"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "VEwHy-QGIJo",
+      "title": "ガムで禁煙を助ける？",
+      "channel": "やくまろ　薬局薬剤師の勉強チャンネル",
+      "notice": "動画は日本向けの2 mg製品を扱います。4 mg製品の選択と使用量は、この説明書と薬剤師の指示に従ってください。"
+    }
+  },
+  "nicotinell-tts-patch": {
+    "zh-TW": {
+      "youtubeId": "zITsmUKK8u4",
+      "title": "克菸貼片 | 一天一片，緩解戒菸時的焦慮不安",
+      "channel": "克菸"
+    },
+    "en": {
+      "youtubeId": "UibOJoL9Qpo",
+      "title": "How to use a Nicotine Patch",
+      "channel": "INTREPID Lab"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "youtubeId": "beWM7nq_LXw",
+      "title": "Kinh nghiệm sử dụng miếng dán nicotin hiệu quả",
+      "channel": "Nhà Thuốc Thanh Nghị"
+    },
+    "th": {
+      "youtubeId": "inckKKgz7PU",
+      "title": "วิธีการใช้แผ่นแปะนิโคติน : ยวมนต์เภสัช",
+      "channel": "An Ant world"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "JSg3wYotAJI",
+      "title": "ニコチネル パッチ20／ニコチネル パッチ10の使い方",
+      "channel": "【公式】佐藤製薬株式会社 (sato)",
+      "notice": "動画は日本向けのニコチネルパッチ20／10を使います。製品の強さと貼り方は、この説明書と薬剤師の指示に従ってください。"
+    }
+  },
+  "nicotine-inhaler": {
+    "zh-TW": {
+      "youtubeId": "Y5f0X_s4fw4",
+      "title": "【衛教影片】戒菸藥品使用方式與注意事項",
+      "channel": "新北市立聯合醫院藥劑科│藥師開講",
+      "notice": "這是戒菸藥品的綜合衛教影片；本藥品的實際用法與劑量請以本單張及藥師指示為準。"
+    },
+    "en": {
+      "youtubeId": "sXzkHZ4GpHo",
+      "title": "Nicotine Replacement Therapy-Inhaler",
+      "channel": "JaniceB Quit Coach"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "niquitin-mint-lozenge": {
+    "zh-TW": {
+      "youtubeId": "Y5f0X_s4fw4",
+      "title": "【衛教影片】戒菸藥品使用方式與注意事項",
+      "channel": "新北市立聯合醫院藥劑科│藥師開講",
+      "notice": "這是戒菸藥品的綜合衛教影片；本藥品的實際用法與劑量請以本單張及藥師指示為準。"
+    },
+    "en": {
+      "youtubeId": "4E0SOPv6YMc",
+      "title": "How to use the Nicotine Lozenge",
+      "channel": "INTREPID Lab"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "nicorette-quickmist": {
+    "zh-TW": {
+      "youtubeId": "4ACo4Irm3bE",
+      "title": "尼古清戒菸噴霧劑",
+      "channel": "新光醫院 Shin Kong Hospital Official Channel（新光吳火獅紀念醫院藥劑部）"
+    },
+    "en": {
+      "youtubeId": "1TUfPFYL3F8",
+      "title": "How to use the Nicotine Mouth Spray",
+      "channel": "INTREPID Lab"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "bupropion-sr": {
+    "zh-TW": {
+      "youtubeId": "Y5f0X_s4fw4",
+      "title": "【衛教影片】戒菸藥品使用方式與注意事項",
+      "channel": "新北市立聯合醫院藥劑科│藥師開講",
+      "notice": "這是戒菸藥品的綜合衛教影片；本藥品的實際用法與劑量請以本單張及藥師指示為準。"
+    },
+    "en": {
+      "youtubeId": "t6vWnuLSC34",
+      "title": "How to Use Bupropion SR to Quit Smoking",
+      "channel": "Centers for Disease Control and Prevention (CDC)"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "varenicline-champix": {
+    "zh-TW": {
+      "youtubeId": "pbGJB_pRNPc",
+      "title": "我想戒菸，我的選擇有什麼?",
+      "channel": "童綜合醫院TTMHH",
+      "notice": "這是戒菸治療選擇的介紹；戒必適的起始劑量和加量方式請依本單張及藥師指示。"
+    },
+    "en": {
+      "youtubeId": "osVTf4Un_3c",
+      "title": "How and When to use Varenicline? (Champix, Chantix) - Medical Doctor Explains",
+      "channel": "HOW TO MEDICATE"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "lKv1QOjN9mI",
+      "title": "MEDDi HOW | การใช้ยา Champix",
+      "channel": "BNH Meddi（泰國曼谷 BNH Hospital 官方醫療頻道）"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "youtubeId": "WrWtxAAQW54",
+      "title": "【禁煙外来ドクター】チャンピックスが再開！ニコチンパッチよりも禁煙成功率が高い！タバコをやめたい方におすすめです！",
+      "channel": "くみ先生@呼吸器・ｱﾚﾙｷﾞｰ専門医👩‍⚕️ﾊﾋﾟｺﾜｸﾘﾆｯｸ五反田田町三田駅前内科",
+      "notice": "禁煙治療の紹介動画です。チャンピックスの開始用量と増量方法は、この説明書と薬剤師の指示に従ってください。"
+    }
   }
 }
