@@ -74,3 +74,22 @@ test("four new QR routes cover seven languages and gaps are explicit", () => {
   }
   assert.equal(videos.nitrostat.vi.status, "no_suitable_video");
 });
+
+test("rescue advice reflects current asthma care and manufacturer phase-out", () => {
+  for (const med of context.data.medications) {
+    if (med.id === "berotec-n") continue;
+    const advice = JSON.stringify([med.preStepsInfo?.text, med.warnings]);
+    assert.doesNotMatch(advice, /Berotec-N/, med.id);
+  }
+  for (const code of context.data.langs.map(lang => lang.code)) {
+    const berotecWarnings = byId["berotec-n"].warnings.map(warning => warning[code]);
+    const berodualWarnings = byId["berodual-n"].warnings.map(warning => warning[code]);
+    assert.ok(berotecWarnings.length >= 5);
+    assert.ok(berodualWarnings.length >= 4);
+    assert.ok(berotecWarnings.every(Boolean));
+    assert.ok(berodualWarnings.every(Boolean));
+  }
+  assert.match(byId["berotec-n"].warnings[0].en, /ICS-containing/);
+  assert.match(byId["berotec-n"].warnings[1].en, /phase-out/);
+  assert.match(byId["berodual-n"].warnings[1].en, /phase-out/);
+});
