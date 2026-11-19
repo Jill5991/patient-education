@@ -1576,22 +1576,22 @@ const MEDICATIONS = [
           },
           {
               action: {
-                  "zh-TW": "5 分鐘未緩解，再含第 2 片（最多 3 片）",
-                  "en": "Not relieved — take 2nd tablet (max 3 tablets total)",
-                  "id": "Belum membaik — minum tablet ke-2 (maks. 3 tablet)",
-                  "vi": "Chưa giảm — dùng viên thứ 2 (tối đa 3 viên)",
-                  "th": "ไม่ดีขึ้น — อมเม็ดที่ 2 (สูงสุด 3 เม็ด)",
-                  "tl": "Hindi gumagaan — uminom ng ika-2 tablet (max 3 tablet)",
-                  "ja": "和らがない場合は2錠目を服用（最大3錠）"
+                  "zh-TW": "含第 1 片後 5 分鐘仍未緩解，立即撥打 119",
+                  "en": "If pain persists 5 minutes after the first tablet, call 119 now",
+                  "id": "Jika nyeri belum reda 5 menit setelah tablet pertama, segera hubungi 119",
+                  "vi": "Nếu vẫn đau sau 5 phút dùng viên đầu, gọi 119 ngay",
+                  "th": "หากยังเจ็บหลังอมเม็ดแรก 5 นาที ให้โทร 119 ทันที",
+                  "tl": "Kung masakit pa rin 5 minuto matapos ang unang tableta, tumawag agad sa 119",
+                  "ja": "1錠目から5分後も痛みが続く場合、直ちに119番に電話"
               },
               note: {
-                  "zh-TW": "3 片後仍未緩解 → 立即撥打 119，等待救護車，不要自行駕車",
-                  "en": "Still not relieved after 3 tablets → Call 119 immediately — do not drive",
-                  "id": "Masih tidak membaik setelah 3 tablet → Hubungi 119 segera — jangan berkendara",
-                  "vi": "Vẫn chưa giảm sau 3 viên → Gọi 119 ngay — không tự lái xe",
-                  "th": "ยังไม่ดีขึ้นหลัง 3 เม็ด → โทร 119 ทันที อย่าขับรถเอง",
-                  "tl": "Hindi pa rin gumagaan pagkatapos ng 3 tablet → Tumawag ng 119 agad — huwag magmaneho",
-                  "ja": "3錠後も和らがない → 直ちに119番 — 自分で運転しない"
+                  "zh-TW": "等救護車時可每隔 5 分鐘再含 1 片，總共最多 3 片；不要自行駕車",
+                  "en": "While waiting for help, repeat one tablet every 5 minutes, up to 3 total. Do not drive.",
+                  "id": "Sambil menunggu ambulans, ulangi 1 tablet setiap 5 menit, maksimal 3 tablet total. Jangan mengemudi.",
+                  "vi": "Trong khi chờ cấp cứu, có thể ngậm thêm 1 viên mỗi 5 phút, tối đa 3 viên. Không tự lái xe.",
+                  "th": "ระหว่างรอรถพยาบาล อมเพิ่มได้ครั้งละ 1 เม็ดทุก 5 นาที รวมไม่เกิน 3 เม็ด ห้ามขับรถเอง",
+                  "tl": "Habang naghihintay ng ambulansya, maaaring umulit ng 1 tableta bawat 5 minuto, hanggang 3 lahat. Huwag magmaneho.",
+                  "ja": "救急車を待つ間、5分ごとに1錠ずつ追加可（合計最大3錠）。自分で運転しない。"
               },
               illustration: "assets/svg/nitrostat/step-3.png",
               highlight: true
@@ -4350,13 +4350,13 @@ const MEDICATIONS = [
           },
           {
               action: {
-                  "zh-TW": "需要第 2 劑時：等 30 秒後重複步驟 ①-⑤",
-                  "en": "If a second puff is needed: wait 30 seconds, then repeat steps 1-5",
-                  "id": "Jika perlu dosis ke-2: tunggu 30 detik lalu ulangi langkah 1-5",
-                  "vi": "Nếu cần liều thứ 2: chờ 30 giây rồi lặp lại bước 1-5",
-                  "th": "หากต้องใช้โดสที่ 2: รอ 30 วินาที แล้วทำซ้ำขั้นตอน 1-5",
-                  "tl": "Kung kailangan ng ika-2 puff: maghintay ng 30 segundo, tapos ulitin ang hakbang 1-5",
-                  "ja": "2吸入目が必要なら30秒待って手順1-5を繰り返す"
+                  "zh-TW": "急性發作吸入 1 劑後等 5 分鐘；未改善才重複吸入第 2 劑",
+                  "en": "For an acute attack, wait 5 minutes after the first puff; take a second puff only if not improved",
+                  "id": "Saat serangan akut, tunggu 5 menit setelah semprotan pertama; gunakan semprotan kedua hanya jika belum membaik",
+                  "vi": "Khi lên cơn cấp, chờ 5 phút sau nhát xịt đầu; chỉ xịt lần hai nếu chưa cải thiện",
+                  "th": "เมื่อมีอาการกำเริบ รอ 5 นาทีหลังพ่นครั้งแรก; พ่นครั้งที่สองเฉพาะเมื่อยังไม่ดีขึ้น",
+                  "tl": "Sa matinding atake, maghintay ng 5 minuto matapos ang unang puff; ulitin lamang kung hindi gumaan",
+                  "ja": "急性発作時は1吸入後5分待ち、改善しない場合のみ2吸入目を行う"
               },
               note: {
                   "zh-TW": "每次只按壓一次，不可連按兩下。",
@@ -29844,6 +29844,32 @@ Object.entries(DAY19_SMOKING_IMAGES).forEach(([id, count]) => {
   });
   med.qrUrl = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
 });
+
+// Days 20–21: emergency medicines and home blood pressure monitoring.
+const DAY20_EMERGENCY_IMAGES = {
+  nitrostat: 5, "berodual-n": 6, "berotec-n": 6
+};
+Object.entries(DAY20_EMERGENCY_IMAGES).forEach(([id, count]) => {
+  const med = MEDICATIONS.find(item => item.id === id);
+  if (!med || med.steps?.length !== count) throw new Error(`Day-20 step mismatch: ${id}`);
+  med.steps.forEach((step, i) => {
+    step.illustration = `assets/img/day20-ntg/${id}/main/step-${String(i).padStart(2, "0")}.png`;
+  });
+  med.qrUrl = `https://jill5991.github.io/patient-education/video.html?med=${id}`;
+});
+
+const bpKit = MEDICATIONS.find(item => item.id === "home-blood-pressure-kit");
+const bpPageCounts = [6, 8, 7];
+if (!bpKit || bpKit.pages?.length !== bpPageCounts.length ||
+    bpKit.pages.some((page, index) => page.steps?.length !== bpPageCounts[index])) {
+  throw new Error("Day-21 blood pressure step mismatch");
+}
+bpKit.pages.forEach((page, pageIndex) => page.steps.forEach((step, i) => {
+  const art = `assets/img/day21-other/home-blood-pressure-kit/page-${pageIndex + 1}/step-${String(i).padStart(2, "0")}.png`;
+  step.illustration = art;
+}));
+bpKit.qrUrl = "https://jill5991.github.io/patient-education/video.html?med=home-blood-pressure-kit";
+bpKit.pages.forEach(page => { page.qrUrl = bpKit.qrUrl; });
 </script>
 </body>
 </html>

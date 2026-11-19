@@ -4356,5 +4356,153 @@
       "channel": "くみ先生@呼吸器・ｱﾚﾙｷﾞｰ専門医👩‍⚕️ﾊﾋﾟｺﾜｸﾘﾆｯｸ五反田田町三田駅前内科",
       "notice": "禁煙治療の紹介動画です。チャンピックスの開始用量と増量方法は、この説明書と薬剤師の指示に従ってください。"
     }
+  },
+  "nitrostat": {
+    "zh-TW": {
+      "youtubeId": "5GRkMAb8fGc",
+      "title": "【衛教影片】Nitrostat 耐絞寧舌下錠(救心)用藥指導",
+      "channel": "新北市立聯合醫院藥劑科│藥師開講"
+    },
+    "en": {
+      "status": "no_suitable_video"
+    },
+    "id": {
+      "status": "no_suitable_video"
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "status": "no_suitable_video"
+    },
+    "tl": {
+      "status": "no_suitable_video"
+    },
+    "ja": {
+      "status": "no_suitable_video"
+    }
+  },
+  "berodual-n": {
+    "zh-TW": {
+      "youtubeId": "3oVJMaGRABI",
+      "title": "【衛教影片】定量噴霧吸入劑的使用方式與注意事項 (Berotec N 備勞喘、Berodual N 備喘全)",
+      "channel": "新北市立聯合醫院藥劑科│藥師開講"
+    },
+    "en": {
+      "youtubeId": "G3z1dClBJxI",
+      "title": "Doctor shows how to use your inhaler properly! #asthma #inhaler #copd #doctor",
+      "channel": "Dr Sophie GP",
+      "notice": "This video shows general metered-dose inhaler technique. Follow this sheet for Berodual N preparation and dose."
+    },
+    "id": {
+      "youtubeId": "Q3Qq7klEIEA",
+      "title": "Tutorial Inhaler Salbutamol: Langkah Benar Menurut Dokter",
+      "channel": "dr. Yohan Maulana",
+      "notice": "Video ini menunjukkan inhaler salbutamol, bukan Berodual N. Ikuti lembar ini untuk dosis dan persiapan Berodual N."
+    },
+    "vi": {
+      "youtubeId": "nwCM1QIgWyw",
+      "title": "👍👍👍 HƯỚNG DẪN SỬ DỤNG DỤNG CỤ HÍT SỐ 3: BERODUAL👍👍👍",
+      "channel": "Bệnh viện Phạm Ngọc Thạch"
+    },
+    "th": {
+      "youtubeId": "6jxrupDmhKY",
+      "title": "How to Use | วิธีการใช้ยาสูดพ่น \"Evohaler\" สำหรับผู้ป่วยโรคหอบ หืด [27/06/2018]",
+      "channel": "SIKARIN HOSPITAL",
+      "notice": "วิดีโอนี้แสดงวิธีใช้เครื่องพ่นยาชนิดกดทั่วไป ไม่ใช่ Berodual N ให้ยึดวิธีเตรียมและขนาดยาตามเอกสารนี้"
+    },
+    "tl": {
+      "youtubeId": "0fO5Q5lTmog",
+      "title": "Wastong Paggamit ng Metered Dose Inhaler",
+      "channel": "Breathe Freely Network（Philippine College of Chest Physicians）",
+      "notice": "Pangkalahatang MDI ang nasa video. Sundin ang polyetong ito para sa paghahanda at dosis ng Berodual N."
+    },
+    "ja": {
+      "youtubeId": "Mcx3Eqccei8",
+      "title": "成人編吸入動画　エアゾール製剤（発作時）【解説編】",
+      "channel": "環境再生保全機構公式動画チャンネル（ERCA）",
+      "notice": "動画は一般的な定量噴霧式吸入器の手技です。ベロデュアルNの準備と用量はこの説明書に従ってください。"
+    }
+  },
+  "berotec-n": {
+    "zh-TW": {
+      "youtubeId": "nwrYZPtxXO8",
+      "title": "【雙和藥你會】備勞喘 定量噴霧液 ( Berotec N )｜支氣管擴張劑｜緩解氣喘發作｜",
+      "channel": "衛生福利部雙和醫院藥劑部"
+    },
+    "en": {
+      "youtubeId": "G3z1dClBJxI",
+      "title": "Doctor shows how to use your inhaler properly! #asthma #inhaler #copd #doctor",
+      "channel": "Dr Sophie GP",
+      "notice": "This video demonstrates general inhaler technique. For an acute attack, wait 5 minutes after the first Berotec N puff and repeat only if symptoms have not improved."
+    },
+    "id": {
+      "youtubeId": "bwnxJuxQDGA",
+      "title": "Cara Penggunaan Inhaler #shorts #inhalers #how #howto #qna",
+      "channel": "apt. Rizki Ardiansyah",
+      "notice": "Video ini menunjukkan teknik inhaler umum. Saat serangan akut dengan Berotec N, tunggu 5 menit setelah semprotan pertama; ulangi hanya jika belum membaik."
+    },
+    "vi": {
+      "status": "no_suitable_video"
+    },
+    "th": {
+      "youtubeId": "6jxrupDmhKY",
+      "title": "How to Use | วิธีการใช้ยาสูดพ่น \"Evohaler\" สำหรับผู้ป่วยโรคหอบ หืด [27/06/2018]",
+      "channel": "SIKARIN HOSPITAL",
+      "notice": "วิดีโอนี้สาธิตเครื่องพ่นยาทั่วไป สำหรับ Berotec N เมื่อมีอาการกำเริบ ให้รอ 5 นาทีหลังพ่นครั้งแรกและพ่นซ้ำเฉพาะเมื่อยังไม่ดีขึ้น"
+    },
+    "tl": {
+      "youtubeId": "46QEVLjjIao",
+      "title": "COPD Inhaler Techniques Video Filipino MDI",
+      "channel": "Health Literacy & Chronic Disease Management",
+      "notice": "Pangkalahatang MDI ang nasa video. Para sa Berotec N sa matinding atake, maghintay ng 5 minuto matapos ang unang puff at ulitin lamang kung hindi gumaan."
+    },
+    "ja": {
+      "youtubeId": "Mcx3Eqccei8",
+      "title": "成人編吸入動画　エアゾール製剤（発作時）【解説編】",
+      "channel": "環境再生保全機構公式動画チャンネル（ERCA）",
+      "notice": "動画は一般的な吸入手技です。ベロテックNの急性発作時は1吸入後5分待ち、改善しない場合のみ追加してください。"
+    }
+  },
+  "home-blood-pressure-kit": {
+    "zh-TW": {
+      "youtubeId": "1PQ1v7dxFNA",
+      "title": "722 原則正確量血壓 這數值最健康 ft. 陳冠任 醫師 譚敦慈【 小宇宙大爆發 】精華版",
+      "channel": "小宇宙大爆發"
+    },
+    "en": {
+      "youtubeId": "g7kjjhK5jcU",
+      "title": "The Right Way to Check Your Blood Pressure at Home | A Doctor Explains",
+      "channel": "The Cooking Doc",
+      "notice": "This video demonstrates measurement technique. Use the 7-2-2 schedule and Taiwan home blood pressure threshold of 130/80 mmHg shown on this sheet."
+    },
+    "id": {
+      "youtubeId": "jxRskXDjmNA",
+      "title": "Cara Mengukur Tekanan Darah yang Benar dengan Tensimeter Digital",
+      "channel": "Kasih Ibu Hospital"
+    },
+    "vi": {
+      "youtubeId": "HWKFdym-KrQ",
+      "title": "Hướng dẫn đo huyết áp đúng cách tại nhà | Bệnh viện Đa khoa Tâm Anh",
+      "channel": "Bệnh Viện Đa Khoa Tâm Anh",
+      "notice": "Video minh họa kỹ thuật đo. Hãy theo lịch 7-2-2 và ngưỡng huyết áp tại nhà 130/80 mmHg của Đài Loan ghi trên tờ hướng dẫn."
+    },
+    "th": {
+      "youtubeId": "_DU7IUHUF1k",
+      "title": "การวัดความดันโลหิตด้วยตนเองที่บ้าน (Home blood pressure monitoring) | MFU-MCH",
+      "channel": "MFU-MCH โรงพยาบาลศูนย์การแพทย์ฯ มฟล."
+    },
+    "tl": {
+      "youtubeId": "rN6UJYZv14I",
+      "title": "🤔𝐏𝐀𝐀𝐍𝐎 𝐍𝐆𝐀 𝐁𝐀 𝐀𝐍𝐆 𝐓𝐀𝐌𝐀𝐍𝐆 𝐏𝐀𝐆𝐊𝐔𝐇𝐀 𝐍𝐆 𝐁𝐋𝐎𝐎𝐃 𝐏𝐑𝐄𝐒𝐒𝐔𝐑𝐄 𝐆𝐀𝐌𝐈𝐓 𝐀𝐍𝐆 𝐃𝐈𝐆𝐈𝐓𝐀𝐋 𝐃𝐄𝐕𝐈𝐂𝐄? 𝐀𝐋𝐀𝐌𝐈𝐍!",
+      "channel": "Philippine Society of Hypertension",
+      "notice": "Ipinapakita ng video ang tamang pagsukat. Sundin ang 7-2-2 at hangganang 130/80 mmHg sa Taiwan na nasa polyetong ito."
+    },
+    "ja": {
+      "youtubeId": "Z1QjraTpWb8",
+      "title": "オムロン 上腕式血圧計（軟性腕帯タイプ）の正しい使い方 | OMRON",
+      "channel": "オムロン ヘルスケア株式会社",
+      "notice": "動画は測定手技の説明です。測定日程と台湾の家庭血圧基準130/80 mmHgはこの説明書に従ってください。"
+    }
   }
 }
