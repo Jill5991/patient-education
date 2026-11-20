@@ -19,5 +19,11 @@ fs.cpSync(path.join(root, "assets"), path.join(output, "assets"), {
   recursive: true,
   filter: source => !path.basename(source).startsWith(".")
 });
+// Every published file, including images, must pass through login middleware.
+fs.writeFileSync(path.join(output, "_routes.json"), JSON.stringify({
+  version: 1,
+  include: ["/*"],
+  exclude: []
+}));
 
-console.log(`Prepared ${output} for the access-controlled pharmacy site.`);
+console.log(`Prepared ${output} for the Google-login pharmacy site.`);
