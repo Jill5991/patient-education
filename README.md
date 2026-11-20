@@ -9,10 +9,13 @@ Patient medication education sheets for pharmacy iPad use.
 - `SPEC.md`: design and authoring spec
 - `blank_guides/`: one blank JSON template per medication
 - `blank_guides_manifest.json`: index of all blank templates
+- `pharmacy-config.js`: owner-maintained pharmacy names and phone numbers used in print footers
+- `TRUSTED_PHARMACIES.md`: partner pharmacy URLs, Cloudflare Access login, and migration checklist
 
 ## iPad usage
 
 Open the deployed HTTPS URL on iPad Safari and switch language/category directly in the page UI.
+The current GitHub Pages URL is public. For trusted-pharmacy sign-in, follow `TRUSTED_PHARMACIES.md` before distributing a protected URL.
 
 ## Maintain content
 

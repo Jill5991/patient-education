@@ -55,13 +55,16 @@
     const params = new URLSearchParams(location.search);
     const med = params.get("med");
     const lang = params.get("lang");
+    const pharmacy = params.get("pharmacy");
     const ui = labels[lang] || labels["zh-TW"];
     document.documentElement.lang = labels[lang] ? lang : "zh-TW";
     document.title = ui.heading;
     document.getElementById("heading").textContent = ui.heading;
     document.getElementById("intro").textContent = ui.intro;
     document.getElementById("back").textContent = ui.back;
-    document.getElementById("back").href = `index.html?med=${encodeURIComponent(med || "trelegy-ellipta")}&lang=${encodeURIComponent(lang || "zh-TW")}`;
+    const backParams = new URLSearchParams({ med: med || "trelegy-ellipta", lang: lang || "zh-TW" });
+    if (pharmacy && /^[a-z0-9-]+$/.test(pharmacy)) backParams.set("pharmacy", pharmacy);
+    document.getElementById("back").href = `index.html?${backParams}`;
 
     async function showApprovedVideo() {
       try {

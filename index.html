@@ -867,6 +867,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
 <!-- QRCode.js from cdnjs -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="pharmacy-config.js"></script>
 
 <script>
 // ============================================================
@@ -29009,6 +29010,18 @@ let pageIdx = 0;
 let qrInstance = null;
 let activeCategory = "all";
 let medSearch = "";
+let selectedPharmacy = null;
+
+function resolvePharmacy(search, config) {
+  if (!config || !config.pharmacies) return null;
+  const params = new URLSearchParams(search);
+  const id = params.has("pharmacy") ? params.get("pharmacy") : config.defaultId;
+  if (!id || !/^[a-z0-9-]+$/.test(id)) return null;
+  const pharmacy = Object.prototype.hasOwnProperty.call(config.pharmacies, id)
+    ? config.pharmacies[id] : null;
+  if (!pharmacy || !pharmacy.name || !pharmacy.phone) return null;
+  return { id, name: pharmacy.name, phone: pharmacy.phone };
+}
 
 function uiText(key) {
   return (UI[key] && (UI[key][lang] || UI[key]["en"])) || "";
@@ -29125,6 +29138,11 @@ function ensureMedVisible() {
 function init() {
   MEDICATIONS.forEach(m => { m.category = inferCategory(m); });
   const params = new URLSearchParams(window.location.search);
+  selectedPharmacy = resolvePharmacy(window.location.search, window.PHARMACY_CONFIG);
+  if (!selectedPharmacy) {
+    document.body.innerHTML = '<main role="alert" style="max-width:640px;margin:10vh auto;padding:24px;font:18px/1.6 system-ui">藥局設定不存在或未載入。請向管理者索取正確網址；此頁不可列印。</main>';
+    return;
+  }
   const requestedLang = params.get("lang");
   if (LANGS.some(item => item.code === requestedLang)) lang = requestedLang;
   const requestedMed = params.get("med");
@@ -29402,7 +29420,7 @@ function renderReferenceSheet(m, c, t, ui, localize) {
     </div>
     <div class="ref-ntg-footer">
       <div class="ref-ntg-footer-info">
-        <div class="ref-ntg-footer-top">佳禾藥局 &nbsp; Tel: 03-482-7805 &nbsp; ${ui("prepared")}: ${preparedMonth}</div>
+        <div class="ref-ntg-footer-top">${escapeHtml(selectedPharmacy.name)} &nbsp; Tel: ${escapeHtml(selectedPharmacy.phone)} &nbsp; ${ui("prepared")}: ${preparedMonth}</div>
         <div>${ui("scan")}</div>
       </div>
       <div class="ref-ntg-footer-qr">
@@ -29519,6 +29537,9 @@ function render() {
 function getSheetQrUrl(medication, language) {
   const url = new URL(medication.qrUrl);
   url.searchParams.set("lang", language);
+  if (selectedPharmacy && url.pathname.endsWith("/video.html")) {
+    url.searchParams.set("pharmacy", selectedPharmacy.id);
+  }
   return url.toString();
 }
 
