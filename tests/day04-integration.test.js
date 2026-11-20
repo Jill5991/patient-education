@@ -32,9 +32,7 @@ const imageCounts = {
 };
 const clinicalReviewIds = [
   "psyllium-hydrophilic-mucilloid",
-  "painkyl-buccal-film",
-  "gi-klean-powder",
-  "bowklean-powder"
+  "painkyl-buccal-film"
 ];
 
 test("day-04 oral sheets reference 28 valid illustrations in step order", () => {
@@ -68,7 +66,7 @@ test("unfinished oral sheets remain in clinical review with no illustration or v
 
 test("day-04 QR codes preserve each language and videos use matching routes", () => {
   let available = 0;
-  for (const id of [...Object.keys(imageCounts), ...clinicalReviewIds]) {
+  for (const id of [...Object.keys(imageCounts), ...clinicalReviewIds, "gi-klean-powder", "bowklean-powder"]) {
     const med = medications.find(item => item.id === id);
     assert.deepEqual(Object.keys(videos[id]).sort(), [...languages].sort());
     for (const lang of languages) {

@@ -808,6 +808,25 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
     box-shadow: none; border-radius: 0;
     page-break-after: always;
   }
+  .sheet[data-med="bowklean-powder"] .ref-ntg-step,
+  .sheet[data-med="gi-klean-powder"] .ref-ntg-step {
+    grid-template-columns: 26px minmax(0, 1fr) 125px;
+    column-gap: 10px;
+    padding: 8px 18px;
+  }
+  .sheet[data-med="bowklean-powder"] .ref-ntg-step-ill,
+  .sheet[data-med="gi-klean-powder"] .ref-ntg-step-ill {
+    width: 125px;
+    height: 95px;
+  }
+  .sheet[data-med="bowklean-powder"] .ref-ntg-step-action,
+  .sheet[data-med="gi-klean-powder"] .ref-ntg-step-action { font-size: 18px; line-height: 1.3; }
+  .sheet[data-med="bowklean-powder"] .ref-ntg-step-note,
+  .sheet[data-med="gi-klean-powder"] .ref-ntg-step-note { font-size: 14.5px; line-height: 1.35; }
+  .sheet[data-med="bowklean-powder"] .ref-ntg-infobox-text,
+  .sheet[data-med="gi-klean-powder"] .ref-ntg-infobox-text { font-size: 14.5px; line-height: 1.4; }
+  .sheet[data-med="bowklean-powder"] .ref-ntg-warn-item,
+  .sheet[data-med="gi-klean-powder"] .ref-ntg-warn-item { font-size: 14.5px; line-height: 1.4; }
 }
 </style>
 </head>
@@ -19377,153 +19396,9 @@ const MEDICATIONS = [
     qrUrl: "https://www.ismp.org/recommendations/do-not-crush"
   },
 
-  // ── Placeholder: GI Klean Powder for colonoscopy bowel preparation ─────────────────────────────────────,
-  {
-      "id": "gi-klean-powder",
-      color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
-      },
-      emergency: false,
-      name: {
-          "zh-TW": "GI Klean Powder（腸鏡清腸）",
-          "en": "GI Klean Powder for colonoscopy bowel preparation",
-          "id": "GI Klean Powder for colonoscopy bowel preparation",
-          "vi": "GI Klean Powder for colonoscopy bowel preparation",
-          "th": "GI Klean Powder for colonoscopy bowel preparation",
-          "tl": "GI Klean Powder for colonoscopy bowel preparation",
-          "ja": "GI Klean Powder for colonoscopy bowel preparation"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "粉劑/泡製",
-          "en": "Powder/Reconstitution",
-          "id": "Serbuk",
-          "vi": "Thuốc bột",
-          "th": "ยาผง",
-          "tl": "Powder/Reconstitution",
-          "ja": "粉末剤"
-      },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/gi-klean-powder"
-  },
-
-  // ── Placeholder: Bowklean Powder for colonoscopy bowel preparation ─────────────────────────────────────,
-  {
-      "id": "bowklean-powder",
-      color: {
-          main: "#0F6E56",
-          light: "#E1F5EE",
-          dark: "#04342C",
-          badge: "#9FE1CB",
-          badgeText: "#04342C"
-      },
-      emergency: false,
-      name: {
-          "zh-TW": "Bowklean Powder（腸鏡清腸）",
-          "en": "Bowklean Powder for colonoscopy bowel preparation",
-          "id": "Bowklean Powder for colonoscopy bowel preparation",
-          "vi": "Bowklean Powder for colonoscopy bowel preparation",
-          "th": "Bowklean Powder for colonoscopy bowel preparation",
-          "tl": "Bowklean Powder for colonoscopy bowel preparation",
-          "ja": "Bowklean Powder for colonoscopy bowel preparation"
-      },
-      subtitle: {
-          "zh-TW": "待更新：請由藥師填寫此藥品完整衛教內容",
-          "en": "Pending update: pharmacist will add full instructions",
-          "id": "Akan diperbarui: apoteker akan melengkapi instruksi",
-          "vi": "Sẽ cập nhật: dược sĩ sẽ bổ sung hướng dẫn đầy đủ",
-          "th": "รออัปเดต: เภสัชกรจะเติมคำแนะนำฉบับเต็ม",
-          "tl": "Ia-update pa: pupunan ng parmasyutiko ang kumpletong gabay",
-          "ja": "更新待ち：薬剤師が詳細指導を追記します"
-      },
-      badge: {
-          "zh-TW": "粉劑/泡製",
-          "en": "Powder/Reconstitution",
-          "id": "Serbuk",
-          "vi": "Thuốc bột",
-          "th": "ยาผง",
-          "tl": "Powder/Reconstitution",
-          "ja": "粉末剤"
-      },
-      steps: [
-          {
-              action: {
-                  "zh-TW": "內容待填寫",
-                  "en": "Content pending",
-                  "id": "Konten menunggu pengisian",
-                  "vi": "Nội dung chờ cập nhật",
-                  "th": "เนื้อหายังไม่กรอก",
-                  "tl": "Naghihintay ng nilalaman",
-                  "ja": "内容は未入力です"
-              },
-              note: {
-                  "zh-TW": "請依院內最新版衛教內容補上步驟",
-                  "en": "Please fill this step using the latest in-house guidance",
-                  "id": "Isi langkah ini sesuai panduan terbaru internal",
-                  "vi": "Vui lòng điền bước này theo hướng dẫn mới nhất của cơ sở",
-                  "th": "กรุณาเติมขั้นตอนตามคู่มือเวอร์ชันล่าสุดของหน่วยงาน",
-                  "tl": "Punan ang hakbang na ito batay sa pinakabagong gabay ng institusyon",
-                  "ja": "院内の最新版手順に沿って入力してください"
-              }
-          }
-      ],
-      warnings: [
-          {
-              "zh-TW": "注意事項待填寫",
-              "en": "Warning content pending",
-              "id": "Peringatan menunggu pengisian",
-              "vi": "Nội dung cảnh báo chờ cập nhật",
-              "th": "คำเตือนยังไม่กรอก",
-              "tl": "Naghihintay ng babala",
-              "ja": "注意事項は未入力です"
-          }
-      ],
-      qrUrl: "https://pharmacy.example.com/meds/bowklean-powder"
-  },
+  // Product data for these two medicines is completed in the bowel-prep block below.
+  { id: "gi-klean-powder", color: { main: "#0F6E56", light: "#E1F5EE", dark: "#04342C", badge: "#9FE1CB", badgeText: "#04342C" }, emergency: false, badge: tx("清腸粉劑", "Bowel prep powder", "Serbuk pembersih usus", "Bột làm sạch ruột", "ผงยาล้างลำไส้", "Pulbos panlinis ng bituka", "腸管洗浄剤") },
+  { id: "bowklean-powder", color: { main: "#0F6E56", light: "#E1F5EE", dark: "#04342C", badge: "#9FE1CB", badgeText: "#04342C" }, emergency: false, badge: tx("清腸粉劑", "Bowel prep powder", "Serbuk pembersih usus", "Bột làm sạch ruột", "ผงยาล้างลำไส้", "Pulbos panlinis ng bituka", "腸管洗浄剤") },
 
   // ── Placeholder: Anal ointment (sodium oleate, hydroxypolyethoxydodecane, chlorocavacrol) ─────────────────────────────────────,
   {
@@ -29888,6 +29763,98 @@ bpKit.pages.forEach((page, pageIndex) => page.steps.forEach((step, i) => {
 }));
 bpKit.qrUrl = "https://jill5991.github.io/patient-education/video.html?med=home-blood-pressure-kit";
 bpKit.pages.forEach(page => { page.qrUrl = bpKit.qrUrl; });
+
+// Product-specific bowel preparation sheets. Taiwanese inserts determine the
+// mixing volumes; the facility's appointment sheet determines clock times.
+const bowelStep = (action, note, illustration) => ({ action, note, illustration });
+const bowelStorageTitle = tx("保存方式", "Storage", "Penyimpanan", "Bảo quản", "การเก็บรักษา", "Pag-iimbak", "保管方法");
+
+const bowklean = MEDICATIONS.find(item => item.id === "bowklean-powder");
+Object.assign(bowklean, {
+  name: tx("保可淨散劑 Bowklean", "Bowklean Powder", "Bowklean Powder", "Bowklean Powder", "Bowklean Powder", "Bowklean Powder", "Bowklean散剤"),
+  subtitle: tx("成人大腸鏡檢查前清腸", "Bowel preparation before adult colonoscopy", "Pembersihan usus sebelum kolonoskopi dewasa", "Làm sạch ruột trước nội soi đại tràng cho người lớn", "ยาล้างลำไส้ก่อนส่องกล้องลำไส้ใหญ่ในผู้ใหญ่", "Panlinis ng bituka bago ang colonoscopy ng nasa hustong gulang", "成人の大腸内視鏡検査前の腸管洗浄"),
+  usage: tx("共 2 包；前一晚 1 包、檢查當天早上 1 包", "2 sachets: 1 the evening before and 1 on the morning of the exam", "2 sachet: 1 malam sebelumnya dan 1 pagi hari pemeriksaan", "2 gói: 1 gói tối hôm trước, 1 gói sáng ngày khám", "รวม 2 ซอง: คืนก่อนตรวจ 1 ซอง และเช้าวันตรวจ 1 ซอง", "2 pakete: 1 sa gabi bago ang pagsusuri at 1 sa umaga ng pagsusuri", "計2包：前夜に1包、検査当日の朝に1包"),
+  preStepsInfo: {
+    tone: { bg: "#E1F5EE", border: "#0F6E56", text: "#04342C" },
+    title: tx("先核對檢查單", "Check your appointment sheet first", "Periksa jadwal pemeriksaan dulu", "Xem giấy hẹn trước", "ตรวจใบนัดก่อน", "Tingnan muna ang iskedyul ng pagsusuri", "まず検査予定表を確認"),
+    text: tx("每包只加 150 mL 水。請把兩次服藥和停止飲水的時間寫在檢查單上；若院所指示不同，以院所為準。這不是腸見淨的 1,000 mL 泡法。", "Mix EACH sachet with only 150 mL water. Mark both dose times and the stop-drinking time on your appointment sheet. Follow your clinic's schedule. This is not GI Klean's 1,000 mL mixture.", "Setiap sachet dicampur hanya dengan 150 mL air. Catat waktu kedua dosis dan batas minum pada jadwal. Ikuti jadwal klinik. Ini bukan campuran GI Klean 1.000 mL.", "MỖI gói chỉ pha với 150 mL nước. Ghi giờ uống 2 liều và giờ ngừng uống theo giấy hẹn. Làm theo lịch của cơ sở khám. Không pha 1.000 mL như GI Klean.", "แต่ละซองผสมน้ำเพียง 150 mL จดเวลารับประทานทั้ง 2 ครั้งและเวลาหยุดดื่มตามใบนัด ให้ทำตามเวลาของสถานพยาบาล ไม่ใช่วิธีผสม GI Klean 1,000 mL", "Bawat pakete ay haluan lamang ng 150 mL tubig. Isulat ang oras ng 2 dosis at oras ng paghinto sa pag-inom ayon sa iskedyul. Sundin ang klinika. Iba ito sa 1,000 mL na halo ng GI Klean.", "1包につき水は150 mLだけ。2回の服用時刻と飲水終了時刻を検査予定表に記入し、施設の指示に従う。GI Kleanの1,000 mL調製とは異なる。")
+  },
+  steps: [
+    bowelStep(tx("前一天只喝清澈飲料", "Drink only clear liquids the day before", "Sehari sebelumnya minum hanya cairan jernih", "Ngày hôm trước chỉ uống chất lỏng trong", "วันก่อนตรวจดื่มได้เฉพาะเครื่องดื่มใส", "Sa araw bago ang pagsusuri, uminom lamang ng malinaw na likido", "前日は透明な飲み物だけを飲む"),
+      tx("不要吃固體食物或喝牛奶；避免紅色、紫色飲料。", "No solid food or milk; avoid red or purple drinks.", "Jangan makan makanan padat atau minum susu; hindari minuman merah/ungu.", "Không ăn thức ăn đặc hoặc uống sữa; tránh đồ uống đỏ/tím.", "ห้ามอาหารแข็งหรือนม และเลี่ยงเครื่องดื่มสีแดง/ม่วง", "Huwag kumain ng solidong pagkain o uminom ng gatas; iwasan ang pula/lilang inumin.", "固形物と牛乳は避け、赤色・紫色の飲料も避ける。"), "assets/svg/bowel-prep/clear-liquid.svg"),
+    bowelStep(tx("用 150 mL 常溫冷水泡第 1 包", "Mix sachet 1 with 150 mL room-temperature water", "Campur sachet 1 dengan 150 mL air suhu ruang", "Pha gói 1 với 150 mL nước nguội", "ผสมซองที่ 1 กับน้ำอุณหภูมิห้อง 150 mL", "Ihalo ang unang pakete sa 150 mL tubig na nasa room temperature", "1包目を常温の水150 mLに溶かす"),
+      tx("喝之前才泡；不可直接吞粉或預先泡好。", "Mix just before drinking. Do not swallow dry powder or mix ahead.", "Campur tepat sebelum diminum. Jangan menelan bubuk kering atau membuatnya lebih dulu.", "Chỉ pha ngay trước khi uống. Không nuốt bột khô hay pha sẵn.", "ผสมก่อนดื่มเท่านั้น ห้ามกลืนผงแห้งหรือผสมไว้ล่วงหน้า", "Ihalo bago inumin. Huwag lunukin ang tuyong pulbos o maghalo nang maaga.", "飲む直前に調製する。粉をそのまま飲まず、作り置きしない。"), "assets/svg/bowel-prep/bowklean-mix.svg"),
+    bowelStep(tx("攪拌至少 5 分鐘", "Stir for at least 5 minutes", "Aduk sedikitnya 5 menit", "Khuấy ít nhất 5 phút", "คนอย่างน้อย 5 นาที", "Haluin nang hindi bababa sa 5 minuto", "5分以上かき混ぜる"),
+      tx("藥液稍微變溫是正常現象。", "The mixture may become slightly warm.", "Larutan mungkin terasa sedikit hangat.", "Dung dịch có thể hơi ấm lên.", "น้ำยาอาจอุ่นขึ้นเล็กน้อย", "Maaaring bahagyang uminit ang halo.", "液が少し温かくなることがある。"), "assets/svg/bowel-prep/stir-five.svg"),
+    bowelStep(tx("前一晚喝下第 1 包", "Drink sachet 1 the evening before", "Minum sachet 1 pada malam sebelumnya", "Uống gói 1 vào tối hôm trước", "ดื่มซองที่ 1 ในคืนก่อนตรวจ", "Inumin ang unang pakete sa gabi bago ang pagsusuri", "前夜に1包目を飲む"),
+      tx("仿單建議下午 5 點至晚上 9 點服用；若醫師指定時間，依醫囑。", "The insert suggests 5–9 p.m.; follow a different time if prescribed.", "Menurut brosur, pukul 17.00–21.00; ikuti resep bila waktunya berbeda.", "Tờ hướng dẫn khuyên uống từ 17–21 giờ; theo giờ bác sĩ dặn nếu khác.", "เอกสารกำกับยาแนะนำเวลา 17.00–21.00 น. หากแพทย์กำหนดเวลาอื่น ให้ทำตามแพทย์", "Ayon sa insert, 5–9 p.m.; sundin ang ibang oras kung iniutos ng doktor.", "添付文書では17～21時を推奨。医師の指定が異なればその時刻に従う。"), "assets/svg/bowel-prep/evening.svg"),
+    bowelStep(tx("5 小時內再喝至少 5 杯清澈飲料", "Drink at least 5 more cups of clear liquids within 5 hours", "Dalam 5 jam, minum lagi sedikitnya 5 gelas cairan jernih", "Trong 5 giờ, uống thêm ít nhất 5 cốc chất lỏng trong", "ภายใน 5 ชั่วโมง ดื่มน้ำใสเพิ่มอย่างน้อย 5 แก้ว", "Sa loob ng 5 oras, uminom pa ng hindi bababa sa 5 basong malinaw na likido", "5時間以内に透明な飲み物をさらに5杯以上飲む"),
+      tx("每杯 250 mL，共至少 1,250 mL。", "Each cup is 250 mL; total at least 1,250 mL.", "Tiap gelas 250 mL; total sedikitnya 1.250 mL.", "Mỗi cốc 250 mL; tổng ít nhất 1.250 mL.", "แก้วละ 250 mL รวมอย่างน้อย 1,250 mL", "250 mL bawat baso; kabuuang hindi bababa sa 1,250 mL.", "1杯250 mL、合計1,250 mL以上。"), "assets/svg/bowel-prep/five-cups.svg"),
+    bowelStep(tx("當天早上再泡第 2 包", "Mix sachet 2 on the exam morning", "Campur sachet 2 pada pagi pemeriksaan", "Sáng ngày khám, pha gói 2", "เช้าวันตรวจ ผสมซองที่ 2", "Sa umaga ng pagsusuri, ihalo ang ikalawang pakete", "検査当日の朝に2包目を溶かす"),
+      tx("約在檢查前 5 小時服用；同樣加 150 mL 水，攪拌至少 5 分鐘後喝下。若醫師指定時間，依醫囑。", "Take about 5 hours before the exam. Again mix with 150 mL water, stir at least 5 minutes, then drink. Follow a different prescribed time.", "Minum sekitar 5 jam sebelum pemeriksaan. Campur lagi dengan 150 mL air, aduk sedikitnya 5 menit, lalu minum. Ikuti waktu resep bila berbeda.", "Uống khoảng 5 giờ trước khám. Pha với 150 mL nước, khuấy ít nhất 5 phút rồi uống. Theo giờ bác sĩ dặn nếu khác.", "ดื่มประมาณ 5 ชั่วโมงก่อนตรวจ ผสมน้ำ 150 mL คนอย่างน้อย 5 นาทีแล้วดื่ม หากแพทย์กำหนดเวลาอื่น ให้ทำตามแพทย์", "Inumin mga 5 oras bago ang pagsusuri. Ihalo sa 150 mL tubig, haluin nang 5 minuto, saka inumin. Sundin ang ibang oras kung iniutos ng doktor.", "検査約5時間前に服用。水150 mLで5分以上混ぜて飲む。医師の指定が異なればそれに従う。"), "assets/svg/bowel-prep/bowklean-mix.svg"),
+    bowelStep(tx("再喝至少 3 杯清澈飲料", "Drink at least 3 more cups of clear liquids", "Minum lagi sedikitnya 3 gelas cairan jernih", "Uống thêm ít nhất 3 cốc chất lỏng trong", "ดื่มน้ำใสเพิ่มอย่างน้อย 3 แก้ว", "Uminom pa ng hindi bababa sa 3 basong malinaw na likido", "透明な飲み物をさらに3杯以上飲む"),
+      tx("每杯 250 mL，共至少 750 mL；最遲檢查前 2 小時喝完。若院所要求更早，依院所時間。", "Each cup is 250 mL; total at least 750 mL. Finish at least 2 hours before the exam, or earlier if your clinic says so.", "Tiap gelas 250 mL; total sedikitnya 750 mL. Selesaikan paling lambat 2 jam sebelum pemeriksaan, atau lebih awal bila diminta klinik.", "Mỗi cốc 250 mL; tổng ít nhất 750 mL. Uống xong trước khám ít nhất 2 giờ hoặc sớm hơn theo cơ sở khám.", "แก้วละ 250 mL รวมอย่างน้อย 750 mL ดื่มให้หมดก่อนตรวจอย่างน้อย 2 ชั่วโมง หรือเร็วกว่านั้นตามใบนัด", "250 mL bawat baso; kabuuang hindi bababa sa 750 mL. Tapusin 2 oras bago ang pagsusuri, o mas maaga kung utos ng klinika.", "1杯250 mL、計750 mL以上。検査の2時間前まで、施設の指示が早ければその時刻までに飲み終える。"), "assets/svg/bowel-prep/three-cups.svg")
+  ],
+  storage: { title: bowelStorageTitle, text: tx("粉末保存於 25°C 以下；每包須在喝之前才泡，不可預先泡好。", "Store powder below 25°C. Mix each sachet just before drinking; do not mix ahead.", "Simpan bubuk di bawah 25°C. Campur sesaat sebelum diminum, jangan dibuat lebih dulu.", "Bảo quản bột dưới 25°C. Chỉ pha ngay trước khi uống, không pha sẵn.", "เก็บผงยาต่ำกว่า 25°C ผสมทันทีก่อนดื่ม ห้ามผสมไว้ล่วงหน้า", "Itago ang pulbos sa ibaba 25°C. Ihalo bago inumin; huwag maghalo nang maaga.", "粉末は25°C未満で保管し、飲む直前に調製する。作り置きしない。") },
+  warnings: [
+    tx("若有嚴重腎病、腸阻塞、心臟衰竭、懷孕，或醫師限制飲水，服用前先聯絡醫師。", "If you have severe kidney disease, bowel obstruction, heart failure, pregnancy, or a fluid limit, contact your doctor before using it.", "Jika Anda punya penyakit ginjal berat, sumbatan usus, gagal jantung, hamil, atau pembatasan cairan, hubungi dokter sebelum minum.", "Nếu bị bệnh thận nặng, tắc ruột, suy tim, có thai hoặc phải hạn chế nước, hãy hỏi bác sĩ trước khi dùng.", "หากเป็นโรคไตรุนแรง ลำไส้อุดตัน หัวใจล้มเหลว ตั้งครรภ์ หรือถูกจำกัดน้ำ ให้ติดต่อแพทย์ก่อนใช้", "Kung may malubhang sakit sa bato, bara sa bituka, heart failure, buntis, o may limitasyon sa tubig, tawagan muna ang doktor.", "重い腎疾患、腸閉塞、心不全、妊娠、飲水制限がある場合は服用前に医師へ連絡する。"),
+    tx("若嚴重嘔吐、昏厥、劇烈腹痛或便血，停止服用並立即就醫。", "Stop and seek urgent care for severe vomiting, fainting, severe abdominal pain, or bloody stool.", "Hentikan dan segera cari pertolongan jika muntah hebat, pingsan, nyeri perut berat, atau tinja berdarah.", "Ngừng thuốc và đi khám ngay nếu nôn nhiều, ngất, đau bụng dữ dội hoặc đi ngoài ra máu.", "หยุดยาและพบแพทย์ทันทีหากอาเจียนรุนแรง เป็นลม ปวดท้องมาก หรือถ่ายเป็นเลือด", "Itigil at magpatingin agad kung matindi ang pagsusuka, nahimatay, matinding sakit ng tiyan, o may dugo sa dumi.", "激しい嘔吐、失神、強い腹痛、血便があれば中止して直ちに受診する。"),
+    tx("糖尿病藥、抗凝血藥及其他口服藥的服法，先向醫師或藥師確認；不要自行停藥。", "Ask your doctor or pharmacist about diabetes medicines, blood thinners, and other oral medicines. Do not stop them on your own.", "Tanyakan obat diabetes, pengencer darah, dan obat minum lain kepada dokter/apoteker. Jangan hentikan sendiri.", "Hỏi bác sĩ/dược sĩ về thuốc tiểu đường, thuốc chống đông và thuốc uống khác. Không tự ngừng thuốc.", "ถามแพทย์หรือเภสัชกรเรื่องยาเบาหวาน ยาต้านการแข็งตัวของเลือด และยากินอื่น อย่าหยุดยาเอง", "Itanong sa doktor o parmasyutiko ang mga gamot sa diabetes, pampalabnaw ng dugo, at iba pang iniinom na gamot. Huwag ihinto nang sarili.", "糖尿病薬、抗凝固薬、その他の内服薬について医師・薬剤師に確認し、自己判断で中止しない。")
+  ]
+});
+
+const giKlean = MEDICATIONS.find(item => item.id === "gi-klean-powder");
+Object.assign(giKlean, {
+  name: tx("腸見淨粉劑 GI Klean", "GI Klean Powder", "GI Klean Powder", "GI Klean Powder", "GI Klean Powder", "GI Klean Powder", "GI Klean散剤"),
+  subtitle: tx("腸道檢查或手術前清腸", "Bowel preparation before an exam or surgery", "Pembersihan usus sebelum pemeriksaan atau operasi", "Làm sạch ruột trước khám hoặc phẫu thuật", "ยาล้างลำไส้ก่อนการตรวจหรือผ่าตัด", "Panlinis ng bituka bago ang pagsusuri o operasyon", "腸の検査・手術前の腸管洗浄"),
+  usage: tx("通常共 4 包；前一晚 2 包、當天早上 2 包", "Usually 4 sachets: 2 the evening before, 2 on the exam morning", "Biasanya 4 sachet: 2 malam sebelumnya, 2 pagi pemeriksaan", "Thường 4 gói: 2 gói tối hôm trước, 2 gói sáng ngày khám", "โดยทั่วไป 4 ซอง: คืนก่อนตรวจ 2 ซอง เช้าวันตรวจ 2 ซอง", "Karaniwang 4 pakete: 2 sa gabi bago at 2 sa umaga ng pagsusuri", "通常4包：前夜2包、当日朝2包"),
+  preStepsInfo: {
+    tone: { bg: "#E1F5EE", border: "#0F6E56", text: "#04342C" },
+    title: tx("先核對檢查單", "Check your appointment sheet first", "Periksa jadwal pemeriksaan dulu", "Xem giấy hẹn trước", "ตรวจใบนัดก่อน", "Tingnan muna ang iskedyul ng pagsusuri", "まず検査予定表を確認"),
+    text: tx("每包須加 1,000 mL 水。分次服用只是常見方式；若醫師開立的包數或時間不同，依醫囑。請確認停止飲水時間。這不是保可淨的 150 mL 泡法。", "Each sachet needs 1,000 mL water. Split dosing is common; follow your prescription if the number or timing differs. Check when to stop drinking. This is not Bowklean's 150 mL mixture.", "Setiap sachet perlu 1.000 mL air. Ikuti resep jika jumlah atau waktunya berbeda. Periksa batas minum. Ini bukan campuran Bowklean 150 mL.", "Mỗi gói cần 1.000 mL nước. Nếu đơn ghi số gói hoặc giờ khác, làm theo đơn. Kiểm tra giờ ngừng uống. Không pha 150 mL như Bowklean.", "แต่ละซองต้องใช้น้ำ 1,000 mL หากจำนวนซองหรือเวลาในใบสั่งต่างกัน ให้ทำตามแพทย์ ตรวจเวลาหยุดดื่ม ไม่ใช่วิธีผสม Bowklean 150 mL", "Bawat pakete ay kailangan ng 1,000 mL tubig. Sundin ang reseta kung iba ang bilang o oras. Tingnan ang oras ng paghinto sa pag-inom. Iba ito sa 150 mL ng Bowklean.", "1包につき水1,000 mL。処方された包数・時刻が異なれば処方に従い、飲水終了時刻を確認する。Bowkleanの150 mL調製とは異なる。")
+  },
+  steps: [
+    bowelStep(tx("服藥前 2 小時停止吃固體食物", "Stop solid food 2 hours before starting the medicine", "Hentikan makanan padat 2 jam sebelum mulai minum obat", "Ngừng ăn thức ăn đặc 2 giờ trước khi bắt đầu uống thuốc", "งดอาหารแข็ง 2 ชั่วโมงก่อนเริ่มยา", "Tumigil sa solidong pagkain 2 oras bago simulan ang gamot", "服用開始2時間前から固形物を食べない"),
+      tx("直到檢查結束；其他飲食限制依院所檢查單。", "Do not eat solids until the exam ends. Follow your clinic's other diet rules.", "Jangan makan padat sampai pemeriksaan selesai. Ikuti aturan makan klinik.", "Không ăn thức ăn đặc cho đến khi khám xong. Theo hướng dẫn ăn uống của cơ sở khám.", "งดจนกว่าจะตรวจเสร็จ และทำตามข้อจำกัดอาหารของสถานพยาบาล", "Huwag kumain ng solidong pagkain hanggang matapos ang pagsusuri. Sundin ang ibang tuntunin ng klinika.", "検査終了まで固形物を避け、他の食事制限は施設の指示に従う。"), "assets/svg/bowel-prep/clear-liquid.svg"),
+    bowelStep(tx("每包加 1,000 mL 水泡開", "Mix EACH sachet with 1,000 mL water", "Campur SETIAP sachet dengan 1.000 mL air", "Pha MỖI gói với 1.000 mL nước", "ผสมแต่ละซองกับน้ำ 1,000 mL", "Ihalo ang BAWAT pakete sa 1,000 mL tubig", "1包ごとに水1,000 mLに溶かす"),
+      tx("攪拌到粉末完全溶解；不要直接吞粉。", "Stir until completely dissolved. Do not swallow dry powder.", "Aduk sampai larut seluruhnya. Jangan menelan bubuk kering.", "Khuấy tan hoàn toàn. Không nuốt bột khô.", "คนให้ละลายหมด ห้ามกลืนผงแห้ง", "Haluin hanggang matunaw nang lubos. Huwag lunukin ang tuyong pulbos.", "粉が完全に溶けるまで混ぜ、粉をそのまま飲まない。"), "assets/svg/bowel-prep/gi-klean-mix.svg"),
+    bowelStep(tx("每 10–15 分鐘喝 250 mL", "Drink 250 mL every 10–15 minutes", "Minum 250 mL setiap 10–15 menit", "Uống 250 mL mỗi 10–15 phút", "ดื่ม 250 mL ทุก 10–15 นาที", "Uminom ng 250 mL bawat 10–15 minuto", "10～15分ごとに250 mL飲む"),
+      tx("1 包泡好後是 1,000 mL，約 4 杯。", "One sachet makes 1,000 mL, about four 250 mL cups.", "Satu sachet menjadi 1.000 mL, sekitar empat gelas 250 mL.", "Một gói pha thành 1.000 mL, khoảng 4 cốc 250 mL.", "ยา 1 ซองที่ผสมแล้วได้ 1,000 mL ประมาณ 4 แก้ว แก้วละ 250 mL", "Ang 1 pakete ay 1,000 mL, mga 4 na basong tig-250 mL.", "1包で1,000 mL、250 mLのコップ約4杯分。"), "assets/svg/bowel-prep/four-cups.svg"),
+    bowelStep(tx("前一晚喝完前 2 包", "Drink the first 2 sachets the evening before", "Minum 2 sachet pertama pada malam sebelumnya", "Uống 2 gói đầu vào tối hôm trước", "คืนก่อนตรวจดื่ม 2 ซองแรกให้หมด", "Inumin ang unang 2 pakete sa gabi bago ang pagsusuri", "前夜に最初の2包を飲む"),
+      tx("2 包各泡 1,000 mL，合計 2,000 mL。", "Mix each sachet in 1,000 mL; total 2,000 mL.", "Tiap sachet dicampur 1.000 mL; total 2.000 mL.", "Mỗi gói pha 1.000 mL; tổng 2.000 mL.", "ซองละ 1,000 mL รวม 2,000 mL", "1,000 mL bawat pakete; kabuuang 2,000 mL.", "各1,000 mL、合計2,000 mL。"), "assets/svg/bowel-prep/evening.svg"),
+    bowelStep(tx("當天早上泡剩下 2 包", "Mix the remaining 2 sachets on the exam morning", "Campur 2 sachet sisanya pada pagi pemeriksaan", "Sáng ngày khám, pha 2 gói còn lại", "เช้าวันตรวจ ผสมอีก 2 ซองที่เหลือ", "Sa umaga ng pagsusuri, ihalo ang natitirang 2 pakete", "検査当日の朝に残りの2包を溶かす"),
+      tx("仍是每包加 1,000 mL 水，合計 2,000 mL。", "Again use 1,000 mL water per sachet; total 2,000 mL.", "Tetap 1.000 mL air per sachet; total 2.000 mL.", "Vẫn pha 1.000 mL nước mỗi gói; tổng 2.000 mL.", "ซองละ 1,000 mL รวม 2,000 mL", "1,000 mL pa rin bawat pakete; kabuuang 2,000 mL.", "引き続き1包につき水1,000 mL、計2,000 mL。"), "assets/svg/bowel-prep/gi-klean-mix.svg"),
+    bowelStep(tx("每 10–15 分鐘喝 250 mL，直到喝完", "Drink 250 mL every 10–15 minutes until finished", "Minum 250 mL setiap 10–15 menit sampai habis", "Uống 250 mL mỗi 10–15 phút đến hết", "ดื่ม 250 mL ทุก 10–15 นาทีจนหมด", "Uminom ng 250 mL bawat 10–15 minuto hanggang maubos", "10～15分ごとに250 mLずつ飲み切る"),
+      tx("若腹脹或腹痛，放慢速度並聯絡醫療團隊。", "If bloating or pain occurs, slow down and contact your care team.", "Jika kembung atau nyeri, perlambat dan hubungi tim medis.", "Nếu chướng hoặc đau bụng, uống chậm lại và liên hệ nhân viên y tế.", "หากท้องอืดหรือปวดท้อง ให้ดื่มช้าลงและติดต่อทีมรักษา", "Kung may kabag o sakit ng tiyan, bagalan at tawagan ang iyong care team.", "腹部膨満や腹痛があれば速度を落とし、医療者に相談する。"), "assets/svg/bowel-prep/four-cups.svg"),
+    bowelStep(tx("檢查前至少 1 小時喝完腸見淨", "Finish GI Klean at least 1 hour before the exam", "Habiskan GI Klean sedikitnya 1 jam sebelum pemeriksaan", "Uống xong GI Klean ít nhất 1 giờ trước khám", "ดื่ม GI Klean ให้หมดก่อนตรวจอย่างน้อย 1 ชั่วโมง", "Tapusin ang GI Klean nang hindi bababa sa 1 oras bago ang pagsusuri", "検査の1時間以上前にGI Kleanを飲み終える"),
+      tx("這是台灣仿單的最低間隔。若檢查或鎮靜團隊要求更早禁水，依其指示。", "This is the minimum interval in the Taiwan insert. If the exam or sedation team requires earlier fasting, follow that instruction.", "Ini batas minimum pada brosur Taiwan. Jika tim pemeriksaan/sedasi meminta berhenti lebih awal, ikuti mereka.", "Đây là khoảng tối thiểu theo tờ hướng dẫn Đài Loan. Nếu nơi khám/gây mê yêu cầu ngừng uống sớm hơn, hãy làm theo.", "นี่คือเวลาขั้นต่ำตามเอกสารกำกับยาไต้หวัน หากทีมตรวจหรือทีมให้ยานอนหลับสั่งให้งดน้ำเร็วกว่านี้ ให้ทำตาม", "Ito ang pinakamababang pagitan sa Taiwan insert. Kung mas maagang paghinto ang utos ng exam o sedation team, sundin iyon.", "これは台湾の添付文書の最低間隔。検査・鎮静担当からより早い絶飲指示があれば従う。"), "assets/svg/bowel-prep/stop-one.svg")
+  ],
+  storage: { title: bowelStorageTitle, text: tx("粉末置於 25°C 以下乾燥處。泡好的藥液冷藏於 2–8°C，24 小時內喝完；剩下的丟棄。", "Keep dry powder below 25°C. Refrigerate mixed solution at 2–8°C; use within 24 hours and discard leftovers.", "Simpan bubuk kering di bawah 25°C. Larutan yang dibuat disimpan pada 2–8°C, gunakan dalam 24 jam dan buang sisanya.", "Bảo quản bột khô dưới 25°C. Dung dịch đã pha để lạnh 2–8°C, dùng trong 24 giờ và bỏ phần thừa.", "เก็บผงยาในที่แห้งต่ำกว่า 25°C น้ำยาที่ผสมแล้วแช่เย็น 2–8°C ใช้ภายใน 24 ชั่วโมงและทิ้งส่วนที่เหลือ", "Itago ang tuyong pulbos sa ibaba 25°C. I-ref ang halo sa 2–8°C; gamitin sa loob ng 24 oras at itapon ang tira.", "粉末は25°C未満の乾燥した場所に保管。調製液は2～8°Cで冷蔵し、24時間以内に使用、残りは廃棄する。") },
+  warnings: [
+    tx("若有嚴重心臟衰竭、嚴重腎病、腸阻塞或醫師限制飲水，服用前先聯絡醫師。", "If you have severe heart failure, severe kidney disease, bowel obstruction, or a fluid limit, contact your doctor before using it.", "Jika Anda punya gagal jantung berat, penyakit ginjal berat, sumbatan usus, atau pembatasan cairan, hubungi dokter sebelum minum.", "Nếu bị suy tim nặng, bệnh thận nặng, tắc ruột hoặc phải hạn chế nước, hãy hỏi bác sĩ trước khi dùng.", "หากหัวใจล้มเหลวรุนแรง โรคไตรุนแรง ลำไส้อุดตัน หรือถูกจำกัดน้ำ ให้ติดต่อแพทย์ก่อนใช้", "Kung may malubhang heart failure, sakit sa bato, bara sa bituka, o limitasyon sa tubig, tawagan muna ang doktor.", "重い心不全・腎疾患、腸閉塞、飲水制限があれば服用前に医師へ連絡する。"),
+    tx("若嚴重嘔吐、昏厥、劇烈腹痛或便血，停止服用並立即就醫。", "Stop and seek urgent care for severe vomiting, fainting, severe abdominal pain, or bloody stool.", "Hentikan dan segera cari pertolongan jika muntah hebat, pingsan, nyeri perut berat, atau tinja berdarah.", "Ngừng thuốc và đi khám ngay nếu nôn nhiều, ngất, đau bụng dữ dội hoặc đi ngoài ra máu.", "หยุดยาและพบแพทย์ทันทีหากอาเจียนรุนแรง เป็นลม ปวดท้องมาก หรือถ่ายเป็นเลือด", "Itigil at magpatingin agad kung matindi ang pagsusuka, nahimatay, matinding sakit ng tiyan, o may dugo sa dumi.", "激しい嘔吐、失神、強い腹痛、血便があれば中止して直ちに受診する。"),
+    tx("其他口服藥至少在開始喝腸見淨前 1 小時服用；糖尿病藥與抗凝血藥請先問醫師或藥師，勿自行停藥。", "Take other oral medicines at least 1 hour before starting GI Klean. Ask about diabetes medicines and blood thinners; do not stop them on your own.", "Minum obat oral lain sedikitnya 1 jam sebelum mulai GI Klean. Tanyakan obat diabetes dan pengencer darah; jangan hentikan sendiri.", "Uống thuốc khác ít nhất 1 giờ trước khi bắt đầu GI Klean. Hỏi về thuốc tiểu đường và chống đông; không tự ngừng thuốc.", "รับประทานยากินอื่นอย่างน้อย 1 ชั่วโมงก่อนเริ่ม GI Klean ถามแพทย์เรื่องยาเบาหวานและยาต้านการแข็งตัวของเลือด อย่าหยุดยาเอง", "Inumin ang ibang gamot 1 oras bago simulan ang GI Klean. Itanong ang gamot sa diabetes at blood thinner; huwag ihinto nang sarili.", "他の内服薬はGI Klean開始の1時間以上前に服用。糖尿病薬・抗凝固薬は確認し、自己判断で中止しない。")
+  ]
+});
+
+// Keep each printable B5 side readable: preparation and first dose on side A,
+// remaining liquids and second dose on side B.
+for (const med of [bowklean, giKlean]) {
+  med.pages = [
+    {
+      pageLabel: tx("A 面｜準備與第一劑", "Side A | prepare and first dose", "Sisi A | siapkan dan dosis pertama", "Mặt A | chuẩn bị và liều đầu", "ด้าน A | เตรียมและยาครั้งแรก", "Panig A | paghahanda at unang dosis", "A面｜準備と1回目"),
+      steps: med.steps.slice(0, 4),
+      storage: null,
+      warnings: med.id === "bowklean-powder" ? [] : med.warnings.slice(0, 1)
+    },
+    {
+      pageLabel: tx("B 面｜補水與第二劑", "Side B | liquids and second dose", "Sisi B | cairan dan dosis kedua", "Mặt B | uống nước và liều hai", "ด้าน B | ดื่มน้ำและยาครั้งที่สอง", "Panig B | pag-inom ng likido at ikalawang dosis", "B面｜補水と2回目"),
+      preStepsInfo: null,
+      steps: med.steps.slice(4),
+      warnings: med.id === "bowklean-powder" ? med.warnings : med.warnings.slice(1)
+    }
+  ];
+}
 </script>
 </body>
 </html>

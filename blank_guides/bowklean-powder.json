@@ -1,65 +1,471 @@
 {
-  "id": "bowklean-powder",
   "category": "powder",
+  "id": "bowklean-powder",
+  "badge": {
+    "zh-TW": "清腸粉劑",
+    "en": "Bowel prep powder",
+    "id": "Serbuk pembersih usus",
+    "vi": "Bột làm sạch ruột",
+    "th": "ผงยาล้างลำไส้",
+    "tl": "Pulbos panlinis ng bituka",
+    "ja": "腸管洗浄剤"
+  },
+  "qrUrl": "https://jill5991.github.io/patient-education/video.html?med=bowklean-powder",
   "name": {
-    "zh-TW": "Bowklean Powder（腸鏡清腸）",
-    "en": "Bowklean Powder for colonoscopy bowel preparation",
-    "id": "Bowklean Powder for colonoscopy bowel preparation",
-    "vi": "Bowklean Powder for colonoscopy bowel preparation",
-    "th": "Bowklean Powder for colonoscopy bowel preparation",
-    "tl": "Bowklean Powder for colonoscopy bowel preparation",
-    "ja": "Bowklean Powder for colonoscopy bowel preparation"
+    "zh-TW": "保可淨散劑 Bowklean",
+    "en": "Bowklean Powder",
+    "id": "Bowklean Powder",
+    "vi": "Bowklean Powder",
+    "th": "Bowklean Powder",
+    "tl": "Bowklean Powder",
+    "ja": "Bowklean散剤"
   },
   "subtitle": {
-    "zh-TW": "",
-    "en": "",
-    "id": "",
-    "vi": "",
-    "th": "",
-    "tl": "",
-    "ja": ""
+    "zh-TW": "成人大腸鏡檢查前清腸",
+    "en": "Bowel preparation before adult colonoscopy",
+    "id": "Pembersihan usus sebelum kolonoskopi dewasa",
+    "vi": "Làm sạch ruột trước nội soi đại tràng cho người lớn",
+    "th": "ยาล้างลำไส้ก่อนส่องกล้องลำไส้ใหญ่ในผู้ใหญ่",
+    "tl": "Panlinis ng bituka bago ang colonoscopy ng nasa hustong gulang",
+    "ja": "成人の大腸内視鏡検査前の腸管洗浄"
   },
-  "badge": {
-    "zh-TW": "粉劑/泡製",
-    "en": "Powder/Reconstitution",
-    "id": "Serbuk",
-    "vi": "Thuốc bột",
-    "th": "ยาผง",
-    "tl": "Powder/Reconstitution",
-    "ja": "粉末剤"
+  "usage": {
+    "zh-TW": "共 2 包；前一晚 1 包、檢查當天早上 1 包",
+    "en": "2 sachets: 1 the evening before and 1 on the morning of the exam",
+    "id": "2 sachet: 1 malam sebelumnya dan 1 pagi hari pemeriksaan",
+    "vi": "2 gói: 1 gói tối hôm trước, 1 gói sáng ngày khám",
+    "th": "รวม 2 ซอง: คืนก่อนตรวจ 1 ซอง และเช้าวันตรวจ 1 ซอง",
+    "tl": "2 pakete: 1 sa gabi bago ang pagsusuri at 1 sa umaga ng pagsusuri",
+    "ja": "計2包：前夜に1包、検査当日の朝に1包"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#E1F5EE",
+      "border": "#0F6E56",
+      "text": "#04342C"
+    },
+    "title": {
+      "zh-TW": "先核對檢查單",
+      "en": "Check your appointment sheet first",
+      "id": "Periksa jadwal pemeriksaan dulu",
+      "vi": "Xem giấy hẹn trước",
+      "th": "ตรวจใบนัดก่อน",
+      "tl": "Tingnan muna ang iskedyul ng pagsusuri",
+      "ja": "まず検査予定表を確認"
+    },
+    "text": {
+      "zh-TW": "每包只加 150 mL 水。請把兩次服藥和停止飲水的時間寫在檢查單上；若院所指示不同，以院所為準。這不是腸見淨的 1,000 mL 泡法。",
+      "en": "Mix EACH sachet with only 150 mL water. Mark both dose times and the stop-drinking time on your appointment sheet. Follow your clinic's schedule. This is not GI Klean's 1,000 mL mixture.",
+      "id": "Setiap sachet dicampur hanya dengan 150 mL air. Catat waktu kedua dosis dan batas minum pada jadwal. Ikuti jadwal klinik. Ini bukan campuran GI Klean 1.000 mL.",
+      "vi": "MỖI gói chỉ pha với 150 mL nước. Ghi giờ uống 2 liều và giờ ngừng uống theo giấy hẹn. Làm theo lịch của cơ sở khám. Không pha 1.000 mL như GI Klean.",
+      "th": "แต่ละซองผสมน้ำเพียง 150 mL จดเวลารับประทานทั้ง 2 ครั้งและเวลาหยุดดื่มตามใบนัด ให้ทำตามเวลาของสถานพยาบาล ไม่ใช่วิธีผสม GI Klean 1,000 mL",
+      "tl": "Bawat pakete ay haluan lamang ng 150 mL tubig. Isulat ang oras ng 2 dosis at oras ng paghinto sa pag-inom ayon sa iskedyul. Sundin ang klinika. Iba ito sa 1,000 mL na halo ng GI Klean.",
+      "ja": "1包につき水は150 mLだけ。2回の服用時刻と飲水終了時刻を検査予定表に記入し、施設の指示に従う。GI Kleanの1,000 mL調製とは異なる。"
+    }
   },
   "steps": [
     {
       "action": {
-        "zh-TW": "",
-        "en": "",
-        "id": "",
-        "vi": "",
-        "th": "",
-        "tl": "",
-        "ja": ""
+        "zh-TW": "前一天只喝清澈飲料",
+        "en": "Drink only clear liquids the day before",
+        "id": "Sehari sebelumnya minum hanya cairan jernih",
+        "vi": "Ngày hôm trước chỉ uống chất lỏng trong",
+        "th": "วันก่อนตรวจดื่มได้เฉพาะเครื่องดื่มใส",
+        "tl": "Sa araw bago ang pagsusuri, uminom lamang ng malinaw na likido",
+        "ja": "前日は透明な飲み物だけを飲む"
       },
       "note": {
-        "zh-TW": "",
-        "en": "",
-        "id": "",
-        "vi": "",
-        "th": "",
-        "tl": "",
-        "ja": ""
-      }
+        "zh-TW": "不要吃固體食物或喝牛奶；避免紅色、紫色飲料。",
+        "en": "No solid food or milk; avoid red or purple drinks.",
+        "id": "Jangan makan makanan padat atau minum susu; hindari minuman merah/ungu.",
+        "vi": "Không ăn thức ăn đặc hoặc uống sữa; tránh đồ uống đỏ/tím.",
+        "th": "ห้ามอาหารแข็งหรือนม และเลี่ยงเครื่องดื่มสีแดง/ม่วง",
+        "tl": "Huwag kumain ng solidong pagkain o uminom ng gatas; iwasan ang pula/lilang inumin.",
+        "ja": "固形物と牛乳は避け、赤色・紫色の飲料も避ける。"
+      },
+      "illustration": "assets/svg/bowel-prep/clear-liquid.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "用 150 mL 常溫冷水泡第 1 包",
+        "en": "Mix sachet 1 with 150 mL room-temperature water",
+        "id": "Campur sachet 1 dengan 150 mL air suhu ruang",
+        "vi": "Pha gói 1 với 150 mL nước nguội",
+        "th": "ผสมซองที่ 1 กับน้ำอุณหภูมิห้อง 150 mL",
+        "tl": "Ihalo ang unang pakete sa 150 mL tubig na nasa room temperature",
+        "ja": "1包目を常温の水150 mLに溶かす"
+      },
+      "note": {
+        "zh-TW": "喝之前才泡；不可直接吞粉或預先泡好。",
+        "en": "Mix just before drinking. Do not swallow dry powder or mix ahead.",
+        "id": "Campur tepat sebelum diminum. Jangan menelan bubuk kering atau membuatnya lebih dulu.",
+        "vi": "Chỉ pha ngay trước khi uống. Không nuốt bột khô hay pha sẵn.",
+        "th": "ผสมก่อนดื่มเท่านั้น ห้ามกลืนผงแห้งหรือผสมไว้ล่วงหน้า",
+        "tl": "Ihalo bago inumin. Huwag lunukin ang tuyong pulbos o maghalo nang maaga.",
+        "ja": "飲む直前に調製する。粉をそのまま飲まず、作り置きしない。"
+      },
+      "illustration": "assets/svg/bowel-prep/bowklean-mix.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "攪拌至少 5 分鐘",
+        "en": "Stir for at least 5 minutes",
+        "id": "Aduk sedikitnya 5 menit",
+        "vi": "Khuấy ít nhất 5 phút",
+        "th": "คนอย่างน้อย 5 นาที",
+        "tl": "Haluin nang hindi bababa sa 5 minuto",
+        "ja": "5分以上かき混ぜる"
+      },
+      "note": {
+        "zh-TW": "藥液稍微變溫是正常現象。",
+        "en": "The mixture may become slightly warm.",
+        "id": "Larutan mungkin terasa sedikit hangat.",
+        "vi": "Dung dịch có thể hơi ấm lên.",
+        "th": "น้ำยาอาจอุ่นขึ้นเล็กน้อย",
+        "tl": "Maaaring bahagyang uminit ang halo.",
+        "ja": "液が少し温かくなることがある。"
+      },
+      "illustration": "assets/svg/bowel-prep/stir-five.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "前一晚喝下第 1 包",
+        "en": "Drink sachet 1 the evening before",
+        "id": "Minum sachet 1 pada malam sebelumnya",
+        "vi": "Uống gói 1 vào tối hôm trước",
+        "th": "ดื่มซองที่ 1 ในคืนก่อนตรวจ",
+        "tl": "Inumin ang unang pakete sa gabi bago ang pagsusuri",
+        "ja": "前夜に1包目を飲む"
+      },
+      "note": {
+        "zh-TW": "仿單建議下午 5 點至晚上 9 點服用；若醫師指定時間，依醫囑。",
+        "en": "The insert suggests 5–9 p.m.; follow a different time if prescribed.",
+        "id": "Menurut brosur, pukul 17.00–21.00; ikuti resep bila waktunya berbeda.",
+        "vi": "Tờ hướng dẫn khuyên uống từ 17–21 giờ; theo giờ bác sĩ dặn nếu khác.",
+        "th": "เอกสารกำกับยาแนะนำเวลา 17.00–21.00 น. หากแพทย์กำหนดเวลาอื่น ให้ทำตามแพทย์",
+        "tl": "Ayon sa insert, 5–9 p.m.; sundin ang ibang oras kung iniutos ng doktor.",
+        "ja": "添付文書では17～21時を推奨。医師の指定が異なればその時刻に従う。"
+      },
+      "illustration": "assets/svg/bowel-prep/evening.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "5 小時內再喝至少 5 杯清澈飲料",
+        "en": "Drink at least 5 more cups of clear liquids within 5 hours",
+        "id": "Dalam 5 jam, minum lagi sedikitnya 5 gelas cairan jernih",
+        "vi": "Trong 5 giờ, uống thêm ít nhất 5 cốc chất lỏng trong",
+        "th": "ภายใน 5 ชั่วโมง ดื่มน้ำใสเพิ่มอย่างน้อย 5 แก้ว",
+        "tl": "Sa loob ng 5 oras, uminom pa ng hindi bababa sa 5 basong malinaw na likido",
+        "ja": "5時間以内に透明な飲み物をさらに5杯以上飲む"
+      },
+      "note": {
+        "zh-TW": "每杯 250 mL，共至少 1,250 mL。",
+        "en": "Each cup is 250 mL; total at least 1,250 mL.",
+        "id": "Tiap gelas 250 mL; total sedikitnya 1.250 mL.",
+        "vi": "Mỗi cốc 250 mL; tổng ít nhất 1.250 mL.",
+        "th": "แก้วละ 250 mL รวมอย่างน้อย 1,250 mL",
+        "tl": "250 mL bawat baso; kabuuang hindi bababa sa 1,250 mL.",
+        "ja": "1杯250 mL、合計1,250 mL以上。"
+      },
+      "illustration": "assets/svg/bowel-prep/five-cups.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "當天早上再泡第 2 包",
+        "en": "Mix sachet 2 on the exam morning",
+        "id": "Campur sachet 2 pada pagi pemeriksaan",
+        "vi": "Sáng ngày khám, pha gói 2",
+        "th": "เช้าวันตรวจ ผสมซองที่ 2",
+        "tl": "Sa umaga ng pagsusuri, ihalo ang ikalawang pakete",
+        "ja": "検査当日の朝に2包目を溶かす"
+      },
+      "note": {
+        "zh-TW": "約在檢查前 5 小時服用；同樣加 150 mL 水，攪拌至少 5 分鐘後喝下。若醫師指定時間，依醫囑。",
+        "en": "Take about 5 hours before the exam. Again mix with 150 mL water, stir at least 5 minutes, then drink. Follow a different prescribed time.",
+        "id": "Minum sekitar 5 jam sebelum pemeriksaan. Campur lagi dengan 150 mL air, aduk sedikitnya 5 menit, lalu minum. Ikuti waktu resep bila berbeda.",
+        "vi": "Uống khoảng 5 giờ trước khám. Pha với 150 mL nước, khuấy ít nhất 5 phút rồi uống. Theo giờ bác sĩ dặn nếu khác.",
+        "th": "ดื่มประมาณ 5 ชั่วโมงก่อนตรวจ ผสมน้ำ 150 mL คนอย่างน้อย 5 นาทีแล้วดื่ม หากแพทย์กำหนดเวลาอื่น ให้ทำตามแพทย์",
+        "tl": "Inumin mga 5 oras bago ang pagsusuri. Ihalo sa 150 mL tubig, haluin nang 5 minuto, saka inumin. Sundin ang ibang oras kung iniutos ng doktor.",
+        "ja": "検査約5時間前に服用。水150 mLで5分以上混ぜて飲む。医師の指定が異なればそれに従う。"
+      },
+      "illustration": "assets/svg/bowel-prep/bowklean-mix.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "再喝至少 3 杯清澈飲料",
+        "en": "Drink at least 3 more cups of clear liquids",
+        "id": "Minum lagi sedikitnya 3 gelas cairan jernih",
+        "vi": "Uống thêm ít nhất 3 cốc chất lỏng trong",
+        "th": "ดื่มน้ำใสเพิ่มอย่างน้อย 3 แก้ว",
+        "tl": "Uminom pa ng hindi bababa sa 3 basong malinaw na likido",
+        "ja": "透明な飲み物をさらに3杯以上飲む"
+      },
+      "note": {
+        "zh-TW": "每杯 250 mL，共至少 750 mL；最遲檢查前 2 小時喝完。若院所要求更早，依院所時間。",
+        "en": "Each cup is 250 mL; total at least 750 mL. Finish at least 2 hours before the exam, or earlier if your clinic says so.",
+        "id": "Tiap gelas 250 mL; total sedikitnya 750 mL. Selesaikan paling lambat 2 jam sebelum pemeriksaan, atau lebih awal bila diminta klinik.",
+        "vi": "Mỗi cốc 250 mL; tổng ít nhất 750 mL. Uống xong trước khám ít nhất 2 giờ hoặc sớm hơn theo cơ sở khám.",
+        "th": "แก้วละ 250 mL รวมอย่างน้อย 750 mL ดื่มให้หมดก่อนตรวจอย่างน้อย 2 ชั่วโมง หรือเร็วกว่านั้นตามใบนัด",
+        "tl": "250 mL bawat baso; kabuuang hindi bababa sa 750 mL. Tapusin 2 oras bago ang pagsusuri, o mas maaga kung utos ng klinika.",
+        "ja": "1杯250 mL、計750 mL以上。検査の2時間前まで、施設の指示が早ければその時刻までに飲み終える。"
+      },
+      "illustration": "assets/svg/bowel-prep/three-cups.svg"
     }
   ],
+  "storage": {
+    "title": {
+      "zh-TW": "保存方式",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บรักษา",
+      "tl": "Pag-iimbak",
+      "ja": "保管方法"
+    },
+    "text": {
+      "zh-TW": "粉末保存於 25°C 以下；每包須在喝之前才泡，不可預先泡好。",
+      "en": "Store powder below 25°C. Mix each sachet just before drinking; do not mix ahead.",
+      "id": "Simpan bubuk di bawah 25°C. Campur sesaat sebelum diminum, jangan dibuat lebih dulu.",
+      "vi": "Bảo quản bột dưới 25°C. Chỉ pha ngay trước khi uống, không pha sẵn.",
+      "th": "เก็บผงยาต่ำกว่า 25°C ผสมทันทีก่อนดื่ม ห้ามผสมไว้ล่วงหน้า",
+      "tl": "Itago ang pulbos sa ibaba 25°C. Ihalo bago inumin; huwag maghalo nang maaga.",
+      "ja": "粉末は25°C未満で保管し、飲む直前に調製する。作り置きしない。"
+    }
+  },
   "warnings": [
     {
-      "zh-TW": "",
-      "en": "",
-      "id": "",
-      "vi": "",
-      "th": "",
-      "tl": "",
-      "ja": ""
+      "zh-TW": "若有嚴重腎病、腸阻塞、心臟衰竭、懷孕，或醫師限制飲水，服用前先聯絡醫師。",
+      "en": "If you have severe kidney disease, bowel obstruction, heart failure, pregnancy, or a fluid limit, contact your doctor before using it.",
+      "id": "Jika Anda punya penyakit ginjal berat, sumbatan usus, gagal jantung, hamil, atau pembatasan cairan, hubungi dokter sebelum minum.",
+      "vi": "Nếu bị bệnh thận nặng, tắc ruột, suy tim, có thai hoặc phải hạn chế nước, hãy hỏi bác sĩ trước khi dùng.",
+      "th": "หากเป็นโรคไตรุนแรง ลำไส้อุดตัน หัวใจล้มเหลว ตั้งครรภ์ หรือถูกจำกัดน้ำ ให้ติดต่อแพทย์ก่อนใช้",
+      "tl": "Kung may malubhang sakit sa bato, bara sa bituka, heart failure, buntis, o may limitasyon sa tubig, tawagan muna ang doktor.",
+      "ja": "重い腎疾患、腸閉塞、心不全、妊娠、飲水制限がある場合は服用前に医師へ連絡する。"
+    },
+    {
+      "zh-TW": "若嚴重嘔吐、昏厥、劇烈腹痛或便血，停止服用並立即就醫。",
+      "en": "Stop and seek urgent care for severe vomiting, fainting, severe abdominal pain, or bloody stool.",
+      "id": "Hentikan dan segera cari pertolongan jika muntah hebat, pingsan, nyeri perut berat, atau tinja berdarah.",
+      "vi": "Ngừng thuốc và đi khám ngay nếu nôn nhiều, ngất, đau bụng dữ dội hoặc đi ngoài ra máu.",
+      "th": "หยุดยาและพบแพทย์ทันทีหากอาเจียนรุนแรง เป็นลม ปวดท้องมาก หรือถ่ายเป็นเลือด",
+      "tl": "Itigil at magpatingin agad kung matindi ang pagsusuka, nahimatay, matinding sakit ng tiyan, o may dugo sa dumi.",
+      "ja": "激しい嘔吐、失神、強い腹痛、血便があれば中止して直ちに受診する。"
+    },
+    {
+      "zh-TW": "糖尿病藥、抗凝血藥及其他口服藥的服法，先向醫師或藥師確認；不要自行停藥。",
+      "en": "Ask your doctor or pharmacist about diabetes medicines, blood thinners, and other oral medicines. Do not stop them on your own.",
+      "id": "Tanyakan obat diabetes, pengencer darah, dan obat minum lain kepada dokter/apoteker. Jangan hentikan sendiri.",
+      "vi": "Hỏi bác sĩ/dược sĩ về thuốc tiểu đường, thuốc chống đông và thuốc uống khác. Không tự ngừng thuốc.",
+      "th": "ถามแพทย์หรือเภสัชกรเรื่องยาเบาหวาน ยาต้านการแข็งตัวของเลือด และยากินอื่น อย่าหยุดยาเอง",
+      "tl": "Itanong sa doktor o parmasyutiko ang mga gamot sa diabetes, pampalabnaw ng dugo, at iba pang iniinom na gamot. Huwag ihinto nang sarili.",
+      "ja": "糖尿病薬、抗凝固薬、その他の内服薬について医師・薬剤師に確認し、自己判断で中止しない。"
     }
   ],
-  "qrUrl": "https://pharmacy.example.com/meds/bowklean-powder"
+  "pages": [
+    {
+      "pageLabel": {
+        "zh-TW": "A 面｜準備與第一劑",
+        "en": "Side A | prepare and first dose",
+        "id": "Sisi A | siapkan dan dosis pertama",
+        "vi": "Mặt A | chuẩn bị và liều đầu",
+        "th": "ด้าน A | เตรียมและยาครั้งแรก",
+        "tl": "Panig A | paghahanda at unang dosis",
+        "ja": "A面｜準備と1回目"
+      },
+      "steps": [
+        {
+          "action": {
+            "zh-TW": "前一天只喝清澈飲料",
+            "en": "Drink only clear liquids the day before",
+            "id": "Sehari sebelumnya minum hanya cairan jernih",
+            "vi": "Ngày hôm trước chỉ uống chất lỏng trong",
+            "th": "วันก่อนตรวจดื่มได้เฉพาะเครื่องดื่มใส",
+            "tl": "Sa araw bago ang pagsusuri, uminom lamang ng malinaw na likido",
+            "ja": "前日は透明な飲み物だけを飲む"
+          },
+          "note": {
+            "zh-TW": "不要吃固體食物或喝牛奶；避免紅色、紫色飲料。",
+            "en": "No solid food or milk; avoid red or purple drinks.",
+            "id": "Jangan makan makanan padat atau minum susu; hindari minuman merah/ungu.",
+            "vi": "Không ăn thức ăn đặc hoặc uống sữa; tránh đồ uống đỏ/tím.",
+            "th": "ห้ามอาหารแข็งหรือนม และเลี่ยงเครื่องดื่มสีแดง/ม่วง",
+            "tl": "Huwag kumain ng solidong pagkain o uminom ng gatas; iwasan ang pula/lilang inumin.",
+            "ja": "固形物と牛乳は避け、赤色・紫色の飲料も避ける。"
+          },
+          "illustration": "assets/svg/bowel-prep/clear-liquid.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "用 150 mL 常溫冷水泡第 1 包",
+            "en": "Mix sachet 1 with 150 mL room-temperature water",
+            "id": "Campur sachet 1 dengan 150 mL air suhu ruang",
+            "vi": "Pha gói 1 với 150 mL nước nguội",
+            "th": "ผสมซองที่ 1 กับน้ำอุณหภูมิห้อง 150 mL",
+            "tl": "Ihalo ang unang pakete sa 150 mL tubig na nasa room temperature",
+            "ja": "1包目を常温の水150 mLに溶かす"
+          },
+          "note": {
+            "zh-TW": "喝之前才泡；不可直接吞粉或預先泡好。",
+            "en": "Mix just before drinking. Do not swallow dry powder or mix ahead.",
+            "id": "Campur tepat sebelum diminum. Jangan menelan bubuk kering atau membuatnya lebih dulu.",
+            "vi": "Chỉ pha ngay trước khi uống. Không nuốt bột khô hay pha sẵn.",
+            "th": "ผสมก่อนดื่มเท่านั้น ห้ามกลืนผงแห้งหรือผสมไว้ล่วงหน้า",
+            "tl": "Ihalo bago inumin. Huwag lunukin ang tuyong pulbos o maghalo nang maaga.",
+            "ja": "飲む直前に調製する。粉をそのまま飲まず、作り置きしない。"
+          },
+          "illustration": "assets/svg/bowel-prep/bowklean-mix.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "攪拌至少 5 分鐘",
+            "en": "Stir for at least 5 minutes",
+            "id": "Aduk sedikitnya 5 menit",
+            "vi": "Khuấy ít nhất 5 phút",
+            "th": "คนอย่างน้อย 5 นาที",
+            "tl": "Haluin nang hindi bababa sa 5 minuto",
+            "ja": "5分以上かき混ぜる"
+          },
+          "note": {
+            "zh-TW": "藥液稍微變溫是正常現象。",
+            "en": "The mixture may become slightly warm.",
+            "id": "Larutan mungkin terasa sedikit hangat.",
+            "vi": "Dung dịch có thể hơi ấm lên.",
+            "th": "น้ำยาอาจอุ่นขึ้นเล็กน้อย",
+            "tl": "Maaaring bahagyang uminit ang halo.",
+            "ja": "液が少し温かくなることがある。"
+          },
+          "illustration": "assets/svg/bowel-prep/stir-five.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "前一晚喝下第 1 包",
+            "en": "Drink sachet 1 the evening before",
+            "id": "Minum sachet 1 pada malam sebelumnya",
+            "vi": "Uống gói 1 vào tối hôm trước",
+            "th": "ดื่มซองที่ 1 ในคืนก่อนตรวจ",
+            "tl": "Inumin ang unang pakete sa gabi bago ang pagsusuri",
+            "ja": "前夜に1包目を飲む"
+          },
+          "note": {
+            "zh-TW": "仿單建議下午 5 點至晚上 9 點服用；若醫師指定時間，依醫囑。",
+            "en": "The insert suggests 5–9 p.m.; follow a different time if prescribed.",
+            "id": "Menurut brosur, pukul 17.00–21.00; ikuti resep bila waktunya berbeda.",
+            "vi": "Tờ hướng dẫn khuyên uống từ 17–21 giờ; theo giờ bác sĩ dặn nếu khác.",
+            "th": "เอกสารกำกับยาแนะนำเวลา 17.00–21.00 น. หากแพทย์กำหนดเวลาอื่น ให้ทำตามแพทย์",
+            "tl": "Ayon sa insert, 5–9 p.m.; sundin ang ibang oras kung iniutos ng doktor.",
+            "ja": "添付文書では17～21時を推奨。医師の指定が異なればその時刻に従う。"
+          },
+          "illustration": "assets/svg/bowel-prep/evening.svg"
+        }
+      ],
+      "storage": null,
+      "warnings": []
+    },
+    {
+      "pageLabel": {
+        "zh-TW": "B 面｜補水與第二劑",
+        "en": "Side B | liquids and second dose",
+        "id": "Sisi B | cairan dan dosis kedua",
+        "vi": "Mặt B | uống nước và liều hai",
+        "th": "ด้าน B | ดื่มน้ำและยาครั้งที่สอง",
+        "tl": "Panig B | pag-inom ng likido at ikalawang dosis",
+        "ja": "B面｜補水と2回目"
+      },
+      "preStepsInfo": null,
+      "steps": [
+        {
+          "action": {
+            "zh-TW": "5 小時內再喝至少 5 杯清澈飲料",
+            "en": "Drink at least 5 more cups of clear liquids within 5 hours",
+            "id": "Dalam 5 jam, minum lagi sedikitnya 5 gelas cairan jernih",
+            "vi": "Trong 5 giờ, uống thêm ít nhất 5 cốc chất lỏng trong",
+            "th": "ภายใน 5 ชั่วโมง ดื่มน้ำใสเพิ่มอย่างน้อย 5 แก้ว",
+            "tl": "Sa loob ng 5 oras, uminom pa ng hindi bababa sa 5 basong malinaw na likido",
+            "ja": "5時間以内に透明な飲み物をさらに5杯以上飲む"
+          },
+          "note": {
+            "zh-TW": "每杯 250 mL，共至少 1,250 mL。",
+            "en": "Each cup is 250 mL; total at least 1,250 mL.",
+            "id": "Tiap gelas 250 mL; total sedikitnya 1.250 mL.",
+            "vi": "Mỗi cốc 250 mL; tổng ít nhất 1.250 mL.",
+            "th": "แก้วละ 250 mL รวมอย่างน้อย 1,250 mL",
+            "tl": "250 mL bawat baso; kabuuang hindi bababa sa 1,250 mL.",
+            "ja": "1杯250 mL、合計1,250 mL以上。"
+          },
+          "illustration": "assets/svg/bowel-prep/five-cups.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "當天早上再泡第 2 包",
+            "en": "Mix sachet 2 on the exam morning",
+            "id": "Campur sachet 2 pada pagi pemeriksaan",
+            "vi": "Sáng ngày khám, pha gói 2",
+            "th": "เช้าวันตรวจ ผสมซองที่ 2",
+            "tl": "Sa umaga ng pagsusuri, ihalo ang ikalawang pakete",
+            "ja": "検査当日の朝に2包目を溶かす"
+          },
+          "note": {
+            "zh-TW": "約在檢查前 5 小時服用；同樣加 150 mL 水，攪拌至少 5 分鐘後喝下。若醫師指定時間，依醫囑。",
+            "en": "Take about 5 hours before the exam. Again mix with 150 mL water, stir at least 5 minutes, then drink. Follow a different prescribed time.",
+            "id": "Minum sekitar 5 jam sebelum pemeriksaan. Campur lagi dengan 150 mL air, aduk sedikitnya 5 menit, lalu minum. Ikuti waktu resep bila berbeda.",
+            "vi": "Uống khoảng 5 giờ trước khám. Pha với 150 mL nước, khuấy ít nhất 5 phút rồi uống. Theo giờ bác sĩ dặn nếu khác.",
+            "th": "ดื่มประมาณ 5 ชั่วโมงก่อนตรวจ ผสมน้ำ 150 mL คนอย่างน้อย 5 นาทีแล้วดื่ม หากแพทย์กำหนดเวลาอื่น ให้ทำตามแพทย์",
+            "tl": "Inumin mga 5 oras bago ang pagsusuri. Ihalo sa 150 mL tubig, haluin nang 5 minuto, saka inumin. Sundin ang ibang oras kung iniutos ng doktor.",
+            "ja": "検査約5時間前に服用。水150 mLで5分以上混ぜて飲む。医師の指定が異なればそれに従う。"
+          },
+          "illustration": "assets/svg/bowel-prep/bowklean-mix.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "再喝至少 3 杯清澈飲料",
+            "en": "Drink at least 3 more cups of clear liquids",
+            "id": "Minum lagi sedikitnya 3 gelas cairan jernih",
+            "vi": "Uống thêm ít nhất 3 cốc chất lỏng trong",
+            "th": "ดื่มน้ำใสเพิ่มอย่างน้อย 3 แก้ว",
+            "tl": "Uminom pa ng hindi bababa sa 3 basong malinaw na likido",
+            "ja": "透明な飲み物をさらに3杯以上飲む"
+          },
+          "note": {
+            "zh-TW": "每杯 250 mL，共至少 750 mL；最遲檢查前 2 小時喝完。若院所要求更早，依院所時間。",
+            "en": "Each cup is 250 mL; total at least 750 mL. Finish at least 2 hours before the exam, or earlier if your clinic says so.",
+            "id": "Tiap gelas 250 mL; total sedikitnya 750 mL. Selesaikan paling lambat 2 jam sebelum pemeriksaan, atau lebih awal bila diminta klinik.",
+            "vi": "Mỗi cốc 250 mL; tổng ít nhất 750 mL. Uống xong trước khám ít nhất 2 giờ hoặc sớm hơn theo cơ sở khám.",
+            "th": "แก้วละ 250 mL รวมอย่างน้อย 750 mL ดื่มให้หมดก่อนตรวจอย่างน้อย 2 ชั่วโมง หรือเร็วกว่านั้นตามใบนัด",
+            "tl": "250 mL bawat baso; kabuuang hindi bababa sa 750 mL. Tapusin 2 oras bago ang pagsusuri, o mas maaga kung utos ng klinika.",
+            "ja": "1杯250 mL、計750 mL以上。検査の2時間前まで、施設の指示が早ければその時刻までに飲み終える。"
+          },
+          "illustration": "assets/svg/bowel-prep/three-cups.svg"
+        }
+      ],
+      "warnings": [
+        {
+          "zh-TW": "若有嚴重腎病、腸阻塞、心臟衰竭、懷孕，或醫師限制飲水，服用前先聯絡醫師。",
+          "en": "If you have severe kidney disease, bowel obstruction, heart failure, pregnancy, or a fluid limit, contact your doctor before using it.",
+          "id": "Jika Anda punya penyakit ginjal berat, sumbatan usus, gagal jantung, hamil, atau pembatasan cairan, hubungi dokter sebelum minum.",
+          "vi": "Nếu bị bệnh thận nặng, tắc ruột, suy tim, có thai hoặc phải hạn chế nước, hãy hỏi bác sĩ trước khi dùng.",
+          "th": "หากเป็นโรคไตรุนแรง ลำไส้อุดตัน หัวใจล้มเหลว ตั้งครรภ์ หรือถูกจำกัดน้ำ ให้ติดต่อแพทย์ก่อนใช้",
+          "tl": "Kung may malubhang sakit sa bato, bara sa bituka, heart failure, buntis, o may limitasyon sa tubig, tawagan muna ang doktor.",
+          "ja": "重い腎疾患、腸閉塞、心不全、妊娠、飲水制限がある場合は服用前に医師へ連絡する。"
+        },
+        {
+          "zh-TW": "若嚴重嘔吐、昏厥、劇烈腹痛或便血，停止服用並立即就醫。",
+          "en": "Stop and seek urgent care for severe vomiting, fainting, severe abdominal pain, or bloody stool.",
+          "id": "Hentikan dan segera cari pertolongan jika muntah hebat, pingsan, nyeri perut berat, atau tinja berdarah.",
+          "vi": "Ngừng thuốc và đi khám ngay nếu nôn nhiều, ngất, đau bụng dữ dội hoặc đi ngoài ra máu.",
+          "th": "หยุดยาและพบแพทย์ทันทีหากอาเจียนรุนแรง เป็นลม ปวดท้องมาก หรือถ่ายเป็นเลือด",
+          "tl": "Itigil at magpatingin agad kung matindi ang pagsusuka, nahimatay, matinding sakit ng tiyan, o may dugo sa dumi.",
+          "ja": "激しい嘔吐、失神、強い腹痛、血便があれば中止して直ちに受診する。"
+        },
+        {
+          "zh-TW": "糖尿病藥、抗凝血藥及其他口服藥的服法，先向醫師或藥師確認；不要自行停藥。",
+          "en": "Ask your doctor or pharmacist about diabetes medicines, blood thinners, and other oral medicines. Do not stop them on your own.",
+          "id": "Tanyakan obat diabetes, pengencer darah, dan obat minum lain kepada dokter/apoteker. Jangan hentikan sendiri.",
+          "vi": "Hỏi bác sĩ/dược sĩ về thuốc tiểu đường, thuốc chống đông và thuốc uống khác. Không tự ngừng thuốc.",
+          "th": "ถามแพทย์หรือเภสัชกรเรื่องยาเบาหวาน ยาต้านการแข็งตัวของเลือด และยากินอื่น อย่าหยุดยาเอง",
+          "tl": "Itanong sa doktor o parmasyutiko ang mga gamot sa diabetes, pampalabnaw ng dugo, at iba pang iniinom na gamot. Huwag ihinto nang sarili.",
+          "ja": "糖尿病薬、抗凝固薬、その他の内服薬について医師・薬剤師に確認し、自己判断で中止しない。"
+        }
+      ]
+    }
+  ]
 }

@@ -1,65 +1,472 @@
 {
-  "id": "gi-klean-powder",
   "category": "powder",
+  "id": "gi-klean-powder",
+  "badge": {
+    "zh-TW": "清腸粉劑",
+    "en": "Bowel prep powder",
+    "id": "Serbuk pembersih usus",
+    "vi": "Bột làm sạch ruột",
+    "th": "ผงยาล้างลำไส้",
+    "tl": "Pulbos panlinis ng bituka",
+    "ja": "腸管洗浄剤"
+  },
+  "qrUrl": "https://jill5991.github.io/patient-education/video.html?med=gi-klean-powder",
   "name": {
-    "zh-TW": "GI Klean Powder（腸鏡清腸）",
-    "en": "GI Klean Powder for colonoscopy bowel preparation",
-    "id": "GI Klean Powder for colonoscopy bowel preparation",
-    "vi": "GI Klean Powder for colonoscopy bowel preparation",
-    "th": "GI Klean Powder for colonoscopy bowel preparation",
-    "tl": "GI Klean Powder for colonoscopy bowel preparation",
-    "ja": "GI Klean Powder for colonoscopy bowel preparation"
+    "zh-TW": "腸見淨粉劑 GI Klean",
+    "en": "GI Klean Powder",
+    "id": "GI Klean Powder",
+    "vi": "GI Klean Powder",
+    "th": "GI Klean Powder",
+    "tl": "GI Klean Powder",
+    "ja": "GI Klean散剤"
   },
   "subtitle": {
-    "zh-TW": "",
-    "en": "",
-    "id": "",
-    "vi": "",
-    "th": "",
-    "tl": "",
-    "ja": ""
+    "zh-TW": "腸道檢查或手術前清腸",
+    "en": "Bowel preparation before an exam or surgery",
+    "id": "Pembersihan usus sebelum pemeriksaan atau operasi",
+    "vi": "Làm sạch ruột trước khám hoặc phẫu thuật",
+    "th": "ยาล้างลำไส้ก่อนการตรวจหรือผ่าตัด",
+    "tl": "Panlinis ng bituka bago ang pagsusuri o operasyon",
+    "ja": "腸の検査・手術前の腸管洗浄"
   },
-  "badge": {
-    "zh-TW": "粉劑/泡製",
-    "en": "Powder/Reconstitution",
-    "id": "Serbuk",
-    "vi": "Thuốc bột",
-    "th": "ยาผง",
-    "tl": "Powder/Reconstitution",
-    "ja": "粉末剤"
+  "usage": {
+    "zh-TW": "通常共 4 包；前一晚 2 包、當天早上 2 包",
+    "en": "Usually 4 sachets: 2 the evening before, 2 on the exam morning",
+    "id": "Biasanya 4 sachet: 2 malam sebelumnya, 2 pagi pemeriksaan",
+    "vi": "Thường 4 gói: 2 gói tối hôm trước, 2 gói sáng ngày khám",
+    "th": "โดยทั่วไป 4 ซอง: คืนก่อนตรวจ 2 ซอง เช้าวันตรวจ 2 ซอง",
+    "tl": "Karaniwang 4 pakete: 2 sa gabi bago at 2 sa umaga ng pagsusuri",
+    "ja": "通常4包：前夜2包、当日朝2包"
+  },
+  "preStepsInfo": {
+    "tone": {
+      "bg": "#E1F5EE",
+      "border": "#0F6E56",
+      "text": "#04342C"
+    },
+    "title": {
+      "zh-TW": "先核對檢查單",
+      "en": "Check your appointment sheet first",
+      "id": "Periksa jadwal pemeriksaan dulu",
+      "vi": "Xem giấy hẹn trước",
+      "th": "ตรวจใบนัดก่อน",
+      "tl": "Tingnan muna ang iskedyul ng pagsusuri",
+      "ja": "まず検査予定表を確認"
+    },
+    "text": {
+      "zh-TW": "每包須加 1,000 mL 水。分次服用只是常見方式；若醫師開立的包數或時間不同，依醫囑。請確認停止飲水時間。這不是保可淨的 150 mL 泡法。",
+      "en": "Each sachet needs 1,000 mL water. Split dosing is common; follow your prescription if the number or timing differs. Check when to stop drinking. This is not Bowklean's 150 mL mixture.",
+      "id": "Setiap sachet perlu 1.000 mL air. Ikuti resep jika jumlah atau waktunya berbeda. Periksa batas minum. Ini bukan campuran Bowklean 150 mL.",
+      "vi": "Mỗi gói cần 1.000 mL nước. Nếu đơn ghi số gói hoặc giờ khác, làm theo đơn. Kiểm tra giờ ngừng uống. Không pha 150 mL như Bowklean.",
+      "th": "แต่ละซองต้องใช้น้ำ 1,000 mL หากจำนวนซองหรือเวลาในใบสั่งต่างกัน ให้ทำตามแพทย์ ตรวจเวลาหยุดดื่ม ไม่ใช่วิธีผสม Bowklean 150 mL",
+      "tl": "Bawat pakete ay kailangan ng 1,000 mL tubig. Sundin ang reseta kung iba ang bilang o oras. Tingnan ang oras ng paghinto sa pag-inom. Iba ito sa 150 mL ng Bowklean.",
+      "ja": "1包につき水1,000 mL。処方された包数・時刻が異なれば処方に従い、飲水終了時刻を確認する。Bowkleanの150 mL調製とは異なる。"
+    }
   },
   "steps": [
     {
       "action": {
-        "zh-TW": "",
-        "en": "",
-        "id": "",
-        "vi": "",
-        "th": "",
-        "tl": "",
-        "ja": ""
+        "zh-TW": "服藥前 2 小時停止吃固體食物",
+        "en": "Stop solid food 2 hours before starting the medicine",
+        "id": "Hentikan makanan padat 2 jam sebelum mulai minum obat",
+        "vi": "Ngừng ăn thức ăn đặc 2 giờ trước khi bắt đầu uống thuốc",
+        "th": "งดอาหารแข็ง 2 ชั่วโมงก่อนเริ่มยา",
+        "tl": "Tumigil sa solidong pagkain 2 oras bago simulan ang gamot",
+        "ja": "服用開始2時間前から固形物を食べない"
       },
       "note": {
-        "zh-TW": "",
-        "en": "",
-        "id": "",
-        "vi": "",
-        "th": "",
-        "tl": "",
-        "ja": ""
-      }
+        "zh-TW": "直到檢查結束；其他飲食限制依院所檢查單。",
+        "en": "Do not eat solids until the exam ends. Follow your clinic's other diet rules.",
+        "id": "Jangan makan padat sampai pemeriksaan selesai. Ikuti aturan makan klinik.",
+        "vi": "Không ăn thức ăn đặc cho đến khi khám xong. Theo hướng dẫn ăn uống của cơ sở khám.",
+        "th": "งดจนกว่าจะตรวจเสร็จ และทำตามข้อจำกัดอาหารของสถานพยาบาล",
+        "tl": "Huwag kumain ng solidong pagkain hanggang matapos ang pagsusuri. Sundin ang ibang tuntunin ng klinika.",
+        "ja": "検査終了まで固形物を避け、他の食事制限は施設の指示に従う。"
+      },
+      "illustration": "assets/svg/bowel-prep/clear-liquid.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "每包加 1,000 mL 水泡開",
+        "en": "Mix EACH sachet with 1,000 mL water",
+        "id": "Campur SETIAP sachet dengan 1.000 mL air",
+        "vi": "Pha MỖI gói với 1.000 mL nước",
+        "th": "ผสมแต่ละซองกับน้ำ 1,000 mL",
+        "tl": "Ihalo ang BAWAT pakete sa 1,000 mL tubig",
+        "ja": "1包ごとに水1,000 mLに溶かす"
+      },
+      "note": {
+        "zh-TW": "攪拌到粉末完全溶解；不要直接吞粉。",
+        "en": "Stir until completely dissolved. Do not swallow dry powder.",
+        "id": "Aduk sampai larut seluruhnya. Jangan menelan bubuk kering.",
+        "vi": "Khuấy tan hoàn toàn. Không nuốt bột khô.",
+        "th": "คนให้ละลายหมด ห้ามกลืนผงแห้ง",
+        "tl": "Haluin hanggang matunaw nang lubos. Huwag lunukin ang tuyong pulbos.",
+        "ja": "粉が完全に溶けるまで混ぜ、粉をそのまま飲まない。"
+      },
+      "illustration": "assets/svg/bowel-prep/gi-klean-mix.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "每 10–15 分鐘喝 250 mL",
+        "en": "Drink 250 mL every 10–15 minutes",
+        "id": "Minum 250 mL setiap 10–15 menit",
+        "vi": "Uống 250 mL mỗi 10–15 phút",
+        "th": "ดื่ม 250 mL ทุก 10–15 นาที",
+        "tl": "Uminom ng 250 mL bawat 10–15 minuto",
+        "ja": "10～15分ごとに250 mL飲む"
+      },
+      "note": {
+        "zh-TW": "1 包泡好後是 1,000 mL，約 4 杯。",
+        "en": "One sachet makes 1,000 mL, about four 250 mL cups.",
+        "id": "Satu sachet menjadi 1.000 mL, sekitar empat gelas 250 mL.",
+        "vi": "Một gói pha thành 1.000 mL, khoảng 4 cốc 250 mL.",
+        "th": "ยา 1 ซองที่ผสมแล้วได้ 1,000 mL ประมาณ 4 แก้ว แก้วละ 250 mL",
+        "tl": "Ang 1 pakete ay 1,000 mL, mga 4 na basong tig-250 mL.",
+        "ja": "1包で1,000 mL、250 mLのコップ約4杯分。"
+      },
+      "illustration": "assets/svg/bowel-prep/four-cups.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "前一晚喝完前 2 包",
+        "en": "Drink the first 2 sachets the evening before",
+        "id": "Minum 2 sachet pertama pada malam sebelumnya",
+        "vi": "Uống 2 gói đầu vào tối hôm trước",
+        "th": "คืนก่อนตรวจดื่ม 2 ซองแรกให้หมด",
+        "tl": "Inumin ang unang 2 pakete sa gabi bago ang pagsusuri",
+        "ja": "前夜に最初の2包を飲む"
+      },
+      "note": {
+        "zh-TW": "2 包各泡 1,000 mL，合計 2,000 mL。",
+        "en": "Mix each sachet in 1,000 mL; total 2,000 mL.",
+        "id": "Tiap sachet dicampur 1.000 mL; total 2.000 mL.",
+        "vi": "Mỗi gói pha 1.000 mL; tổng 2.000 mL.",
+        "th": "ซองละ 1,000 mL รวม 2,000 mL",
+        "tl": "1,000 mL bawat pakete; kabuuang 2,000 mL.",
+        "ja": "各1,000 mL、合計2,000 mL。"
+      },
+      "illustration": "assets/svg/bowel-prep/evening.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "當天早上泡剩下 2 包",
+        "en": "Mix the remaining 2 sachets on the exam morning",
+        "id": "Campur 2 sachet sisanya pada pagi pemeriksaan",
+        "vi": "Sáng ngày khám, pha 2 gói còn lại",
+        "th": "เช้าวันตรวจ ผสมอีก 2 ซองที่เหลือ",
+        "tl": "Sa umaga ng pagsusuri, ihalo ang natitirang 2 pakete",
+        "ja": "検査当日の朝に残りの2包を溶かす"
+      },
+      "note": {
+        "zh-TW": "仍是每包加 1,000 mL 水，合計 2,000 mL。",
+        "en": "Again use 1,000 mL water per sachet; total 2,000 mL.",
+        "id": "Tetap 1.000 mL air per sachet; total 2.000 mL.",
+        "vi": "Vẫn pha 1.000 mL nước mỗi gói; tổng 2.000 mL.",
+        "th": "ซองละ 1,000 mL รวม 2,000 mL",
+        "tl": "1,000 mL pa rin bawat pakete; kabuuang 2,000 mL.",
+        "ja": "引き続き1包につき水1,000 mL、計2,000 mL。"
+      },
+      "illustration": "assets/svg/bowel-prep/gi-klean-mix.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "每 10–15 分鐘喝 250 mL，直到喝完",
+        "en": "Drink 250 mL every 10–15 minutes until finished",
+        "id": "Minum 250 mL setiap 10–15 menit sampai habis",
+        "vi": "Uống 250 mL mỗi 10–15 phút đến hết",
+        "th": "ดื่ม 250 mL ทุก 10–15 นาทีจนหมด",
+        "tl": "Uminom ng 250 mL bawat 10–15 minuto hanggang maubos",
+        "ja": "10～15分ごとに250 mLずつ飲み切る"
+      },
+      "note": {
+        "zh-TW": "若腹脹或腹痛，放慢速度並聯絡醫療團隊。",
+        "en": "If bloating or pain occurs, slow down and contact your care team.",
+        "id": "Jika kembung atau nyeri, perlambat dan hubungi tim medis.",
+        "vi": "Nếu chướng hoặc đau bụng, uống chậm lại và liên hệ nhân viên y tế.",
+        "th": "หากท้องอืดหรือปวดท้อง ให้ดื่มช้าลงและติดต่อทีมรักษา",
+        "tl": "Kung may kabag o sakit ng tiyan, bagalan at tawagan ang iyong care team.",
+        "ja": "腹部膨満や腹痛があれば速度を落とし、医療者に相談する。"
+      },
+      "illustration": "assets/svg/bowel-prep/four-cups.svg"
+    },
+    {
+      "action": {
+        "zh-TW": "檢查前至少 1 小時喝完腸見淨",
+        "en": "Finish GI Klean at least 1 hour before the exam",
+        "id": "Habiskan GI Klean sedikitnya 1 jam sebelum pemeriksaan",
+        "vi": "Uống xong GI Klean ít nhất 1 giờ trước khám",
+        "th": "ดื่ม GI Klean ให้หมดก่อนตรวจอย่างน้อย 1 ชั่วโมง",
+        "tl": "Tapusin ang GI Klean nang hindi bababa sa 1 oras bago ang pagsusuri",
+        "ja": "検査の1時間以上前にGI Kleanを飲み終える"
+      },
+      "note": {
+        "zh-TW": "這是台灣仿單的最低間隔。若檢查或鎮靜團隊要求更早禁水，依其指示。",
+        "en": "This is the minimum interval in the Taiwan insert. If the exam or sedation team requires earlier fasting, follow that instruction.",
+        "id": "Ini batas minimum pada brosur Taiwan. Jika tim pemeriksaan/sedasi meminta berhenti lebih awal, ikuti mereka.",
+        "vi": "Đây là khoảng tối thiểu theo tờ hướng dẫn Đài Loan. Nếu nơi khám/gây mê yêu cầu ngừng uống sớm hơn, hãy làm theo.",
+        "th": "นี่คือเวลาขั้นต่ำตามเอกสารกำกับยาไต้หวัน หากทีมตรวจหรือทีมให้ยานอนหลับสั่งให้งดน้ำเร็วกว่านี้ ให้ทำตาม",
+        "tl": "Ito ang pinakamababang pagitan sa Taiwan insert. Kung mas maagang paghinto ang utos ng exam o sedation team, sundin iyon.",
+        "ja": "これは台湾の添付文書の最低間隔。検査・鎮静担当からより早い絶飲指示があれば従う。"
+      },
+      "illustration": "assets/svg/bowel-prep/stop-one.svg"
     }
   ],
+  "storage": {
+    "title": {
+      "zh-TW": "保存方式",
+      "en": "Storage",
+      "id": "Penyimpanan",
+      "vi": "Bảo quản",
+      "th": "การเก็บรักษา",
+      "tl": "Pag-iimbak",
+      "ja": "保管方法"
+    },
+    "text": {
+      "zh-TW": "粉末置於 25°C 以下乾燥處。泡好的藥液冷藏於 2–8°C，24 小時內喝完；剩下的丟棄。",
+      "en": "Keep dry powder below 25°C. Refrigerate mixed solution at 2–8°C; use within 24 hours and discard leftovers.",
+      "id": "Simpan bubuk kering di bawah 25°C. Larutan yang dibuat disimpan pada 2–8°C, gunakan dalam 24 jam dan buang sisanya.",
+      "vi": "Bảo quản bột khô dưới 25°C. Dung dịch đã pha để lạnh 2–8°C, dùng trong 24 giờ và bỏ phần thừa.",
+      "th": "เก็บผงยาในที่แห้งต่ำกว่า 25°C น้ำยาที่ผสมแล้วแช่เย็น 2–8°C ใช้ภายใน 24 ชั่วโมงและทิ้งส่วนที่เหลือ",
+      "tl": "Itago ang tuyong pulbos sa ibaba 25°C. I-ref ang halo sa 2–8°C; gamitin sa loob ng 24 oras at itapon ang tira.",
+      "ja": "粉末は25°C未満の乾燥した場所に保管。調製液は2～8°Cで冷蔵し、24時間以内に使用、残りは廃棄する。"
+    }
+  },
   "warnings": [
     {
-      "zh-TW": "",
-      "en": "",
-      "id": "",
-      "vi": "",
-      "th": "",
-      "tl": "",
-      "ja": ""
+      "zh-TW": "若有嚴重心臟衰竭、嚴重腎病、腸阻塞或醫師限制飲水，服用前先聯絡醫師。",
+      "en": "If you have severe heart failure, severe kidney disease, bowel obstruction, or a fluid limit, contact your doctor before using it.",
+      "id": "Jika Anda punya gagal jantung berat, penyakit ginjal berat, sumbatan usus, atau pembatasan cairan, hubungi dokter sebelum minum.",
+      "vi": "Nếu bị suy tim nặng, bệnh thận nặng, tắc ruột hoặc phải hạn chế nước, hãy hỏi bác sĩ trước khi dùng.",
+      "th": "หากหัวใจล้มเหลวรุนแรง โรคไตรุนแรง ลำไส้อุดตัน หรือถูกจำกัดน้ำ ให้ติดต่อแพทย์ก่อนใช้",
+      "tl": "Kung may malubhang heart failure, sakit sa bato, bara sa bituka, o limitasyon sa tubig, tawagan muna ang doktor.",
+      "ja": "重い心不全・腎疾患、腸閉塞、飲水制限があれば服用前に医師へ連絡する。"
+    },
+    {
+      "zh-TW": "若嚴重嘔吐、昏厥、劇烈腹痛或便血，停止服用並立即就醫。",
+      "en": "Stop and seek urgent care for severe vomiting, fainting, severe abdominal pain, or bloody stool.",
+      "id": "Hentikan dan segera cari pertolongan jika muntah hebat, pingsan, nyeri perut berat, atau tinja berdarah.",
+      "vi": "Ngừng thuốc và đi khám ngay nếu nôn nhiều, ngất, đau bụng dữ dội hoặc đi ngoài ra máu.",
+      "th": "หยุดยาและพบแพทย์ทันทีหากอาเจียนรุนแรง เป็นลม ปวดท้องมาก หรือถ่ายเป็นเลือด",
+      "tl": "Itigil at magpatingin agad kung matindi ang pagsusuka, nahimatay, matinding sakit ng tiyan, o may dugo sa dumi.",
+      "ja": "激しい嘔吐、失神、強い腹痛、血便があれば中止して直ちに受診する。"
+    },
+    {
+      "zh-TW": "其他口服藥至少在開始喝腸見淨前 1 小時服用；糖尿病藥與抗凝血藥請先問醫師或藥師，勿自行停藥。",
+      "en": "Take other oral medicines at least 1 hour before starting GI Klean. Ask about diabetes medicines and blood thinners; do not stop them on your own.",
+      "id": "Minum obat oral lain sedikitnya 1 jam sebelum mulai GI Klean. Tanyakan obat diabetes dan pengencer darah; jangan hentikan sendiri.",
+      "vi": "Uống thuốc khác ít nhất 1 giờ trước khi bắt đầu GI Klean. Hỏi về thuốc tiểu đường và chống đông; không tự ngừng thuốc.",
+      "th": "รับประทานยากินอื่นอย่างน้อย 1 ชั่วโมงก่อนเริ่ม GI Klean ถามแพทย์เรื่องยาเบาหวานและยาต้านการแข็งตัวของเลือด อย่าหยุดยาเอง",
+      "tl": "Inumin ang ibang gamot 1 oras bago simulan ang GI Klean. Itanong ang gamot sa diabetes at blood thinner; huwag ihinto nang sarili.",
+      "ja": "他の内服薬はGI Klean開始の1時間以上前に服用。糖尿病薬・抗凝固薬は確認し、自己判断で中止しない。"
     }
   ],
-  "qrUrl": "https://pharmacy.example.com/meds/gi-klean-powder"
+  "pages": [
+    {
+      "pageLabel": {
+        "zh-TW": "A 面｜準備與第一劑",
+        "en": "Side A | prepare and first dose",
+        "id": "Sisi A | siapkan dan dosis pertama",
+        "vi": "Mặt A | chuẩn bị và liều đầu",
+        "th": "ด้าน A | เตรียมและยาครั้งแรก",
+        "tl": "Panig A | paghahanda at unang dosis",
+        "ja": "A面｜準備と1回目"
+      },
+      "steps": [
+        {
+          "action": {
+            "zh-TW": "服藥前 2 小時停止吃固體食物",
+            "en": "Stop solid food 2 hours before starting the medicine",
+            "id": "Hentikan makanan padat 2 jam sebelum mulai minum obat",
+            "vi": "Ngừng ăn thức ăn đặc 2 giờ trước khi bắt đầu uống thuốc",
+            "th": "งดอาหารแข็ง 2 ชั่วโมงก่อนเริ่มยา",
+            "tl": "Tumigil sa solidong pagkain 2 oras bago simulan ang gamot",
+            "ja": "服用開始2時間前から固形物を食べない"
+          },
+          "note": {
+            "zh-TW": "直到檢查結束；其他飲食限制依院所檢查單。",
+            "en": "Do not eat solids until the exam ends. Follow your clinic's other diet rules.",
+            "id": "Jangan makan padat sampai pemeriksaan selesai. Ikuti aturan makan klinik.",
+            "vi": "Không ăn thức ăn đặc cho đến khi khám xong. Theo hướng dẫn ăn uống của cơ sở khám.",
+            "th": "งดจนกว่าจะตรวจเสร็จ และทำตามข้อจำกัดอาหารของสถานพยาบาล",
+            "tl": "Huwag kumain ng solidong pagkain hanggang matapos ang pagsusuri. Sundin ang ibang tuntunin ng klinika.",
+            "ja": "検査終了まで固形物を避け、他の食事制限は施設の指示に従う。"
+          },
+          "illustration": "assets/svg/bowel-prep/clear-liquid.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "每包加 1,000 mL 水泡開",
+            "en": "Mix EACH sachet with 1,000 mL water",
+            "id": "Campur SETIAP sachet dengan 1.000 mL air",
+            "vi": "Pha MỖI gói với 1.000 mL nước",
+            "th": "ผสมแต่ละซองกับน้ำ 1,000 mL",
+            "tl": "Ihalo ang BAWAT pakete sa 1,000 mL tubig",
+            "ja": "1包ごとに水1,000 mLに溶かす"
+          },
+          "note": {
+            "zh-TW": "攪拌到粉末完全溶解；不要直接吞粉。",
+            "en": "Stir until completely dissolved. Do not swallow dry powder.",
+            "id": "Aduk sampai larut seluruhnya. Jangan menelan bubuk kering.",
+            "vi": "Khuấy tan hoàn toàn. Không nuốt bột khô.",
+            "th": "คนให้ละลายหมด ห้ามกลืนผงแห้ง",
+            "tl": "Haluin hanggang matunaw nang lubos. Huwag lunukin ang tuyong pulbos.",
+            "ja": "粉が完全に溶けるまで混ぜ、粉をそのまま飲まない。"
+          },
+          "illustration": "assets/svg/bowel-prep/gi-klean-mix.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "每 10–15 分鐘喝 250 mL",
+            "en": "Drink 250 mL every 10–15 minutes",
+            "id": "Minum 250 mL setiap 10–15 menit",
+            "vi": "Uống 250 mL mỗi 10–15 phút",
+            "th": "ดื่ม 250 mL ทุก 10–15 นาที",
+            "tl": "Uminom ng 250 mL bawat 10–15 minuto",
+            "ja": "10～15分ごとに250 mL飲む"
+          },
+          "note": {
+            "zh-TW": "1 包泡好後是 1,000 mL，約 4 杯。",
+            "en": "One sachet makes 1,000 mL, about four 250 mL cups.",
+            "id": "Satu sachet menjadi 1.000 mL, sekitar empat gelas 250 mL.",
+            "vi": "Một gói pha thành 1.000 mL, khoảng 4 cốc 250 mL.",
+            "th": "ยา 1 ซองที่ผสมแล้วได้ 1,000 mL ประมาณ 4 แก้ว แก้วละ 250 mL",
+            "tl": "Ang 1 pakete ay 1,000 mL, mga 4 na basong tig-250 mL.",
+            "ja": "1包で1,000 mL、250 mLのコップ約4杯分。"
+          },
+          "illustration": "assets/svg/bowel-prep/four-cups.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "前一晚喝完前 2 包",
+            "en": "Drink the first 2 sachets the evening before",
+            "id": "Minum 2 sachet pertama pada malam sebelumnya",
+            "vi": "Uống 2 gói đầu vào tối hôm trước",
+            "th": "คืนก่อนตรวจดื่ม 2 ซองแรกให้หมด",
+            "tl": "Inumin ang unang 2 pakete sa gabi bago ang pagsusuri",
+            "ja": "前夜に最初の2包を飲む"
+          },
+          "note": {
+            "zh-TW": "2 包各泡 1,000 mL，合計 2,000 mL。",
+            "en": "Mix each sachet in 1,000 mL; total 2,000 mL.",
+            "id": "Tiap sachet dicampur 1.000 mL; total 2.000 mL.",
+            "vi": "Mỗi gói pha 1.000 mL; tổng 2.000 mL.",
+            "th": "ซองละ 1,000 mL รวม 2,000 mL",
+            "tl": "1,000 mL bawat pakete; kabuuang 2,000 mL.",
+            "ja": "各1,000 mL、合計2,000 mL。"
+          },
+          "illustration": "assets/svg/bowel-prep/evening.svg"
+        }
+      ],
+      "storage": null,
+      "warnings": [
+        {
+          "zh-TW": "若有嚴重心臟衰竭、嚴重腎病、腸阻塞或醫師限制飲水，服用前先聯絡醫師。",
+          "en": "If you have severe heart failure, severe kidney disease, bowel obstruction, or a fluid limit, contact your doctor before using it.",
+          "id": "Jika Anda punya gagal jantung berat, penyakit ginjal berat, sumbatan usus, atau pembatasan cairan, hubungi dokter sebelum minum.",
+          "vi": "Nếu bị suy tim nặng, bệnh thận nặng, tắc ruột hoặc phải hạn chế nước, hãy hỏi bác sĩ trước khi dùng.",
+          "th": "หากหัวใจล้มเหลวรุนแรง โรคไตรุนแรง ลำไส้อุดตัน หรือถูกจำกัดน้ำ ให้ติดต่อแพทย์ก่อนใช้",
+          "tl": "Kung may malubhang heart failure, sakit sa bato, bara sa bituka, o limitasyon sa tubig, tawagan muna ang doktor.",
+          "ja": "重い心不全・腎疾患、腸閉塞、飲水制限があれば服用前に医師へ連絡する。"
+        }
+      ]
+    },
+    {
+      "pageLabel": {
+        "zh-TW": "B 面｜補水與第二劑",
+        "en": "Side B | liquids and second dose",
+        "id": "Sisi B | cairan dan dosis kedua",
+        "vi": "Mặt B | uống nước và liều hai",
+        "th": "ด้าน B | ดื่มน้ำและยาครั้งที่สอง",
+        "tl": "Panig B | pag-inom ng likido at ikalawang dosis",
+        "ja": "B面｜補水と2回目"
+      },
+      "preStepsInfo": null,
+      "steps": [
+        {
+          "action": {
+            "zh-TW": "當天早上泡剩下 2 包",
+            "en": "Mix the remaining 2 sachets on the exam morning",
+            "id": "Campur 2 sachet sisanya pada pagi pemeriksaan",
+            "vi": "Sáng ngày khám, pha 2 gói còn lại",
+            "th": "เช้าวันตรวจ ผสมอีก 2 ซองที่เหลือ",
+            "tl": "Sa umaga ng pagsusuri, ihalo ang natitirang 2 pakete",
+            "ja": "検査当日の朝に残りの2包を溶かす"
+          },
+          "note": {
+            "zh-TW": "仍是每包加 1,000 mL 水，合計 2,000 mL。",
+            "en": "Again use 1,000 mL water per sachet; total 2,000 mL.",
+            "id": "Tetap 1.000 mL air per sachet; total 2.000 mL.",
+            "vi": "Vẫn pha 1.000 mL nước mỗi gói; tổng 2.000 mL.",
+            "th": "ซองละ 1,000 mL รวม 2,000 mL",
+            "tl": "1,000 mL pa rin bawat pakete; kabuuang 2,000 mL.",
+            "ja": "引き続き1包につき水1,000 mL、計2,000 mL。"
+          },
+          "illustration": "assets/svg/bowel-prep/gi-klean-mix.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "每 10–15 分鐘喝 250 mL，直到喝完",
+            "en": "Drink 250 mL every 10–15 minutes until finished",
+            "id": "Minum 250 mL setiap 10–15 menit sampai habis",
+            "vi": "Uống 250 mL mỗi 10–15 phút đến hết",
+            "th": "ดื่ม 250 mL ทุก 10–15 นาทีจนหมด",
+            "tl": "Uminom ng 250 mL bawat 10–15 minuto hanggang maubos",
+            "ja": "10～15分ごとに250 mLずつ飲み切る"
+          },
+          "note": {
+            "zh-TW": "若腹脹或腹痛，放慢速度並聯絡醫療團隊。",
+            "en": "If bloating or pain occurs, slow down and contact your care team.",
+            "id": "Jika kembung atau nyeri, perlambat dan hubungi tim medis.",
+            "vi": "Nếu chướng hoặc đau bụng, uống chậm lại và liên hệ nhân viên y tế.",
+            "th": "หากท้องอืดหรือปวดท้อง ให้ดื่มช้าลงและติดต่อทีมรักษา",
+            "tl": "Kung may kabag o sakit ng tiyan, bagalan at tawagan ang iyong care team.",
+            "ja": "腹部膨満や腹痛があれば速度を落とし、医療者に相談する。"
+          },
+          "illustration": "assets/svg/bowel-prep/four-cups.svg"
+        },
+        {
+          "action": {
+            "zh-TW": "檢查前至少 1 小時喝完腸見淨",
+            "en": "Finish GI Klean at least 1 hour before the exam",
+            "id": "Habiskan GI Klean sedikitnya 1 jam sebelum pemeriksaan",
+            "vi": "Uống xong GI Klean ít nhất 1 giờ trước khám",
+            "th": "ดื่ม GI Klean ให้หมดก่อนตรวจอย่างน้อย 1 ชั่วโมง",
+            "tl": "Tapusin ang GI Klean nang hindi bababa sa 1 oras bago ang pagsusuri",
+            "ja": "検査の1時間以上前にGI Kleanを飲み終える"
+          },
+          "note": {
+            "zh-TW": "這是台灣仿單的最低間隔。若檢查或鎮靜團隊要求更早禁水，依其指示。",
+            "en": "This is the minimum interval in the Taiwan insert. If the exam or sedation team requires earlier fasting, follow that instruction.",
+            "id": "Ini batas minimum pada brosur Taiwan. Jika tim pemeriksaan/sedasi meminta berhenti lebih awal, ikuti mereka.",
+            "vi": "Đây là khoảng tối thiểu theo tờ hướng dẫn Đài Loan. Nếu nơi khám/gây mê yêu cầu ngừng uống sớm hơn, hãy làm theo.",
+            "th": "นี่คือเวลาขั้นต่ำตามเอกสารกำกับยาไต้หวัน หากทีมตรวจหรือทีมให้ยานอนหลับสั่งให้งดน้ำเร็วกว่านี้ ให้ทำตาม",
+            "tl": "Ito ang pinakamababang pagitan sa Taiwan insert. Kung mas maagang paghinto ang utos ng exam o sedation team, sundin iyon.",
+            "ja": "これは台湾の添付文書の最低間隔。検査・鎮静担当からより早い絶飲指示があれば従う。"
+          },
+          "illustration": "assets/svg/bowel-prep/stop-one.svg"
+        }
+      ],
+      "warnings": [
+        {
+          "zh-TW": "若嚴重嘔吐、昏厥、劇烈腹痛或便血，停止服用並立即就醫。",
+          "en": "Stop and seek urgent care for severe vomiting, fainting, severe abdominal pain, or bloody stool.",
+          "id": "Hentikan dan segera cari pertolongan jika muntah hebat, pingsan, nyeri perut berat, atau tinja berdarah.",
+          "vi": "Ngừng thuốc và đi khám ngay nếu nôn nhiều, ngất, đau bụng dữ dội hoặc đi ngoài ra máu.",
+          "th": "หยุดยาและพบแพทย์ทันทีหากอาเจียนรุนแรง เป็นลม ปวดท้องมาก หรือถ่ายเป็นเลือด",
+          "tl": "Itigil at magpatingin agad kung matindi ang pagsusuka, nahimatay, matinding sakit ng tiyan, o may dugo sa dumi.",
+          "ja": "激しい嘔吐、失神、強い腹痛、血便があれば中止して直ちに受診する。"
+        },
+        {
+          "zh-TW": "其他口服藥至少在開始喝腸見淨前 1 小時服用；糖尿病藥與抗凝血藥請先問醫師或藥師，勿自行停藥。",
+          "en": "Take other oral medicines at least 1 hour before starting GI Klean. Ask about diabetes medicines and blood thinners; do not stop them on your own.",
+          "id": "Minum obat oral lain sedikitnya 1 jam sebelum mulai GI Klean. Tanyakan obat diabetes dan pengencer darah; jangan hentikan sendiri.",
+          "vi": "Uống thuốc khác ít nhất 1 giờ trước khi bắt đầu GI Klean. Hỏi về thuốc tiểu đường và chống đông; không tự ngừng thuốc.",
+          "th": "รับประทานยากินอื่นอย่างน้อย 1 ชั่วโมงก่อนเริ่ม GI Klean ถามแพทย์เรื่องยาเบาหวานและยาต้านการแข็งตัวของเลือด อย่าหยุดยาเอง",
+          "tl": "Inumin ang ibang gamot 1 oras bago simulan ang GI Klean. Itanong ang gamot sa diabetes at blood thinner; huwag ihinto nang sarili.",
+          "ja": "他の内服薬はGI Klean開始の1時間以上前に服用。糖尿病薬・抗凝固薬は確認し、自己判断で中止しない。"
+        }
+      ]
+    }
+  ]
 }
