@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T03:46:35.725Z",
+  "generatedAt": "2026-11-20T04:01:24.177Z",
   "sourceFile": "index.html",
   "languages": [
     {
@@ -33,10 +33,10 @@
   ],
   "totals": {
     "medications": 140,
-    "pages": 167,
-    "steps": 958,
+    "pages": 169,
+    "steps": 966,
     "warnings": 466,
-    "uniqueIllustrationRefs": 922,
+    "uniqueIllustrationRefs": 926,
     "categories": {
       "eye": 4,
       "oral": 15,
@@ -35254,13 +35254,13 @@
                 "ja": "服用開始2時間前から固形物を食べない"
               },
               "note": {
-                "zh-TW": "直到檢查結束；其他飲食限制依院所檢查單。",
-                "en": "Do not eat solids until the exam ends. Follow your clinic's other diet rules.",
-                "id": "Jangan makan padat sampai pemeriksaan selesai. Ikuti aturan makan klinik.",
-                "vi": "Không ăn thức ăn đặc cho đến khi khám xong. Theo hướng dẫn ăn uống của cơ sở khám.",
-                "th": "งดจนกว่าจะตรวจเสร็จ และทำตามข้อจำกัดอาหารของสถานพยาบาล",
-                "tl": "Huwag kumain ng solidong pagkain hanggang matapos ang pagsusuri. Sundin ang ibang tuntunin ng klinika.",
-                "ja": "検査終了まで固形物を避け、他の食事制限は施設の指示に従う。"
+                "zh-TW": "之前若要吃，選低渣食物，如白飯、白吐司、蒸蛋或豆腐；避開全穀、蔬果、堅果與種子。停固體後只喝水、無渣清湯等清流質，直到檢查結束。",
+                "en": "Before that, choose low-residue foods such as white rice, white toast, eggs, or tofu. Avoid whole grains, fruit, vegetables, nuts, and seeds. Then drink only clear liquids, such as water or strained broth, until the exam ends.",
+                "id": "Sebelumnya pilih makanan rendah serat seperti nasi putih, roti putih, telur, atau tahu. Hindari biji-bijian utuh, buah, sayur, kacang, dan biji. Setelah berhenti makan padat, minum hanya cairan jernih sampai pemeriksaan selesai.",
+                "vi": "Trước đó hãy chọn đồ ít xơ như cơm trắng, bánh mì trắng, trứng hoặc đậu phụ. Tránh ngũ cốc nguyên hạt, rau quả, hạt. Sau khi ngừng đồ đặc, chỉ uống chất lỏng trong cho đến khi khám xong.",
+                "th": "ก่อนหยุดอาหารแข็ง เลือกอาหารกากน้อย เช่น ข้าวขาว ขนมปังขาว ไข่หรือเต้าหู้ เลี่ยงธัญพืชไม่ขัดสี ผักผลไม้ ถั่วและเมล็ด จากนั้นดื่มเฉพาะน้ำใสจนตรวจเสร็จ",
+                "tl": "Bago iyon, pumili ng pagkaing mababa ang residue gaya ng puting kanin, puting tinapay, itlog, o tokwa. Iwasan ang whole grains, prutas, gulay, mani, at buto. Pagkatapos tumigil sa solidong pagkain, malinaw na likido lamang hanggang matapos ang pagsusuri.",
+                "ja": "それまでは白米、白パン、卵、豆腐など低残渣食を選び、全粒穀物、野菜・果物、ナッツ、種を避ける。固形物をやめた後は検査終了まで水やこしたスープなど透明な飲み物だけにする。"
               },
               "highlight": false,
               "illustration": {
@@ -35531,17 +35531,193 @@
             {
               "index": 1,
               "text": {
-                "zh-TW": "其他口服藥至少在開始喝腸見淨前 1 小時服用；糖尿病藥與抗凝血藥請先問醫師或藥師，勿自行停藥。",
-                "en": "Take other oral medicines at least 1 hour before starting GI Klean. Ask about diabetes medicines and blood thinners; do not stop them on your own.",
-                "id": "Minum obat oral lain sedikitnya 1 jam sebelum mulai GI Klean. Tanyakan obat diabetes dan pengencer darah; jangan hentikan sendiri.",
-                "vi": "Uống thuốc khác ít nhất 1 giờ trước khi bắt đầu GI Klean. Hỏi về thuốc tiểu đường và chống đông; không tự ngừng thuốc.",
-                "th": "รับประทานยากินอื่นอย่างน้อย 1 ชั่วโมงก่อนเริ่ม GI Klean ถามแพทย์เรื่องยาเบาหวานและยาต้านการแข็งตัวของเลือด อย่าหยุดยาเอง",
-                "tl": "Inumin ang ibang gamot 1 oras bago simulan ang GI Klean. Itanong ang gamot sa diabetes at blood thinner; huwag ihinto nang sarili.",
-                "ja": "他の内服薬はGI Klean開始の1時間以上前に服用。糖尿病薬・抗凝固薬は確認し、自己判断で中止しない。"
+                "zh-TW": "其他口服藥至少在喝腸見淨前 1 小時服用；慢性藥調整請看 C 面。",
+                "en": "Take other oral medicines at least 1 hour before GI Klean. See side C for medicine planning.",
+                "id": "Minum obat oral lain setidaknya 1 jam sebelum GI Klean. Lihat sisi C untuk rencana obat.",
+                "vi": "Uống thuốc khác ít nhất 1 giờ trước GI Klean. Xem mặt C về điều chỉnh thuốc.",
+                "th": "รับประทานยากินอื่นอย่างน้อย 1 ชั่วโมงก่อน GI Klean ดูด้าน C เรื่องการปรับยา",
+                "tl": "Inumin ang ibang gamot nang hindi bababa sa 1 oras bago ang GI Klean. Tingnan ang panig C para sa plano ng gamot.",
+                "ja": "他の内服薬はGI Kleanの1時間以上前に服用。常用薬の調整はC面を参照。"
               },
               "highlight": false
             }
           ],
+          "qrUrl": "https://jill5991.github.io/patient-education/video.html?med=gi-klean-powder"
+        },
+        {
+          "pageIndex": 2,
+          "pageKey": "page-3",
+          "pageLabel": {
+            "zh-TW": "C 面｜檢查前用藥核對",
+            "en": "Side C | medicine review",
+            "id": "Sisi C | periksa obat",
+            "vi": "Mặt C | kiểm tra thuốc",
+            "th": "ด้าน C | ทบทวนยา",
+            "tl": "Panig C | suriin ang mga gamot",
+            "ja": "C面｜検査前の薬の確認"
+          },
+          "headerBadge": null,
+          "badge": {
+            "zh-TW": "清腸粉劑",
+            "en": "Bowel prep powder",
+            "id": "Serbuk pembersih usus",
+            "vi": "Bột làm sạch ruột",
+            "th": "ผงยาล้างลำไส้",
+            "tl": "Pulbos panlinis ng bituka",
+            "ja": "腸管洗浄剤"
+          },
+          "usage": {
+            "zh-TW": "慢性藥與鎮靜前準備",
+            "en": "Chronic medicines and sedation planning",
+            "id": "Rencana obat rutin dan sedasi",
+            "vi": "Chuẩn bị thuốc thường dùng và gây mê",
+            "th": "เตรียมยาประจำและการให้ยานอนหลับ",
+            "tl": "Plano sa regular na gamot at sedation",
+            "ja": "常用薬と鎮静の準備"
+          },
+          "preStepsInfo": {
+            "title": {
+              "zh-TW": "至少提前 1 週核對藥單",
+              "en": "Review your medicine list at least 1 week ahead",
+              "id": "Periksa daftar obat sedikitnya 1 minggu sebelumnya",
+              "vi": "Kiểm tra danh sách thuốc trước ít nhất 1 tuần",
+              "th": "ตรวจรายการยาล่วงหน้าอย่างน้อย 1 สัปดาห์",
+              "tl": "Suriin ang listahan ng gamot nang 1 linggo bago",
+              "ja": "少なくとも1週間前に薬の一覧を確認"
+            },
+            "text": {
+              "zh-TW": "這是檢查前提醒，並非個人停藥處方。請帶藥單向開藥醫師及內視鏡／鎮靜團隊取得明確的停藥、恢復與血糖監測時間。",
+              "en": "These are pre-exam reminders, not a personal stop-medicine order. Bring your medicine list to the prescriber and endoscopy/sedation team for exact stop, restart, and glucose-check times.",
+              "id": "Ini pengingat, bukan perintah berhenti obat pribadi. Bawa daftar obat kepada dokter dan tim endoskopi/sedasi untuk waktu berhenti, mulai lagi, dan cek gula yang jelas.",
+              "vi": "Đây là lời nhắc, không phải đơn ngừng thuốc riêng. Mang danh sách thuốc đến bác sĩ và nhóm nội soi/gây mê để xác định giờ ngừng, dùng lại và đo đường huyết.",
+              "th": "นี่เป็นข้อเตือนก่อนตรวจ ไม่ใช่คำสั่งหยุดยาส่วนตัว นำรายชื่อยาให้แพทย์และทีมส่องกล้อง/ให้ยานอนหลับกำหนดเวลาหยุด เริ่มใหม่ และตรวจน้ำตาล",
+              "tl": "Mga paalala ito, hindi personal na utos na ihinto ang gamot. Dalhin ang listahan ng gamot sa doktor at endoscopy/sedation team para sa eksaktong oras ng paghinto, pagbabalik, at pagsukat ng asukal.",
+              "ja": "これは検査前の確認事項であり個別の休薬指示ではない。薬の一覧を処方医と内視鏡・鎮静担当に示し、中止・再開・血糖測定の時刻を決める。"
+            },
+            "html": null,
+            "tone": {
+              "bg": "#E6F1FB",
+              "border": "#185FA5",
+              "text": "#042C53"
+            }
+          },
+          "steps": [
+            {
+              "index": 0,
+              "section": null,
+              "action": {
+                "zh-TW": "提前規劃 SGLT2 抑制劑停藥 3–4 天",
+                "en": "Plan a 3–4 day SGLT2 inhibitor hold in advance",
+                "id": "Rencanakan penghentian obat SGLT2 selama 3–4 hari",
+                "vi": "Lập kế hoạch ngừng thuốc SGLT2 trước 3–4 ngày",
+                "th": "วางแผนหยุดยา SGLT2 ล่วงหน้า 3–4 วัน",
+                "tl": "Planuhin nang maaga ang 3–4 araw na paghinto ng SGLT2 inhibitor",
+                "ja": "SGLT2阻害薬の3～4日前からの休薬を事前に相談する"
+              },
+              "note": {
+                "zh-TW": "如 Jardiance、Forxiga。清腸與禁食會增加酮酸中毒風險；請由處方醫師確認停藥與恢復日期。",
+                "en": "Examples: Jardiance and Forxiga. Fasting and bowel prep raise ketoacidosis risk. Confirm stop and restart dates with your prescriber.",
+                "id": "Contoh: Jardiance, Forxiga. Puasa dan persiapan usus meningkatkan risiko ketoasidosis. Pastikan tanggal berhenti dan mulai lagi dengan dokter.",
+                "vi": "Ví dụ: Jardiance, Forxiga. Nhịn ăn và làm sạch ruột tăng nguy cơ nhiễm toan ceton. Hỏi bác sĩ ngày ngừng và dùng lại.",
+                "th": "เช่น Jardiance, Forxiga การอดอาหารและล้างลำไส้เพิ่มความเสี่ยงภาวะกรดคีโต ให้แพทย์กำหนดวันหยุดและเริ่มยาใหม่",
+                "tl": "Halimbawa: Jardiance at Forxiga. Tumataas ang panganib ng ketoacidosis sa pag-aayuno at paghahanda ng bituka. Ipaayos sa doktor ang petsa ng paghinto at pagbabalik.",
+                "ja": "例：Jardiance、Forxiga。絶食と腸管洗浄でケトアシドーシスの危険が増す。中止日・再開日は処方医に確認する。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/bowel-prep/med-sglt2.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 1,
+              "section": null,
+              "action": {
+                "zh-TW": "取得糖尿病藥與血糖監測計畫",
+                "en": "Get a diabetes medicine and glucose monitoring plan",
+                "id": "Minta rencana obat diabetes dan pemantauan gula",
+                "vi": "Xin kế hoạch thuốc tiểu đường và theo dõi đường huyết",
+                "th": "ขอแผนยาเบาหวานและการวัดน้ำตาล",
+                "tl": "Humingi ng plano sa gamot sa diabetes at pagsukat ng asukal",
+                "ja": "糖尿病薬と血糖測定の計画を確認する"
+              },
+              "note": {
+                "zh-TW": "Metformin 常在開始清流質時暫停；磺醯脲類常在前一天暫停。胰島素通常須調整劑量，不可自行全部停用。",
+                "en": "Metformin is often held when clear liquids begin; sulfonylureas are often held the day before. Insulin usually needs dose adjustment—do not stop all insulin yourself.",
+                "id": "Metformin sering dihentikan saat mulai cairan jernih; sulfonilurea sering dihentikan sehari sebelumnya. Dosis insulin perlu diatur; jangan hentikan seluruh insulin sendiri.",
+                "vi": "Metformin thường tạm ngừng khi bắt đầu chỉ uống chất lỏng trong; sulfonylurea thường ngừng từ ngày trước. Insulin cần chỉnh liều, không tự ngừng tất cả.",
+                "th": "Metformin มักหยุดเมื่อเริ่มดื่มแต่น้ำใส ยากลุ่ม sulfonylurea มักหยุดวันก่อนตรวจ อินซูลินต้องปรับขนาดยา อย่าหยุดเองทั้งหมด",
+                "tl": "Madalas ihinto ang metformin pag nagsimula ang malinaw na likido; ang sulfonylurea ay madalas ihinto sa araw bago ang pagsusuri. Kailangang ayusin ang insulin; huwag ihinto lahat nang sarili.",
+                "ja": "Metforminは透明な飲み物だけに切り替える時点、SU薬は前日に休薬することが多い。インスリンは用量調整が必要で、自己判断で全て中止しない。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/bowel-prep/med-diabetes.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 2,
+              "section": null,
+              "action": {
+                "zh-TW": "請醫師決定抗凝血藥怎麼調整",
+                "en": "Ask your doctor for a blood thinner plan",
+                "id": "Minta rencana obat pengencer darah dari dokter",
+                "vi": "Hỏi bác sĩ kế hoạch thuốc chống đông",
+                "th": "ขอแผนยาต้านการแข็งตัวของเลือดจากแพทย์",
+                "tl": "Humingi sa doktor ng plano para sa pampalabnaw ng dugo",
+                "ja": "抗凝固薬・抗血小板薬の計画を医師に確認する"
+              },
+              "note": {
+                "zh-TW": "Aspirin 單方常可續用；DOAC 常需短暫停用。Warfarin、clopidogrel 等須看是否切息肉及血栓風險；不要自行停藥。",
+                "en": "Aspirin alone is often continued; DOACs are often briefly held. Warfarin and clopidogrel depend on polyp removal and clot risk. Do not stop them yourself.",
+                "id": "Aspirin saja sering dilanjutkan; DOAC sering dihentikan sebentar. Warfarin dan clopidogrel bergantung pada polip dan risiko bekuan. Jangan hentikan sendiri.",
+                "vi": "Aspirin đơn độc thường tiếp tục; DOAC thường tạm ngừng ngắn. Warfarin và clopidogrel tùy việc cắt polyp và nguy cơ huyết khối. Không tự ngừng.",
+                "th": "Aspirin เดี่ยวมักใช้ต่อ DOAC มักหยุดชั่วคราว ส่วน warfarin และ clopidogrel ขึ้นกับการตัดติ่งเนื้อและความเสี่ยงลิ่มเลือด อย่าหยุดเอง",
+                "tl": "Madalas ipagpatuloy ang aspirin lamang; madalas pansamantalang ihinto ang DOAC. Ang warfarin at clopidogrel ay nakadepende sa polyp at panganib ng pamumuo. Huwag ihinto nang sarili.",
+                "ja": "アスピリン単剤は継続することが多く、DOACは短期間休薬することが多い。Warfarinやclopidogrelはポリープ切除と血栓リスクで判断し、自己判断で中止しない。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/bowel-prep/med-antithrombotic.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 3,
+              "section": null,
+              "action": {
+                "zh-TW": "有用 Mounjaro 時先告知鎮靜團隊",
+                "en": "Tell the sedation team if you use Mounjaro",
+                "id": "Beri tahu tim sedasi jika memakai Mounjaro",
+                "vi": "Báo nhóm gây mê nếu đang dùng Mounjaro",
+                "th": "บอกทีมให้ยานอนหลับหากใช้ Mounjaro",
+                "tl": "Sabihin sa sedation team kung gumagamit ng Mounjaro",
+                "ja": "Mounjaro使用中なら鎮静担当に伝える"
+              },
+              "note": {
+                "zh-TW": "多數人可續用；剛開始用、加量、噁心嘔吐或胃排空慢者需評估，可能要至少 24 小時流質飲食或另訂停藥計畫。",
+                "en": "Most can continue. A new or higher dose, nausea, vomiting, or slow stomach emptying needs review; a 24-hour liquid diet or a separate hold plan may be needed.",
+                "id": "Kebanyakan dapat melanjutkan. Dosis baru/naik, mual, muntah, atau lambung lambat kosong perlu dinilai; mungkin perlu diet cair 24 jam atau rencana berhenti obat.",
+                "vi": "Đa số có thể tiếp tục. Mới dùng/tăng liều, buồn nôn, nôn hoặc dạ dày tiêu chậm cần đánh giá; có thể cần ăn lỏng 24 giờ hoặc kế hoạch ngừng thuốc.",
+                "th": "คนส่วนใหญ่ใช้ต่อได้ แต่ผู้ที่เพิ่งเริ่ม/เพิ่มยา คลื่นไส้อาเจียน หรือกระเพาะว่างช้าต้องประเมิน อาจต้องกินอาหารเหลว 24 ชั่วโมงหรือวางแผนหยุดยา",
+                "tl": "Karamihan ay puwedeng magpatuloy. Ang bagong gamit, pagtaas ng dosis, pagduduwal, pagsusuka, o mabagal na pag-alis ng laman ng tiyan ay kailangang suriin; maaaring kailanganin ang 24-oras na likidong pagkain o hiwalay na plano.",
+                "ja": "多くは継続可能。開始・増量直後、吐き気・嘔吐、胃排出遅延があれば評価し、24時間の流動食や別の休薬計画が必要なことがある。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/bowel-prep/med-glp1.svg",
+                "alt": null
+              },
+              "afterBox": null
+            }
+          ],
+          "infoBoxes": [],
+          "storage": null,
+          "warnings": [],
           "qrUrl": "https://jill5991.github.io/patient-education/video.html?med=gi-klean-powder"
         }
       ]
@@ -35677,13 +35853,13 @@
                 "ja": "前日は透明な飲み物だけを飲む"
               },
               "note": {
-                "zh-TW": "不要吃固體食物或喝牛奶；避免紅色、紫色飲料。",
-                "en": "No solid food or milk; avoid red or purple drinks.",
-                "id": "Jangan makan makanan padat atau minum susu; hindari minuman merah/ungu.",
-                "vi": "Không ăn thức ăn đặc hoặc uống sữa; tránh đồ uống đỏ/tím.",
-                "th": "ห้ามอาหารแข็งหรือนม และเลี่ยงเครื่องดื่มสีแดง/ม่วง",
-                "tl": "Huwag kumain ng solidong pagkain o uminom ng gatas; iwasan ang pula/lilang inumin.",
-                "ja": "固形物と牛乳は避け、赤色・紫色の飲料も避ける。"
+                "zh-TW": "清流質是水、無渣清湯、過濾果汁、無奶的茶或咖啡；不能吃固體食物或喝牛奶。白飯、蒸蛋雖是低渣，前一天仍不能吃。",
+                "en": "Clear liquids include water, strained broth, pulp-free juice, and tea or coffee without milk. No solid food or milk. White rice and eggs are low residue, but are not allowed the day before.",
+                "id": "Cairan jernih: air, kaldu saring, jus tanpa ampas, teh atau kopi tanpa susu. Jangan makan padat atau minum susu. Nasi putih dan telur rendah serat, tetapi tidak boleh dimakan sehari sebelumnya.",
+                "vi": "Chất lỏng trong: nước, canh lọc, nước ép không bã, trà hoặc cà phê không sữa. Không ăn đồ đặc hoặc uống sữa. Cơm trắng và trứng ít xơ nhưng không được ăn ngày hôm trước.",
+                "th": "น้ำใส ได้แก่ น้ำเปล่า น้ำซุปกรอง น้ำผลไม้ไม่มีกาก ชาหรือกาแฟไม่ใส่นม ห้ามอาหารแข็งและนม ข้าวขาวกับไข่แม้กากน้อยก็ห้ามกินในวันก่อนตรวจ",
+                "tl": "Malinaw na likido: tubig, sinalang sabaw, katas na walang sapal, tsaa o kape na walang gatas. Bawal ang solidong pagkain at gatas. Ang puting kanin at itlog ay mababa ang residue ngunit bawal sa araw bago ang pagsusuri.",
+                "ja": "透明な飲み物は水、こしたスープ、果肉なしジュース、ミルクなしの茶・コーヒー。固形物と牛乳は避ける。白米や卵は低残渣食だが前日は食べない。"
               },
               "highlight": false,
               "illustration": {
@@ -35953,17 +36129,193 @@
             {
               "index": 2,
               "text": {
-                "zh-TW": "糖尿病藥、抗凝血藥及其他口服藥的服法，先向醫師或藥師確認；不要自行停藥。",
-                "en": "Ask your doctor or pharmacist about diabetes medicines, blood thinners, and other oral medicines. Do not stop them on your own.",
-                "id": "Tanyakan obat diabetes, pengencer darah, dan obat minum lain kepada dokter/apoteker. Jangan hentikan sendiri.",
-                "vi": "Hỏi bác sĩ/dược sĩ về thuốc tiểu đường, thuốc chống đông và thuốc uống khác. Không tự ngừng thuốc.",
-                "th": "ถามแพทย์หรือเภสัชกรเรื่องยาเบาหวาน ยาต้านการแข็งตัวของเลือด และยากินอื่น อย่าหยุดยาเอง",
-                "tl": "Itanong sa doktor o parmasyutiko ang mga gamot sa diabetes, pampalabnaw ng dugo, at iba pang iniinom na gamot. Huwag ihinto nang sarili.",
-                "ja": "糖尿病薬、抗凝固薬、その他の内服薬について医師・薬剤師に確認し、自己判断で中止しない。"
+                "zh-TW": "檢查前的慢性藥調整請看 C 面；保可淨可能影響服藥前 1 小時內吞服藥物的吸收。",
+                "en": "See side C for medicine planning. Bowklean may reduce absorption of oral medicines taken within 1 hour before it.",
+                "id": "Lihat sisi C untuk rencana obat. Bowklean dapat mengurangi penyerapan obat minum dalam 1 jam sebelumnya.",
+                "vi": "Xem mặt C về điều chỉnh thuốc. Bowklean có thể làm giảm hấp thu thuốc uống trong 1 giờ trước khi dùng.",
+                "th": "ดูด้าน C เรื่องการปรับยา Bowklean อาจลดการดูดซึมยากินภายใน 1 ชั่วโมงก่อนใช้",
+                "tl": "Tingnan ang panig C para sa plano ng mga gamot. Maaaring bumaba ang pagsipsip ng gamot na ininom sa loob ng 1 oras bago ang Bowklean.",
+                "ja": "検査前の常用薬はC面を参照。Bowklean服用前1時間以内の内服薬は吸収が低下することがある。"
               },
               "highlight": false
             }
           ],
+          "qrUrl": "https://jill5991.github.io/patient-education/video.html?med=bowklean-powder"
+        },
+        {
+          "pageIndex": 2,
+          "pageKey": "page-3",
+          "pageLabel": {
+            "zh-TW": "C 面｜檢查前用藥核對",
+            "en": "Side C | medicine review",
+            "id": "Sisi C | periksa obat",
+            "vi": "Mặt C | kiểm tra thuốc",
+            "th": "ด้าน C | ทบทวนยา",
+            "tl": "Panig C | suriin ang mga gamot",
+            "ja": "C面｜検査前の薬の確認"
+          },
+          "headerBadge": null,
+          "badge": {
+            "zh-TW": "清腸粉劑",
+            "en": "Bowel prep powder",
+            "id": "Serbuk pembersih usus",
+            "vi": "Bột làm sạch ruột",
+            "th": "ผงยาล้างลำไส้",
+            "tl": "Pulbos panlinis ng bituka",
+            "ja": "腸管洗浄剤"
+          },
+          "usage": {
+            "zh-TW": "慢性藥與鎮靜前準備",
+            "en": "Chronic medicines and sedation planning",
+            "id": "Rencana obat rutin dan sedasi",
+            "vi": "Chuẩn bị thuốc thường dùng và gây mê",
+            "th": "เตรียมยาประจำและการให้ยานอนหลับ",
+            "tl": "Plano sa regular na gamot at sedation",
+            "ja": "常用薬と鎮静の準備"
+          },
+          "preStepsInfo": {
+            "title": {
+              "zh-TW": "至少提前 1 週核對藥單",
+              "en": "Review your medicine list at least 1 week ahead",
+              "id": "Periksa daftar obat sedikitnya 1 minggu sebelumnya",
+              "vi": "Kiểm tra danh sách thuốc trước ít nhất 1 tuần",
+              "th": "ตรวจรายการยาล่วงหน้าอย่างน้อย 1 สัปดาห์",
+              "tl": "Suriin ang listahan ng gamot nang 1 linggo bago",
+              "ja": "少なくとも1週間前に薬の一覧を確認"
+            },
+            "text": {
+              "zh-TW": "這是檢查前提醒，並非個人停藥處方。請帶藥單向開藥醫師及內視鏡／鎮靜團隊取得明確的停藥、恢復與血糖監測時間。",
+              "en": "These are pre-exam reminders, not a personal stop-medicine order. Bring your medicine list to the prescriber and endoscopy/sedation team for exact stop, restart, and glucose-check times.",
+              "id": "Ini pengingat, bukan perintah berhenti obat pribadi. Bawa daftar obat kepada dokter dan tim endoskopi/sedasi untuk waktu berhenti, mulai lagi, dan cek gula yang jelas.",
+              "vi": "Đây là lời nhắc, không phải đơn ngừng thuốc riêng. Mang danh sách thuốc đến bác sĩ và nhóm nội soi/gây mê để xác định giờ ngừng, dùng lại và đo đường huyết.",
+              "th": "นี่เป็นข้อเตือนก่อนตรวจ ไม่ใช่คำสั่งหยุดยาส่วนตัว นำรายชื่อยาให้แพทย์และทีมส่องกล้อง/ให้ยานอนหลับกำหนดเวลาหยุด เริ่มใหม่ และตรวจน้ำตาล",
+              "tl": "Mga paalala ito, hindi personal na utos na ihinto ang gamot. Dalhin ang listahan ng gamot sa doktor at endoscopy/sedation team para sa eksaktong oras ng paghinto, pagbabalik, at pagsukat ng asukal.",
+              "ja": "これは検査前の確認事項であり個別の休薬指示ではない。薬の一覧を処方医と内視鏡・鎮静担当に示し、中止・再開・血糖測定の時刻を決める。"
+            },
+            "html": null,
+            "tone": {
+              "bg": "#E6F1FB",
+              "border": "#185FA5",
+              "text": "#042C53"
+            }
+          },
+          "steps": [
+            {
+              "index": 0,
+              "section": null,
+              "action": {
+                "zh-TW": "提前規劃 SGLT2 抑制劑停藥 3–4 天",
+                "en": "Plan a 3–4 day SGLT2 inhibitor hold in advance",
+                "id": "Rencanakan penghentian obat SGLT2 selama 3–4 hari",
+                "vi": "Lập kế hoạch ngừng thuốc SGLT2 trước 3–4 ngày",
+                "th": "วางแผนหยุดยา SGLT2 ล่วงหน้า 3–4 วัน",
+                "tl": "Planuhin nang maaga ang 3–4 araw na paghinto ng SGLT2 inhibitor",
+                "ja": "SGLT2阻害薬の3～4日前からの休薬を事前に相談する"
+              },
+              "note": {
+                "zh-TW": "如 Jardiance、Forxiga。清腸與禁食會增加酮酸中毒風險；請由處方醫師確認停藥與恢復日期。",
+                "en": "Examples: Jardiance and Forxiga. Fasting and bowel prep raise ketoacidosis risk. Confirm stop and restart dates with your prescriber.",
+                "id": "Contoh: Jardiance, Forxiga. Puasa dan persiapan usus meningkatkan risiko ketoasidosis. Pastikan tanggal berhenti dan mulai lagi dengan dokter.",
+                "vi": "Ví dụ: Jardiance, Forxiga. Nhịn ăn và làm sạch ruột tăng nguy cơ nhiễm toan ceton. Hỏi bác sĩ ngày ngừng và dùng lại.",
+                "th": "เช่น Jardiance, Forxiga การอดอาหารและล้างลำไส้เพิ่มความเสี่ยงภาวะกรดคีโต ให้แพทย์กำหนดวันหยุดและเริ่มยาใหม่",
+                "tl": "Halimbawa: Jardiance at Forxiga. Tumataas ang panganib ng ketoacidosis sa pag-aayuno at paghahanda ng bituka. Ipaayos sa doktor ang petsa ng paghinto at pagbabalik.",
+                "ja": "例：Jardiance、Forxiga。絶食と腸管洗浄でケトアシドーシスの危険が増す。中止日・再開日は処方医に確認する。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/bowel-prep/med-sglt2.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 1,
+              "section": null,
+              "action": {
+                "zh-TW": "取得糖尿病藥與血糖監測計畫",
+                "en": "Get a diabetes medicine and glucose monitoring plan",
+                "id": "Minta rencana obat diabetes dan pemantauan gula",
+                "vi": "Xin kế hoạch thuốc tiểu đường và theo dõi đường huyết",
+                "th": "ขอแผนยาเบาหวานและการวัดน้ำตาล",
+                "tl": "Humingi ng plano sa gamot sa diabetes at pagsukat ng asukal",
+                "ja": "糖尿病薬と血糖測定の計画を確認する"
+              },
+              "note": {
+                "zh-TW": "Metformin 常在開始清流質時暫停；磺醯脲類常在前一天暫停。胰島素通常須調整劑量，不可自行全部停用。",
+                "en": "Metformin is often held when clear liquids begin; sulfonylureas are often held the day before. Insulin usually needs dose adjustment—do not stop all insulin yourself.",
+                "id": "Metformin sering dihentikan saat mulai cairan jernih; sulfonilurea sering dihentikan sehari sebelumnya. Dosis insulin perlu diatur; jangan hentikan seluruh insulin sendiri.",
+                "vi": "Metformin thường tạm ngừng khi bắt đầu chỉ uống chất lỏng trong; sulfonylurea thường ngừng từ ngày trước. Insulin cần chỉnh liều, không tự ngừng tất cả.",
+                "th": "Metformin มักหยุดเมื่อเริ่มดื่มแต่น้ำใส ยากลุ่ม sulfonylurea มักหยุดวันก่อนตรวจ อินซูลินต้องปรับขนาดยา อย่าหยุดเองทั้งหมด",
+                "tl": "Madalas ihinto ang metformin pag nagsimula ang malinaw na likido; ang sulfonylurea ay madalas ihinto sa araw bago ang pagsusuri. Kailangang ayusin ang insulin; huwag ihinto lahat nang sarili.",
+                "ja": "Metforminは透明な飲み物だけに切り替える時点、SU薬は前日に休薬することが多い。インスリンは用量調整が必要で、自己判断で全て中止しない。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/bowel-prep/med-diabetes.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 2,
+              "section": null,
+              "action": {
+                "zh-TW": "請醫師決定抗凝血藥怎麼調整",
+                "en": "Ask your doctor for a blood thinner plan",
+                "id": "Minta rencana obat pengencer darah dari dokter",
+                "vi": "Hỏi bác sĩ kế hoạch thuốc chống đông",
+                "th": "ขอแผนยาต้านการแข็งตัวของเลือดจากแพทย์",
+                "tl": "Humingi sa doktor ng plano para sa pampalabnaw ng dugo",
+                "ja": "抗凝固薬・抗血小板薬の計画を医師に確認する"
+              },
+              "note": {
+                "zh-TW": "Aspirin 單方常可續用；DOAC 常需短暫停用。Warfarin、clopidogrel 等須看是否切息肉及血栓風險；不要自行停藥。",
+                "en": "Aspirin alone is often continued; DOACs are often briefly held. Warfarin and clopidogrel depend on polyp removal and clot risk. Do not stop them yourself.",
+                "id": "Aspirin saja sering dilanjutkan; DOAC sering dihentikan sebentar. Warfarin dan clopidogrel bergantung pada polip dan risiko bekuan. Jangan hentikan sendiri.",
+                "vi": "Aspirin đơn độc thường tiếp tục; DOAC thường tạm ngừng ngắn. Warfarin và clopidogrel tùy việc cắt polyp và nguy cơ huyết khối. Không tự ngừng.",
+                "th": "Aspirin เดี่ยวมักใช้ต่อ DOAC มักหยุดชั่วคราว ส่วน warfarin และ clopidogrel ขึ้นกับการตัดติ่งเนื้อและความเสี่ยงลิ่มเลือด อย่าหยุดเอง",
+                "tl": "Madalas ipagpatuloy ang aspirin lamang; madalas pansamantalang ihinto ang DOAC. Ang warfarin at clopidogrel ay nakadepende sa polyp at panganib ng pamumuo. Huwag ihinto nang sarili.",
+                "ja": "アスピリン単剤は継続することが多く、DOACは短期間休薬することが多い。Warfarinやclopidogrelはポリープ切除と血栓リスクで判断し、自己判断で中止しない。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/bowel-prep/med-antithrombotic.svg",
+                "alt": null
+              },
+              "afterBox": null
+            },
+            {
+              "index": 3,
+              "section": null,
+              "action": {
+                "zh-TW": "有用 Mounjaro 時先告知鎮靜團隊",
+                "en": "Tell the sedation team if you use Mounjaro",
+                "id": "Beri tahu tim sedasi jika memakai Mounjaro",
+                "vi": "Báo nhóm gây mê nếu đang dùng Mounjaro",
+                "th": "บอกทีมให้ยานอนหลับหากใช้ Mounjaro",
+                "tl": "Sabihin sa sedation team kung gumagamit ng Mounjaro",
+                "ja": "Mounjaro使用中なら鎮静担当に伝える"
+              },
+              "note": {
+                "zh-TW": "多數人可續用；剛開始用、加量、噁心嘔吐或胃排空慢者需評估，可能要至少 24 小時流質飲食或另訂停藥計畫。",
+                "en": "Most can continue. A new or higher dose, nausea, vomiting, or slow stomach emptying needs review; a 24-hour liquid diet or a separate hold plan may be needed.",
+                "id": "Kebanyakan dapat melanjutkan. Dosis baru/naik, mual, muntah, atau lambung lambat kosong perlu dinilai; mungkin perlu diet cair 24 jam atau rencana berhenti obat.",
+                "vi": "Đa số có thể tiếp tục. Mới dùng/tăng liều, buồn nôn, nôn hoặc dạ dày tiêu chậm cần đánh giá; có thể cần ăn lỏng 24 giờ hoặc kế hoạch ngừng thuốc.",
+                "th": "คนส่วนใหญ่ใช้ต่อได้ แต่ผู้ที่เพิ่งเริ่ม/เพิ่มยา คลื่นไส้อาเจียน หรือกระเพาะว่างช้าต้องประเมิน อาจต้องกินอาหารเหลว 24 ชั่วโมงหรือวางแผนหยุดยา",
+                "tl": "Karamihan ay puwedeng magpatuloy. Ang bagong gamit, pagtaas ng dosis, pagduduwal, pagsusuka, o mabagal na pag-alis ng laman ng tiyan ay kailangang suriin; maaaring kailanganin ang 24-oras na likidong pagkain o hiwalay na plano.",
+                "ja": "多くは継続可能。開始・増量直後、吐き気・嘔吐、胃排出遅延があれば評価し、24時間の流動食や別の休薬計画が必要なことがある。"
+              },
+              "highlight": false,
+              "illustration": {
+                "src": "assets/svg/bowel-prep/med-glp1.svg",
+                "alt": null
+              },
+              "afterBox": null
+            }
+          ],
+          "infoBoxes": [],
+          "storage": null,
+          "warnings": [],
           "qrUrl": "https://jill5991.github.io/patient-education/video.html?med=bowklean-powder"
         }
       ]

@@ -25,9 +25,10 @@ const gi = meds.find(item => item.id === "gi-klean-powder");
 test("both bowel preparation sheets have localized actionable content and working images", () => {
   for (const med of [bow, gi]) {
     assert.ok(med.steps.length >= 6 && med.steps.length <= 8);
-    assert.equal(med.pages.length, 2);
+    assert.equal(med.pages.length, 3);
     assert.equal(med.pages[0].steps.length, 4);
     assert.equal(med.pages[1].steps.length, 3);
+    assert.equal(med.pages[2].steps.length, 4);
     assert.equal(JSON.stringify([...med.pages[0].steps, ...med.pages[1].steps]), JSON.stringify(med.steps));
     assert.ok(med.preStepsInfo);
     assert.equal(med.warnings.length, 3);
@@ -42,6 +43,11 @@ test("both bowel preparation sheets have localized actionable content and workin
         assert.ok(step.note[lang]);
       });
       med.warnings.forEach(warning => assert.ok(warning[lang]));
+      med.pages[2].steps.forEach(step => {
+        assert.ok(step.action[lang]);
+        assert.ok(step.note[lang]);
+        assert.ok(fs.existsSync(path.join(root, step.illustration)));
+      });
       const url = new URL(context.data.getSheetQrUrl(med, lang));
       assert.equal(url.searchParams.get("med"), med.id);
       assert.equal(url.searchParams.get("lang"), lang);
@@ -74,4 +80,14 @@ test("product-specific mixing and hydration amounts cannot be swapped", () => {
   assert.match(giText, /檢查前至少 1 小時喝完腸見淨/);
   assert.match(giText, /鎮靜團隊要求更早禁水/);
   assert.match(gi.storage.text["zh-TW"], /2–8°C.*24 小時/);
+  assert.doesNotMatch(bowText, /紅色|紫色/);
+  assert.match(bow.steps[0].note["zh-TW"], /清流質.*低渣/);
+  assert.match(gi.steps[0].note["zh-TW"], /低渣食物.*清流質/);
+  for (const med of [bow, gi]) {
+    const text = med.pages[2].steps.map(step => step.action["zh-TW"] + step.note["zh-TW"]).join(" ");
+    assert.match(text, /SGLT2.*3–4 天/);
+    assert.match(text, /Metformin/);
+    assert.match(text, /Aspirin.*DOAC.*Warfarin/);
+    assert.match(text, /Mounjaro.*多數人可續用/);
+  }
 });
