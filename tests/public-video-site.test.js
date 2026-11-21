@@ -19,6 +19,7 @@ test("public Pages source contains only the video QR files", () => {
 test("public video QR page hides the staff-only return link", () => {
   const html = fs.readFileSync(path.join(publicRoot, "video.html"), "utf8");
   assert.match(html, /location\.hostname === "jill5991\.github\.io".*\.hidden = true/);
+  assert.match(html, /\.back\[hidden\]\s*\{\s*display:\s*none/);
   assert.match(html, /fetch\("approved-videos\.json"\)/);
   const registry = JSON.parse(fs.readFileSync(path.join(publicRoot, "approved-videos.json"), "utf8"));
   assert.ok(registry["trelegy-ellipta"].en.youtubeId);
