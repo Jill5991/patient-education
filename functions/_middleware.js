@@ -112,7 +112,7 @@ async function beginLogin(settings, returnTo) {
   const verifier = randomToken();
   const nonce = randomToken();
   const challenge = base64url(new Uint8Array(await crypto.subtle.digest("SHA-256", encoder.encode(verifier))));
-  const params = new URLSearchParams({ client_id: settings.clientId, redirect_uri: `${settings.origin}/auth/callback`, response_type: "code", scope: "openid email", state, nonce, code_challenge: challenge, code_challenge_method: "S256" });
+  const params = new URLSearchParams({ client_id: settings.clientId, redirect_uri: `${settings.origin}/auth/callback`, response_type: "code", scope: "openid email", prompt: "select_account", state, nonce, code_challenge: challenge, code_challenge_method: "S256" });
   const data = base64url(encoder.encode(JSON.stringify({ state, verifier, nonce, returnTo: safeReturn(returnTo), exp: Date.now() + STATE_SECONDS * 1000 })));
   return redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`, [cookie(STATE_COOKIE, data, STATE_SECONDS)]);
 }
@@ -138,6 +138,11 @@ async function finishLogin(request, settings) {
   }
 }
 
+function finishLogout() {
+  const html = `<!doctype html><html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>已登出用藥指導單張</title><style>body{font:16px/1.6 system-ui,-apple-system,sans-serif;background:#f5f7f5;color:#17342c;margin:0}main{max-width:560px;margin:12vh auto;padding:24px}a{color:#096849}</style></head><body><main><h1>已登出用藥指導單張</h1><p>本站登入工作階段已清除。若使用共用裝置，請同時登出 Google 帳號，或使用無痕視窗。</p><p><a href="/auth/login">使用 Google 帳號重新登入</a></p></main></body></html>`;
+  return new Response(html, { status: 200, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store", "Set-Cookie": cookie(SESSION_COOKIE, "", 0), "X-Content-Type-Options": "nosniff" } });
+}
+
 export async function onRequest(context) {
   let settings;
   try { settings = config(context.env); } catch { return plain("登入設定尚未完成。", 503); }
@@ -147,8 +152,11 @@ export async function onRequest(context) {
   if (request.method !== "GET" && request.method !== "HEAD") return plain("Method not allowed", 405);
   if (url.pathname === "/auth/callback") return finishLogin(request, settings);
   if (url.pathname === "/auth/login") return beginLogin(settings, url.searchParams.get("return"));
-  if (url.pathname === "/auth/logout") return redirect(`${settings.origin}/auth/login`, [cookie(SESSION_COOKIE, "", 0)]);
+  if (url.pathname === "/auth/logout") return finishLogout();
   const session = await readSession(cookies(request)[SESSION_COOKIE], settings);
+  if (url.pathname === "/auth/me") return session
+    ? new Response(JSON.stringify({ email: session.email }), { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" } })
+    : plain("請先登入。", 401);
   if (!session) {
     const wantsPage = url.pathname === "/" || url.pathname.endsWith(".html");
     return wantsPage ? redirect(`${settings.origin}/auth/login?return=${encodeURIComponent(url.pathname + url.search)}`) : plain("請先登入。", 401);

@@ -39,6 +39,7 @@ test("Google authorization validates state, signature, allowlist, and every asse
   const authorization = new URL(login.headers.get("Location"));
   assert.equal(authorization.origin, "https://accounts.google.com");
   assert.equal(authorization.searchParams.get("code_challenge_method"), "S256");
+  assert.equal(authorization.searchParams.get("prompt"), "select_account");
   const stateCookie = login.headers.get("Set-Cookie").split(";")[0];
   const badState = await onRequest(context(`${origin}/auth/callback?code=abc&state=wrong`, stateCookie));
   assert.equal(badState.status, 401);
@@ -72,6 +73,14 @@ test("Google authorization validates state, signature, allowlist, and every asse
     const asset = await onRequest(context(`${origin}/assets/img/test.webp`, sessionCookie));
     assert.equal(asset.status, 200);
     assert.equal(asset.headers.get("Cache-Control"), "private, no-store");
+    const identity = await onRequest(context(`${origin}/auth/me`, sessionCookie));
+    assert.equal(identity.status, 200);
+    assert.deepEqual(await identity.json(), { email: "owner@gmail.com" });
+    assert.equal((await onRequest(context(`${origin}/auth/me`))).status, 401);
+    const logout = await onRequest(context(`${origin}/auth/logout`, sessionCookie));
+    assert.equal(logout.status, 200);
+    assert.match(await logout.text(), /已登出用藥指導單張/);
+    assert.match(logout.headers.get("Set-Cookie"), /Max-Age=0/);
     assert.equal((await onRequest(context(`${origin}/assets/img/test.webp`, `${sessionCookie}x`))).status, 401);
     env.ALLOWED_EMAILS = "someone-else@gmail.com";
     assert.equal((await onRequest(context(`${origin}/assets/img/test.webp`, sessionCookie))).status, 401);
@@ -93,4 +102,12 @@ test("build output routes every file through authentication", () => {
   const build = fs.readFileSync(path.join(__dirname, "../scripts/build-pharmacy-site.js"), "utf8");
   assert.match(build, /include:\s*\["\/\*"\]/);
   assert.match(build, /exclude:\s*\[\]/);
+});
+
+test("the sheet shows Google identity and logout outside the printed page", () => {
+  const html = fs.readFileSync(path.join(__dirname, "../index.html"), "utf8");
+  assert.match(html, /id="authStatus" hidden/);
+  assert.match(html, /href="\/auth\/logout"/);
+  assert.match(html, /fetch\("\/auth\/me"/);
+  assert.match(html, /@media print\s*\{\s*\.topbar/);
 });

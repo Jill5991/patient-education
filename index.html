@@ -28,6 +28,12 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 }
 .topbar-title { font-size: 15px; font-weight: 600; }
 .topbar-sub { font-size: 11px; color: var(--muted); margin-left: 8px; font-weight: 400; }
+.topbar-actions { display: flex; align-items: center; gap: 10px; }
+.auth-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+.auth-status[hidden] { display: none; }
+.auth-user { max-width: 210px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.auth-logout { color: #185fa5; text-decoration: underline; white-space: nowrap; }
+@media (max-width: 650px) { .topbar-sub, .auth-user { display: none; } }
 .print-btn {
   background: none; border: 0.5px solid var(--border); border-radius: 6px;
   padding: 7px 14px; font-size: 13px; cursor: pointer; color: var(--text);
@@ -841,6 +847,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   <div class="topbar-title">
     💊 用藥指導 <span class="topbar-sub">Medication Instructions</span>
   </div>
+  <div class="topbar-actions">
+  <div class="auth-status" id="authStatus" hidden>
+    <span class="auth-user" id="authUser"></span>
+    <a class="auth-logout" href="/auth/logout">登出</a>
+  </div>
   <button class="print-btn" onclick="window.print()">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
       <polyline points="6 9 6 2 18 2 18 9"/>
@@ -849,6 +860,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
     </svg>
     <span id="ui-print">列印</span>
   </button>
+  </div>
 </div>
 
 <div class="lang-bar" id="langBar"></div>
@@ -29156,6 +29168,18 @@ function init() {
   renderMedBar();
   renderPageBar();
   render();
+  initAuthStatus();
+}
+
+async function initAuthStatus() {
+  try {
+    const response = await fetch("/auth/me", { credentials: "same-origin", cache: "no-store" });
+    if (!response.ok) return;
+    const { email } = await response.json();
+    if (typeof email !== "string" || !email) return;
+    document.getElementById("authUser").textContent = `Google：${email}`;
+    document.getElementById("authStatus").hidden = false;
+  } catch { /* Local file previews do not have the login endpoint. */ }
 }
 
 function bindFinderEvents() {
