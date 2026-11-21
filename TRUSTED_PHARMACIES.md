@@ -47,4 +47,10 @@ Google 設定說明：[OAuth 用戶端](https://support.google.com/cloud/answer/
 
 ## 舊公開網址與病人影片 QR
 
-`https://Jill5991.github.io/patient-education/` 仍是**公開的完整單張網站**。目前 Google 登入只保護 Cloudflare 網址，不能宣稱整套內容已限制存取。既有單張上的影片 QR 指向該 GitHub Pages 網址的 `video.html`；不能直接關閉而讓已印的 QR 失效。後續須把 GitHub Pages 改成僅公開影片頁與 `approved-videos.json`，實測 QR 後再撤下舊的公開單張。完成前請勿將 Cloudflare 網址稱為唯一入口。
+`https://Jill5991.github.io/patient-education/` 目前仍是**公開的完整單張網站**。Google 登入只保護 Cloudflare 網址。影片 QR 指向該 GitHub Pages 網址的 `video.html`，不可直接關閉。
+
+完成 Cloudflare 登入驗收後，先執行 `node scripts/build-public-video-site.js` 並提交 `docs/`。接著到 GitHub 儲存庫 **Settings > Pages > Build and deployment**，維持 **Deploy from a branch**、`main`，把發布資料夾從 `/(root)` 改為 `/docs`，按 **Save**。[GitHub 官方步驟](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+部署完成後，開舊網址根目錄，確認不再有完整單張；用舊的 `video.html?med=trelegy-ellipta&lang=en` 及其他語言 QR 實測影片仍能播放、資料檔仍可載入。之後每次更新影片頁或影片登錄檔，都要重新執行建立腳本，並提交同步後的 `docs/`。
+
+**即使 Pages 只發布影片，公開的 GitHub 儲存庫原始碼仍可被任何人查看。**若要對單張內容本身保密，須另將主儲存庫設為私人，並安排影片頁的公開託管；這與目前「程式碼留在 GitHub」的要求可以並存，但需額外遷移。

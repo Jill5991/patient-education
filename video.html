@@ -62,6 +62,8 @@
     document.getElementById("heading").textContent = ui.heading;
     document.getElementById("intro").textContent = ui.intro;
     document.getElementById("back").textContent = ui.back;
+    // The public QR destination must not invite patients into the staff-only sheet.
+    if (location.hostname === "jill5991.github.io") document.getElementById("back").hidden = true;
     const backParams = new URLSearchParams({ med: med || "trelegy-ellipta", lang: lang || "zh-TW" });
     if (pharmacy && /^[a-z0-9-]+$/.test(pharmacy)) backParams.set("pharmacy", pharmacy);
     document.getElementById("back").href = `index.html?${backParams}`;
