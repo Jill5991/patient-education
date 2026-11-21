@@ -1,5 +1,6 @@
 // Maintained by the repository owner. IDs are used only to select print branding.
-// Login authorization is enforced by the hosting provider, not by this file.
+// Login authorization and account-to-pharmacy assignments are enforced by
+// Cloudflare Pages Functions using the private PHARMACY_EMAIL_MAP secret.
 window.PHARMACY_CONFIG = {
   defaultId: "jiahe",
   pharmacies: {

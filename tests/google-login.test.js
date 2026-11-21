@@ -75,13 +75,29 @@ test("Google authorization validates state, signature, allowlist, and every asse
     assert.equal(asset.headers.get("Cache-Control"), "private, no-store");
     const identity = await onRequest(context(`${origin}/auth/me`, sessionCookie));
     assert.equal(identity.status, 200);
-    assert.deepEqual(await identity.json(), { email: "owner@gmail.com" });
+    assert.deepEqual(await identity.json(), { email: "owner@gmail.com", pharmacyId: "jiahe" });
     assert.equal((await onRequest(context(`${origin}/auth/me`))).status, 401);
     const logout = await onRequest(context(`${origin}/auth/logout`, sessionCookie));
     assert.equal(logout.status, 200);
     assert.match(await logout.text(), /已登出用藥指導單張/);
     assert.match(logout.headers.get("Set-Cookie"), /Max-Age=0/);
     assert.equal((await onRequest(context(`${origin}/assets/img/test.webp`, `${sessionCookie}x`))).status, 401);
+    const wrongPharmacy = await onRequest(context(`${origin}/?med=trelegy-ellipta&pharmacy=partner-a`, sessionCookie));
+    assert.equal(wrongPharmacy.status, 302);
+    assert.equal(wrongPharmacy.headers.get("Location"), `${origin}/?med=trelegy-ellipta&pharmacy=jiahe`);
+    env.PHARMACY_EMAIL_MAP = JSON.stringify({ "owner@gmail.com": "jiahe", "partner@gmail.com": "partner-a" });
+    email = "partner@gmail.com";
+    const partnerLogin = await onRequest(context(callback, stateCookie));
+    assert.equal(partnerLogin.status, 302);
+    assert.equal(partnerLogin.headers.get("Location"), `${origin}/?pharmacy=partner-a`);
+    const partnerSession = partnerLogin.headers.get("Set-Cookie").split(/, (?=__Host-pharmacy_session=)/)[1]?.split(";")[0];
+    const partnerWrongPharmacy = await onRequest(context(`${origin}/?pharmacy=jiahe`, partnerSession));
+    assert.equal(partnerWrongPharmacy.status, 302);
+    assert.equal(partnerWrongPharmacy.headers.get("Location"), `${origin}/?pharmacy=partner-a`);
+    env.PHARMACY_EMAIL_MAP = JSON.stringify({ "partner@gmail.com": "partner-a" });
+    assert.equal((await onRequest(context(`${origin}/assets/img/test.webp`, sessionCookie))).status, 401);
+    delete env.PHARMACY_EMAIL_MAP;
+    email = "owner@gmail.com";
     env.ALLOWED_EMAILS = "someone-else@gmail.com";
     assert.equal((await onRequest(context(`${origin}/assets/img/test.webp`, sessionCookie))).status, 401);
     email = "unlisted@gmail.com";
@@ -95,6 +111,15 @@ test("Google authorization validates state, signature, allowlist, and every asse
   } finally {
     globalThis.fetch = originalFetch;
     env.ALLOWED_EMAILS = "owner@gmail.com";
+    delete env.PHARMACY_EMAIL_MAP;
+  }
+});
+
+test("malformed pharmacy mappings fail closed", async () => {
+  const { onRequest } = await middleware;
+  for (const value of ["{bad", "{}", '{"owner@gmail.com":"../other"}', '{"owner@gmail.com":"jiahe","OWNER@gmail.com":"partner-a"}']) {
+    const result = await onRequest({ ...context(`${origin}/`), env: { ...env, PHARMACY_EMAIL_MAP: value } });
+    assert.equal(result.status, 503);
   }
 });
 

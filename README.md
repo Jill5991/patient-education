@@ -16,7 +16,7 @@ Patient medication education sheets for pharmacy iPad use.
 ## iPad usage
 
 Open the deployed HTTPS URL on iPad Safari and switch language/category directly in the page UI.
-The current GitHub Pages URL is public. For trusted-pharmacy sign-in through Cloudflare Pages Functions, follow `TRUSTED_PHARMACIES.md` before distributing a protected URL.
+The GitHub Pages URL publishes the video page only. For Google sign-in and account-to-pharmacy branding on Cloudflare Pages, follow `TRUSTED_PHARMACIES.md`.
 
 ## Maintain content
 
@@ -32,9 +32,9 @@ In GitHub repository settings:
 
 1. Go to **Settings → Pages**
 2. Set **Source** to **Deploy from a branch**
-3. Select **Branch: main** and **Folder: /(root)**
+3. Select **Branch: main** and **Folder: /docs**
 4. Save
 
-After the protected Cloudflare site has been tested, change the GitHub Pages folder from `/(root)` to `/docs` as described in `TRUSTED_PHARMACIES.md`. Run `node scripts/build-public-video-site.js` and commit the updated `docs/` files whenever `video.html` or `approved-videos.json` changes. The public QR destination remains:
+Run `node scripts/build-public-video-site.js` and commit the updated `docs/` files whenever `video.html` or `approved-videos.json` changes. The public QR destination remains:
 
 `https://Jill5991.github.io/patient-education/`

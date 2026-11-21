@@ -31,7 +31,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .topbar-actions { display: flex; align-items: center; gap: 10px; }
 .auth-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
 .auth-status[hidden] { display: none; }
-.auth-user { max-width: 210px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.auth-user { max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .auth-logout { color: #185fa5; text-decoration: underline; white-space: nowrap; }
 @media (max-width: 650px) { .topbar-sub, .auth-user { display: none; } }
 .print-btn {
@@ -29175,9 +29175,15 @@ async function initAuthStatus() {
   try {
     const response = await fetch("/auth/me", { credentials: "same-origin", cache: "no-store" });
     if (!response.ok) return;
-    const { email } = await response.json();
-    if (typeof email !== "string" || !email) return;
-    document.getElementById("authUser").textContent = `Google：${email}`;
+    const { email, pharmacyId } = await response.json();
+    if (typeof email !== "string" || !email || typeof pharmacyId !== "string") return;
+    if (pharmacyId !== selectedPharmacy.id) {
+      const assignedUrl = new URL(window.location.href);
+      assignedUrl.searchParams.set("pharmacy", pharmacyId);
+      window.location.replace(assignedUrl.toString());
+      return;
+    }
+    document.getElementById("authUser").textContent = `${selectedPharmacy.name} · Google：${email}`;
     document.getElementById("authStatus").hidden = false;
   } catch { /* Local file previews do not have the login endpoint. */ }
 }

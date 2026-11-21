@@ -51,9 +51,18 @@ function config(env) {
   const origin = new URL(env.APP_ORIGIN || "");
   if (origin.protocol !== "https:" || origin.pathname !== "/" || origin.search || origin.hash) throw new Error("Invalid origin");
   if (!env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET || !env.SESSION_SECRET || env.SESSION_SECRET.length < 32) throw new Error("Missing auth secrets");
-  const allowed = new Set((env.ALLOWED_EMAILS || "").split(/[\s,;]+/).map(email => email.toLowerCase()).filter(Boolean));
-  if (!allowed.size) throw new Error("Missing allowlist");
-  return { origin: origin.origin, clientId: env.GOOGLE_CLIENT_ID, clientSecret: env.GOOGLE_CLIENT_SECRET, sessionSecret: env.SESSION_SECRET, allowed };
+  const rows = env.PHARMACY_EMAIL_MAP
+    ? Object.entries(JSON.parse(env.PHARMACY_EMAIL_MAP))
+    : (env.ALLOWED_EMAILS || "").split(/[\s,;]+/).filter(Boolean).map(email => [email, "jiahe"]);
+  if (!Array.isArray(rows) || !rows.length) throw new Error("Missing pharmacy assignments");
+  const assignments = new Map();
+  for (const [email, id] of rows) {
+    if (typeof email !== "string" || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || typeof id !== "string" || !/^[a-z0-9-]+$/.test(id)) throw new Error("Invalid pharmacy assignment");
+    const normalized = email.toLowerCase();
+    if (assignments.has(normalized)) throw new Error("Duplicate pharmacy assignment");
+    assignments.set(normalized, id);
+  }
+  return { origin: origin.origin, clientId: env.GOOGLE_CLIENT_ID, clientSecret: env.GOOGLE_CLIENT_SECRET, sessionSecret: env.SESSION_SECRET, assignments };
 }
 
 async function hmacKey(secret) {
@@ -73,7 +82,7 @@ async function readSession(value, settings) {
     if (!await crypto.subtle.verify("HMAC", await hmacKey(settings.sessionSecret), unbase64url(signature), encoder.encode(body))) return null;
     const payload = JSON.parse(new TextDecoder().decode(unbase64url(body)));
     if (typeof payload.sub !== "string" || !payload.sub || typeof payload.email !== "string" || !Number.isSafeInteger(payload.exp)) return null;
-    if (payload.exp <= Math.floor(Date.now() / 1000) || !settings.allowed.has(payload.email.toLowerCase())) return null;
+    if (payload.exp <= Math.floor(Date.now() / 1000) || !settings.assignments.has(payload.email.toLowerCase())) return null;
     return payload;
   } catch { return null; }
 }
@@ -130,9 +139,13 @@ async function finishLogin(request, settings) {
     const tokens = await tokenResponse.json();
     if (typeof tokens.id_token !== "string") throw new Error("Missing ID token");
     const claims = await verifyGoogleIdToken(tokens.id_token, settings, state.nonce);
-    if (!settings.allowed.has(claims.email.toLowerCase())) return plain("這個 Google 帳號尚未獲准使用單張。", 403);
+    if (!settings.assignments.has(claims.email.toLowerCase())) return plain("這個 Google 帳號尚未獲准使用單張。", 403);
     const session = await signSession({ sub: claims.sub, email: claims.email.toLowerCase(), exp: Math.floor(Date.now() / 1000) + SESSION_SECONDS }, settings.sessionSecret);
-    return redirect(`${settings.origin}${safeReturn(state.returnTo)}`, [clearState, cookie(SESSION_COOKIE, session, SESSION_SECONDS)]);
+    const destination = new URL(safeReturn(state.returnTo), settings.origin);
+    if (destination.pathname === "/" || destination.pathname === "/index.html") {
+      destination.searchParams.set("pharmacy", settings.assignments.get(claims.email.toLowerCase()));
+    }
+    return redirect(destination.toString(), [clearState, cookie(SESSION_COOKIE, session, SESSION_SECONDS)]);
   } catch {
     return new Response("登入未完成，請返回單張網址重試。", { status: 401, headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store", "Set-Cookie": clearState } });
   }
@@ -155,11 +168,18 @@ export async function onRequest(context) {
   if (url.pathname === "/auth/logout") return finishLogout();
   const session = await readSession(cookies(request)[SESSION_COOKIE], settings);
   if (url.pathname === "/auth/me") return session
-    ? new Response(JSON.stringify({ email: session.email }), { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" } })
+    ? new Response(JSON.stringify({ email: session.email, pharmacyId: settings.assignments.get(session.email.toLowerCase()) }), { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" } })
     : plain("請先登入。", 401);
   if (!session) {
     const wantsPage = url.pathname === "/" || url.pathname.endsWith(".html");
     return wantsPage ? redirect(`${settings.origin}/auth/login?return=${encodeURIComponent(url.pathname + url.search)}`) : plain("請先登入。", 401);
+  }
+  if (url.pathname === "/" || url.pathname === "/index.html") {
+    const assignedId = settings.assignments.get(session.email.toLowerCase());
+    if (url.searchParams.get("pharmacy") !== assignedId) {
+      url.searchParams.set("pharmacy", assignedId);
+      return redirect(url.toString());
+    }
   }
   const response = await context.next();
   response.headers.set("Cache-Control", "private, no-store");
